@@ -65,7 +65,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #0f172a; padding-bottom: 0.875rem; flex-wrap: wrap; gap: 1rem;">
             <div>
                 <span class="badge badge-blue font-mono" style="margin-bottom: 0.5rem;">SUÍTE DE AUDITORIA FORENSE ELEITORAL OFICIAL</span>
-                <h1 style="font-size: 1.625rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)</h1>
+                <h1 style="font-size: 1.625rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Auditoria Comparativa 1º vs 2º Turno (120 Regras Forenses)</h1>
                 <p style="font-size: 0.8125rem; color: #475569; margin: 0;">Eleições Gerais 2026 &bull; Cruzamento de BUs Oficiais &bull; Biometria, Cadastral, Aptos e Fluxo de Terceira Via</p>
             </div>
             <div style="text-align: right; font-size: 0.8125rem; color: #64748b;">
@@ -360,12 +360,13 @@
                                 <th class="col-grow t-left">Inconsistência Forense / Regra Técnica</th>
                                 <th class="col-fit t-right">Seções</th>
                                 <th class="col-fit t-right">% Urnas</th>
+                                <th class="col-fit t-center" style="width: 120px;">Detalhes</th>
                             </tr>
                         </thead>
                         <tbody>
                             
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3">
+            <td class="col-grow t-left py-2 px-3" style="cursor: pointer;" onclick="showRuleDetailsModal('CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO', 7, 29.17)">
                 <div style="display:flex; align-items:center;">
                     <span class="badge badge-blue" style="font-size:10px; padding:1px 5px; margin-right:6px;">BAIXA</span>
                     <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">Primeiro Dígito Anômalo (Lei de Benford)</span>
@@ -376,10 +377,15 @@
             </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">7</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">29.17%</td>
+            <td class="col-fit t-center py-2 px-3">
+                <button type="button" onclick="event.stopPropagation(); showRuleDetailsModal('CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO', 7, 29.17)" style="display:inline-flex; align-items:center; gap:5px; background:#ffffff; border:1px solid #cbd5e1; color:#0f172a; padding:4px 9px; border-radius:5px; font-size:0.75rem; font-weight:700; cursor:pointer; transition:all 0.15s ease; box-shadow:0 1px 2px rgba(0,0,0,0.05); white-space:nowrap;" onmouseover="this.style.background='#0284c7'; this.style.color='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#ffffff'; this.style.color='#0f172a'; this.style.borderColor='#cbd5e1';">
+                    <span>📘</span> <span>Ver Regra</span>
+                </button>
+            </td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3">
+            <td class="col-grow t-left py-2 px-3" style="cursor: pointer;" onclick="showRuleDetailsModal('CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR', 2, 8.33)">
                 <div style="display:flex; align-items:center;">
                     <span class="badge badge-red" style="font-size:10px; padding:1px 5px; margin-right:6px;">ALTA</span>
                     <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">Queda de Votos com MAIOR Comparecimento</span>
@@ -390,10 +396,15 @@
             </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">2</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">8.33%</td>
+            <td class="col-fit t-center py-2 px-3">
+                <button type="button" onclick="event.stopPropagation(); showRuleDetailsModal('CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR', 2, 8.33)" style="display:inline-flex; align-items:center; gap:5px; background:#ffffff; border:1px solid #cbd5e1; color:#0f172a; padding:4px 9px; border-radius:5px; font-size:0.75rem; font-weight:700; cursor:pointer; transition:all 0.15s ease; box-shadow:0 1px 2px rgba(0,0,0,0.05); white-space:nowrap;" onmouseover="this.style.background='#0284c7'; this.style.color='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#ffffff'; this.style.color='#0f172a'; this.style.borderColor='#cbd5e1';">
+                    <span>📘</span> <span>Ver Regra</span>
+                </button>
+            </td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3">
+            <td class="col-grow t-left py-2 px-3" style="cursor: pointer;" onclick="showRuleDetailsModal('CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO', 1, 4.17)">
                 <div style="display:flex; align-items:center;">
                     <span class="badge badge-red" style="font-size:10px; padding:1px 5px; margin-right:6px;">ALTA</span>
                     <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">Migração Total de Brancos/Nulos para um Concorrente</span>
@@ -404,6 +415,11 @@
             </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">1</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">4.17%</td>
+            <td class="col-fit t-center py-2 px-3">
+                <button type="button" onclick="event.stopPropagation(); showRuleDetailsModal('CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO', 1, 4.17)" style="display:inline-flex; align-items:center; gap:5px; background:#ffffff; border:1px solid #cbd5e1; color:#0f172a; padding:4px 9px; border-radius:5px; font-size:0.75rem; font-weight:700; cursor:pointer; transition:all 0.15s ease; box-shadow:0 1px 2px rgba(0,0,0,0.05); white-space:nowrap;" onmouseover="this.style.background='#0284c7'; this.style.color='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#ffffff'; this.style.color='#0f172a'; this.style.borderColor='#cbd5e1';">
+                    <span>📘</span> <span>Ver Regra</span>
+                </button>
+            </td>
         </tr>
         
                         </tbody>
@@ -441,7 +457,7 @@
                         <option value="bio_drop_desc">Ordenar: Maior Queda de Biometria</option>
                     </select>
                     <select id="anomalySelect" onchange="applyFilters()" style="max-width: 280px;">
-                        <option value="ALL">Todos os Tipos de Anomalia (100 detectores)</option>
+                        <option value="ALL">Todos os Tipos de Anomalia (120 detectores)</option>
                         <option value="CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO">CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO (7)</option><option value="CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR">CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR (2)</option><option value="CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO">CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO (1)</option>
                     </select>
                 </div>
@@ -517,7 +533,51 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
+
+    <!-- MODAL DE EXPLICAÇÃO DA REGRA FORENSE -->
+    <div id="ruleModal" class="modal-overlay" onclick="handleRuleModalOverlayClick(event)">
+        <div class="modal-content" style="max-width: 720px;">
+            <div class="modal-header">
+                <div>
+                    <div id="ruleModalSevBadge" style="margin-bottom: 0.4rem;"></div>
+                    <h2 id="ruleModalTitle" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;"></h2>
+                    <p id="ruleModalCode" style="font-family: ui-monospace, monospace; font-size: 0.8125rem; color: #64748b; margin: 0.25rem 0 0 0;"></p>
+                </div>
+                <button onclick="closeRuleModal()" class="modal-close">&times;</button>
+            </div>
+
+            <!-- ESTATÍSTICA DA REGRA NO ESTADO -->
+            <div id="ruleModalStats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.25rem;"></div>
+
+            <!-- O QUE SIGNIFICA PARA LEIGOS -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.85rem; border-left: 4px solid #0284c7;">
+                <h4 style="margin: 0 0 0.4rem 0; font-size: 0.875rem; color: #0f172a; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>💡</span> <strong>O que esta regra audita e significa para leigos:</strong>
+                </h4>
+                <p id="ruleModalDesc" style="margin: 0; font-size: 0.8125rem; color: #334155; line-height: 1.55;"></p>
+            </div>
+
+            <!-- POR QUE LEVANTA SUSPEITA TÉCNICA -->
+            <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 0.5rem; padding: 1rem; margin-bottom: 1.25rem; border-left: 4px solid #e11d48;">
+                <h4 style="margin: 0 0 0.4rem 0; font-size: 0.875rem; color: #9f1239; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>⚠️</span> <strong>Por que levanta suspeita técnica ou risco pericial:</strong>
+                </h4>
+                <p id="ruleModalWhy" style="margin: 0; font-size: 0.8125rem; color: #881337; line-height: 1.55;"></p>
+            </div>
+
+            <!-- RODAPÉ COM BOTÃO PARA VER AS SEÇÕES NA TABELA -->
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <button onclick="closeRuleModal()" class="btn" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #475569; padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 600; cursor: pointer;">
+                    Fechar
+                </button>
+                <button id="btnFilterRule" class="btn" style="background: #0284c7; color: #ffffff; border: none; padding: 0.55rem 1.1rem; border-radius: 0.375rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(2,132,199,0.3);">
+                    <span>⚡</span> <span id="btnFilterRuleText">Ver Seções com Esta Anomalia Abaixo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+        <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
     <script>
         const allSections = [{"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 102, "key": "SC-80004-Z0077-S0102", "worst_severity": "ALTA", "fraud_score": 82, "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)", "total_anomalias": 1, "anomalias": [{"code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "ALTA", "title": "Queda de votos de FLAVIO BOLSONARO (PL) com comparecimento MAIOR no 2T", "description": "FLAVIO BOLSONARO (PL) caiu de 138 para 131 votos (-7), embora 2 novos eleitores tenham comparecido no 2T (288 -> 290).", "details": {"candidato": 22, "votos_1t": 138, "votos_2t": 131, "queda": 7, "delta_comp": 2}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770102-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 102, "local": 1031, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 102, "numero_interno_urna": 2191318, "numero_serie_fv": "FC01B103", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "901416212726277242796252", "data_carga": "2026-09-26T13:04:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T18:02:27", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:58:57", "duracao_minutos": 598.93, "aptos": 348, "aptos_secao": 348, "aptos_tte": 0, "comparecimento": 288, "abstencao": 60, "pct_comparecimento": 82.76, "pct_abstencao": 17.24, "biometria_sim": 230, "biometria_bio": 47, "biometria_nao": 11, "pct_biometria": 79.86, "pct_biografia": 16.32, "votos_presidenciais": {"13": 119, "14": 6, "22": 138, "55": 7, "70": 6}, "votos_brancos": 7, "votos_nulos": 5, "votos_validos": 276, "total_apurado_pres": 288, "total_terceira_via": 19, "votos_terceira_via": {"14": 6, "55": 7, "70": 6}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770102-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 102, "local": 1031, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 102, "numero_interno_urna": 2191318, "numero_serie_fv": "FC01B103", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "901416212726277242796252", "data_carga": "2026-09-26T13:04:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:05:03", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:01:17", "duracao_minutos": 541.27, "aptos": 348, "aptos_secao": 348, "aptos_tte": 0, "comparecimento": 290, "abstencao": 58, "pct_comparecimento": 83.33, "pct_abstencao": 16.67, "biometria_sim": 233, "biometria_bio": 44, "biometria_nao": 13, "pct_biometria": 80.34, "pct_biografia": 15.17, "votos_presidenciais": {"13": 152, "22": 131}, "votos_brancos": 5, "votos_nulos": 2, "votos_validos": 283, "total_apurado_pres": 290, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 125, "key": "SC-80004-Z0077-S0125", "worst_severity": "ALTA", "fraud_score": 0, "fraud_label": "Baixo Risco de Fraude (0%)", "total_anomalias": 1, "anomalias": [{"code": "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO", "category": "BRANCOS_E_NULOS", "severity": "ALTA", "title": "Migração quase total de brancos/nulos para LULA (PT)", "description": "Redução de 14 votos inválidos coincidiu com ganho unilateral de 33 votos.", "details": {"queda_bn": 14, "ganho_candidato": 33}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770125-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 125, "local": 1104, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 125, "numero_interno_urna": 2098748, "numero_serie_fv": "A4F07BF5", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "780204563214812942706668", "data_carga": "2026-09-26T13:57:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:08:40", "abertura": "2026-10-04T08:00:19", "encerramento": "2026-10-04T17:06:45", "duracao_minutos": 546.43, "aptos": 334, "aptos_secao": 334, "aptos_tte": 0, "comparecimento": 266, "abstencao": 68, "pct_comparecimento": 79.64, "pct_abstencao": 20.36, "biometria_sim": 248, "biometria_bio": 8, "biometria_nao": 10, "pct_biometria": 93.23, "pct_biografia": 3.01, "votos_presidenciais": {"13": 106, "14": 4, "22": 124, "27": 1, "30": 2, "55": 2, "70": 5}, "votos_brancos": 12, "votos_nulos": 10, "votos_validos": 244, "total_apurado_pres": 266, "total_terceira_via": 14, "votos_terceira_via": {"14": 4, "27": 1, "30": 2, "55": 2, "70": 5}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770125-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 125, "local": 1104, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 125, "numero_interno_urna": 2098748, "numero_serie_fv": "A4F07BF5", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "780204563214812942706668", "data_carga": "2026-09-26T13:57:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:04:13", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:02:40", "duracao_minutos": 542.65, "aptos": 334, "aptos_secao": 334, "aptos_tte": 0, "comparecimento": 273, "abstencao": 61, "pct_comparecimento": 81.74, "pct_abstencao": 18.26, "biometria_sim": 252, "biometria_bio": 10, "biometria_nao": 11, "pct_biometria": 92.31, "pct_biografia": 3.66, "votos_presidenciais": {"13": 139, "22": 126}, "votos_brancos": 3, "votos_nulos": 5, "votos_validos": 265, "total_apurado_pres": 273, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 174, "key": "SC-80004-Z0077-S0174", "worst_severity": "ALTA", "fraud_score": 82, "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)", "total_anomalias": 1, "anomalias": [{"code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "ALTA", "title": "Queda de votos de FLAVIO BOLSONARO (PL) com comparecimento MAIOR no 2T", "description": "FLAVIO BOLSONARO (PL) caiu de 92 para 89 votos (-3), embora 1 novos eleitores tenham comparecido no 2T (167 -> 168).", "details": {"candidato": 22, "votos_1t": 92, "votos_2t": 89, "queda": 3, "delta_comp": 1}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770174-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 174, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 174, "numero_interno_urna": 2182624, "numero_serie_fv": "88C2247F", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "941820962530747715546258", "data_carga": "2026-09-26T14:26:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:05:28", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:03:56", "duracao_minutos": 543.92, "aptos": 244, "aptos_secao": 241, "aptos_tte": 3, "comparecimento": 167, "abstencao": 77, "pct_comparecimento": 68.44, "pct_abstencao": 31.56, "biometria_sim": 149, "biometria_bio": 8, "biometria_nao": 10, "pct_biometria": 89.22, "pct_biografia": 4.79, "votos_presidenciais": {"13": 58, "14": 3, "22": 92, "55": 1, "70": 7}, "votos_brancos": 5, "votos_nulos": 1, "votos_validos": 161, "total_apurado_pres": 167, "total_terceira_via": 11, "votos_terceira_via": {"14": 3, "55": 1, "70": 7}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770174-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 174, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 174, "numero_interno_urna": 2182624, "numero_serie_fv": "88C2247F", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "941820962530747715546258", "data_carga": "2026-09-26T14:26:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:41", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:26", "duracao_minutos": 540.42, "aptos": 244, "aptos_secao": 241, "aptos_tte": 3, "comparecimento": 168, "abstencao": 76, "pct_comparecimento": 68.85, "pct_abstencao": 31.15, "biometria_sim": 149, "biometria_bio": 10, "biometria_nao": 9, "pct_biometria": 88.69, "pct_biografia": 5.95, "votos_presidenciais": {"13": 76, "22": 89}, "votos_brancos": 3, "votos_nulos": 0, "votos_validos": 165, "total_apurado_pres": 168, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 91, "key": "SC-80004-Z0077-S0091", "worst_severity": "BAIXA", "fraud_score": 3, "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)", "total_anomalias": 2, "anomalias": [{"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13", "description": "Candidato obteve 98 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 13, "votos": 98, "primeiro_digito": 9}}, {"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 22", "description": "Candidato obteve 98 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 22, "votos": 98, "primeiro_digito": 9}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770091-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 91, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 91, "numero_interno_urna": 2000482, "numero_serie_fv": "B3C04055", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "164042906852075248089806", "data_carga": "2026-09-26T09:12:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:04:24", "abertura": "2026-10-04T08:19:54", "encerramento": "2026-10-04T17:02:14", "duracao_minutos": 522.33, "aptos": 244, "aptos_secao": 243, "aptos_tte": 1, "comparecimento": 191, "abstencao": 53, "pct_comparecimento": 78.28, "pct_abstencao": 21.72, "biometria_sim": 157, "biometria_bio": 26, "biometria_nao": 8, "pct_biometria": 82.2, "pct_biografia": 13.61, "votos_presidenciais": {"13": 71, "14": 2, "22": 97, "28": 1, "55": 3, "70": 5}, "votos_brancos": 6, "votos_nulos": 6, "votos_validos": 179, "total_apurado_pres": 191, "total_terceira_via": 11, "votos_terceira_via": {"14": 2, "28": 1, "55": 3, "70": 5}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770091-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 91, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 91, "numero_interno_urna": 2000482, "numero_serie_fv": "B3C04055", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "164042906852075248089806", "data_carga": "2026-09-26T09:12:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:27", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:37", "duracao_minutos": 540.6, "aptos": 244, "aptos_secao": 243, "aptos_tte": 1, "comparecimento": 204, "abstencao": 40, "pct_comparecimento": 83.61, "pct_abstencao": 16.39, "biometria_sim": 164, "biometria_bio": 30, "biometria_nao": 10, "pct_biometria": 80.39, "pct_biografia": 14.71, "votos_presidenciais": {"13": 98, "22": 98}, "votos_brancos": 4, "votos_nulos": 4, "votos_validos": 196, "total_apurado_pres": 204, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 92, "key": "SC-80004-Z0077-S0092", "worst_severity": "BAIXA", "fraud_score": 3, "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)", "total_anomalias": 1, "anomalias": [{"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13", "description": "Candidato obteve 95 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 13, "votos": 95, "primeiro_digito": 9}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770092-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 92, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 92, "numero_interno_urna": 2045875, "numero_serie_fv": "8ACF9D0E", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "194345040455523064131523", "data_carga": "2026-09-26T09:18:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:06:21", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:01:55", "duracao_minutos": 541.9, "aptos": 248, "aptos_secao": 246, "aptos_tte": 2, "comparecimento": 200, "abstencao": 48, "pct_comparecimento": 80.65, "pct_abstencao": 19.35, "biometria_sim": 175, "biometria_bio": 16, "biometria_nao": 9, "pct_biometria": 87.5, "pct_biografia": 8.0, "votos_presidenciais": {"13": 78, "14": 2, "22": 106, "55": 2, "70": 4}, "votos_brancos": 5, "votos_nulos": 3, "votos_validos": 192, "total_apurado_pres": 200, "total_terceira_via": 8, "votos_terceira_via": {"14": 2, "55": 2, "70": 4}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770092-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 92, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 92, "numero_interno_urna": 2045875, "numero_serie_fv": "8ACF9D0E", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "194345040455523064131523", "data_carga": "2026-09-26T09:18:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:48", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:48", "duracao_minutos": 540.78, "aptos": 248, "aptos_secao": 246, "aptos_tte": 2, "comparecimento": 210, "abstencao": 38, "pct_comparecimento": 84.68, "pct_abstencao": 15.32, "biometria_sim": 181, "biometria_bio": 19, "biometria_nao": 10, "pct_biometria": 86.19, "pct_biografia": 9.05, "votos_presidenciais": {"13": 95, "22": 110}, "votos_brancos": 4, "votos_nulos": 1, "votos_validos": 205, "total_apurado_pres": 210, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 94, "key": "SC-80004-Z0077-S0094", "worst_severity": "BAIXA", "fraud_score": 3, "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)", "total_anomalias": 1, "anomalias": [{"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13", "description": "Candidato obteve 91 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 13, "votos": 91, "primeiro_digito": 9}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770094-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 94, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 94, "numero_interno_urna": 2048697, "numero_serie_fv": "BA1F36C4", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "790305861715956319030521", "data_carga": "2026-09-26T09:33:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:01:53", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:00:35", "duracao_minutos": 540.57, "aptos": 247, "aptos_secao": 246, "aptos_tte": 1, "comparecimento": 199, "abstencao": 48, "pct_comparecimento": 80.57, "pct_abstencao": 19.43, "biometria_sim": 176, "biometria_bio": 14, "biometria_nao": 9, "pct_biometria": 88.44, "pct_biografia": 7.04, "votos_presidenciais": {"13": 78, "14": 4, "22": 104, "55": 2, "70": 3}, "votos_brancos": 7, "votos_nulos": 1, "votos_validos": 191, "total_apurado_pres": 199, "total_terceira_via": 9, "votos_terceira_via": {"14": 4, "55": 2, "70": 3}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770094-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 94, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 94, "numero_interno_urna": 2048697, "numero_serie_fv": "BA1F36C4", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "790305861715956319030521", "data_carga": "2026-09-26T09:33:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:08", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:27", "duracao_minutos": 540.43, "aptos": 247, "aptos_secao": 246, "aptos_tte": 1, "comparecimento": 206, "abstencao": 41, "pct_comparecimento": 83.4, "pct_abstencao": 16.6, "biometria_sim": 182, "biometria_bio": 14, "biometria_nao": 10, "pct_biometria": 88.35, "pct_biografia": 6.8, "votos_presidenciais": {"13": 91, "22": 109}, "votos_brancos": 5, "votos_nulos": 1, "votos_validos": 200, "total_apurado_pres": 206, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 100, "key": "SC-80004-Z0077-S0100", "worst_severity": "BAIXA", "fraud_score": 3, "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)", "total_anomalias": 1, "anomalias": [{"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13", "description": "Candidato obteve 95 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 13, "votos": 95, "primeiro_digito": 9}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770100-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 100, "local": 1023, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 100, "numero_interno_urna": 2022448, "numero_serie_fv": "8EAF9538", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "780204878014570102044633", "data_carga": "2026-09-26T11:48:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:07:37", "abertura": "2026-10-04T08:03:14", "encerramento": "2026-10-04T17:02:34", "duracao_minutos": 539.33, "aptos": 286, "aptos_secao": 286, "aptos_tte": 0, "comparecimento": 232, "abstencao": 54, "pct_comparecimento": 81.12, "pct_abstencao": 18.88, "biometria_sim": 209, "biometria_bio": 17, "biometria_nao": 6, "pct_biometria": 90.09, "pct_biografia": 7.33, "votos_presidenciais": {"13": 79, "14": 3, "22": 135, "55": 1, "70": 8}, "votos_brancos": 5, "votos_nulos": 1, "votos_validos": 226, "total_apurado_pres": 232, "total_terceira_via": 12, "votos_terceira_via": {"14": 3, "55": 1, "70": 8}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770100-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 100, "local": 1023, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 100, "numero_interno_urna": 2022448, "numero_serie_fv": "8EAF9538", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "780204878014570102044633", "data_carga": "2026-09-26T11:48:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:19", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:46", "duracao_minutos": 540.75, "aptos": 286, "aptos_secao": 286, "aptos_tte": 0, "comparecimento": 240, "abstencao": 46, "pct_comparecimento": 83.92, "pct_abstencao": 16.08, "biometria_sim": 211, "biometria_bio": 22, "biometria_nao": 7, "pct_biometria": 87.92, "pct_biografia": 9.17, "votos_presidenciais": {"13": 95, "22": 137}, "votos_brancos": 7, "votos_nulos": 1, "votos_validos": 232, "total_apurado_pres": 240, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 101, "key": "SC-80004-Z0077-S0101", "worst_severity": "BAIXA", "fraud_score": 3, "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)", "total_anomalias": 1, "anomalias": [{"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13", "description": "Candidato obteve 99 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 13, "votos": 99, "primeiro_digito": 9}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770101-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 101, "local": 1023, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 101, "numero_interno_urna": 2197332, "numero_serie_fv": "0258CED6", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "376163579673976199163115", "data_carga": "2026-09-26T11:54:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:03:36", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:01:16", "duracao_minutos": 541.25, "aptos": 294, "aptos_secao": 294, "aptos_tte": 0, "comparecimento": 246, "abstencao": 48, "pct_comparecimento": 83.67, "pct_abstencao": 16.33, "biometria_sim": 228, "biometria_bio": 13, "biometria_nao": 5, "pct_biometria": 92.68, "pct_biografia": 5.28, "votos_presidenciais": {"13": 85, "14": 3, "22": 137, "55": 4, "70": 9}, "votos_brancos": 3, "votos_nulos": 5, "votos_validos": 238, "total_apurado_pres": 246, "total_terceira_via": 16, "votos_terceira_via": {"14": 3, "55": 4, "70": 9}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770101-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 101, "local": 1023, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 101, "numero_interno_urna": 2197332, "numero_serie_fv": "0258CED6", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "376163579673976199163115", "data_carga": "2026-09-26T11:54:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:47", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:55", "duracao_minutos": 540.9, "aptos": 294, "aptos_secao": 294, "aptos_tte": 0, "comparecimento": 256, "abstencao": 38, "pct_comparecimento": 87.07, "pct_abstencao": 12.93, "biometria_sim": 229, "biometria_bio": 21, "biometria_nao": 6, "pct_biometria": 89.45, "pct_biografia": 8.2, "votos_presidenciais": {"13": 99, "22": 148}, "votos_brancos": 3, "votos_nulos": 6, "votos_validos": 247, "total_apurado_pres": 256, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 121, "key": "SC-80004-Z0077-S0121", "worst_severity": "BAIXA", "fraud_score": 3, "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)", "total_anomalias": 1, "anomalias": [{"code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "BAIXA", "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13", "description": "Candidato obteve 98 votos (iniciado em dígito 9, estatisticamente infrequente).", "details": {"candidato": 13, "votos": 98, "primeiro_digito": 9}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770121-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 121, "local": 1023, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 121, "numero_interno_urna": 2046897, "numero_serie_fv": "5BEDECD3", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "103436444446938337603688", "data_carga": "2026-09-26T13:28:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:04:34", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:01:07", "duracao_minutos": 541.1, "aptos": 299, "aptos_secao": 299, "aptos_tte": 0, "comparecimento": 244, "abstencao": 55, "pct_comparecimento": 81.61, "pct_abstencao": 18.39, "biometria_sim": 224, "biometria_bio": 13, "biometria_nao": 7, "pct_biometria": 91.8, "pct_biografia": 5.33, "votos_presidenciais": {"13": 76, "14": 2, "21": 1, "22": 135, "55": 3, "70": 12}, "votos_brancos": 8, "votos_nulos": 7, "votos_validos": 229, "total_apurado_pres": 244, "total_terceira_via": 18, "votos_terceira_via": {"14": 2, "21": 1, "55": 3, "70": 12}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770121-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 121, "local": 1023, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 121, "numero_interno_urna": 2046897, "numero_serie_fv": "5BEDECD3", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "103436444446938337603688", "data_carga": "2026-09-26T13:28:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:44", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:57", "duracao_minutos": 540.93, "aptos": 299, "aptos_secao": 299, "aptos_tte": 0, "comparecimento": 251, "abstencao": 48, "pct_comparecimento": 83.95, "pct_abstencao": 16.05, "biometria_sim": 235, "biometria_bio": 10, "biometria_nao": 6, "pct_biometria": 93.63, "pct_biografia": 3.98, "votos_presidenciais": {"13": 98, "22": 147}, "votos_brancos": 1, "votos_nulos": 5, "votos_validos": 245, "total_apurado_pres": 251, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}];
         const munMap = {"80004": "Monte Carlo"};
@@ -1001,7 +1061,271 @@
                 "explicacao": "Um dos dois candidatos finalistas recebeu zero votos válidos em uma seção expressiva do local de votação.",
                 "por_que_suspeito": "Unanimidade artificial extrema em colégios eleitorais com pluralidade de eleitores.",
                 "severidade": "ALTA"
-            }
+            },
+            "CHK021_EXTINCAO_TTE_2T": {
+                "titulo": "Extinção de Eleitores em Trânsito no 2T",
+                "explicacao": "Havia eleitores habilitados para voto em trânsito (TTE) no 1º turno, mas o registro de TTE foi zerado no 2º turno.",
+                "por_que_suspeito": "O cadastro de voto em trânsito é unificado para ambos os turnos. O sumiço completo de eleitores em trânsito indica possível falha ou expurgo no cadastro da urna.",
+                "severidade": "MEDIA"
+            },
+            "CHK022_SURGIMENTO_TTE_MASSIVO_2T": {
+                "titulo": "Surgimento Massivo de Voto em Trânsito no 2T",
+                "explicacao": "A seção não possuía eleitores em trânsito no 1º turno e registrou um número expressivo de votos em trânsito no 2º turno.",
+                "por_que_suspeito": "Incompatível com o procedimento eleitoral padrão, pois a solicitação de voto em trânsito deve ser realizada com meses de antecedência e fixada para ambos os pleitos.",
+                "severidade": "MEDIA"
+            },
+            "CHK024_SECAO_MINIMA_ANOMALA": {
+                "titulo": "Seção Eleitoral com Eleitorado Mínimo Anômalo",
+                "explicacao": "A seção possui menos de 15 eleitores aptos registrados.",
+                "por_que_suspeito": "Seções com eleitorado residual tão baixo violam as normas de agregação do TSE e fragilizam o sigilo constitucional do voto.",
+                "severidade": "BAIXA"
+            },
+            "CHK025_SECAO_HIPERTROFICA": {
+                "titulo": "Seção Eleitoral Hipertrófica (> 500 Aptos)",
+                "explicacao": "A seção possui mais de 500 eleitores aptos registrados.",
+                "por_que_suspeito": "Seções hipertrofiadas causam filas excessivas e demandam ritmo de votação irrealista para viabilizar todos os votos dentro do horário legal.",
+                "severidade": "BAIXA"
+            },
+            "CHK026_SECAO_SEM_APTOS": {
+                "titulo": "Seção com Zero Eleitores Aptos Registrados",
+                "explicacao": "O Boletim de Urna registra zero eleitores aptos na seção.",
+                "por_que_suspeito": "Grave inconsistência cadastral. Uma seção em funcionamento não pode ter zero eleitores aptos.",
+                "severidade": "ALTA"
+            },
+            "CHK027_OSCILACAO_APTOS_TOTAL_MAIOR_10PCT": {
+                "titulo": "Oscilação de Aptos no Município Superior a 10%",
+                "explicacao": "A soma de eleitores aptos no município variou mais de 10% entre o 1º e 2º Turno.",
+                "por_que_suspeito": "O colégio eleitoral municipal é congelado antes do pleito. Oscilações gerais expressivas indicam anomalia cadastral ou importação indevida de dados.",
+                "severidade": "ALTA"
+            },
+            "CHK028_DIVERGENCIA_APTOS_ENTRE_ELEICOES": {
+                "titulo": "Divergência de Aptos entre Eleições no Mesmo BU",
+                "explicacao": "O total de eleitores aptos difere entre as diferentes eleições (Presidencial vs Estadual) registradas no mesmo Boletim de Urna.",
+                "por_que_suspeito": "O eleitorado da seção deve ser idêntico em todas as eleições do mesmo envelope, salvo regras estritas de voto em trânsito.",
+                "severidade": "ALTA"
+            },
+            "CHK029_TRANSFERENCIA_TEMPORARIA_SUPERIOR_A_50PCT": {
+                "titulo": "Transferência Temporária de Eleitores Superior a 50%",
+                "explicacao": "Mais de 50% dos eleitores da seção são oriundos de transferência temporária (TTE).",
+                "por_que_suspeito": "Proporção desproporcional de eleitores voláteis que pode mascarar inserção de eleitores fora do domicílio eleitoral ordinário.",
+                "severidade": "MEDIA"
+            },
+            "CHK030_ZONA_SECAO_FORA_PADRAO_CADASTRO": {
+                "titulo": "Numeração de Zona ou Seção Fora do Padrão Cadastral",
+                "explicacao": "A seção ou zona possui numeração atípica ou fora da faixa de seções ativas do município.",
+                "por_que_suspeito": "Pode indicar seção experimental, simulada ou criada fora do fluxo oficial de homologação do cartório.",
+                "severidade": "BAIXA"
+            },
+            "CHK032_COMPARECIMENTO_EXCEDE_APTOS_1T": {
+                "titulo": "Comparecimento no 1T Superior ao Total de Aptos",
+                "explicacao": "No 1º turno, o número de eleitores que compareceram superou a quantidade de eleitores aptos cadastrados.",
+                "por_que_suspeito": "Impossibilidade matemática direta que aponta para inconsistência de software ou inserção indevida de votos.",
+                "severidade": "ALTA"
+            },
+            "CHK034_ABSTENCAO_SUPERIOR_50PCT_2T": {
+                "titulo": "Abstenção Elevada Superior a 50% no 2T",
+                "explicacao": "Mais da metade dos eleitores aptos da seção deixaram de votar no 2º turno.",
+                "por_que_suspeito": "Desvio estatístico expressivo em relação à média de abstenção histórica (cerca de 15% a 20%), podendo sinalizar contingências locais ou problemas de acesso.",
+                "severidade": "BAIXA"
+            },
+            "CHK035_ABSTENCAO_SUPERIOR_70PCT_2T": {
+                "titulo": "Abstenção Crítica Extrema Superior a 70% no 2T",
+                "explicacao": "Mais de 70% dos eleitores faltaram à votação no 2º turno.",
+                "por_que_suspeito": "Anomalia severa de esvaziamento da seção que requer averiguação das condições de funcionamento da urna e do local de votação.",
+                "severidade": "MEDIA"
+            },
+            "CHK038_COMPARECIMENTO_IDENTICO_COM_APTOS_DIFERENTES": {
+                "titulo": "Comparecimento Idêntico com Quantidade Diferente de Aptos",
+                "explicacao": "A seção teve exatamente o mesmo número de votantes em ambos os turnos, apesar de o número de aptos ter mudado.",
+                "por_que_suspeito": "Coincidência estatística improvável que pode decorrer de preenchimento automatizado ou replicação de registros.",
+                "severidade": "BAIXA"
+            },
+            "CHK039_COMPARECIMENTO_ZERO_2T": {
+                "titulo": "Comparecimento Zero no 2T (Seção Deserta)",
+                "explicacao": "Nenhum eleitor compareceu para votar na seção no 2º turno.",
+                "por_que_suspeito": "Seção fantasma ou urna não instalada que gerou arquivo de resultado sem votação.",
+                "severidade": "ALTA"
+            },
+            "CHK040_COMPARECIMENTO_UNITARIO_2T": {
+                "titulo": "Comparecimento Unitário no 2T (Apenas 1 Votante)",
+                "explicacao": "Apenas um único eleitor votou em toda a seção durante todo o dia de eleição.",
+                "por_que_suspeito": "Quebra absoluta do sigilo constitucional do voto e atipicidade operacional extrema.",
+                "severidade": "ALTA"
+            },
+            "CHK041_ABSTENCAO_ZERO_AMBOS_TURNOS": {
+                "titulo": "Abstenção Zero (100% de Presença) em Ambos os Turnos",
+                "explicacao": "Todos os eleitores cadastrados compareceram para votar no 1º e no 2º Turno, sem nenhuma ausência.",
+                "por_que_suspeito": "Fenômeno estatisticamente quase impossível em populações reais, comum em fraudes de preenchimento manual.",
+                "severidade": "MEDIA"
+            },
+            "CHK042_QUEDA_COMPARECIMENTO_MAIOR_30PCT": {
+                "titulo": "Queda Abrupta de Comparecimento Superior a 30%",
+                "explicacao": "O comparecimento de eleitores desabou em mais de 30% do 1º para o 2º Turno.",
+                "por_que_suspeito": "Esvaziamento atípico que pode indicar desinformação, coação ou descarte de votos.",
+                "severidade": "MEDIA"
+            },
+            "CHK043_EXPLOSAO_COMPARECIMENTO_MAIOR_40PCT": {
+                "titulo": "Explosão Abrupta de Comparecimento Superior a 40%",
+                "explicacao": "O comparecimento de votantes aumentou mais de 40% entre os dois turnos.",
+                "por_que_suspeito": "Inflação artificial de eleitores que exige cruzamento com a biometria para descartar votos de eleitores ausentes.",
+                "severidade": "ALTA"
+            },
+            "CHK045_COMPARECIMENTO_PRESIDENCIAL_MENOR_QUE_CARGO_ESTADUAL": {
+                "titulo": "Comparecimento Presidencial Menor que Estadual",
+                "explicacao": "Mais eleitores votaram para governador/cargo estadual do que para presidente na mesma urna.",
+                "por_que_suspeito": "O comparecimento deve ser comum à cabine de votação; discrepâncias apontam erro de totalização ou descarte parcial.",
+                "severidade": "ALTA"
+            },
+            "CHK051_ZERO_VOTOS_FINALISTA_SECAO_GRANDE": {
+                "titulo": "Zero Votos para Candidato Finalista em Seção Relevante",
+                "explicacao": "Um dos dois candidatos finalistas obteve exatamente ZERO votos em seção com mais de 100 votantes.",
+                "por_que_suspeito": "Unanimidade absoluta que foge do padrão de pluralidade eleitoral e sugere coação local ou preenchimento viciado.",
+                "severidade": "ALTA"
+            },
+            "CHK057_INVERSAO_ABRUPTA_SWING_MAIOR_40PP": {
+                "titulo": "Inversão Abrupta de Liderança com Swing > 40 pp",
+                "explicacao": "O candidato que venceu amplamente a seção no 1º turno foi derrotado com diferença superior a 40 pontos percentuais no 2º turno.",
+                "por_que_suspeito": "Virada política extrema que contraria a inércia eleitoral consolidada, requerendo checagem da transferência de votos.",
+                "severidade": "MEDIA"
+            },
+            "CHK060_FINALISTA_COM_VOTACAO_MENOR_QUE_BRANCOS_E_NULOS": {
+                "titulo": "Votação do Finalista Menor que Brancos e Nulos",
+                "explicacao": "O candidato obteve menos votos do que a soma de votos inválidos na seção.",
+                "por_que_suspeito": "Atipicidade grave de rejeição que diverge do comportamento médio das seções vizinhas.",
+                "severidade": "MEDIA"
+            },
+            "CHK061_VOTOS_VALIDOS_ZERO_NO_2T": {
+                "titulo": "Zero Votos Válidos no 2T (100% Brancos e Nulos)",
+                "explicacao": "Nenhum voto válido foi registrado para nenhum dos finalistas no 2º turno.",
+                "por_que_suspeito": "Urna com resultado totalmente nulo, indicando protesto massivo ou falha crítica no software de contagem.",
+                "severidade": "ALTA"
+            },
+            "CHK063_AMBOS_FINALISTAS_PERDERAM_VOTOS_COM_MAIOR_COMPARECIMENTO": {
+                "titulo": "Ambos os Finalistas Perderam Votos com Comparecimento Maior",
+                "explicacao": "O comparecimento geral subiu, mas a votação nominal de ambos os finalistas caiu simultaneamente.",
+                "por_que_suspeito": "Anomalia de conservação de votos: o aumento de presença foi integralmente desviado para brancos/nulos.",
+                "severidade": "ALTA"
+            },
+            "CHK064_CONCENTRACAO_DE_VOTOS_SUPERIOR_A_95PCT": {
+                "titulo": "Concentração Hiper-Unânime Superior a 95% para um Candidato",
+                "explicacao": "Um único candidato obteve mais de 95% de todos os votos válidos em seção com grande comparecimento.",
+                "por_que_suspeito": "Quase unanimidade que demanda conferência das assinaturas no caderno de votação para descartar voto manobrado.",
+                "severidade": "ALTA"
+            },
+            "CHK065_VOTOS_NOMINAIS_SUPERIORES_AO_COMPARECIMENTO": {
+                "titulo": "Soma de Votos Nominais Superior ao Comparecimento",
+                "explicacao": "A quantidade de votos para candidatos somou mais do que o total de eleitores que compareceram à urna.",
+                "por_que_suspeito": "Falha matemática direta e corrupção nos registros do Boletim de Urna.",
+                "severidade": "ALTA"
+            },
+            "CHK071_EXPLOSAO_SEM_BIOMETRIA_MAIOR_30PP": {
+                "titulo": "Salto Abrupto de Eleitores sem Biometria Superior a 30 pp",
+                "explicacao": "A proporção de eleitores liberados sem biometria aumentou em mais de 30 pontos percentuais no 2º turno.",
+                "por_que_suspeito": "Queda inexplicável na precisão do leitor biométrico que abriu brecha para digitação manual do ano de nascimento pelo mesário.",
+                "severidade": "ALTA"
+            },
+            "CHK073_BIOMETRIA_100PCT_COM_HABILITACAO_MANUAL_ZERO": {
+                "titulo": "100% de Biometria Perfeita sem Habilitação Manual",
+                "explicacao": "Todos os votantes da seção foram validados na digital na primeira tentativa, sem nenhuma exceção manual.",
+                "por_que_suspeito": "Perfeição biométrica atípica em seções de grande porte com eleitores idosos ou com desgastes nas digitais.",
+                "severidade": "INFO"
+            },
+            "CHK074_BIOMETRIA_SUPERIOR_AOS_APTOS": {
+                "titulo": "Validações Biométricas Superam o Total de Aptos",
+                "explicacao": "O número de eleitores com digital reconhecida superou o total de aptos cadastrados.",
+                "por_que_suspeito": "Contagem duplicada ou inconsistência grave nos contadores internos da urna.",
+                "severidade": "ALTA"
+            },
+            "CHK075_CORRELACAO_BIOGRAFICA_E_VOTO_UNANIME": {
+                "titulo": "Liberação Manual Correlacionada a Voto Unânime",
+                "explicacao": "Seção com alto índice de liberação manual pelo mesário apresentou votação esmagadora para um único concorrente.",
+                "por_que_suspeito": "Forte indicativo forense de que votos de eleitores ausentes foram inseridos manualmente com a senha do mesário.",
+                "severidade": "ALTA"
+            },
+            "CHK080_ENCERRAMENTO_MADRUGADA_2T": {
+                "titulo": "Encerramento da Votação na Madrugada do Dia Seguinte",
+                "explicacao": "A votação foi encerrada após as 00:00 da segunda-feira pós-eleição.",
+                "por_que_suspeito": "Atraso operacional extremo que expõe a urna a riscos de custódia fora do horário regulamentar.",
+                "severidade": "ALTA"
+            },
+            "CHK081_DURACAO_VOTACAO_INFERIOR_A_4_HORAS": {
+                "titulo": "Votação Encerrada Prematuramente em Menos de 4 Horas",
+                "explicacao": "A urna foi encerrada antes das 12:00, funcionando por menos de metade do período regulamentar.",
+                "por_que_suspeito": "Interrupção indevida do pleito que impediu eleitores de exercerem o voto à tarde.",
+                "severidade": "ALTA"
+            },
+            "CHK082_DURACAO_2T_SUPERIOR_AO_1T_EM_MAIS_DE_60MIN": {
+                "titulo": "Duração da Votação no 2T Muito Superior ao 1T",
+                "explicacao": "A votação no 2T durou mais de uma hora a mais que no 1T, apesar de haver apenas 1 ou 2 cargos para votar.",
+                "por_que_suspeito": "Como a votação no 2T é muito mais rápida por ter menos cargos, um tempo maior indica filas anômalas ou lentidão técnica.",
+                "severidade": "MEDIA"
+            },
+            "CHK085_HORARIO_ABERTURA_DIVERGENTE_MAIOR_60MIN": {
+                "titulo": "Horário de Abertura Divergente em Mais de 60 Minutos",
+                "explicacao": "A urna foi aberta com mais de 1 hora de atraso em relação ao 1º turno.",
+                "por_que_suspeito": "Atrasos expressivos na inicialização da seção geram descarte de eleitores matutinos.",
+                "severidade": "BAIXA"
+            },
+            "CHK087_BRANCOS_NULOS_SUPERIOR_A_30PCT": {
+                "titulo": "Volume Anômalo de Brancos e Nulos Superior a 30%",
+                "explicacao": "Mais de 30% dos eleitores presentes na seção anularam ou votaram em branco no 2º turno.",
+                "por_que_suspeito": "Desvio atípico para eleição polarizada de 2º turno, devendo ser investigada anomalia no teclado ou visor da urna.",
+                "severidade": "MEDIA"
+            },
+            "CHK089_QUEDA_BRANCOS_NULOS_MAIOR_20PP": {
+                "titulo": "Queda Drástica de Votos Inválidos Superior a 20 pp",
+                "explicacao": "A taxa de brancos e nulos caiu mais de 20 pontos percentuais entre o 1º e o 2º Turno.",
+                "por_que_suspeito": "Canalização incomum de eleitores nulos diretamente para voto nominal que deve ser acompanhada.",
+                "severidade": "MEDIA"
+            },
+            "CHK090_NULOS_SUPERIORES_A_BRANCOS_EM_10X": {
+                "titulo": "Votos Nulos Superam Brancos em Mais de 10 Vezes",
+                "explicacao": "A quantidade de votos nulos foi dez vezes maior que a de votos em branco.",
+                "por_que_suspeito": "Desproporção acentuada entre votos inválidos que pode apontar para digitação massiva de números incorretos ou erro de guia.",
+                "severidade": "BAIXA"
+            },
+            "CHK091_BRANCOS_SUPERIORES_A_NULOS_EM_10X": {
+                "titulo": "Votos Brancos Superam Nulos em Mais de 10 Vezes",
+                "explicacao": "A quantidade de votos em branco foi dez vezes maior que a de votos nulos.",
+                "por_que_suspeito": "Comportamento atípico de eleitorado que prefere o voto em branco direto em relação à anulação.",
+                "severidade": "BAIXA"
+            },
+            "CHK092_100PCT_VOTOS_INVALIDOS_NO_2T": {
+                "titulo": "100% de Votos Inválidos no 2T",
+                "explicacao": "Todos os votos depositados na urna foram nulos ou brancos.",
+                "por_que_suspeito": "Nulidade integral do resultado da seção eleitoral.",
+                "severidade": "ALTA"
+            },
+            "CHK094_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_1T": {
+                "titulo": "Divergência entre Soma de Votos e Comparecimento no 1T",
+                "explicacao": "A soma matemática dos votos nominais, brancos e nulos não fecha com o comparecimento registrado no 1T.",
+                "por_que_suspeito": "Erro aritmético interno no Boletim de Urna do 1º turno.",
+                "severidade": "ALTA"
+            },
+            "CHK095_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_1T": {
+                "titulo": "Seção Eleitoral Presente Apenas no 1T",
+                "explicacao": "A seção funcionou no 1º turno, mas seu Boletim de Urna não consta nos arquivos do 2º turno.",
+                "por_que_suspeito": "Sumiço de urna ou agregação de seção não documentada entre turnos.",
+                "severidade": "ALTA"
+            },
+            "CHK096_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_2T": {
+                "titulo": "Seção Eleitoral Presente Apenas no 2T",
+                "explicacao": "A seção não constava no 1º turno e surgiu apenas no pacote de arquivos do 2º turno.",
+                "por_que_suspeito": "Surgimento de seção nova ou mudança de identificação zonal sem histórico pregresso.",
+                "severidade": "ALTA"
+            },
+            "CHK097_TOTAL_VOTOS_CARGO_NAO_E_MULTIPLO_COMPARECIMENTO": {
+                "titulo": "Total de Votos do Cargo Não Fecha com Comparecimento",
+                "explicacao": "Em cargos proporcionais ou majoritários, a quantidade de votos por eleitor divergiu do permitido por lei.",
+                "por_que_suspeito": "Violação das regras eleitorais de quantidade de votos por eleitor.",
+                "severidade": "ALTA"
+            },
+            "CHK099_FALHA_CADEIA_HASH_SHA512_1T": {
+                "titulo": "Falha na Cadeia Interna de Hashes SHA-512 do 1T",
+                "explicacao": "A assinatura interna em cadeia do Boletim de Urna do 1º turno não conferiu com o recálculo dos votos.",
+                "por_que_suspeito": "Corrupção ou alteração de dados no arquivo do Boletim de Urna do 1º turno.",
+                "severidade": "ALTA"
+            },
         };
 
         
@@ -1409,6 +1733,94 @@
 
         function handleModalOverlayClick(e) {
             if (e.target.id === 'detailsModal') closeModal();
+        }
+
+        function showRuleDetailsModal(code, count, pct) {
+            const info = GLOSSARY_DATA[code] || {
+                titulo: code,
+                explicacao: "Verificação automática da suíte pericial de integridade eleitoral.",
+                por_que_suspeito: "Inconsistência identificada nas checagens oficiais de integridade entre 1º e 2º Turno.",
+                severidade: "MEDIA"
+            };
+
+            const sev = info.severidade || "MEDIA";
+            let sevBadgeHtml = "";
+            let sevColor = "#e11d48";
+            if (sev === "ALTA") {
+                sevBadgeHtml = '<span class="badge badge-red" style="font-size: 11px; padding: 2px 8px;">SEVERIDADE ALTA (CRÍTICA)</span>';
+                sevColor = "#e11d48";
+            } else if (sev === "MEDIA") {
+                sevBadgeHtml = '<span class="badge badge-yellow" style="font-size: 11px; padding: 2px 8px;">SEVERIDADE MÉDIA (RELEVANTE)</span>';
+                sevColor = "#d97706";
+            } else if (sev === "INFO") {
+                sevBadgeHtml = '<span class="badge" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; font-size: 11px; padding: 2px 8px;">INFORMATIVO OPERACIONAL</span>';
+                sevColor = "#64748b";
+            } else {
+                sevBadgeHtml = '<span class="badge badge-blue" style="font-size: 11px; padding: 2px 8px;">SEVERIDADE BAIXA</span>';
+                sevColor = "#2563eb";
+            }
+
+            document.getElementById('ruleModalSevBadge').innerHTML = sevBadgeHtml;
+            document.getElementById('ruleModalTitle').textContent = info.titulo;
+            document.getElementById('ruleModalCode').textContent = code;
+            document.getElementById('ruleModalDesc').textContent = info.explicacao;
+            document.getElementById('ruleModalWhy').textContent = info.por_que_suspeito;
+
+            // Stats cards
+            const countStr = count ? count.toLocaleString('pt-BR') : "-";
+            const pctStr = (pct !== undefined && pct !== null) ? `${pct.toFixed(2)}%` : "-";
+            document.getElementById('ruleModalStats').innerHTML = `
+                <div class="stat-card" style="padding: 0.6rem 0.8rem; margin: 0; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="stat-label" style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Seções Afetadas</div>
+                    <div class="stat-value" style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-top: 2px;">${countStr}</div>
+                </div>
+                <div class="stat-card" style="padding: 0.6rem 0.8rem; margin: 0; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="stat-label" style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">% Total de Urnas</div>
+                    <div class="stat-value" style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-top: 2px;">${pctStr}</div>
+                </div>
+                <div class="stat-card" style="padding: 0.6rem 0.8rem; margin: 0; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="stat-label" style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Severidade Técnica</div>
+                    <div class="stat-value" style="font-size: 1.15rem; font-weight: 800; color: ${sevColor}; margin-top: 2px;">${sev}</div>
+                </div>
+            `;
+
+            // Action button
+            const btnText = count ? `Ver as ${count.toLocaleString('pt-BR')} Seções no Explorador Abaixo` : "Ver Seções no Explorador Abaixo";
+            document.getElementById('btnFilterRuleText').textContent = btnText;
+            document.getElementById('btnFilterRule').onclick = function() {
+                filterByRuleAndScroll(code);
+            };
+
+            document.getElementById('ruleModal').style.display = 'block';
+        }
+
+        function closeRuleModal() {
+            document.getElementById('ruleModal').style.display = 'none';
+        }
+
+        function handleRuleModalOverlayClick(e) {
+            if (e.target.id === 'ruleModal') closeRuleModal();
+        }
+
+        function filterByRuleAndScroll(code) {
+            closeRuleModal();
+            const select = document.getElementById('anomalySelect');
+            if (select) {
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value === code || select.options[i].value.startsWith(code + " ") || select.options[i].value.startsWith(code + "(")) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+                const sevSelect = document.getElementById('severitySelect');
+                if (sevSelect) sevSelect.value = 'ALL';
+                applyFilters();
+
+                const explorer = select.closest('.card');
+                if (explorer) {
+                    explorer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         }
 
         function renderGlossary() {

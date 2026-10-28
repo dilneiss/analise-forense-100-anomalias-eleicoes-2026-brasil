@@ -3085,7 +3085,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
 
         anom_summary_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3">
+            <td class="col-grow t-left py-2 px-3" style="cursor: pointer;" onclick="showRuleDetailsModal('{code_item}', {count}, {pct})">
                 <div style="display:flex; align-items:center;">
                     {badge_html}
                     <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">{html.escape(title_item)}</span>
@@ -3096,6 +3096,11 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">{count:,}</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">{pct:.2f}%</td>
+            <td class="col-fit t-center py-2 px-3">
+                <button type="button" onclick="event.stopPropagation(); showRuleDetailsModal('{code_item}', {count}, {pct})" style="display:inline-flex; align-items:center; gap:5px; background:#ffffff; border:1px solid #cbd5e1; color:#0f172a; padding:4px 9px; border-radius:5px; font-size:0.75rem; font-weight:700; cursor:pointer; transition:all 0.15s ease; box-shadow:0 1px 2px rgba(0,0,0,0.05); white-space:nowrap;" onmouseover="this.style.background='#0284c7'; this.style.color='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#ffffff'; this.style.color='#0f172a'; this.style.borderColor='#cbd5e1';">
+                    <span>📘</span> <span>Ver Regra</span>
+                </button>
+            </td>
         </tr>
         """)
 
@@ -3179,7 +3184,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #0f172a; padding-bottom: 0.875rem; flex-wrap: wrap; gap: 1rem;">
             <div>
                 <span class="badge badge-blue font-mono" style="margin-bottom: 0.5rem;">SUÍTE DE AUDITORIA FORENSE ELEITORAL OFICIAL</span>
-                <h1 style="font-size: 1.625rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)</h1>
+                <h1 style="font-size: 1.625rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Auditoria Comparativa 1º vs 2º Turno (120 Regras Forenses)</h1>
                 <p style="font-size: 0.8125rem; color: #475569; margin: 0;">Eleições Gerais 2026 &bull; Cruzamento de BUs Oficiais &bull; Biometria, Cadastral, Aptos e Fluxo de Terceira Via</p>
             </div>
             <div style="text-align: right; font-size: 0.8125rem; color: #64748b;">
@@ -3386,6 +3391,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                                 <th class="col-grow t-left">Inconsistência Forense / Regra Técnica</th>
                                 <th class="col-fit t-right">Seções</th>
                                 <th class="col-fit t-right">% Urnas</th>
+                                <th class="col-fit t-center" style="width: 120px;">Detalhes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3425,7 +3431,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                         <option value="bio_drop_desc">Ordenar: Maior Queda de Biometria</option>
                     </select>
                     <select id="anomalySelect" onchange="applyFilters()" style="max-width: 280px;">
-                        <option value="ALL">Todos os Tipos de Anomalia (100 detectores)</option>
+                        <option value="ALL">Todos os Tipos de Anomalia (120 detectores)</option>
                         {"".join(f'<option value="{a["codigo"]}">{a["codigo"]} ({a["total"]})</option>' for a in tipos_anomalias)}
                     </select>
                 </div>
@@ -3501,7 +3507,51 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         </div>
     </div>
 
-    <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
+
+    <!-- MODAL DE EXPLICAÇÃO DA REGRA FORENSE -->
+    <div id="ruleModal" class="modal-overlay" onclick="handleRuleModalOverlayClick(event)">
+        <div class="modal-content" style="max-width: 720px;">
+            <div class="modal-header">
+                <div>
+                    <div id="ruleModalSevBadge" style="margin-bottom: 0.4rem;"></div>
+                    <h2 id="ruleModalTitle" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;"></h2>
+                    <p id="ruleModalCode" style="font-family: ui-monospace, monospace; font-size: 0.8125rem; color: #64748b; margin: 0.25rem 0 0 0;"></p>
+                </div>
+                <button onclick="closeRuleModal()" class="modal-close">&times;</button>
+            </div>
+
+            <!-- ESTATÍSTICA DA REGRA NO ESTADO -->
+            <div id="ruleModalStats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.25rem;"></div>
+
+            <!-- O QUE SIGNIFICA PARA LEIGOS -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.85rem; border-left: 4px solid #0284c7;">
+                <h4 style="margin: 0 0 0.4rem 0; font-size: 0.875rem; color: #0f172a; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>💡</span> <strong>O que esta regra audita e significa para leigos:</strong>
+                </h4>
+                <p id="ruleModalDesc" style="margin: 0; font-size: 0.8125rem; color: #334155; line-height: 1.55;"></p>
+            </div>
+
+            <!-- POR QUE LEVANTA SUSPEITA TÉCNICA -->
+            <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 0.5rem; padding: 1rem; margin-bottom: 1.25rem; border-left: 4px solid #e11d48;">
+                <h4 style="margin: 0 0 0.4rem 0; font-size: 0.875rem; color: #9f1239; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>⚠️</span> <strong>Por que levanta suspeita técnica ou risco pericial:</strong>
+                </h4>
+                <p id="ruleModalWhy" style="margin: 0; font-size: 0.8125rem; color: #881337; line-height: 1.55;"></p>
+            </div>
+
+            <!-- RODAPÉ COM BOTÃO PARA VER AS SEÇÕES NA TABELA -->
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <button onclick="closeRuleModal()" class="btn" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #475569; padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 600; cursor: pointer;">
+                    Fechar
+                </button>
+                <button id="btnFilterRule" class="btn" style="background: #0284c7; color: #ffffff; border: none; padding: 0.55rem 1.1rem; border-radius: 0.375rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(2,132,199,0.3);">
+                    <span>⚡</span> <span id="btnFilterRuleText">Ver Seções com Esta Anomalia Abaixo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+        <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
     <script>
         const allSections = {anom_json_str};
         const munMap = {mun_map_json};
@@ -3985,7 +4035,271 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "explicacao": "Um dos dois candidatos finalistas recebeu zero votos válidos em uma seção expressiva do local de votação.",
                 "por_que_suspeito": "Unanimidade artificial extrema em colégios eleitorais com pluralidade de eleitores.",
                 "severidade": "ALTA"
-            }}
+            }},
+            "CHK021_EXTINCAO_TTE_2T": {{
+                "titulo": "Extinção de Eleitores em Trânsito no 2T",
+                "explicacao": "Havia eleitores habilitados para voto em trânsito (TTE) no 1º turno, mas o registro de TTE foi zerado no 2º turno.",
+                "por_que_suspeito": "O cadastro de voto em trânsito é unificado para ambos os turnos. O sumiço completo de eleitores em trânsito indica possível falha ou expurgo no cadastro da urna.",
+                "severidade": "MEDIA"
+            }},
+            "CHK022_SURGIMENTO_TTE_MASSIVO_2T": {{
+                "titulo": "Surgimento Massivo de Voto em Trânsito no 2T",
+                "explicacao": "A seção não possuía eleitores em trânsito no 1º turno e registrou um número expressivo de votos em trânsito no 2º turno.",
+                "por_que_suspeito": "Incompatível com o procedimento eleitoral padrão, pois a solicitação de voto em trânsito deve ser realizada com meses de antecedência e fixada para ambos os pleitos.",
+                "severidade": "MEDIA"
+            }},
+            "CHK024_SECAO_MINIMA_ANOMALA": {{
+                "titulo": "Seção Eleitoral com Eleitorado Mínimo Anômalo",
+                "explicacao": "A seção possui menos de 15 eleitores aptos registrados.",
+                "por_que_suspeito": "Seções com eleitorado residual tão baixo violam as normas de agregação do TSE e fragilizam o sigilo constitucional do voto.",
+                "severidade": "BAIXA"
+            }},
+            "CHK025_SECAO_HIPERTROFICA": {{
+                "titulo": "Seção Eleitoral Hipertrófica (> 500 Aptos)",
+                "explicacao": "A seção possui mais de 500 eleitores aptos registrados.",
+                "por_que_suspeito": "Seções hipertrofiadas causam filas excessivas e demandam ritmo de votação irrealista para viabilizar todos os votos dentro do horário legal.",
+                "severidade": "BAIXA"
+            }},
+            "CHK026_SECAO_SEM_APTOS": {{
+                "titulo": "Seção com Zero Eleitores Aptos Registrados",
+                "explicacao": "O Boletim de Urna registra zero eleitores aptos na seção.",
+                "por_que_suspeito": "Grave inconsistência cadastral. Uma seção em funcionamento não pode ter zero eleitores aptos.",
+                "severidade": "ALTA"
+            }},
+            "CHK027_OSCILACAO_APTOS_TOTAL_MAIOR_10PCT": {{
+                "titulo": "Oscilação de Aptos no Município Superior a 10%",
+                "explicacao": "A soma de eleitores aptos no município variou mais de 10% entre o 1º e 2º Turno.",
+                "por_que_suspeito": "O colégio eleitoral municipal é congelado antes do pleito. Oscilações gerais expressivas indicam anomalia cadastral ou importação indevida de dados.",
+                "severidade": "ALTA"
+            }},
+            "CHK028_DIVERGENCIA_APTOS_ENTRE_ELEICOES": {{
+                "titulo": "Divergência de Aptos entre Eleições no Mesmo BU",
+                "explicacao": "O total de eleitores aptos difere entre as diferentes eleições (Presidencial vs Estadual) registradas no mesmo Boletim de Urna.",
+                "por_que_suspeito": "O eleitorado da seção deve ser idêntico em todas as eleições do mesmo envelope, salvo regras estritas de voto em trânsito.",
+                "severidade": "ALTA"
+            }},
+            "CHK029_TRANSFERENCIA_TEMPORARIA_SUPERIOR_A_50PCT": {{
+                "titulo": "Transferência Temporária de Eleitores Superior a 50%",
+                "explicacao": "Mais de 50% dos eleitores da seção são oriundos de transferência temporária (TTE).",
+                "por_que_suspeito": "Proporção desproporcional de eleitores voláteis que pode mascarar inserção de eleitores fora do domicílio eleitoral ordinário.",
+                "severidade": "MEDIA"
+            }},
+            "CHK030_ZONA_SECAO_FORA_PADRAO_CADASTRO": {{
+                "titulo": "Numeração de Zona ou Seção Fora do Padrão Cadastral",
+                "explicacao": "A seção ou zona possui numeração atípica ou fora da faixa de seções ativas do município.",
+                "por_que_suspeito": "Pode indicar seção experimental, simulada ou criada fora do fluxo oficial de homologação do cartório.",
+                "severidade": "BAIXA"
+            }},
+            "CHK032_COMPARECIMENTO_EXCEDE_APTOS_1T": {{
+                "titulo": "Comparecimento no 1T Superior ao Total de Aptos",
+                "explicacao": "No 1º turno, o número de eleitores que compareceram superou a quantidade de eleitores aptos cadastrados.",
+                "por_que_suspeito": "Impossibilidade matemática direta que aponta para inconsistência de software ou inserção indevida de votos.",
+                "severidade": "ALTA"
+            }},
+            "CHK034_ABSTENCAO_SUPERIOR_50PCT_2T": {{
+                "titulo": "Abstenção Elevada Superior a 50% no 2T",
+                "explicacao": "Mais da metade dos eleitores aptos da seção deixaram de votar no 2º turno.",
+                "por_que_suspeito": "Desvio estatístico expressivo em relação à média de abstenção histórica (cerca de 15% a 20%), podendo sinalizar contingências locais ou problemas de acesso.",
+                "severidade": "BAIXA"
+            }},
+            "CHK035_ABSTENCAO_SUPERIOR_70PCT_2T": {{
+                "titulo": "Abstenção Crítica Extrema Superior a 70% no 2T",
+                "explicacao": "Mais de 70% dos eleitores faltaram à votação no 2º turno.",
+                "por_que_suspeito": "Anomalia severa de esvaziamento da seção que requer averiguação das condições de funcionamento da urna e do local de votação.",
+                "severidade": "MEDIA"
+            }},
+            "CHK038_COMPARECIMENTO_IDENTICO_COM_APTOS_DIFERENTES": {{
+                "titulo": "Comparecimento Idêntico com Quantidade Diferente de Aptos",
+                "explicacao": "A seção teve exatamente o mesmo número de votantes em ambos os turnos, apesar de o número de aptos ter mudado.",
+                "por_que_suspeito": "Coincidência estatística improvável que pode decorrer de preenchimento automatizado ou replicação de registros.",
+                "severidade": "BAIXA"
+            }},
+            "CHK039_COMPARECIMENTO_ZERO_2T": {{
+                "titulo": "Comparecimento Zero no 2T (Seção Deserta)",
+                "explicacao": "Nenhum eleitor compareceu para votar na seção no 2º turno.",
+                "por_que_suspeito": "Seção fantasma ou urna não instalada que gerou arquivo de resultado sem votação.",
+                "severidade": "ALTA"
+            }},
+            "CHK040_COMPARECIMENTO_UNITARIO_2T": {{
+                "titulo": "Comparecimento Unitário no 2T (Apenas 1 Votante)",
+                "explicacao": "Apenas um único eleitor votou em toda a seção durante todo o dia de eleição.",
+                "por_que_suspeito": "Quebra absoluta do sigilo constitucional do voto e atipicidade operacional extrema.",
+                "severidade": "ALTA"
+            }},
+            "CHK041_ABSTENCAO_ZERO_AMBOS_TURNOS": {{
+                "titulo": "Abstenção Zero (100% de Presença) em Ambos os Turnos",
+                "explicacao": "Todos os eleitores cadastrados compareceram para votar no 1º e no 2º Turno, sem nenhuma ausência.",
+                "por_que_suspeito": "Fenômeno estatisticamente quase impossível em populações reais, comum em fraudes de preenchimento manual.",
+                "severidade": "MEDIA"
+            }},
+            "CHK042_QUEDA_COMPARECIMENTO_MAIOR_30PCT": {{
+                "titulo": "Queda Abrupta de Comparecimento Superior a 30%",
+                "explicacao": "O comparecimento de eleitores desabou em mais de 30% do 1º para o 2º Turno.",
+                "por_que_suspeito": "Esvaziamento atípico que pode indicar desinformação, coação ou descarte de votos.",
+                "severidade": "MEDIA"
+            }},
+            "CHK043_EXPLOSAO_COMPARECIMENTO_MAIOR_40PCT": {{
+                "titulo": "Explosão Abrupta de Comparecimento Superior a 40%",
+                "explicacao": "O comparecimento de votantes aumentou mais de 40% entre os dois turnos.",
+                "por_que_suspeito": "Inflação artificial de eleitores que exige cruzamento com a biometria para descartar votos de eleitores ausentes.",
+                "severidade": "ALTA"
+            }},
+            "CHK045_COMPARECIMENTO_PRESIDENCIAL_MENOR_QUE_CARGO_ESTADUAL": {{
+                "titulo": "Comparecimento Presidencial Menor que Estadual",
+                "explicacao": "Mais eleitores votaram para governador/cargo estadual do que para presidente na mesma urna.",
+                "por_que_suspeito": "O comparecimento deve ser comum à cabine de votação; discrepâncias apontam erro de totalização ou descarte parcial.",
+                "severidade": "ALTA"
+            }},
+            "CHK051_ZERO_VOTOS_FINALISTA_SECAO_GRANDE": {{
+                "titulo": "Zero Votos para Candidato Finalista em Seção Relevante",
+                "explicacao": "Um dos dois candidatos finalistas obteve exatamente ZERO votos em seção com mais de 100 votantes.",
+                "por_que_suspeito": "Unanimidade absoluta que foge do padrão de pluralidade eleitoral e sugere coação local ou preenchimento viciado.",
+                "severidade": "ALTA"
+            }},
+            "CHK057_INVERSAO_ABRUPTA_SWING_MAIOR_40PP": {{
+                "titulo": "Inversão Abrupta de Liderança com Swing > 40 pp",
+                "explicacao": "O candidato que venceu amplamente a seção no 1º turno foi derrotado com diferença superior a 40 pontos percentuais no 2º turno.",
+                "por_que_suspeito": "Virada política extrema que contraria a inércia eleitoral consolidada, requerendo checagem da transferência de votos.",
+                "severidade": "MEDIA"
+            }},
+            "CHK060_FINALISTA_COM_VOTACAO_MENOR_QUE_BRANCOS_E_NULOS": {{
+                "titulo": "Votação do Finalista Menor que Brancos e Nulos",
+                "explicacao": "O candidato obteve menos votos do que a soma de votos inválidos na seção.",
+                "por_que_suspeito": "Atipicidade grave de rejeição que diverge do comportamento médio das seções vizinhas.",
+                "severidade": "MEDIA"
+            }},
+            "CHK061_VOTOS_VALIDOS_ZERO_NO_2T": {{
+                "titulo": "Zero Votos Válidos no 2T (100% Brancos e Nulos)",
+                "explicacao": "Nenhum voto válido foi registrado para nenhum dos finalistas no 2º turno.",
+                "por_que_suspeito": "Urna com resultado totalmente nulo, indicando protesto massivo ou falha crítica no software de contagem.",
+                "severidade": "ALTA"
+            }},
+            "CHK063_AMBOS_FINALISTAS_PERDERAM_VOTOS_COM_MAIOR_COMPARECIMENTO": {{
+                "titulo": "Ambos os Finalistas Perderam Votos com Comparecimento Maior",
+                "explicacao": "O comparecimento geral subiu, mas a votação nominal de ambos os finalistas caiu simultaneamente.",
+                "por_que_suspeito": "Anomalia de conservação de votos: o aumento de presença foi integralmente desviado para brancos/nulos.",
+                "severidade": "ALTA"
+            }},
+            "CHK064_CONCENTRACAO_DE_VOTOS_SUPERIOR_A_95PCT": {{
+                "titulo": "Concentração Hiper-Unânime Superior a 95% para um Candidato",
+                "explicacao": "Um único candidato obteve mais de 95% de todos os votos válidos em seção com grande comparecimento.",
+                "por_que_suspeito": "Quase unanimidade que demanda conferência das assinaturas no caderno de votação para descartar voto manobrado.",
+                "severidade": "ALTA"
+            }},
+            "CHK065_VOTOS_NOMINAIS_SUPERIORES_AO_COMPARECIMENTO": {{
+                "titulo": "Soma de Votos Nominais Superior ao Comparecimento",
+                "explicacao": "A quantidade de votos para candidatos somou mais do que o total de eleitores que compareceram à urna.",
+                "por_que_suspeito": "Falha matemática direta e corrupção nos registros do Boletim de Urna.",
+                "severidade": "ALTA"
+            }},
+            "CHK071_EXPLOSAO_SEM_BIOMETRIA_MAIOR_30PP": {{
+                "titulo": "Salto Abrupto de Eleitores sem Biometria Superior a 30 pp",
+                "explicacao": "A proporção de eleitores liberados sem biometria aumentou em mais de 30 pontos percentuais no 2º turno.",
+                "por_que_suspeito": "Queda inexplicável na precisão do leitor biométrico que abriu brecha para digitação manual do ano de nascimento pelo mesário.",
+                "severidade": "ALTA"
+            }},
+            "CHK073_BIOMETRIA_100PCT_COM_HABILITACAO_MANUAL_ZERO": {{
+                "titulo": "100% de Biometria Perfeita sem Habilitação Manual",
+                "explicacao": "Todos os votantes da seção foram validados na digital na primeira tentativa, sem nenhuma exceção manual.",
+                "por_que_suspeito": "Perfeição biométrica atípica em seções de grande porte com eleitores idosos ou com desgastes nas digitais.",
+                "severidade": "INFO"
+            }},
+            "CHK074_BIOMETRIA_SUPERIOR_AOS_APTOS": {{
+                "titulo": "Validações Biométricas Superam o Total de Aptos",
+                "explicacao": "O número de eleitores com digital reconhecida superou o total de aptos cadastrados.",
+                "por_que_suspeito": "Contagem duplicada ou inconsistência grave nos contadores internos da urna.",
+                "severidade": "ALTA"
+            }},
+            "CHK075_CORRELACAO_BIOGRAFICA_E_VOTO_UNANIME": {{
+                "titulo": "Liberação Manual Correlacionada a Voto Unânime",
+                "explicacao": "Seção com alto índice de liberação manual pelo mesário apresentou votação esmagadora para um único concorrente.",
+                "por_que_suspeito": "Forte indicativo forense de que votos de eleitores ausentes foram inseridos manualmente com a senha do mesário.",
+                "severidade": "ALTA"
+            }},
+            "CHK080_ENCERRAMENTO_MADRUGADA_2T": {{
+                "titulo": "Encerramento da Votação na Madrugada do Dia Seguinte",
+                "explicacao": "A votação foi encerrada após as 00:00 da segunda-feira pós-eleição.",
+                "por_que_suspeito": "Atraso operacional extremo que expõe a urna a riscos de custódia fora do horário regulamentar.",
+                "severidade": "ALTA"
+            }},
+            "CHK081_DURACAO_VOTACAO_INFERIOR_A_4_HORAS": {{
+                "titulo": "Votação Encerrada Prematuramente em Menos de 4 Horas",
+                "explicacao": "A urna foi encerrada antes das 12:00, funcionando por menos de metade do período regulamentar.",
+                "por_que_suspeito": "Interrupção indevida do pleito que impediu eleitores de exercerem o voto à tarde.",
+                "severidade": "ALTA"
+            }},
+            "CHK082_DURACAO_2T_SUPERIOR_AO_1T_EM_MAIS_DE_60MIN": {{
+                "titulo": "Duração da Votação no 2T Muito Superior ao 1T",
+                "explicacao": "A votação no 2T durou mais de uma hora a mais que no 1T, apesar de haver apenas 1 ou 2 cargos para votar.",
+                "por_que_suspeito": "Como a votação no 2T é muito mais rápida por ter menos cargos, um tempo maior indica filas anômalas ou lentidão técnica.",
+                "severidade": "MEDIA"
+            }},
+            "CHK085_HORARIO_ABERTURA_DIVERGENTE_MAIOR_60MIN": {{
+                "titulo": "Horário de Abertura Divergente em Mais de 60 Minutos",
+                "explicacao": "A urna foi aberta com mais de 1 hora de atraso em relação ao 1º turno.",
+                "por_que_suspeito": "Atrasos expressivos na inicialização da seção geram descarte de eleitores matutinos.",
+                "severidade": "BAIXA"
+            }},
+            "CHK087_BRANCOS_NULOS_SUPERIOR_A_30PCT": {{
+                "titulo": "Volume Anômalo de Brancos e Nulos Superior a 30%",
+                "explicacao": "Mais de 30% dos eleitores presentes na seção anularam ou votaram em branco no 2º turno.",
+                "por_que_suspeito": "Desvio atípico para eleição polarizada de 2º turno, devendo ser investigada anomalia no teclado ou visor da urna.",
+                "severidade": "MEDIA"
+            }},
+            "CHK089_QUEDA_BRANCOS_NULOS_MAIOR_20PP": {{
+                "titulo": "Queda Drástica de Votos Inválidos Superior a 20 pp",
+                "explicacao": "A taxa de brancos e nulos caiu mais de 20 pontos percentuais entre o 1º e o 2º Turno.",
+                "por_que_suspeito": "Canalização incomum de eleitores nulos diretamente para voto nominal que deve ser acompanhada.",
+                "severidade": "MEDIA"
+            }},
+            "CHK090_NULOS_SUPERIORES_A_BRANCOS_EM_10X": {{
+                "titulo": "Votos Nulos Superam Brancos em Mais de 10 Vezes",
+                "explicacao": "A quantidade de votos nulos foi dez vezes maior que a de votos em branco.",
+                "por_que_suspeito": "Desproporção acentuada entre votos inválidos que pode apontar para digitação massiva de números incorretos ou erro de guia.",
+                "severidade": "BAIXA"
+            }},
+            "CHK091_BRANCOS_SUPERIORES_A_NULOS_EM_10X": {{
+                "titulo": "Votos Brancos Superam Nulos em Mais de 10 Vezes",
+                "explicacao": "A quantidade de votos em branco foi dez vezes maior que a de votos nulos.",
+                "por_que_suspeito": "Comportamento atípico de eleitorado que prefere o voto em branco direto em relação à anulação.",
+                "severidade": "BAIXA"
+            }},
+            "CHK092_100PCT_VOTOS_INVALIDOS_NO_2T": {{
+                "titulo": "100% de Votos Inválidos no 2T",
+                "explicacao": "Todos os votos depositados na urna foram nulos ou brancos.",
+                "por_que_suspeito": "Nulidade integral do resultado da seção eleitoral.",
+                "severidade": "ALTA"
+            }},
+            "CHK094_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_1T": {{
+                "titulo": "Divergência entre Soma de Votos e Comparecimento no 1T",
+                "explicacao": "A soma matemática dos votos nominais, brancos e nulos não fecha com o comparecimento registrado no 1T.",
+                "por_que_suspeito": "Erro aritmético interno no Boletim de Urna do 1º turno.",
+                "severidade": "ALTA"
+            }},
+            "CHK095_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_1T": {{
+                "titulo": "Seção Eleitoral Presente Apenas no 1T",
+                "explicacao": "A seção funcionou no 1º turno, mas seu Boletim de Urna não consta nos arquivos do 2º turno.",
+                "por_que_suspeito": "Sumiço de urna ou agregação de seção não documentada entre turnos.",
+                "severidade": "ALTA"
+            }},
+            "CHK096_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_2T": {{
+                "titulo": "Seção Eleitoral Presente Apenas no 2T",
+                "explicacao": "A seção não constava no 1º turno e surgiu apenas no pacote de arquivos do 2º turno.",
+                "por_que_suspeito": "Surgimento de seção nova ou mudança de identificação zonal sem histórico pregresso.",
+                "severidade": "ALTA"
+            }},
+            "CHK097_TOTAL_VOTOS_CARGO_NAO_E_MULTIPLO_COMPARECIMENTO": {{
+                "titulo": "Total de Votos do Cargo Não Fecha com Comparecimento",
+                "explicacao": "Em cargos proporcionais ou majoritários, a quantidade de votos por eleitor divergiu do permitido por lei.",
+                "por_que_suspeito": "Violação das regras eleitorais de quantidade de votos por eleitor.",
+                "severidade": "ALTA"
+            }},
+            "CHK099_FALHA_CADEIA_HASH_SHA512_1T": {{
+                "titulo": "Falha na Cadeia Interna de Hashes SHA-512 do 1T",
+                "explicacao": "A assinatura interna em cadeia do Boletim de Urna do 1º turno não conferiu com o recálculo dos votos.",
+                "por_que_suspeito": "Corrupção ou alteração de dados no arquivo do Boletim de Urna do 1º turno.",
+                "severidade": "ALTA"
+            }},
         }};
 
         
@@ -4393,6 +4707,94 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
 
         function handleModalOverlayClick(e) {{
             if (e.target.id === 'detailsModal') closeModal();
+        }}
+
+        function showRuleDetailsModal(code, count, pct) {{
+            const info = GLOSSARY_DATA[code] || {{
+                titulo: code,
+                explicacao: "Verificação automática da suíte pericial de integridade eleitoral.",
+                por_que_suspeito: "Inconsistência identificada nas checagens oficiais de integridade entre 1º e 2º Turno.",
+                severidade: "MEDIA"
+            }};
+
+            const sev = info.severidade || "MEDIA";
+            let sevBadgeHtml = "";
+            let sevColor = "#e11d48";
+            if (sev === "ALTA") {{
+                sevBadgeHtml = '<span class="badge badge-red" style="font-size: 11px; padding: 2px 8px;">SEVERIDADE ALTA (CRÍTICA)</span>';
+                sevColor = "#e11d48";
+            }} else if (sev === "MEDIA") {{
+                sevBadgeHtml = '<span class="badge badge-yellow" style="font-size: 11px; padding: 2px 8px;">SEVERIDADE MÉDIA (RELEVANTE)</span>';
+                sevColor = "#d97706";
+            }} else if (sev === "INFO") {{
+                sevBadgeHtml = '<span class="badge" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; font-size: 11px; padding: 2px 8px;">INFORMATIVO OPERACIONAL</span>';
+                sevColor = "#64748b";
+            }} else {{
+                sevBadgeHtml = '<span class="badge badge-blue" style="font-size: 11px; padding: 2px 8px;">SEVERIDADE BAIXA</span>';
+                sevColor = "#2563eb";
+            }}
+
+            document.getElementById('ruleModalSevBadge').innerHTML = sevBadgeHtml;
+            document.getElementById('ruleModalTitle').textContent = info.titulo;
+            document.getElementById('ruleModalCode').textContent = code;
+            document.getElementById('ruleModalDesc').textContent = info.explicacao;
+            document.getElementById('ruleModalWhy').textContent = info.por_que_suspeito;
+
+            // Stats cards
+            const countStr = count ? count.toLocaleString('pt-BR') : "-";
+            const pctStr = (pct !== undefined && pct !== null) ? `${{pct.toFixed(2)}}%` : "-";
+            document.getElementById('ruleModalStats').innerHTML = `
+                <div class="stat-card" style="padding: 0.6rem 0.8rem; margin: 0; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="stat-label" style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Seções Afetadas</div>
+                    <div class="stat-value" style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-top: 2px;">${{countStr}}</div>
+                </div>
+                <div class="stat-card" style="padding: 0.6rem 0.8rem; margin: 0; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="stat-label" style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">% Total de Urnas</div>
+                    <div class="stat-value" style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-top: 2px;">${{pctStr}}</div>
+                </div>
+                <div class="stat-card" style="padding: 0.6rem 0.8rem; margin: 0; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="stat-label" style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Severidade Técnica</div>
+                    <div class="stat-value" style="font-size: 1.15rem; font-weight: 800; color: ${{sevColor}}; margin-top: 2px;">${{sev}}</div>
+                </div>
+            `;
+
+            // Action button
+            const btnText = count ? `Ver as ${{count.toLocaleString('pt-BR')}} Seções no Explorador Abaixo` : "Ver Seções no Explorador Abaixo";
+            document.getElementById('btnFilterRuleText').textContent = btnText;
+            document.getElementById('btnFilterRule').onclick = function() {{
+                filterByRuleAndScroll(code);
+            }};
+
+            document.getElementById('ruleModal').style.display = 'block';
+        }}
+
+        function closeRuleModal() {{
+            document.getElementById('ruleModal').style.display = 'none';
+        }}
+
+        function handleRuleModalOverlayClick(e) {{
+            if (e.target.id === 'ruleModal') closeRuleModal();
+        }}
+
+        function filterByRuleAndScroll(code) {{
+            closeRuleModal();
+            const select = document.getElementById('anomalySelect');
+            if (select) {{
+                for (let i = 0; i < select.options.length; i++) {{
+                    if (select.options[i].value === code || select.options[i].value.startsWith(code + " ") || select.options[i].value.startsWith(code + "(")) {{
+                        select.selectedIndex = i;
+                        break;
+                    }}
+                }}
+                const sevSelect = document.getElementById('severitySelect');
+                if (sevSelect) sevSelect.value = 'ALL';
+                applyFilters();
+
+                const explorer = select.closest('.card');
+                if (explorer) {{
+                    explorer.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+                }}
+            }}
         }}
 
         function renderGlossary() {{
