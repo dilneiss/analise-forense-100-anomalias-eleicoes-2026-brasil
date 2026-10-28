@@ -3167,15 +3167,105 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         .btn-inspect:hover {{ background: #dbeafe; border-color: #93c5fd; }}
         .font-mono {{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }}
         
-        /* Modal */
-        .modal-overlay {{ display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); }}
-        .modal-content {{ background-color: #ffffff; margin: 2rem auto; padding: 1.75rem; border-radius: 0.75rem; max-width: 980px; width: 94%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); position: relative; max-height: 90vh; overflow-y: auto; }}
-        .modal-header {{ display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem; }}
-        .modal-close {{ background: #f1f5f9; border: none; border-radius: 0.375rem; width: 2rem; height: 2rem; font-size: 1.25rem; font-weight: 700; cursor: pointer; color: #64748b; display: flex; align-items: center; justify-content: center; }}
-        .modal-close:hover {{ background: #e2e8f0; color: #0f172a; }}
-        .anomaly-card {{ background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; border-left: 4px solid #ef4444; }}
-        .anomaly-card.sev-MEDIA {{ border-left-color: #f59e0b; }}
-        .anomaly-card.sev-BAIXA {{ border-left-color: #3b82f6; }}
+        /* Modal de Alta Performance e UX Refinada */
+        .modal-overlay {{
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background-color: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }}
+        .modal-content {{
+            background-color: #ffffff;
+            margin: 2.25rem auto;
+            padding: 1.85rem;
+            border-radius: 1rem;
+            max-width: 980px;
+            width: 94%;
+            box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(226, 232, 240, 0.9);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalPopIn 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center center;
+        }}
+        @keyframes modalPopIn {{
+            0% {{ opacity: 0; transform: scale(0.96) translateY(-8px); }}
+            100% {{ opacity: 1; transform: scale(1) translateY(0); }}
+        }}
+        .modal-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.85rem;
+            margin-bottom: 1.15rem;
+        }}
+        .modal-close-group {{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }}
+        .kbd-esc {{
+            font-size: 10px;
+            font-weight: 800;
+            color: #64748b;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 3px 6px;
+            letter-spacing: 0.05em;
+            user-select: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }}
+        .modal-close {{
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 50%;
+            width: 2.2rem;
+            height: 2.2rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1;
+        }}
+        .modal-close:hover {{
+            background: #fee2e2;
+            color: #dc2626;
+            border-color: #fca5a5;
+            transform: scale(1.08);
+        }}
+        .modal-close:active {{
+            transform: scale(0.95);
+        }}
+        .anomaly-card {{
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.625rem;
+            padding: 1rem 1.15rem;
+            margin-bottom: 0.85rem;
+            border-left: 5px solid #ef4444;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.15s ease;
+        }}
+        .anomaly-card:hover {{
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }}
+        .anomaly-card.sev-ALTA {{ border-left-color: #e11d48; border-color: #fecdd3; }}
+        .anomaly-card.sev-MEDIA {{ border-left-color: #f59e0b; border-color: #fef3c7; }}
+        .anomaly-card.sev-BAIXA {{ border-left-color: #3b82f6; border-color: #e2e8f0; }}
+        .anomaly-card.sev-INFO {{ border-left-color: #94a3b8; border-color: #e2e8f0; }}
     </style>
 </head>
 <body>
@@ -3491,11 +3581,14 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         <div class="modal-content">
             <div class="modal-header">
                 <div>
-                    <div id="modalSevBadge" style="margin-bottom: 0.35rem;"></div>
-                    <h2 id="modalTitle" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;"></h2>
-                    <p id="modalSubtitle" style="font-size: 0.8125rem; color: #64748b; margin: 0.2rem 0 0 0;"></p>
+                    <div id="modalSevBadge" style="margin-bottom: 0.4rem;"></div>
+                    <h2 id="modalTitle" style="font-size: 1.35rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -0.02em;"></h2>
+                    <div id="modalSubtitle" style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; margin-top: 0.35rem;"></div>
                 </div>
-                <button onclick="closeModal()" class="modal-close">&times;</button>
+                <div class="modal-close-group">
+                    <span class="kbd-esc" title="Pressione ESC para fechar">ESC</span>
+                    <button onclick="closeModal()" class="modal-close" title="Fechar (ESC)">&times;</button>
+                </div>
             </div>
             <!-- GRÁFICO / MEDIDOR DE CHANCE DE FRAUDE NESTA URNA -->
             <div id="modalFraudCard"></div>
@@ -3514,10 +3607,13 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             <div class="modal-header">
                 <div>
                     <div id="ruleModalSevBadge" style="margin-bottom: 0.4rem;"></div>
-                    <h2 id="ruleModalTitle" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;"></h2>
+                    <h2 id="ruleModalTitle" style="font-size: 1.35rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -0.02em;"></h2>
                     <p id="ruleModalCode" style="font-family: ui-monospace, monospace; font-size: 0.8125rem; color: #64748b; margin: 0.25rem 0 0 0;"></p>
                 </div>
-                <button onclick="closeRuleModal()" class="modal-close">&times;</button>
+                <div class="modal-close-group">
+                    <span class="kbd-esc" title="Pressione ESC para fechar">ESC</span>
+                    <button onclick="closeRuleModal()" class="modal-close" title="Fechar (ESC)">&times;</button>
+                </div>
             </div>
 
             <!-- ESTATÍSTICA DA REGRA NO ESTADO -->
@@ -4578,7 +4674,19 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
 
             document.getElementById('modalSevBadge').innerHTML = getSeverityBadge(s.worst_severity);
             document.getElementById('modalTitle').textContent = `${{s.municipio_nome || 'Município ' + s.municipio}} - Zona ${{s.zona}}, Seção ${{s.secao}}`;
-            document.getElementById('modalSubtitle').textContent = `Urna 1T: ${{d1.numero_interno_urna || 'N/A'}} | Urna 2T: ${{d2.numero_interno_urna || 'N/A'}} | Local: ${{d2.local || d1.local || 'N/A'}}`;
+            
+            // Subtítulo elegante com micro-chips informativos
+            document.getElementById('modalSubtitle').innerHTML = `
+                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; font-weight:700; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; color:#334155;">
+                    <span style="color:#64748b;">Urna 1T:</span> ${{d1.numero_interno_urna || 'N/A'}}
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; font-weight:700; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; color:#334155;">
+                    <span style="color:#64748b;">Urna 2T:</span> ${{d2.numero_interno_urna || 'N/A'}}
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:4px; padding:2px 8px; color:#64748b;">
+                    📍 Local ${{d2.local || d1.local || 'N/A'}}
+                </span>
+            `;
 
             // Ordena as anomalias da seção trazendo as de MAIS ALTA SEVERIDADE PRIMEIRO
             const sortedAnoms = [...(s.anomalias || [])];
@@ -4587,23 +4695,75 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             // Calcula o score de probabilidade de fraude para esta urna específica
             const fraudRisk = calculateSectionFraudScore(s, sortedAnoms);
 
-            // Renderiza o gráfico / medidor no topo do modal
+            // Paleta de cores para o velocimetro/grafico circular
+            let gStart, gMid, gEnd, glowCol, bgGrad1, bgGrad2, borderCol, accentCol, badgeBg, badgeCol;
+            if (fraudRisk.score >= 80) {{
+                gStart = "#991b1b"; gMid = "#e11d48"; gEnd = "#fb7185";
+                glowCol = "rgba(225, 29, 72, 0.4)";
+                bgGrad1 = "#fff5f5"; bgGrad2 = "#fff1f2";
+                borderCol = "#fecdd3"; accentCol = "#e11d48";
+                badgeBg = "#ffe4e6"; badgeCol = "#9f1239";
+            }} else if (fraudRisk.score >= 50) {{
+                gStart = "#b45309"; gMid = "#f59e0b"; gEnd = "#fbbf24";
+                glowCol = "rgba(245, 158, 11, 0.35)";
+                bgGrad1 = "#fffbeb"; bgGrad2 = "#fef3c7";
+                borderCol = "#fde68a"; accentCol = "#f59e0b";
+                badgeBg = "#fef3c7"; badgeCol = "#92400e";
+            }} else if (fraudRisk.score >= 20) {{
+                gStart = "#0369a1"; gMid = "#0284c7"; gEnd = "#38bdf8";
+                glowCol = "rgba(2, 132, 199, 0.3)";
+                bgGrad1 = "#f0f9ff"; bgGrad2 = "#e0f2fe";
+                borderCol = "#bae6fd"; accentCol = "#0284c7";
+                badgeBg = "#e0f2fe"; badgeCol = "#0369a1";
+            }} else {{
+                gStart = "#047857"; gMid = "#10b981"; gEnd = "#34d399";
+                glowCol = "rgba(16, 185, 129, 0.3)";
+                bgGrad1 = "#ecfdf5"; bgGrad2 = "#d1fae5";
+                borderCol = "#a7f3d0"; accentCol = "#10b981";
+                badgeBg = "#d1fae5"; badgeCol = "#065f46";
+            }}
+
+            // Calculo da circunferencia: 2 * PI * 44 ~= 276.46
+            const circum = 276.46;
+            const dashOffset = circum - (fraudRisk.score / 100) * circum;
+
+            // Renderiza o novo grafico / medidor no topo do modal com alto padrao visual
             document.getElementById('modalFraudCard').innerHTML = `
-                <div style="background: #ffffff; border: 2px solid ${{fraudRisk.color}}; border-radius: 0.75rem; padding: 1.15rem 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                <div style="background: linear-gradient(135deg, ${{bgGrad1}} 0%, #ffffff 60%, ${{bgGrad2}} 100%); border: 1px solid ${{borderCol}}; border-left: 6px solid ${{accentCol}}; border-radius: 0.875rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; box-shadow: 0 4px 18px -3px rgba(0,0,0,0.06);">
                     <div style="flex: 1;">
-                        <span class="badge" style="background: ${{fraudRisk.color}}20; color: ${{fraudRisk.color}}; border: 1px solid ${{fraudRisk.color}}; font-weight: 800; font-family: ui-monospace, monospace; margin-bottom: 0.35rem;">ESTIMATIVA PERICIAL DE VÍCIO / FRAUDE NESTA URNA</span>
-                        <h3 style="font-size: 1.15rem; font-weight: 900; color: ${{fraudRisk.color}}; margin: 0.2rem 0;">${{fraudRisk.label}}</h3>
-                        <p style="font-size: 0.8125rem; color: #475569; margin: 0.25rem 0 0 0; line-height: 1.45;">${{fraudRisk.desc}}</p>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background: ${{badgeBg}}; border: 1px solid ${{borderCol}}; border-radius: 9999px; padding: 3px 10px; margin-bottom: 0.45rem;">
+                            <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: ${{accentCol}}; box-shadow: 0 0 0 2px ${{glowCol}};"></span>
+                            <span style="font-size: 10px; font-weight: 800; color: ${{badgeCol}}; text-transform: uppercase; letter-spacing: 0.06em; font-family: ui-monospace, monospace;">PARECER PERICIAL &bull; ESTIMATIVA DE RISCO</span>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 900; color: ${{accentCol}}; margin: 0 0 0.35rem 0; letter-spacing: -0.02em;">${{fraudRisk.label}}</h3>
+                        <p style="font-size: 0.8125rem; color: #334155; margin: 0; line-height: 1.55; max-width: 620px;">${{fraudRisk.desc}}</p>
                     </div>
-                    <div style="text-align: center; min-width: 110px;">
-                        <div style="position: relative; width: 88px; height: 88px; margin: 0 auto;">
-                            <svg viewBox="0 0 36 36" style="width: 88px; height: 88px; transform: rotate(-90deg);">
-                                <path stroke="#e2e8f0" stroke-width="3.5" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <path stroke="${{fraudRisk.color}}" stroke-dasharray="${{fraudRisk.score}}, 100" stroke-width="3.5" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <div style="text-align: center; min-width: 110px; position: relative;">
+                        <div style="position: relative; width: 104px; height: 104px; margin: 0 auto;">
+                            <svg viewBox="0 0 110 110" style="width: 104px; height: 104px; overflow: visible;">
+                                <defs>
+                                    <linearGradient id="fraudGaugeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="${{gStart}}"/>
+                                        <stop offset="60%" stop-color="${{gMid}}"/>
+                                        <stop offset="100%" stop-color="${{gEnd}}"/>
+                                    </linearGradient>
+                                    <filter id="fraudGaugeGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="${{glowCol}}"/>
+                                    </filter>
+                                </defs>
+                                <!-- Track de Fundo -->
+                                <circle cx="55" cy="55" r="44" fill="none" stroke="#e2e8f0" stroke-width="7.5"/>
+                                <!-- Anel decorativo interno -->
+                                <circle cx="55" cy="55" r="37" fill="none" stroke="#f1f5f9" stroke-width="1.5" stroke-dasharray="2 3"/>
+                                <!-- Anel de Progresso Ativo -->
+                                <circle cx="55" cy="55" r="44" fill="none" stroke="url(#fraudGaugeGrad)" stroke-width="8" stroke-linecap="round"
+                                    stroke-dasharray="276.46" stroke-dashoffset="${{dashOffset}}"
+                                    transform="rotate(-90 55 55)" filter="url(#fraudGaugeGlow)"
+                                    style="transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1);"/>
                             </svg>
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: ${{fraudRisk.color}}; font-family: ui-monospace, monospace;">${{fraudRisk.score}}%</div>
-                                <div style="font-size: 0.55rem; font-weight: 700; color: ${{fraudRisk.color}}; text-transform: uppercase;">Probabilidade</div>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none;">
+                                <div style="font-size: 1.45rem; font-weight: 900; color: ${{accentCol}}; font-family: ui-monospace, monospace; line-height: 1; letter-spacing: -0.03em;">${{fraudRisk.score}}%</div>
+                                <div style="font-size: 8px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px;">CHANCE</div>
                             </div>
                         </div>
                     </div>
@@ -4618,26 +4778,37 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             const v1_13 = p1['13'] || 0;
             const v2_13 = p2['13'] || 0;
 
+            const dif22 = v2_22 - v1_22;
+            const dif13 = v2_13 - v1_13;
+
             document.getElementById('modalKpis').innerHTML = `
-                <div class="stat-card">
-                    <div class="stat-label">Comparecimento</div>
-                    <div class="stat-value" style="font-size:1.15rem;">${{d1.comparecimento}} &rarr; ${{d2.comparecimento}}</div>
-                    <div class="stat-desc">Aptos: ${{d1.aptos}} &rarr; ${{d2.aptos}}</div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 0.85rem 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Comparecimento</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace; display: flex; align-items: center; gap: 6px;">
+                        ${{d1.comparecimento}} <span style="font-size: 0.85rem; color: #94a3b8;">&rarr;</span> <strong>${{d2.comparecimento}}</strong>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.35rem;">Aptos: ${{d1.aptos}} &rarr; ${{d2.aptos}}</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Com Biometria</div>
-                    <div class="stat-value" style="font-size:1.15rem;">${{d1.biometria_sim}} &rarr; ${{d2.biometria_sim}}</div>
-                    <div class="stat-desc">Sem bio: ${{sem1}} &rarr; ${{sem2}}</div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 0.85rem 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Com Biometria</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace; display: flex; align-items: center; gap: 6px;">
+                        ${{d1.biometria_sim}} <span style="font-size: 0.85rem; color: #94a3b8;">&rarr;</span> <strong style="color: ${{d2.biometria_sim < d1.biometria_sim ? '#b91c1c' : '#0f172a'}};">${{d2.biometria_sim}}</strong>
+                    </div>
+                    <div style="font-size: 0.75rem; color: ${{sem2 > sem1 ? '#b91c1c' : '#64748b'}}; margin-top: 0.35rem; font-weight: ${{sem2 > sem1 ? '700' : 'normal'}};">Sem bio: ${{sem1}} &rarr; ${{sem2}} (${{sem2 - sem1 >= 0 ? '+' : ''}}${{sem2 - sem1}})</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Flávio Bolsonaro (22)</div>
-                    <div class="stat-value" style="font-size:1.15rem; color:${{v2_22 >= v1_22 ? '#047857' : '#b91c1c'}};">${{v1_22}} &rarr; ${{v2_22}}</div>
-                    <div class="stat-desc">Dif: ${{v2_22 - v1_22 >= 0 ? '+' : ''}}${{v2_22 - v1_22}} votos</div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 0.85rem 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Flávio Bolsonaro (22)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; font-family: ui-monospace, monospace; display: flex; align-items: center; gap: 6px; color:${{dif22 >= 0 ? '#047857' : '#b91c1c'}};">
+                        ${{v1_22}} <span style="font-size: 0.85rem; color: #94a3b8;">&rarr;</span> <strong>${{v2_22}}</strong>
+                    </div>
+                    <div style="font-size: 0.75rem; color: ${{dif22 >= 0 ? '#047857' : '#b91c1c'}}; font-weight: 700; margin-top: 0.35rem;">Dif: ${{dif22 >= 0 ? '+' : ''}}${{dif22}} votos</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Lula (13)</div>
-                    <div class="stat-value" style="font-size:1.15rem; color:${{v2_13 >= v1_13 ? '#047857' : '#b91c1c'}};">${{v1_13}} &rarr; ${{v2_13}}</div>
-                    <div class="stat-desc">Dif: ${{v2_13 - v1_13 >= 0 ? '+' : ''}}${{v2_13 - v1_13}} votos</div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 0.85rem 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Lula (13)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; font-family: ui-monospace, monospace; display: flex; align-items: center; gap: 6px; color:${{dif13 >= 0 ? '#047857' : '#b91c1c'}};">
+                        ${{v1_13}} <span style="font-size: 0.85rem; color: #94a3b8;">&rarr;</span> <strong>${{v2_13}}</strong>
+                    </div>
+                    <div style="font-size: 0.75rem; color: ${{dif13 >= 0 ? '#047857' : '#b91c1c'}}; font-weight: 700; margin-top: 0.35rem;">Dif: ${{dif13 >= 0 ? '+' : ''}}${{dif13}} votos</div>
                 </div>
             `;
 
@@ -4667,7 +4838,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                         if (isViz) {{
                             geoTag = ` [Cidades Vizinhas / Limítrofes - ~${{dKm}} km]`;
                             explLeigo = `A urna funcionou em ${{nSec || mSec}}, mas sua carga foi gerada em ${{nCorr || mCorr}}. Como são municípios vizinhos e limítrofes (~${{dKm}} km de distância), esse remanejamento pode ser normal por logística de contingência do cartório eleitoral regional.`;
-                            porQueSuspeito = `Por serem cidades vizinhas (~${{dKm}} km), o remanejamento pode decorrer de atendimento emergencial de contingência pelo polo regional. Torna-se suspeito se associado a outras quebras graves na mesma urna (como queda de biometria e salto de votos manuais).`;
+                            porQueSuspeito = `Por serem cidades vizinhas (~${{dKm}} km), o remanejamento decorre de atendimento emergencial de contingência pelo polo regional. Só se torna suspeito se acompanhado de outras quebras graves na mesma urna (como queda de biometria e salto de votos manuais).`;
                         }} else {{
                             geoTag = ` [CIDADES NÃO VIZINHAS / DISTANTES - ~${{dKm}} km]`;
                             explLeigo = `A urna funcionou em ${{nSec || mSec}}, mas sua carga foi gerada em ${{nCorr || mCorr}} a mais de ${{dKm}} km de distância. Por NÃO serem cidades vizinhas nem conurbadas, a presença de carga de município distante é atípica e incomum.`;
@@ -4679,19 +4850,20 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
 
                 anomHtml += `
                     <div class="anomaly-card sev-${{a.severity}}">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                            <span class="font-mono" style="font-weight:800; font-size:0.75rem; color:#0f172a;">${{a.code}}</span>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.45rem; padding-bottom:0.35rem; border-bottom:1px solid #f1f5f9;">
+                            <span class="font-mono" style="font-weight:800; font-size:0.75rem; color:#334155; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 7px;">${{a.code}}</span>
                             ${{getSeverityBadge(a.severity)}}
                         </div>
-                        <div style="font-weight:700; font-size:0.875rem; color:#1e293b; margin-bottom:0.25rem;">${{g.titulo}}</div>
-                        <div style="font-size:0.8125rem; color:#475569; margin-bottom:0.5rem; background:#ffffff; padding:0.4rem 0.6rem; border-radius:0.25rem; border:1px solid #e2e8f0;">
-                            <strong>Dado Identificado na Urna:</strong> ${{descText}}
+                        <h4 style="font-weight:800; font-size:0.95rem; color:#0f172a; margin:0 0 0.55rem 0;">${{g.titulo}}</h4>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:0.55rem 0.85rem; margin-bottom:0.5rem; font-size:0.8125rem; color:#0f172a; display:flex; align-items:flex-start; gap:8px;">
+                            <span style="font-size:1rem; line-height:1.2;">📋</span>
+                            <div style="flex:1;"><strong style="color:#475569;">Dado Oficial no BU:</strong> <span style="font-family:ui-monospace,monospace; font-weight:600;">${{descText}}</span></div>
                         </div>
-                        <div style="font-size:0.75rem; color:#334155; margin-bottom:0.35rem;">
-                            <strong>💡 O que significa para leigos:</strong> ${{explLeigo}}
+                        <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:6px; padding:0.55rem 0.85rem; margin-bottom:0.45rem; font-size:0.78rem; color:#0369a1; line-height:1.5;">
+                            <strong style="color:#0284c7;">💡 O que significa para leigos:</strong> ${{explLeigo}}
                         </div>
-                        <div style="font-size:0.75rem; color:#991b1b;">
-                            <strong>⚠️ Por que isso levanta suspeita:</strong> ${{porQueSuspeito}}
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:6px; padding:0.55rem 0.85rem; font-size:0.78rem; color:#9f1239; line-height:1.5;">
+                            <strong style="color:#e11d48;">⚠️ Por que isso levanta suspeita pericial:</strong> ${{porQueSuspeito}}
                         </div>
                     </div>
                 `;
@@ -4827,7 +4999,15 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             renderGlossary();
         }}
 
-        window.onload = function() {{
+        // Atalho de teclado: Tecla ESC fecha qualquer modal aberto
+        document.addEventListener('keydown', function(e) {{
+            if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {{
+                closeModal();
+                closeRuleModal();
+            }}
+        }});
+
+                window.onload = function() {{
             applyFilters();
             renderGlossary();
         }};
