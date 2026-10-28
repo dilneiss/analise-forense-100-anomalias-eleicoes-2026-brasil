@@ -53,7 +53,7 @@ def _make_sample(
         numero_serie_fc="11223344",
         versao_votacao=versao,
         codigo_carga="123456789012345678901234",
-        data_carga="2026-09-20T10:00:00",
+        data_carga="2026-10-18T10:00:00" if "2026-10-25" in encerramento else "2026-09-20T10:00:00",
         nome_gerador_midia="CSC077W058300",
         serial_tpm="367A7A6587EFF2070249",
         serial_instalacao="B8B53007",

@@ -1,9 +1,9 @@
 # Ferramenta Forense de Auditoria da Urna Eletrônica (TSE)
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/tests-59%20passed-success.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-60%20passed-success.svg)](tests/)
 [![Security: Read-Only](https://img.shields.io/badge/custodia-read--only%20imutavel-emerald.svg)](#1-princípios-de-segurança-e-custódia-forense)
-[![Auditoria: 1T vs 2T](https://img.shields.io/badge/auditoria-1T%20vs%202T%20(100%20regras)-purple.svg)](#5-auditoria-comparativa-1º-vs-2º-turno-100-regras-forenses)
+[![Auditoria: 1T vs 2T](https://img.shields.io/badge/auditoria-1T%20vs%202T%20(120%20regras)-purple.svg)](#5-auditoria-comparativa-1º-vs-2º-turno-120-regras-forenses)
 [![Offline & Zero CDN](https://img.shields.io/badge/relatorios-100%25%20offline%20full--width-orange.svg)](#7-painel-interativo-html-100-largura-com-modal-e-glossário)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -112,11 +112,11 @@ python analyzer.py --input "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2
 ```
 ---
 
-## 5. Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)
+## 5. Auditoria Comparativa 1º vs 2º Turno (120 Regras Forenses)
 
-### 5.1 Catálogo dos 100 Detectores Automatizados
+### 5.1 Catálogo dos 120 Detectores Automatizados
 
-As 100 regras cobrem 8 eixos de integridade:
+As 120 regras cobrem 9 eixos de integridade:
 - **1. Hardware e Carga (`CHK001` a `CHK015`):** Troca de urna física, troca de FV, atualização da Flash de Carga (FC - procedimento normal do 2T), modelo divergente, alteração de software oficial, carga gerada para outro município e serial TPM divergente.
 - **2. Cadastro e Eleitorado (`CHK016` a `CHK030`):** Variação de eleitores originais (`aptos_secao`), redução/aumento do caderno congelado e picos de transferência temporária (TTE).
 - **3. Comparecimento e Abstenção (`CHK031` a `CHK045`):** Votos superando aptos, 100% de presença, abstenção acima de 50% e 70%, oscilações extremas e desvio da média municipal.
@@ -125,7 +125,7 @@ As 100 regras cobrem 8 eixos de integridade:
 - **6. Tempo e Ritmo de Votação (`CHK076` a `CHK085`):** Abertura precoce (< 07h), encerramento precoce (< 17h), encerramento após 20h e 22h e tempo médio por voto humanamente inviável (< 15 segundos).
 - **7. Brancos e Nulos (`CHK086` a `CHK092`):** Explosão de brancos/nulos (> 15 pp), taxa superior a 30% e extinção total em seções grandes.
 - **8. Integridade Criptográfica (`CHK093` a `CHK100`):** Divergência entre soma de votos e comparecimento no BU, quebra da cadeia SHA-512 e hash divergente do envelope `vota.vsc`.
-
+- **9. Análise Forense Avançada e Benford (`CHK101` a `CHK120`):** Concentração no 1º dígito pela Lei de Benford, dígitos redondos em centena (00), validação de urna de contingência, data de carga posterior ao encerramento, inversão da razão brancos/nulos, liberação manual por ano de nascimento superando a biometria (`CHK111`), desabamento de biometria > 40 pp (`CHK112`), retenção de 1T < 50% (`CHK116`), abstenção superando votos do vencedor (`CHK109`), e desvio extremo intra-local (`CHK120`).
 ---
 
 ### 5.2 Explicação dos Candidatos de Terceira Via do 1º Turno
@@ -161,9 +161,10 @@ Com base no processamento integral das **17.326 seções eleitorais de Santa Cat
 
 ```text
 ================================================================================
-AUDITORIA FORENSE COMPARATIVA: 1º TURNO vs 2º TURNO (100 VERIFICAÇÕES TÉCNICAS)
+AUDITORIA FORENSE COMPARATIVA: 1º TURNO vs 2º TURNO (120 VERIFICAÇÕES TÉCNICAS)
 ================================================================================
 Tempo de processamento: 129.06s | Seções analisadas: 17,326
+Total de ocorrências de anomalias: 7,027
 Seções 100% Consistentes / Sem Anomalias: 14,888 (85.93%)
 Seções com Ajustes Cadastrais Residuais (INFO <= 0.5%): 1,490 (8.60%)
 Seções com Inconsistências Relevantes (ALTA/MÉDIA): 890 (5.14%)

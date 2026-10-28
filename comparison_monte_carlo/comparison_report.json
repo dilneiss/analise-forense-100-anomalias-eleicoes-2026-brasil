@@ -6,7 +6,7 @@
     "diretorio_1t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC",
     "diretorio_2t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC",
     "diretorio_saida": "C:\\Users\\dilne\\Downloads\\urna-forense\\comparison_monte_carlo",
-    "total_verificacoes_disponiveis": 100,
+    "total_verificacoes_disponiveis": 120,
     "filtros": {
       "uf": null,
       "municipio": 80004,
@@ -16,38 +16,38 @@
   },
   "impacto_eleitoral_anomalias": {
     "urnas_consistentes": {
-      "total_secoes": 22,
-      "comparecimento_1t": 5067,
-      "comparecimento_2t": 5294,
-      "lula_1t": 1876,
-      "lula_2t": 2338,
-      "delta_lula": 462,
-      "pct_crescimento_lula": 24.63,
-      "flavio_1t": 2630,
-      "flavio_2t": 2823,
-      "delta_flavio": 193,
-      "pct_crescimento_flavio": 7.34,
-      "pct_lula_validos_2t": 45.3,
-      "pct_flavio_validos_2t": 54.7,
-      "pct_lula_comp_2t": 44.16,
-      "pct_flavio_comp_2t": 53.32
+      "total_secoes": 15,
+      "comparecimento_1t": 3489,
+      "comparecimento_2t": 3654,
+      "lula_1t": 1303,
+      "lula_2t": 1623,
+      "delta_lula": 320,
+      "pct_crescimento_lula": 24.56,
+      "flavio_1t": 1792,
+      "flavio_2t": 1948,
+      "delta_flavio": 156,
+      "pct_crescimento_flavio": 8.71,
+      "pct_lula_validos_2t": 45.45,
+      "pct_flavio_validos_2t": 54.55,
+      "pct_lula_comp_2t": 44.42,
+      "pct_flavio_comp_2t": 53.31
     },
     "urnas_inconsistentes": {
-      "total_secoes": 2,
-      "comparecimento_1t": 455,
-      "comparecimento_2t": 458,
-      "lula_1t": 177,
-      "lula_2t": 228,
-      "delta_lula": 51,
-      "pct_crescimento_lula": 28.81,
-      "flavio_1t": 230,
-      "flavio_2t": 220,
-      "delta_flavio": -10,
-      "pct_crescimento_flavio": -4.35,
-      "pct_lula_validos_2t": 50.89,
-      "pct_flavio_validos_2t": 49.11,
-      "pct_lula_comp_2t": 49.78,
-      "pct_flavio_comp_2t": 48.03
+      "total_secoes": 3,
+      "comparecimento_1t": 721,
+      "comparecimento_2t": 731,
+      "lula_1t": 283,
+      "lula_2t": 367,
+      "delta_lula": 84,
+      "pct_crescimento_lula": 29.68,
+      "flavio_1t": 354,
+      "flavio_2t": 346,
+      "delta_flavio": -8,
+      "pct_crescimento_flavio": -2.26,
+      "pct_lula_validos_2t": 51.47,
+      "pct_flavio_validos_2t": 48.53,
+      "pct_lula_comp_2t": 50.21,
+      "pct_flavio_comp_2t": 47.33
     },
     "secoes_queda_maior_comparecimento": {
       "total_secoes": 2,
@@ -67,12 +67,12 @@
       "pct_flavio_comp_2t": 48.03
     },
     "comparativo_lula": {
-      "votos_reais_inconsistentes": 228,
-      "votos_esperados_padrao_consistente": 202,
-      "votos_a_mais_inconsistencias": 26,
-      "diferenca_pp_validos": 5.59,
-      "diferenca_pp_comparecimento": 5.62,
-      "votos_a_mais_chk046": 26
+      "votos_reais_inconsistentes": 367,
+      "votos_esperados_padrao_consistente": 325,
+      "votos_a_mais_inconsistencias": 42,
+      "diferenca_pp_validos": 6.02,
+      "diferenca_pp_comparecimento": 5.79,
+      "votos_a_mais_chk046": 25
     }
   },
   "totais_estaduais": {
@@ -206,17 +206,28 @@
     "total_secoes_analisadas": 24,
     "total_secoes_com_anomalias": 2,
     "pct_secoes_com_anomalias": 8.33,
-    "total_anomalias_detectadas": 2,
+    "total_anomalias_detectadas": 10,
     "por_severidade": {
-      "ALTA": 2
+      "ALTA": 3,
+      "MEDIA": 0,
+      "BAIXA": 7,
+      "INFO": 0
     },
     "por_categoria": {
       "VOTACAO_E_MIGRACAO_TERCEIRA_VIA": 2
     },
     "por_tipo_anomalia": [
       {
+        "codigo": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+        "total": 7
+      },
+      {
         "codigo": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR",
         "total": 2
+      },
+      {
+        "codigo": "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO",
+        "total": 1
       }
     ],
     "top_municipios_com_anomalias": [
@@ -235,6 +246,8 @@
       "secao": 102,
       "key": "SC-80004-Z0077-S0102",
       "worst_severity": "ALTA",
+      "fraud_score": 82,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)",
       "total_anomalias": 1,
       "anomalias": [
         {
@@ -354,9 +367,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 82,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)"
+      }
     },
     {
       "uf": "sc",
@@ -366,6 +377,8 @@
       "secao": 174,
       "key": "SC-80004-Z0077-S0174",
       "worst_severity": "ALTA",
+      "fraud_score": 82,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)",
       "total_anomalias": 1,
       "anomalias": [
         {
@@ -485,9 +498,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 82,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)"
+      }
     },
     {
       "uf": "sc",
@@ -497,6 +508,8 @@
       "secao": 90,
       "key": "SC-80004-Z0077-S0090",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -599,9 +612,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -610,9 +621,36 @@
       "zona": 77,
       "secao": 91,
       "key": "SC-80004-Z0077-S0091",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+      "total_anomalias": 2,
+      "anomalias": [
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13",
+          "description": "Candidato obteve 98 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 13,
+            "votos": 98,
+            "primeiro_digito": 9
+          }
+        },
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 22",
+          "description": "Candidato obteve 98 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 22,
+            "votos": 98,
+            "primeiro_digito": 9
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770091-bu.dat",
         "uf": "sc",
@@ -717,9 +755,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -728,9 +764,24 @@
       "zona": 77,
       "secao": 92,
       "key": "SC-80004-Z0077-S0092",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+      "total_anomalias": 1,
+      "anomalias": [
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13",
+          "description": "Candidato obteve 95 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 13,
+            "votos": 95,
+            "primeiro_digito": 9
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770092-bu.dat",
         "uf": "sc",
@@ -833,9 +884,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -845,6 +894,8 @@
       "secao": 93,
       "key": "SC-80004-Z0077-S0093",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -951,9 +1002,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -962,9 +1011,24 @@
       "zona": 77,
       "secao": 94,
       "key": "SC-80004-Z0077-S0094",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+      "total_anomalias": 1,
+      "anomalias": [
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13",
+          "description": "Candidato obteve 91 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 13,
+            "votos": 91,
+            "primeiro_digito": 9
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770094-bu.dat",
         "uf": "sc",
@@ -1067,9 +1131,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1079,6 +1141,8 @@
       "secao": 95,
       "key": "SC-80004-Z0077-S0095",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -1185,9 +1249,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1197,6 +1259,8 @@
       "secao": 96,
       "key": "SC-80004-Z0077-S0096",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -1301,9 +1365,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1313,6 +1375,8 @@
       "secao": 97,
       "key": "SC-80004-Z0077-S0097",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -1419,9 +1483,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1431,6 +1493,8 @@
       "secao": 98,
       "key": "SC-80004-Z0077-S0098",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -1535,9 +1599,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1547,6 +1609,8 @@
       "secao": 99,
       "key": "SC-80004-Z0077-S0099",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -1657,9 +1721,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1668,9 +1730,24 @@
       "zona": 77,
       "secao": 100,
       "key": "SC-80004-Z0077-S0100",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+      "total_anomalias": 1,
+      "anomalias": [
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13",
+          "description": "Candidato obteve 95 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 13,
+            "votos": 95,
+            "primeiro_digito": 9
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770100-bu.dat",
         "uf": "sc",
@@ -1773,9 +1850,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1784,9 +1859,24 @@
       "zona": 77,
       "secao": 101,
       "key": "SC-80004-Z0077-S0101",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+      "total_anomalias": 1,
+      "anomalias": [
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13",
+          "description": "Candidato obteve 99 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 13,
+            "votos": 99,
+            "primeiro_digito": 9
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770101-bu.dat",
         "uf": "sc",
@@ -1889,9 +1979,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -1901,6 +1989,8 @@
       "secao": 103,
       "key": "SC-80004-Z0077-S0103",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2005,9 +2095,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2017,6 +2105,8 @@
       "secao": 104,
       "key": "SC-80004-Z0077-S0104",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2121,9 +2211,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2133,6 +2221,8 @@
       "secao": 109,
       "key": "SC-80004-Z0077-S0109",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2237,9 +2327,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2249,6 +2337,8 @@
       "secao": 120,
       "key": "SC-80004-Z0077-S0120",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2353,9 +2443,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2364,9 +2452,24 @@
       "zona": 77,
       "secao": 121,
       "key": "SC-80004-Z0077-S0121",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+      "total_anomalias": 1,
+      "anomalias": [
+        {
+          "code": "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
+          "severity": "BAIXA",
+          "title": "Primeiro dígito anômalo pela Lei de Benford para candidato 13",
+          "description": "Candidato obteve 98 votos (iniciado em dígito 9, estatisticamente infrequente).",
+          "details": {
+            "candidato": 13,
+            "votos": 98,
+            "primeiro_digito": 9
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770121-bu.dat",
         "uf": "sc",
@@ -2471,9 +2574,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2482,9 +2583,23 @@
       "zona": 77,
       "secao": 125,
       "key": "SC-80004-Z0077-S0125",
-      "worst_severity": "NORMAL",
-      "total_anomalias": 0,
-      "anomalias": [],
+      "worst_severity": "ALTA",
+      "fraud_score": 0,
+      "fraud_label": "Baixo Risco de Fraude (0%)",
+      "total_anomalias": 1,
+      "anomalias": [
+        {
+          "code": "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO",
+          "category": "BRANCOS_E_NULOS",
+          "severity": "ALTA",
+          "title": "Migração quase total de brancos/nulos para LULA (PT)",
+          "description": "Redução de 14 votos inválidos coincidiu com ganho unilateral de 33 votos.",
+          "details": {
+            "queda_bn": 14,
+            "ganho_candidato": 33
+          }
+        }
+      ],
       "dados_1t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770125-bu.dat",
         "uf": "sc",
@@ -2591,9 +2706,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2603,6 +2716,8 @@
       "secao": 128,
       "key": "SC-80004-Z0077-S0128",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2707,9 +2822,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2719,6 +2832,8 @@
       "secao": 131,
       "key": "SC-80004-Z0077-S0131",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2823,9 +2938,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2835,6 +2948,8 @@
       "secao": 138,
       "key": "SC-80004-Z0077-S0138",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -2937,9 +3052,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     },
     {
       "uf": "sc",
@@ -2949,6 +3062,8 @@
       "secao": 154,
       "key": "SC-80004-Z0077-S0154",
       "worst_severity": "NORMAL",
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)",
       "total_anomalias": 0,
       "anomalias": [],
       "dados_1t": {
@@ -3053,9 +3168,7 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      },
-      "fraud_score": 0,
-      "fraud_label": "Sem Evidência de Fraude (0%)"
+      }
     }
   ]
 }

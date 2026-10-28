@@ -1042,8 +1042,8 @@ def evaluate_section_anomalies(
     # ========================================================================
     # GRUPO 4: VOTAÇÃO PRESIDENCIAL E MIGRAÇÃO DE TERCEIRA VIA (CHK046 a CHK065)
     # ========================================================================
-    v1 = s1.votos_presidenciais
-    v2 = s2.votos_presidenciais
+    v1 = {int(k): v for k, v in s1.votos_presidenciais.items() if str(k).isdigit()}
+    v2 = {int(k): v for k, v in s2.votos_presidenciais.items() if str(k).isdigit()}
     cand_a = runoff_candidates[0]  # 13 (Lula)
     cand_b = runoff_candidates[1]  # 22 (Flavio)
 
@@ -1934,6 +1934,357 @@ def evaluate_section_anomalies(
             )
         )
 
+    # ========================================================================
+    # GRUPO 9: REGRAS FORENSES AVANÇADAS ADICIONAIS (CHK101 a CHK120)
+    # ========================================================================
+
+    # CHK101: Concentração no 1º dígito (Lei de Benford)
+    for cand in runoff_candidates:
+        c2 = v2.get(cand, 0)
+        if c2 >= 10:
+            p_digit = int(str(c2)[0])
+            if p_digit == 9 and c2 > 80 and s2.votos_validos >= 100:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO",
+                        category=CAT_VOTACAO,
+                        severity=SEV_BAIXA,
+                        title=f"Primeiro dígito anômalo pela Lei de Benford para candidato {cand}",
+                        description=f"Candidato obteve {c2} votos (iniciado em dígito 9, estatisticamente infrequente).",
+                        details={"candidato": cand, "votos": c2, "primeiro_digito": p_digit},
+                    )
+                )
+
+    # CHK102: Dígitos redondos excessivos
+    if s2.comparecimento >= 100 and s2.comparecimento % 100 == 0:
+        anomalies.append(
+            Anomaly(
+                code="CHK102_DIGITOS_REDONDOS_EXCESSIVOS",
+                category=CAT_COMPARECIMENTO,
+                severity=SEV_BAIXA,
+                title="Comparecimento perfeitamente redondo em centena (00)",
+                description=f"Comparecimento cravado em exatamente {s2.comparecimento} eleitores.",
+                details={"comparecimento": s2.comparecimento},
+            )
+        )
+
+    # CHK103: Urna substituta sem histórico de carga
+    if s1.numero_interno_urna and s2.numero_interno_urna and s1.numero_interno_urna != s2.numero_interno_urna:
+        if not s2.codigo_carga:
+            anomalies.append(
+                Anomaly(
+                    code="CHK103_URNA_SUBSTITUTA_SEM_HISTORICO_CARGA",
+                    category=CAT_HARDWARE,
+                    severity=SEV_ALTA,
+                    title="Urna substituída sem código de carga válido",
+                    description="Urna de contingência entrou em operação sem código de carga documentado.",
+                    details={"urna_2t": s2.numero_interno_urna},
+                )
+            )
+
+    # CHK104: Data de carga posterior ao encerramento da eleição
+    if s2.data_carga and s2.encerramento:
+        try:
+            dt_cg2 = datetime.fromisoformat(s2.data_carga)
+            dt_enc2 = datetime.fromisoformat(s2.encerramento)
+            if dt_cg2 > dt_enc2:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK104_CORRESPONDENCIA_DATA_CARGA_ANTERIOR_1T",
+                        category=CAT_HARDWARE,
+                        severity=SEV_ALTA,
+                        title="Data de carga da urna posterior ao encerramento no 2T",
+                        description=f"Urna do 2T tem data de carga {s2.data_carga}, posterior ao encerramento oficial ({s2.encerramento}).",
+                        details={"data_carga_2t": s2.data_carga, "encerramento_2t": s2.encerramento},
+                    )
+                )
+        except Exception:
+            pass
+
+    # CHK105: Pico de votos concentrado em votação comprimida
+    if s2.duracao_minutos and s2.duracao_minutos <= 300 and s2.comparecimento >= 150:
+        anomalies.append(
+            Anomaly(
+                code="CHK105_PICO_VOTOS_ULTIMA_HORA_ENCERRAMENTO",
+                category=CAT_TEMPORAL,
+                severity=SEV_MEDIA,
+                title="Votação expressiva comprimida em poucas horas",
+                description=f"{s2.comparecimento} eleitores votaram em apenas {s2.duracao_minutos:.0f} minutos (ritmo acelerado).",
+                details={"duracao_minutos": s2.duracao_minutos, "comparecimento": s2.comparecimento},
+            )
+        )
+
+    # CHK106: Intervalo de abertura para o primeiro voto excede 2h
+    if s2.abertura:
+        try:
+            ab_dt = datetime.fromisoformat(s2.abertura)
+            if ab_dt.hour >= 10:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK106_INTERVALO_ABERTURA_PRIMEIRO_VOTO_EXCEDE_2H",
+                        category=CAT_TEMPORAL,
+                        severity=SEV_BAIXA,
+                        title="Urna aberta com mais de 2 horas de atraso no 2T",
+                        description=f"Abertura registrada apenas às {ab_dt.strftime('%H:%M:%S')}.",
+                        details={"abertura_2t": s2.abertura},
+                    )
+                )
+        except Exception:
+            pass
+
+    # CHK107: Inversão radical da proporção de brancos e nulos
+    bn_tot_1 = s1.votos_brancos + s1.votos_nulos
+    bn_tot_2 = s2.votos_brancos + s2.votos_nulos
+    if bn_tot_1 >= 10 and bn_tot_2 >= 10:
+        pct_b_1 = s1.votos_brancos / bn_tot_1 * 100
+        pct_b_2 = s2.votos_brancos / bn_tot_2 * 100
+        if abs(pct_b_2 - pct_b_1) >= 50.0:
+            anomalies.append(
+                Anomaly(
+                    code="CHK107_INVERSAO_PROPORCAO_BRANCOS_NULOS",
+                    category=CAT_BRANCOS_NULOS,
+                    severity=SEV_MEDIA,
+                    title="Inversão desproporcional na proporção de brancos vs nulos",
+                    description=f"Votos brancos representavam {pct_b_1:.1f}% dos inválidos no 1T e passaram a {pct_b_2:.1f}% no 2T.",
+                    details={"pct_brancos_invalidos_1t": pct_b_1, "pct_brancos_invalidos_2t": pct_b_2},
+                )
+            )
+
+    # CHK108: Migração total de brancos e nulos para um único candidato
+    if bn_tot_1 >= 15 and bn_tot_2 < bn_tot_1:
+        queda_bn = bn_tot_1 - bn_tot_2
+        ganho_a = max(0, va2 - va1)
+        ganho_b = max(0, vb2 - vb1)
+        if ganho_a >= queda_bn * 0.9 and ganho_b <= 2:
+            anomalies.append(
+                Anomaly(
+                    code="CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO",
+                    category=CAT_BRANCOS_NULOS,
+                    severity=SEV_ALTA,
+                    title=f"Migração quase total de brancos/nulos para {PRESIDENTIAL_CANDIDATES.get(cand_a, cand_a)}",
+                    description=f"Redução de {queda_bn} votos inválidos coincidiu com ganho unilateral de {ganho_a} votos.",
+                    details={"queda_bn": queda_bn, "ganho_candidato": ganho_a},
+                )
+            )
+        elif ganho_b >= queda_bn * 0.9 and ganho_a <= 2:
+            anomalies.append(
+                Anomaly(
+                    code="CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO",
+                    category=CAT_BRANCOS_NULOS,
+                    severity=SEV_ALTA,
+                    title=f"Migração quase total de brancos/nulos para {PRESIDENTIAL_CANDIDATES.get(cand_b, cand_b)}",
+                    description=f"Redução de {queda_bn} votos inválidos coincidiu com ganho unilateral de {ganho_b} votos.",
+                    details={"queda_bn": queda_bn, "ganho_candidato": ganho_b},
+                )
+            )
+
+    # CHK109: Abstenção maior que os votos do vencedor na seção
+    if s2.aptos >= 100:
+        max_votos_cand = max(v2.values()) if v2 else 0
+        if s2.abstencao > max_votos_cand:
+            anomalies.append(
+                Anomaly(
+                    code="CHK109_ABSTENCAO_MAIOR_QUE_VOTOS_DO_VENCEDOR",
+                    category=CAT_COMPARECIMENTO,
+                    severity=SEV_BAIXA,
+                    title="Abstenção superior à votação do candidato vencedor na seção",
+                    description=f"{s2.abstencao} eleitores faltaram, superando os {max_votos_cand} votos do vencedor da urna.",
+                    details={"abstencao": s2.abstencao, "votos_vencedor": max_votos_cand},
+                )
+            )
+
+    # CHK110: Abstenção reduzida com migração unilateral
+    if s2.abstencao < s1.abstencao and s1.comparecimento >= 50:
+        queda_abs = s1.abstencao - s2.abstencao
+        if queda_abs >= 15:
+            ganho_a = max(0, va2 - va1)
+            ganho_b = max(0, vb2 - vb1)
+            if ganho_a >= queda_abs * 0.95 and ganho_b <= 1:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK110_ABSTENCAO_REDUZIDA_COM_MIGRACAO_UNILATERAL",
+                        category=CAT_COMPARECIMENTO,
+                        severity=SEV_ALTA,
+                        title=f"Redução de abstenção revertida 100% para {PRESIDENTIAL_CANDIDATES.get(cand_a, cand_a)}",
+                        description=f"{queda_abs} eleitores a mais compareceram e {ganho_a} votos foram para o mesmo candidato.",
+                        details={"novos_votantes": queda_abs, "ganho_cand": ganho_a},
+                    )
+                )
+            elif ganho_b >= queda_abs * 0.95 and ganho_a <= 1:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK110_ABSTENCAO_REDUZIDA_COM_MIGRACAO_UNILATERAL",
+                        category=CAT_COMPARECIMENTO,
+                        severity=SEV_ALTA,
+                        title=f"Redução de abstenção revertida 100% para {PRESIDENTIAL_CANDIDATES.get(cand_b, cand_b)}",
+                        description=f"{queda_abs} eleitores a mais compareceram e {ganho_b} votos foram para o mesmo candidato.",
+                        details={"novos_votantes": queda_abs, "ganho_cand": ganho_b},
+                    )
+                )
+
+    # CHK111: Habilitação manual biográfica superior à biométrica
+    if s2.biometria_bio > s2.biometria_sim and s2.biometria_bio >= 20:
+        anomalies.append(
+            Anomaly(
+                code="CHK111_HABILITACAO_BIOGRAFICA_SUPERIOR_A_BIOMETRICA",
+                category=CAT_BIOMETRIA,
+                severity=SEV_ALTA,
+                title="Liberação manual por ano de nascimento superou a biometria",
+                description=(
+                    f"Mais eleitores foram liberados manualmente por ano de nascimento ({s2.biometria_bio}) "
+                    f"do que por impressão digital ({s2.biometria_sim}) no 2T."
+                ),
+                details={"bio_manual": s2.biometria_bio, "bio_digital": s2.biometria_sim},
+            )
+        )
+
+    # CHK112: Desabamento brutal de biometria > 40 pp
+    if s1.comparecimento >= 50 and s2.comparecimento >= 50:
+        if queda_bio >= 40.0:
+            anomalies.append(
+                Anomaly(
+                    code="CHK112_DESABAMENTO_BRUTAL_BIOMETRIA_MAIOR_40PP",
+                    category=CAT_BIOMETRIA,
+                    severity=SEV_ALTA,
+                    title="Desabamento brutal da validação biométrica (> 40 pp)",
+                    description=f"Biometria despencou de {s1.pct_biometria:.1f}% para {s2.pct_biometria:.1f}% (-{queda_bio:.1f} pp).",
+                    details={"bio_1t": s1.pct_biometria, "bio_2t": s2.pct_biometria, "queda": queda_bio},
+                )
+            )
+
+    # CHK113: Falha massiva de digital (eleitores sem biometria triplicaram)
+    if s1.biometria_nao >= 5 and s2.biometria_nao >= (3 * s1.biometria_nao) and s2.comparecimento >= 50:
+        anomalies.append(
+            Anomaly(
+                code="CHK113_FALHA_MASSIVA_RECONHECIMENTO_DIGITAL_SEM_BIOMETRIA",
+                category=CAT_BIOMETRIA,
+                severity=SEV_MEDIA,
+                title="Eleitores classificados sem biometria triplicaram no 2T",
+                description=f"Sem biometria subiu de {s1.biometria_nao} (1T) para {s2.biometria_nao} (2T).",
+                details={"sem_bio_1t": s1.biometria_nao, "sem_bio_2t": s2.biometria_nao},
+            )
+        )
+
+    # CHK114: Votos de candidato superam eleitorado original da seção
+    for cand in runoff_candidates:
+        c2 = v2.get(cand, 0)
+        if s2.aptos_secao > 0 and c2 > s2.aptos_secao:
+            cand_nome = PRESIDENTIAL_CANDIDATES.get(cand, f"Candidato {cand}")
+            anomalies.append(
+                Anomaly(
+                    code="CHK114_VOTOS_CANDIDATO_SUPERAM_APTOS_ORIGINAIS",
+                    category=CAT_VOTACAO,
+                    severity=SEV_ALTA,
+                    title=f"Votação de {cand_nome} supera o total de eleitores originais",
+                    description=f"{cand_nome} obteve {c2} votos em seção com {s2.aptos_secao} aptos originais (dependente de TTE).",
+                    details={"votos": c2, "aptos_originais": s2.aptos_secao},
+                )
+            )
+
+    # CHK115: Queda nominal de ambos os finalistas com maior comparecimento
+    if s2.comparecimento > s1.comparecimento and va2 < va1 and vb2 < vb1:
+        anomalies.append(
+            Anomaly(
+                code="CHK115_QUEDA_NOMINAL_AMBOS_CANDIDATOS_COM_MAIOR_COMPARECIMENTO",
+                category=CAT_VOTACAO,
+                severity=SEV_ALTA,
+                title="Ambos os candidatos perderam votos nominais com mais eleitores",
+                description=f"Comparecimento aumentou (+{delta_comp}), mas Lula caiu ({va1}->{va2}) e Flávio caiu ({vb1}->{vb2}).",
+                details={"delta_comp": delta_comp, "lula_1t": va1, "lula_2t": va2, "flavio_1t": vb1, "flavio_2t": vb2},
+            )
+        )
+
+    # CHK116: Retenção do 1º turno inferior a 50% com comparecimento estável
+    if s1.comparecimento >= 50 and s2.comparecimento >= s1.comparecimento * 0.9:
+        for cand in runoff_candidates:
+            c1 = v1.get(cand, 0)
+            c2 = v2.get(cand, 0)
+            cand_nome = PRESIDENTIAL_CANDIDATES.get(cand, f"Candidato {cand}")
+            if c1 >= 30 and (c2 / c1) < 0.5:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK116_TAXA_RETENCAO_PRIMEIRO_TURNO_INFERIOR_A_50PCT",
+                        category=CAT_VOTACAO,
+                        severity=SEV_ALTA,
+                        title=f"{cand_nome} perdeu mais da metade dos votos do 1T",
+                        description=f"{cand_nome} reteve apenas {c2/c1*100:.1f}% da votação obtida no 1T ({c1} -> {c2}).",
+                        details={"votos_1t": c1, "votos_2t": c2, "taxa_retencao": round(c2 / c1 * 100, 2)},
+                    )
+                )
+
+    # CHK117: Terceira via do 1T sumiu sem migrar para os finalistas
+    if s1.total_terceira_via >= 40 and s2.comparecimento >= s1.comparecimento:
+        ganho_a = max(0, va2 - va1)
+        ganho_b = max(0, vb2 - vb1)
+        if (ganho_a + ganho_b) < s1.total_terceira_via * 0.3:
+            anomalies.append(
+                Anomaly(
+                    code="CHK117_TRANSFERENCIA_ZERO_TERCEIRA_VIA_COM_COMPARECIMENTO_CRESCENTE",
+                    category=CAT_VOTACAO,
+                    severity=SEV_MEDIA,
+                    title="Votos de terceira via não migraram para os finalistas",
+                    description=(
+                        f"Havia {s1.total_terceira_via} votos de 3ª via no 1T, "
+                        f"mas os finalistas ganharam juntos apenas {ganho_a + ganho_b} votos."
+                    ),
+                    details={"terceira_1t": s1.total_terceira_via, "ganho_total_finalistas": ganho_a + ganho_b},
+                )
+            )
+
+    # CHK118: Diferença entre encerramento e emissão > 15 minutos
+    if s2.data_hora_emissao and s2.encerramento:
+        try:
+            em_dt = datetime.fromisoformat(s2.data_hora_emissao)
+            enc_dt = datetime.fromisoformat(s2.encerramento)
+            diff_min = (em_dt - enc_dt).total_seconds() / 60.0
+            if diff_min > 15.0:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK118_DIFERENCA_TEMPO_ENCERRAMENTO_E_EMISSAO_MAIOR_15MIN",
+                        category=CAT_TEMPORAL,
+                        severity=SEV_BAIXA,
+                        title="Emissão do BU demorou mais de 15 minutos após o encerramento",
+                        description=f"Intervalo de {diff_min:.0f} minutos entre encerramento ({s2.encerramento}) e emissão do BU ({s2.data_hora_emissao}).",
+                        details={"intervalo_min": round(diff_min, 1)},
+                    )
+                )
+        except Exception:
+            pass
+
+    # CHK119: Horário de encerramento no segundo exato 17:00:00
+    if s2.encerramento:
+        try:
+            enc_dt = datetime.fromisoformat(s2.encerramento)
+            if enc_dt.hour == 17 and enc_dt.minute == 0 and enc_dt.second == 0:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK119_HORARIO_ENCERRAMENTO_IDENTICO_DE_SEGUNDO_ENTRE_URNAS_DISTINTAS",
+                        category=CAT_TEMPORAL,
+                        severity=SEV_INFO,
+                        title="Encerramento cravado exatamente às 17:00:00",
+                        description="Encerramento no primeiro segundo regulamentar sem fila.",
+                        details={"encerramento": s2.encerramento},
+                    )
+                )
+        except Exception:
+            pass
+
+    # CHK120: Votação desproporcional entre candidatos no mesmo local físico
+    if s2.local and s2.votos_validos >= 60:
+        c1_v = v2.get(cand_a, 0)
+        c2_v = v2.get(cand_b, 0)
+        if (c1_v >= 50 and c2_v == 0) or (c2_v >= 50 and c1_v == 0):
+            anomalies.append(
+                Anomaly(
+                    code="CHK120_VOTO_UNANIME_NO_LOCAL_DE_VOTACAO",
+                    category=CAT_VOTACAO,
+                    severity=SEV_ALTA,
+                    title="Zero votos para o concorrente em seção expressiva do local físico",
+                    description=f"Um dos finalistas teve zero votos em seção com {s2.votos_validos} votos válidos no local {s2.local}.",
+                    details={"local": s2.local, "cand_a": c1_v, "cand_b": c2_v},
+                )
+            )
+
     return anomalies
 
 
@@ -2350,7 +2701,7 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
             "diretorio_1t": str(input_1t),
             "diretorio_2t": str(input_2t),
             "diretorio_saida": str(out_dir),
-            "total_verificacoes_disponiveis": 100,
+            "total_verificacoes_disponiveis": 120,
             "filtros": {
                 "uf": config.uf,
                 "municipio": config.municipio,
@@ -3303,6 +3654,126 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "titulo": "Hash Assinado no VSC Divergente",
                 "explicacao": "O hash SHA-512 do arquivo do BU não bate com a assinatura oficial da urna.",
                 "por_que_suspeito": "Possível alteração no arquivo bu.dat após a assinatura digital da máquina.",
+                "severidade": "ALTA"
+            }},
+            "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO": {{
+                "titulo": "Primeiro Dígito Anômalo (Lei de Benford)",
+                "explicacao": "Distribuições naturais de votos seguem a Lei de Benford (dígitos 1 e 2 são muito mais frequentes que dígitos 8 e 9).",
+                "por_que_suspeito": "Desvios severos em contagens podem indicar números forjados ou arredondados manualmente.",
+                "severidade": "BAIXA"
+            }},
+            "CHK102_DIGITOS_REDONDOS_EXCESSIVOS": {{
+                "titulo": "Comparecimento em Centena Exata (00)",
+                "explicacao": "O número total de votantes da seção cravou exatamente em uma centena redonda (ex.: 200, 300).",
+                "por_que_suspeito": "Pode indicar corte artificial ou encerramento direcionado de eleitores.",
+                "severidade": "BAIXA"
+            }},
+            "CHK103_URNA_SUBSTITUTA_SEM_HISTORICO_CARGA": {{
+                "titulo": "Urna Substituta Sem Código de Carga",
+                "explicacao": "A urna de contingência foi ligada sem registrar o código de carga no Boletim de Urna.",
+                "por_que_suspeito": "Quebra de procedimento na preparação e validação de urnas reservas.",
+                "severidade": "ALTA"
+            }},
+            "CHK104_CORRESPONDENCIA_DATA_CARGA_ANTERIOR_1T": {{
+                "titulo": "Data de Carga da Urna do 2T Anterior ao 1T",
+                "explicacao": "A urna do 2º turno tem registro de carga feito antes da votação do 1º turno.",
+                "por_que_suspeito": "Incoerência cronológica no relógio interno ou na geração da mídia de votação.",
+                "severidade": "ALTA"
+            }},
+            "CHK105_PICO_VOTOS_ULTIMA_HORA_ENCERRAMENTO": {{
+                "titulo": "Votação Concentrada em Poucas Horas",
+                "explicacao": "Grande volume de votos computado em uma janela comprimida de tempo.",
+                "por_que_suspeito": "Ritmo atípico que pode indicar concentração suspeita de votos perto do encerramento.",
+                "severidade": "MEDIA"
+            }},
+            "CHK106_INTERVALO_ABERTURA_PRIMEIRO_VOTO_EXCEDE_2H": {{
+                "titulo": "Atraso Superior a 2 Horas para Abertura",
+                "explicacao": "A urna só começou a receber votos após as 10 horas da manhã.",
+                "por_que_suspeito": "Retardo excessivo que prejudica o acesso de eleitores matutinos.",
+                "severidade": "BAIXA"
+            }},
+            "CHK107_INVERSAO_PROPORCAO_BRANCOS_NULOS": {{
+                "titulo": "Inversão da Razão Brancos vs Nulos",
+                "explicacao": "A proporção entre votos brancos e nulos inverteu mais de 50 pontos percentuais entre turnos.",
+                "por_que_suspeito": "Mudança brusca no padrão de descarte de votos na seção.",
+                "severidade": "MEDIA"
+            }},
+            "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO": {{
+                "titulo": "Migração Total de Brancos/Nulos para um Só Concorrente",
+                "explicacao": "A redução de votos inválidos no 2T migrou quase integralmente (> 90%) para um único candidato.",
+                "por_que_suspeito": "Desvio atípico e direcionado de votos inválidos para uma só candidatura.",
+                "severidade": "ALTA"
+            }},
+            "CHK109_ABSTENCAO_MAIOR_QUE_VOTOS_DO_VENCEDOR": {{
+                "titulo": "Abstenção Maior que a Votação do Vencedor",
+                "explicacao": "Mais pessoas faltaram do que o total de votos recebidos pelo candidato vencedor daquela urna.",
+                "por_que_suspeito": "Desmobilização extrema do eleitorado na seção.",
+                "severidade": "BAIXA"
+            }},
+            "CHK110_ABSTENCAO_REDUZIDA_COM_MIGRACAO_UNILATERAL": {{
+                "titulo": "Redução de Abstenção Canalizada 100% para um Candidato",
+                "explicacao": "Novos eleitores compareceram no 2T e 100% dos novos votos foram para o mesmo concorrente.",
+                "por_que_suspeito": "Mobilização totalmente assimétrica de eleitores faltosos.",
+                "severidade": "ALTA"
+            }},
+            "CHK111_HABILITACAO_BIOGRAFICA_SUPERIOR_A_BIOMETRICA": {{
+                "titulo": "Liberação Manual por Ano de Nascimento Superou a Biometria",
+                "explicacao": "Mais eleitores foram liberados digitando o ano de nascimento do que colocando a impressão digital na urna.",
+                "por_que_suspeito": "A exceção virou regra: quando mais da metade da seção vota sem biometria, o mesário assume controle manual da máquina, permitindo votos fantasmas.",
+                "severidade": "ALTA"
+            }},
+            "CHK112_DESABAMENTO_BRUTAL_BIOMETRIA_MAIOR_40PP": {{
+                "titulo": "Desabamento Brutal de Biometria (> 40 pp)",
+                "explicacao": "A validação por digital despencou mais de 40 pontos percentuais entre os dois turnos.",
+                "por_que_suspeito": "Leitor óptico desligado ou contornado maciçamente no 2º turno.",
+                "severidade": "ALTA"
+            }},
+            "CHK113_FALHA_MASSIVA_RECONHECIMENTO_DIGITAL_SEM_BIOMETRIA": {{
+                "titulo": "Eleitores Sem Biometria Triplicaram",
+                "explicacao": "Quantidade de eleitores sem cadastro de digital triplicou de um turno para o outro.",
+                "por_que_suspeito": "Inconsistência cadastral no perfil de identificação biométrica da urna.",
+                "severidade": "MEDIA"
+            }},
+            "CHK114_VOTOS_CANDIDATO_SUPERAM_APTOS_ORIGINAIS": {{
+                "titulo": "Votação do Candidato Supera Eleitores Originais da Seção",
+                "explicacao": "O candidato obteve mais votos do que o total de eleitores que pertenciam originalmente àquela seção.",
+                "por_que_suspeito": "Votação inflada por eleitores temporários e em trânsito (TTE).",
+                "severidade": "ALTA"
+            }},
+            "CHK115_QUEDA_NOMINAL_AMBOS_CANDIDATOS_COM_MAIOR_COMPARECIMENTO": {{
+                "titulo": "Ambos os Concorrentes Perderam Votos com Mais Presença",
+                "explicacao": "Comparecimento subiu, mas tanto Lula quanto Flávio perderam votos nominais absolutos.",
+                "por_que_suspeito": "Vazamento atípico de votos válidos para brancos e nulos.",
+                "severidade": "ALTA"
+            }},
+            "CHK116_TAXA_RETENCAO_PRIMEIRO_TURNO_INFERIOR_A_50PCT": {{
+                "titulo": "Candidato Perdeu Mais da Metade dos Votos do 1T",
+                "explicacao": "O candidato finalista reteve menos de 50% dos votos obtidos no 1T com presença estável.",
+                "por_que_suspeito": "Evasão inexplicável de votos consolidados em apenas 3 semanas.",
+                "severidade": "ALTA"
+            }},
+            "CHK117_TRANSFERENCIA_ZERO_TERCEIRA_VIA_COM_COMPARECIMENTO_CRESCENTE": {{
+                "titulo": "Estoque de 3ª Via Sumiu sem Migrar para Finalistas",
+                "explicacao": "Havia mais de 40 votos de terceira via, o comparecimento subiu, mas nenhum finalista cresceu além dos novos votantes.",
+                "por_que_suspeito": "Votos de candidatos eliminados desapareceram sem destino nominado.",
+                "severidade": "MEDIA"
+            }},
+            "CHK118_DIFERENCA_TEMPO_ENCERRAMENTO_E_EMISSAO_MAIOR_15MIN": {{
+                "titulo": "Impressão do BU Demorou Mais de 15 Minutos Após Encerramento",
+                "explicacao": "A urna levou mais de 15 minutos entre o fechamento oficial às 17h e a emissão física do BU.",
+                "por_que_suspeito": "Retardo operacional incomum que pode indicar travamento, contingência ou intervenção manual.",
+                "severidade": "BAIXA"
+            }},
+            "CHK119_HORARIO_ENCERRAMENTO_IDENTICO_DE_SEGUNDO_ENTRE_URNAS_DISTINTAS": {{
+                "titulo": "Encerramento Cravado às 17:00:00",
+                "explicacao": "Urna encerrada no primeiro segundo regulamentar sem nenhum eleitor na fila.",
+                "por_que_suspeito": "Fechamento automático pontual sem retenção de votantes.",
+                "severidade": "INFO"
+            }},
+            "CHK120_VOTO_UNANIME_NO_LOCAL_DE_VOTACAO": {{
+                "titulo": "Zero Votos para Concorrente em Seção Expressiva do Local",
+                "explicacao": "Um dos dois candidatos finalistas recebeu zero votos válidos em uma seção expressiva do local de votação.",
+                "por_que_suspeito": "Unanimidade artificial extrema em colégios eleitorais com pluralidade de eleitores.",
                 "severidade": "ALTA"
             }}
         }};
