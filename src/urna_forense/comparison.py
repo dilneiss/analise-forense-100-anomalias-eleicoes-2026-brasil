@@ -3065,9 +3065,11 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         .card-header {{ display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }}
         .grid {{ display: grid; gap: 1rem; }}
         .grid-cols-6 {{ grid-template-columns: repeat(6, minmax(0, 1fr)); }}
+        .grid-cols-4 {{ grid-template-columns: repeat(4, minmax(0, 1fr)); }}
+        .grid-cols-3 {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }}
         .grid-cols-2 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
-        @media (max-width: 1200px) {{ .grid-cols-6 {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }} .grid-cols-2 {{ grid-template-columns: repeat(1, minmax(0, 1fr)); }} }}
-        @media (max-width: 768px) {{ .grid-cols-6 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} .container-fluid {{ padding: 0.75rem 0.75rem; }} }}
+        @media (max-width: 1200px) {{ .grid-cols-6 {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }} .grid-cols-4 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} .grid-cols-2 {{ grid-template-columns: repeat(1, minmax(0, 1fr)); }} }}
+        @media (max-width: 768px) {{ .grid-cols-6 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} .grid-cols-4 {{ grid-template-columns: repeat(1, minmax(0, 1fr)); }} .grid-cols-3 {{ grid-template-columns: repeat(1, minmax(0, 1fr)); }} .container-fluid {{ padding: 0.75rem 0.75rem; }} }}
         .stat-card {{ background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.875rem 1rem; }}
         .stat-label {{ font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; }}
         .stat-value {{ font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem; font-family: ui-monospace, monospace; }}
@@ -3173,7 +3175,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     <div style="font-size: 0.72rem; color: #991b1b; font-weight: 700;">Votos excedentes recebidos por Lula acima do padrão de urnas consistentes</div>
                 </div>
             </div>
-            <div class="grid grid-cols-4" style="gap: 0.75rem;">
+            <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem;">
                 <div class="stat-card" style="background: #ffffff; border: 1px solid #fecdd3;">
                     <div class="stat-label" style="color: #991b1b;">Urnas Consistentes (Sem Anomalias)</div>
                     <div class="stat-value" style="font-size: 1.25rem; color: #0f172a;">{t_cons.get('pct_lula_validos_2t', 0)}% dos votos</div>
@@ -3207,10 +3209,10 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 </div>
             </div>
 
-            <!-- GAUGES / MEDIDORES DE CERTEZA -->
-            <div class="grid grid-cols-3" style="gap: 1.25rem; padding: 0.5rem 0;">
+            <!-- GAUGES / MEDIDORES DE CERTEZA (LADO A LADO) -->
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; padding: 0.5rem 0;">
                 <!-- GAUGE 1: FRAUDE SISTÊMICA ESTADUAL -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #10b981;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #10b981; display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #059669;">NÍVEL 1 &bull; ESCALA ESTADUAL</div>
                     <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-top: 0.35rem;">Fraude Sistêmica que Mudou o Vencedor</div>
                     <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">Alteração do Resultado Geral da Eleição em SC</div>
@@ -3232,7 +3234,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 </div>
 
                 <!-- GAUGE 2: FRAUDE PROCEDIMENTAL LOCAL / MESÁRIOS -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #ef4444;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #ef4444; display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #b91c1c;">NÍVEL 2 &bull; SEÇÕES ESPECÍFICAS</div>
                     <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-top: 0.35rem;">Manipulação Humana e Voto Fantasma</div>
                     <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">Bypass de Biometria e Liberação Manual</div>
@@ -3254,7 +3256,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 </div>
 
                 <!-- GAUGE 3: ANOMALIA DE VOTAÇÃO LOCAL (CHK046) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #f59e0b;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #f59e0b; display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #d97706;">NÍVEL 3 &bull; 292 SEÇÕES CRÍTICAS</div>
                     <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-top: 0.35rem;">Anomalia de Votação (CHK046)</div>
                     <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">Queda Nominal com Mais Comparecimento</div>
