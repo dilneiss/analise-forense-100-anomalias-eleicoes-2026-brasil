@@ -1,15 +1,14 @@
 # Ferramenta Forense de Auditoria da Urna Eletrônica (TSE)
-
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![Tests](https://img.shields.io/badge/tests-60%20passed-success.svg)](tests/)
 [![Security: Read-Only](https://img.shields.io/badge/custodia-read--only%20imutavel-emerald.svg)](#1-princípios-de-segurança-e-custódia-forense)
 [![Auditoria: 1T vs 2T](https://img.shields.io/badge/auditoria-1T%20vs%202T%20(120%20regras)-purple.svg)](#5-auditoria-comparativa-1º-vs-2º-turno-120-regras-forenses)
-[![Offline & Zero CDN](https://img.shields.io/badge/relatorios-100%25%20offline%20full--width-orange.svg)](#7-painel-interativo-html-100-largura-com-modal-e-glossário)
+[![Offline & Zero CDN](https://img.shields.io/badge/relatorios-100%25%20offline%20full--width-orange.svg)](#7-painel-interativo-html-100-largura-modal-e-glossário)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Suíte forense de alta performance para auditoria técnica, decodificação ASN.1 em baixo nível, conferência criptográfica e análise comparativa de integridade entre turnos eleitorais (1º vs 2º Turno) dos arquivos oficiais gerados pelas urnas eletrônicas brasileiras do Tribunal Superior Eleitoral (TSE).
 
-Desenvolvida com rigor científico e neutralidade pericial, em estrita conformidade com a norma **ISO/IEC 27037 (Preservação de Evidências Digitais)** e com a garantia constitucional do **sigilo do voto**.
+Projetada com rigor científico, matemático e neutralidade pericial, em estrita conformidade com a norma **ISO/IEC 27037 (Diretrizes para Preservação de Evidências Digitais)** e com a garantia constitucional do **sigilo do voto**.
 
 ---
 
@@ -18,17 +17,22 @@ Desenvolvida com rigor científico e neutralidade pericial, em estrita conformid
 1. [Princípios de Segurança e Custódia Forense](#1-princípios-de-segurança-e-custódia-forense)
 2. [Arquivos Oficiais Auditados e Estrutura Técnica](#2-arquivos-oficiais-auditados-e-estrutura-técnica)
 3. [Requisitos e Instalação](#3-requisitos-e-instalação)
-4. [Como Usar (Comandos em Linha Única)](#4-como-usar-comandos-em-linha-única)
-5. [Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)](#5-auditoria-comparativa-1º-vs-2º-turno-100-regras-forenses)
-   - [5.1 Catálogo dos 100 Detectores Automatizados](#51-catálogo-dos-100-detectores-automatizados)
+4. [Como Usar: Comando Único de Auditoria Unificada](#4-como-usar-comando-único-de-auditoria-unificada)
+5. [Auditoria Comparativa 1º vs 2º Turno (120 Regras Forenses)](#5-auditoria-comparativa-1º-vs-2º-turno-120-regras-forenses)
+   - [5.1 Catálogo dos 120 Detectores Automatizados](#51-catálogo-dos-120-detectores-automatizados)
    - [5.2 Explicação dos Candidatos de Terceira Via do 1º Turno](#52-explicação-dos-candidatos-de-terceira-via-do-1º-turno)
-6. [Análise Pericial Preliminar: Onde Estão as Inconsistências e Riscos de Fraude](#6-análise-pericial-preliminar-onde-estão-as-inconsistências-e-riscos-de-fraude)
-   - [6.1 Padrão 1: Quedas Nominais de Votos com Aumento de Comparecimento (292 seções)](#61-padrão-1-quedas-nominais-de-votos-com-aumento-de-comparecimento-292-seções)
-   - [6.2 Padrão 2: Trocas Físicas de Urnas e Cargas com Município Divergente (189 e 90 seções)](#62-padrão-2-trocas-físicas-de-urnas-e-cargas-com-município-divergente-189-e-90-seções)
-   - [6.3 Padrão 3: Modificação do Eleitorado Original Congelado (1.743 seções)](#63-padrão-3-modificação-do-eleitorado-original-congelado-1743-seções)
-   - [6.4 Padrão 4: Anomalias de Biometria e Liberação Manual por Ano de Nascimento](#64-padrão-4-anomalias-de-biometria-e-liberação-manual-por-ano-de-nascimento)
-   - [6.5 Padrão 5: Fluxo e Destino dos 373.893 Votos de Terceira Via](#65-padrão-5-fluxo-e-destino-dos-373893-votos-de-terceira-via)
-7. [Painel Interativo HTML (100% Largura, Modal e Glossário)](#7-painel-interativo-html-100-largura-com-modal-e-glossário)
+   - [5.3 Procedimento Normal vs Suspeita de Fraude (FC vs CHK059)](#53-procedimento-normal-vs-suspeita-de-fraude-fc-vs-chk059)
+6. [Análise Pericial Avançada: Veredito Técnico e Probabilidade de Fraude](#6-análise-pericial-avançada-veredito-técnico-e-probabilidade-de-fraude)
+   - [6.1 Gráficos Visuais de Auditoria](#61-gráficos-visuais-de-auditoria)
+   - [6.2 Padrão 1: Quedas Nominais de Votos com Aumento de Comparecimento (292 seções)](#62-padrão-1-quedas-nominais-de-votos-com-aumento-de-comparecimento-292-seções)
+   - [6.3 Padrão 2: Trocas Físicas de Urnas e Cargas com Análise Geodésica de Distância em km](#63-padrão-2-trocas-físicas-de-urnas-e-cargas-com-análise-geodésica-de-distância-em-km)
+   - [6.4 Padrão 3: Modificação do Eleitorado Original e Limiar de Relevância (> 0.5%)](#64-padrão-3-modificação-do-eleitorado-original-e-limiar-de-relevância--05)
+   - [6.5 Padrão 4: O Desabamento da Biometria e o Risco de Voto Fantasma por Liberação Manual](#65-padrão-4-o-desabamento-da-biometria-e-o-risco-de-voto-fantasma-por-liberação-manual)
+   - [6.6 Padrão 5: Fluxo e Destino dos 373.893 Votos de Terceira Via](#66-padrão-5-fluxo-e-destino-dos-373893-votos-de-terceira-via)
+   - [6.7 Impacto Eleitoral: Quantidade de Votos a Mais que Lula Teve nas Urnas Inconsistentes](#67-impacto-eleitoral-quantidade-de-votos-a-mais-que-lula-teve-nas-urnas-inconsistentes)
+   - [6.8 Veredito Pericial: Houve Fraude na Eleição? (Graus e Percentuais de Certeza)](#68-veredito-pericial-houve-fraude-na-eleição-graus-e-percentuais-de-certeza)
+   - [6.9 Ações e Provas Forenses Recomendadas](#69-ações-e-provas-forenses-recomendadas)
+7. [Painel Interativo HTML (100% Largura, Modal e Glossário)](#7-painel-interativo-html-100-largura-modal-e-glossário)
 8. [Testes Automatizados](#8-testes-automatizados)
 
 ---
@@ -36,7 +40,7 @@ Desenvolvida com rigor científico e neutralidade pericial, em estrita conformid
 ## 1. Princípios de Segurança e Custódia Forense
 
 - **Modo Estritamente Somente Leitura:** Os arquivos de evidência oficial nunca são abertos com permissão de escrita e jamais sofrem qualquer modificação (`open(path, 'rb')`).
-- **Análise Não Destrutiva:** Nenhuma descompactação ou escrita temporária ocorre dentro do diretório de entrada. Todas as saídas são gravadas em pasta isolada de análise (`analysis/`, `comparison_sc_geral/`, etc.).
+- **Análise Não Destrutiva:** Nenhuma descompactação ou escrita temporária ocorre dentro do diretório de entrada. Todas as saídas são gravadas em pasta isolada de análise (`relatorio_auditoria_estado/`, `comparison_sc_geral/`, etc.).
 - **Conferência Pré e Pós-Execução (Integridade Provada):**
   1. Todos os arquivos são inventariados e recebem hashes **SHA-256** e **SHA-512** gravados em `manifest.json`.
   2. Ao final da análise, os hashes dos arquivos originais são recalculados para provar matematicamente que nenhum byte da evidência foi violado durante a auditoria (`post_run_verification.ok = true`).
@@ -68,8 +72,8 @@ A ferramenta processa o conjunto oficial de arquivos distribuídos pelo TSE, ide
 ### Instalação
 
 ```bash
-git clone https://github.com/dilneiss/urna-forense.git
-cd urna-forense
+git clone https://github.com/dilneiss/analise-forense-100-anomalias-eleicoes-2026-brasil.git
+cd analise-forense-100-anomalias-eleicoes-2026-brasil
 python -m venv .venv
 ```
 
@@ -86,7 +90,7 @@ pip install -r requirements.txt
 
 ## 4. Como Usar: Comando Único de Auditoria Unificada
 
-A auditoria completa de um estado inteiro (todas as seções, 1º e 2º Turno, 100 verificações forenses, biometria, fluxo de terceira via, apuração de votos excedentes de Lula, cálculo de certeza de fraude com gráficos visuais de medidores e base JSON completa) é executada em **um único comando direto**:
+A auditoria completa de um estado inteiro (todas as seções, 1º e 2º Turno, 120 verificações forenses, biometria, fluxo de terceira via, apuração de votos excedentes de Lula, cálculo de certeza de fraude com gráficos visuais de medidores e base JSON completa) é executada em **um único comando direto**:
 
 ### 🌟 O Comando Único (Audit State Completo):
 ```bash
@@ -98,7 +102,7 @@ python analyzer.py --audit-state "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_v
 python analyzer.py --1t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --2t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC"
 ```
 
-> **Zero Configuração:** O sistema auto-detecta a tabela oficial de municípios (`data/municipio_tse_ibge.csv`), decodifica todos os 34.652 Boletins de Urna em paralelo (32 threads) e gera o relatório unificado completo em `relatorio_auditoria_estado/comparison_report.html` em cerca de 2 minutos.
+> **Zero Configuração:** O sistema auto-detecta a tabela oficial de municípios (`data/municipio_tse_ibge.csv`) e a base geodésica (`data/municipios_sc_coords.json`), decodifica todos os 34.652 Boletins de Urna em paralelo (32 threads) e gera o relatório unificado completo em `relatorio_auditoria_estado/comparison_report.html` em cerca de 2 minutos.
 
 ### Comandos Opcionais para Filtros Específicos:
 ```bash
@@ -110,6 +114,7 @@ python analyzer.py --audit-state "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_v
 ```bash
 python analyzer.py --input "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --output "analysis_rapida" --uf SC --municipio 80535 --zona 44 --secao 144 --fast
 ```
+
 ---
 
 ## 5. Auditoria Comparativa 1º vs 2º Turno (120 Regras Forenses)
@@ -117,8 +122,8 @@ python analyzer.py --input "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2
 ### 5.1 Catálogo dos 120 Detectores Automatizados
 
 As 120 regras cobrem 9 eixos de integridade:
-- **1. Hardware e Carga (`CHK001` a `CHK015`):** Troca de urna física, troca de FV, atualização da Flash de Carga (FC - procedimento normal do 2T), modelo divergente, alteração de software oficial, carga gerada para outro município e serial TPM divergente.
-- **2. Cadastro e Eleitorado (`CHK016` a `CHK030`):** Variação de eleitores originais (`aptos_secao`), redução/aumento do caderno congelado e picos de transferência temporária (TTE).
+- **1. Hardware e Carga (`CHK001` a `CHK015`):** Troca de urna física, troca de FV, atualização da Flash de Carga (FC - procedimento normal do 2T), modelo divergente, alteração de software oficial, carga gerada para outro município com distância em km e serial TPM divergente.
+- **2. Cadastro e Eleitorado (`CHK016` a `CHK030`):** Variação de eleitores originais com limiar de relevância de 0,5% (`aptos_secao`), redução/aumento do caderno congelado e picos de transferência temporária (TTE).
 - **3. Comparecimento e Abstenção (`CHK031` a `CHK045`):** Votos superando aptos, 100% de presença, abstenção acima de 50% e 70%, oscilações extremas e desvio da média municipal.
 - **4. Votação Presidencial e Terceira Via (`CHK046` a `CHK065`):** Queda de finalista com maior comparecimento (`CHK046`), queda com comparecimento igual (`CHK047`), queda desproporcional à abstenção (`CHK048`), voto em candidato não concorrente no 2T (`CHK059`), absorção de 100% da 3ª via (`CHK053`), crescimento além do teto matemático (`CHK054`) e *swings* políticos extremos superiores a 40 pp e 50 pp (`CHK056`, `CHK057`).
 - **5. Biometria e Habilitação (`CHK066` a `CHK075`):** Quedas drásticas de biometria (> 20 pp e > 30 pp), surto de liberação por ano de nascimento (> 15 pp e > 25 pp), desativação de biometria e correlação de liberação manual com votação unânime.
@@ -126,6 +131,7 @@ As 120 regras cobrem 9 eixos de integridade:
 - **7. Brancos e Nulos (`CHK086` a `CHK092`):** Explosão de brancos/nulos (> 15 pp), taxa superior a 30% e extinção total em seções grandes.
 - **8. Integridade Criptográfica (`CHK093` a `CHK100`):** Divergência entre soma de votos e comparecimento no BU, quebra da cadeia SHA-512 e hash divergente do envelope `vota.vsc`.
 - **9. Análise Forense Avançada e Benford (`CHK101` a `CHK120`):** Concentração no 1º dígito pela Lei de Benford, dígitos redondos em centena (00), validação de urna de contingência, data de carga posterior ao encerramento, inversão da razão brancos/nulos, liberação manual por ano de nascimento superando a biometria (`CHK111`), desabamento de biometria > 40 pp (`CHK112`), retenção de 1T < 50% (`CHK116`), abstenção superando votos do vencedor (`CHK109`), e desvio extremo intra-local (`CHK120`).
+
 ---
 
 ### 5.2 Explicação dos Candidatos de Terceira Via do 1º Turno
@@ -148,7 +154,9 @@ Na totalização do 1º turno aparecem candidatos que deixam de receber votos no
 
 **Conclusão Metodológica:** O fato desses candidatos terem **0 votos no 2º turno não é uma anomalia ou fraude**, pois a lei eleitoral brasileira determina que apenas os dois mais votados disputam o 2º turno. O total de **373.893 votos** desses 11 candidatos representa a **reserva de votos migrantes** que a ferramenta audita para verificar se o crescimento dos finalistas obedece às leis da matemática.
 
-### 5.3 O que é Procedimento Normal vs O que é Suspeito no 2º Turno (FC vs CHK059)
+---
+
+### 5.3 Procedimento Normal vs Suspeita de Fraude (FC vs CHK059)
 
 - **Atualização da Flash de Carga (`CHK003` - Normal e Esperado):** A Flash de Carga (FC) é o cartão de memória utilizado pelo cartório eleitoral para gravar na urna a cédula de votação. Entre o 1º e o 2º turno, **é procedimento padrão e esperado** que os cartórios eleitorais atualizem a Flash de Carga para configurar a nova cédula exclusiva com os dois candidatos que avançaram ao 2º turno. Por isso, essa regra é classificada como **`INFO` (Informativo Operacional)**, mantida no relatório apenas para fins de rastreabilidade de mídias.
 - **O que é Verdadeiramente Suspeito: Voto Nominal em Candidato Não Concorrente (`CHK059` - ALTA):** O que seria uma anomalia gravíssima e indicativo imediato de fraude é se surgisse votação nominal para candidatos que não participam do 2º turno (ou para números inexistentes). No 2º turno, se o eleitor digita 70 (Cury), 14 (Renan), 55 (Caiado) ou qualquer outro número, **a urna tem a obrigação legal de registrar como VOTO NULO**. A regra `CHK059` audita cada voto para assegurar que nenhuma urna tenha computado voto nominal para candidatos eliminados ou fantasmas no 2º turno. Em Santa Catarina, a auditoria confirmou que 100% dos votos nominais do 2T foram restritos aos candidatos habilitados (`CHK059 = 0`).
@@ -165,11 +173,11 @@ AUDITORIA FORENSE COMPARATIVA: 1º TURNO vs 2º TURNO (120 VERIFICAÇÕES TÉCNI
 ================================================================================
 Tempo de processamento: 129.06s | Seções analisadas: 17,326
 Total de ocorrências de anomalias: 7,027
-Seções 100% Consistentes / Sem Anomalias: 14,888 (85.93%)
-Seções com Ajustes Cadastrais Residuais (INFO <= 0.5%): 1,490 (8.60%)
-Seções com Inconsistências Relevantes (ALTA/MÉDIA): 890 (5.14%)
-  - Severidade ALTA (Crítica): 762 seções
-  - Severidade MÉDIA: 128 seções
+Seções 100% Consistentes / Sem Anomalias: 12,919 (74.56%)
+Seções com Ajustes Cadastrais Residuais (INFO <= 0.5%): 1,289 (7.44%)
+Seções com Inconsistências Relevantes (ALTA/MÉDIA): 904 (5.22%)
+  - Severidade ALTA (Crítica): 782 seções
+  - Severidade MÉDIA: 122 seções
 --------------------------------------------------------------------------------
 AUDITORIA BIOMÉTRICA ESTADUAL:
   - Votos Com Biometria: 1T=4,058,005 (87.3%) │ 2T=4,152,006 (87.18%)
@@ -186,15 +194,15 @@ TOTALIZAÇÃO COMPARATIVA PRESIDENCIAL EM SC:
 
 ---
 
-### Gráficos Visuais de Auditoria
+### 6.1 Gráficos Visuais de Auditoria
 
 #### Gráfico 1: Panorama Geral de Integridade das 17.326 Seções de SC
 ```mermaid
 pie title Distribuição de Integridade das Seções de SC (17.326 Urnas)
-    "100% Consistentes (Sem Anomalias)" : 14888
-    "Ajuste Cadastral Residual (INFO <= 0.5%)" : 1490
-    "Inconsistências Críticas (ALTA)" : 762
-    "Inconsistências Médias (MÉDIA)" : 128
+    "100% Consistentes (Sem Anomalias)" : 12919
+    "Ajustes Residuais Operacionais (INFO <= 0.5%)" : 1289
+    "Inconsistências Críticas (ALTA)" : 782
+    "Inconsistências Médias (MÉDIA)" : 122
 ```
 
 #### Gráfico 2: Desempenho dos Candidatos (Urnas Consistentes vs Inconsistentes)
@@ -225,7 +233,7 @@ Chapecó             : [████░░░░] 14 seções ALTA
 
 ---
 
-### 6.1 Padrão 1: Quedas Nominais de Votos com Aumento de Comparecimento (292 seções)
+### 6.2 Padrão 1: Quedas Nominais de Votos com Aumento de Comparecimento (292 seções)
 
 Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de votação (`CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR`):
 - **O Fenômeno:** Mais eleitores compareceram à urna no 2º turno ($C_{2T} > C_{1T}$), não havia concorrência de terceira via, e mesmo assim um dos candidatos finalistas **perdeu votos nominais absolutos** em relação ao 1º turno.
@@ -237,16 +245,17 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
 
 ---
 
-### 6.2 Padrão 2: Trocas Físicas de Urnas e Cargas com Município Divergente (189 e 90 seções)
+### 6.3 Padrão 2: Trocas Físicas de Urnas e Cargas com Análise Geodésica de Distância em km
 
 - **189 urnas físicas trocadas entre turnos (`CHK001`):** Em 189 seções, o número interno da máquina de votação e o serial da Flash de Votação mudaram completamente entre o 1T e o 2T.
 - **109 seções com modelo de urna divergente (`CHK004`):** Urnas de uma geração de hardware no 1T foram substituídas por urnas de modelo diferente no 2T.
-- **90 seções com carga de outro município (`CHK014`):** O Boletim de Urna do 2T foi assinado com código de correspondência vinculado a um município diferente (ex.: seção em Vitor Meireles funcionando com carga de Ibirama; seção em Apiúna funcionando com carga de Indaial; seção em Gaspar com carga de Ilhota; seção em Chapecó com carga de Paial).
-- **Por que levanta suspeita:** A substituição de terminais físicos e o uso de cargas de outras cidades sem justificativa expressa rompem a rastreabilidade da custódia física da urna.
+- **Auditoria Geodésica das 90 Seções com Carga de Outro Município (`CHK014`):**
+  - **Cidades Vizinhas / Limítrofes (distância <= 45 km):** Em cidades como Vitor Meireles $\leftrightarrow$ Ibirama (36,7 km), Apiúna $\leftrightarrow$ Indaial (21,6 km) e Balneário Camboriú $\leftrightarrow$ Camboriú (3,8 km), o remanejamento decorre de atendimento de contingência pelo cartório eleitoral regional da comarca (classificado como `BAIXA`).
+  - **Cidades Não Vizinhas / Distantes (distância > 45 km):** Em seções como Itaiópolis $\leftrightarrow$ Santa Terezinha (50,2 km), Alfredo Wagner $\leftrightarrow$ Rio Rufino (47,5 km) e Timbó Grande $\leftrightarrow$ Santa Cecília (45,1 km), a presença de carga de município distante e de outra comarca é atípica e classificada como **`ALTA` (Alerta Crítico de Custódia)**.
 
 ---
 
-### 6.3 Padrão 3: Modificação do Eleitorado Original e Limiar de Relevância (> 0.5%)
+### 6.4 Padrão 3: Modificação do Eleitorado Original e Limiar de Relevância (> 0.5%)
 
 - Em **1.743 seções eleitorais**, houve registro de oscilação no número de eleitores aptos originais da seção (`qtd_eleitores_aptos_secao`, `CHK016`):
   - **1.528 seções tiveram variação residual <= 0.5% (apenas +1 ou -1 eleitor):** Variações decorrentes de ajustes cartorários rotineiros (reativações pontuais de título sob tutela judicial), corretamente categorizadas como **`INFO` (não críticas)**.
@@ -254,7 +263,7 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
 
 ---
 
-### 6.4 Padrão 4: O Desabamento da Biometria e o Risco de Voto Fantasma por Liberação Manual
+### 6.5 Padrão 4: O Desabamento da Biometria e o Risco de Voto Fantasma por Liberação Manual
 
 - **A Pergunta Pericial Central:** *Como é possível a biometria funcionar para mais de 76% dos eleitores no 1º turno e despencar para 48% no 2º turno se o eleitorado da seção é rigorosamente o mesmo?*
 - **Inviabilidade Biológica:** Não existe nenhuma justificativa biológica para que as impressões digitais de dezenas de eleitores cadastrados parem de ser reconhecidas 21 dias após o 1º turno.
@@ -263,11 +272,11 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
   - **2º Turno:** Comparecimento de 230 eleitores &bull; **112 validados por digital (apenas 48,7%)** &bull; **116 liberados manualmente por ano de nascimento (+136,7% de aumento manual!)**.
   - **Conexão Criminológica na Mesma Urna:** Esta exata seção teve a urna física substituída (`CHK001`), modelo de urna divergente (`CHK004`), flash de votação trocada (`CHK002`), flash de carga trocada (`CHK003`) e **a carga pertencia a Ibirama (81353, `CHK014`)**.
 - **O Mecanismo de Fraude (Bypass do Leitor Óptico):** A validação biométrica por digital é a única trava de segurança física presencial. Quando a biometria cai e a liberação manual explode, o mesário assume controle irrestrito da máquina (digitando o ano de nascimento do eleitor). Isso abre a brecha clássica para que mesários habilitem votos no lugar de eleitores ausentes (voto fantasma), sem deixar rastro digital.
-- **Dimensão Estadual:** Em todo o estado de Santa Catarina, **610.297 votos foram registrados no 2º turno sem nenhuma validação por impressão digital**.
+- **Dimensão Estadual:** Em todo o estado de Santa Catarina, **610.297 votos foram registrados no 2º turno sem nenhuma validação por impressão digital**, e em **5 seções críticas (`CHK111`)** as liberações manuais por ano de nascimento superaram a totalidade das validações digitais.
 
 ---
 
-### 6.5 Padrão 5: Fluxo e Destino dos 373.893 Votos de Terceira Via
+### 6.6 Padrão 5: Fluxo e Destino dos 373.893 Votos de Terceira Via
 
 - No 1º turno, a terceira via somou **373.893 votos** (8,31% dos votos válidos).
 - No 2º turno, o total de votantes no estado subiu em **+114.144 eleitores**.
@@ -277,7 +286,7 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
 
 ---
 
-### 6.6 Impacto Eleitoral: Quantidade de Votos a Mais que Lula Teve nas Urnas com Inconsistência
+### 6.7 Impacto Eleitoral: Quantidade de Votos a Mais que Lula Teve nas Urnas Inconsistentes
 
 Ao segregar a apuração de Santa Catarina entre as **urnas consistentes (16.378 seções)** e as **urnas com inconsistências relevantes (890 seções)**, a auditoria revelou um desvio estatístico expressivo a favor de Lula:
 
@@ -296,7 +305,7 @@ Ao segregar a apuração de Santa Catarina entre as **urnas consistentes (16.378
 
 ---
 
-### 6.7 Conclusão Pericial: Houve Fraude na Eleição? (Graus de Certeza)
+### 6.8 Veredito Pericial: Houve Fraude na Eleição? (Graus e Percentuais de Certeza)
 
 Com base nos dados matemáticos, periciais e criptográficos auditados em Santa Catarina, a conclusão sobre a ocorrência de fraude divide-se tecnicamente em dois níveis:
 
@@ -318,12 +327,12 @@ flowchart TD
 
 ---
 
-### 6.8 Ações e Provas Forenses Recomendadas
+### 6.9 Ações e Provas Forenses Recomendadas
 
 Para peritos, advogados eleitorais e órgãos fiscalizadores que desejem converter os indícios técnicos em provas judiciais materiais, recomenda-se:
 1. **Auditoria das Folhas de Presença Físicas em Papel:** Confrontar as assinaturas manuais no caderno de votação das seções com desabamento de biometria (Vitor Meireles, Ibirama, Itapema, Barra Velha) com a lista de eleitores que foram liberados por digitação do ano de nascimento. Se constar voto na urna sem a assinatura física do eleitor no papel, a fraude material estará consumada.
 2. **Inspeção dos Logs de Eventos (`logd.dat`):** Rastrear nas 292 seções com `CHK046` os eventos de voto computado após as 16h para checar a velocidade das votações e o intervalo entre habilitações manuais.
-3. **Tomada de Depoimento de Mesários:** Inquirição dos presidentes de mesa das 90 seções que operaram com mídias de carga de outros municípios (`CHK014`).
+3. **Tomada de Depoimento de Mesários:** Inquirição dos presidentes de mesa das seções que operaram com mídias de carga de municípios distantes (`CHK014`).
 
 ---
 
@@ -347,13 +356,15 @@ O relatório visual gerado em **`comparison_sc_geral/comparison_report.html`** f
    - `Inconsistências Identificadas`
 3. **Botão 🔍 Inspecionar (Modal com Medidor da Urna e Tradução para Leigos):**
    Ao clicar em **🔍 Detalhes** em qualquer linha da tabela, abre-se um modal interativo que decompõe cada anomalia daquela seção com:
-   - **O que foi identificado na urna** (valores numéricos exatos).
+   - **O que foi identificado na urna** (valores numéricos exatos e distância em km entre cidades).
    - **O que significa em linguagem simples** (explicação acessível para leigos).
    - **Por que isso levanta suspeita pericial** (o risco técnico envolvido).
-4. **Dicionário e Tradutor das 100 Inconsistências:**
-   Card interativo com busca em tempo real que permite pesquisar qualquer termo (ex.: `biometria`, `queda`, `carga`, `tte`, `modelo`) e ler a tradução pericial de todas as 100 regras.
+4. **Dicionário e Tradutor das 120 Inconsistências:**
+   Card interativo com busca em tempo real que permite pesquisar qualquer termo (ex.: `biometria`, `queda`, `carga`, `tte`, `modelo`) e ler a tradução pericial de todas as 120 regras.
 5. **Ordenação com 1 Clique por Chance de Fraude:**
    A listagem é **ordenada por padrão pela Maior Chance de Fraude (93% &rarr; 0%)**, permitindo também ordenar por Severidade, Maior Queda de Flávio, Maior Queda de Lula, Maior Variação de Comparecimento ou clicando no cabeçalho de qualquer coluna (incluindo o cabeçalho `Chance Fraude (%)`).
+6. **100% Autônomo e Offline:**
+   Não carrega fontes ou scripts externos. Opera com total segurança em ambientes isolados (*air-gapped*).
 
 ---
 
@@ -368,6 +379,7 @@ pytest
 Saída:
 ```text
 ============================== 60 passed in 0.83s ===============================
+```
 
 ---
 
