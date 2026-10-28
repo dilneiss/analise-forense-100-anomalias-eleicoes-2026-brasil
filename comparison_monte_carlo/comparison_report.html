@@ -3,85 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auditoria Comparativa Forense 1T vs 2T - Eleições Gerais 2026</title>
+    <title>Auditoria Forense Comparativa 1T vs 2T - 100 Verificações (Eleições 2026)</title>
     <style>
-        /* CSS reset & utilitários modernos embarcados (100% offline, zero CDN) */
         *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e2e8f0; }
         body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.5; }
-        .container { width: 100%; max-width: 1400px; margin-left: auto; margin-right: auto; padding: 1.5rem 1rem; }
+        .container { width: 100%; max-width: 1550px; margin-left: auto; margin-right: auto; padding: 1.5rem 1rem; }
         .card { background-color: #ffffff; border-radius: 0.75rem; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); padding: 1.25rem; margin-bottom: 1.5rem; }
-        .card-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; margin-bottom: 1rem; }
+        .card-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
         .grid { display: grid; gap: 1rem; }
-        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
         .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        @media (max-width: 900px) { .grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
-        @media (max-width: 600px) { .grid-cols-4 { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
-        .stat-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem; }
-        .stat-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; }
-        .stat-value { font-size: 1.75rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem; font-family: ui-monospace, monospace; }
-        .stat-desc { font-size: 0.75rem; color: #64748b; margin-top: 0.25rem; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem; }
-        th { background-color: #f8fafc; color: #475569; font-weight: 600; padding: 0.625rem 0.75rem; border-bottom: 2px solid #e2e8f0; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
-        td { padding: 0.625rem 0.75rem; border-bottom: 1px solid #f1f5f9; }
-        input, select { background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: #0f172a; outline: none; }
+        @media (max-width: 1200px) { .grid-cols-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
+        @media (max-width: 768px) { .grid-cols-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .stat-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.875rem 1rem; }
+        .stat-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; }
+        .stat-value { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem; font-family: ui-monospace, monospace; }
+        .stat-desc { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.8125rem; }
+        th { background-color: #f8fafc; color: #475569; font-weight: 700; padding: 0.625rem 0.5rem; border-bottom: 2px solid #e2e8f0; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.04em; cursor: pointer; user-select: none; }
+        th:hover { background-color: #f1f5f9; color: #0f172a; }
+        th.sorted-asc::after { content: " ↑"; color: #2563eb; }
+        th.sorted-desc::after { content: " ↓"; color: #2563eb; }
+        td { padding: 0.5rem 0.5rem; border-bottom: 1px solid #f1f5f9; }
+        input, select { background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.45rem 0.65rem; font-size: 0.8125rem; color: #0f172a; outline: none; }
         input:focus, select:focus { border-color: #3b82f6; ring: 2px #93c5fd; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.375rem; font-weight: 600; padding: 0.5rem 1rem; font-size: 0.875rem; cursor: pointer; transition: background 0.15s ease; }
-        .btn-primary { background: #2563eb; color: #ffffff; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .badge { display: inline-flex; align-items: center; padding: 0.125rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 700; }
+        .badge { display: inline-block; padding: 0.15rem 0.45rem; border-radius: 0.25rem; font-size: 0.6875rem; font-weight: 700; margin-right: 4px; margin-bottom: 4px; line-height: 1.2; text-decoration: none; }
         .badge-red { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
         .badge-yellow { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
         .badge-blue { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+        .badge-anom { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; font-family: ui-monospace, monospace; }
         .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- HEADER -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid #0f172a; padding-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid #0f172a; padding-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
             <div>
-                <span class="badge badge-blue font-mono" style="margin-bottom: 0.5rem;">AUDITORIA FORENSE ELEITORAL OFICIAL</span>
-                <h1 style="font-size: 1.75rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Relatório Comparativo de Inconsistências: 1º vs 2º Turno</h1>
-                <p style="font-size: 0.875rem; color: #475569; margin: 0;">Eleições Gerais 2026 &bull; Cruzamento Integral de Boletins de Urna (BUs) Oficiais do TSE</p>
+                <span class="badge badge-blue font-mono" style="margin-bottom: 0.5rem;">SUÍTE DE AUDITORIA FORENSE ELEITORAL OFICIAL</span>
+                <h1 style="font-size: 1.625rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)</h1>
+                <p style="font-size: 0.8125rem; color: #475569; margin: 0;">Eleições Gerais 2026 &bull; Cruzamento de BUs Oficiais &bull; Biometria, Cadastral, Aptos e Fluxo de Votação</p>
             </div>
             <div style="text-align: right; font-size: 0.8125rem; color: #64748b;">
-                <div><strong>Iniciado:</strong> 2026-10-28T14:53:32.247749</div>
-                <div><strong>Duração da análise:</strong> 0.41s</div>
-                <div><strong>Estado/UF:</strong> Santa Catarina (SC)</div>
+                <div><strong>Data da análise:</strong> 2026-10-28T15:21:20.748931</div>
+                <div><strong>Tempo de execução:</strong> 0.68s (100 detectores ativos)</div>
+                <div><strong>Escopo:</strong> Estado de Santa Catarina (SC)</div>
             </div>
         </div>
 
-        <!-- KPI CARDS -->
-        <div class="grid grid-cols-4" style="margin-bottom: 1.5rem;">
+        <!-- 6 KPI CARDS -->
+        <div class="grid grid-cols-6" style="margin-bottom: 1.5rem;">
             <div class="stat-card" style="border-left: 4px solid #3b82f6;">
-                <div class="stat-label">Total de Seções Auditadas</div>
+                <div class="stat-label">Seções Auditadas</div>
                 <div class="stat-value">24</div>
-                <div class="stat-desc">Pares completos de BUs no 1T e 2T</div>
+                <div class="stat-desc">Pares completos 1T/2T</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #ef4444;">
-                <div class="stat-label">Seções com Alguma Inconsistência</div>
+                <div class="stat-label">Com Inconsistências</div>
                 <div class="stat-value" style="color: #b91c1c;">2</div>
-                <div class="stat-desc">8.33% do eleitorado estadual</div>
+                <div class="stat-desc">8.33% do total estadual</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #f59e0b;">
-                <div class="stat-label">Inconsistências Críticas (Alta)</div>
+                <div class="stat-label">Severidade Alta (Crítica)</div>
                 <div class="stat-value" style="color: #d97706;">2</div>
-                <div class="stat-desc">Quedas anômalas, variações cadastrais ou swaps</div>
+                <div class="stat-desc">Quedas nominais, variações cadastrais</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #10b981;">
-                <div class="stat-label">Votos Computados (2T)</div>
+                <div class="stat-label">Comparecimento (2T)</div>
                 <div class="stat-value" style="color: #047857;">5,752</div>
-                <div class="stat-desc">Comparecimento: 82.3% dos aptos</div>
+                <div class="stat-desc">82.3% presença (+230 vs 1T)</div>
+            </div>
+            <div class="stat-card" style="border-left: 4px solid #6366f1;">
+                <div class="stat-label">Com Biometria (2T)</div>
+                <div class="stat-value" style="color: #4338ca;">5,110</div>
+                <div class="stat-desc">88.84% dos votos no 2T</div>
+            </div>
+            <div class="stat-card" style="border-left: 4px solid #8b5cf6;">
+                <div class="stat-label">Sem Biometria (2T)</div>
+                <div class="stat-value" style="color: #6d28d9;">642</div>
+                <div class="stat-desc">Manual + Ano de Nascimento</div>
             </div>
         </div>
 
-        <!-- PAINEL COMPARATIVO DE VOTAÇÃO E CATEGORIAS -->
+        <!-- PAINEL COMPARATIVO DE VOTAÇÃO E DISTRIBUIÇÃO DE ANOMALIAS -->
         <div class="grid grid-cols-2">
-            <!-- TABELA COMPARATIVA DE CANDIDATOS -->
+            <!-- TOTALIZAÇÃO PRESIDENCIAL -->
             <div class="card">
                 <div class="card-header">
-                    <h2 style="font-size: 1.125rem; font-weight: 700; margin: 0; color: #0f172a;">Totalização Presidencial Estadual (1T vs 2T)</h2>
-                    <span style="font-size: 0.75rem; color: #64748b;">Consolidado de todas as urnas apuradas</span>
+                    <div>
+                        <h2 style="font-size: 1.0625rem; font-weight: 700; margin: 0; color: #0f172a;">Totalização Presidencial e Terceira Via</h2>
+                        <span style="font-size: 0.75rem; color: #64748b;">Consolidado de todas as seções (Terceira via no 1T: 321 votos)</span>
+                    </div>
                 </div>
                 <table>
                     <thead>
@@ -90,7 +102,7 @@
                             <th>Candidato</th>
                             <th style="text-align: right;">Votos 1T</th>
                             <th style="text-align: right;">Votos 2T</th>
-                            <th style="text-align: right;">Variação Nominal</th>
+                            <th style="text-align: right;">Variação Nominal (2T vs 1T)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,72 +127,72 @@
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">70</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">ESCRITOR AUGUSTO CURY</td>
             <td class="py-2.5 px-4 text-right font-mono">144</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-144 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">14</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">RENAN SANTOS</td>
             <td class="py-2.5 px-4 text-right font-mono">101</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-101 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">55</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">RONALDO CAIADO</td>
             <td class="py-2.5 px-4 text-right font-mono">63</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-63 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">30</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">Candidato 30</td>
             <td class="py-2.5 px-4 text-right font-mono">5</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-5 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">21</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">Candidato 21</td>
             <td class="py-2.5 px-4 text-right font-mono">4</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-4 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">27</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">Candidato 27</td>
             <td class="py-2.5 px-4 text-right font-mono">1</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-1 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">28</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">Candidato 28</td>
             <td class="py-2.5 px-4 text-right font-mono">1</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-1 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">29</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">Candidato 29</td>
             <td class="py-2.5 px-4 text-right font-mono">1</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-1 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
             <td class="py-2.5 px-4 font-mono font-bold text-slate-800">80</td>
             <td class="py-2.5 px-4 font-semibold text-slate-900">Candidato 80</td>
             <td class="py-2.5 px-4 text-right font-mono">1</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">0</td>
-            <td class="py-2.5 px-4 text-right font-mono text-rose-700 font-semibold">-1 <span class="text-xs text-slate-500 font-normal">(-100.00%)</span></td>
+            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900"><span class="text-slate-400 italic">Não concorre</span></td>
+            <td class="py-2.5 px-4 text-right font-mono text-slate-600"><span class="text-xs text-slate-400">3ª via 1T</span> <span class="text-xs text-slate-500 font-normal"></span></td>
         </tr>
         
                         <tr class="border-t-2 border-slate-200 bg-slate-50 font-bold">
@@ -193,27 +205,29 @@
                 </table>
             </div>
 
-            <!-- DISTRIBUIÇÃO DOS 24+ DETECTORES -->
+            <!-- DISTRIBUIÇÃO DOS DETECTORES -->
             <div class="card">
                 <div class="card-header">
-                    <h2 style="font-size: 1.125rem; font-weight: 700; margin: 0; color: #0f172a;">Distribuição de Inconsistências Detectadas</h2>
-                    <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra forense</span>
+                    <div>
+                        <h2 style="font-size: 1.0625rem; font-weight: 700; margin: 0; color: #0f172a;">Top Inconsistências Detectadas</h2>
+                        <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra das 100 implementadas</span>
+                    </div>
                 </div>
                 <div style="max-height: 290px; overflow-y: auto;">
                     <table>
                         <thead>
                             <tr>
                                 <th>Código da Inconsistência</th>
-                                <th style="text-align: right;">Urnas</th>
+                                <th style="text-align: right;">Seções</th>
                                 <th style="text-align: right;">% Urnas</th>
                             </tr>
                         </thead>
                         <tbody>
                             
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="py-2 px-3 font-mono text-xs font-semibold text-slate-800">QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO</td>
-            <td class="py-2 px-3 text-right font-mono font-bold text-slate-900">2</td>
-            <td class="py-2 px-3 text-right font-mono text-xs text-slate-500">8.33%</td>
+            <td class="py-1.5 px-3 font-mono text-[11px] font-semibold text-slate-800">CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR</td>
+            <td class="py-1.5 px-3 text-right font-mono font-bold text-slate-900">2</td>
+            <td class="py-1.5 px-3 text-right font-mono text-xs text-slate-500">8.33%</td>
         </tr>
         
                         </tbody>
@@ -222,91 +236,137 @@
             </div>
         </div>
 
-        <!-- PAINEL INTERATIVO DE PESQUISA E FILTROS -->
+        <!-- PAINEL INTERATIVO DE PESQUISA, FILTROS E ORDENAÇÃO -->
         <div class="card">
             <div class="card-header">
                 <div>
-                    <h2 style="font-size: 1.125rem; font-weight: 700; margin: 0; color: #0f172a;">Explorador Interativo de Seções Eleitorais</h2>
-                    <p style="font-size: 0.75rem; color: #64748b; margin: 0.25rem 0 0 0;">Filtre em tempo real por município, zona, seção, tipo ou gravidade de anomalia</p>
+                    <h2 style="font-size: 1.125rem; font-weight: 800; margin: 0; color: #0f172a;">Explorador Interativo de Seções Eleitorais</h2>
+                    <p style="font-size: 0.75rem; color: #64748b; margin: 0.25rem 0 0 0;">Exibição detalhada com <strong>Aptos</strong>, <strong>Biometria</strong>, <strong>Terceira Via</strong> e <strong>Inconsistências</strong>. Clique no cabeçalho de qualquer coluna para ordenar.</p>
                 </div>
-                <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <input type="text" id="searchInput" placeholder="Buscar município, zona ou seção..." style="width: 280px;" oninput="applyFilters()">
+                <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+                    <input type="text" id="searchInput" placeholder="Buscar município, zona ou seção..." style="width: 240px;" oninput="applyFilters()">
                     <select id="severitySelect" onchange="applyFilters()">
                         <option value="ALL">Todas as Severidades</option>
-                        <option value="ALTA">Severidade ALTA (Crítica)</option>
+                        <option value="ALTA" selected>Severidade ALTA (Crítica)</option>
                         <option value="MEDIA">Severidade MÉDIA</option>
                         <option value="BAIXA">Severidade BAIXA</option>
                     </select>
-                    <select id="anomalySelect" onchange="applyFilters()" style="max-width: 250px;">
-                        <option value="ALL">Todos os Tipos de Anomalia</option>
-                        <option value="QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO">QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO (2)</option>
+                    <select id="sortSelect" onchange="applySortDropdown()">
+                        <option value="sev_desc">Ordenar: Severidade (Alta &rarr; Baixa)</option>
+                        <option value="sev_asc">Ordenar: Severidade (Baixa &rarr; Alta)</option>
+                        <option value="mun_asc">Ordenar: Município (A &rarr; Z)</option>
+                        <option value="comp_delta_desc">Ordenar: Maior Ganho de Comparecimento</option>
+                        <option value="comp_delta_asc">Ordenar: Maior Queda de Comparecimento</option>
+                        <option value="flavio_drop_desc">Ordenar: Maior Queda de Flávio (22)</option>
+                        <option value="lula_drop_desc">Ordenar: Maior Queda de Lula (13)</option>
+                        <option value="t3_desc">Ordenar: Maior Terceira Via no 1T</option>
+                        <option value="bio_drop_desc">Ordenar: Maior Queda de Biometria</option>
+                    </select>
+                    <select id="anomalySelect" onchange="applyFilters()" style="max-width: 280px;">
+                        <option value="ALL">Todos os Tipos de Anomalia (100 detectores)</option>
+                        <option value="CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR">CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR (2)</option>
                     </select>
                 </div>
             </div>
 
-            <!-- TABELA DE RESULTADOS -->
+            <!-- TABELA COMPLETA COM APTOS E BIOMETRIA -->
             <div style="overflow-x: auto;">
                 <table id="mainTable">
                     <thead>
                         <tr>
-                            <th>Município</th>
-                            <th style="text-align: center;">Zona</th>
-                            <th style="text-align: center;">Seção</th>
-                            <th style="text-align: center;">Severidade</th>
-                            <th style="text-align: right;">Comparecimento</th>
-                            <th style="text-align: right;">Flavio (22) 1T &rarr; 2T</th>
-                            <th style="text-align: right;">Lula (13) 1T &rarr; 2T</th>
+                            <th onclick="sortByColumn('municipio')">Município</th>
+                            <th onclick="sortByColumn('zona')" style="text-align: center;">Zona</th>
+                            <th onclick="sortByColumn('secao')" style="text-align: center;">Seção</th>
+                            <th onclick="sortByColumn('aptos')" style="text-align: right;">Aptos (1T&rarr;2T)</th>
+                            <th onclick="sortByColumn('severidade')" style="text-align: center;">Severidade</th>
+                            <th onclick="sortByColumn('comparecimento')" style="text-align: right;">Comparecimento</th>
+                            <th onclick="sortByColumn('biometria')" style="text-align: right;">Com Biometria</th>
+                            <th onclick="sortByColumn('sem_biometria')" style="text-align: right;">Sem Biometria</th>
+                            <th onclick="sortByColumn('flavio')" style="text-align: right;">Flávio (22)</th>
+                            <th onclick="sortByColumn('lula')" style="text-align: right;">Lula (13)</th>
+                            <th onclick="sortByColumn('terceira_via')" style="text-align: right;">3ª Via 1T</th>
                             <th>Inconsistências Identificadas</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        
-        <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors text-xs">
-            <td class="py-2.5 px-3 font-semibold text-slate-800">Monte Carlo</td>
-            <td class="py-2.5 px-2 text-center font-mono">77</td>
-            <td class="py-2.5 px-2 text-center font-mono font-bold text-slate-900">102</td>
-            <td class="py-2.5 px-2 text-center"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">ALTA</span></td>
-            <td class="py-2.5 px-2 text-right font-mono">288 &rarr; <strong>290</strong></td>
-            <td class="py-2.5 px-2 text-right font-mono">138 &rarr; <strong>131</strong></td>
-            <td class="py-2.5 px-2 text-right font-mono">119 &rarr; <strong>152</strong></td>
-            <td class="py-2.5 px-3"><span class="inline-block px-1.5 py-0.5 mr-1 mb-1 rounded text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200" title="FLAVIO BOLSONARO obteve 138 votos no 1T e caiu para 131 votos no 2T (-7 votos), embora o comparecimento tenha aumentado de 288 para 290.">QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO</span></td>
-        </tr>
-        
-        <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors text-xs">
-            <td class="py-2.5 px-3 font-semibold text-slate-800">Monte Carlo</td>
-            <td class="py-2.5 px-2 text-center font-mono">77</td>
-            <td class="py-2.5 px-2 text-center font-mono font-bold text-slate-900">174</td>
-            <td class="py-2.5 px-2 text-center"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">ALTA</span></td>
-            <td class="py-2.5 px-2 text-right font-mono">167 &rarr; <strong>168</strong></td>
-            <td class="py-2.5 px-2 text-right font-mono">92 &rarr; <strong>89</strong></td>
-            <td class="py-2.5 px-2 text-right font-mono">58 &rarr; <strong>76</strong></td>
-            <td class="py-2.5 px-3"><span class="inline-block px-1.5 py-0.5 mr-1 mb-1 rounded text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200" title="FLAVIO BOLSONARO obteve 92 votos no 1T e caiu para 89 votos no 2T (-3 votos), embora o comparecimento tenha aumentado de 167 para 168.">QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO</span></td>
-        </tr>
-        
                     </tbody>
                 </table>
             </div>
             <div id="filterCount" style="margin-top: 0.75rem; font-size: 0.8125rem; color: #64748b; text-align: right;">
-                Exibindo as 100 seções mais críticas de 2 seções com inconsistências registradas.
             </div>
         </div>
 
         <!-- FOOTER METODOLÓGICO -->
         <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; font-size: 0.75rem; color: #64748b; border-top: 1px solid #e2e8f0;">
-            <p style="margin: 0 0 0.5rem 0;"><strong>Ferramenta Forense de Auditoria da Urna Eletrônica</strong> &bull; Análise estritamente científica, matemática e não-destrutiva de integridade pública.</p>
-            <p style="margin: 0;">As classificações refletem regras técnicas objetivas comparando fontes oficiais do TSE (bu.dat) de 1º e 2º Turno, sem emitir juízo político.</p>
+            <p style="margin: 0 0 0.5rem 0;"><strong>Ferramenta Forense de Auditoria da Urna Eletrônica</strong> &bull; 100 Regras Técnicas de Integridade Forense e Matemática Eleitoral.</p>
+            <p style="margin: 0;">Análise estritamente científica sobre arquivos oficiais do TSE (bu.dat) de 1º e 2º Turno. As classificações refletem regras objetivas sem emitir juízo político.</p>
         </div>
     </div>
 
-    <!-- SCRIPT DE FILTRAGEM INTERATIVA OFFLINE -->
+    <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
     <script>
-        const allSections = [{"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 102, "key": "SC-80004-Z0077-S0102", "worst_severity": "ALTA", "total_anomalias": 1, "anomalias": [{"code": "QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO", "category": "VOTACAO", "severity": "ALTA", "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento estável/maior", "description": "FLAVIO BOLSONARO obteve 138 votos no 1T e caiu para 131 votos no 2T (-7 votos), embora o comparecimento tenha aumentado de 288 para 290.", "details": {"candidato": 22, "nome": "FLAVIO BOLSONARO", "votos_1t": 138, "votos_2t": 131, "queda": 7, "comp_1t": 288, "comp_2t": 290}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770102-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 102, "local": 1031, "numero_interno_urna": 2191318, "numero_serie_fv": "FC01B103", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "901416212726277242796252", "data_carga": "2026-09-26T13:04:00", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:58:57", "duracao_minutos": 598.93, "aptos": 348, "aptos_secao": 348, "aptos_tte": 0, "comparecimento": 288, "abstencao": 60, "pct_comparecimento": 82.76, "pct_abstencao": 17.24, "biometria_sim": 230, "biometria_bio": 47, "biometria_nao": 11, "pct_biometria": 79.86, "pct_biografia": 16.32, "votos_presidenciais": {"13": 119, "14": 6, "22": 138, "55": 7, "70": 6}, "votos_brancos": 7, "votos_nulos": 5, "votos_validos": 276, "total_apurado_pres": 288}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770102-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 102, "local": 1031, "numero_interno_urna": 2191318, "numero_serie_fv": "FC01B103", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "901416212726277242796252", "data_carga": "2026-09-26T13:04:00", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:01:17", "duracao_minutos": 541.27, "aptos": 348, "aptos_secao": 348, "aptos_tte": 0, "comparecimento": 290, "abstencao": 58, "pct_comparecimento": 83.33, "pct_abstencao": 16.67, "biometria_sim": 233, "biometria_bio": 44, "biometria_nao": 13, "pct_biometria": 80.34, "pct_biografia": 15.17, "votos_presidenciais": {"13": 152, "22": 131}, "votos_brancos": 5, "votos_nulos": 2, "votos_validos": 283, "total_apurado_pres": 290}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 174, "key": "SC-80004-Z0077-S0174", "worst_severity": "ALTA", "total_anomalias": 1, "anomalias": [{"code": "QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO", "category": "VOTACAO", "severity": "ALTA", "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento estável/maior", "description": "FLAVIO BOLSONARO obteve 92 votos no 1T e caiu para 89 votos no 2T (-3 votos), embora o comparecimento tenha aumentado de 167 para 168.", "details": {"candidato": 22, "nome": "FLAVIO BOLSONARO", "votos_1t": 92, "votos_2t": 89, "queda": 3, "comp_1t": 167, "comp_2t": 168}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770174-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 174, "local": 1090, "numero_interno_urna": 2182624, "numero_serie_fv": "88C2247F", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "941820962530747715546258", "data_carga": "2026-09-26T14:26:00", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:03:56", "duracao_minutos": 543.92, "aptos": 244, "aptos_secao": 241, "aptos_tte": 3, "comparecimento": 167, "abstencao": 77, "pct_comparecimento": 68.44, "pct_abstencao": 31.56, "biometria_sim": 149, "biometria_bio": 8, "biometria_nao": 10, "pct_biometria": 89.22, "pct_biografia": 4.79, "votos_presidenciais": {"13": 58, "14": 3, "22": 92, "55": 1, "70": 7}, "votos_brancos": 5, "votos_nulos": 1, "votos_validos": 161, "total_apurado_pres": 167}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770174-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 174, "local": 1090, "numero_interno_urna": 2182624, "numero_serie_fv": "88C2247F", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "941820962530747715546258", "data_carga": "2026-09-26T14:26:00", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:26", "duracao_minutos": 540.42, "aptos": 244, "aptos_secao": 241, "aptos_tte": 3, "comparecimento": 168, "abstencao": 76, "pct_comparecimento": 68.85, "pct_abstencao": 31.15, "biometria_sim": 149, "biometria_bio": 10, "biometria_nao": 9, "pct_biometria": 88.69, "pct_biografia": 5.95, "votos_presidenciais": {"13": 76, "22": 89}, "votos_brancos": 3, "votos_nulos": 0, "votos_validos": 165, "total_apurado_pres": 168}}];
+        const allSections = [{"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 102, "key": "SC-80004-Z0077-S0102", "worst_severity": "ALTA", "total_anomalias": 1, "anomalias": [{"code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "ALTA", "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento MAIOR no 2T", "description": "FLAVIO BOLSONARO caiu de 138 para 131 votos (-7), embora 2 novos eleitores tenham comparecido no 2T (288 -> 290).", "details": {"candidato": 22, "votos_1t": 138, "votos_2t": 131, "queda": 7, "delta_comp": 2}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770102-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 102, "local": 1031, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 102, "numero_interno_urna": 2191318, "numero_serie_fv": "FC01B103", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "901416212726277242796252", "data_carga": "2026-09-26T13:04:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T18:02:27", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:58:57", "duracao_minutos": 598.93, "aptos": 348, "aptos_secao": 348, "aptos_tte": 0, "comparecimento": 288, "abstencao": 60, "pct_comparecimento": 82.76, "pct_abstencao": 17.24, "biometria_sim": 230, "biometria_bio": 47, "biometria_nao": 11, "pct_biometria": 79.86, "pct_biografia": 16.32, "votos_presidenciais": {"13": 119, "14": 6, "22": 138, "55": 7, "70": 6}, "votos_brancos": 7, "votos_nulos": 5, "votos_validos": 276, "total_apurado_pres": 288, "total_terceira_via": 19, "votos_terceira_via": {"14": 6, "55": 7, "70": 6}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770102-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 102, "local": 1031, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 102, "numero_interno_urna": 2191318, "numero_serie_fv": "FC01B103", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "901416212726277242796252", "data_carga": "2026-09-26T13:04:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:05:03", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:01:17", "duracao_minutos": 541.27, "aptos": 348, "aptos_secao": 348, "aptos_tte": 0, "comparecimento": 290, "abstencao": 58, "pct_comparecimento": 83.33, "pct_abstencao": 16.67, "biometria_sim": 233, "biometria_bio": 44, "biometria_nao": 13, "pct_biometria": 80.34, "pct_biografia": 15.17, "votos_presidenciais": {"13": 152, "22": 131}, "votos_brancos": 5, "votos_nulos": 2, "votos_validos": 283, "total_apurado_pres": 290, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}, {"uf": "sc", "municipio": 80004, "municipio_nome": "Monte Carlo", "zona": 77, "secao": 174, "key": "SC-80004-Z0077-S0174", "worst_severity": "ALTA", "total_anomalias": 1, "anomalias": [{"code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR", "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA", "severity": "ALTA", "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento MAIOR no 2T", "description": "FLAVIO BOLSONARO caiu de 92 para 89 votos (-3), embora 1 novos eleitores tenham comparecido no 2T (167 -> 168).", "details": {"candidato": 22, "votos_1t": 92, "votos_2t": 89, "queda": 3, "delta_comp": 1}}], "dados_1t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC\\o03220sc8000400770174-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 174, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 174, "numero_interno_urna": 2182624, "numero_serie_fv": "88C2247F", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "941820962530747715546258", "data_carga": "2026-09-26T14:26:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-04T17:05:28", "abertura": "2026-10-04T08:00:01", "encerramento": "2026-10-04T17:03:56", "duracao_minutos": 543.92, "aptos": 244, "aptos_secao": 241, "aptos_tte": 3, "comparecimento": 167, "abstencao": 77, "pct_comparecimento": 68.44, "pct_abstencao": 31.56, "biometria_sim": 149, "biometria_bio": 8, "biometria_nao": 10, "pct_biometria": 89.22, "pct_biografia": 4.79, "votos_presidenciais": {"13": 58, "14": 3, "22": 92, "55": 1, "70": 7}, "votos_brancos": 5, "votos_nulos": 1, "votos_validos": 161, "total_apurado_pres": 167, "total_terceira_via": 11, "votos_terceira_via": {"14": 3, "55": 1, "70": 7}, "cadeia_hash_valida": true}, "dados_2t": {"path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770174-bu.dat", "uf": "sc", "municipio": 80004, "zona": 77, "secao": 174, "local": 1090, "municipio_correspondencia": 80004, "zona_correspondencia": 77, "secao_correspondencia": 174, "numero_interno_urna": 2182624, "numero_serie_fv": "88C2247F", "numero_serie_fc": "4A1EECCB", "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy", "codigo_carga": "941820962530747715546258", "data_carga": "2026-09-26T14:26:00", "nome_gerador_midia": "CSC077W058300", "serial_tpm": "367A7A6587EFF2070249", "serial_instalacao": "B8B53007", "tipo_arquivo": 1, "data_hora_emissao": "2026-10-25T17:02:41", "abertura": "2026-10-25T08:00:01", "encerramento": "2026-10-25T17:00:26", "duracao_minutos": 540.42, "aptos": 244, "aptos_secao": 241, "aptos_tte": 3, "comparecimento": 168, "abstencao": 76, "pct_comparecimento": 68.85, "pct_abstencao": 31.15, "biometria_sim": 149, "biometria_bio": 10, "biometria_nao": 9, "pct_biometria": 88.69, "pct_biografia": 5.95, "votos_presidenciais": {"13": 76, "22": 89}, "votos_brancos": 3, "votos_nulos": 0, "votos_validos": 165, "total_apurado_pres": 168, "total_terceira_via": 0, "votos_terceira_via": {}, "cadeia_hash_valida": true}}];
+        let currentSort = { column: 'severidade', order: 'desc' };
+
+        const SEV_WEIGHTS = {
+            'ALTA': 3,
+            'MEDIA': 2,
+            'BAIXA': 1,
+            'INFO': 0,
+            'NORMAL': -1
+        };
 
         function getSeverityBadge(sev) {
             if (sev === 'ALTA') return '<span class="badge badge-red">ALTA</span>';
             if (sev === 'MEDIA') return '<span class="badge badge-yellow">MÉDIA</span>';
             if (sev === 'BAIXA') return '<span class="badge badge-blue">BAIXA</span>';
-            return '<span class="text-xs">' + sev + '</span>';
+            return '<span class="text-xs text-slate-500">' + sev + '</span>';
+        }
+
+        function getSectionValue(s, column) {
+            const d1 = s.dados_1t || {};
+            const d2 = s.dados_2t || {};
+            const p1 = d1.votos_presidenciais || {};
+            const p2 = d2.votos_presidenciais || {};
+
+            switch(column) {
+                case 'municipio': return (s.municipio_nome || '').toLowerCase();
+                case 'zona': return s.zona || 0;
+                case 'secao': return s.secao || 0;
+                case 'aptos': return d2.aptos || 0;
+                case 'severidade': return SEV_WEIGHTS[s.worst_severity] || 0;
+                case 'comparecimento': return d2.comparecimento || 0;
+                case 'biometria': return d2.biometria_sim || 0;
+                case 'sem_biometria': return (d2.biometria_bio || 0) + (d2.biometria_nao || 0);
+                case 'flavio': return (p2['22'] || 0) - (p1['22'] || 0);
+                case 'lula': return (p2['13'] || 0) - (p1['13'] || 0);
+                case 'terceira_via': return d1.total_terceira_via || 0;
+                default: return 0;
+            }
+        }
+
+        function sortByColumn(column) {
+            if (currentSort.column === column) {
+                currentSort.order = currentSort.order === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.order = 'desc';
+            }
+            applyFilters();
+        }
+
+        function applySortDropdown() {
+            const val = document.getElementById('sortSelect').value;
+            if (val === 'sev_desc') currentSort = { column: 'severidade', order: 'desc' };
+            if (val === 'sev_asc') currentSort = { column: 'severidade', order: 'asc' };
+            if (val === 'mun_asc') currentSort = { column: 'municipio', order: 'asc' };
+            if (val === 'comp_delta_desc') currentSort = { column: 'comparecimento', order: 'desc' };
+            if (val === 'comp_delta_asc') currentSort = { column: 'comparecimento', order: 'asc' };
+            if (val === 'flavio_drop_desc') currentSort = { column: 'flavio', order: 'asc' };
+            if (val === 'lula_drop_desc') currentSort = { column: 'lula', order: 'asc' };
+            if (val === 't3_desc') currentSort = { column: 'terceira_via', order: 'desc' };
+            if (val === 'bio_drop_desc') currentSort = { column: 'biometria', order: 'asc' };
+            applyFilters();
         }
 
         function applyFilters() {
@@ -314,7 +374,7 @@
             const sevFilter = document.getElementById('severitySelect').value;
             const anomFilter = document.getElementById('anomalySelect').value;
 
-            const filtered = allSections.filter(s => {
+            let filtered = allSections.filter(s => {
                 if (sevFilter !== 'ALL' && s.worst_severity !== sevFilter) return false;
                 if (anomFilter !== 'ALL' && !s.anomalias.some(a => a.code === anomFilter)) return false;
 
@@ -323,7 +383,7 @@
                     const munCode = String(s.municipio || '');
                     const zona = String(s.zona || '');
                     const secao = String(s.secao || '');
-                    const hasAnom = s.anomalias.some(a => a.code.toLowerCase().includes(search));
+                    const hasAnom = s.anomalias.some(a => a.code.toLowerCase().includes(search) || (a.title || '').toLowerCase().includes(search));
                     if (!mun.includes(search) && !munCode.includes(search) && !zona.includes(search) && !secao.includes(search) && !hasAnom) {
                         return false;
                     }
@@ -331,8 +391,17 @@
                 return true;
             });
 
+            // Ordenação
+            filtered.sort((a, b) => {
+                const valA = getSectionValue(a, currentSort.column);
+                const valB = getSectionValue(b, currentSort.column);
+                if (valA < valB) return currentSort.order === 'asc' ? -1 : 1;
+                if (valA > valB) return currentSort.order === 'asc' ? 1 : -1;
+                return 0;
+            });
+
             const tbody = document.getElementById('tableBody');
-            const limit = Math.min(filtered.length, 150);
+            const limit = Math.min(filtered.length, 250);
             let html = '';
 
             for (let i = 0; i < limit; i++) {
@@ -342,34 +411,60 @@
                 const p1 = d1.votos_presidenciais || {};
                 const p2 = d2.votos_presidenciais || {};
 
-                const v1_22 = p1['22'] || 0;
-                const v2_22 = p2['22'] || 0;
-                const v1_13 = p1['13'] || 0;
-                const v2_13 = p2['13'] || 0;
+                const apt1 = d1.aptos || 0;
+                const apt2 = d2.aptos || 0;
+                const aptClass = apt1 !== apt2 ? 'text-amber-700 font-bold' : 'text-slate-600';
 
                 const c1 = d1.comparecimento || 0;
                 const c2 = d2.comparecimento || 0;
 
+                const bio1 = d1.biometria_sim || 0;
+                const bio2 = d2.biometria_sim || 0;
+
+                const sem1 = (d1.biometria_bio || 0) + (d1.biometria_nao || 0);
+                const sem2 = (d2.biometria_bio || 0) + (d2.biometria_nao || 0);
+
+                const v1_22 = p1['22'] || 0;
+                const v2_22 = p2['22'] || 0;
+                const d_22 = v2_22 - v1_22;
+                const cl_22 = d_22 > 0 ? 'text-emerald-700' : (d_22 < 0 ? 'text-rose-700 font-bold' : 'text-slate-600');
+
+                const v1_13 = p1['13'] || 0;
+                const v2_13 = p2['13'] || 0;
+                const d_13 = v2_13 - v1_13;
+                const cl_13 = d_13 > 0 ? 'text-emerald-700' : (d_13 < 0 ? 'text-rose-700 font-bold' : 'text-slate-600');
+
+                const t3 = d1.total_terceira_via || 0;
+
                 const badges = s.anomalias.map(a => 
-                    `<span class="badge font-mono" style="background:#f1f5f9; color:#334155; margin-right:4px; margin-bottom:4px;" title="${a.description || ''}">${a.code}</span>`
-                ).join('');
+                    `<span class="badge badge-anom" title="${a.description || ''} &bull; ${a.title || ''}">${a.code}</span>`
+                ).join(' ');
 
                 html += `
                 <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors text-xs">
-                    <td class="py-2.5 px-3 font-semibold text-slate-800">${s.municipio_nome || 'Município ' + s.municipio}</td>
+                    <td class="py-2.5 px-2 font-semibold text-slate-800">${s.municipio_nome || 'Município ' + s.municipio}</td>
                     <td class="py-2.5 px-2 text-center font-mono">${s.zona}</td>
                     <td class="py-2.5 px-2 text-center font-mono font-bold text-slate-900">${s.secao}</td>
+                    <td class="py-2.5 px-2 text-right font-mono ${aptClass}">${apt1} &rarr; <strong>${apt2}</strong></td>
                     <td class="py-2.5 px-2 text-center">${getSeverityBadge(s.worst_severity)}</td>
                     <td class="py-2.5 px-2 text-right font-mono">${c1} &rarr; <strong>${c2}</strong></td>
-                    <td class="py-2.5 px-2 text-right font-mono">${v1_22} &rarr; <strong>${v2_22}</strong></td>
-                    <td class="py-2.5 px-2 text-right font-mono">${v1_13} &rarr; <strong>${v2_13}</strong></td>
-                    <td class="py-2.5 px-3">${badges}</td>
+                    <td class="py-2.5 px-2 text-right font-mono">${bio1} &rarr; <strong>${bio2}</strong></td>
+                    <td class="py-2.5 px-2 text-right font-mono">${sem1} &rarr; <strong>${sem2}</strong></td>
+                    <td class="py-2.5 px-2 text-right font-mono ${cl_22}">${v1_22} &rarr; <strong>${v2_22}</strong> <span class="text-[10px]">(${d_22 >= 0 ? '+' : ''}${d_22})</span></td>
+                    <td class="py-2.5 px-2 text-right font-mono ${cl_13}">${v1_13} &rarr; <strong>${v2_13}</strong> <span class="text-[10px]">(${d_13 >= 0 ? '+' : ''}${d_13})</span></td>
+                    <td class="py-2.5 px-2 text-right font-mono font-semibold text-slate-700">${t3}</td>
+                    <td class="py-2.5 px-2" style="max-width: 380px;">${badges}</td>
                 </tr>`;
             }
 
             tbody.innerHTML = html;
-            document.getElementById('filterCount').textContent = `Exibindo ${limit} de ${filtered.length} seções encontradas nos filtros.`;
+            document.getElementById('filterCount').textContent = `Exibindo ${limit} de ${filtered.length} seções encontradas nos filtros (ordenadas por ${currentSort.column} ${currentSort.order}).`;
         }
+
+        // Inicializa ao carregar
+        window.onload = function() {
+            applyFilters();
+        };
     </script>
 </body>
 </html>

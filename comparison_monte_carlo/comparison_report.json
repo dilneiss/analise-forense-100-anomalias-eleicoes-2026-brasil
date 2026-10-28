@@ -1,11 +1,12 @@
 {
   "metadados": {
-    "gerado_em": "2026-10-28T14:53:32.660344",
-    "iniciado_em": "2026-10-28T14:53:32.247749",
-    "duracao_segundos": 0.41,
+    "gerado_em": "2026-10-28T15:21:21.431314",
+    "iniciado_em": "2026-10-28T15:21:20.748931",
+    "duracao_segundos": 0.68,
     "diretorio_1t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC",
     "diretorio_2t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC",
     "diretorio_saida": "C:\\Users\\dilne\\Downloads\\urna-forense\\comparison_monte_carlo",
+    "total_verificacoes_disponiveis": 100,
     "filtros": {
       "uf": null,
       "municipio": 80004,
@@ -22,6 +23,18 @@
     "pct_comparecimento_2t": 82.3,
     "abstencao_1t": 1467,
     "abstencao_2t": 1237,
+    "biometria": {
+      "com_biometria_1t": 4931,
+      "com_biometria_2t": 5110,
+      "pct_biometria_1t": 89.3,
+      "pct_biometria_2t": 88.84,
+      "sem_biometria_1t": 591,
+      "sem_biometria_2t": 642
+    },
+    "terceira_via_1t": {
+      "total_votos": 321,
+      "pct_validos": 6.13
+    },
     "votos_brancos_1t": 178,
     "votos_brancos_2t": 85,
     "votos_nulos_1t": 110,
@@ -30,6 +43,7 @@
       {
         "numero": 22,
         "nome": "FLAVIO BOLSONARO",
+        "e_finalista": true,
         "votos_1t": 2860,
         "votos_2t": 3043,
         "delta_votos": 183,
@@ -38,6 +52,7 @@
       {
         "numero": 13,
         "nome": "LULA",
+        "e_finalista": true,
         "votos_1t": 2053,
         "votos_2t": 2566,
         "delta_votos": 513,
@@ -46,74 +61,83 @@
       {
         "numero": 70,
         "nome": "ESCRITOR AUGUSTO CURY",
+        "e_finalista": false,
         "votos_1t": 144,
         "votos_2t": 0,
-        "delta_votos": -144,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 14,
         "nome": "RENAN SANTOS",
+        "e_finalista": false,
         "votos_1t": 101,
         "votos_2t": 0,
-        "delta_votos": -101,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 55,
         "nome": "RONALDO CAIADO",
+        "e_finalista": false,
         "votos_1t": 63,
         "votos_2t": 0,
-        "delta_votos": -63,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 30,
         "nome": "Candidato 30",
+        "e_finalista": false,
         "votos_1t": 5,
         "votos_2t": 0,
-        "delta_votos": -5,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 21,
         "nome": "Candidato 21",
+        "e_finalista": false,
         "votos_1t": 4,
         "votos_2t": 0,
-        "delta_votos": -4,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 27,
         "nome": "Candidato 27",
+        "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
-        "delta_votos": -1,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 28,
         "nome": "Candidato 28",
+        "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
-        "delta_votos": -1,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 29,
         "nome": "Candidato 29",
+        "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
-        "delta_votos": -1,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       },
       {
         "numero": 80,
         "nome": "Candidato 80",
+        "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
-        "delta_votos": -1,
-        "pct_crescimento": -100.0
+        "delta_votos": 0,
+        "pct_crescimento": null
       }
     ]
   },
@@ -126,11 +150,11 @@
       "ALTA": 2
     },
     "por_categoria": {
-      "VOTACAO": 2
+      "VOTACAO_E_MIGRACAO_TERCEIRA_VIA": 2
     },
     "por_tipo_anomalia": [
       {
-        "codigo": "QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO",
+        "codigo": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR",
         "total": 2
       }
     ],
@@ -153,19 +177,17 @@
       "total_anomalias": 1,
       "anomalias": [
         {
-          "code": "QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO",
-          "category": "VOTACAO",
+          "code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
           "severity": "ALTA",
-          "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento estável/maior",
-          "description": "FLAVIO BOLSONARO obteve 138 votos no 1T e caiu para 131 votos no 2T (-7 votos), embora o comparecimento tenha aumentado de 288 para 290.",
+          "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento MAIOR no 2T",
+          "description": "FLAVIO BOLSONARO caiu de 138 para 131 votos (-7), embora 2 novos eleitores tenham comparecido no 2T (288 -> 290).",
           "details": {
             "candidato": 22,
-            "nome": "FLAVIO BOLSONARO",
             "votos_1t": 138,
             "votos_2t": 131,
             "queda": 7,
-            "comp_1t": 288,
-            "comp_2t": 290
+            "delta_comp": 2
           }
         }
       ],
@@ -176,12 +198,20 @@
         "zona": 77,
         "secao": 102,
         "local": 1031,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 102,
         "numero_interno_urna": 2191318,
         "numero_serie_fv": "FC01B103",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "901416212726277242796252",
         "data_carga": "2026-09-26T13:04:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T18:02:27",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:58:57",
         "duracao_minutos": 598.93,
@@ -207,7 +237,14 @@
         "votos_brancos": 7,
         "votos_nulos": 5,
         "votos_validos": 276,
-        "total_apurado_pres": 288
+        "total_apurado_pres": 288,
+        "total_terceira_via": 19,
+        "votos_terceira_via": {
+          "14": 6,
+          "55": 7,
+          "70": 6
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770102-bu.dat",
@@ -216,12 +253,20 @@
         "zona": 77,
         "secao": 102,
         "local": 1031,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 102,
         "numero_interno_urna": 2191318,
         "numero_serie_fv": "FC01B103",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "901416212726277242796252",
         "data_carga": "2026-09-26T13:04:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:05:03",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:17",
         "duracao_minutos": 541.27,
@@ -244,7 +289,10 @@
         "votos_brancos": 5,
         "votos_nulos": 2,
         "votos_validos": 283,
-        "total_apurado_pres": 290
+        "total_apurado_pres": 290,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -258,19 +306,17 @@
       "total_anomalias": 1,
       "anomalias": [
         {
-          "code": "QUEDA_VOTOS_CANDIDATO_COM_MAIOR_COMPARECIMENTO",
-          "category": "VOTACAO",
+          "code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR",
+          "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
           "severity": "ALTA",
-          "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento estável/maior",
-          "description": "FLAVIO BOLSONARO obteve 92 votos no 1T e caiu para 89 votos no 2T (-3 votos), embora o comparecimento tenha aumentado de 167 para 168.",
+          "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento MAIOR no 2T",
+          "description": "FLAVIO BOLSONARO caiu de 92 para 89 votos (-3), embora 1 novos eleitores tenham comparecido no 2T (167 -> 168).",
           "details": {
             "candidato": 22,
-            "nome": "FLAVIO BOLSONARO",
             "votos_1t": 92,
             "votos_2t": 89,
             "queda": 3,
-            "comp_1t": 167,
-            "comp_2t": 168
+            "delta_comp": 1
           }
         }
       ],
@@ -281,12 +327,20 @@
         "zona": 77,
         "secao": 174,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 174,
         "numero_interno_urna": 2182624,
         "numero_serie_fv": "88C2247F",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "941820962530747715546258",
         "data_carga": "2026-09-26T14:26:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:05:28",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:03:56",
         "duracao_minutos": 543.92,
@@ -312,7 +366,14 @@
         "votos_brancos": 5,
         "votos_nulos": 1,
         "votos_validos": 161,
-        "total_apurado_pres": 167
+        "total_apurado_pres": 167,
+        "total_terceira_via": 11,
+        "votos_terceira_via": {
+          "14": 3,
+          "55": 1,
+          "70": 7
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770174-bu.dat",
@@ -321,12 +382,20 @@
         "zona": 77,
         "secao": 174,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 174,
         "numero_interno_urna": 2182624,
         "numero_serie_fv": "88C2247F",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "941820962530747715546258",
         "data_carga": "2026-09-26T14:26:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:41",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:26",
         "duracao_minutos": 540.42,
@@ -349,7 +418,10 @@
         "votos_brancos": 3,
         "votos_nulos": 0,
         "votos_validos": 165,
-        "total_apurado_pres": 168
+        "total_apurado_pres": 168,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -369,12 +441,20 @@
         "zona": 77,
         "secao": 90,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 90,
         "numero_interno_urna": 2173142,
         "numero_serie_fv": "F010DA6E",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "174143801553206635218590",
         "data_carga": "2026-09-26T09:05:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:34",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:03:43",
         "duracao_minutos": 543.7,
@@ -399,7 +479,13 @@
         "votos_brancos": 4,
         "votos_nulos": 2,
         "votos_validos": 199,
-        "total_apurado_pres": 205
+        "total_apurado_pres": 205,
+        "total_terceira_via": 10,
+        "votos_terceira_via": {
+          "14": 3,
+          "70": 7
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770090-bu.dat",
@@ -408,12 +494,20 @@
         "zona": 77,
         "secao": 90,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 90,
         "numero_interno_urna": 2173142,
         "numero_serie_fv": "F010DA6E",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "174143801553206635218590",
         "data_carga": "2026-09-26T09:05:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:04:40",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:32",
         "duracao_minutos": 541.52,
@@ -436,7 +530,10 @@
         "votos_brancos": 2,
         "votos_nulos": 1,
         "votos_validos": 205,
-        "total_apurado_pres": 208
+        "total_apurado_pres": 208,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -456,12 +553,20 @@
         "zona": 77,
         "secao": 91,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 91,
         "numero_interno_urna": 2000482,
         "numero_serie_fv": "B3C04055",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "164042906852075248089806",
         "data_carga": "2026-09-26T09:12:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:24",
         "abertura": "2026-10-04T08:19:54",
         "encerramento": "2026-10-04T17:02:14",
         "duracao_minutos": 522.33,
@@ -488,7 +593,15 @@
         "votos_brancos": 6,
         "votos_nulos": 6,
         "votos_validos": 179,
-        "total_apurado_pres": 191
+        "total_apurado_pres": 191,
+        "total_terceira_via": 11,
+        "votos_terceira_via": {
+          "14": 2,
+          "28": 1,
+          "55": 3,
+          "70": 5
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770091-bu.dat",
@@ -497,12 +610,20 @@
         "zona": 77,
         "secao": 91,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 91,
         "numero_interno_urna": 2000482,
         "numero_serie_fv": "B3C04055",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "164042906852075248089806",
         "data_carga": "2026-09-26T09:12:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:27",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:37",
         "duracao_minutos": 540.6,
@@ -525,7 +646,10 @@
         "votos_brancos": 4,
         "votos_nulos": 4,
         "votos_validos": 196,
-        "total_apurado_pres": 204
+        "total_apurado_pres": 204,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -545,12 +669,20 @@
         "zona": 77,
         "secao": 92,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 92,
         "numero_interno_urna": 2045875,
         "numero_serie_fv": "8ACF9D0E",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "194345040455523064131523",
         "data_carga": "2026-09-26T09:18:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:06:21",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:55",
         "duracao_minutos": 541.9,
@@ -576,7 +708,14 @@
         "votos_brancos": 5,
         "votos_nulos": 3,
         "votos_validos": 192,
-        "total_apurado_pres": 200
+        "total_apurado_pres": 200,
+        "total_terceira_via": 8,
+        "votos_terceira_via": {
+          "14": 2,
+          "55": 2,
+          "70": 4
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770092-bu.dat",
@@ -585,12 +724,20 @@
         "zona": 77,
         "secao": 92,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 92,
         "numero_interno_urna": 2045875,
         "numero_serie_fv": "8ACF9D0E",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "194345040455523064131523",
         "data_carga": "2026-09-26T09:18:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:48",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:48",
         "duracao_minutos": 540.78,
@@ -613,7 +760,10 @@
         "votos_brancos": 4,
         "votos_nulos": 1,
         "votos_validos": 205,
-        "total_apurado_pres": 210
+        "total_apurado_pres": 210,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -633,12 +783,20 @@
         "zona": 77,
         "secao": 93,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 93,
         "numero_interno_urna": 2023613,
         "numero_serie_fv": "49A4D740",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "568082520392842178313030",
         "data_carga": "2026-09-26T09:26:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:03:44",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:54",
         "duracao_minutos": 541.88,
@@ -665,7 +823,15 @@
         "votos_brancos": 10,
         "votos_nulos": 4,
         "votos_validos": 189,
-        "total_apurado_pres": 203
+        "total_apurado_pres": 203,
+        "total_terceira_via": 6,
+        "votos_terceira_via": {
+          "14": 2,
+          "30": 1,
+          "55": 1,
+          "70": 2
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770093-bu.dat",
@@ -674,12 +840,20 @@
         "zona": 77,
         "secao": 93,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 93,
         "numero_interno_urna": 2023613,
         "numero_serie_fv": "49A4D740",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "568082520392842178313030",
         "data_carga": "2026-09-26T09:26:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:52",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:51",
         "duracao_minutos": 540.83,
@@ -702,7 +876,10 @@
         "votos_brancos": 5,
         "votos_nulos": 1,
         "votos_validos": 208,
-        "total_apurado_pres": 214
+        "total_apurado_pres": 214,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -722,12 +899,20 @@
         "zona": 77,
         "secao": 94,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 94,
         "numero_interno_urna": 2048697,
         "numero_serie_fv": "BA1F36C4",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "790305861715956319030521",
         "data_carga": "2026-09-26T09:33:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:01:53",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:00:35",
         "duracao_minutos": 540.57,
@@ -753,7 +938,14 @@
         "votos_brancos": 7,
         "votos_nulos": 1,
         "votos_validos": 191,
-        "total_apurado_pres": 199
+        "total_apurado_pres": 199,
+        "total_terceira_via": 9,
+        "votos_terceira_via": {
+          "14": 4,
+          "55": 2,
+          "70": 3
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770094-bu.dat",
@@ -762,12 +954,20 @@
         "zona": 77,
         "secao": 94,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 94,
         "numero_interno_urna": 2048697,
         "numero_serie_fv": "BA1F36C4",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "790305861715956319030521",
         "data_carga": "2026-09-26T09:33:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:08",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:27",
         "duracao_minutos": 540.43,
@@ -790,7 +990,10 @@
         "votos_brancos": 5,
         "votos_nulos": 1,
         "votos_validos": 200,
-        "total_apurado_pres": 206
+        "total_apurado_pres": 206,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -810,12 +1013,20 @@
         "zona": 77,
         "secao": 95,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 95,
         "numero_interno_urna": 2182735,
         "numero_serie_fv": "8C47C2DD",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "477173650583981362387473",
         "data_carga": "2026-09-26T09:38:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:03:32",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:15",
         "duracao_minutos": 541.23,
@@ -842,7 +1053,15 @@
         "votos_brancos": 8,
         "votos_nulos": 4,
         "votos_validos": 184,
-        "total_apurado_pres": 196
+        "total_apurado_pres": 196,
+        "total_terceira_via": 10,
+        "votos_terceira_via": {
+          "14": 3,
+          "55": 3,
+          "70": 3,
+          "80": 1
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770095-bu.dat",
@@ -851,12 +1070,20 @@
         "zona": 77,
         "secao": 95,
         "local": 1090,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 95,
         "numero_interno_urna": 2182735,
         "numero_serie_fv": "8C47C2DD",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "477173650583981362387473",
         "data_carga": "2026-09-26T09:38:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:00",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:32",
         "duracao_minutos": 540.52,
@@ -879,7 +1106,10 @@
         "votos_brancos": 3,
         "votos_nulos": 3,
         "votos_validos": 198,
-        "total_apurado_pres": 204
+        "total_apurado_pres": 204,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -899,12 +1129,20 @@
         "zona": 77,
         "secao": 96,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 96,
         "numero_interno_urna": 2191248,
         "numero_serie_fv": "4D7D76A5",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "103436397346978714873606",
         "data_carga": "2026-09-26T11:00:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:03:10",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:04",
         "duracao_minutos": 541.05,
@@ -930,7 +1168,14 @@
         "votos_brancos": 8,
         "votos_nulos": 4,
         "votos_validos": 223,
-        "total_apurado_pres": 235
+        "total_apurado_pres": 235,
+        "total_terceira_via": 18,
+        "votos_terceira_via": {
+          "14": 10,
+          "55": 2,
+          "70": 6
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770096-bu.dat",
@@ -939,12 +1184,20 @@
         "zona": 77,
         "secao": 96,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 96,
         "numero_interno_urna": 2191248,
         "numero_serie_fv": "4D7D76A5",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "103436397346978714873606",
         "data_carga": "2026-09-26T11:00:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:04:11",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:02:21",
         "duracao_minutos": 542.33,
@@ -967,7 +1220,10 @@
         "votos_brancos": 4,
         "votos_nulos": 2,
         "votos_validos": 239,
-        "total_apurado_pres": 245
+        "total_apurado_pres": 245,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -987,12 +1243,20 @@
         "zona": 77,
         "secao": 97,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 97,
         "numero_interno_urna": 2017932,
         "numero_serie_fv": "41CEAF94",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "376163774373338528426828",
         "data_carga": "2026-09-26T11:10:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:02:24",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:04",
         "duracao_minutos": 541.05,
@@ -1019,7 +1283,15 @@
         "votos_brancos": 6,
         "votos_nulos": 4,
         "votos_validos": 227,
-        "total_apurado_pres": 237
+        "total_apurado_pres": 237,
+        "total_terceira_via": 14,
+        "votos_terceira_via": {
+          "14": 5,
+          "21": 2,
+          "55": 3,
+          "70": 4
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770097-bu.dat",
@@ -1028,12 +1300,20 @@
         "zona": 77,
         "secao": 97,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 97,
         "numero_interno_urna": 2017932,
         "numero_serie_fv": "41CEAF94",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "376163774373338528426828",
         "data_carga": "2026-09-26T11:10:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:13",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:38",
         "duracao_minutos": 540.62,
@@ -1056,7 +1336,10 @@
         "votos_brancos": 2,
         "votos_nulos": 1,
         "votos_validos": 249,
-        "total_apurado_pres": 252
+        "total_apurado_pres": 252,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1076,12 +1359,20 @@
         "zona": 77,
         "secao": 98,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 98,
         "numero_interno_urna": 2179693,
         "numero_serie_fv": "F707FE6E",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "840810353520899846301292",
         "data_carga": "2026-09-26T11:20:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:56",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:02:05",
         "duracao_minutos": 542.07,
@@ -1107,7 +1398,14 @@
         "votos_brancos": 7,
         "votos_nulos": 0,
         "votos_validos": 221,
-        "total_apurado_pres": 228
+        "total_apurado_pres": 228,
+        "total_terceira_via": 11,
+        "votos_terceira_via": {
+          "14": 3,
+          "55": 3,
+          "70": 5
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770098-bu.dat",
@@ -1116,12 +1414,20 @@
         "zona": 77,
         "secao": 98,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 98,
         "numero_interno_urna": 2179693,
         "numero_serie_fv": "F707FE6E",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "840810353520899846301292",
         "data_carga": "2026-09-26T11:20:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:36",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:44",
         "duracao_minutos": 540.72,
@@ -1144,7 +1450,10 @@
         "votos_brancos": 2,
         "votos_nulos": 0,
         "votos_validos": 247,
-        "total_apurado_pres": 249
+        "total_apurado_pres": 249,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1164,12 +1473,20 @@
         "zona": 77,
         "secao": 99,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 99,
         "numero_interno_urna": 2177934,
         "numero_serie_fv": "E5B8210C",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "982224609534685959168652",
         "data_carga": "2026-09-26T11:38:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:03:25",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:00:37",
         "duracao_minutos": 540.6,
@@ -1198,7 +1515,17 @@
         "votos_brancos": 5,
         "votos_nulos": 5,
         "votos_validos": 231,
-        "total_apurado_pres": 241
+        "total_apurado_pres": 241,
+        "total_terceira_via": 19,
+        "votos_terceira_via": {
+          "14": 8,
+          "21": 1,
+          "29": 1,
+          "30": 1,
+          "55": 2,
+          "70": 6
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770099-bu.dat",
@@ -1207,12 +1534,20 @@
         "zona": 77,
         "secao": 99,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 99,
         "numero_interno_urna": 2177934,
         "numero_serie_fv": "E5B8210C",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "982224609534685959168652",
         "data_carga": "2026-09-26T11:38:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:01:47",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:38",
         "duracao_minutos": 540.62,
@@ -1235,7 +1570,10 @@
         "votos_brancos": 2,
         "votos_nulos": 2,
         "votos_validos": 244,
-        "total_apurado_pres": 248
+        "total_apurado_pres": 248,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1255,12 +1593,20 @@
         "zona": 77,
         "secao": 100,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 100,
         "numero_interno_urna": 2022448,
         "numero_serie_fv": "8EAF9538",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "780204878014570102044633",
         "data_carga": "2026-09-26T11:48:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:07:37",
         "abertura": "2026-10-04T08:03:14",
         "encerramento": "2026-10-04T17:02:34",
         "duracao_minutos": 539.33,
@@ -1286,7 +1632,14 @@
         "votos_brancos": 5,
         "votos_nulos": 1,
         "votos_validos": 226,
-        "total_apurado_pres": 232
+        "total_apurado_pres": 232,
+        "total_terceira_via": 12,
+        "votos_terceira_via": {
+          "14": 3,
+          "55": 1,
+          "70": 8
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770100-bu.dat",
@@ -1295,12 +1648,20 @@
         "zona": 77,
         "secao": 100,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 100,
         "numero_interno_urna": 2022448,
         "numero_serie_fv": "8EAF9538",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "780204878014570102044633",
         "data_carga": "2026-09-26T11:48:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:19",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:46",
         "duracao_minutos": 540.75,
@@ -1323,7 +1684,10 @@
         "votos_brancos": 7,
         "votos_nulos": 1,
         "votos_validos": 232,
-        "total_apurado_pres": 240
+        "total_apurado_pres": 240,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1343,12 +1707,20 @@
         "zona": 77,
         "secao": 101,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 101,
         "numero_interno_urna": 2197332,
         "numero_serie_fv": "0258CED6",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "376163579673976199163115",
         "data_carga": "2026-09-26T11:54:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:03:36",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:16",
         "duracao_minutos": 541.25,
@@ -1374,7 +1746,14 @@
         "votos_brancos": 3,
         "votos_nulos": 5,
         "votos_validos": 238,
-        "total_apurado_pres": 246
+        "total_apurado_pres": 246,
+        "total_terceira_via": 16,
+        "votos_terceira_via": {
+          "14": 3,
+          "55": 4,
+          "70": 9
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770101-bu.dat",
@@ -1383,12 +1762,20 @@
         "zona": 77,
         "secao": 101,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 101,
         "numero_interno_urna": 2197332,
         "numero_serie_fv": "0258CED6",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "376163579673976199163115",
         "data_carga": "2026-09-26T11:54:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:47",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:55",
         "duracao_minutos": 540.9,
@@ -1411,7 +1798,10 @@
         "votos_brancos": 3,
         "votos_nulos": 6,
         "votos_validos": 247,
-        "total_apurado_pres": 256
+        "total_apurado_pres": 256,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1431,12 +1821,20 @@
         "zona": 77,
         "secao": 103,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 103,
         "numero_interno_urna": 2046092,
         "numero_serie_fv": "D0291BA4",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "648890069700369262457052",
         "data_carga": "2026-09-26T13:09:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:23:43",
         "abertura": "2026-10-04T08:06:40",
         "encerramento": "2026-10-04T17:20:03",
         "duracao_minutos": 553.38,
@@ -1462,7 +1860,14 @@
         "votos_brancos": 10,
         "votos_nulos": 5,
         "votos_validos": 233,
-        "total_apurado_pres": 248
+        "total_apurado_pres": 248,
+        "total_terceira_via": 16,
+        "votos_terceira_via": {
+          "14": 2,
+          "55": 6,
+          "70": 8
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770103-bu.dat",
@@ -1471,12 +1876,20 @@
         "zona": 77,
         "secao": 103,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 103,
         "numero_interno_urna": 2046092,
         "numero_serie_fv": "D0291BA4",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "648890069700369262457052",
         "data_carga": "2026-09-26T13:09:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:28",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:32",
         "duracao_minutos": 541.52,
@@ -1499,7 +1912,10 @@
         "votos_brancos": 5,
         "votos_nulos": 4,
         "votos_validos": 258,
-        "total_apurado_pres": 267
+        "total_apurado_pres": 267,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1519,12 +1935,20 @@
         "zona": 77,
         "secao": 104,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 104,
         "numero_interno_urna": 2020630,
         "numero_serie_fv": "547DC0AD",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "265052794162724511630993",
         "data_carga": "2026-09-26T13:14:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:11:46",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:08:44",
         "duracao_minutos": 548.72,
@@ -1550,7 +1974,14 @@
         "votos_brancos": 10,
         "votos_nulos": 3,
         "votos_validos": 251,
-        "total_apurado_pres": 264
+        "total_apurado_pres": 264,
+        "total_terceira_via": 15,
+        "votos_terceira_via": {
+          "14": 7,
+          "55": 3,
+          "70": 5
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770104-bu.dat",
@@ -1559,12 +1990,20 @@
         "zona": 77,
         "secao": 104,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 104,
         "numero_interno_urna": 2020630,
         "numero_serie_fv": "547DC0AD",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "265052794162724511630993",
         "data_carga": "2026-09-26T13:14:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:43",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:02:25",
         "duracao_minutos": 542.4,
@@ -1587,7 +2026,10 @@
         "votos_brancos": 5,
         "votos_nulos": 3,
         "votos_validos": 267,
-        "total_apurado_pres": 275
+        "total_apurado_pres": 275,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1607,12 +2049,20 @@
         "zona": 77,
         "secao": 109,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 109,
         "numero_interno_urna": 2015189,
         "numero_serie_fv": "F590D466",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "931719014329208560266483",
         "data_carga": "2026-09-26T13:20:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:58",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:02:03",
         "duracao_minutos": 542.03,
@@ -1638,7 +2088,14 @@
         "votos_brancos": 6,
         "votos_nulos": 3,
         "votos_validos": 232,
-        "total_apurado_pres": 241
+        "total_apurado_pres": 241,
+        "total_terceira_via": 14,
+        "votos_terceira_via": {
+          "14": 4,
+          "55": 4,
+          "70": 6
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770109-bu.dat",
@@ -1647,12 +2104,20 @@
         "zona": 77,
         "secao": 109,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 109,
         "numero_interno_urna": 2015189,
         "numero_serie_fv": "F590D466",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "931719014329208560266483",
         "data_carga": "2026-09-26T13:20:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:04:38",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:02:38",
         "duracao_minutos": 542.62,
@@ -1675,7 +2140,10 @@
         "votos_brancos": 4,
         "votos_nulos": 3,
         "votos_validos": 238,
-        "total_apurado_pres": 245
+        "total_apurado_pres": 245,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1695,12 +2163,20 @@
         "zona": 77,
         "secao": 120,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 120,
         "numero_interno_urna": 2050242,
         "numero_serie_fv": "AAB0C233",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "901416133926453607963714",
         "data_carga": "2026-09-26T13:24:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:09:06",
         "abertura": "2026-10-04T08:05:19",
         "encerramento": "2026-10-04T17:07:05",
         "duracao_minutos": 541.77,
@@ -1726,7 +2202,14 @@
         "votos_brancos": 7,
         "votos_nulos": 10,
         "votos_validos": 199,
-        "total_apurado_pres": 216
+        "total_apurado_pres": 216,
+        "total_terceira_via": 17,
+        "votos_terceira_via": {
+          "14": 8,
+          "55": 3,
+          "70": 6
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770120-bu.dat",
@@ -1735,12 +2218,20 @@
         "zona": 77,
         "secao": 120,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 120,
         "numero_interno_urna": 2050242,
         "numero_serie_fv": "AAB0C233",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "901416133926453607963714",
         "data_carga": "2026-09-26T13:24:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:31",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:06",
         "duracao_minutos": 541.08,
@@ -1763,7 +2254,10 @@
         "votos_brancos": 3,
         "votos_nulos": 4,
         "votos_validos": 225,
-        "total_apurado_pres": 232
+        "total_apurado_pres": 232,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1783,12 +2277,20 @@
         "zona": 77,
         "secao": 121,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 121,
         "numero_interno_urna": 2046897,
         "numero_serie_fv": "5BEDECD3",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "103436444446938337603688",
         "data_carga": "2026-09-26T13:28:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:34",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:07",
         "duracao_minutos": 541.1,
@@ -1815,7 +2317,15 @@
         "votos_brancos": 8,
         "votos_nulos": 7,
         "votos_validos": 229,
-        "total_apurado_pres": 244
+        "total_apurado_pres": 244,
+        "total_terceira_via": 18,
+        "votos_terceira_via": {
+          "14": 2,
+          "21": 1,
+          "55": 3,
+          "70": 12
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770121-bu.dat",
@@ -1824,12 +2334,20 @@
         "zona": 77,
         "secao": 121,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 121,
         "numero_interno_urna": 2046897,
         "numero_serie_fv": "5BEDECD3",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "103436444446938337603688",
         "data_carga": "2026-09-26T13:28:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:44",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:57",
         "duracao_minutos": 540.93,
@@ -1852,7 +2370,10 @@
         "votos_brancos": 1,
         "votos_nulos": 5,
         "votos_validos": 245,
-        "total_apurado_pres": 251
+        "total_apurado_pres": 251,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1872,12 +2393,20 @@
         "zona": 77,
         "secao": 125,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 125,
         "numero_interno_urna": 2098748,
         "numero_serie_fv": "A4F07BF5",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "780204563214812942706668",
         "data_carga": "2026-09-26T13:57:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:08:40",
         "abertura": "2026-10-04T08:00:19",
         "encerramento": "2026-10-04T17:06:45",
         "duracao_minutos": 546.43,
@@ -1905,7 +2434,16 @@
         "votos_brancos": 12,
         "votos_nulos": 10,
         "votos_validos": 244,
-        "total_apurado_pres": 266
+        "total_apurado_pres": 266,
+        "total_terceira_via": 14,
+        "votos_terceira_via": {
+          "14": 4,
+          "27": 1,
+          "30": 2,
+          "55": 2,
+          "70": 5
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770125-bu.dat",
@@ -1914,12 +2452,20 @@
         "zona": 77,
         "secao": 125,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 125,
         "numero_interno_urna": 2098748,
         "numero_serie_fv": "A4F07BF5",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "780204563214812942706668",
         "data_carga": "2026-09-26T13:57:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:04:13",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:02:40",
         "duracao_minutos": 542.65,
@@ -1942,7 +2488,10 @@
         "votos_brancos": 3,
         "votos_nulos": 5,
         "votos_validos": 265,
-        "total_apurado_pres": 273
+        "total_apurado_pres": 273,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -1962,12 +2511,20 @@
         "zona": 77,
         "secao": 128,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 128,
         "numero_interno_urna": 2022997,
         "numero_serie_fv": "1A39D445",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "113537229447666435671783",
         "data_carga": "2026-09-26T14:05:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:03:52",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:02:13",
         "duracao_minutos": 542.2,
@@ -1993,7 +2550,14 @@
         "votos_brancos": 13,
         "votos_nulos": 6,
         "votos_validos": 239,
-        "total_apurado_pres": 258
+        "total_apurado_pres": 258,
+        "total_terceira_via": 18,
+        "votos_terceira_via": {
+          "14": 6,
+          "55": 4,
+          "70": 8
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770128-bu.dat",
@@ -2002,12 +2566,20 @@
         "zona": 77,
         "secao": 128,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 128,
         "numero_interno_urna": 2022997,
         "numero_serie_fv": "1A39D445",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "113537229447666435671783",
         "data_carga": "2026-09-26T14:05:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:02:46",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:00:59",
         "duracao_minutos": 540.97,
@@ -2030,7 +2602,10 @@
         "votos_brancos": 4,
         "votos_nulos": 3,
         "votos_validos": 262,
-        "total_apurado_pres": 269
+        "total_apurado_pres": 269,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -2050,12 +2625,20 @@
         "zona": 77,
         "secao": 131,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 131,
         "numero_interno_urna": 2181535,
         "numero_serie_fv": "A321D373",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "426668837778856702540200",
         "data_carga": "2026-09-26T14:12:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:13",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:37",
         "duracao_minutos": 541.6,
@@ -2081,7 +2664,14 @@
         "votos_brancos": 9,
         "votos_nulos": 4,
         "votos_validos": 218,
-        "total_apurado_pres": 231
+        "total_apurado_pres": 231,
+        "total_terceira_via": 13,
+        "votos_terceira_via": {
+          "14": 5,
+          "30": 1,
+          "70": 7
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770131-bu.dat",
@@ -2090,12 +2680,20 @@
         "zona": 77,
         "secao": 131,
         "local": 1023,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 131,
         "numero_interno_urna": 2181535,
         "numero_serie_fv": "A321D373",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "426668837778856702540200",
         "data_carga": "2026-09-26T14:12:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:20",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:11",
         "duracao_minutos": 541.17,
@@ -2118,7 +2716,10 @@
         "votos_brancos": 6,
         "votos_nulos": 2,
         "votos_validos": 233,
-        "total_apurado_pres": 241
+        "total_apurado_pres": 241,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -2138,12 +2739,20 @@
         "zona": 77,
         "secao": 138,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 138,
         "numero_interno_urna": 2015536,
         "numero_serie_fv": "E1152F8D",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "759901937111530698969334",
         "data_carga": "2026-09-26T14:17:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:05:23",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:02:03",
         "duracao_minutos": 542.03,
@@ -2168,7 +2777,13 @@
         "votos_brancos": 6,
         "votos_nulos": 5,
         "votos_validos": 242,
-        "total_apurado_pres": 253
+        "total_apurado_pres": 253,
+        "total_terceira_via": 10,
+        "votos_terceira_via": {
+          "14": 2,
+          "70": 8
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770138-bu.dat",
@@ -2177,12 +2792,20 @@
         "zona": 77,
         "secao": 138,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 138,
         "numero_interno_urna": 2015536,
         "numero_serie_fv": "E1152F8D",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "759901937111530698969334",
         "data_carga": "2026-09-26T14:17:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:55",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:04",
         "duracao_minutos": 541.05,
@@ -2205,7 +2828,10 @@
         "votos_brancos": 2,
         "votos_nulos": 2,
         "votos_validos": 252,
-        "total_apurado_pres": 256
+        "total_apurado_pres": 256,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     },
     {
@@ -2225,12 +2851,20 @@
         "zona": 77,
         "secao": 154,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 154,
         "numero_interno_urna": 2021773,
         "numero_serie_fv": "212395E9",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "992325870135518830895042",
         "data_carga": "2026-09-26T14:22:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-04T17:04:41",
         "abertura": "2026-10-04T08:00:01",
         "encerramento": "2026-10-04T17:01:51",
         "duracao_minutos": 541.83,
@@ -2256,7 +2890,14 @@
         "votos_brancos": 11,
         "votos_nulos": 12,
         "votos_validos": 210,
-        "total_apurado_pres": 233
+        "total_apurado_pres": 233,
+        "total_terceira_via": 12,
+        "votos_terceira_via": {
+          "14": 4,
+          "55": 4,
+          "70": 4
+        },
+        "cadeia_hash_valida": true
       },
       "dados_2t": {
         "path": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC\\o03221sc8000400770154-bu.dat",
@@ -2265,12 +2906,20 @@
         "zona": 77,
         "secao": 154,
         "local": 1104,
+        "municipio_correspondencia": 80004,
+        "zona_correspondencia": 77,
+        "secao_correspondencia": 154,
         "numero_interno_urna": 2021773,
         "numero_serie_fv": "212395E9",
         "numero_serie_fc": "4A1EECCB",
         "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
         "codigo_carga": "992325870135518830895042",
         "data_carga": "2026-09-26T14:22:00",
+        "nome_gerador_midia": "CSC077W058300",
+        "serial_tpm": "367A7A6587EFF2070249",
+        "serial_instalacao": "B8B53007",
+        "tipo_arquivo": 1,
+        "data_hora_emissao": "2026-10-25T17:03:14",
         "abertura": "2026-10-25T08:00:01",
         "encerramento": "2026-10-25T17:01:13",
         "duracao_minutos": 541.2,
@@ -2293,7 +2942,10 @@
         "votos_brancos": 1,
         "votos_nulos": 2,
         "votos_validos": 246,
-        "total_apurado_pres": 249
+        "total_apurado_pres": 249,
+        "total_terceira_via": 0,
+        "votos_terceira_via": {},
+        "cadeia_hash_valida": true
       }
     }
   ]
