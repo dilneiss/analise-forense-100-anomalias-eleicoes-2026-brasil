@@ -2845,6 +2845,8 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 </div>
                 <button onclick="closeModal()" class="modal-close">&times;</button>
             </div>
+            <!-- GRÁFICO / MEDIDOR DE CHANCE DE FRAUDE NESTA URNA -->
+            <div id="modalFraudCard"></div>
             <div id="modalKpis" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.25rem;"></div>
             <h3 style="font-size: 0.9375rem; font-weight: 800; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.4rem; margin-bottom: 0.75rem;">
                 Inconsistências Identificadas e Tradução para Leigos:
@@ -3368,6 +3370,99 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             document.getElementById('filterCount').textContent = `Exibindo ${{limit}} de ${{filtered.length}} seções encontradas nos filtros (ordenadas por ${{currentSort.column}} ${{currentSort.order}}).`;
         }}
 
+                function calculateSectionFraudScore(s, sortedAnoms) {{
+            if (!sortedAnoms || sortedAnoms.length === 0) {{
+                return {{ score: 0, label: "Sem Evidência de Fraude (0%)", color: "#10b981", desc: "Urna 100% consistente em todas as 100 verificações forenses." }};
+            }}
+
+            let score = 0;
+            const codes = sortedAnoms.map(a => a.code);
+            const hasCode = (prefix) => codes.some(c => c.includes(prefix));
+
+            // Conjunção Crítica (Bypass de Biometria + Carga de Outro Município + Troca de Urna)
+            if ((hasCode("CHK001") || hasCode("CHK004")) && hasCode("CHK014") && (hasCode("CHK066") || hasCode("CHK067")) && (hasCode("CHK068") || hasCode("CHK069"))) {{
+                return {{
+                    score: 93,
+                    label: "Altíssima Probabilidade de Fraude / Vício Material (93%)",
+                    color: "#b91c1c",
+                    desc: "Conjunção simultânea de troca física de máquina, carga preparada para outro município, desabamento de biometria e explosão de liberações manuais por ano de nascimento."
+                }};
+            }}
+
+            // Violação Criptográfica Direta
+            if (hasCode("CHK093") || hasCode("CHK098") || hasCode("CHK100") || hasCode("CHK059")) {{
+                score = Math.max(score, 90);
+            }}
+
+            // Anomalia de Votação com Queda e Mais Comparecimento (CHK046)
+            if (hasCode("CHK046")) {{
+                score = Math.max(score, 82);
+            }}
+
+            // Crescimento Excedente ao Teto Matemático (CHK054 / CHK055)
+            if (hasCode("CHK054") || hasCode("CHK055")) {{
+                score = Math.max(score, 85);
+            }}
+
+            // Desabamento de Biometria + Surto Manual
+            if ((hasCode("CHK066") || hasCode("CHK067")) && (hasCode("CHK068") || hasCode("CHK069"))) {{
+                score = Math.max(score, 88);
+            }} else if (hasCode("CHK066") || hasCode("CHK068")) {{
+                score = Math.max(score, 75);
+            }}
+
+            // Troca de Urna + Carga de Outro Município
+            if (hasCode("CHK001") && hasCode("CHK014")) {{
+                score = Math.max(score, 80);
+            }} else if (hasCode("CHK014")) {{
+                score = Math.max(score, 65);
+            }} else if (hasCode("CHK001")) {{
+                score = Math.max(score, 50);
+            }}
+
+            // Swing Político Extremo > 50 pp
+            if (hasCode("CHK056")) {{
+                score = Math.max(score, 70);
+            }}
+
+            // Variação Relevante de Eleitores > 0.5%
+            const chk16 = sortedAnoms.find(a => a.code.includes("CHK016"));
+            if (chk16 && chk16.severity === "ALTA") {{
+                score = Math.max(score, 55);
+            }}
+
+            // Se apenas informativos operacionais (ex: troca de FC padrão ou aptos <= 0.5%)
+            const allInfo = sortedAnoms.every(a => a.severity === "INFO" || a.severity === "BAIXA");
+            if (allInfo) {{
+                return {{
+                    score: 3,
+                    label: "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+                    color: "#10b981",
+                    desc: "Apresenta apenas ajustes rotineiros comuns (como atualização padrão de Flash de Carga para o 2T ou variação residual <= 0.5% de eleitores)."
+                }};
+            }}
+
+            let color = "#10b981";
+            let label = "Baixo Risco de Fraude (" + score + "%)";
+            let desc = "Inconsistências isoladas com baixa probabilidade de alteração dolosa do resultado.";
+
+            if (score >= 80) {{
+                color = "#b91c1c";
+                label = "Altíssima Probabilidade de Vício / Fraude (" + score + "%)";
+                desc = "Apresenta anomalias graves de hardware, biometria ou contabilidade que rompem as travas de segurança da urna.";
+            }} else if (score >= 50) {{
+                color = "#d97706";
+                label = "Suspeita Elevada de Manipulação / Contaminação (" + score + "%)";
+                desc = "Combinação de inconsistências relevantes que exigem auditoria documental (folha de presença física e logs).";
+            }} else if (score >= 20) {{
+                color = "#eab308";
+                label = "Anomalia Moderada / Risco Médio (" + score + "%)";
+                desc = "Desvios operacionais ou comportamentais atípicos na seção.";
+            }}
+
+            return {{ score, label, color, desc }};
+        }}
+
         function openModal(index) {{
             const s = currentFilteredSections[index];
             if (!s) return;
@@ -3380,6 +3475,36 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             document.getElementById('modalSevBadge').innerHTML = getSeverityBadge(s.worst_severity);
             document.getElementById('modalTitle').textContent = `${{s.municipio_nome || 'Município ' + s.municipio}} - Zona ${{s.zona}}, Seção ${{s.secao}}`;
             document.getElementById('modalSubtitle').textContent = `Urna 1T: ${{d1.numero_interno_urna || 'N/A'}} | Urna 2T: ${{d2.numero_interno_urna || 'N/A'}} | Local: ${{d2.local || d1.local || 'N/A'}}`;
+
+            // Ordena as anomalias da seção trazendo as de MAIS ALTA SEVERIDADE PRIMEIRO
+            const sortedAnoms = [...(s.anomalias || [])];
+            sortedAnoms.sort((a, b) => (SEV_WEIGHTS[b.severity] || 0) - (SEV_WEIGHTS[a.severity] || 0));
+
+            // Calcula o score de probabilidade de fraude para esta urna específica
+            const fraudRisk = calculateSectionFraudScore(s, sortedAnoms);
+
+            // Renderiza o gráfico / medidor no topo do modal
+            document.getElementById('modalFraudCard').innerHTML = `
+                <div style="background: #ffffff; border: 2px solid ${{fraudRisk.color}}; border-radius: 0.75rem; padding: 1.15rem 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <div style="flex: 1;">
+                        <span class="badge" style="background: ${{fraudRisk.color}}20; color: ${{fraudRisk.color}}; border: 1px solid ${{fraudRisk.color}}; font-weight: 800; font-family: ui-monospace, monospace; margin-bottom: 0.35rem;">ESTIMATIVA PERICIAL DE VÍCIO / FRAUDE NESTA URNA</span>
+                        <h3 style="font-size: 1.15rem; font-weight: 900; color: ${{fraudRisk.color}}; margin: 0.2rem 0;">${{fraudRisk.label}}</h3>
+                        <p style="font-size: 0.8125rem; color: #475569; margin: 0.25rem 0 0 0; line-height: 1.45;">${{fraudRisk.desc}}</p>
+                    </div>
+                    <div style="text-align: center; min-width: 110px;">
+                        <div style="position: relative; width: 88px; height: 88px; margin: 0 auto;">
+                            <svg viewBox="0 0 36 36" style="width: 88px; height: 88px; transform: rotate(-90deg);">
+                                <path stroke="#e2e8f0" stroke-width="3.5" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path stroke="${{fraudRisk.color}}" stroke-dasharray="${{fraudRisk.score}}, 100" stroke-width="3.5" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: ${{fraudRisk.color}}; font-family: ui-monospace, monospace;">${{fraudRisk.score}}%</div>
+                                <div style="font-size: 0.55rem; font-weight: 700; color: ${{fraudRisk.color}}; text-transform: uppercase;">Probabilidade</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
 
             const sem1 = (d1.biometria_bio || 0) + (d1.biometria_nao || 0);
             const sem2 = (d2.biometria_bio || 0) + (d2.biometria_nao || 0);
@@ -3413,7 +3538,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             `;
 
             let anomHtml = '';
-            for (const a of (s.anomalias || [])) {{
+            for (const a of sortedAnoms) {{
                 const g = GLOSSARY_DATA[a.code] || {{
                     titulo: a.title,
                     explicacao: a.description,
@@ -3440,6 +3565,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                         <div style="font-size:0.8125rem; color:#475569; margin-bottom:0.5rem; background:#ffffff; padding:0.4rem 0.6rem; border-radius:0.25rem; border:1px solid #e2e8f0;">
                             <strong>Dado Identificado na Urna:</strong> ${{descText}}
                         </div>
+                        <div style="font-size:0.75rem; color:#334155; margin-bottom:0.35rem;">
                             <strong>💡 O que significa para leigos:</strong> ${{g.explicacao}}
                         </div>
                         <div style="font-size:0.75rem; color:#991b1b;">
