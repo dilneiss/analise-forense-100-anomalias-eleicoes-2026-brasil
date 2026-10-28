@@ -171,9 +171,9 @@ Seções com alguma inconsistência: 2,438 (14.07%)
 Total de ocorrências de anomalias: 4,626
 --------------------------------------------------------------------------------
 DISTRIBUIÇÃO POR SEVERIDADE:
-  - ALTA (Crítica):    4,084 ocorrências
-  - MÉDIA (Relevante): 470 ocorrências
-  - BAIXA / INFO:      72 ocorrências
+  - ALTA (Crítica):    1,028 ocorrências (762 seções com severidade máxima ALTA)
+  - MÉDIA (Relevante): 355 ocorrências
+  - BAIXA / INFO:      3,243 ocorrências
 --------------------------------------------------------------------------------
 AUDITORIA BIOMÉTRICA ESTADUAL:
   - Votos Com Biometria: 1T=4,058,005 (87.3%) │ 2T=4,152,006 (87.18%)
@@ -214,13 +214,12 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
 
 ---
 
-### 6.3 Padrão 3: Modificação do Eleitorado Original Congelado (1.743 seções)
+### 6.3 Padrão 3: Modificação do Eleitorado Original e Filtro de Relevância (> 0.5%)
 
-- Em **1.743 seções eleitorais**, o número de eleitores aptos originais da seção (`qtd_eleitores_aptos_secao`) foi diferente entre o 1º e o 2º turno (`CHK016`):
-  - Em **1.110 seções**, houve **aumento** de eleitores cadastrados (`CHK018`).
-  - Em **633 seções**, houve **redução** de eleitores cadastrados (`CHK017`).
-- **Por que levanta suspeita:** Por determinação da legislação eleitoral brasileira, o caderno de eleitores aptos da seção é estritamente **congelado** semanas antes do pleito. Não existe previsão legal para exclusão ou inclusão de eleitores originais entre o 1º e 2º turno. Essa oscilação aponta para adulteração na tabela de eleitores da mídia de carga ou inserção de eleitores fantasmas.
-
+- Em **1.743 seções eleitorais**, houve registro de oscilação no número de eleitores aptos originais da seção (`qtd_eleitores_aptos_secao`, `CHK016`):
+  - **1.528 seções tiveram variação residual $\le 0.5\%$ (apenas +1 ou -1 eleitor):** Variações ínfimas decorrentes de ajustes cartorários rotineiros (como reativações pontuais de título sob tutela judicial), corretamente categorizadas como **`INFO` (não críticas)** para evitar falsos alarmes.
+  - **215 seções tiveram variação expressiva $> 0.5\%$ (Severidade `ALTA`):** Seções onde o eleitorado original oscilou substancialmente após o congelamento oficial do cadastro, exigindo prestação de contas do cartório eleitoral.
+- **Por que variações acima de meio por cento levantam suspeita:** Por determinação legal, o caderno de eleitores aptos da seção é congelado antes do pleito. Inclusões ou exclusões expressivas de votantes originais após o 1º turno podem indicar adulteração cadastral na tabela da urna ou inserção de eleitores fantasmas.
 ---
 
 ### 6.4 Padrão 4: O Desabamento da Biometria e o Risco de Voto Fantasma por Liberação Manual

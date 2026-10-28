@@ -613,43 +613,57 @@ def evaluate_section_anomalies(
     # GRUPO 2: CADASTRO E ELEITORADO (CHK016 a CHK030)
     # ========================================================================
 
-    # CHK016: Variação de eleitores aptos da seção
+    # CHK016: Variação de eleitores aptos da seção (> 0.5% é relevante/ALTA, <= 0.5% é residual/INFO)
     if s1.aptos_secao != s2.aptos_secao:
         diff_aptos = s2.aptos_secao - s1.aptos_secao
+        pct_diff_aptos = abs(diff_aptos) / s1.aptos_secao * 100.0 if s1.aptos_secao > 0 else 0.0
+        is_relevante = pct_diff_aptos > 0.5
+        sev_aptos = SEV_ALTA if is_relevante else SEV_INFO
+        title_aptos = "Variação Relevante no Cadastro de Aptos (> 0.5%)" if is_relevante else "Ajuste Cadastral Residual de Aptos (<= 0.5% - Comum)"
         anomalies.append(
             Anomaly(
                 code="CHK016_VARIACAO_APTOS_SECAO",
                 category=CAT_ELEITORADO,
-                severity=SEV_ALTA,
-                title="Variação no cadastro de eleitores originais da seção",
-                description=f"Caderno eleitoral variou em {diff_aptos:+d} (1T: {s1.aptos_secao} vs 2T: {s2.aptos_secao}).",
-                details={"aptos_1t": s1.aptos_secao, "aptos_2t": s2.aptos_secao, "delta": diff_aptos},
+                severity=sev_aptos,
+                title=title_aptos,
+                description=f"Caderno eleitoral variou em {diff_aptos:+d} ({pct_diff_aptos:.2f}%) [1T: {s1.aptos_secao} vs 2T: {s2.aptos_secao}].",
+                details={"aptos_1t": s1.aptos_secao, "aptos_2t": s2.aptos_secao, "delta": diff_aptos, "pct_var": round(pct_diff_aptos, 2), "relevante": is_relevante},
             )
         )
 
     # CHK017: Redução de aptos originais
     if s2.aptos_secao < s1.aptos_secao:
+        diff_aptos = s1.aptos_secao - s2.aptos_secao
+        pct_diff_aptos = diff_aptos / s1.aptos_secao * 100.0 if s1.aptos_secao > 0 else 0.0
+        is_relevante = pct_diff_aptos > 0.5
+        sev_aptos = SEV_ALTA if is_relevante else SEV_INFO
+        title_aptos = "Redução Relevante de Eleitores Originais (> 0.5%)" if is_relevante else "Redução Residual de Eleitores Originais (<= 0.5%)"
         anomalies.append(
             Anomaly(
                 code="CHK017_REDUCAO_APTOS_SECAO",
                 category=CAT_ELEITORADO,
-                severity=SEV_ALTA,
-                title="Redução do número de eleitores originais no 2T",
-                description=f"O número de aptos originais diminuiu de {s1.aptos_secao} para {s2.aptos_secao}.",
-                details={"queda": s1.aptos_secao - s2.aptos_secao},
+                severity=sev_aptos,
+                title=title_aptos,
+                description=f"O número de aptos originais diminuiu de {s1.aptos_secao} para {s2.aptos_secao} (-{diff_aptos}, {pct_diff_aptos:.2f}%).",
+                details={"queda": diff_aptos, "pct_var": round(pct_diff_aptos, 2), "relevante": is_relevante},
             )
         )
 
     # CHK018: Aumento de aptos originais
     if s2.aptos_secao > s1.aptos_secao:
+        diff_aptos = s2.aptos_secao - s1.aptos_secao
+        pct_diff_aptos = diff_aptos / s1.aptos_secao * 100.0 if s1.aptos_secao > 0 else 0.0
+        is_relevante = pct_diff_aptos > 0.5
+        sev_aptos = SEV_ALTA if is_relevante else SEV_INFO
+        title_aptos = "Aumento Relevante de Eleitores Originais (> 0.5%)" if is_relevante else "Aumento Residual de Eleitores Originais (<= 0.5%)"
         anomalies.append(
             Anomaly(
                 code="CHK018_AUMENTO_APTOS_SECAO",
                 category=CAT_ELEITORADO,
-                severity=SEV_ALTA,
-                title="Aumento no número de eleitores originais no 2T",
-                description=f"O número de aptos originais subiu de {s1.aptos_secao} para {s2.aptos_secao}.",
-                details={"aumento": s2.aptos_secao - s1.aptos_secao},
+                severity=sev_aptos,
+                title=title_aptos,
+                description=f"O número de aptos originais subiu de {s1.aptos_secao} para {s2.aptos_secao} (+{diff_aptos}, {pct_diff_aptos:.2f}%).",
+                details={"aumento": diff_aptos, "pct_var": round(pct_diff_aptos, 2), "relevante": is_relevante},
             )
         )
 
@@ -2754,20 +2768,20 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             // Cadastral
             "CHK016_VARIACAO_APTOS_SECAO": {{
                 "titulo": "Variação de Eleitores Originais da Seção",
-                "explicacao": "A lista oficial de eleitores cadastrados na seção mudou entre o 1º e 2º turno.",
-                "por_que_suspeito": "Por lei, o cadastro de eleitores é congelado antes da eleição. Não podem surgir nem sumir eleitores da seção.",
+                "explicacao": "A lista oficial de eleitores cadastrados na seção mudou entre os turnos. Variações pequenas de até meio por cento (<= 0.5%, como apenas 1 ou 2 eleitores) são ajustes cadastrais residuais comuns da Justiça Eleitoral (ex.: reativações pontuais de título). Apenas variações superiores a meio por cento (> 0.5%) são consideradas relevantes.",
+                "por_que_suspeito": "Se a variação for superior a 0.5% do eleitorado, aponta para inclusão ou exclusão anormal de votantes após o congelamento oficial do cadastro eleitoral.",
                 "severidade": "ALTA"
             }},
             "CHK017_REDUCAO_APTOS_SECAO": {{
                 "titulo": "Redução de Eleitores Originais",
-                "explicacao": "Eleitores cadastrados foram retirados da lista de votantes no 2T.",
-                "por_que_suspeito": "Risco de exclusão indevida ou cerceamento de eleitores aptos.",
+                "explicacao": "Eleitores cadastrados foram retirados da lista de votantes no 2T. É relevante quando a redução ultrapassa 0.5% do total da seção.",
+                "por_que_suspeito": "Reduções acima de meio por cento podem indicar cerceamento indevido de eleitores aptos.",
                 "severidade": "ALTA"
             }},
             "CHK018_AUMENTO_APTOS_SECAO": {{
                 "titulo": "Aumento de Eleitores Originais",
-                "explicacao": "Novos eleitores apareceram cadastrados na seção no 2T.",
-                "por_que_suspeito": "Inserção irregular de eleitores no cadastro após o congelamento legal.",
+                "explicacao": "Novos eleitores apareceram cadastrados na seção no 2T. É relevante quando o aumento ultrapassa 0.5% do total da seção.",
+                "por_que_suspeito": "Aumentos acima de meio por cento apontam para inserção irregular de eleitores no cadastro após o congelamento legal.",
                 "severidade": "ALTA"
             }},
             "CHK019_PICO_TTE_ABSOLUTO": {{

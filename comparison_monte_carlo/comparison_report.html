@@ -475,20 +475,20 @@
             // Cadastral
             "CHK016_VARIACAO_APTOS_SECAO": {
                 "titulo": "Variação de Eleitores Originais da Seção",
-                "explicacao": "A lista oficial de eleitores cadastrados na seção mudou entre o 1º e 2º turno.",
-                "por_que_suspeito": "Por lei, o cadastro de eleitores é congelado antes da eleição. Não podem surgir nem sumir eleitores da seção.",
+                "explicacao": "A lista oficial de eleitores cadastrados na seção mudou entre os turnos. Variações pequenas de até meio por cento (<= 0.5%, como apenas 1 ou 2 eleitores) são ajustes cadastrais residuais comuns da Justiça Eleitoral (ex.: reativações pontuais de título). Apenas variações superiores a meio por cento (> 0.5%) são consideradas relevantes.",
+                "por_que_suspeito": "Se a variação for superior a 0.5% do eleitorado, aponta para inclusão ou exclusão anormal de votantes após o congelamento oficial do cadastro eleitoral.",
                 "severidade": "ALTA"
             },
             "CHK017_REDUCAO_APTOS_SECAO": {
                 "titulo": "Redução de Eleitores Originais",
-                "explicacao": "Eleitores cadastrados foram retirados da lista de votantes no 2T.",
-                "por_que_suspeito": "Risco de exclusão indevida ou cerceamento de eleitores aptos.",
+                "explicacao": "Eleitores cadastrados foram retirados da lista de votantes no 2T. É relevante quando a redução ultrapassa 0.5% do total da seção.",
+                "por_que_suspeito": "Reduções acima de meio por cento podem indicar cerceamento indevido de eleitores aptos.",
                 "severidade": "ALTA"
             },
             "CHK018_AUMENTO_APTOS_SECAO": {
                 "titulo": "Aumento de Eleitores Originais",
-                "explicacao": "Novos eleitores apareceram cadastrados na seção no 2T.",
-                "por_que_suspeito": "Inserção irregular de eleitores no cadastro após o congelamento legal.",
+                "explicacao": "Novos eleitores apareceram cadastrados na seção no 2T. É relevante quando o aumento ultrapassa 0.5% do total da seção.",
+                "por_que_suspeito": "Aumentos acima de meio por cento apontam para inserção irregular de eleitores no cadastro após o congelamento legal.",
                 "severidade": "ALTA"
             },
             "CHK019_PICO_TTE_ABSOLUTO": {

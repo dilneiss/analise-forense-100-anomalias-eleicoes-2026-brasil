@@ -131,6 +131,24 @@ def test_electorate_anomalies():
     assert "CHK016_VARIACAO_APTOS_SECAO" in codes
     assert "CHK019_PICO_TTE_ABSOLUTO" in codes
 
+def test_aptos_secao_threshold_half_percent():
+    # +1 eleitor em 361 (= 0.27% <= 0.5%): severidade INFO (não relevante)
+    s1 = _make_sample(aptos_secao=361, comparecimento=250, aptos=361)
+    s2 = _make_sample(aptos_secao=362, comparecimento=250, aptos=362)
+    anoms = evaluate_section_anomalies(s1, s2)
+    chk16 = next((a for a in anoms if a.code == "CHK016_VARIACAO_APTOS_SECAO"), None)
+    assert chk16 is not None
+    assert chk16.severity == "INFO"
+    assert chk16.details["relevante"] is False
+
+    # +3 eleitores em 300 (= 1.0% > 0.5%): severidade ALTA (relevante)
+    s3 = _make_sample(aptos_secao=300, comparecimento=250, aptos=300)
+    s4 = _make_sample(aptos_secao=303, comparecimento=250, aptos=303)
+    anoms_rel = evaluate_section_anomalies(s3, s4)
+    chk16_rel = next((a for a in anoms_rel if a.code == "CHK016_VARIACAO_APTOS_SECAO"), None)
+    assert chk16_rel is not None
+    assert chk16_rel.severity == "ALTA"
+    assert chk16_rel.details["relevante"] is True
 
 def test_turnout_extreme_and_exceeding():
     s1 = _make_sample(aptos=100, comparecimento=110)
