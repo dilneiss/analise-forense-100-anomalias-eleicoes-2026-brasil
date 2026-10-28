@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Urna SC 80535 Z0044 S0144 · auditoria</title>
+<style>
+:root{
+  --bg:#f4f6f8;--card:#ffffff;--fg:#16202b;--muted:#5d6b7a;--border:#d9e1e8;
+  --accent:#0b57d0;--ok:#18794e;--warn:#8a5a00;--err:#b3261e;--soft:#eef2f6;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f141a;--card:#161d25;--fg:#e8eef5;--muted:#98a6b5;--border:#273241;
+  --accent:#7aa7ff;--ok:#4ac486;--warn:#e0b04a;--err:#ff7b72;--soft:#1d2631;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--border);padding:28px 20px}
+main{max-width:1120px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:24px;margin:0 0 4px;letter-spacing:-.2px}
+h2{font-size:18px;margin:34px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+h3{font-size:15px;margin:18px 0 8px}
+p{margin:8px 0}
+.sub{color:var(--muted);font-size:13px}
+.mono{font-family:var(--mono);font-size:12.5px;word-break:break-all}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.card .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.card .value{font-size:24px;font-weight:650;margin-top:4px;font-variant-numeric:tabular-nums}
+.card .note{color:var(--muted);font-size:12.5px;margin-top:4px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.03em}
+.badge.ok{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.badge.warn{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.badge.err{background:color-mix(in srgb,var(--err) 16%,transparent);color:var(--err)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.callout{border:1px solid var(--border);border-left:4px solid var(--warn);background:var(--card);border-radius:8px;padding:14px 16px;margin:18px 0}
+.callout.err{border-left-color:var(--err)}
+.callout.info{border-left-color:var(--accent)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);font-size:13.5px;vertical-align:top}
+th{background:var(--soft);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--border)}
+.timeline li{position:relative;padding:0 0 20px 14px}
+.timeline li::before{content:"";position:absolute;left:-8px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--card)}
+.timeline .when{font-family:var(--mono);font-size:13px;font-weight:650}
+.timeline .what{font-weight:600}
+.timeline .src{color:var(--muted);font-size:12px;word-break:break-word}
+.timeline details{margin-top:4px;color:var(--muted);font-size:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+details.box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin:8px 0}
+details.box summary{cursor:pointer;font-weight:600}
+.bars{display:flex;align-items:flex-end;gap:3px;height:90px;margin-top:10px}
+.bar{flex:1;background:var(--accent);opacity:.75;border-radius:2px 2px 0 0;min-height:1px;position:relative}
+.bar:hover{opacity:1}
+.bar span{display:none;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border);padding:2px 5px;border-radius:4px;font-size:11px;white-space:nowrap}
+.bar:hover span{display:block}
+.hours{display:flex;gap:3px;font-size:10.5px;color:var(--muted);margin-top:4px}
+.hours span{flex:1;text-align:center}
+ul.tight{margin:6px 0;padding-left:20px}
+ul.tight li{margin:4px 0}
+pre{background:var(--soft);border:1px solid var(--border);border-radius:8px;padding:12px;overflow:auto;font-family:var(--mono);font-size:12px}
+footer{color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:36px;padding-top:14px}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  header,main{max-width:none;padding:0}
+  .card,table{break-inside:avoid}
+  h2{break-after:avoid}
+  details.box{break-inside:avoid}
+  details.box>summary{list-style:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div style="max-width:1120px;margin:0 auto">
+    <div class="sub">Auditoria técnica de arquivos da urna eletrônica</div>
+    <h1>Urna SC · Braço Do Norte · Zona 0044 · Seção 0144</h1>
+    <div class="sub">
+      Eleição de 04/10/2026 ·
+      turno 1 ·
+      análise em 27/10/2026 20:50:56
+    </div>
+    <div class="badges"><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span><span class="badge warn">ASSINATURA: NÃO FOI POSSÍVEL VERIFICAR</span><span class="badge ok">SEM EVIDÊNCIA DE ALTERAÇÃO</span></div>
+  </div>
+</header>
+<main>
+  
+  <div class="callout info">
+    <strong>Conclusão técnica</strong>
+    <p>A votacao foi aberta em 04/10/2026 08:00:01 e encerrada em 04/10/2026 17:01:17. O BU declara comparecimento 324 e 2 eleicao(oes). Nenhuma evidencia de alteracao foi encontrada nas verificacoes disponiveis.</p>
+    <p class="sub">Integridade: NÃO FOI POSSÍVEL VERIFICAR ·
+    Autenticidade: NÃO FOI POSSÍVEL VERIFICAR ·
+    Alteração: SEM EVIDÊNCIA DE ALTERAÇÃO</p>
+  </div>
+
+  <h2>Identificação</h2>
+  <div class="grid">
+    <div class="card"><div class="label">UF</div><div class="value">SC</div></div>
+    <div class="card"><div class="label">Município</div><div class="value" style="font-size:19px">Braço Do Norte</div><div class="note">código TSE 80535</div></div>
+    <div class="card"><div class="label">Zona</div><div class="value">0044</div></div>
+    <div class="card"><div class="label">Seção</div><div class="value">0144</div></div>
+    <div class="card"><div class="label">Turno</div><div class="value">1</div><div class="note">deduzido do log e do BU impresso</div></div>
+    <div class="card"><div class="label">Eleição</div><div class="value" style="font-size:19px">04/10/2026</div></div>
+  </div>
+
+  <h2>Resultado</h2>
+  
+<div class="grid"><div class="card"><div class="label">Eleitores aptos</div><div class="value">386</div><div class="note">caderno da seção + transferências</div></div><div class="card"><div class="label">Comparecimento</div><div class="value">324</div><div class="note">habilitação biométrica 283</div></div><div class="card"><div class="label">Votos válidos</div><div class="value">317</div><div class="note">cargo presidente</div></div><div class="card"><div class="label">Brancos</div><div class="value">3</div><div class="note">cargo presidente</div></div><div class="card"><div class="label">Nulos</div><div class="value">4</div><div class="note">cargo presidente</div></div><div class="card"><div class="label">Abstenção</div><div class="value">62</div><div class="note">aptos − comparecimento</div></div></div>
+<h3>Votos por cargo</h3>
+
+<details class="box">
+  <summary>presidente · cargo 1 · eleição 6257 · total 324</summary>
+  <table style="margin-top:10px">
+    <thead><tr><th class="num">Número</th><th>Nome (BU impresso)</th><th class="num">Partido</th><th class="num">Votos</th></tr></thead>
+    <tbody><tr><td class='num'>22</td><td>FLAVIO BOLSONARO</td><td class='num'>22</td><td class='num'>220</td></tr><tr><td class='num'>13</td><td>LULA</td><td class='num'>13</td><td class='num'>62</td></tr><tr><td class='num'>70</td><td>ESCRITOR AUGUSTO CURY</td><td class='num'>70</td><td class='num'>14</td></tr><tr><td class='num'>14</td><td>RENAN SANTOS</td><td class='num'>14</td><td class='num'>13</td></tr><tr><td class='num'>55</td><td>RONALDO CAIADO</td><td class='num'>55</td><td class='num'>8</td></tr><tr><td class='num'>—</td><td>Brancos</td><td class='num'>—</td><td class='num'>3</td></tr><tr><td class='num'>—</td><td>Nulos</td><td class='num'>—</td><td class='num'>4</td></tr></tbody>
+  </table>
+  <p class="sub">O BU estruturado não contém nomes de candidatos; os nomes vêm do BU impresso e são exibidos quando a linha foi reconhecida com segurança.</p>
+</details>
+<details class="box">
+  <summary>deputado federal · cargo 6 · eleição 6259 · total 324</summary>
+  <table style="margin-top:10px">
+    <thead><tr><th class="num">Número</th><th>Nome (BU impresso)</th><th class="num">Partido</th><th class="num">Votos</th></tr></thead>
+    <tbody><tr><td class='num'>2233</td><td>JULIA ZANATTA</td><td class='num'>22</td><td class='num'>82</td></tr><tr><td class='num'>5511</td><td>JULIO GARCIA</td><td class='num'>55</td><td class='num'>63</td></tr><tr><td class='num'>2200</td><td>RICARDO GUIDI</td><td class='num'>22</td><td class='num'>17</td></tr><tr><td class='num'>3099</td><td>PAMELYS BARROS</td><td class='num'>30</td><td class='num'>14</td></tr><tr><td class='num'>4444</td><td>FABIO SCHIOCHET</td><td class='num'>44</td><td class='num'>12</td></tr><tr><td class='num'>1111</td><td>ZÉ MILTON</td><td class='num'>11</td><td class='num'>11</td></tr><tr><td class='num'>1077</td><td>GEOVANIA DE SÁ</td><td class='num'>10</td><td class='num'>10</td></tr><tr><td class='num'>1001</td><td>JORGE GOETTEN</td><td class='num'>10</td><td class='num'>8</td></tr><tr><td class='num'>6565</td><td>GIOVANA MONDARDO</td><td class='num'>65</td><td class='num'>8</td></tr><tr><td class='num'>1313</td><td>ANA PAULA LIMA</td><td class='num'>13</td><td class='num'>7</td></tr><tr><td class='num'>1588</td><td>----------------------&gt;</td><td class='num'>15</td><td class='num'>6</td></tr><tr><td class='num'>1510</td><td>PEZENTI</td><td class='num'>15</td><td class='num'>5</td></tr><tr><td class='num'>1515</td><td>JOMA FRETTA</td><td class='num'>15</td><td class='num'>5</td></tr><tr><td class='num'>2211</td><td>DANIEL FREITAS</td><td class='num'>22</td><td class='num'>5</td></tr><tr><td class='num'>2221</td><td>FERNANDO CORDEIRO</td><td class='num'>22</td><td class='num'>5</td></tr><tr><td class='num'>1560</td><td>VALDIR COBALCHINI</td><td class='num'>15</td><td class='num'>4</td></tr><tr><td class='num'>2020</td><td>PAULINHA</td><td class='num'>20</td><td class='num'>4</td></tr><tr><td class='num'>2222</td><td>JAIR BOLSONARO</td><td class='num'>22</td><td class='num'>4</td></tr><tr><td class='num'>3050</td><td>GILSON MARQUES</td><td class='num'>30</td><td class='num'>3</td></tr><tr><td class='num'>4411</td><td>CARLOS MOISÉS</td><td class='num'>44</td><td class='num'>3</td></tr><tr><td class='num'>1133</td><td>ANGELA AMIN</td><td class='num'>11</td><td class='num'>2</td></tr><tr><td class='num'>1350</td><td>PROFESSOR PEDRO UCZAI</td><td class='num'>13</td><td class='num'>2</td></tr><tr><td class='num'>1414</td><td>FELIPE BARCELLOS</td><td class='num'>14</td><td class='num'>2</td></tr><tr><td class='num'>2322</td><td>ROSELI MORAES (ROSE)</td><td class='num'>23</td><td class='num'>2</td></tr><tr><td class='num'>3022</td><td>BIA BORBA</td><td class='num'>30</td><td class='num'>2</td></tr><tr><td class='num'>1102</td><td>ROSE DA ITOUPAVAZINHA</td><td class='num'>11</td><td class='num'>1</td></tr><tr><td class='num'>1344</td><td>CARLA AYRES</td><td class='num'>13</td><td class='num'>1</td></tr><tr><td class='num'>1415</td><td>TUCO FARIAS</td><td class='num'>14</td><td class='num'>1</td></tr><tr><td class='num'>1477</td><td>SANTIAGO CESAR</td><td class='num'>14</td><td class='num'>1</td></tr><tr><td class='num'>1500</td><td>CLEITON FOSSÁ</td><td class='num'>15</td><td class='num'>1</td></tr><tr><td class='num'>1540</td><td>RODRIGO COELHO</td><td class='num'>15</td><td class='num'>1</td></tr><tr><td class='num'>1551</td><td>TEODORO</td><td class='num'>15</td><td class='num'>1</td></tr><tr><td class='num'>2010</td><td>RICARDO GANEM</td><td class='num'>20</td><td class='num'>1</td></tr><tr><td class='num'>2055</td><td>ITO DE SOUZA</td><td class='num'>20</td><td class='num'>1</td></tr><tr><td class='num'>2277</td><td>ISMAEL DOS SANTOS</td><td class='num'>22</td><td class='num'>1</td></tr><tr><td class='num'>2299</td><td>ANGIOLETTI RUBENS</td><td class='num'>22</td><td class='num'>1</td></tr><tr><td class='num'>3010</td><td>ANDRÉ DE OLIVEIRA</td><td class='num'>30</td><td class='num'>1</td></tr><tr><td class='num'>3033</td><td>MORGANA DANIEL</td><td class='num'>30</td><td class='num'>1</td></tr><tr><td class='num'>5515</td><td>DEISE CARDOSO</td><td class='num'>55</td><td class='num'>1</td></tr><tr><td class='num'>5588</td><td>RAIMUNDO COLOMBO</td><td class='num'>55</td><td class='num'>1</td></tr><tr><td class='num'>11</td><td><em>voto de legenda</em></td><td class='num'>11</td><td class='num'>1</td></tr><tr><td class='num'>12</td><td><em>voto de legenda</em></td><td class='num'>12</td><td class='num'>1</td></tr><tr><td class='num'>20</td><td><em>voto de legenda</em></td><td class='num'>20</td><td class='num'>1</td></tr><tr><td class='num'>55</td><td><em>voto de legenda</em></td><td class='num'>55</td><td class='num'>1</td></tr><tr><td class='num'>—</td><td>Brancos</td><td class='num'>—</td><td class='num'>13</td></tr><tr><td class='num'>—</td><td>Nulos</td><td class='num'>—</td><td class='num'>6</td></tr></tbody>
+  </table>
+  <p class="sub">O BU estruturado não contém nomes de candidatos; os nomes vêm do BU impresso e são exibidos quando a linha foi reconhecida com segurança.</p>
+</details>
+<details class="box">
+  <summary>deputado estadual · cargo 7 · eleição 6259 · total 324</summary>
+  <table style="margin-top:10px">
+    <thead><tr><th class="num">Número</th><th>Nome (BU impresso)</th><th class="num">Partido</th><th class="num">Votos</th></tr></thead>
+    <tbody><tr><td class='num'>55789</td><td>BETO KUERTEN MARCELINO</td><td class='num'>55</td><td class='num'>162</td></tr><tr><td class='num'>15000</td><td>DELEGADO JORGE KOCH</td><td class='num'>15</td><td class='num'>22</td></tr><tr><td class='num'>22111</td><td>----------------------&gt;</td><td class='num'>22</td><td class='num'>14</td></tr><tr><td class='num'>22222</td><td>ANA CAMPAGNOLO</td><td class='num'>22</td><td class='num'>13</td></tr><tr><td class='num'>22333</td><td>GUILHERME COLOMBO</td><td class='num'>22</td><td class='num'>12</td></tr><tr><td class='num'>11223</td><td>PEPÊ COLLAÇO</td><td class='num'>11</td><td class='num'>8</td></tr><tr><td class='num'>44123</td><td>GEAN LOUREIRO</td><td class='num'>44</td><td class='num'>7</td></tr><tr><td class='num'>10123</td><td>SERGIO MOTTA</td><td class='num'>10</td><td class='num'>5</td></tr><tr><td class='num'>22022</td><td>JESSÉ LOPES</td><td class='num'>22</td><td class='num'>5</td></tr><tr><td class='num'>10333</td><td>JEFFERSON MONTEIRO</td><td class='num'>10</td><td class='num'>4</td></tr><tr><td class='num'>13601</td><td>LUCIANE CARMINATTI</td><td class='num'>13</td><td class='num'>4</td></tr><tr><td class='num'>22369</td><td>CAMILO MARTINS</td><td class='num'>22</td><td class='num'>4</td></tr><tr><td class='num'>22422</td><td>JAIR MIOTTO</td><td class='num'>22</td><td class='num'>4</td></tr><tr><td class='num'>22000</td><td>A ALEX BRASIL</td><td class='num'>22</td><td class='num'>3</td></tr><tr><td class='num'>44500</td><td>SÉRGIO GUIMARÃES</td><td class='num'>44</td><td class='num'>3</td></tr><tr><td class='num'>15104</td><td>LEATRICE BEZ</td><td class='num'>15</td><td class='num'>2</td></tr><tr><td class='num'>15600</td><td>JOÃO COBALCHINI</td><td class='num'>15</td><td class='num'>2</td></tr><tr><td class='num'>15655</td><td>FERNANDO KRELLING</td><td class='num'>15</td><td class='num'>2</td></tr><tr><td class='num'>22077</td><td>MARCOS DA ROSA</td><td class='num'>22</td><td class='num'>2</td></tr><tr><td class='num'>30000</td><td>MATHEUS CADORIN</td><td class='num'>30</td><td class='num'>2</td></tr><tr><td class='num'>55111</td><td>CLESIO SALVARO</td><td class='num'>55</td><td class='num'>2</td></tr><tr><td class='num'>10110</td><td>----------------------&gt;</td><td class='num'>10</td><td class='num'>1</td></tr><tr><td class='num'>12100</td><td>GUI PEREIRA</td><td class='num'>12</td><td class='num'>1</td></tr><tr><td class='num'>12345</td><td>RODRIGO MINOTTO</td><td class='num'>12</td><td class='num'>1</td></tr><tr><td class='num'>13007</td><td>MARISTELA FRANCISCO</td><td class='num'>13</td><td class='num'>1</td></tr><tr><td class='num'>13137</td><td>----------------------&gt;</td><td class='num'>13</td><td class='num'>1</td></tr><tr><td class='num'>13313</td><td>JEAN VOLPATO</td><td class='num'>13</td><td class='num'>1</td></tr><tr><td class='num'>13987</td><td>PADRE PEDRO</td><td class='num'>13</td><td class='num'>1</td></tr><tr><td class='num'>22100</td><td>FRIGO</td><td class='num'>22</td><td class='num'>1</td></tr><tr><td class='num'>22322</td><td>JUNIOR CARDOSO</td><td class='num'>22</td><td class='num'>1</td></tr><tr><td class='num'>11</td><td><em>voto de legenda</em></td><td class='num'>11</td><td class='num'>6</td></tr><tr><td class='num'>13</td><td><em>voto de legenda</em></td><td class='num'>13</td><td class='num'>1</td></tr><tr><td class='num'>15</td><td><em>voto de legenda</em></td><td class='num'>15</td><td class='num'>2</td></tr><tr><td class='num'>22</td><td><em>voto de legenda</em></td><td class='num'>22</td><td class='num'>4</td></tr><tr><td class='num'>30</td><td><em>voto de legenda</em></td><td class='num'>30</td><td class='num'>1</td></tr><tr><td class='num'>55</td><td><em>voto de legenda</em></td><td class='num'>55</td><td class='num'>1</td></tr><tr><td class='num'>—</td><td>Brancos</td><td class='num'>—</td><td class='num'>15</td></tr><tr><td class='num'>—</td><td>Nulos</td><td class='num'>—</td><td class='num'>3</td></tr></tbody>
+  </table>
+  <p class="sub">O BU estruturado não contém nomes de candidatos; os nomes vêm do BU impresso e são exibidos quando a linha foi reconhecida com segurança.</p>
+</details>
+<details class="box">
+  <summary>senador · cargo 5 · eleição 6259 · total 648</summary>
+  <table style="margin-top:10px">
+    <thead><tr><th class="num">Número</th><th>Nome (BU impresso)</th><th class="num">Partido</th><th class="num">Votos</th></tr></thead>
+    <tbody><tr><td class='num'>221</td><td>CAROL DE TONI</td><td class='num'>22</td><td class='num'>181</td></tr><tr><td class='num'>111</td><td>ESPERIDIÃO AMIN</td><td class='num'>11</td><td class='num'>160</td></tr><tr><td class='num'>222</td><td>CARLOS BOLSONARO</td><td class='num'>22</td><td class='num'>118</td></tr><tr><td class='num'>155</td><td>LUNELLI</td><td class='num'>15</td><td class='num'>47</td></tr><tr><td class='num'>133</td><td>DÉCIO LIMA</td><td class='num'>13</td><td class='num'>29</td></tr><tr><td class='num'>500</td><td>AFRÂNIO BOPPRÉ</td><td class='num'>50</td><td class='num'>20</td></tr><tr><td class='num'>144</td><td>----------------------&gt;</td><td class='num'>14</td><td class='num'>4</td></tr><tr><td class='num'>250</td><td>JEFERSON ROCHA</td><td class='num'>25</td><td class='num'>4</td></tr><tr><td class='num'>290</td><td>CAROL</td><td class='num'>29</td><td class='num'>1</td></tr><tr><td class='num'>800</td><td>----------------------&gt;</td><td class='num'>80</td><td class='num'>1</td></tr><tr><td class='num'>—</td><td>Brancos</td><td class='num'>—</td><td class='num'>47</td></tr><tr><td class='num'>—</td><td>Nulos</td><td class='num'>—</td><td class='num'>36</td></tr></tbody>
+  </table>
+  <p class="sub">O BU estruturado não contém nomes de candidatos; os nomes vêm do BU impresso e são exibidos quando a linha foi reconhecida com segurança.</p>
+</details>
+<details class="box">
+  <summary>governador · cargo 3 · eleição 6259 · total 324</summary>
+  <table style="margin-top:10px">
+    <thead><tr><th class="num">Número</th><th>Nome (BU impresso)</th><th class="num">Partido</th><th class="num">Votos</th></tr></thead>
+    <tbody><tr><td class='num'>22</td><td>FLAVIO BOLSONARO</td><td class='num'>22</td><td class='num'>219</td></tr><tr><td class='num'>55</td><td>RONALDO CAIADO</td><td class='num'>55</td><td class='num'>54</td></tr><tr><td class='num'>40</td><td>GELSON MERÍSIO</td><td class='num'>40</td><td class='num'>23</td></tr><tr><td class='num'>14</td><td>RENAN SANTOS</td><td class='num'>14</td><td class='num'>2</td></tr><tr><td class='num'>—</td><td>Brancos</td><td class='num'>—</td><td class='num'>12</td></tr><tr><td class='num'>—</td><td>Nulos</td><td class='num'>—</td><td class='num'>14</td></tr></tbody>
+  </table>
+  <p class="sub">O BU estruturado não contém nomes de candidatos; os nomes vêm do BU impresso e são exibidos quando a linha foi reconhecida com segurança.</p>
+</details>
+
+
+  <h2>Linha do tempo</h2>
+  
+<div class="split">
+  <div>
+    <h3>Marcos</h3>
+    <ul class="timeline"><li><div class="when">04/10/2026 07:19:52</div><div class="what">Inicialização da urna <span class="badge ok">IDENTIFICADO</span></div><div class="src">Primeira evidência de energia/aplicação no dia da eleição. &#x27;Urna ligada em&#x27; é o evento de energização; &#x27;Início das operações do logd&#x27; é o início do registro; &#x27;Iniciando aplicação&#x27; é a carga do software.</div><div class="src mono">log.jez!logd.dat @offset 48439; log.jez!logd.dat @offset 48354; log.jez!logd.dat @offset 48622</div><details><summary>Linha do log</summary><pre>04/10/2026 07:20:29	INFO	02191040	LOGD	Urna ligada em 04/10/2026 às 07:19:52	8917399B38F28954</pre></details></li><li><div class="when">04/10/2026 07:21:06</div><div class="what">Preparação e identificação da seção <span class="badge ok">IDENTIFICADO</span></div><div class="src">Identificação de município, zona, local e seção e carga da mídia de votação, antes da abertura.</div><div class="src mono">log.jez!logd.dat @offset 49669; log.jez!logd.dat @offset 48914</div><details><summary>Linha do log</summary><pre>04/10/2026 07:21:06	INFO	02191040	GAP	Município: 80535	B3628083399E4619</pre></details></li><li><div class="when">04/10/2026 08:00:01</div><div class="what">Abertura da votação <span class="badge ok">IDENTIFICADO</span></div><div class="src">Evento &#x27;Urna pronta para receber votos&#x27; no dia da eleição. É o início efetivo do recebimento de votos.</div><div class="src mono">log.jez!logd.dat @offset 63082</div><details><summary>Linha do log</summary><pre>04/10/2026 08:00:01	INFO	02191040	VOTA	Urna pronta para receber votos	3687690E7A97BD64</pre></details></li><li><div class="when">04/10/2026 08:04:35</div><div class="what">Primeiro voto computado <span class="badge ok">IDENTIFICADO</span></div><div class="src">Primeiro evento &#x27;O voto do eleitor foi computado&#x27; do dia.</div><div class="src mono">log.jez!logd.dat @offset 66756</div><details><summary>Linha do log</summary><pre>04/10/2026 08:04:35	INFO	02191040	VOTA	O voto do eleitor foi computado	6AF3D979BE29E08B</pre></details></li><li><div class="when">04/10/2026 16:56:28</div><div class="what">Último voto computado <span class="badge ok">IDENTIFICADO</span></div><div class="src">Último evento &#x27;O voto do eleitor foi computado&#x27; do dia.</div><div class="src mono">log.jez!logd.dat @offset 684272</div><details><summary>Linha do log</summary><pre>04/10/2026 16:56:28	INFO	02191040	VOTA	O voto do eleitor foi computado	57BB9DE4DE874285</pre></details></li><li><div class="when">04/10/2026 17:01:17</div><div class="what">Encerramento da votação <span class="badge ok">IDENTIFICADO</span></div><div class="src">Fim da aquisição de votos. No log, &#x27;Procedimento de encerramento confirmado&#x27;; no BU, dataHoraEncerramento. Não confundir com &#x27;Início do Encerramento&#x27; (procedimento de fechamento) nem com geração/impressão do BU.</div><div class="src mono">log.jez!logd.dat @offset 685295; bu.dat @offset 263</div><details><summary>Linha do log</summary><pre>04/10/2026 17:01:17	INFO	02191040	VOTA	Procedimento de encerramento confirmado	4DD3B2BB01352D90</pre></details><details><summary>Outros eventos relacionados</summary><ul class="tight"><li>início do procedimento de encerramento (não é o fim da votação) — 04/10/2026 17:03:06	INFO	02191040	VOTA	Inicio do Encerramento	AE2559CF95DF4EBA</li></ul></details></li><li><div class="when">04/10/2026 17:03:07</div><div class="what">Geração do relatório do BU <span class="badge ok">IDENTIFICADO</span></div><div class="src">&#x27;Gerando relatório [BU]&#x27; e dataHoraEmissao do BU. É a emissão do boletim, anterior à impressão e à gravação do arquivo.</div><div class="src mono">log.jez!logd.dat @offset 688412; log.jez!logd.dat @offset 688500; bu.dat @offset 227</div><details><summary>Linha do log</summary><pre>04/10/2026 17:03:07	INFO	02191040	VOTA	Gerando relatório [BU] [INÍCIO]	239A966E8180483D</pre></details></li><li><div class="when">04/10/2026 17:03:09</div><div class="what">Impressão do BU <span class="badge ok">IDENTIFICADO</span></div><div class="src">Início e fim da impressão física do BU.</div><div class="src mono">log.jez!logd.dat @offset 689287; log.jez!logd.dat @offset 689363</div><details><summary>Linha do log</summary><pre>04/10/2026 17:03:09	INFO	02191040	VOTA	Início de impressão	1E9ED2B0987CAB8D</pre></details></li><li><div class="when">04/10/2026 17:04:06</div><div class="what">Gravação do arquivo bu.dat <span class="badge ok">IDENTIFICADO</span></div><div class="src">&#x27;Gerando arquivo de resultado [bu.dat]&#x27;. O instante do arquivo assinado (envelope) é posterior à emissão.</div><div class="src mono">log.jez!logd.dat @offset 689650; log.jez!logd.dat @offset 689755</div><details><summary>Linha do log</summary><pre>04/10/2026 17:04:06	INFO	02191040	VOTA	Gerando arquivo de resultado [bu.dat] + [Início]	A29A90D215E2DC84</pre></details></li><li><div class="when">04/10/2026 17:04:21</div><div class="what">Assinatura do conjunto (vota.vsc) <span class="badge ok">IDENTIFICADO</span></div><div class="src">Assinatura digital dos arquivos de resultado. O envelope do bu.dat e o vota.vsc têm horários próprios.</div><div class="src mono">vota.vsc; bu.dat @offset 6</div></li><li><div class="when">04/10/2026 17:04:11</div><div class="what">Empacotamento do log.jez <span class="badge ok">IDENTIFICADO</span></div><div class="src">Início da geração do log.jez. O término não aparece no próprio log (a última linha é gravada durante o empacotamento).</div><div class="src mono">log.jez!logd.dat @offset 691806</div><details><summary>Linha do log</summary><pre>04/10/2026 17:04:11	INFO	02191040	VOTA	Gerando arquivo de resultado [log.jez] + [Início]	5D1D731B39987651</pre></details></li><li><div class="when">NÃO IDENTIFICADO</div><div class="what">Transmissão iniciada <span class="badge warn">NÃO IDENTIFICADO</span></div><div class="src">NAO IDENTIFICADO</div><div class="src mono"></div></li><li><div class="when">NÃO IDENTIFICADO</div><div class="what">Transmissão concluída <span class="badge warn">NÃO IDENTIFICADO</span></div><div class="src">NAO IDENTIFICADO</div><div class="src mono"></div></li><li><div class="when">NÃO IDENTIFICADO</div><div class="what">Desligamento da urna <span class="badge warn">NÃO IDENTIFICADO</span></div><div class="src">NAO IDENTIFICADO</div><div class="src mono"></div></li><li><div class="when">04/10/2026 17:04:11</div><div class="what">Último evento do log no dia <span class="badge ok">IDENTIFICADO</span></div><div class="src">Última linha registrada antes do empacotamento do log.</div><div class="src mono">log.jez!logd.dat @offset 691806</div><details><summary>Linha do log</summary><pre>04/10/2026 17:04:11	INFO	02191040	VOTA	Gerando arquivo de resultado [log.jez] + [Início]	5D1D731B39987651</pre></details></li></ul>
+  </div>
+  <div>
+    <h3>Operação no dia</h3>
+    <div class="grid"><div class="card"><div class="label">Duração da votação</div><div class="value" style="font-size:18px">09:01:16</div></div><div class="card"><div class="label">Votos computados</div><div class="value" style="font-size:18px">324</div></div><div class="card"><div class="label">Abertura → 1º voto</div><div class="value" style="font-size:18px">274 s</div></div><div class="card"><div class="label">Aberturas (reinícios)</div><div class="value" style="font-size:18px">1</div></div><div class="card"><div class="label">Alertas no dia</div><div class="value" style="font-size:18px">15</div></div><div class="card"><div class="label">Votos antes da abertura</div><div class="value" style="font-size:18px">0</div></div><div class="card"><div class="label">Votos após encerramento</div><div class="value" style="font-size:18px">0</div></div><div class="card"><div class="label">Maior intervalo entre votos</div><div class="value" style="font-size:18px">461.0 s</div></div></div>
+    <h3>Votos computados por hora</h3>
+    <div class="bars"><div class="bar" style="height:70px"><span>08:00 · 32</span></div><div class="bar" style="height:70px"><span>09:00 · 32</span></div><div class="bar" style="height:79px"><span>10:00 · 36</span></div><div class="bar" style="height:75px"><span>11:00 · 34</span></div><div class="bar" style="height:86px"><span>12:00 · 39</span></div><div class="bar" style="height:79px"><span>13:00 · 36</span></div><div class="bar" style="height:84px"><span>14:00 · 38</span></div><div class="bar" style="height:88px"><span>15:00 · 40</span></div><div class="bar" style="height:81px"><span>16:00 · 37</span></div></div><div class='hours'><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span></div>
+  </div>
+</div>
+
+  <h2>Integridade</h2>
+  
+<div class="grid"><div class="card"><div class="label">Hashes SHA-512 assinados</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">4 de 4 arquivos presentes conferem com o hash assinado; 7 arquivo(s) assinado(s) ausente(s) no conjunto</div></div><div class="card"><div class="label">Hash do conteudo autoassinado (software)</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">SHA-512 do conteudo confere com o hash declarado</div></div><div class="card"><div class="label">Hash do conteudo autoassinado (hardware)</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">SHA-512 do conteudo confere com o hash declarado</div></div><div class="card"><div class="label">Assinatura digital de hardware</div><div style="margin:6px 0"><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></div><div class="note">algoritmo EdDSA Ed521 (ICP-Brasil, OID 1.3.6.1.4.1.44588.2.1) nao e suportado pela biblioteca cryptography; a verificacao exigiria implementacao propria de curva, o que esta fora do escopo desta ferramenta</div></div><div class="card"><div class="label">Assinatura digital de software (CEPESC)</div><div style="margin:6px 0"><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></div><div class="note">assinatura de software CEPESC (algoritmo de governo) nao possui verificador publico; o hash do conteudo autoassinado foi conferido</div></div><div class="card"><div class="label">Cadeia de certificacao</div><div style="margin:6px 0"><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></div><div class="note">certificados das AC nao fornecidos; a cadeia nao pode ser validada (use --ca DIR)</div></div><div class="card"><div class="label">Cadeia de hashes SHA-512 do BU</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">eleicao 6257: 7 registros, 0 falha(s), ultimo hash confere; eleicao 6259: 102 registros, 0 falha(s), ultimo hash confere</div></div><div class="card"><div class="label">Conferencias aritmeticas do BU</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">comparecimento=324; detalhamento={&#x27;sem_biometria&#x27;: 16, &#x27;por_biometria&#x27;: 283, &#x27;por_biografia&#x27;: 25}; aptos=386; secao+tte=386 (382+4); cargo 1 (presidente): total 324 = 1 x comparecimento 324; aptos=386; secao+tte=386 (382+4); cargo 6 (deputado federal): total 324 = 1 x comparecimento 324; cargo 7 (deputado estadual): total 324 = 1 x comparecimento 324; cargo 5 (senador): total 648 = 2 x comparecimento 324; cargo 3 (governador): total 324 = 1 x comparecimento 324</div></div><div class="card"><div class="label">Registros do RDV x comparecimento do BU</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">cargo 1 (presidente): 324 registros = comparecimento 324 x 1 escolha(s); cargo 6 (deputado federal): 324 registros = comparecimento 324 x 1 escolha(s); cargo 7 (deputado estadual): 324 registros = comparecimento 324 x 1 escolha(s); cargo 5 (senador): 648 registros = comparecimento 324 x 2 escolha(s); cargo 3 (governador): 324 registros = comparecimento 324 x 1 escolha(s)</div></div><div class="card"><div class="label">Estrutura do log</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">7254 eventos; 0 linha(s) fora do formato</div></div><div class="card"><div class="label">Monotonicidade dos horarios</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">0 inversao(oes) dentro das sessoes</div></div><div class="card"><div class="label">Codigo de 64 bits por linha</div><div style="margin:6px 0"><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></div><div class="note">NAO FOI POSSIVEL VERIFICAR: o codigo de 64 bits de cada linha nao tem construcao publicada e nao e funcao apenas dos campos visiveis (linhas identicas aparecem com codigos diferentes).</div></div><div class="card"><div class="label">Ordem temporal dos marcos</div><div style="margin:6px 0"><span class="badge ok">VALIDADO</span></div><div class="note">abertura &lt;= votos &lt;= encerramento &lt;= BU &lt;= arquivo &lt;= assinatura</div></div></div>
+<h3>Hashes SHA-512 assinados</h3>
+<p class="sub">O arquivo de assinatura registra o SHA-512 de cada arquivo gerado pela urna.
+O valor é recalculado sobre o arquivo fornecido. Arquivos listados e ausentes não
+podem ser conferidos.</p>
+<table>
+  <thead><tr><th>Arquivo</th><th>SHA-512 assinado</th><th>SHA-512 calculado</th><th>Situação</th></tr></thead>
+  <tbody><tr><td class='mono'>o03220sc8053500440144-bu.dat</td><td class='mono'>9b8b7a9a7b1a4fc43b827a94edcea9db6e0644198731ed460ce178d089941c7d6dda369b3bc53bf818c1ebfc3cf6e61a53b0eddb4f3f24e4552410b44b21b20a</td><td class='mono'>9b8b7a9a7b1a4fc43b827a94edcea9db6e0644198731ed460ce178d089941c7d6dda369b3bc53bf818c1ebfc3cf6e61a53b0eddb4f3f24e4552410b44b21b20a</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-hash.dat</td><td class='mono'>9a2a689972ffdf719d8079c36811f3decc6a395570ef4819918a5e0f458f5ba5c8d214ae4f2d9ea3fcd4a160332060c04f1fdf3339f52f0e89c1d4ae17083dff</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr><tr><td class='mono'>o03220sc8053500440144-imgbu.dat</td><td class='mono'>abfebd4953f00d93b2efaa659722f28107606d5d44a5e2161f0acd62c80fb5b7663200d2618e81ee89bfcc49d353ce9c81b047b8b09fa97e9931b8e5971e688d</td><td class='mono'>abfebd4953f00d93b2efaa659722f28107606d5d44a5e2161f0acd62c80fb5b7663200d2618e81ee89bfcc49d353ce9c81b047b8b09fa97e9931b8e5971e688d</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-imgze.dat</td><td class='mono'>b81e981150b61668a7ac85a4bfd882e1ff5ee7436d082966c1a3618b155ae1b11e77cbaac7d470fd2a1fff38a922609e622d503160df43df69e395cf6242d50c</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr><tr><td class='mono'>o03220sc8053500440144-jufa.dat</td><td class='mono'>855bac07defa77009ade1157b22c302184b15cee40a7f3568568b722a00ff2ac8452cdcbb7b6971c088e30baee8827e64cd2302bef6c5de3abf75bb48f87fdac</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr><tr><td class='mono'>o03220sc8053500440144-log.jez</td><td class='mono'>89eb7cef56d49c17bc4c96db55e6ca874cc1757382e4b74e0cd1b5cb1624a13a6fec13e746bfe879c61b282833fe1e6d9e801db496e7dc70c9513a00e0152f78</td><td class='mono'>89eb7cef56d49c17bc4c96db55e6ca874cc1757382e4b74e0cd1b5cb1624a13a6fec13e746bfe879c61b282833fe1e6d9e801db496e7dc70c9513a00e0152f78</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-mr.ver</td><td class='mono'>3246ce97ca80337a6b0e7073241bee673d4154fa2019a70a397a30ba421eae2756361629d0202344d5f38e8b1d00ae903f9b163a8e824845b91750ce63ded160</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr><tr><td class='mono'>o03220sc8053500440144-rdv.dat</td><td class='mono'>dbdf8782e15aad74b4b97ebfb8581e335817927b0751dba5f1c4a1facae89bcc5cda234b442412702309138cfa178c6afadbd9fb801485c70a70ffab1bbce8e8</td><td class='mono'>dbdf8782e15aad74b4b97ebfb8581e335817927b0751dba5f1c4a1facae89bcc5cda234b442412702309138cfa178c6afadbd9fb801485c70a70ffab1bbce8e8</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-wsqbio.jez</td><td class='mono'>290ab172bd271ec2fa6ec9dd9d9f8cb534cc15978ef5ce09f2c5a7fc718c93bd42ffdbba5813d7332ad8bc995561dd800b44d12007444f792f40272e67752cc4</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr><tr><td class='mono'>o03220sc8053500440144-wsqman.jez</td><td class='mono'>192b96e1eb70a194276ba71660a2c3e0f0a12dc8491c47a0822b86212a8c14382bb734fe1ad1495f1f10f0076b08924dd0ca8e239f43713e9dc1af4dad269de6</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr><tr><td class='mono'>o03220sc8053500440144-wsqmes.jez</td><td class='mono'>472bcc9d143b38fdf3dd8bba439c5fd267f0ac4b153399ba2a2138cb06fdb0d4e05949c0138a3171638db38aaebb362b997a259f66da502f594b6e2cefdb2939</td><td class='mono'>—</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td></tr></tbody>
+</table>
+<h3>Assinatura e certificado</h3>
+<div class="callout info">
+  <p><strong>Modelo da urna:</strong> UE2020 ·
+  <strong>Algoritmo de hardware:</strong> eddsa
+  (521 bits) · <strong>Algoritmo de software:</strong>
+  cepesc.</p>
+  <p>algoritmo EdDSA Ed521 (ICP-Brasil, OID 1.3.6.1.4.1.44588.2.1) nao e suportado pela biblioteca cryptography; a verificacao exigiria implementacao propria de curva, o que esta fora do escopo desta ferramenta</p>
+  <p>certificados das AC nao fornecidos; a cadeia nao pode ser validada (use --ca DIR)</p>
+</div>
+<table><tbody><tr><th>Titular</th><td class='mono'>O=TSE,C=BR,CN=UEAO02191040</td></tr><tr><th>Emissor</th><td class='mono'>L=Brasilia,OU=STI,O=TSE,1.2.840.113549.1.9.1=acue2020@tse.jus.br,C=BR,ST=DF,CN=AC UE2020</td></tr><tr><th>Número de série</th><td class='mono'>de3f2</td></tr><tr><th>SHA-256</th><td class='mono'>1a3eac6f81efd3c191d8c27eb87a9ee44a8d4a5b1b0c3502fbb5a201244c88f5</td></tr><tr><th>Validade</th><td>2022-05-13T05:47:18+00:00 — 2036-01-20T05:47:18+00:00</td></tr><tr><th>Chave</th><td>desconhecido · OID 1.3.6.1.4.1.44588.2.1</td></tr></tbody></table>
+
+
+  <h2>Coerência entre arquivos</h2>
+  
+<table>
+  <thead><tr><th>Relação verificada</th><th>Situação</th><th>O que foi comparado</th></tr></thead>
+  <tbody><tr><td>BU &lt;-&gt; RDV</td><td><span class="badge ok">VALIDADO</span></td><td class='sub'>contagem por cargo e total de registros</td></tr><tr><td>BU &lt;-&gt; LOG</td><td><span class="badge ok">VALIDADO</span></td><td class='sub'>horarios de abertura/encerramento e votos computados</td></tr><tr><td>BU &lt;-&gt; BU impresso</td><td><span class="badge ok">VALIDADO</span></td><td class='sub'>totais por cargo e identificacao</td></tr><tr><td>ARQUIVOS &lt;-&gt; HASHES ASSINADOS</td><td><span class="badge ok">VALIDADO</span></td><td class='sub'>SHA-512 de cada arquivo contra o valor da assinatura</td></tr><tr><td>ASSINATURA DIGITAL</td><td><span class="badge warn">NÃO FOI POSSÍVEL VERIFICAR</span></td><td class='sub'>assinatura de hardware e cadeia de certificacao</td></tr><tr><td>TIMELINE</td><td><span class="badge ok">VALIDADO</span></td><td class='sub'>ordem dos marcos e monotonicidade do log</td></tr></tbody>
+</table>
+
+  <h2>Alertas</h2>
+  <div class="callout info"><strong>[INFO] ARQUIVOS_ASSINADOS_AUSENTES</strong><p>7 arquivo(s) listado(s) na assinatura nao estao no conjunto fornecido.</p><p class="sub">o03220sc8053500440144-hash.dat, o03220sc8053500440144-imgze.dat, o03220sc8053500440144-jufa.dat, o03220sc8053500440144-mr.ver, o03220sc8053500440144-wsqbio.jez, o03220sc8053500440144-wsqman.jez, o03220sc8053500440144-wsqmes.jez. A ausencia impede conferir o hash desses arquivos; nao indica alteracao dos arquivos presentes.</p></div><div class="callout info"><strong>[INFO] ASSINATURA_NAO_VERIFICAVEL</strong><p>ASSINATURA PRESENTE, MAS NAO FOI POSSIVEL VALIDAR criptograficamente.</p><p class="sub">A assinatura de hardware Ed521 (ICP-Brasil) nao e suportada pela biblioteca criptografica utilizada; por isso a autenticidade criptografica do conjunto nao foi confirmada.; A assinatura de software CEPESC usa algoritmo de governo sem verificador publico; ela foi lida, nao verificada.</p></div><p class="sub">Uma inconsistência não autoriza, isoladamente, concluir que houve adulteração. O relatório descreve o que foi comparado e o que não pôde ser verificado.</p>
+
+  <h2>Arquivos analisados</h2>
+  
+<table>
+  <thead><tr><th>Arquivo</th><th class="num">Bytes</th><th>Tipo detectado</th><th>SHA-256</th><th>Hash assinado</th></tr></thead>
+  <tbody><tr><td class='mono'>o03220sc8053500440144-bu.dat</td><td class='num'>10,221</td><td>asn1-ber</td><td class='mono'>59d0cafe5d89946c3a542488fa29ec58f696aa6968fae1bb135d1affe2850d7c</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-imgbu.dat</td><td class='num'>17,688</td><td>asn1-ber</td><td class='mono'>8e2ae39d5d3bbd4e9dfa37cb57b8593fdc6c0436762457be5be9717a59273e82</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-log.jez</td><td class='num'>129,820</td><td>zip</td><td class='mono'>1a95e791683b0f683c371ae9c5df066048da846780ecd33217f1dab003b5caec</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-rdv.dat</td><td class='num'>19,618</td><td>asn1-ber</td><td class='mono'>c09b61dda23a7c585285991a3b3cf25dff50b71b52dda6c2261c9cce498a2a0c</td><td><span class="badge ok">VALIDADO</span></td></tr><tr><td class='mono'>o03220sc8053500440144-vota.vsc</td><td class='num'>62,609</td><td>asn1-ber</td><td class='mono'>68e86b29ceb03f551f5cf575048bb2d00106f6177794bde30e440d0fff55c9e9</td><td><span class="badge warn">NÃO LISTADO NA ASSINATURA</span></td></tr></tbody>
+</table>
+
+  <h2>Método, formato e limites</h2>
+  
+<h3>Formato documentado</h3>
+<ul class="tight"><li>LEIA-ME oficial que acompanha o conjunto (leiame.pdf)</li><li>Especificacao ASN.1 v2 do TSE para BU, RDV e assinatura (ModuloBU, ModuloRegistroDigitalVoto, ModuloAssinaturaResultado), espelhada em DataUrnas-BR spec/v2</li><li>Formato do log: texto simples com 6 campos, observado nos arquivos e compativel com leitores publicos</li></ul>
+<h3>Formato inferido / observado</h3>
+<ul class="tight"><li>O container .jez observado e ZIP (o LEIA-ME cita 7z)</li><li>O codigo de 64 bits de cada linha do log nao tem construcao publicada; nao e verificado</li></ul>
+<h3>Limitações desta análise</h3>
+<ul class="tight"><li>A assinatura de hardware Ed521 (ICP-Brasil) nao e suportada pela biblioteca criptografica utilizada; por isso a autenticidade criptografica do conjunto nao foi confirmada.</li><li>A assinatura de software CEPESC usa algoritmo de governo sem verificador publico; ela foi lida, nao verificada.</li></ul>
+<h3>Artefatos extraídos (em <span class="mono">analysis/</span>)</h3>
+<ul class="tight"><li class='mono'>extracted\logd.dat · SHA-256 b9b23cfe291fbc00aa223b7d867a25ec50ca19e7481fcfd3cff424f372c3acfc</li><li class='mono'>extracted\imgbu_spool.bin · SHA-256 71ba8718284ff05e3b286741c1055bc1ca941fc77eb27c5ca882f86306d9dc04</li></ul>
+<h3>Reprodução</h3>
+<pre>python analyzer.py --input "&lt;pasta da urna&gt;" --output "&lt;pasta analysis&gt;"   --uf SC --municipio 80535   --zona 44 --secao 144   --turno 1 --data-eleicao 2026-10-04</pre>
+
+
+  <footer>
+    Gerado por urna-forense 1.0.0 em
+    27/10/2026 20:50:58 ·
+    entrada <span class="mono">C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC</span> ·
+    escopo de hash: all ·
+    1.955 s.
+    <br>Arquivos originais tratados em modo somente leitura; a verificação
+    pós-execução confirmou
+    que os hashes da urna não mudaram durante a análise.
+  </footer>
+</main>
+</body>
+</html>

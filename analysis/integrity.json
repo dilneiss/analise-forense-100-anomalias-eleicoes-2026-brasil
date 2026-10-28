@@ -1,0 +1,729 @@
+{
+  "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+  "alteration": "SEM_EVIDENCIA_DE_ALTERACAO",
+  "authenticity": "NAO_FOI_POSSIVEL_VERIFICAR",
+  "checks": [
+    {
+      "key": "hashes_assinados",
+      "label": "Hashes SHA-512 assinados",
+      "status": "VALIDADO",
+      "detail": "4 de 4 arquivos presentes conferem com o hash assinado; 7 arquivo(s) assinado(s) ausente(s) no conjunto",
+      "evidence": []
+    },
+    {
+      "key": "hash_autoassinado_sw",
+      "label": "Hash do conteudo autoassinado (software)",
+      "status": "VALIDADO",
+      "detail": "SHA-512 do conteudo confere com o hash declarado",
+      "evidence": []
+    },
+    {
+      "key": "hash_autoassinado_hw",
+      "label": "Hash do conteudo autoassinado (hardware)",
+      "status": "VALIDADO",
+      "detail": "SHA-512 do conteudo confere com o hash declarado",
+      "evidence": []
+    },
+    {
+      "key": "assinatura_hardware",
+      "label": "Assinatura digital de hardware",
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "detail": "algoritmo EdDSA Ed521 (ICP-Brasil, OID 1.3.6.1.4.1.44588.2.1) nao e suportado pela biblioteca cryptography; a verificacao exigiria implementacao propria de curva, o que esta fora do escopo desta ferramenta",
+      "evidence": [
+        "O=TSE,C=BR,CN=UEAO02191040"
+      ]
+    },
+    {
+      "key": "assinatura_software",
+      "label": "Assinatura digital de software (CEPESC)",
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "detail": "assinatura de software CEPESC (algoritmo de governo) nao possui verificador publico; o hash do conteudo autoassinado foi conferido",
+      "evidence": []
+    },
+    {
+      "key": "cadeia_certificacao",
+      "label": "Cadeia de certificacao",
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "detail": "certificados das AC nao fornecidos; a cadeia nao pode ser validada (use --ca DIR)",
+      "evidence": []
+    },
+    {
+      "key": "bu_estrutura",
+      "label": "Estrutura ASN.1 do BU",
+      "status": "VALIDADO",
+      "detail": "BU de 2 eleicao(oes) decodificado",
+      "evidence": []
+    },
+    {
+      "key": "bu_cadeia_hashes",
+      "label": "Cadeia de hashes SHA-512 do BU",
+      "status": "VALIDADO",
+      "detail": "eleicao 6257: 7 registros, 0 falha(s), ultimo hash confere; eleicao 6259: 102 registros, 0 falha(s), ultimo hash confere",
+      "evidence": []
+    },
+    {
+      "key": "bu_aritmetica",
+      "label": "Conferencias aritmeticas do BU",
+      "status": "VALIDADO",
+      "detail": "comparecimento=324; detalhamento={'sem_biometria': 16, 'por_biometria': 283, 'por_biografia': 25}; aptos=386; secao+tte=386 (382+4); cargo 1 (presidente): total 324 = 1 x comparecimento 324; aptos=386; secao+tte=386 (382+4); cargo 6 (deputado federal): total 324 = 1 x comparecimento 324; cargo 7 (deputado estadual): total 324 = 1 x comparecimento 324; cargo 5 (senador): total 648 = 2 x comparecimento 324; cargo 3 (governador): total 324 = 1 x comparecimento 324",
+      "evidence": []
+    },
+    {
+      "key": "rdv_estrutura",
+      "label": "Estrutura ASN.1 do RDV",
+      "status": "VALIDADO",
+      "detail": "RDV de 2 eleicao(oes), 1944 registros agregados",
+      "evidence": []
+    },
+    {
+      "key": "rdv_registros",
+      "label": "Registros do RDV x comparecimento do BU",
+      "status": "VALIDADO",
+      "detail": "cargo 1 (presidente): 324 registros = comparecimento 324 x 1 escolha(s); cargo 6 (deputado federal): 324 registros = comparecimento 324 x 1 escolha(s); cargo 7 (deputado estadual): 324 registros = comparecimento 324 x 1 escolha(s); cargo 5 (senador): 648 registros = comparecimento 324 x 2 escolha(s); cargo 3 (governador): 324 registros = comparecimento 324 x 1 escolha(s)",
+      "evidence": []
+    },
+    {
+      "key": "log_legivel",
+      "label": "Estrutura do log",
+      "status": "VALIDADO",
+      "detail": "7254 eventos; 0 linha(s) fora do formato",
+      "evidence": []
+    },
+    {
+      "key": "log_relogio",
+      "label": "Monotonicidade dos horarios",
+      "status": "VALIDADO",
+      "detail": "0 inversao(oes) dentro das sessoes",
+      "evidence": []
+    },
+    {
+      "key": "log_codigo_linha",
+      "label": "Codigo de 64 bits por linha",
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "detail": "NAO FOI POSSIVEL VERIFICAR: o codigo de 64 bits de cada linha nao tem construcao publicada e nao e funcao apenas dos campos visiveis (linhas identicas aparecem com codigos diferentes).",
+      "evidence": []
+    },
+    {
+      "key": "ordem_temporal",
+      "label": "Ordem temporal dos marcos",
+      "status": "VALIDADO",
+      "detail": "abertura <= votos <= encerramento <= BU <= arquivo <= assinatura",
+      "evidence": []
+    }
+  ],
+  "hash_checks": [
+    {
+      "file": "o03220sc8053500440144-bu.dat",
+      "declared_sha512": "9b8b7a9a7b1a4fc43b827a94edcea9db6e0644198731ed460ce178d089941c7d6dda369b3bc53bf818c1ebfc3cf6e61a53b0eddb4f3f24e4552410b44b21b20a",
+      "calculated_sha512": "9b8b7a9a7b1a4fc43b827a94edcea9db6e0644198731ed460ce178d089941c7d6dda369b3bc53bf818c1ebfc3cf6e61a53b0eddb4f3f24e4552410b44b21b20a",
+      "match": true,
+      "status": "VALIDADO"
+    },
+    {
+      "file": "o03220sc8053500440144-hash.dat",
+      "declared_sha512": "9a2a689972ffdf719d8079c36811f3decc6a395570ef4819918a5e0f458f5ba5c8d214ae4f2d9ea3fcd4a160332060c04f1fdf3339f52f0e89c1d4ae17083dff",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    },
+    {
+      "file": "o03220sc8053500440144-imgbu.dat",
+      "declared_sha512": "abfebd4953f00d93b2efaa659722f28107606d5d44a5e2161f0acd62c80fb5b7663200d2618e81ee89bfcc49d353ce9c81b047b8b09fa97e9931b8e5971e688d",
+      "calculated_sha512": "abfebd4953f00d93b2efaa659722f28107606d5d44a5e2161f0acd62c80fb5b7663200d2618e81ee89bfcc49d353ce9c81b047b8b09fa97e9931b8e5971e688d",
+      "match": true,
+      "status": "VALIDADO"
+    },
+    {
+      "file": "o03220sc8053500440144-imgze.dat",
+      "declared_sha512": "b81e981150b61668a7ac85a4bfd882e1ff5ee7436d082966c1a3618b155ae1b11e77cbaac7d470fd2a1fff38a922609e622d503160df43df69e395cf6242d50c",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    },
+    {
+      "file": "o03220sc8053500440144-jufa.dat",
+      "declared_sha512": "855bac07defa77009ade1157b22c302184b15cee40a7f3568568b722a00ff2ac8452cdcbb7b6971c088e30baee8827e64cd2302bef6c5de3abf75bb48f87fdac",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    },
+    {
+      "file": "o03220sc8053500440144-log.jez",
+      "declared_sha512": "89eb7cef56d49c17bc4c96db55e6ca874cc1757382e4b74e0cd1b5cb1624a13a6fec13e746bfe879c61b282833fe1e6d9e801db496e7dc70c9513a00e0152f78",
+      "calculated_sha512": "89eb7cef56d49c17bc4c96db55e6ca874cc1757382e4b74e0cd1b5cb1624a13a6fec13e746bfe879c61b282833fe1e6d9e801db496e7dc70c9513a00e0152f78",
+      "match": true,
+      "status": "VALIDADO"
+    },
+    {
+      "file": "o03220sc8053500440144-mr.ver",
+      "declared_sha512": "3246ce97ca80337a6b0e7073241bee673d4154fa2019a70a397a30ba421eae2756361629d0202344d5f38e8b1d00ae903f9b163a8e824845b91750ce63ded160",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    },
+    {
+      "file": "o03220sc8053500440144-rdv.dat",
+      "declared_sha512": "dbdf8782e15aad74b4b97ebfb8581e335817927b0751dba5f1c4a1facae89bcc5cda234b442412702309138cfa178c6afadbd9fb801485c70a70ffab1bbce8e8",
+      "calculated_sha512": "dbdf8782e15aad74b4b97ebfb8581e335817927b0751dba5f1c4a1facae89bcc5cda234b442412702309138cfa178c6afadbd9fb801485c70a70ffab1bbce8e8",
+      "match": true,
+      "status": "VALIDADO"
+    },
+    {
+      "file": "o03220sc8053500440144-wsqbio.jez",
+      "declared_sha512": "290ab172bd271ec2fa6ec9dd9d9f8cb534cc15978ef5ce09f2c5a7fc718c93bd42ffdbba5813d7332ad8bc995561dd800b44d12007444f792f40272e67752cc4",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    },
+    {
+      "file": "o03220sc8053500440144-wsqman.jez",
+      "declared_sha512": "192b96e1eb70a194276ba71660a2c3e0f0a12dc8491c47a0822b86212a8c14382bb734fe1ad1495f1f10f0076b08924dd0ca8e239f43713e9dc1af4dad269de6",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    },
+    {
+      "file": "o03220sc8053500440144-wsqmes.jez",
+      "declared_sha512": "472bcc9d143b38fdf3dd8bba439c5fd267f0ac4b153399ba2a2138cb06fdb0d4e05949c0138a3171638db38aaebb362b997a259f66da502f594b6e2cefdb2939",
+      "calculated_sha512": null,
+      "match": null,
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "reason": "arquivo assinado ausente no conjunto fornecido"
+    }
+  ],
+  "missing_signed_files": [
+    "o03220sc8053500440144-hash.dat",
+    "o03220sc8053500440144-imgze.dat",
+    "o03220sc8053500440144-jufa.dat",
+    "o03220sc8053500440144-mr.ver",
+    "o03220sc8053500440144-wsqbio.jez",
+    "o03220sc8053500440144-wsqman.jez",
+    "o03220sc8053500440144-wsqmes.jez"
+  ],
+  "extra_files": [],
+  "signature_summary": {
+    "arquivo_sha256": "68e86b29ceb03f551f5cf575048bb2d00106f6177794bde30e440d0fff55c9e9",
+    "layout": "observado_2026 (SW, HW, modelo/algoritmo no fim)",
+    "modelo_urna_codigo": 20,
+    "modelo_urna": "UE2020",
+    "algoritmo_hardware_codigo": 4,
+    "assinatura_software": {
+      "parte": "software",
+      "data_hora": "2026-10-04T17:04:21",
+      "versao_protocolo": 2,
+      "usuario": "SEVIN",
+      "serial": 20260708,
+      "algoritmo_hash": "sha512",
+      "algoritmo_assinatura": "cepesc",
+      "bits": 256,
+      "hash_autoassinado_declarado": "9C573932B0A79A5956751415D8F8C84FEF1629E1D4FC2D0C96A671DDC1FEEBF1F8ADF21FE0012932BC986A4645F695D0CD810CEC15BA5522B83FDCAC999B9148",
+      "hash_autoassinado_calculado": "9C573932B0A79A5956751415D8F8C84FEF1629E1D4FC2D0C96A671DDC1FEEBF1F8ADF21FE0012932BC986A4645F695D0CD810CEC15BA5522B83FDCAC999B9148",
+      "hash_autoassinado_confere": true,
+      "tamanho_assinatura": 4765,
+      "conjunto_chave": "202607021654",
+      "certificado": null,
+      "verificacao": {
+        "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+        "algorithm": "CEPESC",
+        "detail": "assinatura de software CEPESC (algoritmo de governo) nao possui verificador publico; o hash do conteudo autoassinado foi conferido",
+        "checks": []
+      },
+      "arquivos": [
+        {
+          "nome": "o03220sc8053500440144-bu.dat",
+          "hash_sha512": "9B8B7A9A7B1A4FC43B827A94EDCEA9DB6E0644198731ED460CE178D089941C7D6DDA369B3BC53BF818C1EBFC3CF6E61A53B0EDDB4F3F24E4552410B44B21B20A",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-rdv.dat",
+          "hash_sha512": "DBDF8782E15AAD74B4B97EBFB8581E335817927B0751DBA5F1C4A1FACAE89BCC5CDA234B442412702309138CFA178C6AFADBD9FB801485C70A70FFAB1BBCE8E8",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-jufa.dat",
+          "hash_sha512": "855BAC07DEFA77009ADE1157B22C302184B15CEE40A7F3568568B722A00FF2AC8452CDCBB7B6971C088E30BAEE8827E64CD2302BEF6C5DE3ABF75BB48F87FDAC",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-imgbu.dat",
+          "hash_sha512": "ABFEBD4953F00D93B2EFAA659722F28107606D5D44A5E2161F0ACD62C80FB5B7663200D2618E81EE89BFCC49D353CE9C81B047B8B09FA97E9931B8E5971E688D",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-imgze.dat",
+          "hash_sha512": "B81E981150B61668A7AC85A4BFD882E1FF5EE7436D082966C1A3618B155AE1B11E77CBAAC7D470FD2A1FFF38A922609E622D503160DF43DF69E395CF6242D50C",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-hash.dat",
+          "hash_sha512": "9A2A689972FFDF719D8079C36811F3DECC6A395570EF4819918A5E0F458F5BA5C8D214AE4F2D9EA3FCD4A160332060C04F1FDF3339F52F0E89C1D4AE17083DFF",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-wsqbio.jez",
+          "hash_sha512": "290AB172BD271EC2FA6EC9DD9D9F8CB534CC15978EF5CE09F2C5A7FC718C93BD42FFDBBA5813D7332AD8BC995561DD800B44D12007444F792F40272E67752CC4",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-wsqman.jez",
+          "hash_sha512": "192B96E1EB70A194276BA71660A2C3E0F0A12DC8491C47A0822B86212A8C14382BB734FE1AD1495F1F10F0076B08924DD0CA8E239F43713E9DC1AF4DAD269DE6",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-wsqmes.jez",
+          "hash_sha512": "472BCC9D143B38FDF3DD8BBA439C5FD267F0AC4B153399BA2A2138CB06FDB0D4E05949C0138A3171638DB38AAEBB362B997A259F66DA502F594B6E2CEFDB2939",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-mr.ver",
+          "hash_sha512": "3246CE97CA80337A6B0E7073241BEE673D4154FA2019A70A397A30BA421EAE2756361629D0202344D5F38E8B1D00AE903F9B163A8E824845B91750CE63DED160",
+          "tamanho_assinatura": 4765
+        },
+        {
+          "nome": "o03220sc8053500440144-log.jez",
+          "hash_sha512": "89EB7CEF56D49C17BC4C96DB55E6CA874CC1757382E4B74E0CD1B5CB1624A13A6FEC13E746BFE879C61B282833FE1E6D9E801DB496E7DC70C9513A00E0152F78",
+          "tamanho_assinatura": 4765
+        }
+      ],
+      "arquivos_verificados": {}
+    },
+    "assinatura_hardware": {
+      "parte": "hardware",
+      "data_hora": "2026-10-04T17:04:21",
+      "versao_protocolo": 2,
+      "usuario": "UEAO",
+      "serial": 2191040,
+      "algoritmo_hash": "sha512",
+      "algoritmo_assinatura": "eddsa",
+      "bits": 521,
+      "hash_autoassinado_declarado": "F0E5008ACE7C78B05572BE18075E713E6469FF830E225AC94B0793923CD5B97BB05A17D0F08E0E6A310791575C949699F5326862D46B48F0468DD7ABDD2E5733",
+      "hash_autoassinado_calculado": "F0E5008ACE7C78B05572BE18075E713E6469FF830E225AC94B0793923CD5B97BB05A17D0F08E0E6A310791575C949699F5326862D46B48F0468DD7ABDD2E5733",
+      "hash_autoassinado_confere": true,
+      "tamanho_assinatura": 132,
+      "conjunto_chave": null,
+      "certificado": {
+        "subject": "O=TSE,C=BR,CN=UEAO02191040",
+        "issuer": "L=Brasilia,OU=STI,O=TSE,1.2.840.113549.1.9.1=acue2020@tse.jus.br,C=BR,ST=DF,CN=AC UE2020",
+        "serial_hex": "de3f2",
+        "sha256": "1a3eac6f81efd3c191d8c27eb87a9ee44a8d4a5b1b0c3502fbb5a201244c88f5",
+        "not_before": "2022-05-13T05:47:18+00:00",
+        "not_after": "2036-01-20T05:47:18+00:00",
+        "signature_oid": "1.3.6.1.4.1.44588.2.1",
+        "public_key_oid": "1.3.6.1.4.1.44588.2.1",
+        "common_name": "UEAO02191040",
+        "public_key_type": "desconhecido",
+        "public_key_supported": false,
+        "public_key_error": "UnsupportedAlgorithm: Unknown key type: 1.3.6.1.4.1.44588.2.1",
+        "pem_path": null
+      },
+      "verificacao": {
+        "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+        "algorithm": "Ed521 (ICP-Brasil)",
+        "detail": "algoritmo EdDSA Ed521 (ICP-Brasil, OID 1.3.6.1.4.1.44588.2.1) nao e suportado pela biblioteca cryptography; a verificacao exigiria implementacao propria de curva, o que esta fora do escopo desta ferramenta",
+        "checks": [
+          {
+            "key": "autoassinado",
+            "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+            "detail": "algoritmo EdDSA Ed521 (ICP-Brasil, OID 1.3.6.1.4.1.44588.2.1) nao e suportado pela biblioteca cryptography; a verificacao exigiria implementacao propria de curva, o que esta fora do escopo desta ferramenta"
+          }
+        ]
+      },
+      "arquivos": [
+        {
+          "nome": "o03220sc8053500440144-bu.dat",
+          "hash_sha512": "9B8B7A9A7B1A4FC43B827A94EDCEA9DB6E0644198731ED460CE178D089941C7D6DDA369B3BC53BF818C1EBFC3CF6E61A53B0EDDB4F3F24E4552410B44B21B20A",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-rdv.dat",
+          "hash_sha512": "DBDF8782E15AAD74B4B97EBFB8581E335817927B0751DBA5F1C4A1FACAE89BCC5CDA234B442412702309138CFA178C6AFADBD9FB801485C70A70FFAB1BBCE8E8",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-jufa.dat",
+          "hash_sha512": "855BAC07DEFA77009ADE1157B22C302184B15CEE40A7F3568568B722A00FF2AC8452CDCBB7B6971C088E30BAEE8827E64CD2302BEF6C5DE3ABF75BB48F87FDAC",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-imgbu.dat",
+          "hash_sha512": "ABFEBD4953F00D93B2EFAA659722F28107606D5D44A5E2161F0ACD62C80FB5B7663200D2618E81EE89BFCC49D353CE9C81B047B8B09FA97E9931B8E5971E688D",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-imgze.dat",
+          "hash_sha512": "B81E981150B61668A7AC85A4BFD882E1FF5EE7436D082966C1A3618B155AE1B11E77CBAAC7D470FD2A1FFF38A922609E622D503160DF43DF69E395CF6242D50C",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-hash.dat",
+          "hash_sha512": "9A2A689972FFDF719D8079C36811F3DECC6A395570EF4819918A5E0F458F5BA5C8D214AE4F2D9EA3FCD4A160332060C04F1FDF3339F52F0E89C1D4AE17083DFF",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-wsqbio.jez",
+          "hash_sha512": "290AB172BD271EC2FA6EC9DD9D9F8CB534CC15978EF5CE09F2C5A7FC718C93BD42FFDBBA5813D7332AD8BC995561DD800B44D12007444F792F40272E67752CC4",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-wsqman.jez",
+          "hash_sha512": "192B96E1EB70A194276BA71660A2C3E0F0A12DC8491C47A0822B86212A8C14382BB734FE1AD1495F1F10F0076B08924DD0CA8E239F43713E9DC1AF4DAD269DE6",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-wsqmes.jez",
+          "hash_sha512": "472BCC9D143B38FDF3DD8BBA439C5FD267F0AC4B153399BA2A2138CB06FDB0D4E05949C0138A3171638DB38AAEBB362B997A259F66DA502F594B6E2CEFDB2939",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-mr.ver",
+          "hash_sha512": "3246CE97CA80337A6B0E7073241BEE673D4154FA2019A70A397A30BA421EAE2756361629D0202344D5F38E8B1D00AE903F9B163A8E824845B91750CE63DED160",
+          "tamanho_assinatura": 132
+        },
+        {
+          "nome": "o03220sc8053500440144-log.jez",
+          "hash_sha512": "89EB7CEF56D49C17BC4C96DB55E6CA874CC1757382E4B74E0CD1B5CB1624A13A6FEC13E746BFE879C61B282833FE1E6D9E801DB496E7DC70C9513A00E0152F78",
+          "tamanho_assinatura": 132
+        }
+      ],
+      "arquivos_verificados": {
+        "o03220sc8053500440144-bu.dat": "NAO_FOI_POSSIVEL_VERIFICAR",
+        "o03220sc8053500440144-rdv.dat": "NAO_FOI_POSSIVEL_VERIFICAR",
+        "o03220sc8053500440144-imgbu.dat": "NAO_FOI_POSSIVEL_VERIFICAR",
+        "o03220sc8053500440144-log.jez": "NAO_FOI_POSSIVEL_VERIFICAR"
+      }
+    },
+    "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+    "cadeia_certificacao": {
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "detail": "certificados das AC nao fornecidos; a cadeia nao pode ser validada (use --ca DIR)",
+      "levels": []
+    },
+    "hashes_assinados": {
+      "o03220sc8053500440144-bu.dat": "9B8B7A9A7B1A4FC43B827A94EDCEA9DB6E0644198731ED460CE178D089941C7D6DDA369B3BC53BF818C1EBFC3CF6E61A53B0EDDB4F3F24E4552410B44B21B20A",
+      "o03220sc8053500440144-rdv.dat": "DBDF8782E15AAD74B4B97EBFB8581E335817927B0751DBA5F1C4A1FACAE89BCC5CDA234B442412702309138CFA178C6AFADBD9FB801485C70A70FFAB1BBCE8E8",
+      "o03220sc8053500440144-jufa.dat": "855BAC07DEFA77009ADE1157B22C302184B15CEE40A7F3568568B722A00FF2AC8452CDCBB7B6971C088E30BAEE8827E64CD2302BEF6C5DE3ABF75BB48F87FDAC",
+      "o03220sc8053500440144-imgbu.dat": "ABFEBD4953F00D93B2EFAA659722F28107606D5D44A5E2161F0ACD62C80FB5B7663200D2618E81EE89BFCC49D353CE9C81B047B8B09FA97E9931B8E5971E688D",
+      "o03220sc8053500440144-imgze.dat": "B81E981150B61668A7AC85A4BFD882E1FF5EE7436D082966C1A3618B155AE1B11E77CBAAC7D470FD2A1FFF38A922609E622D503160DF43DF69E395CF6242D50C",
+      "o03220sc8053500440144-hash.dat": "9A2A689972FFDF719D8079C36811F3DECC6A395570EF4819918A5E0F458F5BA5C8D214AE4F2D9EA3FCD4A160332060C04F1FDF3339F52F0E89C1D4AE17083DFF",
+      "o03220sc8053500440144-wsqbio.jez": "290AB172BD271EC2FA6EC9DD9D9F8CB534CC15978EF5CE09F2C5A7FC718C93BD42FFDBBA5813D7332AD8BC995561DD800B44D12007444F792F40272E67752CC4",
+      "o03220sc8053500440144-wsqman.jez": "192B96E1EB70A194276BA71660A2C3E0F0A12DC8491C47A0822B86212A8C14382BB734FE1AD1495F1F10F0076B08924DD0CA8E239F43713E9DC1AF4DAD269DE6",
+      "o03220sc8053500440144-wsqmes.jez": "472BCC9D143B38FDF3DD8BBA439C5FD267F0AC4B153399BA2A2138CB06FDB0D4E05949C0138A3171638DB38AAEBB362B997A259F66DA502F594B6E2CEFDB2939",
+      "o03220sc8053500440144-mr.ver": "3246CE97CA80337A6B0E7073241BEE673D4154FA2019A70A397A30BA421EAE2756361629D0202344D5F38E8B1D00AE903F9B163A8E824845B91750CE63DED160",
+      "o03220sc8053500440144-log.jez": "89EB7CEF56D49C17BC4C96DB55E6CA874CC1757382E4B74E0CD1B5CB1624A13A6FEC13E746BFE879C61B282833FE1E6D9E801DB496E7DC70C9513A00E0152F78"
+    },
+    "observacoes": []
+  },
+  "bu_summary": {
+    "identificacao": {
+      "tipo": "secao",
+      "municipio": 80535,
+      "zona": 44,
+      "local": 1236,
+      "secao": 144
+    },
+    "fase": 2,
+    "fase_nome": "oficial",
+    "data_hora_emissao": "2026-10-04T17:03:07",
+    "dados_secao": {
+      "abertura": "2026-10-04T08:00:01",
+      "encerramento": "2026-10-04T17:01:17"
+    },
+    "comparecimento": 324,
+    "detalhamento_comparecimento": {
+      "sem_biometria": 16,
+      "por_biometria": 283,
+      "por_biografia": 25
+    },
+    "eleicoes": [
+      {
+        "id_eleicao": 6257,
+        "qtd_eleitores_aptos": 386,
+        "cargos": [
+          {
+            "codigo_cargo": 1,
+            "cargo": "presidente",
+            "total_votos": 324,
+            "tipos_voto": {
+              "nominal": 317,
+              "branco": 3,
+              "nulo": 4
+            }
+          }
+        ]
+      },
+      {
+        "id_eleicao": 6259,
+        "qtd_eleitores_aptos": 386,
+        "cargos": [
+          {
+            "codigo_cargo": 6,
+            "cargo": "deputado federal",
+            "total_votos": 324,
+            "tipos_voto": {
+              "nominal": 301,
+              "branco": 13,
+              "nulo": 6,
+              "legenda": 4
+            }
+          },
+          {
+            "codigo_cargo": 7,
+            "cargo": "deputado estadual",
+            "total_votos": 324,
+            "tipos_voto": {
+              "nominal": 291,
+              "branco": 15,
+              "nulo": 3,
+              "legenda": 15
+            }
+          },
+          {
+            "codigo_cargo": 5,
+            "cargo": "senador",
+            "total_votos": 648,
+            "tipos_voto": {
+              "nominal": 565,
+              "branco": 47,
+              "nulo": 36
+            }
+          },
+          {
+            "codigo_cargo": 3,
+            "cargo": "governador",
+            "total_votos": 324,
+            "tipos_voto": {
+              "nominal": 298,
+              "branco": 12,
+              "nulo": 14
+            }
+          }
+        ]
+      }
+    ],
+    "cadeia_hashes": [
+      {
+        "id_eleicao": 6257,
+        "algoritmo": "SHA-512",
+        "cabecalho": "03220|06257|80535|0044|0144|636435444008130565347658",
+        "hash_cabecalho": "59FD1D2C310D7F12A77CC9A0BF99A7C803E5E15C25310D4F6D6318F569ABEC38E11ECCF95D2455F575666A7E4F78FF2500B6A0003308BCB43A06BB8DFE12567E",
+        "registros_verificados": 7,
+        "falhas": [],
+        "formula": "documentada",
+        "ultimo_hash_declarado": "792DD60F77A3AD467EC6F4B1B4B35A7FCEE474E5884B22191EFE0D712A9A7968772A25F33282A3EC93AD27922F8BBE72721F38DB37DCAFB76B498FECA7F25CDA",
+        "ultimo_hash_recalculado": "792DD60F77A3AD467EC6F4B1B4B35A7FCEE474E5884B22191EFE0D712A9A7968772A25F33282A3EC93AD27922F8BBE72721F38DB37DCAFB76B498FECA7F25CDA",
+        "ultimo_hash_confere": true,
+        "status": "VALIDADO"
+      },
+      {
+        "id_eleicao": 6259,
+        "algoritmo": "SHA-512",
+        "cabecalho": "03220|06259|80535|0044|0144|636435444008130565347658",
+        "hash_cabecalho": "B359DB887290FF4165EBC9A48240CA224789EDA1D4BFDA23DA587875BCA550E28000F53EBBB7063DA426267823A56A5F3B99C2F0B98C886137CB12FCB7610116",
+        "registros_verificados": 102,
+        "falhas": [],
+        "formula": "documentada",
+        "ultimo_hash_declarado": "05C2F20ECBAAC765FA2EB34F4E4E9D9A42C7982E08216A929A64DFFA9B3BC52371923DC38C70CFC3EFA607F88DAFB9D1BA4AA7279BD1A34321F01A473AB86673",
+        "ultimo_hash_recalculado": "05C2F20ECBAAC765FA2EB34F4E4E9D9A42C7982E08216A929A64DFFA9B3BC52371923DC38C70CFC3EFA607F88DAFB9D1BA4AA7279BD1A34321F01A473AB86673",
+        "ultimo_hash_confere": true,
+        "status": "VALIDADO"
+      }
+    ],
+    "checks_aritmeticos": [
+      {
+        "key": "comparecimento_detalhamento",
+        "status": "VALIDADO",
+        "detail": "comparecimento=324; detalhamento={'sem_biometria': 16, 'por_biometria': 283, 'por_biografia': 25}"
+      },
+      {
+        "key": "aptos_6257",
+        "status": "VALIDADO",
+        "detail": "aptos=386; secao+tte=386 (382+4)"
+      },
+      {
+        "key": "total_cargo_6257_1",
+        "status": "VALIDADO",
+        "detail": "cargo 1 (presidente): total 324 = 1 x comparecimento 324"
+      },
+      {
+        "key": "aptos_6259",
+        "status": "VALIDADO",
+        "detail": "aptos=386; secao+tte=386 (382+4)"
+      },
+      {
+        "key": "total_cargo_6259_6",
+        "status": "VALIDADO",
+        "detail": "cargo 6 (deputado federal): total 324 = 1 x comparecimento 324"
+      },
+      {
+        "key": "total_cargo_6259_7",
+        "status": "VALIDADO",
+        "detail": "cargo 7 (deputado estadual): total 324 = 1 x comparecimento 324"
+      },
+      {
+        "key": "total_cargo_6259_5",
+        "status": "VALIDADO",
+        "detail": "cargo 5 (senador): total 648 = 2 x comparecimento 324"
+      },
+      {
+        "key": "total_cargo_6259_3",
+        "status": "VALIDADO",
+        "detail": "cargo 3 (governador): total 324 = 1 x comparecimento 324"
+      }
+    ]
+  },
+  "log_summary": {
+    "eventos": 7254,
+    "linhas_nao_interpretadas": 0,
+    "sessoes": 4,
+    "niveis": {
+      "INFO": 7238,
+      "ALERTA": 16
+    },
+    "modulos": {
+      "LOGD": 18,
+      "SCUE": 85,
+      "GAP": 273,
+      "ATUE": 92,
+      "VOTA": 6784,
+      "INITJE": 2
+    },
+    "categorias": {
+      "LOG.START": 4,
+      "SYS.POWER_ON": 4,
+      "SYS.APP_START": 13,
+      "SCUE.INFO": 23,
+      "PREP.MEDIA": 178,
+      "SEC.SIGNATURE_APP": 29,
+      "SEC.SIGNATURE_DATA": 12,
+      "SEC.SIGNATURE_MODEL": 10,
+      "PREP.SECTION_ID": 17,
+      "SEC.SIGNATURE_FILE": 7,
+      "PREP.LOAD": 24,
+      "BU.PRINT_START": 5,
+      "BU.PRINT_END": 5,
+      "PREP.LOG_COPY": 1,
+      "LOGD.INFO": 6,
+      "SYS.APP_END": 8,
+      "SYS.SHUTDOWN": 3,
+      "GAP.INFO": 220,
+      "ALERT": 1,
+      "ATUE.INFO": 79,
+      "PREP.MEDIA_TEST": 4,
+      "MAINT.CYCLE": 3,
+      "MAINT.TEST_FAIL": 1,
+      "VOTA.INFO": 52,
+      "SYS.KEY_OFF": 2,
+      "VOTE.HABILITATION": 3063,
+      "VOTE.READY": 1,
+      "VOTE.WAIT_ID": 355,
+      "VOTE.BALLOT": 1944,
+      "VOTE.ERROR": 794,
+      "VOTE.COMPUTED": 324,
+      "VOTE.IDLE": 6,
+      "VOTE.ALERT_MESARIO": 7,
+      "PREP.INSPECTION": 21,
+      "CLOSE.REQUEST": 1,
+      "CLOSE.QUESTION": 1,
+      "CLOSE.CONFIRM": 1,
+      "CLOSE.START": 1,
+      "BU.REPORT_START": 1,
+      "BU.REPORT_END": 1,
+      "BU.QUALITY": 1,
+      "FILE.GEN_START": 11,
+      "FILE.GEN_END": 10
+    },
+    "codigos_unicos": 7254,
+    "inversoes_de_relogio": 0,
+    "linhas_repetidas": 0,
+    "verificacao_do_codigo_de_linha": "NAO FOI POSSIVEL VERIFICAR: o codigo de 64 bits de cada linha nao tem construcao publicada e nao e funcao apenas dos campos visiveis (linhas identicas aparecem com codigos diferentes)."
+  },
+  "timeline_order": [
+    {
+      "key": "inicializacao",
+      "label": "Inicialização da urna",
+      "timestamp": "2026-10-04T07:19:52",
+      "status": "VALIDADO",
+      "previous": null
+    },
+    {
+      "key": "preparacao",
+      "label": "Preparação e identificação da seção",
+      "timestamp": "2026-10-04T07:21:06",
+      "status": "VALIDADO",
+      "previous": "inicializacao"
+    },
+    {
+      "key": "abertura",
+      "label": "Abertura da votação",
+      "timestamp": "2026-10-04T08:00:01",
+      "status": "VALIDADO",
+      "previous": "preparacao"
+    },
+    {
+      "key": "primeiro_voto",
+      "label": "Primeiro voto computado",
+      "timestamp": "2026-10-04T08:04:35",
+      "status": "VALIDADO",
+      "previous": "abertura"
+    },
+    {
+      "key": "ultimo_voto",
+      "label": "Último voto computado",
+      "timestamp": "2026-10-04T16:56:28",
+      "status": "VALIDADO",
+      "previous": "primeiro_voto"
+    },
+    {
+      "key": "encerramento",
+      "label": "Encerramento da votação",
+      "timestamp": "2026-10-04T17:01:17",
+      "status": "VALIDADO",
+      "previous": "ultimo_voto"
+    },
+    {
+      "key": "bu_relatorio",
+      "label": "Geração do relatório do BU",
+      "timestamp": "2026-10-04T17:03:07",
+      "status": "VALIDADO",
+      "previous": "encerramento"
+    },
+    {
+      "key": "bu_impressao",
+      "label": "Impressão do BU",
+      "timestamp": "2026-10-04T17:03:09",
+      "status": "VALIDADO",
+      "previous": "bu_relatorio"
+    },
+    {
+      "key": "bu_arquivo",
+      "label": "Gravação do arquivo bu.dat",
+      "timestamp": "2026-10-04T17:04:06",
+      "status": "VALIDADO",
+      "previous": "bu_impressao"
+    },
+    {
+      "key": "log_empacotado",
+      "label": "Empacotamento do log.jez",
+      "timestamp": "2026-10-04T17:04:11",
+      "status": "VALIDADO",
+      "previous": "bu_arquivo"
+    },
+    {
+      "key": "bu_assinatura",
+      "label": "Assinatura do conjunto (vota.vsc)",
+      "timestamp": "2026-10-04T17:04:21",
+      "status": "VALIDADO",
+      "previous": "log_empacotado"
+    }
+  ],
+  "limitations": [
+    "A assinatura de hardware Ed521 (ICP-Brasil) nao e suportada pela biblioteca criptografica utilizada; por isso a autenticidade criptografica do conjunto nao foi confirmada.",
+    "A assinatura de software CEPESC usa algoritmo de governo sem verificador publico; ela foi lida, nao verificada."
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "summary": {
+    "files_total": 5,
+    "bytes_total": 239956,
+    "bytes_total_human": "234.3 KB",
+    "by_extension": {
+      ".dat": 3,
+      ".jez": 1,
+      ".vsc": 1
+    },
+    "by_detected_type": {
+      "asn1-ber": 4,
+      "zip": 1
+    },
+    "by_kind": {
+      "bu": 1,
+      "imgbu": 1,
+      "log": 1,
+      "rdv": 1,
+      "vota": 1
+    },
+    "by_uf": {
+      "sc": 5
+    },
+    "urnas_total": 1,
+    "urnas_incompletas": 0,
+    "cobertura_por_kind": {
+      "bu": 1,
+      "rdv": 1,
+      "log": 1,
+      "vota": 1,
+      "imgbu": 1
+    },
+    "ausencias_por_kind": {}
+  },
+  "target": {
+    "uf": "SC",
+    "municipio_codigo_tse": 80535,
+    "zona": 44,
+    "secao": 144,
+    "chave": "SC-80535-0044-0144",
+    "files": [
+      {
+        "path": "o03220sc8053500440144-bu.dat",
+        "size": 10221,
+        "extension": ".dat",
+        "detected_type": "asn1-ber",
+        "magic": "30 82 27 e9 30 15 1b 0f 32 30 32 36 31 30 30 34",
+        "mtime_ns": 1791236648000000000,
+        "sha256": "59d0cafe5d89946c3a542488fa29ec58f696aa6968fae1bb135d1affe2850d7c",
+        "sha512": "9b8b7a9a7b1a4fc43b827a94edcea9db6e0644198731ed460ce178d089941c7d6dda369b3bc53bf818c1ebfc3cf6e61a53b0eddb4f3f24e4552410b44b21b20a",
+        "urna": "SC-80535-0044-0144",
+        "kind": "bu"
+      },
+      {
+        "path": "o03220sc8053500440144-imgbu.dat",
+        "size": 17688,
+        "extension": ".dat",
+        "detected_type": "asn1-ber",
+        "magic": "30 82 45 14 30 15 1b 0f 32 30 32 36 31 30 30 34",
+        "mtime_ns": 1791150614000000000,
+        "sha256": "8e2ae39d5d3bbd4e9dfa37cb57b8593fdc6c0436762457be5be9717a59273e82",
+        "sha512": "abfebd4953f00d93b2efaa659722f28107606d5d44a5e2161f0acd62c80fb5b7663200d2618e81ee89bfcc49d353ce9c81b047b8b09fa97e9931b8e5971e688d",
+        "urna": "SC-80535-0044-0144",
+        "kind": "imgbu"
+      },
+      {
+        "path": "o03220sc8053500440144-log.jez",
+        "size": 129820,
+        "extension": ".jez",
+        "detected_type": "zip",
+        "magic": "50 4b 03 04 14 00 00 00 08 00 85 88 44 5d 0f 9f",
+        "mtime_ns": 1791236648000000000,
+        "sha256": "1a95e791683b0f683c371ae9c5df066048da846780ecd33217f1dab003b5caec",
+        "sha512": "89eb7cef56d49c17bc4c96db55e6ca874cc1757382e4b74e0cd1b5cb1624a13a6fec13e746bfe879c61b282833fe1e6d9e801db496e7dc70c9513a00e0152f78",
+        "urna": "SC-80535-0044-0144",
+        "kind": "log"
+      },
+      {
+        "path": "o03220sc8053500440144-rdv.dat",
+        "size": 19618,
+        "extension": ".dat",
+        "detected_type": "asn1-ber",
+        "magic": "30 82 4c 9e 30 15 1b 0f 32 30 32 36 31 30 30 34",
+        "mtime_ns": 1791236648000000000,
+        "sha256": "c09b61dda23a7c585285991a3b3cf25dff50b71b52dda6c2261c9cce498a2a0c",
+        "sha512": "dbdf8782e15aad74b4b97ebfb8581e335817927b0751dba5f1c4a1facae89bcc5cda234b442412702309138cfa178c6afadbd9fb801485c70a70ffab1bbce8e8",
+        "urna": "SC-80535-0044-0144",
+        "kind": "rdv"
+      },
+      {
+        "path": "o03220sc8053500440144-vota.vsc",
+        "size": 62609,
+        "extension": ".vsc",
+        "detected_type": "asn1-ber",
+        "magic": "30 82 f4 8d 30 82 e4 e8 1b 0f 32 30 32 36 31 30",
+        "mtime_ns": 1791236649000000000,
+        "sha256": "68e86b29ceb03f551f5cf575048bb2d00106f6177794bde30e440d0fff55c9e9",
+        "sha512": "522262a55979b3c3caaf8d2e822fb49d580a07d0ca8d2c9998377570d3cf99f066894df126ce5a29e0b84793c798d00d1e0e2a4b612f59b4ab61061af2db55fd",
+        "urna": "SC-80535-0044-0144",
+        "kind": "vota"
+      }
+    ]
+  },
+  "urnas_com_ausencia": [],
+  "non_urna_files": [],
+  "input_root": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC"
+}

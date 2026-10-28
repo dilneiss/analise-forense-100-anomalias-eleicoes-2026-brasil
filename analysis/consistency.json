@@ -1,0 +1,294 @@
+{
+  "checks": [
+    {
+      "key": "hashes_assinados",
+      "label": "Hashes SHA-512 assinados",
+      "status": "VALIDADO",
+      "detail": "4 de 4 arquivos presentes conferem com o hash assinado; 7 arquivo(s) assinado(s) ausente(s) no conjunto",
+      "evidence": []
+    },
+    {
+      "key": "bu_cadeia_hashes",
+      "label": "Cadeia de hashes SHA-512 do BU",
+      "status": "VALIDADO",
+      "detail": "eleicao 6257: 7 registros, 0 falha(s), ultimo hash confere; eleicao 6259: 102 registros, 0 falha(s), ultimo hash confere",
+      "evidence": []
+    },
+    {
+      "key": "bu_aritmetica",
+      "label": "Conferencias aritmeticas do BU",
+      "status": "VALIDADO",
+      "detail": "comparecimento=324; detalhamento={'sem_biometria': 16, 'por_biometria': 283, 'por_biografia': 25}; aptos=386; secao+tte=386 (382+4); cargo 1 (presidente): total 324 = 1 x comparecimento 324; aptos=386; secao+tte=386 (382+4); cargo 6 (deputado federal): total 324 = 1 x comparecimento 324; cargo 7 (deputado estadual): total 324 = 1 x comparecimento 324; cargo 5 (senador): total 648 = 2 x comparecimento 324; cargo 3 (governador): total 324 = 1 x comparecimento 324",
+      "evidence": []
+    },
+    {
+      "key": "municipio",
+      "label": "Município (código TSE)",
+      "status": "VALIDADO",
+      "detail": "nome do arquivo=80535; BU (envelope)=80535; BU (conteúdo)=80535; BU (carga)=80535; RDV=80535; RDV (carga)=80535; BU impresso=80535; log=80535",
+      "evidence": [
+        "nome do arquivo",
+        "BU (envelope)",
+        "BU (conteúdo)",
+        "BU (carga)",
+        "RDV",
+        "RDV (carga)",
+        "BU impresso",
+        "log"
+      ]
+    },
+    {
+      "key": "zona",
+      "label": "Zona eleitoral",
+      "status": "VALIDADO",
+      "detail": "nome do arquivo=44; BU (envelope)=44; BU (conteúdo)=44; BU (carga)=44; RDV=44; RDV (carga)=44; BU impresso=44; log=44",
+      "evidence": [
+        "nome do arquivo",
+        "BU (envelope)",
+        "BU (conteúdo)",
+        "BU (carga)",
+        "RDV",
+        "RDV (carga)",
+        "BU impresso",
+        "log"
+      ]
+    },
+    {
+      "key": "secao",
+      "label": "Seção eleitoral",
+      "status": "VALIDADO",
+      "detail": "nome do arquivo=144; BU (envelope)=144; BU (conteúdo)=144; BU (carga)=144; RDV=144; RDV (carga)=144; BU impresso=144; log=144",
+      "evidence": [
+        "nome do arquivo",
+        "BU (envelope)",
+        "BU (conteúdo)",
+        "BU (carga)",
+        "RDV",
+        "RDV (carga)",
+        "BU impresso",
+        "log"
+      ]
+    },
+    {
+      "key": "local",
+      "label": "Local de votação",
+      "status": "VALIDADO",
+      "detail": "BU (envelope)=1236; BU (conteúdo)=1236; BU impresso=1236",
+      "evidence": [
+        "BU (envelope)",
+        "BU (conteúdo)",
+        "BU impresso"
+      ]
+    },
+    {
+      "key": "urna_id",
+      "label": "Número interno da urna",
+      "status": "VALIDADO",
+      "detail": "BU=2191040; RDV=2191040; BU impresso=2191040; log=2191040; certificado (CN)=UEAO02191040",
+      "evidence": [
+        "BU",
+        "RDV",
+        "BU impresso",
+        "log",
+        "certificado (CN)"
+      ]
+    },
+    {
+      "key": "versao_votacao",
+      "label": "Versão do software de votação",
+      "status": "VALIDADO",
+      "detail": "BU=10.23.0.0 - Praia da Barra do Cahy; RDV=10.23.0.0 - Praia da Barra do Cahy; log=10.23.0.0 - Praia da Barra do Cahy",
+      "evidence": [
+        "BU",
+        "RDV",
+        "log"
+      ]
+    },
+    {
+      "key": "codigo_carga",
+      "label": "Código de carga",
+      "status": "VALIDADO",
+      "detail": "BU=636435444008130565347658; RDV=636435444008130565347658; BU impresso=636435444008130565347658",
+      "evidence": [
+        "BU",
+        "RDV",
+        "BU impresso"
+      ]
+    },
+    {
+      "key": "eleicoes",
+      "label": "Identificadores de eleição (BU x RDV)",
+      "status": "VALIDADO",
+      "detail": "idPleito 3220; eleicoes 6257, 6259",
+      "evidence": []
+    },
+    {
+      "key": "bu_rdv_votos",
+      "label": "Votos por cargo: BU x RDV",
+      "status": "VALIDADO",
+      "detail": "99 grupos nominal/legenda comparados; sem diferenca",
+      "evidence": []
+    },
+    {
+      "key": "abertura_bu_log",
+      "label": "Abertura (BU x log)",
+      "status": "VALIDADO",
+      "detail": "BU=2026-10-04 08:00:01; log=2026-10-04 08:00:01",
+      "evidence": [
+        "BU",
+        "log"
+      ]
+    },
+    {
+      "key": "encerramento_bu_log",
+      "label": "Encerramento (BU x log)",
+      "status": "VALIDADO",
+      "detail": "BU=2026-10-04 17:01:17; log=2026-10-04 17:01:17",
+      "evidence": [
+        "BU",
+        "log"
+      ]
+    },
+    {
+      "key": "comparecimento_bu_log",
+      "label": "Comparecimento (BU x votos computados no log)",
+      "status": "VALIDADO",
+      "detail": "BU=324; log=324",
+      "evidence": [
+        "BU",
+        "log"
+      ]
+    },
+    {
+      "key": "aptos_bu_impresso",
+      "label": "Eleitores aptos (BU x BU impresso)",
+      "status": "VALIDADO",
+      "detail": "BU=386; BU impresso=386",
+      "evidence": [
+        "BU",
+        "BU impresso"
+      ]
+    },
+    {
+      "key": "comparecimento_bu_impresso",
+      "label": "Comparecimento (BU x BU impresso)",
+      "status": "VALIDADO",
+      "detail": "BU=324; BU impresso=324",
+      "evidence": [
+        "BU",
+        "BU impresso"
+      ]
+    },
+    {
+      "key": "abertura_bu_impresso",
+      "label": "Abertura (BU x BU impresso)",
+      "status": "VALIDADO",
+      "detail": "BU=04/10/2026 08:00:01; BU impresso=04/10/2026 08:00:01",
+      "evidence": [
+        "BU",
+        "BU impresso"
+      ]
+    },
+    {
+      "key": "encerramento_bu_impresso",
+      "label": "Encerramento (BU x BU impresso)",
+      "status": "VALIDADO",
+      "detail": "BU=04/10/2026 17:01:17; BU impresso=04/10/2026 17:01:17",
+      "evidence": [
+        "BU",
+        "BU impresso"
+      ]
+    },
+    {
+      "key": "bu_impresso_totais",
+      "label": "Totais por cargo: BU x BU impresso",
+      "status": "VALIDADO",
+      "detail": "todos os totais conferem",
+      "evidence": []
+    },
+    {
+      "key": "municipio_nome",
+      "label": "Nome do município (BU impresso x tabela oficial)",
+      "status": "VALIDADO",
+      "detail": "BU impresso=BRAÇO DO NORTE; tabela TSE=Braço Do Norte",
+      "evidence": [
+        "BU impresso",
+        "tabela TSE"
+      ]
+    },
+    {
+      "key": "turno",
+      "label": "Turno",
+      "status": "VALIDADO",
+      "detail": "log=1; BU impresso=1; solicitacao=1",
+      "evidence": [
+        "log",
+        "BU impresso",
+        "solicitacao"
+      ]
+    },
+    {
+      "key": "data_eleicao",
+      "label": "Data da eleição",
+      "status": "VALIDADO",
+      "detail": "BU (abertura)=2026-10-04; BU impresso=2026-10-04; log=2026-10-04; solicitacao=2026-10-04",
+      "evidence": [
+        "BU (abertura)",
+        "BU impresso",
+        "log",
+        "solicitacao"
+      ]
+    },
+    {
+      "key": "modelo_urna",
+      "label": "Modelo da urna (log x assinatura)",
+      "status": "VALIDADO",
+      "detail": "log=UE2020; assinatura=UE2020",
+      "evidence": [
+        "log",
+        "assinatura"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "INFO",
+      "type": "ARQUIVOS_ASSINADOS_AUSENTES",
+      "message": "7 arquivo(s) listado(s) na assinatura nao estao no conjunto fornecido.",
+      "details": "o03220sc8053500440144-hash.dat, o03220sc8053500440144-imgze.dat, o03220sc8053500440144-jufa.dat, o03220sc8053500440144-mr.ver, o03220sc8053500440144-wsqbio.jez, o03220sc8053500440144-wsqman.jez, o03220sc8053500440144-wsqmes.jez. A ausencia impede conferir o hash desses arquivos; nao indica alteracao dos arquivos presentes.",
+      "evidence": []
+    }
+  ],
+  "matrix": [
+    {
+      "relacao": "BU <-> RDV",
+      "status": "VALIDADO",
+      "detalhe": "contagem por cargo e total de registros"
+    },
+    {
+      "relacao": "BU <-> LOG",
+      "status": "VALIDADO",
+      "detalhe": "horarios de abertura/encerramento e votos computados"
+    },
+    {
+      "relacao": "BU <-> BU impresso",
+      "status": "VALIDADO",
+      "detalhe": "totais por cargo e identificacao"
+    },
+    {
+      "relacao": "ARQUIVOS <-> HASHES ASSINADOS",
+      "status": "VALIDADO",
+      "detalhe": "SHA-512 de cada arquivo contra o valor da assinatura"
+    },
+    {
+      "relacao": "ASSINATURA DIGITAL",
+      "status": "NAO_FOI_POSSIVEL_VERIFICAR",
+      "detalhe": "assinatura de hardware e cadeia de certificacao"
+    },
+    {
+      "relacao": "TIMELINE",
+      "status": "VALIDADO",
+      "detalhe": "ordem dos marcos e monotonicidade do log"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "eleicao": "Eleições Gerais 2026 - 1º Turno",
+  "data_eleicao": "2026-10-04",
+  "analise": {
+    "iniciada_em": "2026-10-27T21:36:03.267979",
+    "concluida_em": "2026-10-27T21:37:43.537090",
+    "duracao_segundos": 100.27,
+    "diretorio_entrada": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC",
+    "diretorio_saida": "C:\\Users\\dilne\\Downloads\\urna-forense\\analysis_geral",
+    "escopo_hash": "all"
+  },
+  "estatisticas_gerais": {
+    "total_arquivos": 86631,
+    "total_urnas": 17326,
+    "urnas_com_bu": 17326,
+    "municipios_atingidos": 295,
+    "zonas_eleitorais": 100,
+    "total_eleitores_aptos": 5734651,
+    "total_comparecimento": 4648159,
+    "pct_comparecimento": 81.05,
+    "total_abstencao": 1086492,
+    "pct_abstencao": 18.95
+  },
+  "totalizacao_presidente": {
+    "votos_validos": 4501081,
+    "votos_nominais": 4501081,
+    "votos_brancos": 69007,
+    "votos_nulos": 78071,
+    "total_apurado": 4648159,
+    "candidatos": [
+      {
+        "numero": 22,
+        "votos": 3000020,
+        "pct_validos": 66.65
+      },
+      {
+        "numero": 13,
+        "votos": 1127168,
+        "pct_validos": 25.04
+      },
+      {
+        "numero": 70,
+        "votos": 134273,
+        "pct_validos": 2.98
+      },
+      {
+        "numero": 14,
+        "votos": 132795,
+        "pct_validos": 2.95
+      },
+      {
+        "numero": 55,
+        "votos": 79911,
+        "pct_validos": 1.78
+      },
+      {
+        "numero": 30,
+        "votos": 16718,
+        "pct_validos": 0.37
+      },
+      {
+        "numero": 80,
+        "votos": 5049,
+        "pct_validos": 0.11
+      },
+      {
+        "numero": 16,
+        "votos": 1503,
+        "pct_validos": 0.03
+      },
+      {
+        "numero": 27,
+        "votos": 1429,
+        "pct_validos": 0.03
+      },
+      {
+        "numero": 21,
+        "votos": 828,
+        "pct_validos": 0.02
+      },
+      {
+        "numero": 29,
+        "votos": 643,
+        "pct_validos": 0.01
+      },
+      {
+        "numero": 35,
+        "votos": 560,
+        "pct_validos": 0.01
+      },
+      {
+        "numero": 28,
+        "votos": 184,
+        "pct_validos": 0.0
+      }
+    ]
+  },
+  "cobertura_arquivos": {
+    "bu": 17326,
+    "rdv": 17326,
+    "log": 17326,
+    "vota": 17326,
+    "imgbu": 17326
+  }
+}

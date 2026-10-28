@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "files_total": 86631,
+    "bytes_total": 3830093202,
+    "by_extension": {
+      ".pdf": 1,
+      ".dat": 51978,
+      ".jez": 17326,
+      ".vsc": 17326
+    },
+    "by_detected_type": {
+      "pdf": 1,
+      "asn1-ber": 69304,
+      "zip": 17326
+    },
+    "urnas_total": 17326
+  }
+}

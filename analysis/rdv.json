@@ -1,0 +1,259 @@
+{
+  "arquivo_sha256": "c09b61dda23a7c585285991a3b3cf25dff50b71b52dda6c2261c9cce498a2a0c",
+  "cabecalho": {
+    "data_geracao": "2026-10-04T17:04:05",
+    "id_eleitoral": {
+      "tipo": "pleito",
+      "valor": 3220
+    }
+  },
+  "urna": {
+    "tipo_urna": 1,
+    "tipo_urna_nome": "secao",
+    "versao_votacao": "10.23.0.0 - Praia da Barra do Cahy",
+    "correspondencia": {
+      "identificacao": {
+        "tipo": "secao",
+        "municipio": 80535,
+        "zona": 44,
+        "local": 1,
+        "secao": 144
+      },
+      "carga": {
+        "numero_interno_urna": 2191040,
+        "numero_serie_fc": "B9152115",
+        "identificador_gerador_midia": {
+          "nome": "CSC044W057495",
+          "serial_certificado_tpm": "54514D04F35BF8BD5435",
+          "serial_instalacao": "F59C5677"
+        },
+        "data_hora_carga": "2026-09-22T14:53:00",
+        "codigo_carga": "636435444008130565347658"
+      }
+    },
+    "tipo_arquivo": 1,
+    "tipo_arquivo_nome": "votacao_ue",
+    "numero_serie_fv": "9A190E59"
+  },
+  "pleito": 3220,
+  "fase": 2,
+  "fase_nome": "oficial",
+  "identificacao": {
+    "tipo": "secao",
+    "municipio": 80535,
+    "zona": 44,
+    "local": 1236,
+    "secao": 144
+  },
+  "historico_codigos_carga": [
+    "636435444008130565347658"
+  ],
+  "tipo_eleicoes": "vota",
+  "eleicoes": [
+    {
+      "id_eleicao": 6257,
+      "cargos": [
+        {
+          "codigo_cargo": 1,
+          "cargo": "presidente",
+          "quantidade_escolhas": 1,
+          "registros": 324,
+          "por_tipo": {
+            "nominal": 317,
+            "branco": 3,
+            "nulo": 4
+          },
+          "nominais_por_numero": {
+            "13": 62,
+            "14": 13,
+            "22": 220,
+            "55": 8,
+            "70": 14
+          },
+          "legendas_por_partido": {},
+          "brancos": 3,
+          "nulos": 4,
+          "cargo_sem_candidato": 0
+        }
+      ],
+      "total_registros": 324
+    },
+    {
+      "id_eleicao": 6259,
+      "cargos": [
+        {
+          "codigo_cargo": 6,
+          "cargo": "deputado federal",
+          "quantidade_escolhas": 1,
+          "registros": 324,
+          "por_tipo": {
+            "legenda": 4,
+            "nominal": 301,
+            "branco": 13,
+            "nulo": 6
+          },
+          "nominais_por_numero": {
+            "1001": 8,
+            "1077": 10,
+            "1102": 1,
+            "1111": 11,
+            "1133": 2,
+            "1313": 7,
+            "1344": 1,
+            "1350": 2,
+            "1414": 2,
+            "1415": 1,
+            "1477": 1,
+            "1500": 1,
+            "1510": 5,
+            "1515": 5,
+            "1540": 1,
+            "1551": 1,
+            "1560": 4,
+            "1588": 6,
+            "2010": 1,
+            "2020": 4,
+            "2055": 1,
+            "2200": 17,
+            "2211": 5,
+            "2221": 5,
+            "2222": 4,
+            "2233": 82,
+            "2277": 1,
+            "2299": 1,
+            "2322": 2,
+            "3010": 1,
+            "3022": 2,
+            "3033": 1,
+            "3050": 3,
+            "3099": 14,
+            "4411": 3,
+            "4444": 12,
+            "5511": 63,
+            "5515": 1,
+            "5588": 1,
+            "6565": 8
+          },
+          "legendas_por_partido": {
+            "11": 1,
+            "12": 1,
+            "20": 1,
+            "55": 1
+          },
+          "brancos": 13,
+          "nulos": 6,
+          "cargo_sem_candidato": 0
+        },
+        {
+          "codigo_cargo": 7,
+          "cargo": "deputado estadual",
+          "quantidade_escolhas": 1,
+          "registros": 324,
+          "por_tipo": {
+            "legenda": 15,
+            "nominal": 291,
+            "branco": 15,
+            "nulo": 3
+          },
+          "nominais_por_numero": {
+            "10110": 1,
+            "10123": 5,
+            "10333": 4,
+            "11223": 8,
+            "12100": 1,
+            "12345": 1,
+            "13007": 1,
+            "13137": 1,
+            "13313": 1,
+            "13601": 4,
+            "13987": 1,
+            "15000": 22,
+            "15104": 2,
+            "15600": 2,
+            "15655": 2,
+            "22000": 3,
+            "22022": 5,
+            "22077": 2,
+            "22100": 1,
+            "22111": 14,
+            "22222": 13,
+            "22322": 1,
+            "22333": 12,
+            "22369": 4,
+            "22422": 4,
+            "30000": 2,
+            "44123": 7,
+            "44500": 3,
+            "55111": 2,
+            "55789": 162
+          },
+          "legendas_por_partido": {
+            "11": 6,
+            "13": 1,
+            "15": 2,
+            "22": 4,
+            "30": 1,
+            "55": 1
+          },
+          "brancos": 15,
+          "nulos": 3,
+          "cargo_sem_candidato": 0
+        },
+        {
+          "codigo_cargo": 5,
+          "cargo": "senador",
+          "quantidade_escolhas": 2,
+          "registros": 648,
+          "por_tipo": {
+            "nominal": 565,
+            "branco": 47,
+            "nulo": 29,
+            "nulo_por_repeticao": 7
+          },
+          "nominais_por_numero": {
+            "111": 160,
+            "133": 29,
+            "144": 4,
+            "155": 47,
+            "221": 181,
+            "222": 118,
+            "250": 4,
+            "290": 1,
+            "500": 20,
+            "800": 1
+          },
+          "legendas_por_partido": {},
+          "brancos": 47,
+          "nulos": 36,
+          "cargo_sem_candidato": 0
+        },
+        {
+          "codigo_cargo": 3,
+          "cargo": "governador",
+          "quantidade_escolhas": 1,
+          "registros": 324,
+          "por_tipo": {
+            "nominal": 298,
+            "branco": 12,
+            "nulo": 14
+          },
+          "nominais_por_numero": {
+            "14": 2,
+            "22": 219,
+            "40": 23,
+            "55": 54
+          },
+          "legendas_por_partido": {},
+          "brancos": 12,
+          "nulos": 14,
+          "cargo_sem_candidato": 0
+        }
+      ],
+      "total_registros": 1620
+    }
+  ],
+  "total_registros": 1944,
+  "observacoes": [
+    "O RDV nao contem identificacao de eleitor; apenas tipo de voto e digitacao, sem ordem vinculada ao eleitor. Nenhuma sequencia individual e exportada."
+  ]
+}
