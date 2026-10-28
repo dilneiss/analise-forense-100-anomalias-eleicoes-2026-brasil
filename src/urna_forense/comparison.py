@@ -2528,15 +2528,15 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         """)
 
     anom_summary_rows = []
-    for item in tipos_anomalias[:25]:
+    for item in tipos_anomalias[:12]:
         code_item = item["codigo"]
         count = item["total"]
         pct = round(count / resumo["total_secoes_analisadas"] * 100, 2)
         anom_summary_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-1.5 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code_item)}</td>
-            <td class="col-fit t-right py-1.5 px-3 font-mono font-bold text-slate-900">{count:,}</td>
-            <td class="col-fit t-right py-1.5 px-3 font-mono text-xs text-slate-500">{pct:.2f}%</td>
+            <td class="col-grow t-left py-2 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code_item)}</td>
+            <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">{count:,}</td>
+            <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">{pct:.2f}%</td>
         </tr>
         """)
 
@@ -2818,7 +2818,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                         <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra das 100 implementadas</span>
                     </div>
                 </div>
-                <div style="max-height: 290px; overflow-y: auto;">
+                <div style="overflow-x: auto;">
                     <table>
                         <thead>
                             <tr>
