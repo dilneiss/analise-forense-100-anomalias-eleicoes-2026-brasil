@@ -90,6 +90,12 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--no-html", action="store_true", help="nao gerar report.html")
     parser.add_argument(
+        "--audit-state",
+        nargs=2,
+        metavar=("PASTA_1T", "PASTA_2T"),
+        help="comando unico para auditoria completa e unificada do estado (1T e 2T)",
+    )
+    parser.add_argument(
         "--compare-1t",
         "--1t",
         dest="compare_1t",
@@ -176,6 +182,18 @@ def _list(
 
 def main(argv: Optional[list[str]] = None) -> int:
     args = _parser().parse_args(argv)
+    if args.audit_state:
+        args.compare_1t = args.audit_state[0]
+        args.compare_2t = args.audit_state[1]
+
+    # Auto-resolucao da tabela de municipios para comparacao/auditoria estadual
+    if not args.municipios_csv and (args.compare_1t or args.compare_2t or args.audit_state):
+        candidate_csv = Path("data/municipio_tse_ibge.csv")
+        if not candidate_csv.is_file():
+            candidate_csv = Path(__file__).resolve().parent.parent.parent / "data" / "municipio_tse_ibge.csv"
+        if candidate_csv.is_file():
+            args.municipios_csv = str(candidate_csv)
+
     input_arg = args.input_opt or args.input_pos
     is_comparison = bool(args.compare_1t or args.compare_2t)
     if is_comparison:
@@ -185,7 +203,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         _parser().error("informe a pasta de entrada (posicional ou --input)")
 
     input_dir = Path(input_arg) if input_arg else Path(".")
-    default_out = "comparison_analysis" if is_comparison and args.output == "analysis" else args.output
+    default_out = "relatorio_auditoria_estado" if is_comparison and args.output == "analysis" else args.output
     output_dir = Path(default_out)
     try:
         data_eleicao = _parse_date(args.data_eleicao)

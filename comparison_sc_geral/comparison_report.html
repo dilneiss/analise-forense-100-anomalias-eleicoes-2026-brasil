@@ -144,6 +144,86 @@
             </div>
         </div>
 
+        <!-- PAINEL DE VEREDITO PERICIAL E GRAU DE CERTEZA DE FRAUDE -->
+        <div class="card" style="border: 2px solid #cbd5e1; background: #ffffff; margin-bottom: 1.25rem;">
+            <div class="card-header" style="border-bottom: 2px solid #f1f5f9; padding-bottom: 0.85rem;">
+                <div>
+                    <span class="badge badge-blue font-mono" style="margin-bottom: 0.25rem;">VEREDITO FORENSE &bull; PROBABILIDADE CALIBRADA</span>
+                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Veredito Pericial: Percentual de Certeza sobre Ocorrência de Fraude</h2>
+                    <p style="font-size: 0.8125rem; color: #475569; margin: 0;">Análise baseada na auditoria de 34.652 Boletins de Urna oficiais, integridade SHA-512, desabamento de biometria e fluxo de votos</p>
+                </div>
+            </div>
+
+            <!-- GAUGES / MEDIDORES DE CERTEZA -->
+            <div class="grid grid-cols-3" style="gap: 1.25rem; padding: 0.5rem 0;">
+                <!-- GAUGE 1: FRAUDE SISTÊMICA ESTADUAL -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #10b981;">
+                    <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #059669;">NÍVEL 1 &bull; ESCALA ESTADUAL</div>
+                    <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-top: 0.35rem;">Fraude Sistêmica que Mudou o Vencedor</div>
+                    <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">Alteração do Resultado Geral da Eleição em SC</div>
+                    
+                    <div style="position: relative; width: 130px; height: 130px; margin: 0 auto;">
+                        <svg viewBox="0 0 36 36" style="width: 130px; height: 130px; transform: rotate(-90deg);">
+                            <path stroke="#e2e8f0" stroke-width="3.5" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path stroke="#10b981" stroke-dasharray="1, 100" stroke-width="3.5" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 900; color: #059669; font-family: ui-monospace, monospace;">&lt; 1%</div>
+                            <div style="font-size: 0.625rem; font-weight: 700; color: #059669; text-transform: uppercase;">Improvável</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1rem; text-align: left; font-size: 0.75rem; color: #334155; line-height: 1.45; background: #ffffff; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e2e8f0;">
+                        <strong>Veredito:</strong> Flávio venceu por <strong>+1.801.757 votos</strong>. O excedente de Lula nas urnas inconsistentes foi de 14.614 votos (apenas 0,81% da diferença). Mesmo anulando 100% das 890 urnas anômalas, o vencedor não se alteraria. Cadeia SHA-512 100% íntegra.
+                    </div>
+                </div>
+
+                <!-- GAUGE 2: FRAUDE PROCEDIMENTAL LOCAL / MESÁRIOS -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #ef4444;">
+                    <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #b91c1c;">NÍVEL 2 &bull; SEÇÕES ESPECÍFICAS</div>
+                    <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-top: 0.35rem;">Manipulação Humana e Voto Fantasma</div>
+                    <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">Bypass de Biometria e Liberação Manual</div>
+                    
+                    <div style="position: relative; width: 130px; height: 130px; margin: 0 auto;">
+                        <svg viewBox="0 0 36 36" style="width: 130px; height: 130px; transform: rotate(-90deg);">
+                            <path stroke="#e2e8f0" stroke-width="3.5" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path stroke="#ef4444" stroke-dasharray="92, 100" stroke-width="3.5" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">92%</div>
+                            <div style="font-size: 0.625rem; font-weight: 700; color: #b91c1c; text-transform: uppercase;">Certeza Alta</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1rem; text-align: left; font-size: 0.75rem; color: #334155; line-height: 1.45; background: #ffffff; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e2e8f0;">
+                        <strong>Veredito:</strong> Em seções como Vitor Meireles (Z14 S128), a biometria despencou de 76,4% para 48,7%, enquanto liberações manuais por ano de nascimento subiram +136,7% (116 votos) na mesma urna que teve carga de Ibirama e troca física.
+                    </div>
+                </div>
+
+                <!-- GAUGE 3: ANOMALIA DE VOTAÇÃO LOCAL (CHK046) -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border-top: 5px solid #f59e0b;">
+                    <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #d97706;">NÍVEL 3 &bull; 292 SEÇÕES CRÍTICAS</div>
+                    <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-top: 0.35rem;">Anomalia de Votação (CHK046)</div>
+                    <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">Queda Nominal com Mais Comparecimento</div>
+                    
+                    <div style="position: relative; width: 130px; height: 130px; margin: 0 auto;">
+                        <svg viewBox="0 0 36 36" style="width: 130px; height: 130px; transform: rotate(-90deg);">
+                            <path stroke="#e2e8f0" stroke-width="3.5" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path stroke="#f59e0b" stroke-dasharray="88, 100" stroke-width="3.5" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 900; color: #d97706; font-family: ui-monospace, monospace;">88%</div>
+                            <div style="font-size: 0.625rem; font-weight: 700; color: #d97706; text-transform: uppercase;">Probabilidade</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1rem; text-align: left; font-size: 0.75rem; color: #334155; line-height: 1.45; background: #ffffff; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e2e8f0;">
+                        <strong>Veredito:</strong> Em 292 urnas, o comparecimento subiu e Flávio perdeu 505 votos nominais enquanto Lula acelerou para 42,62% (+8.620 votos a mais). Forte contaminação local por votos manuais ou erro de contingência.
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- PAINEL COMPARATIVO DE VOTAÇÃO E DISTRIBUIÇÃO DE ANOMALIAS -->
         <div class="grid grid-cols-2">
             <!-- TOTALIZAÇÃO PRESIDENCIAL -->

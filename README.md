@@ -84,35 +84,32 @@ pip install -r requirements.txt
 
 ---
 
-## 4. Como Usar (Comandos em Linha Única)
+## 4. Como Usar: Comando Único de Auditoria Unificada
 
-*Todos os comandos abaixo estão formatados em uma única linha contínua, permitindo cópia e execução direta sem quebra de linha.*
+A auditoria completa de um estado inteiro (todas as seções, 1º e 2º Turno, 100 verificações forenses, biometria, fluxo de terceira via, apuração de votos excedentes de Lula, cálculo de certeza de fraude com gráficos visuais de medidores e base JSON completa) é executada em **um único comando direto**:
 
-### Comparação do Estado Inteiro (17.326 seções de SC - 100 Regras):
+### 🌟 O Comando Único (Audit State Completo):
 ```bash
-python analyzer.py --compare-1t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --compare-2t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC" --output "comparison_sc_geral" --municipios-csv data/municipio_tse_ibge.csv --max-workers 32
+python analyzer.py --audit-state "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC"
 ```
 
-### Comparação de um Município Específico (ex.: Monte Carlo - 80004):
+*(Ou utilizando a sintaxe equivalente com `--1t` e `--2t`):*
 ```bash
-python analyzer.py --compare-1t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --compare-2t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC" --municipio 80004 --output "comparison_monte_carlo" --municipios-csv data/municipio_tse_ibge.csv
+python analyzer.py --1t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --2t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC"
 ```
 
-### Comparação de uma Seção Específica:
-```bash
-python analyzer.py --compare-1t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --compare-2t "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC" --uf SC --municipio 80535 --zona 44 --secao 144 --output "comparison_secao_144"
-```
+> **Zero Configuração:** O sistema auto-detecta a tabela oficial de municípios (`data/municipio_tse_ibge.csv`), decodifica todos os 34.652 Boletins de Urna em paralelo (32 threads) e gera o relatório unificado completo em `relatorio_auditoria_estado/comparison_report.html` em cerca de 2 minutos.
 
-### Auditoria Detalhada de Seção Única com Reconstituição de Timeline:
+### Comandos Opcionais para Filtros Específicos:
 ```bash
-python analyzer.py --input "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --output "analysis_secao" --uf SC --municipio 80535 --zona 44 --secao 144 --turno 1 --data-eleicao 2026-10-04 --municipios-csv data/municipio_tse_ibge.csv
+python analyzer.py --audit-state "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC" --municipio 80004 --output "comparison_monte_carlo"
 ```
-
-### Auditoria Rápida de Seção em Menos de 1 Segundo:
+```bash
+python analyzer.py --audit-state "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC" --uf SC --municipio 80535 --zona 44 --secao 144 --output "comparison_secao_144"
+```
 ```bash
 python analyzer.py --input "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC" --output "analysis_rapida" --uf SC --municipio 80535 --zona 44 --secao 144 --fast
 ```
-
 ---
 
 ## 5. Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)

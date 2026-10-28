@@ -1,8 +1,8 @@
 {
   "metadados": {
-    "gerado_em": "2026-10-28T16:17:09.966939",
-    "iniciado_em": "2026-10-28T16:17:09.432984",
-    "duracao_segundos": 0.53,
+    "gerado_em": "2026-10-28T17:27:49.045844",
+    "iniciado_em": "2026-10-28T17:27:48.546060",
+    "duracao_segundos": 0.5,
     "diretorio_1t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC",
     "diretorio_2t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC",
     "diretorio_saida": "C:\\Users\\dilne\\Downloads\\urna-forense\\comparison_monte_carlo",
@@ -12,6 +12,67 @@
       "municipio": 80004,
       "zona": null,
       "secao": null
+    }
+  },
+  "impacto_eleitoral_anomalias": {
+    "urnas_consistentes": {
+      "total_secoes": 22,
+      "comparecimento_1t": 5067,
+      "comparecimento_2t": 5294,
+      "lula_1t": 1876,
+      "lula_2t": 2338,
+      "delta_lula": 462,
+      "pct_crescimento_lula": 24.63,
+      "flavio_1t": 2630,
+      "flavio_2t": 2823,
+      "delta_flavio": 193,
+      "pct_crescimento_flavio": 7.34,
+      "pct_lula_validos_2t": 45.3,
+      "pct_flavio_validos_2t": 54.7,
+      "pct_lula_comp_2t": 44.16,
+      "pct_flavio_comp_2t": 53.32
+    },
+    "urnas_inconsistentes": {
+      "total_secoes": 2,
+      "comparecimento_1t": 455,
+      "comparecimento_2t": 458,
+      "lula_1t": 177,
+      "lula_2t": 228,
+      "delta_lula": 51,
+      "pct_crescimento_lula": 28.81,
+      "flavio_1t": 230,
+      "flavio_2t": 220,
+      "delta_flavio": -10,
+      "pct_crescimento_flavio": -4.35,
+      "pct_lula_validos_2t": 50.89,
+      "pct_flavio_validos_2t": 49.11,
+      "pct_lula_comp_2t": 49.78,
+      "pct_flavio_comp_2t": 48.03
+    },
+    "secoes_queda_maior_comparecimento": {
+      "total_secoes": 2,
+      "comparecimento_1t": 455,
+      "comparecimento_2t": 458,
+      "lula_1t": 177,
+      "lula_2t": 228,
+      "delta_lula": 51,
+      "pct_crescimento_lula": 28.81,
+      "flavio_1t": 230,
+      "flavio_2t": 220,
+      "delta_flavio": -10,
+      "pct_crescimento_flavio": -4.35,
+      "pct_lula_validos_2t": 50.89,
+      "pct_flavio_validos_2t": 49.11,
+      "pct_lula_comp_2t": 49.78,
+      "pct_flavio_comp_2t": 48.03
+    },
+    "comparativo_lula": {
+      "votos_reais_inconsistentes": 228,
+      "votos_esperados_padrao_consistente": 202,
+      "votos_a_mais_inconsistencias": 26,
+      "diferenca_pp_validos": 5.59,
+      "diferenca_pp_comparecimento": 5.62,
+      "votos_a_mais_chk046": 26
     }
   },
   "totais_estaduais": {
@@ -147,10 +208,7 @@
     "pct_secoes_com_anomalias": 8.33,
     "total_anomalias_detectadas": 2,
     "por_severidade": {
-      "ALTA": 2,
-      "MEDIA": 0,
-      "BAIXA": 0,
-      "INFO": 0
+      "ALTA": 2
     },
     "por_categoria": {
       "VOTACAO_E_MIGRACAO_TERCEIRA_VIA": 2
@@ -2951,66 +3009,5 @@
         "cadeia_hash_valida": true
       }
     }
-  ],
-  "impacto_eleitoral_anomalias": {
-    "urnas_consistentes": {
-      "total_secoes": 22,
-      "comparecimento_1t": 5067,
-      "comparecimento_2t": 5294,
-      "lula_1t": 1876,
-      "lula_2t": 2338,
-      "delta_lula": 462,
-      "pct_crescimento_lula": 24.63,
-      "flavio_1t": 2630,
-      "flavio_2t": 2823,
-      "delta_flavio": 193,
-      "pct_crescimento_flavio": 7.34,
-      "pct_lula_validos_2t": 45.3,
-      "pct_flavio_validos_2t": 54.7,
-      "pct_lula_comp_2t": 44.16,
-      "pct_flavio_comp_2t": 53.32
-    },
-    "urnas_inconsistentes": {
-      "total_secoes": 2,
-      "comparecimento_1t": 455,
-      "comparecimento_2t": 458,
-      "lula_1t": 177,
-      "lula_2t": 228,
-      "delta_lula": 51,
-      "pct_crescimento_lula": 28.81,
-      "flavio_1t": 230,
-      "flavio_2t": 220,
-      "delta_flavio": -10,
-      "pct_crescimento_flavio": -4.35,
-      "pct_lula_validos_2t": 50.89,
-      "pct_flavio_validos_2t": 49.11,
-      "pct_lula_comp_2t": 49.78,
-      "pct_flavio_comp_2t": 48.03
-    },
-    "secoes_queda_maior_comparecimento": {
-      "total_secoes": 2,
-      "comparecimento_1t": 455,
-      "comparecimento_2t": 458,
-      "lula_1t": 177,
-      "lula_2t": 228,
-      "delta_lula": 51,
-      "pct_crescimento_lula": 28.81,
-      "flavio_1t": 230,
-      "flavio_2t": 220,
-      "delta_flavio": -10,
-      "pct_crescimento_flavio": -4.35,
-      "pct_lula_validos_2t": 50.89,
-      "pct_flavio_validos_2t": 49.11,
-      "pct_lula_comp_2t": 49.78,
-      "pct_flavio_comp_2t": 48.03
-    },
-    "comparativo_lula": {
-      "votos_reais_inconsistentes": 228,
-      "votos_esperados_padrao_consistente": 202,
-      "votos_a_mais_inconsistencias": 26,
-      "diferenca_pp_validos": 5.59,
-      "diferenca_pp_comparecimento": 5.62,
-      "votos_a_mais_chk046": 26
-    }
-  }
+  ]
 }
