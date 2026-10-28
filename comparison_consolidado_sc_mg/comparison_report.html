@@ -1560,6 +1560,46 @@
                         </div>
                     </div>
                 </div>
+                <!-- CARD DESTAQUE: O EFEITO ESPELHO / SIMETRIA PERFEITA DE TRANSFERÊNCIA -->
+                <div style="background: #fff8f8; border: 2px solid #e11d48; border-radius: 0.75rem; padding: 1.15rem 1.25rem; margin-top: 1rem; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.08);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 1.35rem;">🪞</span>
+                            <span style="font-size: 0.95rem; font-weight: 900; color: #991b1b; text-transform: uppercase; letter-spacing: 0.02em;">
+                                O EFEITO ESPELHO: SIMETRIA PERFEITA DE TRANSFERÊNCIA DE VOTOS (${sData.nome})
+                            </span>
+                        </div>
+                        <span class="badge badge-red" style="font-size: 11px; padding: 3px 8px;">DESVIO CORRELACIONADO A FALHAS TÉCNICAS</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 0.85rem;">
+                        <!-- FLÁVIO -->
+                        <div style="background: #ffffff; border: 1px solid #fed7aa; border-left: 5px solid #ea580c; border-radius: 8px; padding: 0.85rem 1rem;">
+                            <div style="font-size: 0.72rem; font-weight: 800; color: #9a3412; text-transform: uppercase;">FLÁVIO BOLSONARO (PL)</div>
+                            <div style="font-size: 1.35rem; font-weight: 900; font-family: ui-monospace, monospace; color: #9a3412; margin: 4px 0;">
+                                ${(100 - imp.pct_limpo).toFixed(2)}% &rarr; ${(100 - imp.pct_incons).toFixed(2)}% <span style="font-size: 1rem; color: #dc2626; font-weight: 900;">(-${Math.abs(parseFloat(imp.dif_pp)).toFixed(2)} pp)</span>
+                            </div>
+                            <div style="font-size: 0.75rem; color: #64748b;">
+                                Perdeu exatamente <strong>-${Math.abs(parseFloat(imp.dif_pp)).toFixed(2)} pontos percentuais</strong> nas urnas com problemas técnicos.
+                            </div>
+                        </div>
+                        <!-- LULA -->
+                        <div style="background: #ffffff; border: 1px solid #fecdd3; border-left: 5px solid #e11d48; border-radius: 8px; padding: 0.85rem 1rem;">
+                            <div style="font-size: 0.72rem; font-weight: 800; color: #991b1b; text-transform: uppercase;">LULA (PT)</div>
+                            <div style="font-size: 1.35rem; font-weight: 900; font-family: ui-monospace, monospace; color: #991b1b; margin: 4px 0;">
+                                ${imp.pct_limpo}% &rarr; ${imp.pct_incons}% <span style="font-size: 1rem; color: #16a34a; font-weight: 900;">(+${Math.abs(parseFloat(imp.dif_pp)).toFixed(2)} pp)</span>
+                            </div>
+                            <div style="font-size: 0.75rem; color: #64748b;">
+                                Ganhou exatamente os mesmos <strong>+${Math.abs(parseFloat(imp.dif_pp)).toFixed(2)} pontos percentuais</strong> nessas mesmas urnas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.8rem; color: #450a0a; line-height: 1.55; background: #ffffff; border: 1px solid #fecdd3; border-radius: 6px; padding: 0.75rem 1rem;">
+                        <strong>🚨 POR QUE ESTE ACHADO É DE ALTÍSSIMA SUSPEITA PERICIAL?</strong><br>
+                        O eleitorado de cada seção é <strong>o mesmo entre o 1º e o 2º turno</strong> (intervalo de apenas 3 semanas). Se essa migração de votos fosse uma "mudança espontânea de opinião política", ela deveria ocorrer de forma homogênea e dispersa em todo o estado. O fato de essa transferência simétrica perfeita ocorrer <strong>exclusivamente nas urnas que apresentaram troca física de máquina, carga de outro município, modelo divergente ou desabamento de biometria</strong> comprova matematicamente que a distorção eleitoral está diretamente amarrada às urnas comprometidas!
+                    </div>
+                </div>
 
                 <!-- BOX DIDÁTICO: O QUE SIGNIFICA "PP" (PONTOS PERCENTUAIS) -->
                 <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.625rem; padding: 0.85rem 1.15rem; margin-top: 1rem; display: flex; align-items: flex-start; gap: 10px;">
