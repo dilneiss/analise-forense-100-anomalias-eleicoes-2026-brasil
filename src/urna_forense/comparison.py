@@ -2848,6 +2848,131 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
 # GERADOR DE RELATÓRIO HTML PROFISSIONAL COM ORDENAÇÃO E BIOMETRIA
 # ============================================================================
 
+
+RULE_HUMAN_TITLES = {
+    "CHK001_TROCA_URNA_FISICA": ("Substituição da Urna Física no 2T", "MEDIA"),
+    "CHK002_TROCA_FLASH_VOTACAO": ("Troca da Flash de Votação (FV)", "MEDIA"),
+    "CHK003_TROCA_FLASH_CARGA": ("Atualização da Flash de Carga (Normal 2T)", "INFO"),
+    "CHK004_MODELO_URNA_DIVERGENTE": ("Modelo de Urna Divergente entre Turnos", "ALTA"),
+    "CHK005_VERSAO_SOFTWARE_ALTERADA": ("Versão do Software Oficial Alterada", "ALTA"),
+    "CHK006_MUDANCA_LOCAL_VOTACAO": ("Mudança de Local Físico de Votação", "BAIXA"),
+    "CHK007_CODIGO_CARGA_ALTERADO": ("Código de Carga Recarregado na Urna", "BAIXA"),
+    "CHK008_DATA_CARGA_ANOMALA_2T": ("Data de Carga Anômala", "MEDIA"),
+    "CHK009_DATA_CARGA_TARDIA_2T": ("Carga Tardia no Dia da Votação", "MEDIA"),
+    "CHK010_CORRESPONDENCIA_INVALIDA_2T": ("Correspondência de Seção Inválida", "ALTA"),
+    "CHK011_GERADOR_MIDIA_DIVERGENTE": ("Gerador de Mídia Divergente", "BAIXA"),
+    "CHK012_TPM_SERIAL_DIVERGENTE": ("Serial do Chip TPM Divergente", "ALTA"),
+    "CHK013_SERIAL_INSTALACAO_REINICIADO": ("Serial de Instalação Reiniciado", "MEDIA"),
+    "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO": ("Carga Gerada para Outro Município", "ALTA"),
+    "CHK015_TIPO_ARQUIVO_NAO_VOTACAO_UE": ("Tipo de Arquivo não Oficial", "ALTA"),
+    "CHK016_VARIACAO_APTOS_SECAO": ("Variação de Eleitores Originais da Seção", "ALTA"),
+    "CHK017_REDUCAO_APTOS_SECAO": ("Redução de Eleitores Originais no 2T", "ALTA"),
+    "CHK018_AUMENTO_APTOS_SECAO": ("Aumento de Eleitores Originais no 2T", "ALTA"),
+    "CHK019_PICO_TTE_ABSOLUTO": ("Pico de Voto em Trânsito (TTE)", "MEDIA"),
+    "CHK020_PICO_TTE_PERCENTUAL": ("Oscilação Excessiva de TTE (> 10%)", "MEDIA"),
+    "CHK021_EXTINCAO_TTE_2T": ("Extinção de Eleitores Temporários no 2T", "BAIXA"),
+    "CHK022_SURGIMENTO_TTE_MASSIVO_2T": ("Entrada Massiva de Temporários no 2T", "MEDIA"),
+    "CHK023_APTOS_TOTAL_DIVERGENTE_SOMA": ("Soma de Aptos (Seção + TTE) Incoerente", "ALTA"),
+    "CHK024_SECAO_MINIMA_ANOMALA": ("Seção Eleitoral com Menos de 15 Aptos", "BAIXA"),
+    "CHK025_SECAO_HIPERTROFICA": ("Seção Eleitoral com Mais de 500 Aptos", "BAIXA"),
+    "CHK026_SECAO_SEM_APTOS": ("Seção com Zero Eleitores Aptos", "ALTA"),
+    "CHK027_OSCILACAO_APTOS_TOTAL_MAIOR_10PCT": ("Oscilação do Eleitorado Total > 10%", "ALTA"),
+    "CHK028_DIVERGENCIA_APTOS_ENTRE_ELEICOES": ("Divergência no Total de Aptos", "ALTA"),
+    "CHK029_TRANSFERENCIA_TEMPORARIA_SUPERIOR_A_50PCT": ("Mais de 50% de Eleitores Temporários (TTE)", "ALTA"),
+    "CHK030_ZONA_SECAO_FORA_PADRAO_CADASTRO": ("Numeração de Seção Atípica (> 3000)", "BAIXA"),
+    "CHK031_COMPARECIMENTO_EXCEDE_APTOS_2T": ("Comparecimento Maior que Aptos no 2T", "ALTA"),
+    "CHK032_COMPARECIMENTO_EXCEDE_APTOS_1T": ("Comparecimento Maior que Aptos no 1T", "ALTA"),
+    "CHK033_COMPARECIMENTO_100_PCT_2T": ("100% de Presença (Zero Abstenção)", "MEDIA"),
+    "CHK034_ABSTENCAO_SUPERIOR_50PCT_2T": ("Abstenção Superior a 50% no 2T", "MEDIA"),
+    "CHK035_ABSTENCAO_SUPERIOR_70PCT_2T": ("Abstenção Crítica Superior a 70%", "ALTA"),
+    "CHK036_SALTO_COMPARECIMENTO_MAIOR_25PP": ("Salto de Presença > 25 pp no 2T", "ALTA"),
+    "CHK037_QUEDA_COMPARECIMENTO_MAIOR_25PP": ("Queda de Presença > 25 pp no 2T", "ALTA"),
+    "CHK038_COMPARECIMENTO_IDENTICO_COM_APTOS_DIFERENTES": ("Comparecimento Idêntico com Aptos Diferentes", "ALTA"),
+    "CHK039_COMPARECIMENTO_ZERO_2T": ("Zero Comparecimento no 2T", "ALTA"),
+    "CHK040_COMPARECIMENTO_UNITARIO_2T": ("Apenas 1 Eleitor Compareceu no 2T", "ALTA"),
+    "CHK041_ABSTENCAO_ZERO_AMBOS_TURNOS": ("Zero Abstenção em Ambos os Turnos", "MEDIA"),
+    "CHK042_QUEDA_COMPARECIMENTO_MAIOR_30PCT": ("Queda Absoluta de Presença > 30%", "MEDIA"),
+    "CHK043_EXPLOSAO_COMPARECIMENTO_MAIOR_40PCT": ("Aumento Absoluto de Presença > 40%", "MEDIA"),
+    "CHK044_COMPARECIMENTO_DISCREPANTE_DO_MUNICIPIO": ("Presença Discrepante da Média Municipal", "ALTA"),
+    "CHK045_COMPARECIMENTO_PRESIDENCIAL_MENOR_QUE_CARGO_ESTADUAL": ("Total Presidencial Menor que Comparecimento", "ALTA"),
+    "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR": ("Queda de Votos com MAIOR Comparecimento", "ALTA"),
+    "CHK047_QUEDA_FINALISTA_COM_COMPARECIMENTO_IGUAL": ("Queda de Votos com Comparecimento IGUAL", "ALTA"),
+    "CHK048_QUEDA_DESPROPORCIONAL_AO_COMPARECIMENTO": ("Queda Desproporcional à Abstenção", "ALTA"),
+    "CHK049_PERDA_BRUSCA_MAIOR_30PCT_FINALISTA": ("Perda Brusca > 30% dos Votos com Presença Estável", "MEDIA"),
+    "CHK050_DESAPARECIMENTO_FINALISTA_NO_2T": ("Desaparecimento Total de Votos de Finalista", "ALTA"),
+    "CHK051_ZERO_VOTOS_FINALISTA_SECAO_GRANDE": ("Zero Votos para Finalista em Seção Grande", "MEDIA"),
+    "CHK052_UNANIMIDADE_100PCT_FINALISTA_2T": ("100% de Votação Unânime para Finalista", "MEDIA"),
+    "CHK053_ABSORCAO_100PCT_TERCEIRA_VIA_POR_UM_CANDIDATO": ("Absorção de 100% da 3ª Via por um Só Concorrente", "MEDIA"),
+    "CHK054_CRESCIMENTO_EXCEDE_TETO_MIGRACAO_E_COMPARECIMENTO": ("Crescimento Excede Teto Matemático Disponível", "ALTA"),
+    "CHK055_CRESCIMENTO_COM_QUEDA_DE_COMPARECIMENTO_ACIMA_DA_TERCEIRA_VIA": ("Crescimento com Queda de Presença Acima da 3ª Via", "ALTA"),
+    "CHK056_INVERSAO_ABRUPTA_SWING_MAIOR_50PP": ("Swing Político Extremo (> 50 pp)", "ALTA"),
+    "CHK057_INVERSAO_ABRUPTA_SWING_MAIOR_40PP": ("Swing Político Elevado (> 40 pp)", "MEDIA"),
+    "CHK058_MIGRACAO_TOTALMENTE_ASSIMETRICA_CONTRA_MEDIA_MUNICIPAL": ("Migração Oposta à Média Municipal", "ALTA"),
+    "CHK059_VOTO_CANDIDATO_NAO_CONCORRENTE_NO_2T": ("Voto para Candidato Não Habilitado ao 2T", "ALTA"),
+    "CHK060_FINALISTA_COM_VOTACAO_MENOR_QUE_BRANCOS_E_NULOS": ("Finalista Atrás de Brancos e Nulos", "MEDIA"),
+    "CHK061_VOTOS_VALIDOS_ZERO_NO_2T": ("Zero Votos Válidos para Presidente no 2T", "ALTA"),
+    "CHK062_DESVIO_PADRAO_VOTOS_EXTREMO_NO_MUNICIPIO": ("Votação a Mais de 3.5 Desvios-Padrão Municipal", "MEDIA"),
+    "CHK063_AMBOS_FINALISTAS_PERDERAM_VOTOS_COM_MAIOR_COMPARECIMENTO": ("Ambos os Finalistas Perderam Votos com Mais Presença", "ALTA"),
+    "CHK064_CONCENTRACAO_DE_VOTOS_SUPERIOR_A_95PCT": ("Concentração de Votos Superior a 95%", "MEDIA"),
+    "CHK065_VOTOS_NOMINAIS_SUPERIORES_AO_COMPARECIMENTO": ("Votos Nominais Excedem Comparecimento", "ALTA"),
+    "CHK066_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_30PP": ("Desabamento Crítico de Biometria (> 30 pp)", "ALTA"),
+    "CHK067_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_20PP": ("Queda Acentuada de Biometria (> 20 pp)", "MEDIA"),
+    "CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP": ("Surto Crítico de Liberação Manual (> 25 pp)", "ALTA"),
+    "CHK069_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_15PP": ("Salto de Liberação Manual por Ano de Nascimento", "MEDIA"),
+    "CHK070_ZERO_BIOMETRIA_EM_SECAO_BIOMETRIZADA": ("Zero Biometria em Seção Biometrizada", "MEDIA"),
+    "CHK071_EXPLOSAO_SEM_BIOMETRIA_MAIOR_30PP": ("Eleitores Sem Biometria Subiram > 30 pp", "MEDIA"),
+    "CHK072_SOMA_DETALHAMENTO_COMPARECIMENTO_DIVERGENTE": ("Soma Biométrica Diverge do Comparecimento", "ALTA"),
+    "CHK073_BIOMETRIA_100PCT_COM_HABILITACAO_MANUAL_ZERO": ("100% de Biometria Perfeita Sem Falha", "INFO"),
+    "CHK074_BIOMETRIA_SUPERIOR_AOS_APTOS": ("Habilitações Biométricas Superam Aptos", "ALTA"),
+    "CHK075_CORRELACAO_BIOGRAFICA_E_VOTO_UNANIME": ("Salto Manual Associado a Voto Unânime", "ALTA"),
+    "CHK076_ABERTURA_PRECOCE_2T": ("Abertura Precoce da Urna (< 07:00)", "MEDIA"),
+    "CHK077_ABERTURA_TARDIA_2T": ("Abertura com Atraso (> 08:30)", "MEDIA"),
+    "CHK078_ENCERRAMENTO_PRECOCE_2T": ("Encerramento Precoce da Urna (< 17:00)", "ALTA"),
+    "CHK079_ENCERRAMENTO_MUITO_TARDIO_2T": ("Encerramento Tardio da Votação (> 20:00)", "MEDIA"),
+    "CHK080_ENCERRAMENTO_MADRUGADA_2T": ("Encerramento na Madrugada (> 22:00)", "ALTA"),
+    "CHK081_DURACAO_VOTACAO_INFERIOR_A_4_HORAS": ("Votação Funcionou Menos de 4 Horas", "ALTA"),
+    "CHK082_DURACAO_2T_SUPERIOR_AO_1T_EM_MAIS_DE_60MIN": ("Votação 2T Durou > 1h a Mais que 1T", "BAIXA"),
+    "CHK083_TEMPO_MEDIO_POR_VOTO_IMPOSSIVEL_INFERIOR_15S": ("Votos em Menos de 15 Segundos (Inviável)", "ALTA"),
+    "CHK084_EMISSAO_BU_ANTERIOR_AO_ENCERRAMENTO": ("Emissão do BU Anterior ao Encerramento", "ALTA"),
+    "CHK085_HORARIO_ABERTURA_DIVERGENTE_MAIOR_60MIN": ("Abertura Divergiu > 60 min entre Turnos", "BAIXA"),
+    "CHK086_EXPLOSAO_BRANCOS_NULOS_MAIOR_15PP": ("Salto de Brancos e Nulos > 15 pp", "MEDIA"),
+    "CHK087_BRANCOS_NULOS_SUPERIOR_A_30PCT": ("Brancos e Nulos Superam 30% dos Votos", "ALTA"),
+    "CHK088_EXTINCAO_BRANCOS_NULOS_SECAO_GRANDE": ("Zero Brancos e Zero Nulos em Seção Grande", "BAIXA"),
+    "CHK089_QUEDA_BRANCOS_NULOS_MAIOR_20PP": ("Queda de Brancos/Nulos > 20 pp no 2T", "MEDIA"),
+    "CHK090_NULOS_SUPERIORES_A_BRANCOS_EM_10X": ("Votos Nulos Superam Brancos em 10x", "MEDIA"),
+    "CHK091_BRANCOS_SUPERIORES_A_NULOS_EM_10X": ("Votos Brancos Superam Nulos em 10x", "MEDIA"),
+    "CHK092_100PCT_VOTOS_INVALIDOS_NO_2T": ("100% de Votos Inválidos no 2T", "ALTA"),
+    "CHK093_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_2T": ("Soma de Votos != Comparecimento no 2T", "ALTA"),
+    "CHK094_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_1T": ("Soma de Votos != Comparecimento no 1T", "ALTA"),
+    "CHK095_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_1T": ("Seção Presente Apenas no 1T", "MEDIA"),
+    "CHK096_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_2T": ("Seção Presente Apenas no 2T", "MEDIA"),
+    "CHK097_TOTAL_VOTOS_CARGO_NAO_E_MULTIPLO_COMPARECIMENTO": ("Total no Cargo Diverge do Comparecimento", "ALTA"),
+    "CHK098_FALHA_CADEIA_HASH_SHA512_2T": ("Cadeia de Hashes SHA-512 Rompida no 2T", "ALTA"),
+    "CHK099_FALHA_CADEIA_HASH_SHA512_1T": ("Cadeia de Hashes SHA-512 Rompida no 1T", "ALTA"),
+    "CHK100_HASH_ASSINADO_VSC_DIVERGENTE": ("Hash Assinado no VSC Divergente", "ALTA"),
+    "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO": ("Primeiro Dígito Anômalo (Lei de Benford)", "BAIXA"),
+    "CHK102_DIGITOS_REDONDOS_EXCESSIVOS": ("Comparecimento em Centena Exata (00)", "BAIXA"),
+    "CHK103_URNA_SUBSTITUTA_SEM_HISTORICO_CARGA": ("Urna Substituta Sem Código de Carga", "ALTA"),
+    "CHK104_CORRESPONDENCIA_DATA_CARGA_ANTERIOR_1T": ("Data de Carga Posterior ao Encerramento", "ALTA"),
+    "CHK105_PICO_VOTOS_ULTIMA_HORA_ENCERRAMENTO": ("Votação Concentrada em Poucas Horas", "MEDIA"),
+    "CHK106_INTERVALO_ABERTURA_PRIMEIRO_VOTO_EXCEDE_2H": ("Atraso Superior a 2 Horas para Abertura", "BAIXA"),
+    "CHK107_INVERSAO_PROPORCAO_BRANCOS_NULOS": ("Inversão da Razão Brancos vs Nulos", "MEDIA"),
+    "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO": ("Migração Total de Brancos/Nulos para um Concorrente", "ALTA"),
+    "CHK109_ABSTENCAO_MAIOR_QUE_VOTOS_DO_VENCEDOR": ("Abstenção Maior que Votação do Vencedor", "BAIXA"),
+    "CHK110_ABSTENCAO_REDUZIDA_COM_MIGRACAO_UNILATERAL": ("Redução de Abstenção Canalizada 100% para um Concorrente", "ALTA"),
+    "CHK111_HABILITACAO_BIOGRAFICA_SUPERIOR_A_BIOMETRICA": ("Liberação Manual Superou a Digital", "ALTA"),
+    "CHK112_DESABAMENTO_BRUTAL_BIOMETRIA_MAIOR_40PP": ("Desabamento Brutal de Biometria (> 40 pp)", "ALTA"),
+    "CHK113_FALHA_MASSIVA_RECONHECIMENTO_DIGITAL_SEM_BIOMETRIA": ("Eleitores Sem Biometria Triplicaram", "MEDIA"),
+    "CHK114_VOTOS_CANDIDATO_SUPERAM_APTOS_ORIGINAIS": ("Votação do Candidato Supera Eleitores Originais", "ALTA"),
+    "CHK115_QUEDA_NOMINAL_AMBOS_CANDIDATOS_COM_MAIOR_COMPARECIMENTO": ("Ambos os Concorrentes Perderam Votos com Mais Presença", "ALTA"),
+    "CHK116_TAXA_RETENCAO_PRIMEIRO_TURNO_INFERIOR_A_50PCT": ("Candidato Perdeu Mais da Metade dos Votos do 1T", "ALTA"),
+    "CHK117_TRANSFERENCIA_ZERO_TERCEIRA_VIA_COM_COMPARECIMENTO_CRESCENTE": ("Estoque de 3ª Via Sumiu sem Migrar para Finalistas", "MEDIA"),
+    "CHK118_DIFERENCA_TEMPO_ENCERRAMENTO_E_EMISSAO_MAIOR_15MIN": ("Impressão do BU Demorou > 15 min Após Encerramento", "BAIXA"),
+    "CHK119_HORARIO_ENCERRAMENTO_IDENTICO_DE_SEGUNDO_ENTRE_URNAS_DISTINTAS": ("Encerramento Cravado às 17:00:00", "INFO"),
+    "CHK120_VOTO_UNANIME_NO_LOCAL_DE_VOTACAO": ("Zero Votos para Concorrente em Seção Expressiva do Local", "ALTA"),
+}
+
+
 def generate_comparison_html(data: dict[str, Any]) -> str:
     """Gera relatório HTML responsivo, autônomo, ocupando 100% da largura, com modal explicativo e glossário para leigos."""
     meta = data["metadados"]
@@ -2883,9 +3008,31 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         code_item = item["codigo"]
         count = item["total"]
         pct = round(count / resumo["total_secoes_analisadas"] * 100, 2)
+        
+        info_t = RULE_HUMAN_TITLES.get(code_item, (code_item, "ALTA"))
+        title_item = info_t[0]
+        sev_item = info_t[1]
+        
+        if sev_item == "ALTA":
+            badge_html = '<span class="badge badge-red" style="font-size:10px; padding:1px 5px; margin-right:6px;">ALTA</span>'
+        elif sev_item == "MEDIA":
+            badge_html = '<span class="badge badge-yellow" style="font-size:10px; padding:1px 5px; margin-right:6px;">MÉDIA</span>'
+        elif sev_item == "INFO":
+            badge_html = '<span class="badge" style="background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; font-size:10px; padding:1px 5px; margin-right:6px;">INFO</span>'
+        else:
+            badge_html = '<span class="badge badge-blue" style="font-size:10px; padding:1px 5px; margin-right:6px;">BAIXA</span>'
+
         anom_summary_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code_item)}</td>
+            <td class="col-grow t-left py-2 px-3">
+                <div style="display:flex; align-items:center;">
+                    {badge_html}
+                    <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">{html.escape(title_item)}</span>
+                </div>
+                <div style="font-family:ui-monospace, monospace; font-size:10px; color:#64748b; margin-top:2px; padding-left:2px;">
+                    {html.escape(code_item)}
+                </div>
+            </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">{count:,}</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">{pct:.2f}%</td>
         </tr>
@@ -3166,14 +3313,14 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 <div class="card-header">
                     <div>
                         <h2 style="font-size: 1.0625rem; font-weight: 700; margin: 0; color: #0f172a;">Top Inconsistências Detectadas</h2>
-                        <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra das 100 implementadas</span>
+                        <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra das 120 implementadas</span>
                     </div>
                 </div>
                 <div style="overflow-x: auto;">
                     <table>
                         <thead>
                             <tr>
-                                <th class="col-grow t-left">Código da Inconsistência</th>
+                                <th class="col-grow t-left">Inconsistência Forense / Regra Técnica</th>
                                 <th class="col-fit t-right">Seções</th>
                                 <th class="col-fit t-right">% Urnas</th>
                             </tr>

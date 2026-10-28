@@ -348,14 +348,14 @@
                 <div class="card-header">
                     <div>
                         <h2 style="font-size: 1.0625rem; font-weight: 700; margin: 0; color: #0f172a;">Top Inconsistências Detectadas</h2>
-                        <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra das 100 implementadas</span>
+                        <span style="font-size: 0.75rem; color: #64748b;">Ocorrências por regra das 120 implementadas</span>
                     </div>
                 </div>
                 <div style="overflow-x: auto;">
                     <table>
                         <thead>
                             <tr>
-                                <th class="col-grow t-left">Código da Inconsistência</th>
+                                <th class="col-grow t-left">Inconsistência Forense / Regra Técnica</th>
                                 <th class="col-fit t-right">Seções</th>
                                 <th class="col-fit t-right">% Urnas</th>
                             </tr>
@@ -363,19 +363,43 @@
                         <tbody>
                             
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3 font-mono text-[11px] font-semibold text-slate-800">CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO</td>
+            <td class="col-grow t-left py-2 px-3">
+                <div style="display:flex; align-items:center;">
+                    <span class="badge badge-blue" style="font-size:10px; padding:1px 5px; margin-right:6px;">BAIXA</span>
+                    <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">Primeiro Dígito Anômalo (Lei de Benford)</span>
+                </div>
+                <div style="font-family:ui-monospace, monospace; font-size:10px; color:#64748b; margin-top:2px; padding-left:2px;">
+                    CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO
+                </div>
+            </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">7</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">29.17%</td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3 font-mono text-[11px] font-semibold text-slate-800">CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR</td>
+            <td class="col-grow t-left py-2 px-3">
+                <div style="display:flex; align-items:center;">
+                    <span class="badge badge-red" style="font-size:10px; padding:1px 5px; margin-right:6px;">ALTA</span>
+                    <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">Queda de Votos com MAIOR Comparecimento</span>
+                </div>
+                <div style="font-family:ui-monospace, monospace; font-size:10px; color:#64748b; margin-top:2px; padding-left:2px;">
+                    CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR
+                </div>
+            </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">2</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">8.33%</td>
         </tr>
         
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="col-grow t-left py-2 px-3 font-mono text-[11px] font-semibold text-slate-800">CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO</td>
+            <td class="col-grow t-left py-2 px-3">
+                <div style="display:flex; align-items:center;">
+                    <span class="badge badge-red" style="font-size:10px; padding:1px 5px; margin-right:6px;">ALTA</span>
+                    <span style="font-weight:700; color:#0f172a; font-size:0.8125rem;">Migração Total de Brancos/Nulos para um Concorrente</span>
+                </div>
+                <div style="font-family:ui-monospace, monospace; font-size:10px; color:#64748b; margin-top:2px; padding-left:2px;">
+                    CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO
+                </div>
+            </td>
             <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">1</td>
             <td class="col-fit t-right py-2 px-3 font-mono text-xs text-slate-500">4.17%</td>
         </tr>
