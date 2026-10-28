@@ -1389,20 +1389,34 @@ def evaluate_section_anomalies(
     # ========================================================================
     queda_bio = 0.0
     salto_bio_ano = 0.0
+    salto_m = s2.biometria_bio - s1.biometria_bio
     if s1.comparecimento >= 50 and s2.comparecimento >= 50:
         queda_bio = s1.pct_biometria - s2.pct_biometria
         salto_bio_ano = s2.pct_biografia - s1.pct_biografia
-    if s1.comparecimento >= 50 and s2.comparecimento >= 50:
-        queda_bio = s1.pct_biometria - s2.pct_biometria
         if queda_bio >= 30.0:
             anomalies.append(
                 Anomaly(
                     code="CHK066_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_30PP",
                     category=CAT_BIOMETRIA,
                     severity=SEV_ALTA,
-                    title="Queda drástica na validação biométrica (> 30 pp)",
-                    description=f"Biometria caiu de {s1.pct_biometria:.1f}% para {s2.pct_biometria:.1f}% (-{queda_bio:.1f} pp).",
-                    details={"bio_1t": s1.pct_biometria, "bio_2t": s2.pct_biometria, "queda": queda_bio},
+                    title="Desabamento Crítico de Validação Biométrica (> 30 pp)",
+                    description=(
+                        f"Validação por digital despencou de {s1.pct_biometria:.1f}% ({s1.biometria_sim} eleitores) "
+                        f"para {s2.pct_biometria:.1f}% ({s2.biometria_sim} eleitores) [-{queda_bio:.1f} pp]. "
+                        f"Liberações manuais por ano de nascimento subiram de {s1.biometria_bio} para {s2.biometria_bio} (+{salto_m} manuais)."
+                    ),
+                    details={
+                        "bio_sim_1t": s1.biometria_sim,
+                        "bio_sim_2t": s2.biometria_sim,
+                        "pct_bio_1t": s1.pct_biometria,
+                        "pct_bio_2t": s2.pct_biometria,
+                        "queda_pp": round(queda_bio, 2),
+                        "bio_ano_1t": s1.biometria_bio,
+                        "bio_ano_2t": s2.biometria_bio,
+                        "salto_manual": salto_m,
+                        "comp_1t": s1.comparecimento,
+                        "comp_2t": s2.comparecimento,
+                    },
                 )
             )
         elif queda_bio >= 20.0:
@@ -1411,24 +1425,51 @@ def evaluate_section_anomalies(
                     code="CHK067_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_20PP",
                     category=CAT_BIOMETRIA,
                     severity=SEV_MEDIA,
-                    title="Queda acentuada na validação biométrica (> 20 pp)",
-                    description=f"Biometria recuou de {s1.pct_biometria:.1f}% para {s2.pct_biometria:.1f}% (-{queda_bio:.1f} pp).",
-                    details={"queda": queda_bio},
+                    title="Queda Acentuada de Biometria (> 20 pp)",
+                    description=(
+                        f"Biometria recuou de {s1.pct_biometria:.1f}% ({s1.biometria_sim} eleitores) "
+                        f"para {s2.pct_biometria:.1f}% ({s2.biometria_sim} eleitores) [-{queda_bio:.1f} pp]. "
+                        f"Liberações manuais por ano de nascimento subiram de {s1.biometria_bio} para {s2.biometria_bio} (+{salto_m} manuais)."
+                    ),
+                    details={
+                        "bio_sim_1t": s1.biometria_sim,
+                        "bio_sim_2t": s2.biometria_sim,
+                        "pct_bio_1t": s1.pct_biometria,
+                        "pct_bio_2t": s2.pct_biometria,
+                        "queda_pp": round(queda_bio, 2),
+                        "bio_ano_1t": s1.biometria_bio,
+                        "bio_ano_2t": s2.biometria_bio,
+                        "salto_manual": salto_m,
+                        "comp_1t": s1.comparecimento,
+                        "comp_2t": s2.comparecimento,
+                    },
                 )
             )
 
-    # CHK068 e CHK069: Surto de biometria biográfica (ano de nascimento)
-    if s1.comparecimento >= 50 and s2.comparecimento >= 50:
-        salto_bio_ano = s2.pct_biografia - s1.pct_biografia
+        # CHK068 e CHK069: Surto de biometria biográfica (ano de nascimento)
         if salto_bio_ano >= 25.0:
             anomalies.append(
                 Anomaly(
                     code="CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP",
                     category=CAT_BIOMETRIA,
                     severity=SEV_ALTA,
-                    title="Surto crítico de habilitação manual por ano de nascimento (> 25 pp)",
-                    description=f"Liberação biográfica saltou de {s1.pct_biografia:.1f}% para {s2.pct_biografia:.1f}% (+{salto_bio_ano:.1f} pp).",
-                    details={"bio_ano_1t": s1.pct_biografia, "bio_ano_2t": s2.pct_biografia, "salto": salto_bio_ano},
+                    title="Surto Crítico de Habilitação Manual por Ano de Nascimento (> 25 pp)",
+                    description=(
+                        f"Liberação manual por ano de nascimento saltou de {s1.pct_biografia:.1f}% ({s1.biometria_bio} eleitores) "
+                        f"para {s2.pct_biografia:.1f}% ({s2.biometria_bio} eleitores) [+ {salto_bio_ano:.1f} pp], "
+                        f"enquanto validações digitais caíram de {s1.biometria_sim} para {s2.biometria_sim} (-{s1.biometria_sim - s2.biometria_sim})."
+                    ),
+                    details={
+                        "bio_ano_1t": s1.biometria_bio,
+                        "bio_ano_2t": s2.biometria_bio,
+                        "pct_ano_1t": s1.pct_biografia,
+                        "pct_ano_2t": s2.pct_biografia,
+                        "salto_pp": round(salto_bio_ano, 2),
+                        "bio_sim_1t": s1.biometria_sim,
+                        "bio_sim_2t": s2.biometria_sim,
+                        "comp_1t": s1.comparecimento,
+                        "comp_2t": s2.comparecimento,
+                    },
                 )
             )
         elif salto_bio_ano >= 15.0:
@@ -1438,8 +1479,15 @@ def evaluate_section_anomalies(
                     category=CAT_BIOMETRIA,
                     severity=SEV_MEDIA,
                     title="Salto acentuado de habilitação manual por ano de nascimento (> 15 pp)",
-                    description=f"Liberação manual por ano de nascimento subiu {salto_bio_ano:.1f} pp no 2T.",
-                    details={"salto": salto_bio_ano},
+                    description=(
+                        f"Liberação manual por ano de nascimento subiu de {s1.pct_biografia:.1f}% ({s1.biometria_bio}) "
+                        f"para {s2.pct_biografia:.1f}% ({s2.biometria_bio}) [+ {salto_bio_ano:.1f} pp]."
+                    ),
+                    details={
+                        "bio_ano_1t": s1.biometria_bio,
+                        "bio_ano_2t": s2.biometria_bio,
+                        "salto_pp": round(salto_bio_ano, 2),
+                    },
                 )
             )
 
@@ -2838,33 +2886,33 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
 
             // Biometria
             "CHK066_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_30PP": {{
-                "titulo": "Queda Drástica de Biometria (> 30 pp)",
-                "explicacao": "A taxa de reconhecimento biométrico caiu mais de 30 pontos percentuais no 2T.",
-                "por_que_suspeito": "O leitor biométrico parou de ser usado ou foi contornado pelos mesários.",
+                "titulo": "Desabamento Crítico de Validação Biométrica (> 30 pp)",
+                "explicacao": "Como é possível a biometria funcionar normalmente para quase todos no 1º turno e falhar no 2º turno para os mesmos eleitores? Não existe justificativa biológica para as impressões digitais deixarem de ser reconhecidas 21 dias depois. Isso aponta que o leitor biométrico foi propositalmente ignorado, desligado ou contornado pelos mesários, que passaram a liberar a votação digitando o ano de nascimento no terminal.",
+                "por_que_suspeito": "A biometria é a única trava física que comprova a presença presencial do cidadão. Quando a biometria cai e a liberação manual explode, o mesário assume controle irrestrito da máquina, criando a brecha perfeita para habilitar votos no lugar de eleitores faltosos (voto fantasma), sem deixar rastro digital.",
                 "severidade": "ALTA"
             }},
             "CHK067_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_20PP": {{
                 "titulo": "Queda Acentuada de Biometria (> 20 pp)",
-                "explicacao": "A validação por digital recuou mais de 20 pontos percentuais no 2T.",
-                "por_que_suspeito": "Queda anormal no uso da biometria entre os turnos.",
+                "explicacao": "O eleitorado da seção é exatamente o mesmo nos dois turnos. Uma queda de mais de 20 pontos percentuais no reconhecimento por digital significa que dezenas de eleitores que tiveram sua digital reconhecida no 1º turno foram misteriosamente liberados sem biometria no 2º turno por digitação manual do ano de nascimento.",
+                "por_que_suspeito": "Anula a barreira de segurança antifraude da urna. A substituição da digital pela digitação manual do ano de nascimento pelo mesário elimina a garantia de presença física do cidadão e exige auditoria imediata das folhas de presença em papel assinadas e tomada de depoimentos dos mesários.",
                 "severidade": "MEDIA"
             }},
             "CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP": {{
-                "titulo": "Surto Crítico de Habilitação Manual (> 25 pp)",
-                "explicacao": "Mesários liberaram mais de 25% dos eleitores digitando o ano de nascimento.",
-                "por_que_suspeito": "Pode indicar liberação de eleitores sem conferência da digital ou presença.",
+                "titulo": "Surto Crítico de Liberação Manual por Ano de Nascimento (> 25 pp)",
+                "explicacao": "Os mesários digitaram manualmente o ano de nascimento para liberar mais de um quarto dos eleitores da seção, em vez de exigir a leitura da impressão digital.",
+                "por_que_suspeito": "Mesários mal-intencionados podem consultar o caderno eleitoral para obter a data de nascimento de eleitores que não compareceram e liberar a urna para votar no lugar deles, inflando artificialmente o comparecimento e alterando o resultado da urna.",
                 "severidade": "ALTA"
             }},
             "CHK069_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_15PP": {{
-                "titulo": "Salto de Habilitação Manual (> 15 pp)",
-                "explicacao": "Aumento expressivo na liberação por ano de nascimento no 2T.",
-                "por_que_suspeito": "Uso elevado da exceção biográfica em vez da biometria.",
+                "titulo": "Salto de Liberação Manual por Ano de Nascimento (> 15 pp)",
+                "explicacao": "Aumento expressivo na liberação de eleitores por digitação do ano de nascimento no terminal do mesário no 2º turno.",
+                "por_que_suspeito": "Uso desproporcional da exceção manual sem justificativa técnica plausível, contornando a segurança biométrica.",
                 "severidade": "MEDIA"
             }},
             "CHK070_ZERO_BIOMETRIA_EM_SECAO_BIOMETRIZADA": {{
-                "titulo": "Zero Biometria em Seção Biometrizada",
-                "explicacao": "Seção que usou biometria no 1T teve 0 biometrias no 2T.",
-                "por_que_suspeito": "Leitor biométrico quebrado, desativado ou deliberadamente ignorado.",
+                "titulo": "Desativação Total da Biometria em Seção Biometrizada",
+                "explicacao": "Uma seção onde a maioria dos eleitores votou por biometria no 1º turno registrou ZERO votos por biometria no 2º turno. Todos os eleitores foram liberados manualmente.",
+                "por_que_suspeito": "O leitor óptico foi desconectado, desativado ou sumariamente ignorado pela mesa receptora durante todo o dia da eleição, eliminando 100% da rastreabilidade biométrica da urna.",
                 "severidade": "MEDIA"
             }},
             "CHK072_SOMA_DETALHAMENTO_COMPARECIMENTO_DIVERGENTE": {{

@@ -218,11 +218,16 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
 
 ---
 
-### 6.4 Padrão 4: Anomalias de Biometria e Liberação Manual por Ano de Nascimento
+### 6.4 Padrão 4: O Desabamento da Biometria e o Risco de Voto Fantasma por Liberação Manual
 
-- No estado, **610.297 votos** foram computados no 2º turno **sem validação por impressão digital** (através de liberação manual de mesários ou digitação do ano de nascimento).
-- Em dezenas de seções, identificamos picos em que a biometria despencou mais de 20 pp (`CHK067`) e a liberação por ano de nascimento subiu mais de 15 pp (`CHK069`).
-- **Onde está a vulnerabilidade de fraude:** Quando o leitor biométrico é desligado ou contornado pelo mesário, perde-se a garantia física de que o cidadão compareceu pessoalmente. Mesários mal-intencionados podem utilizar os dados de eleitores ausentes para registrar votos ilegítimos ao final do dia.
+- **A Pergunta Pericial Central:** *Como é possível a biometria funcionar para mais de 76% dos eleitores no 1º turno e despencar para 48% no 2º turno se o eleitorado da seção é rigorosamente o mesmo?*
+- **Inviabilidade Biológica:** Não existe nenhuma justificativa biológica, médica ou dermatológica para que as impressões digitais de dezenas de eleitores cadastrados parem subitamente de ser reconhecidas 21 dias após o 1º turno.
+- **O Caso Emblemático de Vitor Meireles (Zona 14, Seção 128):**
+  - **1º Turno:** Comparecimento de 220 eleitores &bull; **168 validados por digital (76,4%)** &bull; 49 liberados por ano de nascimento &bull; 3 sem biometria.
+  - **2º Turno:** Comparecimento de 230 eleitores &bull; **112 validados por digital (apenas 48,7%)** &bull; **116 liberados manualmente por ano de nascimento (+136,7% de aumento manual!)**.
+  - **Conexão Criminológica com Outras Anomalias na Mesma Urna:** Esta exata seção teve a urna física substituída (`CHK001`), modelo de urna divergente (`CHK004`), flash de votação trocada (`CHK002`), flash de carga trocada (`CHK003`) e **a correspondência da carga era de outro município (Ibirama - 81353, `CHK014`)**.
+- **O Mecanismo de Fraude (Bypass do Leitor Óptico):** A validação biométrica por impressão digital é a única trava de segurança física que atesta a presença de carne e osso do cidadão na cabine. Quando o leitor biométrico é desligado, ignorado ou contornado, o mesário assume controle irrestrito da máquina através da digitação manual do ano de nascimento do eleitor (dado facilmente consultável no próprio caderno de votação). Isso abre a brecha clássica para que mesários habilitem votos no lugar de eleitores que faltaram à eleição (voto fantasma), sem deixar rastro de digital.
+- **Dimensão Estadual:** Em todo o estado de Santa Catarina, **610.297 votos foram registrados no 2º turno sem nenhuma validação por impressão digital**, criando uma margem expressiva de vulnerabilidade operacional.
 
 ---
 

@@ -440,9 +440,17 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Queda acentuada na validação biométrica (> 20 pp)",
-          "description": "Biometria recuou de 76.4% para 48.7% (-27.7 pp).",
+          "description": "Biometria recuou de 76.4% (168 eleitores) para 48.7% (112 eleitores) [-27.7 pp]. Liberações manuais por ano de nascimento subiram de 49 para 116 (+67 manuais).",
           "details": {
-            "queda": 27.659999999999997
+            "queda": 27.659999999999997,
+            "bio_sim_1t": 168,
+            "bio_sim_2t": 112,
+            "pct_bio_1t": 76.36,
+            "pct_bio_2t": 48.7,
+            "queda_pp": 27.66,
+            "bio_ano_1t": 49,
+            "bio_ano_2t": 116,
+            "salto_manual": 67
           }
         },
         {
@@ -450,11 +458,14 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "ALTA",
           "title": "Surto crítico de habilitação manual por ano de nascimento (> 25 pp)",
-          "description": "Liberação biográfica saltou de 22.3% para 50.4% (+28.2 pp).",
+          "description": "Liberação manual por ano de nascimento saltou de 22.3% (49 eleitores) para 50.4% (116 eleitores) [+ 28.2 pp], enquanto validações digitais caíram de 168 para 112 (-56).",
           "details": {
-            "bio_ano_1t": 22.27,
-            "bio_ano_2t": 50.43,
-            "salto": 28.16
+            "bio_ano_1t": 49,
+            "bio_ano_2t": 116,
+            "salto": 28.16,
+            "salto_pp": 28.16,
+            "bio_sim_1t": 168,
+            "bio_sim_2t": 112
           }
         }
       ],
@@ -1357,9 +1368,17 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Queda acentuada na validação biométrica (> 20 pp)",
-          "description": "Biometria recuou de 82.2% para 61.5% (-20.7 pp).",
+          "description": "Biometria recuou de 82.2% (212 eleitores) para 61.5% (166 eleitores) [-20.7 pp]. Liberações manuais por ano de nascimento subiram de 27 para 85 (+58 manuais).",
           "details": {
-            "queda": 20.690000000000005
+            "queda": 20.690000000000005,
+            "bio_sim_1t": 212,
+            "bio_sim_2t": 166,
+            "pct_bio_1t": 82.17,
+            "pct_bio_2t": 61.48,
+            "queda_pp": 20.69,
+            "bio_ano_1t": 27,
+            "bio_ano_2t": 85,
+            "salto_manual": 58
           }
         },
         {
@@ -1367,9 +1386,14 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Salto acentuado de habilitação manual por ano de nascimento (> 15 pp)",
-          "description": "Liberação manual por ano de nascimento subiu 21.0 pp no 2T.",
+          "description": "Liberação manual por ano de nascimento saltou de 10.5% (27 eleitores) para 31.5% (85 eleitores) [+ 21.0 pp], enquanto validações digitais caíram de 212 para 166 (-46).",
           "details": {
-            "salto": 21.009999999999998
+            "salto": 21.009999999999998,
+            "bio_ano_1t": 27,
+            "bio_ano_2t": 85,
+            "salto_pp": 21.01,
+            "bio_sim_1t": 212,
+            "bio_sim_2t": 166
           }
         }
       ],
@@ -6058,9 +6082,17 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Queda acentuada na validação biométrica (> 20 pp)",
-          "description": "Biometria recuou de 25.6% para 2.5% (-23.2 pp).",
+          "description": "Biometria recuou de 25.6% (60 eleitores) para 2.5% (6 eleitores) [-23.2 pp]. Liberações manuais por ano de nascimento subiram de 145 para 204 (+59 manuais).",
           "details": {
-            "queda": 23.17
+            "queda": 23.17,
+            "bio_sim_1t": 60,
+            "bio_sim_2t": 6,
+            "pct_bio_1t": 25.64,
+            "pct_bio_2t": 2.47,
+            "queda_pp": 23.17,
+            "bio_ano_1t": 145,
+            "bio_ano_2t": 204,
+            "salto_manual": 59
           }
         },
         {
@@ -6068,9 +6100,14 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Salto acentuado de habilitação manual por ano de nascimento (> 15 pp)",
-          "description": "Liberação manual por ano de nascimento subiu 22.0 pp no 2T.",
+          "description": "Liberação manual por ano de nascimento saltou de 62.0% (145 eleitores) para 84.0% (204 eleitores) [+ 22.0 pp], enquanto validações digitais caíram de 60 para 6 (-54).",
           "details": {
-            "salto": 21.980000000000004
+            "salto": 21.980000000000004,
+            "bio_ano_1t": 145,
+            "bio_ano_2t": 204,
+            "salto_pp": 21.98,
+            "bio_sim_1t": 60,
+            "bio_sim_2t": 6
           }
         }
       ],
@@ -6870,9 +6907,14 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Salto acentuado de habilitação manual por ano de nascimento (> 15 pp)",
-          "description": "Liberação manual por ano de nascimento subiu 19.5 pp no 2T.",
+          "description": "Liberação manual por ano de nascimento saltou de 10.3% (27 eleitores) para 29.8% (81 eleitores) [+ 19.5 pp], enquanto validações digitais caíram de 228 para 183 (-45).",
           "details": {
-            "salto": 19.51
+            "salto": 19.51,
+            "bio_ano_1t": 27,
+            "bio_ano_2t": 81,
+            "salto_pp": 19.51,
+            "bio_sim_1t": 228,
+            "bio_sim_2t": 183
           }
         }
       ],
@@ -43075,9 +43117,17 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "MEDIA",
           "title": "Queda acentuada na validação biométrica (> 20 pp)",
-          "description": "Biometria recuou de 75.9% para 48.7% (-27.2 pp).",
+          "description": "Biometria recuou de 75.9% (198 eleitores) para 48.7% (131 eleitores) [-27.2 pp]. Liberações manuais por ano de nascimento subiram de 40 para 116 (+76 manuais).",
           "details": {
-            "queda": 27.159999999999997
+            "queda": 27.159999999999997,
+            "bio_sim_1t": 198,
+            "bio_sim_2t": 131,
+            "pct_bio_1t": 75.86,
+            "pct_bio_2t": 48.7,
+            "queda_pp": 27.16,
+            "bio_ano_1t": 40,
+            "bio_ano_2t": 116,
+            "salto_manual": 76
           }
         },
         {
@@ -43085,11 +43135,14 @@
           "category": "BIOMETRIA_E_HABILITACAO",
           "severity": "ALTA",
           "title": "Surto crítico de habilitação manual por ano de nascimento (> 25 pp)",
-          "description": "Liberação biográfica saltou de 15.3% para 43.1% (+27.8 pp).",
+          "description": "Liberação manual por ano de nascimento saltou de 15.3% (40 eleitores) para 43.1% (116 eleitores) [+ 27.8 pp], enquanto validações digitais caíram de 198 para 131 (-67).",
           "details": {
-            "bio_ano_1t": 15.33,
-            "bio_ano_2t": 43.12,
-            "salto": 27.79
+            "bio_ano_1t": 40,
+            "bio_ano_2t": 116,
+            "salto": 27.79,
+            "salto_pp": 27.79,
+            "bio_sim_1t": 198,
+            "bio_sim_2t": 131
           }
         }
       ],
