@@ -2437,11 +2437,11 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         pct_str = f"({c['pct_crescimento']:+.2f}%)" if c.get("pct_crescimento") is not None else ""
         cand_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="py-2.5 px-3 font-mono font-bold text-slate-800">{c['numero']}</td>
-            <td class="py-2.5 px-3 font-semibold text-slate-900">{html.escape(c['nome'])}</td>
-            <td class="py-2.5 px-3 text-right font-mono">{v1}</td>
-            <td class="py-2.5 px-3 text-right font-mono font-bold text-slate-900">{v2}</td>
-            <td class="py-2.5 px-3 text-right font-mono {color_class}">{d_str} <span class="text-xs text-slate-500 font-normal">{pct_str}</span></td>
+            <td class="col-fit t-center py-2 px-3 font-mono font-bold text-slate-800">{c['numero']}</td>
+            <td class="col-grow t-left py-2 px-3 font-semibold text-slate-900">{html.escape(c['nome'])}</td>
+            <td class="col-fit t-right py-2 px-3 font-mono">{v1}</td>
+            <td class="col-fit t-right py-2 px-3 font-mono font-bold text-slate-900">{v2}</td>
+            <td class="col-fit t-right py-2 px-3 font-mono {color_class}">{d_str} <span class="text-xs text-slate-500 font-normal">{pct_str}</span></td>
         </tr>
         """)
 
@@ -2452,9 +2452,9 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         pct = round(count / resumo["total_secoes_analisadas"] * 100, 2)
         anom_summary_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="py-1.5 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code_item)}</td>
-            <td class="py-1.5 px-3 text-right font-mono font-bold text-slate-900">{count:,}</td>
-            <td class="py-1.5 px-3 text-right font-mono text-xs text-slate-500">{pct:.2f}%</td>
+            <td class="col-grow t-left py-1.5 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code_item)}</td>
+            <td class="col-fit t-right py-1.5 px-3 font-mono font-bold text-slate-900">{count:,}</td>
+            <td class="col-fit t-right py-1.5 px-3 font-mono text-xs text-slate-500">{pct:.2f}%</td>
         </tr>
         """)
 
@@ -2710,21 +2710,20 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 <table>
                     <thead>
                         <tr>
-                            <th>Nº</th>
-                            <th>Candidato</th>
-                            <th style="text-align: right;">Votos 1T</th>
-                            <th style="text-align: right;">Votos 2T</th>
-                            <th style="text-align: right;">Variação Nominal (2T vs 1T)</th>
+                            <th class="col-fit t-center">Nº</th>
+                            <th class="col-grow t-left">Candidato</th>
+                            <th class="col-fit t-right">Votos 1T</th>
+                            <th class="col-fit t-right">Votos 2T</th>
+                            <th class="col-fit t-right">Variação Nominal (2T vs 1T)</th>
                         </tr>
                     </thead>
                     <tbody>
                         {"".join(cand_rows)}
                         <tr class="border-t-2 border-slate-200 bg-slate-50 font-bold">
-                            <td colspan="2" class="py-2.5 px-3 text-slate-800">COMPARECIMENTO TOTAL</td>
-                            <td class="py-2.5 px-3 text-right font-mono">{totais['comparecimento_1t']:,}</td>
-                            <td class="py-2.5 px-3 text-right font-mono">{totais['comparecimento_2t']:,}</td>
-                            <td class="py-2.5 px-3 text-right font-mono text-slate-900">{totais['comparecimento_2t'] - totais['comparecimento_1t']:+,}</td>
-                        </tr>
+                            <td colspan="2" class="col-grow t-left py-2 px-3 text-slate-800">COMPARECIMENTO TOTAL</td>
+                            <td class="col-fit t-right py-2 px-3 font-mono">{totais['comparecimento_1t']:,}</td>
+                            <td class="col-fit t-right py-2 px-3 font-mono">{totais['comparecimento_2t']:,}</td>
+                            <td class="col-fit t-right py-2 px-3 font-mono text-slate-900">{totais['comparecimento_2t'] - totais['comparecimento_1t']:+,}</td>
                     </tbody>
                 </table>
             </div>
@@ -2741,9 +2740,9 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     <table>
                         <thead>
                             <tr>
-                                <th>Código da Inconsistência</th>
-                                <th style="text-align: right;">Seções</th>
-                                <th style="text-align: right;">% Urnas</th>
+                                <th class="col-grow t-left">Código da Inconsistência</th>
+                                <th class="col-fit t-right">Seções</th>
+                                <th class="col-fit t-right">% Urnas</th>
                             </tr>
                         </thead>
                         <tbody>
