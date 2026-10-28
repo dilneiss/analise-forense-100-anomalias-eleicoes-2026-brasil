@@ -24,6 +24,41 @@ from .parsers.bu import parse_bu
 from .reports import json_report
 from .scanner import NAME_RE
 
+import math
+
+_SC_COORDS_CACHE: Optional[dict[str, Any]] = None
+
+def get_sc_coords() -> dict[str, Any]:
+    global _SC_COORDS_CACHE
+    if _SC_COORDS_CACHE is None:
+        p = Path("data/municipios_sc_coords.json")
+        if not p.is_file():
+            p = Path(__file__).resolve().parent.parent.parent / "data" / "municipios_sc_coords.json"
+        if p.is_file():
+            try:
+                _SC_COORDS_CACHE = json.loads(p.read_text(encoding="utf-8"))
+            except Exception:
+                _SC_COORDS_CACHE = {}
+        else:
+            _SC_COORDS_CACHE = {}
+    return _SC_COORDS_CACHE
+
+def calculate_municipios_distance_km(code1: int, code2: int) -> Optional[float]:
+    coords = get_sc_coords()
+    c1 = coords.get(str(code1))
+    c2 = coords.get(str(code2))
+    if not c1 or not c2:
+        return None
+    R = 6371.0
+    lat1, lon1 = math.radians(c1["lat"]), math.radians(c1["lon"])
+    lat2, lon2 = math.radians(c2["lat"]), math.radians(c2["lon"])
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    a = math.sin(dlat / 2.0)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2.0)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return round(R * c, 1)
+
+
 # Candidatos oficiais de referência (Eleições 2026)
 PRESIDENTIAL_CANDIDATES = {
     13: "LULA (PT)",
@@ -579,24 +614,43 @@ def evaluate_section_anomalies(
                 )
             )
 
-    # CHK014: Carga de urna em município diferente
+    # CHK014: Carga de urna em município diferente (com auditoria de distância e vizinhança)
     if s2.municipio_correspondencia and s2.municipio_correspondencia != s2.municipio:
         nome_secao = mun_resolver(s2.municipio) if mun_resolver else None
         nome_corr = mun_resolver(s2.municipio_correspondencia) if mun_resolver else None
         txt_secao = f"{s2.municipio} ({nome_secao})" if nome_secao else str(s2.municipio)
         txt_corr = f"{s2.municipio_correspondencia} ({nome_corr})" if nome_corr else str(s2.municipio_correspondencia)
+
+        dist_km = calculate_municipios_distance_km(s2.municipio, s2.municipio_correspondencia)
+        is_vizinha = (dist_km is not None and dist_km <= 45.0)
+
+        if dist_km is not None:
+            if is_vizinha:
+                status_geo = f"[Cidades Vizinhas / Limítrofes - ~{dist_km} km]"
+                sev_chk14 = SEV_BAIXA  # Cidade vizinha pode ser normal por contingência regional
+            else:
+                status_geo = f"[CIDADES NÃO VIZINHAS / DISTANTES - ~{dist_km} km]"
+                sev_chk14 = SEV_ALTA   # Cidade distante não é normal
+        else:
+            status_geo = "[Distância não determinada]"
+            sev_chk14 = SEV_ALTA
+
         anomalies.append(
             Anomaly(
                 code="CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
                 category=CAT_HARDWARE,
-                severity=SEV_ALTA,
+                severity=sev_chk14,
                 title="Carga Gerada para Outro Município",
-                description=f"Correspondência vinculada ao município {txt_corr}, mas a seção pertence ao município {txt_secao}.",
+                description=(
+                    f"Correspondência vinculada ao município {txt_corr}, mas a seção pertence ao município {txt_secao} {status_geo}."
+                ),
                 details={
                     "mun_secao": s2.municipio,
                     "mun_secao_nome": nome_secao,
                     "mun_corr": s2.municipio_correspondencia,
                     "mun_corr_nome": nome_corr,
+                    "distancia_km": dist_km,
+                    "cidades_vizinhas": is_vizinha,
                 },
             )
         )
@@ -2320,12 +2374,19 @@ def calculate_section_fraud_score(anomalies: list[Anomaly]) -> dict[str, Any]:
     elif has_code("CHK066") or has_code("CHK068"):
         score = max(score, 75)
 
-    if has_code("CHK001") and has_code("CHK014"):
-        score = max(score, 80)
-    elif has_code("CHK014"):
-        score = max(score, 65)
+    chk14 = next((a for a in anomalies if "CHK014" in a.code), None)
+    is_chk14_distante = (chk14 and chk14.details.get("cidades_vizinhas") is False)
+
+    if has_code("CHK001") and is_chk14_distante:
+        score = max(score, 85)
+    elif is_chk14_distante:
+        score = max(score, 70)
+    elif has_code("CHK001") and has_code("CHK014"):
+        score = max(score, 55)
     elif has_code("CHK001"):
         score = max(score, 50)
+    elif has_code("CHK014"):
+        score = max(score, 20)
 
     if has_code("CHK056"):
         score = max(score, 70)
@@ -3541,10 +3602,10 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "por_que_suspeito": "Indica reinstalação não autorizada do sistema operacional da urna.",
                 "severidade": "MEDIA"
             }},
-            "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO": {{
-                "titulo": "Carga Gerada para Outro Município",
-                "explicacao": "A carga da urna foi configurada para um município, mas a urna funcionou em outro.",
-                "por_que_suspeito": "Falha de custódia logística: urna operando fora de sua jurisdição municipal.",
+                        "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO": {{
+                "titulo": "Carga Gerada para Outro Município (Distância e Vizinhança)",
+                "explicacao": "A carga da urna foi configurada para um município, mas a urna funcionou em outro. Se as cidades forem vizinhas/limítrofes (até ~45 km), o remanejamento pode ser normal por logística do cartório eleitoral regional. Se forem cidades distantes (> 45 km), a ocorrência não é normal e aponta falha de custódia.",
+                "por_que_suspeito": "A distância em km determina a gravidade: cidades vizinhas da mesma comarca representam contingência de polo regional; cidades distantes representam quebra de jurisdição e risco de substituição irregular de urnas.",
                 "severidade": "ALTA"
             }},
             "CHK015_TIPO_ARQUIVO_NAO_VOTACAO_UE": {{
@@ -4134,13 +4195,19 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 score = Math.max(score, 75);
             }}
 
-            // Troca de Urna + Carga de Outro Município
-            if (hasCode("CHK001") && hasCode("CHK014")) {{
-                score = Math.max(score, 80);
-            }} else if (hasCode("CHK014")) {{
-                score = Math.max(score, 65);
+            const chk14 = sortedAnoms.find(a => a.code.includes("CHK014"));
+            const isChk14Distante = (chk14 && chk14.details && chk14.details.cidades_vizinhas === false);
+
+            if (hasCode("CHK001") && isChk14Distante) {{
+                score = Math.max(score, 85);
+            }} else if (isChk14Distante) {{
+                score = Math.max(score, 70);
+            }} else if (hasCode("CHK001") && hasCode("CHK014")) {{
+                score = Math.max(score, 55);
             }} else if (hasCode("CHK001")) {{
                 score = Math.max(score, 50);
+            }} else if (hasCode("CHK014")) {{
+                score = Math.max(score, 20);
             }}
 
             // Swing Político Extremo > 50 pp
@@ -4268,6 +4335,9 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     por_que_suspeito: "Inconsistência técnica identificada nas verificações automáticas de integridade."
                 }};
                 let descText = a.description;
+                let explLeigo = g.explicacao;
+                let porQueSuspeito = g.por_que_suspeito;
+
                 if (a.code === 'CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO' && a.details) {{
                     const mSec = a.details.mun_secao || s.municipio;
                     const mCorr = a.details.mun_corr || '';
@@ -4275,7 +4345,22 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     const nCorr = a.details.mun_corr_nome || munMap[mCorr] || '';
                     const tSec = nSec ? `${{mSec}} (${{nSec}})` : mSec;
                     const tCorr = nCorr ? `${{mCorr}} (${{nCorr}})` : mCorr;
-                    descText = `Correspondência vinculada ao município ${{tCorr}}, mas a seção pertence ao município ${{tSec}}.`;
+                    const dKm = a.details.distancia_km !== undefined ? a.details.distancia_km : '';
+                    const isViz = a.details.cidades_vizinhas;
+
+                    let geoTag = '';
+                    if (dKm !== '' && dKm !== null) {{
+                        if (isViz) {{
+                            geoTag = ` [Cidades Vizinhas / Limítrofes - ~${{dKm}} km]`;
+                            explLeigo = `A urna funcionou em ${{nSec || mSec}}, mas sua carga foi gerada em ${{nCorr || mCorr}}. Como são municípios vizinhos e limítrofes (~${{dKm}} km de distância), esse remanejamento pode ser normal por logística de contingência do cartório eleitoral regional.`;
+                            porQueSuspeito = `Por serem cidades vizinhas (~${{dKm}} km), o remanejamento pode decorrer de atendimento emergencial de contingência pelo polo regional. Torna-se suspeito se associado a outras quebras graves na mesma urna (como queda de biometria e salto de votos manuais).`;
+                        }} else {{
+                            geoTag = ` [CIDADES NÃO VIZINHAS / DISTANTES - ~${{dKm}} km]`;
+                            explLeigo = `A urna funcionou em ${{nSec || mSec}}, mas sua carga foi gerada em ${{nCorr || mCorr}} a mais de ${{dKm}} km de distância. Por NÃO serem cidades vizinhas nem conurbadas, a presença de carga de município distante é atípica e incomum.`;
+                            porQueSuspeito = `ALERTA CRÍTICO DE CUSTÓDIA: Cidades distantes (~${{dKm}} km) pertencentes a regiões diferentes. Não é comum nem esperado o trânsito de urnas entre comarcas distantes sem justificativa formal prévia.`;
+                        }}
+                    }}
+                    descText = `Correspondência vinculada ao município ${{tCorr}}, mas a seção pertence ao município ${{tSec}}${{geoTag}}.`;
                 }}
 
                 anomHtml += `
@@ -4289,10 +4374,10 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                             <strong>Dado Identificado na Urna:</strong> ${{descText}}
                         </div>
                         <div style="font-size:0.75rem; color:#334155; margin-bottom:0.35rem;">
-                            <strong>💡 O que significa para leigos:</strong> ${{g.explicacao}}
+                            <strong>💡 O que significa para leigos:</strong> ${{explLeigo}}
                         </div>
                         <div style="font-size:0.75rem; color:#991b1b;">
-                            <strong>⚠️ Por que isso levanta suspeita:</strong> ${{g.por_que_suspeito}}
+                            <strong>⚠️ Por que isso levanta suspeita:</strong> ${{porQueSuspeito}}
                         </div>
                     </div>
                 `;

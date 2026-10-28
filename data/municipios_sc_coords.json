@@ -1,0 +1,2067 @@
+{
+  "80225": {
+    "codigo_tse": 80225,
+    "codigo_ibge": 4200051,
+    "nome": "Abdon Batista",
+    "lat": -27.6126,
+    "lon": -51.0233
+  },
+  "80012": {
+    "codigo_tse": 80012,
+    "codigo_ibge": 4200101,
+    "nome": "Abelardo Luz",
+    "lat": -26.5716,
+    "lon": -52.3229
+  },
+  "80039": {
+    "codigo_tse": 80039,
+    "codigo_ibge": 4200200,
+    "nome": "Agrolândia",
+    "lat": -27.4087,
+    "lon": -49.822
+  },
+  "80055": {
+    "codigo_tse": 80055,
+    "codigo_ibge": 4200309,
+    "nome": "Agronômica",
+    "lat": -27.2662,
+    "lon": -49.708
+  },
+  "80071": {
+    "codigo_tse": 80071,
+    "codigo_ibge": 4200408,
+    "nome": "Água Doce",
+    "lat": -26.9985,
+    "lon": -51.5528
+  },
+  "80098": {
+    "codigo_tse": 80098,
+    "codigo_ibge": 4200507,
+    "nome": "Águas De Chapecó",
+    "lat": -27.0754,
+    "lon": -52.9808
+  },
+  "80500": {
+    "codigo_tse": 80500,
+    "codigo_ibge": 4200556,
+    "nome": "Águas Frias",
+    "lat": -26.8794,
+    "lon": -52.8568
+  },
+  "80110": {
+    "codigo_tse": 80110,
+    "codigo_ibge": 4200606,
+    "nome": "Águas Mornas",
+    "lat": -27.6963,
+    "lon": -48.8243
+  },
+  "80136": {
+    "codigo_tse": 80136,
+    "codigo_ibge": 4200705,
+    "nome": "Alfredo Wagner",
+    "lat": -27.7001,
+    "lon": -49.3273
+  },
+  "81302": {
+    "codigo_tse": 81302,
+    "codigo_ibge": 4200754,
+    "nome": "Alto Bela Vista",
+    "lat": -27.4333,
+    "lon": -51.9044
+  },
+  "80152": {
+    "codigo_tse": 80152,
+    "codigo_ibge": 4200804,
+    "nome": "Anchieta",
+    "lat": -26.5382,
+    "lon": -53.3319
+  },
+  "80179": {
+    "codigo_tse": 80179,
+    "codigo_ibge": 4200903,
+    "nome": "Angelina",
+    "lat": -27.5704,
+    "lon": -48.9879
+  },
+  "80195": {
+    "codigo_tse": 80195,
+    "codigo_ibge": 4201000,
+    "nome": "Anita Garibaldi",
+    "lat": -27.6897,
+    "lon": -51.1271
+  },
+  "80217": {
+    "codigo_tse": 80217,
+    "codigo_ibge": 4201109,
+    "nome": "Anitápolis",
+    "lat": -27.9012,
+    "lon": -49.1316
+  },
+  "80233": {
+    "codigo_tse": 80233,
+    "codigo_ibge": 4201208,
+    "nome": "Antônio Carlos",
+    "lat": -27.5191,
+    "lon": -48.766
+  },
+  "80063": {
+    "codigo_tse": 80063,
+    "codigo_ibge": 4201257,
+    "nome": "Apiúna",
+    "lat": -27.0375,
+    "lon": -49.3885
+  },
+  "80489": {
+    "codigo_tse": 80489,
+    "codigo_ibge": 4201273,
+    "nome": "Arabutã",
+    "lat": -27.1587,
+    "lon": -52.1423
+  },
+  "80250": {
+    "codigo_tse": 80250,
+    "codigo_ibge": 4201307,
+    "nome": "Araquari",
+    "lat": -26.3754,
+    "lon": -48.7188
+  },
+  "80276": {
+    "codigo_tse": 80276,
+    "codigo_ibge": 4201406,
+    "nome": "Araranguá",
+    "lat": -28.9356,
+    "lon": -49.4918
+  },
+  "80292": {
+    "codigo_tse": 80292,
+    "codigo_ibge": 4201505,
+    "nome": "Armazém",
+    "lat": -28.2448,
+    "lon": -49.0215
+  },
+  "80314": {
+    "codigo_tse": 80314,
+    "codigo_ibge": 4201604,
+    "nome": "Arroio Trinta",
+    "lat": -26.9257,
+    "lon": -51.3407
+  },
+  "80802": {
+    "codigo_tse": 80802,
+    "codigo_ibge": 4201653,
+    "nome": "Arvoredo",
+    "lat": -27.0748,
+    "lon": -52.4543
+  },
+  "80330": {
+    "codigo_tse": 80330,
+    "codigo_ibge": 4201703,
+    "nome": "Ascurra",
+    "lat": -26.9548,
+    "lon": -49.3783
+  },
+  "80357": {
+    "codigo_tse": 80357,
+    "codigo_ibge": 4201802,
+    "nome": "Atalanta",
+    "lat": -27.4219,
+    "lon": -49.7789
+  },
+  "80373": {
+    "codigo_tse": 80373,
+    "codigo_ibge": 4201901,
+    "nome": "Aurora",
+    "lat": -27.3098,
+    "lon": -49.6295
+  },
+  "81728": {
+    "codigo_tse": 81728,
+    "codigo_ibge": 4201950,
+    "nome": "Balneário Arroio Do Silva",
+    "lat": -28.9806,
+    "lon": -49.4237
+  },
+  "80683": {
+    "codigo_tse": 80683,
+    "codigo_ibge": 4202057,
+    "nome": "Balneário Barra Do Sul",
+    "lat": -26.4597,
+    "lon": -48.6123
+  },
+  "80390": {
+    "codigo_tse": 80390,
+    "codigo_ibge": 4202008,
+    "nome": "Balneário Camboriú",
+    "lat": -26.9926,
+    "lon": -48.6352
+  },
+  "81744": {
+    "codigo_tse": 81744,
+    "codigo_ibge": 4202073,
+    "nome": "Balneário Gaivota",
+    "lat": -29.1527,
+    "lon": -49.5841
+  },
+  "82511": {
+    "codigo_tse": 82511,
+    "codigo_ibge": 4212809,
+    "nome": "Balneário Piçarras",
+    "lat": -26.7639,
+    "lon": -48.6717
+  },
+  "83909": {
+    "codigo_tse": 83909,
+    "codigo_ibge": 4220000,
+    "nome": "Balneário Rincão",
+    "lat": -28.8314,
+    "lon": -49.2352
+  },
+  "81582": {
+    "codigo_tse": 81582,
+    "codigo_ibge": 4202081,
+    "nome": "Bandeirante",
+    "lat": -26.7705,
+    "lon": -53.6413
+  },
+  "81760": {
+    "codigo_tse": 81760,
+    "codigo_ibge": 4202099,
+    "nome": "Barra Bonita",
+    "lat": -26.654,
+    "lon": -53.44
+  },
+  "80411": {
+    "codigo_tse": 80411,
+    "codigo_ibge": 4202107,
+    "nome": "Barra Velha",
+    "lat": -26.637,
+    "lon": -48.6933
+  },
+  "81221": {
+    "codigo_tse": 81221,
+    "codigo_ibge": 4202131,
+    "nome": "Bela Vista Do Toldo",
+    "lat": -26.2746,
+    "lon": -50.4664
+  },
+  "80748": {
+    "codigo_tse": 80748,
+    "codigo_ibge": 4202156,
+    "nome": "Belmonte",
+    "lat": -26.843,
+    "lon": -53.5758
+  },
+  "80438": {
+    "codigo_tse": 80438,
+    "codigo_ibge": 4202206,
+    "nome": "Benedito Novo",
+    "lat": -26.781,
+    "lon": -49.3593
+  },
+  "80454": {
+    "codigo_tse": 80454,
+    "codigo_ibge": 4202305,
+    "nome": "Biguaçu",
+    "lat": -27.496,
+    "lon": -48.6598
+  },
+  "80470": {
+    "codigo_tse": 80470,
+    "codigo_ibge": 4202404,
+    "nome": "Blumenau",
+    "lat": -26.9155,
+    "lon": -49.0709
+  },
+  "81280": {
+    "codigo_tse": 81280,
+    "codigo_ibge": 4202438,
+    "nome": "Bocaina Do Sul",
+    "lat": -27.7455,
+    "lon": -49.9423
+  },
+  "83895": {
+    "codigo_tse": 83895,
+    "codigo_ibge": 4202503,
+    "nome": "Bom Jardim Da Serra",
+    "lat": -28.3377,
+    "lon": -49.6373
+  },
+  "81388": {
+    "codigo_tse": 81388,
+    "codigo_ibge": 4202537,
+    "nome": "Bom Jesus",
+    "lat": -26.7326,
+    "lon": -52.3919
+  },
+  "81469": {
+    "codigo_tse": 81469,
+    "codigo_ibge": 4202578,
+    "nome": "Bom Jesus Do Oeste",
+    "lat": -26.6927,
+    "lon": -53.0967
+  },
+  "80497": {
+    "codigo_tse": 80497,
+    "codigo_ibge": 4202602,
+    "nome": "Bom Retiro",
+    "lat": -27.799,
+    "lon": -49.487
+  },
+  "80985": {
+    "codigo_tse": 80985,
+    "codigo_ibge": 4202453,
+    "nome": "Bombinhas",
+    "lat": -27.1382,
+    "lon": -48.5146
+  },
+  "80519": {
+    "codigo_tse": 80519,
+    "codigo_ibge": 4202701,
+    "nome": "Botuverá",
+    "lat": -27.2007,
+    "lon": -49.0689
+  },
+  "80535": {
+    "codigo_tse": 80535,
+    "codigo_ibge": 4202800,
+    "nome": "Braço Do Norte",
+    "lat": -28.2681,
+    "lon": -49.1701
+  },
+  "80420": {
+    "codigo_tse": 80420,
+    "codigo_ibge": 4202859,
+    "nome": "Braço Do Trombudo",
+    "lat": -27.3586,
+    "lon": -49.8821
+  },
+  "81787": {
+    "codigo_tse": 81787,
+    "codigo_ibge": 4202875,
+    "nome": "Brunópolis",
+    "lat": -27.3058,
+    "lon": -50.8684
+  },
+  "80551": {
+    "codigo_tse": 80551,
+    "codigo_ibge": 4202909,
+    "nome": "Brusque",
+    "lat": -27.0977,
+    "lon": -48.9107
+  },
+  "80578": {
+    "codigo_tse": 80578,
+    "codigo_ibge": 4203006,
+    "nome": "Caçador",
+    "lat": -26.7757,
+    "lon": -51.012
+  },
+  "80594": {
+    "codigo_tse": 80594,
+    "codigo_ibge": 4203105,
+    "nome": "Caibi",
+    "lat": -27.0741,
+    "lon": -53.2458
+  },
+  "80667": {
+    "codigo_tse": 80667,
+    "codigo_ibge": 4203154,
+    "nome": "Calmon",
+    "lat": -26.5942,
+    "lon": -51.095
+  },
+  "80616": {
+    "codigo_tse": 80616,
+    "codigo_ibge": 4203204,
+    "nome": "Camboriú",
+    "lat": -27.0241,
+    "lon": -48.6503
+  },
+  "80632": {
+    "codigo_tse": 80632,
+    "codigo_ibge": 4203303,
+    "nome": "Campo Alegre",
+    "lat": -26.195,
+    "lon": -49.2676
+  },
+  "80659": {
+    "codigo_tse": 80659,
+    "codigo_ibge": 4203402,
+    "nome": "Campo Belo Do Sul",
+    "lat": -27.8975,
+    "lon": -50.7595
+  },
+  "80675": {
+    "codigo_tse": 80675,
+    "codigo_ibge": 4203501,
+    "nome": "Campo Erê",
+    "lat": -26.3931,
+    "lon": -53.0856
+  },
+  "80691": {
+    "codigo_tse": 80691,
+    "codigo_ibge": 4203600,
+    "nome": "Campos Novos",
+    "lat": -27.4002,
+    "lon": -51.2276
+  },
+  "80713": {
+    "codigo_tse": 80713,
+    "codigo_ibge": 4203709,
+    "nome": "Canelinha",
+    "lat": -27.2616,
+    "lon": -48.7658
+  },
+  "80730": {
+    "codigo_tse": 80730,
+    "codigo_ibge": 4203808,
+    "nome": "Canoinhas",
+    "lat": -26.1766,
+    "lon": -50.395
+  },
+  "81248": {
+    "codigo_tse": 81248,
+    "codigo_ibge": 4203253,
+    "nome": "Capão Alto",
+    "lat": -27.9389,
+    "lon": -50.5098
+  },
+  "80756": {
+    "codigo_tse": 80756,
+    "codigo_ibge": 4203907,
+    "nome": "Capinzal",
+    "lat": -27.3473,
+    "lon": -51.6057
+  },
+  "81027": {
+    "codigo_tse": 81027,
+    "codigo_ibge": 4203956,
+    "nome": "Capivari De Baixo",
+    "lat": -28.4498,
+    "lon": -48.9631
+  },
+  "80772": {
+    "codigo_tse": 80772,
+    "codigo_ibge": 4204004,
+    "nome": "Catanduvas",
+    "lat": -27.069,
+    "lon": -51.6602
+  },
+  "80799": {
+    "codigo_tse": 80799,
+    "codigo_ibge": 4204103,
+    "nome": "Caxambu Do Sul",
+    "lat": -27.1624,
+    "lon": -52.8807
+  },
+  "80268": {
+    "codigo_tse": 80268,
+    "codigo_ibge": 4204152,
+    "nome": "Celso Ramos",
+    "lat": -27.6327,
+    "lon": -51.335
+  },
+  "80381": {
+    "codigo_tse": 80381,
+    "codigo_ibge": 4204178,
+    "nome": "Cerro Negro",
+    "lat": -27.7942,
+    "lon": -50.8673
+  },
+  "81701": {
+    "codigo_tse": 81701,
+    "codigo_ibge": 4204194,
+    "nome": "Chapadão Do Lageado",
+    "lat": -27.5905,
+    "lon": -49.5539
+  },
+  "80810": {
+    "codigo_tse": 80810,
+    "codigo_ibge": 4204202,
+    "nome": "Chapecó",
+    "lat": -27.1004,
+    "lon": -52.6152
+  },
+  "80306": {
+    "codigo_tse": 80306,
+    "codigo_ibge": 4204251,
+    "nome": "Cocal Do Sul",
+    "lat": -28.5986,
+    "lon": -49.3335
+  },
+  "80837": {
+    "codigo_tse": 80837,
+    "codigo_ibge": 4204301,
+    "nome": "Concórdia",
+    "lat": -27.2335,
+    "lon": -52.026
+  },
+  "81043": {
+    "codigo_tse": 81043,
+    "codigo_ibge": 4204350,
+    "nome": "Cordilheira Alta",
+    "lat": -26.9844,
+    "lon": -52.6056
+  },
+  "80853": {
+    "codigo_tse": 80853,
+    "codigo_ibge": 4204400,
+    "nome": "Coronel Freitas",
+    "lat": -26.9057,
+    "lon": -52.7011
+  },
+  "81108": {
+    "codigo_tse": 81108,
+    "codigo_ibge": 4204459,
+    "nome": "Coronel Martins",
+    "lat": -26.511,
+    "lon": -52.6694
+  },
+  "83950": {
+    "codigo_tse": 83950,
+    "codigo_ibge": 4204558,
+    "nome": "Correia Pinto",
+    "lat": -27.5877,
+    "lon": -50.3614
+  },
+  "80870": {
+    "codigo_tse": 80870,
+    "codigo_ibge": 4204509,
+    "nome": "Corupá",
+    "lat": -26.4246,
+    "lon": -49.246
+  },
+  "80896": {
+    "codigo_tse": 80896,
+    "codigo_ibge": 4204608,
+    "nome": "Criciúma",
+    "lat": -28.6723,
+    "lon": -49.3729
+  },
+  "80918": {
+    "codigo_tse": 80918,
+    "codigo_ibge": 4204707,
+    "nome": "Cunha Porã",
+    "lat": -26.895,
+    "lon": -53.1662
+  },
+  "81620": {
+    "codigo_tse": 81620,
+    "codigo_ibge": 4204756,
+    "nome": "Cunhataí",
+    "lat": -26.9709,
+    "lon": -53.0895
+  },
+  "80934": {
+    "codigo_tse": 80934,
+    "codigo_ibge": 4204806,
+    "nome": "Curitibanos",
+    "lat": -27.2824,
+    "lon": -50.5816
+  },
+  "80950": {
+    "codigo_tse": 80950,
+    "codigo_ibge": 4204905,
+    "nome": "Descanso",
+    "lat": -26.827,
+    "lon": -53.5034
+  },
+  "80977": {
+    "codigo_tse": 80977,
+    "codigo_ibge": 4205001,
+    "nome": "Dionísio Cerqueira",
+    "lat": -26.2648,
+    "lon": -53.6351
+  },
+  "80993": {
+    "codigo_tse": 80993,
+    "codigo_ibge": 4205100,
+    "nome": "Dona Emma",
+    "lat": -26.981,
+    "lon": -49.7261
+  },
+  "80080": {
+    "codigo_tse": 80080,
+    "codigo_ibge": 4205159,
+    "nome": "Doutor Pedrinho",
+    "lat": -26.7174,
+    "lon": -49.4795
+  },
+  "81426": {
+    "codigo_tse": 81426,
+    "codigo_ibge": 4205175,
+    "nome": "Entre Rios",
+    "lat": -26.7225,
+    "lon": -52.5585
+  },
+  "81167": {
+    "codigo_tse": 81167,
+    "codigo_ibge": 4205191,
+    "nome": "Ermo",
+    "lat": -28.9869,
+    "lon": -49.643
+  },
+  "81019": {
+    "codigo_tse": 81019,
+    "codigo_ibge": 4205209,
+    "nome": "Erval Velho",
+    "lat": -27.2743,
+    "lon": -51.443
+  },
+  "81035": {
+    "codigo_tse": 81035,
+    "codigo_ibge": 4205308,
+    "nome": "Faxinal Dos Guedes",
+    "lat": -26.8451,
+    "lon": -52.2596
+  },
+  "81604": {
+    "codigo_tse": 81604,
+    "codigo_ibge": 4205357,
+    "nome": "Flor Do Sertão",
+    "lat": -26.7811,
+    "lon": -53.3505
+  },
+  "81051": {
+    "codigo_tse": 81051,
+    "codigo_ibge": 4205407,
+    "nome": "Florianópolis",
+    "lat": -27.5945,
+    "lon": -48.5477
+  },
+  "80888": {
+    "codigo_tse": 80888,
+    "codigo_ibge": 4205431,
+    "nome": "Formosa Do Sul",
+    "lat": -26.6453,
+    "lon": -52.7946
+  },
+  "81060": {
+    "codigo_tse": 81060,
+    "codigo_ibge": 4205456,
+    "nome": "Forquilhinha",
+    "lat": -28.7454,
+    "lon": -49.4785
+  },
+  "81078": {
+    "codigo_tse": 81078,
+    "codigo_ibge": 4205506,
+    "nome": "Fraiburgo",
+    "lat": -27.0233,
+    "lon": -50.92
+  },
+  "81329": {
+    "codigo_tse": 81329,
+    "codigo_ibge": 4205555,
+    "nome": "Frei Rogério",
+    "lat": -27.175,
+    "lon": -50.8076
+  },
+  "81094": {
+    "codigo_tse": 81094,
+    "codigo_ibge": 4205605,
+    "nome": "Galvão",
+    "lat": -26.4549,
+    "lon": -52.6875
+  },
+  "81132": {
+    "codigo_tse": 81132,
+    "codigo_ibge": 4205704,
+    "nome": "Garopaba",
+    "lat": -28.0275,
+    "lon": -48.6192
+  },
+  "81159": {
+    "codigo_tse": 81159,
+    "codigo_ibge": 4205803,
+    "nome": "Garuva",
+    "lat": -26.0292,
+    "lon": -48.852
+  },
+  "81175": {
+    "codigo_tse": 81175,
+    "codigo_ibge": 4205902,
+    "nome": "Gaspar",
+    "lat": -26.9336,
+    "lon": -48.9534
+  },
+  "81116": {
+    "codigo_tse": 81116,
+    "codigo_ibge": 4206009,
+    "nome": "Governador Celso Ramos",
+    "lat": -27.3172,
+    "lon": -48.5576
+  },
+  "81191": {
+    "codigo_tse": 81191,
+    "codigo_ibge": 4206108,
+    "nome": "Grão-Pará",
+    "lat": -28.1809,
+    "lon": -49.2252
+  },
+  "81213": {
+    "codigo_tse": 81213,
+    "codigo_ibge": 4206207,
+    "nome": "Gravatal",
+    "lat": -28.3208,
+    "lon": -49.0427
+  },
+  "81230": {
+    "codigo_tse": 81230,
+    "codigo_ibge": 4206306,
+    "nome": "Guabiruba",
+    "lat": -27.0808,
+    "lon": -48.9804
+  },
+  "81256": {
+    "codigo_tse": 81256,
+    "codigo_ibge": 4206405,
+    "nome": "Guaraciaba",
+    "lat": -26.6042,
+    "lon": -53.5243
+  },
+  "81272": {
+    "codigo_tse": 81272,
+    "codigo_ibge": 4206504,
+    "nome": "Guaramirim",
+    "lat": -26.4688,
+    "lon": -49.0026
+  },
+  "81299": {
+    "codigo_tse": 81299,
+    "codigo_ibge": 4206603,
+    "nome": "Guarujá Do Sul",
+    "lat": -26.3858,
+    "lon": -53.5296
+  },
+  "80527": {
+    "codigo_tse": 80527,
+    "codigo_ibge": 4206652,
+    "nome": "Guatambú",
+    "lat": -27.1341,
+    "lon": -52.7887
+  },
+  "81310": {
+    "codigo_tse": 81310,
+    "codigo_ibge": 4206702,
+    "nome": "Herval D'Oeste",
+    "lat": -27.1903,
+    "lon": -51.4917
+  },
+  "81400": {
+    "codigo_tse": 81400,
+    "codigo_ibge": 4206751,
+    "nome": "Ibiam",
+    "lat": -27.1847,
+    "lon": -51.2352
+  },
+  "81337": {
+    "codigo_tse": 81337,
+    "codigo_ibge": 4206801,
+    "nome": "Ibicaré",
+    "lat": -27.0881,
+    "lon": -51.3681
+  },
+  "81353": {
+    "codigo_tse": 81353,
+    "codigo_ibge": 4206900,
+    "nome": "Ibirama",
+    "lat": -27.0547,
+    "lon": -49.5193
+  },
+  "81370": {
+    "codigo_tse": 81370,
+    "codigo_ibge": 4207007,
+    "nome": "Içara",
+    "lat": -28.7132,
+    "lon": -49.3087
+  },
+  "81396": {
+    "codigo_tse": 81396,
+    "codigo_ibge": 4207106,
+    "nome": "Ilhota",
+    "lat": -26.9023,
+    "lon": -48.8251
+  },
+  "81418": {
+    "codigo_tse": 81418,
+    "codigo_ibge": 4207205,
+    "nome": "Imaruí",
+    "lat": -28.3339,
+    "lon": -48.817
+  },
+  "81434": {
+    "codigo_tse": 81434,
+    "codigo_ibge": 4207304,
+    "nome": "Imbituba",
+    "lat": -28.2284,
+    "lon": -48.6659
+  },
+  "81450": {
+    "codigo_tse": 81450,
+    "codigo_ibge": 4207403,
+    "nome": "Imbuia",
+    "lat": -27.4908,
+    "lon": -49.4218
+  },
+  "81477": {
+    "codigo_tse": 81477,
+    "codigo_ibge": 4207502,
+    "nome": "Indaial",
+    "lat": -26.8992,
+    "lon": -49.2354
+  },
+  "81361": {
+    "codigo_tse": 81361,
+    "codigo_ibge": 4207577,
+    "nome": "Iomerê",
+    "lat": -27.0019,
+    "lon": -51.2442
+  },
+  "81493": {
+    "codigo_tse": 81493,
+    "codigo_ibge": 4207601,
+    "nome": "Ipira",
+    "lat": -27.4038,
+    "lon": -51.7758
+  },
+  "80020": {
+    "codigo_tse": 80020,
+    "codigo_ibge": 4207650,
+    "nome": "Iporã Do Oeste",
+    "lat": -26.9854,
+    "lon": -53.5355
+  },
+  "80829": {
+    "codigo_tse": 80829,
+    "codigo_ibge": 4207684,
+    "nome": "Ipuaçu",
+    "lat": -26.635,
+    "lon": -52.4556
+  },
+  "81515": {
+    "codigo_tse": 81515,
+    "codigo_ibge": 4207700,
+    "nome": "Ipumirim",
+    "lat": -27.0772,
+    "lon": -52.1289
+  },
+  "80187": {
+    "codigo_tse": 80187,
+    "codigo_ibge": 4207759,
+    "nome": "Iraceminha",
+    "lat": -26.8215,
+    "lon": -53.2767
+  },
+  "81531": {
+    "codigo_tse": 81531,
+    "codigo_ibge": 4207809,
+    "nome": "Irani",
+    "lat": -27.0287,
+    "lon": -51.9012
+  },
+  "80861": {
+    "codigo_tse": 80861,
+    "codigo_ibge": 4207858,
+    "nome": "Irati",
+    "lat": -26.6539,
+    "lon": -52.8955
+  },
+  "81558": {
+    "codigo_tse": 81558,
+    "codigo_ibge": 4207908,
+    "nome": "Irineópolis",
+    "lat": -26.242,
+    "lon": -50.7957
+  },
+  "81574": {
+    "codigo_tse": 81574,
+    "codigo_ibge": 4208005,
+    "nome": "Itá",
+    "lat": -27.2907,
+    "lon": -52.3212
+  },
+  "81590": {
+    "codigo_tse": 81590,
+    "codigo_ibge": 4208104,
+    "nome": "Itaiópolis",
+    "lat": -26.339,
+    "lon": -49.9092
+  },
+  "81612": {
+    "codigo_tse": 81612,
+    "codigo_ibge": 4208203,
+    "nome": "Itajaí",
+    "lat": -26.9101,
+    "lon": -48.6705
+  },
+  "81639": {
+    "codigo_tse": 81639,
+    "codigo_ibge": 4208302,
+    "nome": "Itapema",
+    "lat": -27.0861,
+    "lon": -48.616
+  },
+  "81655": {
+    "codigo_tse": 81655,
+    "codigo_ibge": 4208401,
+    "nome": "Itapiranga",
+    "lat": -27.1659,
+    "lon": -53.7166
+  },
+  "81663": {
+    "codigo_tse": 81663,
+    "codigo_ibge": 4208450,
+    "nome": "Itapoá",
+    "lat": -26.1158,
+    "lon": -48.6182
+  },
+  "81671": {
+    "codigo_tse": 81671,
+    "codigo_ibge": 4208500,
+    "nome": "Ituporanga",
+    "lat": -27.4101,
+    "lon": -49.5963
+  },
+  "81698": {
+    "codigo_tse": 81698,
+    "codigo_ibge": 4208609,
+    "nome": "Jaborá",
+    "lat": -27.1782,
+    "lon": -51.7279
+  },
+  "81710": {
+    "codigo_tse": 81710,
+    "codigo_ibge": 4208708,
+    "nome": "Jacinto Machado",
+    "lat": -28.9961,
+    "lon": -49.7623
+  },
+  "81736": {
+    "codigo_tse": 81736,
+    "codigo_ibge": 4208807,
+    "nome": "Jaguaruna",
+    "lat": -28.6146,
+    "lon": -49.0296
+  },
+  "81752": {
+    "codigo_tse": 81752,
+    "codigo_ibge": 4208906,
+    "nome": "Jaraguá Do Sul",
+    "lat": -26.4851,
+    "lon": -49.0713
+  },
+  "81140": {
+    "codigo_tse": 81140,
+    "codigo_ibge": 4208955,
+    "nome": "Jardinópolis",
+    "lat": -26.7191,
+    "lon": -52.8625
+  },
+  "81779": {
+    "codigo_tse": 81779,
+    "codigo_ibge": 4209003,
+    "nome": "Joaçaba",
+    "lat": -27.1721,
+    "lon": -51.5108
+  },
+  "81795": {
+    "codigo_tse": 81795,
+    "codigo_ibge": 4209102,
+    "nome": "Joinville",
+    "lat": -26.3045,
+    "lon": -48.8487
+  },
+  "80101": {
+    "codigo_tse": 80101,
+    "codigo_ibge": 4209151,
+    "nome": "José Boiteux",
+    "lat": -26.9566,
+    "lon": -49.6286
+  },
+  "81540": {
+    "codigo_tse": 81540,
+    "codigo_ibge": 4209177,
+    "nome": "Jupiá",
+    "lat": -26.395,
+    "lon": -52.7298
+  },
+  "81817": {
+    "codigo_tse": 81817,
+    "codigo_ibge": 4209201,
+    "nome": "Lacerdópolis",
+    "lat": -27.2579,
+    "lon": -51.5577
+  },
+  "81833": {
+    "codigo_tse": 81833,
+    "codigo_ibge": 4209300,
+    "nome": "Lages",
+    "lat": -27.815,
+    "lon": -50.3259
+  },
+  "81850": {
+    "codigo_tse": 81850,
+    "codigo_ibge": 4209409,
+    "nome": "Laguna",
+    "lat": -28.4843,
+    "lon": -48.7772
+  },
+  "80586": {
+    "codigo_tse": 80586,
+    "codigo_ibge": 4209458,
+    "nome": "Lajeado Grande",
+    "lat": -26.8576,
+    "lon": -52.5648
+  },
+  "81876": {
+    "codigo_tse": 81876,
+    "codigo_ibge": 4209508,
+    "nome": "Laurentino",
+    "lat": -27.2173,
+    "lon": -49.7331
+  },
+  "81892": {
+    "codigo_tse": 81892,
+    "codigo_ibge": 4209607,
+    "nome": "Lauro Müller",
+    "lat": -28.3859,
+    "lon": -49.4035
+  },
+  "81914": {
+    "codigo_tse": 81914,
+    "codigo_ibge": 4209706,
+    "nome": "Lebon Régis",
+    "lat": -26.928,
+    "lon": -50.6921
+  },
+  "81930": {
+    "codigo_tse": 81930,
+    "codigo_ibge": 4209805,
+    "nome": "Leoberto Leal",
+    "lat": -27.5081,
+    "lon": -49.2789
+  },
+  "80047": {
+    "codigo_tse": 80047,
+    "codigo_ibge": 4209854,
+    "nome": "Lindóia Do Sul",
+    "lat": -27.0545,
+    "lon": -52.069
+  },
+  "81957": {
+    "codigo_tse": 81957,
+    "codigo_ibge": 4209904,
+    "nome": "Lontras",
+    "lat": -27.1684,
+    "lon": -49.535
+  },
+  "81973": {
+    "codigo_tse": 81973,
+    "codigo_ibge": 4210001,
+    "nome": "Luiz Alves",
+    "lat": -26.7151,
+    "lon": -48.9322
+  },
+  "81809": {
+    "codigo_tse": 81809,
+    "codigo_ibge": 4210035,
+    "nome": "Luzerna",
+    "lat": -27.1304,
+    "lon": -51.4682
+  },
+  "80900": {
+    "codigo_tse": 80900,
+    "codigo_ibge": 4210050,
+    "nome": "Macieira",
+    "lat": -26.8552,
+    "lon": -51.3705
+  },
+  "81990": {
+    "codigo_tse": 81990,
+    "codigo_ibge": 4210100,
+    "nome": "Mafra",
+    "lat": -26.1159,
+    "lon": -49.8086
+  },
+  "82015": {
+    "codigo_tse": 82015,
+    "codigo_ibge": 4210209,
+    "nome": "Major Gercino",
+    "lat": -27.4192,
+    "lon": -48.9488
+  },
+  "82031": {
+    "codigo_tse": 82031,
+    "codigo_ibge": 4210308,
+    "nome": "Major Vieira",
+    "lat": -26.3709,
+    "lon": -50.3266
+  },
+  "83917": {
+    "codigo_tse": 83917,
+    "codigo_ibge": 4210407,
+    "nome": "Maracajá",
+    "lat": -28.8463,
+    "lon": -49.4605
+  },
+  "82058": {
+    "codigo_tse": 82058,
+    "codigo_ibge": 4210506,
+    "nome": "Maravilha",
+    "lat": -26.7665,
+    "lon": -53.1737
+  },
+  "82066": {
+    "codigo_tse": 82066,
+    "codigo_ibge": 4210555,
+    "nome": "Marema",
+    "lat": -26.8024,
+    "lon": -52.6264
+  },
+  "82074": {
+    "codigo_tse": 82074,
+    "codigo_ibge": 4210605,
+    "nome": "Massaranduba",
+    "lat": -26.6109,
+    "lon": -49.0054
+  },
+  "82090": {
+    "codigo_tse": 82090,
+    "codigo_ibge": 4210704,
+    "nome": "Matos Costa",
+    "lat": -26.4709,
+    "lon": -51.1501
+  },
+  "82112": {
+    "codigo_tse": 82112,
+    "codigo_ibge": 4210803,
+    "nome": "Meleiro",
+    "lat": -28.8244,
+    "lon": -49.6378
+  },
+  "80365": {
+    "codigo_tse": 80365,
+    "codigo_ibge": 4210852,
+    "nome": "Mirim Doce",
+    "lat": -27.197,
+    "lon": -50.0786
+  },
+  "82139": {
+    "codigo_tse": 82139,
+    "codigo_ibge": 4210902,
+    "nome": "Modelo",
+    "lat": -26.7729,
+    "lon": -53.04
+  },
+  "82155": {
+    "codigo_tse": 82155,
+    "codigo_ibge": 4211009,
+    "nome": "Mondaí",
+    "lat": -27.1008,
+    "lon": -53.4032
+  },
+  "80004": {
+    "codigo_tse": 80004,
+    "codigo_ibge": 4211058,
+    "nome": "Monte Carlo",
+    "lat": -27.2239,
+    "lon": -50.9808
+  },
+  "82171": {
+    "codigo_tse": 82171,
+    "codigo_ibge": 4211108,
+    "nome": "Monte Castelo",
+    "lat": -26.461,
+    "lon": -50.2327
+  },
+  "82198": {
+    "codigo_tse": 82198,
+    "codigo_ibge": 4211207,
+    "nome": "Morro Da Fumaça",
+    "lat": -28.6511,
+    "lon": -49.2169
+  },
+  "81086": {
+    "codigo_tse": 81086,
+    "codigo_ibge": 4211256,
+    "nome": "Morro Grande",
+    "lat": -28.8006,
+    "lon": -49.7214
+  },
+  "82210": {
+    "codigo_tse": 82210,
+    "codigo_ibge": 4211306,
+    "nome": "Navegantes",
+    "lat": -26.8943,
+    "lon": -48.6546
+  },
+  "82236": {
+    "codigo_tse": 82236,
+    "codigo_ibge": 4211405,
+    "nome": "Nova Erechim",
+    "lat": -26.8982,
+    "lon": -52.9066
+  },
+  "80322": {
+    "codigo_tse": 80322,
+    "codigo_ibge": 4211454,
+    "nome": "Nova Itaberaba",
+    "lat": -26.9428,
+    "lon": -52.8141
+  },
+  "82252": {
+    "codigo_tse": 82252,
+    "codigo_ibge": 4211504,
+    "nome": "Nova Trento",
+    "lat": -27.278,
+    "lon": -48.9298
+  },
+  "82279": {
+    "codigo_tse": 82279,
+    "codigo_ibge": 4211603,
+    "nome": "Nova Veneza",
+    "lat": -28.6338,
+    "lon": -49.5055
+  },
+  "80764": {
+    "codigo_tse": 80764,
+    "codigo_ibge": 4211652,
+    "nome": "Novo Horizonte",
+    "lat": -26.4442,
+    "lon": -52.8281
+  },
+  "82295": {
+    "codigo_tse": 82295,
+    "codigo_ibge": 4211702,
+    "nome": "Orleans",
+    "lat": -28.3487,
+    "lon": -49.2986
+  },
+  "83976": {
+    "codigo_tse": 83976,
+    "codigo_ibge": 4211751,
+    "nome": "Otacílio Costa",
+    "lat": -27.4789,
+    "lon": -50.1231
+  },
+  "82317": {
+    "codigo_tse": 82317,
+    "codigo_ibge": 4211801,
+    "nome": "Ouro",
+    "lat": -27.3379,
+    "lon": -51.6194
+  },
+  "80845": {
+    "codigo_tse": 80845,
+    "codigo_ibge": 4211850,
+    "nome": "Ouro Verde",
+    "lat": -26.692,
+    "lon": -52.3108
+  },
+  "81442": {
+    "codigo_tse": 81442,
+    "codigo_ibge": 4211876,
+    "nome": "Paial",
+    "lat": -27.2541,
+    "lon": -52.4975
+  },
+  "81264": {
+    "codigo_tse": 81264,
+    "codigo_ibge": 4211892,
+    "nome": "Painel",
+    "lat": -27.9234,
+    "lon": -50.0972
+  },
+  "82333": {
+    "codigo_tse": 82333,
+    "codigo_ibge": 4211900,
+    "nome": "Palhoça",
+    "lat": -27.6455,
+    "lon": -48.6697
+  },
+  "82350": {
+    "codigo_tse": 82350,
+    "codigo_ibge": 4212007,
+    "nome": "Palma Sola",
+    "lat": -26.3471,
+    "lon": -53.2771
+  },
+  "81566": {
+    "codigo_tse": 81566,
+    "codigo_ibge": 4212056,
+    "nome": "Palmeira",
+    "lat": -27.583,
+    "lon": -50.1577
+  },
+  "82376": {
+    "codigo_tse": 82376,
+    "codigo_ibge": 4212106,
+    "nome": "Palmitos",
+    "lat": -27.0702,
+    "lon": -53.1586
+  },
+  "82392": {
+    "codigo_tse": 82392,
+    "codigo_ibge": 4212205,
+    "nome": "Papanduva",
+    "lat": -26.3777,
+    "lon": -50.1419
+  },
+  "80705": {
+    "codigo_tse": 80705,
+    "codigo_ibge": 4212239,
+    "nome": "Paraíso",
+    "lat": -26.62,
+    "lon": -53.6716
+  },
+  "80403": {
+    "codigo_tse": 80403,
+    "codigo_ibge": 4212254,
+    "nome": "Passo De Torres",
+    "lat": -29.3099,
+    "lon": -49.722
+  },
+  "80624": {
+    "codigo_tse": 80624,
+    "codigo_ibge": 4212270,
+    "nome": "Passos Maia",
+    "lat": -26.7829,
+    "lon": -52.0568
+  },
+  "82414": {
+    "codigo_tse": 82414,
+    "codigo_ibge": 4212304,
+    "nome": "Paulo Lopes",
+    "lat": -27.9607,
+    "lon": -48.6864
+  },
+  "82430": {
+    "codigo_tse": 82430,
+    "codigo_ibge": 4212403,
+    "nome": "Pedras Grandes",
+    "lat": -28.4339,
+    "lon": -49.1949
+  },
+  "82457": {
+    "codigo_tse": 82457,
+    "codigo_ibge": 4212502,
+    "nome": "Penha",
+    "lat": -26.7754,
+    "lon": -48.6465
+  },
+  "82473": {
+    "codigo_tse": 82473,
+    "codigo_ibge": 4212601,
+    "nome": "Peritiba",
+    "lat": -27.3754,
+    "lon": -51.9018
+  },
+  "83925": {
+    "codigo_tse": 83925,
+    "codigo_ibge": 4212650,
+    "nome": "Pescaria Brava",
+    "lat": -28.3966,
+    "lon": -48.8864
+  },
+  "82490": {
+    "codigo_tse": 82490,
+    "codigo_ibge": 4212700,
+    "nome": "Petrolândia",
+    "lat": -27.5346,
+    "lon": -49.6937
+  },
+  "82538": {
+    "codigo_tse": 82538,
+    "codigo_ibge": 4212908,
+    "nome": "Pinhalzinho",
+    "lat": -26.8495,
+    "lon": -52.9913
+  },
+  "82554": {
+    "codigo_tse": 82554,
+    "codigo_ibge": 4213005,
+    "nome": "Pinheiro Preto",
+    "lat": -27.0483,
+    "lon": -51.2243
+  },
+  "82570": {
+    "codigo_tse": 82570,
+    "codigo_ibge": 4213104,
+    "nome": "Piratuba",
+    "lat": -27.4242,
+    "lon": -51.7668
+  },
+  "80543": {
+    "codigo_tse": 80543,
+    "codigo_ibge": 4213153,
+    "nome": "Planalto Alegre",
+    "lat": -27.0704,
+    "lon": -52.867
+  },
+  "82597": {
+    "codigo_tse": 82597,
+    "codigo_ibge": 4213203,
+    "nome": "Pomerode",
+    "lat": -26.7384,
+    "lon": -49.1785
+  },
+  "82619": {
+    "codigo_tse": 82619,
+    "codigo_ibge": 4213302,
+    "nome": "Ponte Alta",
+    "lat": -27.4835,
+    "lon": -50.3764
+  },
+  "80926": {
+    "codigo_tse": 80926,
+    "codigo_ibge": 4213351,
+    "nome": "Ponte Alta Do Norte",
+    "lat": -27.1591,
+    "lon": -50.4659
+  },
+  "82635": {
+    "codigo_tse": 82635,
+    "codigo_ibge": 4213401,
+    "nome": "Ponte Serrada",
+    "lat": -26.8733,
+    "lon": -52.0112
+  },
+  "82651": {
+    "codigo_tse": 82651,
+    "codigo_ibge": 4213500,
+    "nome": "Porto Belo",
+    "lat": -27.1586,
+    "lon": -48.5469
+  },
+  "82678": {
+    "codigo_tse": 82678,
+    "codigo_ibge": 4213609,
+    "nome": "Porto União",
+    "lat": -26.2451,
+    "lon": -51.0759
+  },
+  "82694": {
+    "codigo_tse": 82694,
+    "codigo_ibge": 4213708,
+    "nome": "Pouso Redondo",
+    "lat": -27.2567,
+    "lon": -49.9301
+  },
+  "82716": {
+    "codigo_tse": 82716,
+    "codigo_ibge": 4213807,
+    "nome": "Praia Grande",
+    "lat": -29.1918,
+    "lon": -49.9525
+  },
+  "82732": {
+    "codigo_tse": 82732,
+    "codigo_ibge": 4213906,
+    "nome": "Presidente Castello Branco",
+    "lat": -27.2218,
+    "lon": -51.8089
+  },
+  "82759": {
+    "codigo_tse": 82759,
+    "codigo_ibge": 4214003,
+    "nome": "Presidente Getúlio",
+    "lat": -27.0474,
+    "lon": -49.6246
+  },
+  "82775": {
+    "codigo_tse": 82775,
+    "codigo_ibge": 4214102,
+    "nome": "Presidente Nereu",
+    "lat": -27.2768,
+    "lon": -49.3889
+  },
+  "81647": {
+    "codigo_tse": 81647,
+    "codigo_ibge": 4214151,
+    "nome": "Princesa",
+    "lat": -26.4441,
+    "lon": -53.5994
+  },
+  "82791": {
+    "codigo_tse": 82791,
+    "codigo_ibge": 4214201,
+    "nome": "Quilombo",
+    "lat": -26.7264,
+    "lon": -52.724
+  },
+  "82813": {
+    "codigo_tse": 82813,
+    "codigo_ibge": 4214300,
+    "nome": "Rancho Queimado",
+    "lat": -27.6727,
+    "lon": -49.0191
+  },
+  "82830": {
+    "codigo_tse": 82830,
+    "codigo_ibge": 4214409,
+    "nome": "Rio Das Antas",
+    "lat": -26.8946,
+    "lon": -51.0674
+  },
+  "82856": {
+    "codigo_tse": 82856,
+    "codigo_ibge": 4214508,
+    "nome": "Rio Do Campo",
+    "lat": -26.9452,
+    "lon": -50.136
+  },
+  "82872": {
+    "codigo_tse": 82872,
+    "codigo_ibge": 4214607,
+    "nome": "Rio Do Oeste",
+    "lat": -27.1952,
+    "lon": -49.7989
+  },
+  "82910": {
+    "codigo_tse": 82910,
+    "codigo_ibge": 4214805,
+    "nome": "Rio Do Sul",
+    "lat": -27.2156,
+    "lon": -49.643
+  },
+  "82899": {
+    "codigo_tse": 82899,
+    "codigo_ibge": 4214706,
+    "nome": "Rio Dos Cedros",
+    "lat": -26.7398,
+    "lon": -49.2718
+  },
+  "82937": {
+    "codigo_tse": 82937,
+    "codigo_ibge": 4214904,
+    "nome": "Rio Fortuna",
+    "lat": -28.1244,
+    "lon": -49.1068
+  },
+  "82953": {
+    "codigo_tse": 82953,
+    "codigo_ibge": 4215000,
+    "nome": "Rio Negrinho",
+    "lat": -26.2591,
+    "lon": -49.5177
+  },
+  "80608": {
+    "codigo_tse": 80608,
+    "codigo_ibge": 4215059,
+    "nome": "Rio Rufino",
+    "lat": -27.8592,
+    "lon": -49.7754
+  },
+  "80560": {
+    "codigo_tse": 80560,
+    "codigo_ibge": 4215075,
+    "nome": "Riqueza",
+    "lat": -27.0653,
+    "lon": -53.3265
+  },
+  "82970": {
+    "codigo_tse": 82970,
+    "codigo_ibge": 4215109,
+    "nome": "Rodeio",
+    "lat": -26.9243,
+    "lon": -49.3649
+  },
+  "82996": {
+    "codigo_tse": 82996,
+    "codigo_ibge": 4215208,
+    "nome": "Romelândia",
+    "lat": -26.6809,
+    "lon": -53.3172
+  },
+  "83011": {
+    "codigo_tse": 83011,
+    "codigo_ibge": 4215307,
+    "nome": "Salete",
+    "lat": -26.9798,
+    "lon": -49.9988
+  },
+  "81523": {
+    "codigo_tse": 81523,
+    "codigo_ibge": 4215356,
+    "nome": "Saltinho",
+    "lat": -26.6049,
+    "lon": -53.0578
+  },
+  "83038": {
+    "codigo_tse": 83038,
+    "codigo_ibge": 4215406,
+    "nome": "Salto Veloso",
+    "lat": -26.903,
+    "lon": -51.4043
+  },
+  "81000": {
+    "codigo_tse": 81000,
+    "codigo_ibge": 4215455,
+    "nome": "Sangão",
+    "lat": -28.6326,
+    "lon": -49.1322
+  },
+  "83054": {
+    "codigo_tse": 83054,
+    "codigo_ibge": 4215505,
+    "nome": "Santa Cecília",
+    "lat": -26.9592,
+    "lon": -50.4252
+  },
+  "80721": {
+    "codigo_tse": 80721,
+    "codigo_ibge": 4215554,
+    "nome": "Santa Helena",
+    "lat": -26.937,
+    "lon": -53.6214
+  },
+  "83070": {
+    "codigo_tse": 83070,
+    "codigo_ibge": 4215604,
+    "nome": "Santa Rosa De Lima",
+    "lat": -28.0331,
+    "lon": -49.133
+  },
+  "80241": {
+    "codigo_tse": 80241,
+    "codigo_ibge": 4215653,
+    "nome": "Santa Rosa Do Sul",
+    "lat": -29.1313,
+    "lon": -49.7109
+  },
+  "80349": {
+    "codigo_tse": 80349,
+    "codigo_ibge": 4215679,
+    "nome": "Santa Terezinha",
+    "lat": -26.7813,
+    "lon": -50.009
+  },
+  "81507": {
+    "codigo_tse": 81507,
+    "codigo_ibge": 4215687,
+    "nome": "Santa Terezinha Do Progresso",
+    "lat": -26.624,
+    "lon": -53.1997
+  },
+  "81205": {
+    "codigo_tse": 81205,
+    "codigo_ibge": 4215695,
+    "nome": "Santiago Do Sul",
+    "lat": -26.6388,
+    "lon": -52.6799
+  },
+  "83097": {
+    "codigo_tse": 83097,
+    "codigo_ibge": 4215703,
+    "nome": "Santo Amaro Da Imperatriz",
+    "lat": -27.6852,
+    "lon": -48.7813
+  },
+  "83119": {
+    "codigo_tse": 83119,
+    "codigo_ibge": 4215802,
+    "nome": "São Bento Do Sul",
+    "lat": -26.2495,
+    "lon": -49.3831
+  },
+  "81485": {
+    "codigo_tse": 81485,
+    "codigo_ibge": 4215752,
+    "nome": "São Bernardino",
+    "lat": -26.4739,
+    "lon": -52.9687
+  },
+  "83135": {
+    "codigo_tse": 83135,
+    "codigo_ibge": 4215901,
+    "nome": "São Bonifácio",
+    "lat": -27.9009,
+    "lon": -48.9326
+  },
+  "83151": {
+    "codigo_tse": 83151,
+    "codigo_ibge": 4216008,
+    "nome": "São Carlos",
+    "lat": -27.0798,
+    "lon": -53.0037
+  },
+  "80942": {
+    "codigo_tse": 80942,
+    "codigo_ibge": 4216057,
+    "nome": "São Cristóvão Do Sul",
+    "lat": -27.2666,
+    "lon": -50.4388
+  },
+  "83178": {
+    "codigo_tse": 83178,
+    "codigo_ibge": 4216107,
+    "nome": "São Domingos",
+    "lat": -26.5548,
+    "lon": -52.5313
+  },
+  "83194": {
+    "codigo_tse": 83194,
+    "codigo_ibge": 4216206,
+    "nome": "São Francisco Do Sul",
+    "lat": -26.2579,
+    "lon": -48.6344
+  },
+  "83216": {
+    "codigo_tse": 83216,
+    "codigo_ibge": 4216305,
+    "nome": "São João Batista",
+    "lat": -27.2772,
+    "lon": -48.8474
+  },
+  "81124": {
+    "codigo_tse": 81124,
+    "codigo_ibge": 4216354,
+    "nome": "São João Do Itaperiú",
+    "lat": -26.6213,
+    "lon": -48.7683
+  },
+  "80640": {
+    "codigo_tse": 80640,
+    "codigo_ibge": 4216255,
+    "nome": "São João Do Oeste",
+    "lat": -27.0984,
+    "lon": -53.5977
+  },
+  "83232": {
+    "codigo_tse": 83232,
+    "codigo_ibge": 4216404,
+    "nome": "São João Do Sul",
+    "lat": -29.2154,
+    "lon": -49.8094
+  },
+  "83259": {
+    "codigo_tse": 83259,
+    "codigo_ibge": 4216503,
+    "nome": "São Joaquim",
+    "lat": -28.2887,
+    "lon": -49.9457
+  },
+  "83275": {
+    "codigo_tse": 83275,
+    "codigo_ibge": 4216602,
+    "nome": "São José",
+    "lat": -27.6136,
+    "lon": -48.6366
+  },
+  "83291": {
+    "codigo_tse": 83291,
+    "codigo_ibge": 4216701,
+    "nome": "São José Do Cedro",
+    "lat": -26.4561,
+    "lon": -53.4955
+  },
+  "83313": {
+    "codigo_tse": 83313,
+    "codigo_ibge": 4216800,
+    "nome": "São José Do Cerrito",
+    "lat": -27.6602,
+    "lon": -50.5733
+  },
+  "83330": {
+    "codigo_tse": 83330,
+    "codigo_ibge": 4216909,
+    "nome": "São Lourenço Do Oeste",
+    "lat": -26.3557,
+    "lon": -52.8498
+  },
+  "83356": {
+    "codigo_tse": 83356,
+    "codigo_ibge": 4217006,
+    "nome": "São Ludgero",
+    "lat": -28.3144,
+    "lon": -49.1806
+  },
+  "83372": {
+    "codigo_tse": 83372,
+    "codigo_ibge": 4217105,
+    "nome": "São Martinho",
+    "lat": -28.1609,
+    "lon": -48.9867
+  },
+  "80780": {
+    "codigo_tse": 80780,
+    "codigo_ibge": 4217154,
+    "nome": "São Miguel Da Boa Vista",
+    "lat": -26.687,
+    "lon": -53.2511
+  },
+  "83399": {
+    "codigo_tse": 83399,
+    "codigo_ibge": 4217204,
+    "nome": "São Miguel Do Oeste",
+    "lat": -26.7242,
+    "lon": -53.5163
+  },
+  "81183": {
+    "codigo_tse": 81183,
+    "codigo_ibge": 4217253,
+    "nome": "São Pedro De Alcântara",
+    "lat": -27.5665,
+    "lon": -48.8048
+  },
+  "83410": {
+    "codigo_tse": 83410,
+    "codigo_ibge": 4217303,
+    "nome": "Saudades",
+    "lat": -26.9317,
+    "lon": -53.0021
+  },
+  "83437": {
+    "codigo_tse": 83437,
+    "codigo_ibge": 4217402,
+    "nome": "Schroeder",
+    "lat": -26.4116,
+    "lon": -49.074
+  },
+  "83453": {
+    "codigo_tse": 83453,
+    "codigo_ibge": 4217501,
+    "nome": "Seara",
+    "lat": -27.1564,
+    "lon": -52.299
+  },
+  "80284": {
+    "codigo_tse": 80284,
+    "codigo_ibge": 4217550,
+    "nome": "Serra Alta",
+    "lat": -26.7229,
+    "lon": -53.0409
+  },
+  "83470": {
+    "codigo_tse": 83470,
+    "codigo_ibge": 4217600,
+    "nome": "Siderópolis",
+    "lat": -28.5955,
+    "lon": -49.4314
+  },
+  "83496": {
+    "codigo_tse": 83496,
+    "codigo_ibge": 4217709,
+    "nome": "Sombrio",
+    "lat": -29.108,
+    "lon": -49.6328
+  },
+  "80446": {
+    "codigo_tse": 80446,
+    "codigo_ibge": 4217758,
+    "nome": "Sul Brasil",
+    "lat": -26.7351,
+    "lon": -52.964
+  },
+  "83518": {
+    "codigo_tse": 83518,
+    "codigo_ibge": 4217808,
+    "nome": "Taió",
+    "lat": -27.121,
+    "lon": -49.9942
+  },
+  "83534": {
+    "codigo_tse": 83534,
+    "codigo_ibge": 4217907,
+    "nome": "Tangará",
+    "lat": -27.0996,
+    "lon": -51.2473
+  },
+  "81680": {
+    "codigo_tse": 81680,
+    "codigo_ibge": 4217956,
+    "nome": "Tigrinhos",
+    "lat": -26.6876,
+    "lon": -53.1545
+  },
+  "83550": {
+    "codigo_tse": 83550,
+    "codigo_ibge": 4218004,
+    "nome": "Tijucas",
+    "lat": -27.2354,
+    "lon": -48.6322
+  },
+  "83933": {
+    "codigo_tse": 83933,
+    "codigo_ibge": 4218103,
+    "nome": "Timbé Do Sul",
+    "lat": -28.8287,
+    "lon": -49.842
+  },
+  "83577": {
+    "codigo_tse": 83577,
+    "codigo_ibge": 4218202,
+    "nome": "Timbó",
+    "lat": -26.8246,
+    "lon": -49.269
+  },
+  "80209": {
+    "codigo_tse": 80209,
+    "codigo_ibge": 4218251,
+    "nome": "Timbó Grande",
+    "lat": -26.6127,
+    "lon": -50.6607
+  },
+  "83593": {
+    "codigo_tse": 83593,
+    "codigo_ibge": 4218301,
+    "nome": "Três Barras",
+    "lat": -26.1056,
+    "lon": -50.3197
+  },
+  "81345": {
+    "codigo_tse": 81345,
+    "codigo_ibge": 4218350,
+    "nome": "Treviso",
+    "lat": -28.5097,
+    "lon": -49.4634
+  },
+  "83615": {
+    "codigo_tse": 83615,
+    "codigo_ibge": 4218400,
+    "nome": "Treze De Maio",
+    "lat": -28.5537,
+    "lon": -49.1565
+  },
+  "83631": {
+    "codigo_tse": 83631,
+    "codigo_ibge": 4218509,
+    "nome": "Treze Tílias",
+    "lat": -27.0026,
+    "lon": -51.4084
+  },
+  "83658": {
+    "codigo_tse": 83658,
+    "codigo_ibge": 4218608,
+    "nome": "Trombudo Central",
+    "lat": -27.3033,
+    "lon": -49.793
+  },
+  "83674": {
+    "codigo_tse": 83674,
+    "codigo_ibge": 4218707,
+    "nome": "Tubarão",
+    "lat": -28.4713,
+    "lon": -49.0144
+  },
+  "83682": {
+    "codigo_tse": 83682,
+    "codigo_ibge": 4218756,
+    "nome": "Tunápolis",
+    "lat": -26.9681,
+    "lon": -53.6417
+  },
+  "83690": {
+    "codigo_tse": 83690,
+    "codigo_ibge": 4218806,
+    "nome": "Turvo",
+    "lat": -28.9272,
+    "lon": -49.6831
+  },
+  "80144": {
+    "codigo_tse": 80144,
+    "codigo_ibge": 4218855,
+    "nome": "União Do Oeste",
+    "lat": -26.762,
+    "lon": -52.8541
+  },
+  "83712": {
+    "codigo_tse": 83712,
+    "codigo_ibge": 4218905,
+    "nome": "Urubici",
+    "lat": -28.0157,
+    "lon": -49.5925
+  },
+  "80160": {
+    "codigo_tse": 80160,
+    "codigo_ibge": 4218954,
+    "nome": "Urupema",
+    "lat": -27.9557,
+    "lon": -49.8729
+  },
+  "83739": {
+    "codigo_tse": 83739,
+    "codigo_ibge": 4219002,
+    "nome": "Urussanga",
+    "lat": -28.518,
+    "lon": -49.3238
+  },
+  "83755": {
+    "codigo_tse": 83755,
+    "codigo_ibge": 4219101,
+    "nome": "Vargeão",
+    "lat": -26.8621,
+    "lon": -52.1549
+  },
+  "80462": {
+    "codigo_tse": 80462,
+    "codigo_ibge": 4219150,
+    "nome": "Vargem",
+    "lat": -27.4867,
+    "lon": -50.9724
+  },
+  "80969": {
+    "codigo_tse": 80969,
+    "codigo_ibge": 4219176,
+    "nome": "Vargem Bonita",
+    "lat": -27.0055,
+    "lon": -51.7402
+  },
+  "83771": {
+    "codigo_tse": 83771,
+    "codigo_ibge": 4219200,
+    "nome": "Vidal Ramos",
+    "lat": -27.3886,
+    "lon": -49.3593
+  },
+  "83798": {
+    "codigo_tse": 83798,
+    "codigo_ibge": 4219309,
+    "nome": "Videira",
+    "lat": -27.0086,
+    "lon": -51.1543
+  },
+  "80128": {
+    "codigo_tse": 80128,
+    "codigo_ibge": 4219358,
+    "nome": "Vitor Meireles",
+    "lat": -26.8782,
+    "lon": -49.8328
+  },
+  "83810": {
+    "codigo_tse": 83810,
+    "codigo_ibge": 4219408,
+    "nome": "Witmarsum",
+    "lat": -26.9275,
+    "lon": -49.7947
+  },
+  "83836": {
+    "codigo_tse": 83836,
+    "codigo_ibge": 4219507,
+    "nome": "Xanxerê",
+    "lat": -26.8747,
+    "lon": -52.4036
+  },
+  "83852": {
+    "codigo_tse": 83852,
+    "codigo_ibge": 4219606,
+    "nome": "Xavantina",
+    "lat": -27.0667,
+    "lon": -52.343
+  },
+  "83879": {
+    "codigo_tse": 83879,
+    "codigo_ibge": 4219705,
+    "nome": "Xaxim",
+    "lat": -26.9596,
+    "lon": -52.5374
+  },
+  "81825": {
+    "codigo_tse": 81825,
+    "codigo_ibge": 4219853,
+    "nome": "Zortéa",
+    "lat": -27.4521,
+    "lon": -51.552
+  }
+}

@@ -165,9 +165,9 @@
     "pct_secoes_com_anomalias": 14.07,
     "total_anomalias_detectadas": 7027,
     "por_severidade": {
-      "ALTA": 1165,
+      "ALTA": 1081,
       "MEDIA": 325,
-      "BAIXA": 2366,
+      "BAIXA": 2450,
       "INFO": 3171
     },
     "por_categoria": {
@@ -457,14 +457,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81353 (Ibirama), mas a seção pertence ao município 80128 (Vitor Meireles).",
+          "description": "Correspondência vinculada ao município 81353 (Ibirama), mas a seção pertence ao município 80128 (Vitor Meireles) [Cidades Vizinhas / Limítrofes - ~36.7 km].",
           "details": {
             "mun_secao": 80128,
             "mun_secao_nome": "Vitor Meireles",
             "mun_corr": 81353,
-            "mun_corr_nome": "Ibirama"
+            "mun_corr_nome": "Ibirama",
+            "distancia_km": 36.7,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -628,8 +630,8 @@
       "secao": 77,
       "key": "SC-80063-Z0015-S0077",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 6,
       "anomalias": [
         {
@@ -669,14 +671,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81477 (Indaial), mas a seção pertence ao município 80063 (Apiúna).",
+          "description": "Correspondência vinculada ao município 81477 (Indaial), mas a seção pertence ao município 80063 (Apiúna) [Cidades Vizinhas / Limítrofes - ~21.6 km].",
           "details": {
             "mun_secao": 80063,
             "mun_secao_nome": "Apiúna",
             "mun_corr": 81477,
-            "mun_corr_nome": "Indaial"
+            "mun_corr_nome": "Indaial",
+            "distancia_km": 21.6,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -815,8 +819,8 @@
       "secao": 6,
       "key": "SC-80136-Z0004-S0006",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 85,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (85%)",
       "total_anomalias": 6,
       "anomalias": [
         {
@@ -858,12 +862,14 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80608 (Rio Rufino), mas a seção pertence ao município 80136 (Alfredo Wagner).",
+          "description": "Correspondência vinculada ao município 80608 (Rio Rufino), mas a seção pertence ao município 80136 (Alfredo Wagner) [CIDADES NÃO VIZINHAS / DISTANTES - ~47.5 km].",
           "details": {
             "mun_secao": 80136,
             "mun_secao_nome": "Alfredo Wagner",
             "mun_corr": 80608,
-            "mun_corr_nome": "Rio Rufino"
+            "mun_corr_nome": "Rio Rufino",
+            "distancia_km": 47.5,
+            "cidades_vizinhas": false
           }
         },
         {
@@ -1059,12 +1065,14 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande).",
+          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande) [CIDADES NÃO VIZINHAS / DISTANTES - ~45.1 km].",
           "details": {
             "mun_secao": 80209,
             "mun_secao_nome": "Timbó Grande",
             "mun_corr": 83054,
-            "mun_corr_nome": "Santa Cecília"
+            "mun_corr_nome": "Santa Cecília",
+            "distancia_km": 45.1,
+            "cidades_vizinhas": false
           }
         },
         {
@@ -1190,8 +1198,8 @@
       "secao": 154,
       "key": "SC-81175-Z0064-S0154",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 7,
       "anomalias": [
         {
@@ -1231,14 +1239,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar) [Cidades Vizinhas / Limítrofes - ~13.2 km].",
           "details": {
             "mun_secao": 81175,
             "mun_secao_nome": "Gaspar",
             "mun_corr": 81396,
-            "mun_corr_nome": "Ilhota"
+            "mun_corr_nome": "Ilhota",
+            "distancia_km": 13.2,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -1594,8 +1604,8 @@
       "secao": 138,
       "key": "SC-80063-Z0015-S0138",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 6,
       "anomalias": [
         {
@@ -1635,14 +1645,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81477 (Indaial), mas a seção pertence ao município 80063 (Apiúna).",
+          "description": "Correspondência vinculada ao município 81477 (Indaial), mas a seção pertence ao município 80063 (Apiúna) [Cidades Vizinhas / Limítrofes - ~21.6 km].",
           "details": {
             "mun_secao": 80063,
             "mun_secao_nome": "Apiúna",
             "mun_corr": 81477,
-            "mun_corr_nome": "Indaial"
+            "mun_corr_nome": "Indaial",
+            "distancia_km": 21.6,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -1778,8 +1790,8 @@
       "secao": 41,
       "key": "SC-80209-Z0051-S0041",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 85,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (85%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -1832,12 +1844,14 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande).",
+          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande) [CIDADES NÃO VIZINHAS / DISTANTES - ~45.1 km].",
           "details": {
             "mun_secao": 80209,
             "mun_secao_nome": "Timbó Grande",
             "mun_corr": 83054,
-            "mun_corr_nome": "Santa Cecília"
+            "mun_corr_nome": "Santa Cecília",
+            "distancia_km": 45.1,
+            "cidades_vizinhas": false
           }
         }
       ],
@@ -1953,8 +1967,8 @@
       "secao": 42,
       "key": "SC-80209-Z0051-S0042",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 85,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (85%)",
       "total_anomalias": 6,
       "anomalias": [
         {
@@ -2007,12 +2021,14 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande).",
+          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande) [CIDADES NÃO VIZINHAS / DISTANTES - ~45.1 km].",
           "details": {
             "mun_secao": 80209,
             "mun_secao_nome": "Timbó Grande",
             "mun_corr": 83054,
-            "mun_corr_nome": "Santa Cecília"
+            "mun_corr_nome": "Santa Cecília",
+            "distancia_km": 45.1,
+            "cidades_vizinhas": false
           }
         },
         {
@@ -2139,9 +2155,9 @@
       "zona": 2,
       "secao": 91,
       "key": "SC-80233-Z0002-S0091",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -2192,14 +2208,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos) [Cidades Vizinhas / Limítrofes - ~10.8 km].",
           "details": {
             "mun_secao": 80233,
             "mun_secao_nome": "Antônio Carlos",
             "mun_corr": 80454,
-            "mun_corr_nome": "Biguaçu"
+            "mun_corr_nome": "Biguaçu",
+            "distancia_km": 10.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -2315,8 +2333,8 @@
       "secao": 180,
       "key": "SC-80276-Z0001-S0180",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -2367,14 +2385,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81728 (Balneário Arroio Do Silva), mas a seção pertence ao município 80276 (Araranguá).",
+          "description": "Correspondência vinculada ao município 81728 (Balneário Arroio Do Silva), mas a seção pertence ao município 80276 (Araranguá) [Cidades Vizinhas / Limítrofes - ~8.3 km].",
           "details": {
             "mun_secao": 80276,
             "mun_secao_nome": "Araranguá",
             "mun_corr": 81728,
-            "mun_corr_nome": "Balneário Arroio Do Silva"
+            "mun_corr_nome": "Balneário Arroio Do Silva",
+            "distancia_km": 8.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -2672,8 +2692,8 @@
       "secao": 124,
       "key": "SC-80683-Z0027-S0124",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -2713,14 +2733,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83194 (São Francisco Do Sul), mas a seção pertence ao município 80683 (Balneário Barra Do Sul).",
+          "description": "Correspondência vinculada ao município 83194 (São Francisco Do Sul), mas a seção pertence ao município 80683 (Balneário Barra Do Sul) [Cidades Vizinhas / Limítrofes - ~22.5 km].",
           "details": {
             "mun_secao": 80683,
             "mun_secao_nome": "Balneário Barra Do Sul",
             "mun_corr": 83194,
-            "mun_corr_nome": "São Francisco Do Sul"
+            "mun_corr_nome": "São Francisco Do Sul",
+            "distancia_km": 22.5,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -3581,8 +3603,8 @@
       "secao": 320,
       "key": "SC-81779-Z0018-S0320",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -3633,14 +3655,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 81779 (Joaçaba).",
+          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 81779 (Joaçaba) [Cidades Vizinhas / Limítrofes - ~6.3 km].",
           "details": {
             "mun_secao": 81779,
             "mun_secao_nome": "Joaçaba",
             "mun_corr": 81809,
-            "mun_corr_nome": "Luzerna"
+            "mun_corr_nome": "Luzerna",
+            "distancia_km": 6.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -3939,8 +3963,8 @@
       "secao": 143,
       "key": "SC-82678-Z0025-S0143",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -3980,14 +4004,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82090 (Matos Costa), mas a seção pertence ao município 82678 (Porto União).",
+          "description": "Correspondência vinculada ao município 82090 (Matos Costa), mas a seção pertence ao município 82678 (Porto União) [Cidades Vizinhas / Limítrofes - ~26.2 km].",
           "details": {
             "mun_secao": 82678,
             "mun_secao_nome": "Porto União",
             "mun_corr": 82090,
-            "mun_corr_nome": "Matos Costa"
+            "mun_corr_nome": "Matos Costa",
+            "distancia_km": 26.2,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -4120,8 +4146,8 @@
       "secao": 93,
       "key": "SC-83259-Z0028-S0093",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -4172,14 +4198,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80160 (Urupema), mas a seção pertence ao município 83259 (São Joaquim).",
+          "description": "Correspondência vinculada ao município 80160 (Urupema), mas a seção pertence ao município 83259 (São Joaquim) [Cidades Vizinhas / Limítrofes - ~37.7 km].",
           "details": {
             "mun_secao": 83259,
             "mun_secao_nome": "São Joaquim",
             "mun_corr": 80160,
-            "mun_corr_nome": "Urupema"
+            "mun_corr_nome": "Urupema",
+            "distancia_km": 37.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -4295,8 +4323,8 @@
       "secao": 200,
       "key": "SC-80071-Z0085-S0200",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -4336,14 +4364,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81817 (Lacerdópolis), mas a seção pertence ao município 80071 (Água Doce).",
+          "description": "Correspondência vinculada ao município 81817 (Lacerdópolis), mas a seção pertence ao município 80071 (Água Doce) [Cidades Vizinhas / Limítrofes - ~28.8 km].",
           "details": {
             "mun_secao": 80071,
             "mun_secao_nome": "Água Doce",
             "mun_corr": 81817,
-            "mun_corr_nome": "Lacerdópolis"
+            "mun_corr_nome": "Lacerdópolis",
+            "distancia_km": 28.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -4471,8 +4501,8 @@
       "secao": 76,
       "key": "SC-80306-Z0034-S0076",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -4512,14 +4542,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83739 (Urussanga), mas a seção pertence ao município 80306 (Cocal Do Sul).",
+          "description": "Correspondência vinculada ao município 83739 (Urussanga), mas a seção pertence ao município 80306 (Cocal Do Sul) [Cidades Vizinhas / Limítrofes - ~9.0 km].",
           "details": {
             "mun_secao": 80306,
             "mun_secao_nome": "Cocal Do Sul",
             "mun_corr": 83739,
-            "mun_corr_nome": "Urussanga"
+            "mun_corr_nome": "Urussanga",
+            "distancia_km": 9.0,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -4637,8 +4669,8 @@
       "secao": 116,
       "key": "SC-80390-Z0103-S0116",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -4678,14 +4710,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80616 (Camboriú), mas a seção pertence ao município 80390 (Balneário Camboriú).",
+          "description": "Correspondência vinculada ao município 80616 (Camboriú), mas a seção pertence ao município 80390 (Balneário Camboriú) [Cidades Vizinhas / Limítrofes - ~3.8 km].",
           "details": {
             "mun_secao": 80390,
             "mun_secao_nome": "Balneário Camboriú",
             "mun_corr": 80616,
-            "mun_corr_nome": "Camboriú"
+            "mun_corr_nome": "Camboriú",
+            "distancia_km": 3.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -4801,8 +4835,8 @@
       "secao": 53,
       "key": "SC-80420-Z0057-S0053",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -4842,14 +4876,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83658 (Trombudo Central), mas a seção pertence ao município 80420 (Braço Do Trombudo).",
+          "description": "Correspondência vinculada ao município 83658 (Trombudo Central), mas a seção pertence ao município 80420 (Braço Do Trombudo) [Cidades Vizinhas / Limítrofes - ~10.7 km].",
           "details": {
             "mun_secao": 80420,
             "mun_secao_nome": "Braço Do Trombudo",
             "mun_corr": 83658,
-            "mun_corr_nome": "Trombudo Central"
+            "mun_corr_nome": "Trombudo Central",
+            "distancia_km": 10.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -4965,8 +5001,8 @@
       "secao": 134,
       "key": "SC-80438-Z0032-S0134",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -5006,14 +5042,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83577 (Timbó), mas a seção pertence ao município 80438 (Benedito Novo).",
+          "description": "Correspondência vinculada ao município 83577 (Timbó), mas a seção pertence ao município 80438 (Benedito Novo) [Cidades Vizinhas / Limítrofes - ~10.2 km].",
           "details": {
             "mun_secao": 80438,
             "mun_secao_nome": "Benedito Novo",
             "mun_corr": 83577,
-            "mun_corr_nome": "Timbó"
+            "mun_corr_nome": "Timbó",
+            "distancia_km": 10.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -5277,9 +5315,9 @@
       "zona": 103,
       "secao": 167,
       "key": "SC-80616-Z0103-S0167",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -5308,14 +5346,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80390 (Balneário Camboriú), mas a seção pertence ao município 80616 (Camboriú).",
+          "description": "Correspondência vinculada ao município 80390 (Balneário Camboriú), mas a seção pertence ao município 80616 (Camboriú) [Cidades Vizinhas / Limítrofes - ~3.8 km].",
           "details": {
             "mun_secao": 80616,
             "mun_secao_nome": "Camboriú",
             "mun_corr": 80390,
-            "mun_corr_nome": "Balneário Camboriú"
+            "mun_corr_nome": "Balneário Camboriú",
+            "distancia_km": 3.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -5457,8 +5497,8 @@
       "secao": 327,
       "key": "SC-80810-Z0094-S0327",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -5498,14 +5538,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81442 (Paial), mas a seção pertence ao município 80810 (Chapecó).",
+          "description": "Correspondência vinculada ao município 81442 (Paial), mas a seção pertence ao município 80810 (Chapecó) [Cidades Vizinhas / Limítrofes - ~20.7 km].",
           "details": {
             "mun_secao": 80810,
             "mun_secao_nome": "Chapecó",
             "mun_corr": 81442,
-            "mun_corr_nome": "Paial"
+            "mun_corr_nome": "Paial",
+            "distancia_km": 20.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -5812,8 +5854,8 @@
       "secao": 98,
       "key": "SC-81256-Z0082-S0098",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -5853,14 +5895,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80705 (Paraíso), mas a seção pertence ao município 81256 (Guaraciaba).",
+          "description": "Correspondência vinculada ao município 80705 (Paraíso), mas a seção pertence ao município 81256 (Guaraciaba) [Cidades Vizinhas / Limítrofes - ~14.7 km].",
           "details": {
             "mun_secao": 81256,
             "mun_secao_nome": "Guaraciaba",
             "mun_corr": 80705,
-            "mun_corr_nome": "Paraíso"
+            "mun_corr_nome": "Paraíso",
+            "distancia_km": 14.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -5980,8 +6024,8 @@
       "secao": 71,
       "key": "SC-81388-Z0043-S0071",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -6021,14 +6065,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83836 (Xanxerê), mas a seção pertence ao município 81388 (Bom Jesus).",
+          "description": "Correspondência vinculada ao município 83836 (Xanxerê), mas a seção pertence ao município 81388 (Bom Jesus) [Cidades Vizinhas / Limítrofes - ~15.8 km].",
           "details": {
             "mun_secao": 81388,
             "mun_secao_nome": "Bom Jesus",
             "mun_corr": 83836,
-            "mun_corr_nome": "Xanxerê"
+            "mun_corr_nome": "Xanxerê",
+            "distancia_km": 15.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -6494,8 +6540,8 @@
       "secao": 49,
       "key": "SC-81655-Z0065-S0049",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -6535,14 +6581,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83682 (Tunápolis), mas a seção pertence ao município 81655 (Itapiranga).",
+          "description": "Correspondência vinculada ao município 83682 (Tunápolis), mas a seção pertence ao município 81655 (Itapiranga) [Cidades Vizinhas / Limítrofes - ~23.2 km].",
           "details": {
             "mun_secao": 81655,
             "mun_secao_nome": "Itapiranga",
             "mun_corr": 83682,
-            "mun_corr_nome": "Tunápolis"
+            "mun_corr_nome": "Tunápolis",
+            "distancia_km": 23.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -6821,8 +6869,8 @@
       "secao": 67,
       "key": "SC-81957-Z0102-S0067",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -6862,14 +6910,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82775 (Presidente Nereu), mas a seção pertence ao município 81957 (Lontras).",
+          "description": "Correspondência vinculada ao município 82775 (Presidente Nereu), mas a seção pertence ao município 81957 (Lontras) [Cidades Vizinhas / Limítrofes - ~18.8 km].",
           "details": {
             "mun_secao": 81957,
             "mun_secao_nome": "Lontras",
             "mun_corr": 82775,
-            "mun_corr_nome": "Presidente Nereu"
+            "mun_corr_nome": "Presidente Nereu",
+            "distancia_km": 18.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -7148,9 +7198,9 @@
       "zona": 68,
       "secao": 58,
       "key": "SC-82511-Z0068-S0058",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -7179,14 +7229,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras) [Cidades Vizinhas / Limítrofes - ~2.8 km].",
           "details": {
             "mun_secao": 82511,
             "mun_secao_nome": "Balneário Piçarras",
             "mun_corr": 82457,
-            "mun_corr_nome": "Penha"
+            "mun_corr_nome": "Penha",
+            "distancia_km": 2.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -7316,8 +7368,8 @@
       "secao": 138,
       "key": "SC-82570-Z0037-S0138",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -7357,14 +7409,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 82570 (Piratuba).",
+          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 82570 (Piratuba) [Cidades Vizinhas / Limítrofes - ~17.4 km].",
           "details": {
             "mun_secao": 82570,
             "mun_secao_nome": "Piratuba",
             "mun_corr": 82317,
-            "mun_corr_nome": "Ouro"
+            "mun_corr_nome": "Ouro",
+            "distancia_km": 17.4,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -7480,8 +7534,8 @@
       "secao": 284,
       "key": "SC-82651-Z0031-S0284",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -7521,14 +7575,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 82651 (Porto Belo).",
+          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 82651 (Porto Belo) [Cidades Vizinhas / Limítrofes - ~3.9 km].",
           "details": {
             "mun_secao": 82651,
             "mun_secao_nome": "Porto Belo",
             "mun_corr": 80985,
-            "mun_corr_nome": "Bombinhas"
+            "mun_corr_nome": "Bombinhas",
+            "distancia_km": 3.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -7644,8 +7700,8 @@
       "secao": 120,
       "key": "SC-82759-Z0014-S0120",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -7685,14 +7741,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81353 (Ibirama), mas a seção pertence ao município 82759 (Presidente Getúlio).",
+          "description": "Correspondência vinculada ao município 81353 (Ibirama), mas a seção pertence ao município 82759 (Presidente Getúlio) [Cidades Vizinhas / Limítrofes - ~10.5 km].",
           "details": {
             "mun_secao": 82759,
             "mun_secao_nome": "Presidente Getúlio",
             "mun_corr": 81353,
-            "mun_corr_nome": "Ibirama"
+            "mun_corr_nome": "Ibirama",
+            "distancia_km": 10.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -7810,8 +7868,8 @@
       "secao": 103,
       "key": "SC-82830-Z0006-S0103",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -7851,14 +7909,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80578 (Caçador), mas a seção pertence ao município 82830 (Rio Das Antas).",
+          "description": "Correspondência vinculada ao município 80578 (Caçador), mas a seção pertence ao município 82830 (Rio Das Antas) [Cidades Vizinhas / Limítrofes - ~14.3 km].",
           "details": {
             "mun_secao": 82830,
             "mun_secao_nome": "Rio Das Antas",
             "mun_corr": 80578,
-            "mun_corr_nome": "Caçador"
+            "mun_corr_nome": "Caçador",
+            "distancia_km": 14.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -7974,8 +8034,8 @@
       "secao": 71,
       "key": "SC-82899-Z0055-S0071",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -8015,14 +8075,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros).",
+          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros) [Cidades Vizinhas / Limítrofes - ~9.3 km].",
           "details": {
             "mun_secao": 82899,
             "mun_secao_nome": "Rio Dos Cedros",
             "mun_corr": 82597,
-            "mun_corr_nome": "Pomerode"
+            "mun_corr_nome": "Pomerode",
+            "distancia_km": 9.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -8140,8 +8202,8 @@
       "secao": 76,
       "key": "SC-82899-Z0055-S0076",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -8181,14 +8243,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros).",
+          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros) [Cidades Vizinhas / Limítrofes - ~9.3 km].",
           "details": {
             "mun_secao": 82899,
             "mun_secao_nome": "Rio Dos Cedros",
             "mun_corr": 82597,
-            "mun_corr_nome": "Pomerode"
+            "mun_corr_nome": "Pomerode",
+            "distancia_km": 9.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -8304,8 +8368,8 @@
       "secao": 147,
       "key": "SC-83135-Z0067-S0147",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -8345,14 +8409,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80110 (Águas Mornas), mas a seção pertence ao município 83135 (São Bonifácio).",
+          "description": "Correspondência vinculada ao município 80110 (Águas Mornas), mas a seção pertence ao município 83135 (São Bonifácio) [Cidades Vizinhas / Limítrofes - ~25.1 km].",
           "details": {
             "mun_secao": 83135,
             "mun_secao_nome": "São Bonifácio",
             "mun_corr": 80110,
-            "mun_corr_nome": "Águas Mornas"
+            "mun_corr_nome": "Águas Mornas",
+            "distancia_km": 25.1,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -8468,8 +8534,8 @@
       "secao": 201,
       "key": "SC-83275-Z0029-S0201",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 5,
       "anomalias": [
         {
@@ -8509,14 +8575,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81183 (São Pedro De Alcântara), mas a seção pertence ao município 83275 (São José).",
+          "description": "Correspondência vinculada ao município 81183 (São Pedro De Alcântara), mas a seção pertence ao município 83275 (São José) [Cidades Vizinhas / Limítrofes - ~17.4 km].",
           "details": {
             "mun_secao": 83275,
             "mun_secao_nome": "São José",
             "mun_corr": 81183,
-            "mun_corr_nome": "São Pedro De Alcântara"
+            "mun_corr_nome": "São Pedro De Alcântara",
+            "distancia_km": 17.4,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -8813,8 +8881,8 @@
       "secao": 102,
       "key": "SC-83496-Z0054-S0102",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -8854,14 +8922,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82716 (Praia Grande), mas a seção pertence ao município 83496 (Sombrio).",
+          "description": "Correspondência vinculada ao município 82716 (Praia Grande), mas a seção pertence ao município 83496 (Sombrio) [Cidades Vizinhas / Limítrofes - ~32.4 km].",
           "details": {
             "mun_secao": 83496,
             "mun_secao_nome": "Sombrio",
             "mun_corr": 82716,
-            "mun_corr_nome": "Praia Grande"
+            "mun_corr_nome": "Praia Grande",
+            "distancia_km": 32.4,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -8979,8 +9049,8 @@
       "secao": 164,
       "key": "SC-83496-Z0054-S0164",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -9020,14 +9090,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83232 (São João Do Sul), mas a seção pertence ao município 83496 (Sombrio).",
+          "description": "Correspondência vinculada ao município 83232 (São João Do Sul), mas a seção pertence ao município 83496 (Sombrio) [Cidades Vizinhas / Limítrofes - ~20.9 km].",
           "details": {
             "mun_secao": 83496,
             "mun_secao_nome": "Sombrio",
             "mun_corr": 83232,
-            "mun_corr_nome": "São João Do Sul"
+            "mun_corr_nome": "São João Do Sul",
+            "distancia_km": 20.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -9141,8 +9213,8 @@
       "secao": 133,
       "key": "SC-83550-Z0031-S0133",
       "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 4,
       "anomalias": [
         {
@@ -9182,14 +9254,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 83550 (Tijucas).",
+          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 83550 (Tijucas) [Cidades Vizinhas / Limítrofes - ~15.9 km].",
           "details": {
             "mun_secao": 83550,
             "mun_secao_nome": "Tijucas",
             "mun_corr": 80985,
-            "mun_corr_nome": "Bombinhas"
+            "mun_corr_nome": "Bombinhas",
+            "distancia_km": 15.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -9783,9 +9857,9 @@
       "zona": 1,
       "secao": 7,
       "key": "SC-80276-Z0001-S0007",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -9814,14 +9888,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81728 (Balneário Arroio Do Silva), mas a seção pertence ao município 80276 (Araranguá).",
+          "description": "Correspondência vinculada ao município 81728 (Balneário Arroio Do Silva), mas a seção pertence ao município 80276 (Araranguá) [Cidades Vizinhas / Limítrofes - ~8.3 km].",
           "details": {
             "mun_secao": 80276,
             "mun_secao_nome": "Araranguá",
             "mun_corr": 81728,
-            "mun_corr_nome": "Balneário Arroio Do Silva"
+            "mun_corr_nome": "Balneário Arroio Do Silva",
+            "distancia_km": 8.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -10264,9 +10340,9 @@
       "zona": 46,
       "secao": 80,
       "key": "SC-80365-Z0046-S0080",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -10295,14 +10371,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83518 (Taió), mas a seção pertence ao município 80365 (Mirim Doce).",
+          "description": "Correspondência vinculada ao município 83518 (Taió), mas a seção pertence ao município 80365 (Mirim Doce) [Cidades Vizinhas / Limítrofes - ~11.9 km].",
           "details": {
             "mun_secao": 80365,
             "mun_secao_nome": "Mirim Doce",
             "mun_corr": 83518,
-            "mun_corr_nome": "Taió"
+            "mun_corr_nome": "Taió",
+            "distancia_km": 11.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -10417,22 +10495,24 @@
       "zona": 103,
       "secao": 128,
       "key": "SC-80390-Z0103-S0128",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 3,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80616 (Camboriú), mas a seção pertence ao município 80390 (Balneário Camboriú).",
+          "description": "Correspondência vinculada ao município 80616 (Camboriú), mas a seção pertence ao município 80390 (Balneário Camboriú) [Cidades Vizinhas / Limítrofes - ~3.8 km].",
           "details": {
             "mun_secao": 80390,
             "mun_secao_nome": "Balneário Camboriú",
             "mun_corr": 80616,
-            "mun_corr_nome": "Camboriú"
+            "mun_corr_nome": "Camboriú",
+            "distancia_km": 3.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -10575,9 +10655,9 @@
       "zona": 32,
       "secao": 7,
       "key": "SC-80438-Z0032-S0007",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -10606,14 +10686,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83577 (Timbó), mas a seção pertence ao município 80438 (Benedito Novo).",
+          "description": "Correspondência vinculada ao município 83577 (Timbó), mas a seção pertence ao município 80438 (Benedito Novo) [Cidades Vizinhas / Limítrofes - ~10.2 km].",
           "details": {
             "mun_secao": 80438,
             "mun_secao_nome": "Benedito Novo",
             "mun_corr": 83577,
-            "mun_corr_nome": "Timbó"
+            "mun_corr_nome": "Timbó",
+            "distancia_km": 10.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -10730,9 +10812,9 @@
       "zona": 83,
       "secao": 63,
       "key": "SC-80446-Z0083-S0063",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -10761,14 +10843,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80918 (Cunha Porã), mas a seção pertence ao município 80446 (Sul Brasil).",
+          "description": "Correspondência vinculada ao município 80918 (Cunha Porã), mas a seção pertence ao município 80446 (Sul Brasil) [Cidades Vizinhas / Limítrofes - ~26.8 km].",
           "details": {
             "mun_secao": 80446,
             "mun_secao_nome": "Sul Brasil",
             "mun_corr": 80918,
-            "mun_corr_nome": "Cunha Porã"
+            "mun_corr_nome": "Cunha Porã",
+            "distancia_km": 26.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -12121,9 +12205,9 @@
       "zona": 18,
       "secao": 312,
       "key": "SC-80772-Z0018-S0312",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -12152,14 +12236,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 80772 (Catanduvas).",
+          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 80772 (Catanduvas) [Cidades Vizinhas / Limítrofes - ~20.2 km].",
           "details": {
             "mun_secao": 80772,
             "mun_secao_nome": "Catanduvas",
             "mun_corr": 81809,
-            "mun_corr_nome": "Luzerna"
+            "mun_corr_nome": "Luzerna",
+            "distancia_km": 20.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -13196,22 +13282,24 @@
       "zona": 11,
       "secao": 76,
       "key": "SC-80934-Z0011-S0076",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 3,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80942 (São Cristóvão Do Sul), mas a seção pertence ao município 80934 (Curitibanos).",
+          "description": "Correspondência vinculada ao município 80942 (São Cristóvão Do Sul), mas a seção pertence ao município 80934 (Curitibanos) [Cidades Vizinhas / Limítrofes - ~14.2 km].",
           "details": {
             "mun_secao": 80934,
             "mun_secao_nome": "Curitibanos",
             "mun_corr": 80942,
-            "mun_corr_nome": "São Cristóvão Do Sul"
+            "mun_corr_nome": "São Cristóvão Do Sul",
+            "distancia_km": 14.2,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -13356,9 +13444,9 @@
       "zona": 45,
       "secao": 20,
       "key": "SC-80950-Z0045-S0020",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -13387,14 +13475,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83399 (São Miguel Do Oeste), mas a seção pertence ao município 80950 (Descanso).",
+          "description": "Correspondência vinculada ao município 83399 (São Miguel Do Oeste), mas a seção pertence ao município 80950 (Descanso) [Cidades Vizinhas / Limítrofes - ~11.5 km].",
           "details": {
             "mun_secao": 80950,
             "mun_secao_nome": "Descanso",
             "mun_corr": 83399,
-            "mun_corr_nome": "São Miguel Do Oeste"
+            "mun_corr_nome": "São Miguel Do Oeste",
+            "distancia_km": 11.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -15077,9 +15167,9 @@
       "zona": 98,
       "secao": 172,
       "key": "SC-81060-Z0098-S0172",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -15108,14 +15198,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80896 (Criciúma), mas a seção pertence ao município 81060 (Forquilhinha).",
+          "description": "Correspondência vinculada ao município 80896 (Criciúma), mas a seção pertence ao município 81060 (Forquilhinha) [Cidades Vizinhas / Limítrofes - ~13.1 km].",
           "details": {
             "mun_secao": 81060,
             "mun_secao_nome": "Forquilhinha",
             "mun_corr": 80896,
-            "mun_corr_nome": "Criciúma"
+            "mun_corr_nome": "Criciúma",
+            "distancia_km": 13.1,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -15389,9 +15481,9 @@
       "zona": 64,
       "secao": 135,
       "key": "SC-81175-Z0064-S0135",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -15420,14 +15512,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar) [Cidades Vizinhas / Limítrofes - ~13.2 km].",
           "details": {
             "mun_secao": 81175,
             "mun_secao_nome": "Gaspar",
             "mun_corr": 81396,
-            "mun_corr_nome": "Ilhota"
+            "mun_corr_nome": "Ilhota",
+            "distancia_km": 13.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -15711,9 +15805,9 @@
       "zona": 60,
       "secao": 102,
       "key": "SC-81272-Z0060-S0102",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -15742,14 +15836,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82074 (Massaranduba), mas a seção pertence ao município 81272 (Guaramirim).",
+          "description": "Correspondência vinculada ao município 82074 (Massaranduba), mas a seção pertence ao município 81272 (Guaramirim) [Cidades Vizinhas / Limítrofes - ~15.8 km].",
           "details": {
             "mun_secao": 81272,
             "mun_secao_nome": "Guaramirim",
             "mun_corr": 82074,
-            "mun_corr_nome": "Massaranduba"
+            "mun_corr_nome": "Massaranduba",
+            "distancia_km": 15.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -16653,8 +16749,8 @@
       "secao": 1,
       "key": "SC-81590-Z0038-S0001",
       "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "fraud_score": 70,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (70%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -16662,12 +16758,14 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80349 (Santa Terezinha), mas a seção pertence ao município 81590 (Itaiópolis).",
+          "description": "Correspondência vinculada ao município 80349 (Santa Terezinha), mas a seção pertence ao município 81590 (Itaiópolis) [CIDADES NÃO VIZINHAS / DISTANTES - ~50.2 km].",
           "details": {
             "mun_secao": 81590,
             "mun_secao_nome": "Itaiópolis",
             "mun_corr": 80349,
-            "mun_corr_nome": "Santa Terezinha"
+            "mun_corr_nome": "Santa Terezinha",
+            "distancia_km": 50.2,
+            "cidades_vizinhas": false
           }
         },
         {
@@ -17726,9 +17824,9 @@
       "zona": 65,
       "secao": 37,
       "key": "SC-81655-Z0065-S0037",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -17757,14 +17855,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83682 (Tunápolis), mas a seção pertence ao município 81655 (Itapiranga).",
+          "description": "Correspondência vinculada ao município 83682 (Tunápolis), mas a seção pertence ao município 81655 (Itapiranga) [Cidades Vizinhas / Limítrofes - ~23.2 km].",
           "details": {
             "mun_secao": 81655,
             "mun_secao_nome": "Itapiranga",
             "mun_corr": 83682,
-            "mun_corr_nome": "Tunápolis"
+            "mun_corr_nome": "Tunápolis",
+            "distancia_km": 23.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -17879,9 +17979,9 @@
       "zona": 39,
       "secao": 27,
       "key": "SC-81671-Z0039-S0027",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -17910,14 +18010,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81450 (Imbuia), mas a seção pertence ao município 81671 (Ituporanga).",
+          "description": "Correspondência vinculada ao município 81450 (Imbuia), mas a seção pertence ao município 81671 (Ituporanga) [Cidades Vizinhas / Limítrofes - ~19.4 km].",
           "details": {
             "mun_secao": 81671,
             "mun_secao_nome": "Ituporanga",
             "mun_corr": 81450,
-            "mun_corr_nome": "Imbuia"
+            "mun_corr_nome": "Imbuia",
+            "distancia_km": 19.4,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -18197,9 +18299,9 @@
       "zona": 18,
       "secao": 309,
       "key": "SC-81779-Z0018-S0309",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -18228,14 +18330,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 81779 (Joaçaba).",
+          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 81779 (Joaçaba) [Cidades Vizinhas / Limítrofes - ~6.3 km].",
           "details": {
             "mun_secao": 81779,
             "mun_secao_nome": "Joaçaba",
             "mun_corr": 81809,
-            "mun_corr_nome": "Luzerna"
+            "mun_corr_nome": "Luzerna",
+            "distancia_km": 6.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -18507,9 +18611,9 @@
       "zona": 37,
       "secao": 144,
       "key": "SC-81825-Z0037-S0144",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -18538,14 +18642,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 81825 (Zortéa).",
+          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 81825 (Zortéa) [Cidades Vizinhas / Limítrofes - ~14.3 km].",
           "details": {
             "mun_secao": 81825,
             "mun_secao_nome": "Zortéa",
             "mun_corr": 82317,
-            "mun_corr_nome": "Ouro"
+            "mun_corr_nome": "Ouro",
+            "distancia_km": 14.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -20834,22 +20940,24 @@
       "zona": 68,
       "secao": 62,
       "key": "SC-82511-Z0068-S0062",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 3,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras) [Cidades Vizinhas / Limítrofes - ~2.8 km].",
           "details": {
             "mun_secao": 82511,
             "mun_secao_nome": "Balneário Piçarras",
             "mun_corr": 82457,
-            "mun_corr_nome": "Penha"
+            "mun_corr_nome": "Penha",
+            "distancia_km": 2.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -22233,22 +22341,24 @@
       "zona": 49,
       "secao": 148,
       "key": "SC-83178-Z0049-S0148",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 3,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83330 (São Lourenço Do Oeste), mas a seção pertence ao município 83178 (São Domingos).",
+          "description": "Correspondência vinculada ao município 83330 (São Lourenço Do Oeste), mas a seção pertence ao município 83178 (São Domingos) [Cidades Vizinhas / Limítrofes - ~38.7 km].",
           "details": {
             "mun_secao": 83178,
             "mun_secao_nome": "São Domingos",
             "mun_corr": 83330,
-            "mun_corr_nome": "São Lourenço Do Oeste"
+            "mun_corr_nome": "São Lourenço Do Oeste",
+            "distancia_km": 38.7,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -23333,9 +23443,9 @@
       "zona": 31,
       "secao": 42,
       "key": "SC-83550-Z0031-S0042",
-      "worst_severity": "ALTA",
-      "fraud_score": 80,
-      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (80%)",
+      "worst_severity": "MEDIA",
+      "fraud_score": 55,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (55%)",
       "total_anomalias": 3,
       "anomalias": [
         {
@@ -23364,14 +23474,16 @@
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 83550 (Tijucas).",
+          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 83550 (Tijucas) [Cidades Vizinhas / Limítrofes - ~15.9 km].",
           "details": {
             "mun_secao": 83550,
             "mun_secao_nome": "Tijucas",
             "mun_corr": 80985,
-            "mun_corr_nome": "Bombinhas"
+            "mun_corr_nome": "Bombinhas",
+            "distancia_km": 15.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -282376,22 +282488,24 @@
       "zona": 71,
       "secao": 50,
       "key": "SC-80012-Z0071-S0050",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80845 (Ouro Verde), mas a seção pertence ao município 80012 (Abelardo Luz).",
+          "description": "Correspondência vinculada ao município 80845 (Ouro Verde), mas a seção pertence ao município 80012 (Abelardo Luz) [Cidades Vizinhas / Limítrofes - ~13.4 km].",
           "details": {
             "mun_secao": 80012,
             "mun_secao_nome": "Abelardo Luz",
             "mun_corr": 80845,
-            "mun_corr_nome": "Ouro Verde"
+            "mun_corr_nome": "Ouro Verde",
+            "distancia_km": 13.4,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -283973,8 +284087,8 @@
       "secao": 17,
       "key": "SC-80136-Z0004-S0017",
       "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "fraud_score": 70,
+      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (70%)",
       "total_anomalias": 1,
       "anomalias": [
         {
@@ -283982,12 +284096,14 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80608 (Rio Rufino), mas a seção pertence ao município 80136 (Alfredo Wagner).",
+          "description": "Correspondência vinculada ao município 80608 (Rio Rufino), mas a seção pertence ao município 80136 (Alfredo Wagner) [CIDADES NÃO VIZINHAS / DISTANTES - ~47.5 km].",
           "details": {
             "mun_secao": 80136,
             "mun_secao_nome": "Alfredo Wagner",
             "mun_corr": 80608,
-            "mun_corr_nome": "Rio Rufino"
+            "mun_corr_nome": "Rio Rufino",
+            "distancia_km": 47.5,
+            "cidades_vizinhas": false
           }
         }
       ],
@@ -284665,22 +284781,24 @@
       "zona": 2,
       "secao": 85,
       "key": "SC-80233-Z0002-S0085",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos) [Cidades Vizinhas / Limítrofes - ~10.8 km].",
           "details": {
             "mun_secao": 80233,
             "mun_secao_nome": "Antônio Carlos",
             "mun_corr": 80454,
-            "mun_corr_nome": "Biguaçu"
+            "mun_corr_nome": "Biguaçu",
+            "distancia_km": 10.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -284795,22 +284913,24 @@
       "zona": 2,
       "secao": 241,
       "key": "SC-80233-Z0002-S0241",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 2,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos) [Cidades Vizinhas / Limítrofes - ~10.8 km].",
           "details": {
             "mun_secao": 80233,
             "mun_secao_nome": "Antônio Carlos",
             "mun_corr": 80454,
-            "mun_corr_nome": "Biguaçu"
+            "mun_corr_nome": "Biguaçu",
+            "distancia_km": 10.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -284939,22 +285059,24 @@
       "zona": 2,
       "secao": 247,
       "key": "SC-80233-Z0002-S0247",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos) [Cidades Vizinhas / Limítrofes - ~10.8 km].",
           "details": {
             "mun_secao": 80233,
             "mun_secao_nome": "Antônio Carlos",
             "mun_corr": 80454,
-            "mun_corr_nome": "Biguaçu"
+            "mun_corr_nome": "Biguaçu",
+            "distancia_km": 10.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -285071,22 +285193,24 @@
       "zona": 54,
       "secao": 66,
       "key": "SC-80241-Z0054-S0066",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80403 (Passo De Torres), mas a seção pertence ao município 80241 (Santa Rosa Do Sul).",
+          "description": "Correspondência vinculada ao município 80403 (Passo De Torres), mas a seção pertence ao município 80241 (Santa Rosa Do Sul) [Cidades Vizinhas / Limítrofes - ~19.9 km].",
           "details": {
             "mun_secao": 80241,
             "mun_secao_nome": "Santa Rosa Do Sul",
             "mun_corr": 80403,
-            "mun_corr_nome": "Passo De Torres"
+            "mun_corr_nome": "Passo De Torres",
+            "distancia_km": 19.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -286277,22 +286401,24 @@
       "zona": 83,
       "secao": 99,
       "key": "SC-80284-Z0083-S0099",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 2,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80918 (Cunha Porã), mas a seção pertence ao município 80284 (Serra Alta).",
+          "description": "Correspondência vinculada ao município 80918 (Cunha Porã), mas a seção pertence ao município 80284 (Serra Alta) [Cidades Vizinhas / Limítrofes - ~22.8 km].",
           "details": {
             "mun_secao": 80284,
             "mun_secao_nome": "Serra Alta",
             "mun_corr": 80918,
-            "mun_corr_nome": "Cunha Porã"
+            "mun_corr_nome": "Cunha Porã",
+            "distancia_km": 22.8,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -286421,22 +286547,24 @@
       "zona": 34,
       "secao": 177,
       "key": "SC-80306-Z0034-S0177",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83739 (Urussanga), mas a seção pertence ao município 80306 (Cocal Do Sul).",
+          "description": "Correspondência vinculada ao município 83739 (Urussanga), mas a seção pertence ao município 80306 (Cocal Do Sul) [Cidades Vizinhas / Limítrofes - ~9.0 km].",
           "details": {
             "mun_secao": 80306,
             "mun_secao_nome": "Cocal Do Sul",
             "mun_corr": 83739,
-            "mun_corr_nome": "Urussanga"
+            "mun_corr_nome": "Urussanga",
+            "distancia_km": 9.0,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -288265,22 +288393,24 @@
       "zona": 7,
       "secao": 59,
       "key": "SC-80462-Z0007-S0059",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80691 (Campos Novos), mas a seção pertence ao município 80462 (Vargem).",
+          "description": "Correspondência vinculada ao município 80691 (Campos Novos), mas a seção pertence ao município 80462 (Vargem) [Cidades Vizinhas / Limítrofes - ~27.0 km].",
           "details": {
             "mun_secao": 80462,
             "mun_secao_nome": "Vargem",
             "mun_corr": 80691,
-            "mun_corr_nome": "Campos Novos"
+            "mun_corr_nome": "Campos Novos",
+            "distancia_km": 27.0,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -288395,22 +288525,24 @@
       "zona": 90,
       "secao": 29,
       "key": "SC-80489-Z0090-S0029",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80047 (Lindóia Do Sul), mas a seção pertence ao município 80489 (Arabutã).",
+          "description": "Correspondência vinculada ao município 80047 (Lindóia Do Sul), mas a seção pertence ao município 80489 (Arabutã) [Cidades Vizinhas / Limítrofes - ~13.7 km].",
           "details": {
             "mun_secao": 80489,
             "mun_secao_nome": "Arabutã",
             "mun_corr": 80047,
-            "mun_corr_nome": "Lindóia Do Sul"
+            "mun_corr_nome": "Lindóia Do Sul",
+            "distancia_km": 13.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -289349,22 +289481,24 @@
       "zona": 41,
       "secao": 137,
       "key": "SC-80560-Z0041-S0137",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 2,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82376 (Palmitos), mas a seção pertence ao município 80560 (Riqueza).",
+          "description": "Correspondência vinculada ao município 82376 (Palmitos), mas a seção pertence ao município 80560 (Riqueza) [Cidades Vizinhas / Limítrofes - ~16.6 km].",
           "details": {
             "mun_secao": 80560,
             "mun_secao_nome": "Riqueza",
             "mun_corr": 82376,
-            "mun_corr_nome": "Palmitos"
+            "mun_corr_nome": "Palmitos",
+            "distancia_km": 16.6,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -293539,22 +293673,24 @@
       "zona": 37,
       "secao": 105,
       "key": "SC-80756-Z0037-S0105",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 80756 (Capinzal).",
+          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 80756 (Capinzal) [Cidades Vizinhas / Limítrofes - ~1.7 km].",
           "details": {
             "mun_secao": 80756,
             "mun_secao_nome": "Capinzal",
             "mun_corr": 82317,
-            "mun_corr_nome": "Ouro"
+            "mun_corr_nome": "Ouro",
+            "distancia_km": 1.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -298382,22 +298518,24 @@
       "zona": 33,
       "secao": 50,
       "key": "SC-81000-Z0033-S0050",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 83674 (Tubarão), mas a seção pertence ao município 81000 (Sangão).",
+          "description": "Correspondência vinculada ao município 83674 (Tubarão), mas a seção pertence ao município 81000 (Sangão) [Cidades Vizinhas / Limítrofes - ~21.3 km].",
           "details": {
             "mun_secao": 81000,
             "mun_secao_nome": "Sangão",
             "mun_corr": 83674,
-            "mun_corr_nome": "Tubarão"
+            "mun_corr_nome": "Tubarão",
+            "distancia_km": 21.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -298512,22 +298650,24 @@
       "zona": 85,
       "secao": 157,
       "key": "SC-81019-Z0085-S0157",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81817 (Lacerdópolis), mas a seção pertence ao município 81019 (Erval Velho).",
+          "description": "Correspondência vinculada ao município 81817 (Lacerdópolis), mas a seção pertence ao município 81019 (Erval Velho) [Cidades Vizinhas / Limítrofes - ~11.5 km].",
           "details": {
             "mun_secao": 81019,
             "mun_secao_nome": "Erval Velho",
             "mun_corr": 81817,
-            "mun_corr_nome": "Lacerdópolis"
+            "mun_corr_nome": "Lacerdópolis",
+            "distancia_km": 11.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -302455,22 +302595,24 @@
       "zona": 73,
       "secao": 97,
       "key": "SC-81132-Z0073-S0097",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81434 (Imbituba), mas a seção pertence ao município 81132 (Garopaba).",
+          "description": "Correspondência vinculada ao município 81434 (Imbituba), mas a seção pertence ao município 81132 (Garopaba) [Cidades Vizinhas / Limítrofes - ~22.8 km].",
           "details": {
             "mun_secao": 81132,
             "mun_secao_nome": "Garopaba",
             "mun_corr": 81434,
-            "mun_corr_nome": "Imbituba"
+            "mun_corr_nome": "Imbituba",
+            "distancia_km": 22.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -302591,22 +302733,24 @@
       "zona": 64,
       "secao": 29,
       "key": "SC-81175-Z0064-S0029",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar) [Cidades Vizinhas / Limítrofes - ~13.2 km].",
           "details": {
             "mun_secao": 81175,
             "mun_secao_nome": "Gaspar",
             "mun_corr": 81396,
-            "mun_corr_nome": "Ilhota"
+            "mun_corr_nome": "Ilhota",
+            "distancia_km": 13.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -302723,22 +302867,24 @@
       "zona": 64,
       "secao": 121,
       "key": "SC-81175-Z0064-S0121",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar) [Cidades Vizinhas / Limítrofes - ~13.2 km].",
           "details": {
             "mun_secao": 81175,
             "mun_secao_nome": "Gaspar",
             "mun_corr": 81396,
-            "mun_corr_nome": "Ilhota"
+            "mun_corr_nome": "Ilhota",
+            "distancia_km": 13.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -302853,22 +302999,24 @@
       "zona": 64,
       "secao": 132,
       "key": "SC-81175-Z0064-S0132",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar) [Cidades Vizinhas / Limítrofes - ~13.2 km].",
           "details": {
             "mun_secao": 81175,
             "mun_secao_nome": "Gaspar",
             "mun_corr": 81396,
-            "mun_corr_nome": "Ilhota"
+            "mun_corr_nome": "Ilhota",
+            "distancia_km": 13.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -302985,22 +303133,24 @@
       "zona": 64,
       "secao": 139,
       "key": "SC-81175-Z0064-S0139",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar) [Cidades Vizinhas / Limítrofes - ~13.2 km].",
           "details": {
             "mun_secao": 81175,
             "mun_secao_nome": "Gaspar",
             "mun_corr": 81396,
-            "mun_corr_nome": "Ilhota"
+            "mun_corr_nome": "Ilhota",
+            "distancia_km": 13.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -306094,22 +306244,24 @@
       "zona": 15,
       "secao": 50,
       "key": "SC-81477-Z0015-S0050",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80330 (Ascurra), mas a seção pertence ao município 81477 (Indaial).",
+          "description": "Correspondência vinculada ao município 80330 (Ascurra), mas a seção pertence ao município 81477 (Indaial) [Cidades Vizinhas / Limítrofes - ~15.5 km].",
           "details": {
             "mun_secao": 81477,
             "mun_secao_nome": "Indaial",
             "mun_corr": 80330,
-            "mun_corr_nome": "Ascurra"
+            "mun_corr_nome": "Ascurra",
+            "distancia_km": 15.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -306228,22 +306380,24 @@
       "zona": 15,
       "secao": 63,
       "key": "SC-81477-Z0015-S0063",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80330 (Ascurra), mas a seção pertence ao município 81477 (Indaial).",
+          "description": "Correspondência vinculada ao município 80330 (Ascurra), mas a seção pertence ao município 81477 (Indaial) [Cidades Vizinhas / Limítrofes - ~15.5 km].",
           "details": {
             "mun_secao": 81477,
             "mun_secao_nome": "Indaial",
             "mun_corr": 80330,
-            "mun_corr_nome": "Ascurra"
+            "mun_corr_nome": "Ascurra",
+            "distancia_km": 15.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -306360,22 +306514,24 @@
       "zona": 15,
       "secao": 69,
       "key": "SC-81477-Z0015-S0069",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80063 (Apiúna), mas a seção pertence ao município 81477 (Indaial).",
+          "description": "Correspondência vinculada ao município 80063 (Apiúna), mas a seção pertence ao município 81477 (Indaial) [Cidades Vizinhas / Limítrofes - ~21.6 km].",
           "details": {
             "mun_secao": 81477,
             "mun_secao_nome": "Indaial",
             "mun_corr": 80063,
-            "mun_corr_nome": "Apiúna"
+            "mun_corr_nome": "Apiúna",
+            "distancia_km": 21.6,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -306492,22 +306648,24 @@
       "zona": 90,
       "secao": 66,
       "key": "SC-81515-Z0090-S0066",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80047 (Lindóia Do Sul), mas a seção pertence ao município 81515 (Ipumirim).",
+          "description": "Correspondência vinculada ao município 80047 (Lindóia Do Sul), mas a seção pertence ao município 81515 (Ipumirim) [Cidades Vizinhas / Limítrofes - ~6.4 km].",
           "details": {
             "mun_secao": 81515,
             "mun_secao_nome": "Ipumirim",
             "mun_corr": 80047,
-            "mun_corr_nome": "Lindóia Do Sul"
+            "mun_corr_nome": "Lindóia Do Sul",
+            "distancia_km": 6.4,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -307027,21 +307185,23 @@
       "secao": 73,
       "key": "SC-81604-Z0058-S0073",
       "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "fraud_score": 20,
+      "fraud_label": "Anomalia Moderada / Risco Médio (20%)",
       "total_anomalias": 2,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82058 (Maravilha), mas a seção pertence ao município 81604 (Flor Do Sertão).",
+          "description": "Correspondência vinculada ao município 82058 (Maravilha), mas a seção pertence ao município 81604 (Flor Do Sertão) [Cidades Vizinhas / Limítrofes - ~17.6 km].",
           "details": {
             "mun_secao": 81604,
             "mun_secao_nome": "Flor Do Sertão",
             "mun_corr": 82058,
-            "mun_corr_nome": "Maravilha"
+            "mun_corr_nome": "Maravilha",
+            "distancia_km": 17.6,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -317908,22 +318068,24 @@
       "zona": 37,
       "secao": 60,
       "key": "SC-82317-Z0037-S0060",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80756 (Capinzal), mas a seção pertence ao município 82317 (Ouro).",
+          "description": "Correspondência vinculada ao município 80756 (Capinzal), mas a seção pertence ao município 82317 (Ouro) [Cidades Vizinhas / Limítrofes - ~1.7 km].",
           "details": {
             "mun_secao": 82317,
             "mun_secao_nome": "Ouro",
             "mun_corr": 80756,
-            "mun_corr_nome": "Capinzal"
+            "mun_corr_nome": "Capinzal",
+            "distancia_km": 1.7,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -319797,22 +319959,24 @@
       "zona": 39,
       "secao": 97,
       "key": "SC-82490-Z0039-S0097",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81701 (Chapadão Do Lageado), mas a seção pertence ao município 82490 (Petrolândia).",
+          "description": "Correspondência vinculada ao município 81701 (Chapadão Do Lageado), mas a seção pertence ao município 82490 (Petrolândia) [Cidades Vizinhas / Limítrofes - ~15.1 km].",
           "details": {
             "mun_secao": 82490,
             "mun_secao_nome": "Petrolândia",
             "mun_corr": 81701,
-            "mun_corr_nome": "Chapadão Do Lageado"
+            "mun_corr_nome": "Chapadão Do Lageado",
+            "distancia_km": 15.1,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -320058,22 +320222,24 @@
       "zona": 68,
       "secao": 74,
       "key": "SC-82511-Z0068-S0074",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras) [Cidades Vizinhas / Limítrofes - ~2.8 km].",
           "details": {
             "mun_secao": 82511,
             "mun_secao_nome": "Balneário Piçarras",
             "mun_corr": 82457,
-            "mun_corr_nome": "Penha"
+            "mun_corr_nome": "Penha",
+            "distancia_km": 2.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -320325,22 +320491,24 @@
       "zona": 68,
       "secao": 143,
       "key": "SC-82511-Z0068-S0143",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras) [Cidades Vizinhas / Limítrofes - ~2.8 km].",
           "details": {
             "mun_secao": 82511,
             "mun_secao_nome": "Balneário Piçarras",
             "mun_corr": 82457,
-            "mun_corr_nome": "Penha"
+            "mun_corr_nome": "Penha",
+            "distancia_km": 2.8,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -320459,22 +320627,24 @@
       "zona": 11,
       "secao": 89,
       "key": "SC-82619-Z0011-S0089",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80942 (São Cristóvão Do Sul), mas a seção pertence ao município 82619 (Ponte Alta).",
+          "description": "Correspondência vinculada ao município 80942 (São Cristóvão Do Sul), mas a seção pertence ao município 82619 (Ponte Alta) [Cidades Vizinhas / Limítrofes - ~24.9 km].",
           "details": {
             "mun_secao": 82619,
             "mun_secao_nome": "Ponte Alta",
             "mun_corr": 80942,
-            "mun_corr_nome": "São Cristóvão Do Sul"
+            "mun_corr_nome": "São Cristóvão Do Sul",
+            "distancia_km": 24.9,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -322185,22 +322355,24 @@
       "zona": 55,
       "secao": 80,
       "key": "SC-82899-Z0055-S0080",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros).",
+          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros) [Cidades Vizinhas / Limítrofes - ~9.3 km].",
           "details": {
             "mun_secao": 82899,
             "mun_secao_nome": "Rio Dos Cedros",
             "mun_corr": 82597,
-            "mun_corr_nome": "Pomerode"
+            "mun_corr_nome": "Pomerode",
+            "distancia_km": 9.3,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -323962,22 +324134,24 @@
       "zona": 27,
       "secao": 76,
       "key": "SC-83194-Z0027-S0076",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80683 (Balneário Barra Do Sul), mas a seção pertence ao município 83194 (São Francisco Do Sul).",
+          "description": "Correspondência vinculada ao município 80683 (Balneário Barra Do Sul), mas a seção pertence ao município 83194 (São Francisco Do Sul) [Cidades Vizinhas / Limítrofes - ~22.5 km].",
           "details": {
             "mun_secao": 83194,
             "mun_secao_nome": "São Francisco Do Sul",
             "mun_corr": 80683,
-            "mun_corr_nome": "Balneário Barra Do Sul"
+            "mun_corr_nome": "Balneário Barra Do Sul",
+            "distancia_km": 22.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -324231,22 +324405,24 @@
       "zona": 27,
       "secao": 169,
       "key": "SC-83194-Z0027-S0169",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80683 (Balneário Barra Do Sul), mas a seção pertence ao município 83194 (São Francisco Do Sul).",
+          "description": "Correspondência vinculada ao município 80683 (Balneário Barra Do Sul), mas a seção pertence ao município 83194 (São Francisco Do Sul) [Cidades Vizinhas / Limítrofes - ~22.5 km].",
           "details": {
             "mun_secao": 83194,
             "mun_secao_nome": "São Francisco Do Sul",
             "mun_corr": 80683,
-            "mun_corr_nome": "Balneário Barra Do Sul"
+            "mun_corr_nome": "Balneário Barra Do Sul",
+            "distancia_km": 22.5,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -324365,22 +324541,24 @@
       "zona": 27,
       "secao": 177,
       "key": "SC-83194-Z0027-S0177",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 2,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 80250 (Araquari), mas a seção pertence ao município 83194 (São Francisco Do Sul).",
+          "description": "Correspondência vinculada ao município 80250 (Araquari), mas a seção pertence ao município 83194 (São Francisco Do Sul) [Cidades Vizinhas / Limítrofes - ~15.5 km].",
           "details": {
             "mun_secao": 83194,
             "mun_secao_nome": "São Francisco Do Sul",
             "mun_corr": 80250,
-            "mun_corr_nome": "Araquari"
+            "mun_corr_nome": "Araquari",
+            "distancia_km": 15.5,
+            "cidades_vizinhas": true
           }
         },
         {
@@ -326880,22 +327058,24 @@
       "zona": 17,
       "secao": 311,
       "key": "SC-83437-Z0017-S0311",
-      "worst_severity": "ALTA",
-      "fraud_score": 65,
-      "fraud_label": "Suspeita Elevada de Manipulação / Contaminação (65%)",
+      "worst_severity": "BAIXA",
+      "fraud_score": 3,
+      "fraud_label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
       "total_anomalias": 1,
       "anomalias": [
         {
           "code": "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
           "category": "HARDWARE_E_CARGA",
-          "severity": "ALTA",
+          "severity": "BAIXA",
           "title": "Carga Gerada para Outro Município",
-          "description": "Correspondência vinculada ao município 81752 (Jaraguá Do Sul), mas a seção pertence ao município 83437 (Schroeder).",
+          "description": "Correspondência vinculada ao município 81752 (Jaraguá Do Sul), mas a seção pertence ao município 83437 (Schroeder) [Cidades Vizinhas / Limítrofes - ~8.2 km].",
           "details": {
             "mun_secao": 83437,
             "mun_secao_nome": "Schroeder",
             "mun_corr": 81752,
-            "mun_corr_nome": "Jaraguá Do Sul"
+            "mun_corr_nome": "Jaraguá Do Sul",
+            "distancia_km": 8.2,
+            "cidades_vizinhas": true
           }
         }
       ],
@@ -2136091,21 +2136271,21 @@
       "pct_flavio_comp_2t": 68.5
     },
     "urnas_inconsistentes": {
-      "total_secoes": 940,
-      "comparecimento_1t": 239141,
-      "comparecimento_2t": 244124,
-      "lula_1t": 69256,
-      "lula_2t": 86878,
-      "delta_lula": 17622,
-      "pct_crescimento_lula": 25.44,
-      "flavio_1t": 144941,
-      "flavio_2t": 150866,
-      "delta_flavio": 5925,
-      "pct_crescimento_flavio": 4.09,
-      "pct_lula_validos_2t": 36.54,
-      "pct_flavio_validos_2t": 63.46,
-      "pct_lula_comp_2t": 35.59,
-      "pct_flavio_comp_2t": 61.8
+      "total_secoes": 904,
+      "comparecimento_1t": 229749,
+      "comparecimento_2t": 234397,
+      "lula_1t": 67052,
+      "lula_2t": 84147,
+      "delta_lula": 17095,
+      "pct_crescimento_lula": 25.5,
+      "flavio_1t": 138660,
+      "flavio_2t": 144110,
+      "delta_flavio": 5450,
+      "pct_crescimento_flavio": 3.93,
+      "pct_lula_validos_2t": 36.87,
+      "pct_flavio_validos_2t": 63.13,
+      "pct_lula_comp_2t": 35.9,
+      "pct_flavio_comp_2t": 61.48
     },
     "secoes_queda_maior_comparecimento": {
       "total_secoes": 292,
@@ -2136125,11 +2136305,11 @@
       "pct_flavio_comp_2t": 55.91
     },
     "comparativo_lula": {
-      "votos_reais_inconsistentes": 86878,
-      "votos_esperados_padrao_consistente": 70562,
-      "votos_a_mais_inconsistencias": 16316,
-      "diferenca_pp_validos": 6.87,
-      "diferenca_pp_comparecimento": 6.69,
+      "votos_reais_inconsistentes": 84147,
+      "votos_esperados_padrao_consistente": 67750,
+      "votos_a_mais_inconsistencias": 16397,
+      "diferenca_pp_validos": 7.2,
+      "diferenca_pp_comparecimento": 7.0,
       "votos_a_mais_chk046": 9030
     }
   }
