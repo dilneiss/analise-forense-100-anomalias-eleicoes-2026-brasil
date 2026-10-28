@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 from .models import UrnaKey
 from .municipios import Municipio, load_table
@@ -348,6 +348,7 @@ def evaluate_section_anomalies(
     s2: Optional[SectionExtraction],
     runoff_candidates: tuple[int, int] = (13, 22),
     mun_stats: Optional[dict[str, Any]] = None,
+    mun_resolver: Optional[Callable[[int], Optional[str]]] = None,
 ) -> list[Anomaly]:
     """Aplica o catálogo completo de 100 verificações automatizadas."""
     anomalies: list[Anomaly] = []
@@ -573,14 +574,23 @@ def evaluate_section_anomalies(
 
     # CHK014: Carga de urna em município diferente
     if s2.municipio_correspondencia and s2.municipio_correspondencia != s2.municipio:
+        nome_secao = mun_resolver(s2.municipio) if mun_resolver else None
+        nome_corr = mun_resolver(s2.municipio_correspondencia) if mun_resolver else None
+        txt_secao = f"{s2.municipio} ({nome_secao})" if nome_secao else str(s2.municipio)
+        txt_corr = f"{s2.municipio_correspondencia} ({nome_corr})" if nome_corr else str(s2.municipio_correspondencia)
         anomalies.append(
             Anomaly(
                 code="CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO",
                 category=CAT_HARDWARE,
                 severity=SEV_ALTA,
-                title="Município da correspondência diverge do município da seção",
-                description=f"Correspondência vinculada ao município {s2.municipio_correspondencia}, mas a seção é {s2.municipio}.",
-                details={"mun_secao": s2.municipio, "mun_corr": s2.municipio_correspondencia},
+                title="Carga Gerada para Outro Município",
+                description=f"Correspondência vinculada ao município {txt_corr}, mas a seção pertence ao município {txt_secao}.",
+                details={
+                    "mun_secao": s2.municipio,
+                    "mun_secao_nome": nome_secao,
+                    "mun_corr": s2.municipio_correspondencia,
+                    "mun_corr_nome": nome_corr,
+                },
             )
         )
     # CHK015: Tipo de arquivo não é votacao_ue
@@ -2046,16 +2056,16 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
             for cand, v in s2.votos_presidenciais.items():
                 total_2t_pres[cand] += v
 
-        mun_b = mun_benchmarks.get(k.municipio)
-        anomalies = evaluate_section_anomalies(s1, s2, mun_stats=mun_b)
-        worst_sev = compute_worst_severity(anomalies)
-
         mun_nome = None
         if table:
             mun_obj = table.get((k.uf, k.municipio))
             if mun_obj:
                 mun_nome = mun_obj.nome
 
+        mun_b = mun_benchmarks.get(k.municipio)
+        mun_res = (lambda code: table.get((k.uf, code)).nome if (k.uf, code) in table else None) if table else None
+        anomalies = evaluate_section_anomalies(s1, s2, mun_stats=mun_b, mun_resolver=mun_res)
+        worst_sev = compute_worst_severity(anomalies)
         for a in anomalies:
             anomaly_counter[a.code] += 1
             severity_counter[a.severity] += 1
@@ -2302,6 +2312,12 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         </tr>
         """)
 
+    mun_map_dict = {
+        s["municipio"]: s["municipio_nome"]
+        for s in secoes
+        if s.get("municipio") and s.get("municipio_nome")
+    }
+    mun_map_json = json.dumps(mun_map_dict, ensure_ascii=False)
     anom_json_str = json.dumps(anomalous_sections, ensure_ascii=False)
 
     return f"""<!DOCTYPE html>
@@ -2573,6 +2589,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
     <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
     <script>
         const allSections = {anom_json_str};
+        const munMap = {mun_map_json};
         let currentSort = {{ column: 'severidade', order: 'desc' }};
         let currentFilteredSections = [];
 
@@ -3129,6 +3146,16 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     explicacao: a.description,
                     por_que_suspeito: "Inconsistência técnica identificada nas verificações automáticas de integridade."
                 }};
+                let descText = a.description;
+                if (a.code === 'CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO' && a.details) {{
+                    const mSec = a.details.mun_secao || s.municipio;
+                    const mCorr = a.details.mun_corr || '';
+                    const nSec = a.details.mun_secao_nome || munMap[mSec] || s.municipio_nome || '';
+                    const nCorr = a.details.mun_corr_nome || munMap[mCorr] || '';
+                    const tSec = nSec ? `${{mSec}} (${{nSec}})` : mSec;
+                    const tCorr = nCorr ? `${{mCorr}} (${{nCorr}})` : mCorr;
+                    descText = `Correspondência vinculada ao município ${{tCorr}}, mas a seção pertence ao município ${{tSec}}.`;
+                }}
 
                 anomHtml += `
                     <div class="anomaly-card sev-${{a.severity}}">
@@ -3138,9 +3165,8 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                         </div>
                         <div style="font-weight:700; font-size:0.875rem; color:#1e293b; margin-bottom:0.25rem;">${{g.titulo}}</div>
                         <div style="font-size:0.8125rem; color:#475569; margin-bottom:0.5rem; background:#ffffff; padding:0.4rem 0.6rem; border-radius:0.25rem; border:1px solid #e2e8f0;">
-                            <strong>Dado Identificado na Urna:</strong> ${{a.description}}
+                            <strong>Dado Identificado na Urna:</strong> ${{descText}}
                         </div>
-                        <div style="font-size:0.75rem; color:#334155; margin-bottom:0.35rem;">
                             <strong>💡 O que significa para leigos:</strong> ${{g.explicacao}}
                         </div>
                         <div style="font-size:0.75rem; color:#991b1b;">

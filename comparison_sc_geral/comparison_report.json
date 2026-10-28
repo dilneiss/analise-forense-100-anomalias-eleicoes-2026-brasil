@@ -427,10 +427,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81353, mas a seção é 80128.",
+          "description": "Correspondência vinculada ao município 81353 (Ibirama), mas a seção pertence ao município 80128 (Vitor Meireles).",
           "details": {
             "mun_secao": 80128,
-            "mun_corr": 81353
+            "mun_corr": 81353,
+            "mun_secao_nome": "Vitor Meireles",
+            "mun_corr_nome": "Ibirama"
           }
         },
         {
@@ -608,10 +610,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81477, mas a seção é 80063.",
+          "description": "Correspondência vinculada ao município 81477 (Indaial), mas a seção pertence ao município 80063 (Apiúna).",
           "details": {
             "mun_secao": 80063,
-            "mun_corr": 81477
+            "mun_corr": 81477,
+            "mun_secao_nome": "Apiúna",
+            "mun_corr_nome": "Indaial"
           }
         },
         {
@@ -790,10 +794,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80608, mas a seção é 80136.",
+          "description": "Correspondência vinculada ao município 80608 (Rio Rufino), mas a seção pertence ao município 80136 (Alfredo Wagner).",
           "details": {
             "mun_secao": 80136,
-            "mun_corr": 80608
+            "mun_corr": 80608,
+            "mun_secao_nome": "Alfredo Wagner",
+            "mun_corr_nome": "Rio Rufino"
           }
         },
         {
@@ -982,10 +988,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83054, mas a seção é 80209.",
+          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande).",
           "details": {
             "mun_secao": 80209,
-            "mun_corr": 83054
+            "mun_corr": 83054,
+            "mun_secao_nome": "Timbó Grande",
+            "mun_corr_nome": "Santa Cecília"
           }
         },
         {
@@ -1151,10 +1159,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81396, mas a seção é 81175.",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
           "details": {
             "mun_secao": 81175,
-            "mun_corr": 81396
+            "mun_corr": 81396,
+            "mun_secao_nome": "Gaspar",
+            "mun_corr_nome": "Ilhota"
           }
         },
         {
@@ -1517,10 +1527,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81477, mas a seção é 80063.",
+          "description": "Correspondência vinculada ao município 81477 (Indaial), mas a seção pertence ao município 80063 (Apiúna).",
           "details": {
             "mun_secao": 80063,
-            "mun_corr": 81477
+            "mun_corr": 81477,
+            "mun_secao_nome": "Apiúna",
+            "mun_corr_nome": "Indaial"
           }
         },
         {
@@ -1695,10 +1707,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83054, mas a seção é 80209.",
+          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande).",
           "details": {
             "mun_secao": 80209,
-            "mun_corr": 83054
+            "mun_corr": 83054,
+            "mun_secao_nome": "Timbó Grande",
+            "mun_corr_nome": "Santa Cecília"
           }
         }
       ],
@@ -1865,10 +1879,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83054, mas a seção é 80209.",
+          "description": "Correspondência vinculada ao município 83054 (Santa Cecília), mas a seção pertence ao município 80209 (Timbó Grande).",
           "details": {
             "mun_secao": 80209,
-            "mun_corr": 83054
+            "mun_corr": 83054,
+            "mun_secao_nome": "Timbó Grande",
+            "mun_corr_nome": "Santa Cecília"
           }
         }
       ],
@@ -2035,10 +2051,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80454, mas a seção é 80233.",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
           "details": {
             "mun_secao": 80233,
-            "mun_corr": 80454
+            "mun_corr": 80454,
+            "mun_secao_nome": "Antônio Carlos",
+            "mun_corr_nome": "Biguaçu"
           }
         }
       ],
@@ -2205,10 +2223,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81728, mas a seção é 80276.",
+          "description": "Correspondência vinculada ao município 81728 (Balneário Arroio Do Silva), mas a seção pertence ao município 80276 (Araranguá).",
           "details": {
             "mun_secao": 80276,
-            "mun_corr": 81728
+            "mun_corr": 81728,
+            "mun_secao_nome": "Araranguá",
+            "mun_corr_nome": "Balneário Arroio Do Silva"
           }
         }
       ],
@@ -2540,10 +2560,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83194, mas a seção é 80683.",
+          "description": "Correspondência vinculada ao município 83194 (São Francisco Do Sul), mas a seção pertence ao município 80683 (Balneário Barra Do Sul).",
           "details": {
             "mun_secao": 80683,
-            "mun_corr": 83194
+            "mun_corr": 83194,
+            "mun_secao_nome": "Balneário Barra Do Sul",
+            "mun_corr_nome": "São Francisco Do Sul"
           }
         },
         {
@@ -3421,10 +3443,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81809, mas a seção é 81779.",
+          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 81779 (Joaçaba).",
           "details": {
             "mun_secao": 81779,
-            "mun_corr": 81809
+            "mun_corr": 81809,
+            "mun_secao_nome": "Joaçaba",
+            "mun_corr_nome": "Luzerna"
           }
         }
       ],
@@ -3756,10 +3780,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82090, mas a seção é 82678.",
+          "description": "Correspondência vinculada ao município 82090 (Matos Costa), mas a seção pertence ao município 82678 (Porto União).",
           "details": {
             "mun_secao": 82678,
-            "mun_corr": 82090
+            "mun_corr": 82090,
+            "mun_secao_nome": "Porto União",
+            "mun_corr_nome": "Matos Costa"
           }
         },
         {
@@ -3943,10 +3969,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80160, mas a seção é 83259.",
+          "description": "Correspondência vinculada ao município 80160 (Urupema), mas a seção pertence ao município 83259 (São Joaquim).",
           "details": {
             "mun_secao": 83259,
-            "mun_corr": 80160
+            "mun_corr": 80160,
+            "mun_secao_nome": "São Joaquim",
+            "mun_corr_nome": "Urupema"
           }
         }
       ],
@@ -4102,10 +4130,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81817, mas a seção é 80071.",
+          "description": "Correspondência vinculada ao município 81817 (Lacerdópolis), mas a seção pertence ao município 80071 (Água Doce).",
           "details": {
             "mun_secao": 80071,
-            "mun_corr": 81817
+            "mun_corr": 81817,
+            "mun_secao_nome": "Água Doce",
+            "mun_corr_nome": "Lacerdópolis"
           }
         }
       ],
@@ -4261,10 +4291,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83739, mas a seção é 80306.",
+          "description": "Correspondência vinculada ao município 83739 (Urussanga), mas a seção pertence ao município 80306 (Cocal Do Sul).",
           "details": {
             "mun_secao": 80306,
-            "mun_corr": 83739
+            "mun_corr": 83739,
+            "mun_secao_nome": "Cocal Do Sul",
+            "mun_corr_nome": "Urussanga"
           }
         }
       ],
@@ -4422,10 +4454,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80616, mas a seção é 80390.",
+          "description": "Correspondência vinculada ao município 80616 (Camboriú), mas a seção pertence ao município 80390 (Balneário Camboriú).",
           "details": {
             "mun_secao": 80390,
-            "mun_corr": 80616
+            "mun_corr": 80616,
+            "mun_secao_nome": "Balneário Camboriú",
+            "mun_corr_nome": "Camboriú"
           }
         }
       ],
@@ -4581,10 +4615,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83658, mas a seção é 80420.",
+          "description": "Correspondência vinculada ao município 83658 (Trombudo Central), mas a seção pertence ao município 80420 (Braço Do Trombudo).",
           "details": {
             "mun_secao": 80420,
-            "mun_corr": 83658
+            "mun_corr": 83658,
+            "mun_secao_nome": "Braço Do Trombudo",
+            "mun_corr_nome": "Trombudo Central"
           }
         }
       ],
@@ -4740,10 +4776,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83577, mas a seção é 80438.",
+          "description": "Correspondência vinculada ao município 83577 (Timbó), mas a seção pertence ao município 80438 (Benedito Novo).",
           "details": {
             "mun_secao": 80438,
-            "mun_corr": 83577
+            "mun_corr": 83577,
+            "mun_secao_nome": "Benedito Novo",
+            "mun_corr_nome": "Timbó"
           }
         }
       ],
@@ -5047,10 +5085,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80390, mas a seção é 80616.",
+          "description": "Correspondência vinculada ao município 80390 (Balneário Camboriú), mas a seção pertence ao município 80616 (Camboriú).",
           "details": {
             "mun_secao": 80616,
-            "mun_corr": 80390
+            "mun_corr": 80390,
+            "mun_secao_nome": "Camboriú",
+            "mun_corr_nome": "Balneário Camboriú"
           }
         },
         {
@@ -5220,10 +5260,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81442, mas a seção é 80810.",
+          "description": "Correspondência vinculada ao município 81442 (Paial), mas a seção pertence ao município 80810 (Chapecó).",
           "details": {
             "mun_secao": 80810,
-            "mun_corr": 81442
+            "mun_corr": 81442,
+            "mun_secao_nome": "Chapecó",
+            "mun_corr_nome": "Paial"
           }
         }
       ],
@@ -5541,10 +5583,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80705, mas a seção é 81256.",
+          "description": "Correspondência vinculada ao município 80705 (Paraíso), mas a seção pertence ao município 81256 (Guaraciaba).",
           "details": {
             "mun_secao": 81256,
-            "mun_corr": 80705
+            "mun_corr": 80705,
+            "mun_secao_nome": "Guaraciaba",
+            "mun_corr_nome": "Paraíso"
           }
         }
       ],
@@ -5704,10 +5748,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83836, mas a seção é 81388.",
+          "description": "Correspondência vinculada ao município 83836 (Xanxerê), mas a seção pertence ao município 81388 (Bom Jesus).",
           "details": {
             "mun_secao": 81388,
-            "mun_corr": 83836
+            "mun_corr": 83836,
+            "mun_secao_nome": "Bom Jesus",
+            "mun_corr_nome": "Xanxerê"
           }
         }
       ],
@@ -6182,10 +6228,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83682, mas a seção é 81655.",
+          "description": "Correspondência vinculada ao município 83682 (Tunápolis), mas a seção pertence ao município 81655 (Itapiranga).",
           "details": {
             "mun_secao": 81655,
-            "mun_corr": 83682
+            "mun_corr": 83682,
+            "mun_secao_nome": "Itapiranga",
+            "mun_corr_nome": "Tunápolis"
           }
         }
       ],
@@ -6498,10 +6546,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82775, mas a seção é 81957.",
+          "description": "Correspondência vinculada ao município 82775 (Presidente Nereu), mas a seção pertence ao município 81957 (Lontras).",
           "details": {
             "mun_secao": 81957,
-            "mun_corr": 82775
+            "mun_corr": 82775,
+            "mun_secao_nome": "Lontras",
+            "mun_corr_nome": "Presidente Nereu"
           }
         }
       ],
@@ -6807,10 +6857,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82457, mas a seção é 82511.",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
           "details": {
             "mun_secao": 82511,
-            "mun_corr": 82457
+            "mun_corr": 82457,
+            "mun_secao_nome": "Balneário Piçarras",
+            "mun_corr_nome": "Penha"
           }
         },
         {
@@ -6978,10 +7030,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82317, mas a seção é 82570.",
+          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 82570 (Piratuba).",
           "details": {
             "mun_secao": 82570,
-            "mun_corr": 82317
+            "mun_corr": 82317,
+            "mun_secao_nome": "Piratuba",
+            "mun_corr_nome": "Ouro"
           }
         }
       ],
@@ -7137,10 +7191,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80985, mas a seção é 82651.",
+          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 82651 (Porto Belo).",
           "details": {
             "mun_secao": 82651,
-            "mun_corr": 80985
+            "mun_corr": 80985,
+            "mun_secao_nome": "Porto Belo",
+            "mun_corr_nome": "Bombinhas"
           }
         }
       ],
@@ -7296,10 +7352,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81353, mas a seção é 82759.",
+          "description": "Correspondência vinculada ao município 81353 (Ibirama), mas a seção pertence ao município 82759 (Presidente Getúlio).",
           "details": {
             "mun_secao": 82759,
-            "mun_corr": 81353
+            "mun_corr": 81353,
+            "mun_secao_nome": "Presidente Getúlio",
+            "mun_corr_nome": "Ibirama"
           }
         }
       ],
@@ -7457,10 +7515,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80578, mas a seção é 82830.",
+          "description": "Correspondência vinculada ao município 80578 (Caçador), mas a seção pertence ao município 82830 (Rio Das Antas).",
           "details": {
             "mun_secao": 82830,
-            "mun_corr": 80578
+            "mun_corr": 80578,
+            "mun_secao_nome": "Rio Das Antas",
+            "mun_corr_nome": "Caçador"
           }
         }
       ],
@@ -7616,10 +7676,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82597, mas a seção é 82899.",
+          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros).",
           "details": {
             "mun_secao": 82899,
-            "mun_corr": 82597
+            "mun_corr": 82597,
+            "mun_secao_nome": "Rio Dos Cedros",
+            "mun_corr_nome": "Pomerode"
           }
         }
       ],
@@ -7777,10 +7839,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82597, mas a seção é 82899.",
+          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros).",
           "details": {
             "mun_secao": 82899,
-            "mun_corr": 82597
+            "mun_corr": 82597,
+            "mun_secao_nome": "Rio Dos Cedros",
+            "mun_corr_nome": "Pomerode"
           }
         }
       ],
@@ -7936,10 +8000,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80110, mas a seção é 83135.",
+          "description": "Correspondência vinculada ao município 80110 (Águas Mornas), mas a seção pertence ao município 83135 (São Bonifácio).",
           "details": {
             "mun_secao": 83135,
-            "mun_corr": 80110
+            "mun_corr": 80110,
+            "mun_secao_nome": "São Bonifácio",
+            "mun_corr_nome": "Águas Mornas"
           }
         }
       ],
@@ -8095,10 +8161,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81183, mas a seção é 83275.",
+          "description": "Correspondência vinculada ao município 81183 (São Pedro De Alcântara), mas a seção pertence ao município 83275 (São José).",
           "details": {
             "mun_secao": 83275,
-            "mun_corr": 81183
+            "mun_corr": 81183,
+            "mun_secao_nome": "São José",
+            "mun_corr_nome": "São Pedro De Alcântara"
           }
         }
       ],
@@ -8417,10 +8485,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82716, mas a seção é 83496.",
+          "description": "Correspondência vinculada ao município 82716 (Praia Grande), mas a seção pertence ao município 83496 (Sombrio).",
           "details": {
             "mun_secao": 83496,
-            "mun_corr": 82716
+            "mun_corr": 82716,
+            "mun_secao_nome": "Sombrio",
+            "mun_corr_nome": "Praia Grande"
           }
         }
       ],
@@ -8578,10 +8648,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83232, mas a seção é 83496.",
+          "description": "Correspondência vinculada ao município 83232 (São João Do Sul), mas a seção pertence ao município 83496 (Sombrio).",
           "details": {
             "mun_secao": 83496,
-            "mun_corr": 83232
+            "mun_corr": 83232,
+            "mun_secao_nome": "Sombrio",
+            "mun_corr_nome": "São João Do Sul"
           }
         }
       ],
@@ -8735,10 +8807,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80985, mas a seção é 83550.",
+          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 83550 (Tijucas).",
           "details": {
             "mun_secao": 83550,
-            "mun_corr": 80985
+            "mun_corr": 80985,
+            "mun_secao_nome": "Tijucas",
+            "mun_corr_nome": "Bombinhas"
           }
         }
       ],
@@ -9352,10 +9426,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81728, mas a seção é 80276.",
+          "description": "Correspondência vinculada ao município 81728 (Balneário Arroio Do Silva), mas a seção pertence ao município 80276 (Araranguá).",
           "details": {
             "mun_secao": 80276,
-            "mun_corr": 81728
+            "mun_corr": 81728,
+            "mun_secao_nome": "Araranguá",
+            "mun_corr_nome": "Balneário Arroio Do Silva"
           }
         }
       ],
@@ -9807,10 +9883,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83518, mas a seção é 80365.",
+          "description": "Correspondência vinculada ao município 83518 (Taió), mas a seção pertence ao município 80365 (Mirim Doce).",
           "details": {
             "mun_secao": 80365,
-            "mun_corr": 83518
+            "mun_corr": 83518,
+            "mun_secao_nome": "Mirim Doce",
+            "mun_corr_nome": "Taió"
           }
         }
       ],
@@ -9933,10 +10011,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80616, mas a seção é 80390.",
+          "description": "Correspondência vinculada ao município 80616 (Camboriú), mas a seção pertence ao município 80390 (Balneário Camboriú).",
           "details": {
             "mun_secao": 80390,
-            "mun_corr": 80616
+            "mun_corr": 80616,
+            "mun_secao_nome": "Balneário Camboriú",
+            "mun_corr_nome": "Camboriú"
           }
         },
         {
@@ -10105,10 +10185,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83577, mas a seção é 80438.",
+          "description": "Correspondência vinculada ao município 83577 (Timbó), mas a seção pertence ao município 80438 (Benedito Novo).",
           "details": {
             "mun_secao": 80438,
-            "mun_corr": 83577
+            "mun_corr": 83577,
+            "mun_secao_nome": "Benedito Novo",
+            "mun_corr_nome": "Timbó"
           }
         }
       ],
@@ -10255,10 +10337,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80918, mas a seção é 80446.",
+          "description": "Correspondência vinculada ao município 80918 (Cunha Porã), mas a seção pertence ao município 80446 (Sul Brasil).",
           "details": {
             "mun_secao": 80446,
-            "mun_corr": 80918
+            "mun_corr": 80918,
+            "mun_secao_nome": "Sul Brasil",
+            "mun_corr_nome": "Cunha Porã"
           }
         }
       ],
@@ -11613,10 +11697,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81809, mas a seção é 80772.",
+          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 80772 (Catanduvas).",
           "details": {
             "mun_secao": 80772,
-            "mun_corr": 81809
+            "mun_corr": 81809,
+            "mun_secao_nome": "Catanduvas",
+            "mun_corr_nome": "Luzerna"
           }
         }
       ],
@@ -12633,10 +12719,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80942, mas a seção é 80934.",
+          "description": "Correspondência vinculada ao município 80942 (São Cristóvão Do Sul), mas a seção pertence ao município 80934 (Curitibanos).",
           "details": {
             "mun_secao": 80934,
-            "mun_corr": 80942
+            "mun_corr": 80942,
+            "mun_secao_nome": "Curitibanos",
+            "mun_corr_nome": "São Cristóvão Do Sul"
           }
         },
         {
@@ -12807,10 +12895,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83399, mas a seção é 80950.",
+          "description": "Correspondência vinculada ao município 83399 (São Miguel Do Oeste), mas a seção pertence ao município 80950 (Descanso).",
           "details": {
             "mun_secao": 80950,
-            "mun_corr": 83399
+            "mun_corr": 83399,
+            "mun_secao_nome": "Descanso",
+            "mun_corr_nome": "São Miguel Do Oeste"
           }
         }
       ],
@@ -14485,10 +14575,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80896, mas a seção é 81060.",
+          "description": "Correspondência vinculada ao município 80896 (Criciúma), mas a seção pertence ao município 81060 (Forquilhinha).",
           "details": {
             "mun_secao": 81060,
-            "mun_corr": 80896
+            "mun_corr": 80896,
+            "mun_secao_nome": "Forquilhinha",
+            "mun_corr_nome": "Criciúma"
           }
         }
       ],
@@ -14789,10 +14881,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81396, mas a seção é 81175.",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
           "details": {
             "mun_secao": 81175,
-            "mun_corr": 81396
+            "mun_corr": 81396,
+            "mun_secao_nome": "Gaspar",
+            "mun_corr_nome": "Ilhota"
           }
         }
       ],
@@ -15091,10 +15185,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82074, mas a seção é 81272.",
+          "description": "Correspondência vinculada ao município 82074 (Massaranduba), mas a seção pertence ao município 81272 (Guaramirim).",
           "details": {
             "mun_secao": 81272,
-            "mun_corr": 82074
+            "mun_corr": 82074,
+            "mun_secao_nome": "Guaramirim",
+            "mun_corr_nome": "Massaranduba"
           }
         }
       ],
@@ -15970,10 +16066,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80349, mas a seção é 81590.",
+          "description": "Correspondência vinculada ao município 80349 (Santa Terezinha), mas a seção pertence ao município 81590 (Itaiópolis).",
           "details": {
             "mun_secao": 81590,
-            "mun_corr": 80349
+            "mun_corr": 80349,
+            "mun_secao_nome": "Itaiópolis",
+            "mun_corr_nome": "Santa Terezinha"
           }
         },
         {
@@ -17040,10 +17138,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83682, mas a seção é 81655.",
+          "description": "Correspondência vinculada ao município 83682 (Tunápolis), mas a seção pertence ao município 81655 (Itapiranga).",
           "details": {
             "mun_secao": 81655,
-            "mun_corr": 83682
+            "mun_corr": 83682,
+            "mun_secao_nome": "Itapiranga",
+            "mun_corr_nome": "Tunápolis"
           }
         }
       ],
@@ -17188,10 +17288,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81450, mas a seção é 81671.",
+          "description": "Correspondência vinculada ao município 81450 (Imbuia), mas a seção pertence ao município 81671 (Ituporanga).",
           "details": {
             "mun_secao": 81671,
-            "mun_corr": 81450
+            "mun_corr": 81450,
+            "mun_secao_nome": "Ituporanga",
+            "mun_corr_nome": "Imbuia"
           }
         }
       ],
@@ -17486,10 +17588,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81809, mas a seção é 81779.",
+          "description": "Correspondência vinculada ao município 81809 (Luzerna), mas a seção pertence ao município 81779 (Joaçaba).",
           "details": {
             "mun_secao": 81779,
-            "mun_corr": 81809
+            "mun_corr": 81809,
+            "mun_secao_nome": "Joaçaba",
+            "mun_corr_nome": "Luzerna"
           }
         }
       ],
@@ -17788,10 +17892,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82317, mas a seção é 81825.",
+          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 81825 (Zortéa).",
           "details": {
             "mun_secao": 81825,
-            "mun_corr": 82317
+            "mun_corr": 82317,
+            "mun_secao_nome": "Zortéa",
+            "mun_corr_nome": "Ouro"
           }
         }
       ],
@@ -20009,10 +20115,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82457, mas a seção é 82511.",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
           "details": {
             "mun_secao": 82511,
-            "mun_corr": 82457
+            "mun_corr": 82457,
+            "mun_secao_nome": "Balneário Piçarras",
+            "mun_corr_nome": "Penha"
           }
         },
         {
@@ -21371,10 +21479,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83330, mas a seção é 83178.",
+          "description": "Correspondência vinculada ao município 83330 (São Lourenço Do Oeste), mas a seção pertence ao município 83178 (São Domingos).",
           "details": {
             "mun_secao": 83178,
-            "mun_corr": 83330
+            "mun_corr": 83330,
+            "mun_secao_nome": "São Domingos",
+            "mun_corr_nome": "São Lourenço Do Oeste"
           }
         },
         {
@@ -22447,10 +22557,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80985, mas a seção é 83550.",
+          "description": "Correspondência vinculada ao município 80985 (Bombinhas), mas a seção pertence ao município 83550 (Tijucas).",
           "details": {
             "mun_secao": 83550,
-            "mun_corr": 80985
+            "mun_corr": 80985,
+            "mun_secao_nome": "Tijucas",
+            "mun_corr_nome": "Bombinhas"
           }
         }
       ],
@@ -268344,10 +268456,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80845, mas a seção é 80012.",
+          "description": "Correspondência vinculada ao município 80845 (Ouro Verde), mas a seção pertence ao município 80012 (Abelardo Luz).",
           "details": {
             "mun_secao": 80012,
-            "mun_corr": 80845
+            "mun_corr": 80845,
+            "mun_secao_nome": "Abelardo Luz",
+            "mun_corr_nome": "Ouro Verde"
           }
         }
       ],
@@ -269891,10 +270005,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80608, mas a seção é 80136.",
+          "description": "Correspondência vinculada ao município 80608 (Rio Rufino), mas a seção pertence ao município 80136 (Alfredo Wagner).",
           "details": {
             "mun_secao": 80136,
-            "mun_corr": 80608
+            "mun_corr": 80608,
+            "mun_secao_nome": "Alfredo Wagner",
+            "mun_corr_nome": "Rio Rufino"
           }
         }
       ],
@@ -270536,10 +270652,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80454, mas a seção é 80233.",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
           "details": {
             "mun_secao": 80233,
-            "mun_corr": 80454
+            "mun_corr": 80454,
+            "mun_secao_nome": "Antônio Carlos",
+            "mun_corr_nome": "Biguaçu"
           }
         }
       ],
@@ -270662,10 +270780,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80454, mas a seção é 80233.",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
           "details": {
             "mun_secao": 80233,
-            "mun_corr": 80454
+            "mun_corr": 80454,
+            "mun_secao_nome": "Antônio Carlos",
+            "mun_corr_nome": "Biguaçu"
           }
         }
       ],
@@ -270790,10 +270910,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80454, mas a seção é 80233.",
+          "description": "Correspondência vinculada ao município 80454 (Biguaçu), mas a seção pertence ao município 80233 (Antônio Carlos).",
           "details": {
             "mun_secao": 80233,
-            "mun_corr": 80454
+            "mun_corr": 80454,
+            "mun_secao_nome": "Antônio Carlos",
+            "mun_corr_nome": "Biguaçu"
           }
         }
       ],
@@ -270918,10 +271040,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80403, mas a seção é 80241.",
+          "description": "Correspondência vinculada ao município 80403 (Passo De Torres), mas a seção pertence ao município 80241 (Santa Rosa Do Sul).",
           "details": {
             "mun_secao": 80241,
-            "mun_corr": 80403
+            "mun_corr": 80403,
+            "mun_secao_nome": "Santa Rosa Do Sul",
+            "mun_corr_nome": "Passo De Torres"
           }
         }
       ],
@@ -272082,10 +272206,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80918, mas a seção é 80284.",
+          "description": "Correspondência vinculada ao município 80918 (Cunha Porã), mas a seção pertence ao município 80284 (Serra Alta).",
           "details": {
             "mun_secao": 80284,
-            "mun_corr": 80918
+            "mun_corr": 80918,
+            "mun_secao_nome": "Serra Alta",
+            "mun_corr_nome": "Cunha Porã"
           }
         }
       ],
@@ -272210,10 +272336,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83739, mas a seção é 80306.",
+          "description": "Correspondência vinculada ao município 83739 (Urussanga), mas a seção pertence ao município 80306 (Cocal Do Sul).",
           "details": {
             "mun_secao": 80306,
-            "mun_corr": 83739
+            "mun_corr": 83739,
+            "mun_secao_nome": "Cocal Do Sul",
+            "mun_corr_nome": "Urussanga"
           }
         }
       ],
@@ -274024,10 +274152,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80691, mas a seção é 80462.",
+          "description": "Correspondência vinculada ao município 80691 (Campos Novos), mas a seção pertence ao município 80462 (Vargem).",
           "details": {
             "mun_secao": 80462,
-            "mun_corr": 80691
+            "mun_corr": 80691,
+            "mun_secao_nome": "Vargem",
+            "mun_corr_nome": "Campos Novos"
           }
         }
       ],
@@ -274150,10 +274280,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80047, mas a seção é 80489.",
+          "description": "Correspondência vinculada ao município 80047 (Lindóia Do Sul), mas a seção pertence ao município 80489 (Arabutã).",
           "details": {
             "mun_secao": 80489,
-            "mun_corr": 80047
+            "mun_corr": 80047,
+            "mun_secao_nome": "Arabutã",
+            "mun_corr_nome": "Lindóia Do Sul"
           }
         }
       ],
@@ -275055,10 +275187,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82376, mas a seção é 80560.",
+          "description": "Correspondência vinculada ao município 82376 (Palmitos), mas a seção pertence ao município 80560 (Riqueza).",
           "details": {
             "mun_secao": 80560,
-            "mun_corr": 82376
+            "mun_corr": 82376,
+            "mun_secao_nome": "Riqueza",
+            "mun_corr_nome": "Palmitos"
           }
         }
       ],
@@ -279056,10 +279190,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82317, mas a seção é 80756.",
+          "description": "Correspondência vinculada ao município 82317 (Ouro), mas a seção pertence ao município 80756 (Capinzal).",
           "details": {
             "mun_secao": 80756,
-            "mun_corr": 82317
+            "mun_corr": 82317,
+            "mun_secao_nome": "Capinzal",
+            "mun_corr_nome": "Ouro"
           }
         }
       ],
@@ -283690,10 +283826,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 83674, mas a seção é 81000.",
+          "description": "Correspondência vinculada ao município 83674 (Tubarão), mas a seção pertence ao município 81000 (Sangão).",
           "details": {
             "mun_secao": 81000,
-            "mun_corr": 83674
+            "mun_corr": 83674,
+            "mun_secao_nome": "Sangão",
+            "mun_corr_nome": "Tubarão"
           }
         }
       ],
@@ -283816,10 +283954,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81817, mas a seção é 81019.",
+          "description": "Correspondência vinculada ao município 81817 (Lacerdópolis), mas a seção pertence ao município 81019 (Erval Velho).",
           "details": {
             "mun_secao": 81019,
-            "mun_corr": 81817
+            "mun_corr": 81817,
+            "mun_secao_nome": "Erval Velho",
+            "mun_corr_nome": "Lacerdópolis"
           }
         }
       ],
@@ -287572,10 +287712,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81434, mas a seção é 81132.",
+          "description": "Correspondência vinculada ao município 81434 (Imbituba), mas a seção pertence ao município 81132 (Garopaba).",
           "details": {
             "mun_secao": 81132,
-            "mun_corr": 81434
+            "mun_corr": 81434,
+            "mun_secao_nome": "Garopaba",
+            "mun_corr_nome": "Imbituba"
           }
         }
       ],
@@ -287704,10 +287846,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81396, mas a seção é 81175.",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
           "details": {
             "mun_secao": 81175,
-            "mun_corr": 81396
+            "mun_corr": 81396,
+            "mun_secao_nome": "Gaspar",
+            "mun_corr_nome": "Ilhota"
           }
         }
       ],
@@ -287832,10 +287976,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81396, mas a seção é 81175.",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
           "details": {
             "mun_secao": 81175,
-            "mun_corr": 81396
+            "mun_corr": 81396,
+            "mun_secao_nome": "Gaspar",
+            "mun_corr_nome": "Ilhota"
           }
         }
       ],
@@ -287958,10 +288104,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81396, mas a seção é 81175.",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
           "details": {
             "mun_secao": 81175,
-            "mun_corr": 81396
+            "mun_corr": 81396,
+            "mun_secao_nome": "Gaspar",
+            "mun_corr_nome": "Ilhota"
           }
         }
       ],
@@ -288086,10 +288234,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81396, mas a seção é 81175.",
+          "description": "Correspondência vinculada ao município 81396 (Ilhota), mas a seção pertence ao município 81175 (Gaspar).",
           "details": {
             "mun_secao": 81175,
-            "mun_corr": 81396
+            "mun_corr": 81396,
+            "mun_secao_nome": "Gaspar",
+            "mun_corr_nome": "Ilhota"
           }
         }
       ],
@@ -291066,10 +291216,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80330, mas a seção é 81477.",
+          "description": "Correspondência vinculada ao município 80330 (Ascurra), mas a seção pertence ao município 81477 (Indaial).",
           "details": {
             "mun_secao": 81477,
-            "mun_corr": 80330
+            "mun_corr": 80330,
+            "mun_secao_nome": "Indaial",
+            "mun_corr_nome": "Ascurra"
           }
         }
       ],
@@ -291196,10 +291348,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80330, mas a seção é 81477.",
+          "description": "Correspondência vinculada ao município 80330 (Ascurra), mas a seção pertence ao município 81477 (Indaial).",
           "details": {
             "mun_secao": 81477,
-            "mun_corr": 80330
+            "mun_corr": 80330,
+            "mun_secao_nome": "Indaial",
+            "mun_corr_nome": "Ascurra"
           }
         }
       ],
@@ -291324,10 +291478,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80063, mas a seção é 81477.",
+          "description": "Correspondência vinculada ao município 80063 (Apiúna), mas a seção pertence ao município 81477 (Indaial).",
           "details": {
             "mun_secao": 81477,
-            "mun_corr": 80063
+            "mun_corr": 80063,
+            "mun_secao_nome": "Indaial",
+            "mun_corr_nome": "Apiúna"
           }
         }
       ],
@@ -291452,10 +291608,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80047, mas a seção é 81515.",
+          "description": "Correspondência vinculada ao município 80047 (Lindóia Do Sul), mas a seção pertence ao município 81515 (Ipumirim).",
           "details": {
             "mun_secao": 81515,
-            "mun_corr": 80047
+            "mun_corr": 80047,
+            "mun_secao_nome": "Ipumirim",
+            "mun_corr_nome": "Lindóia Do Sul"
           }
         }
       ],
@@ -291965,10 +292123,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82058, mas a seção é 81604.",
+          "description": "Correspondência vinculada ao município 82058 (Maravilha), mas a seção pertence ao município 81604 (Flor Do Sertão).",
           "details": {
             "mun_secao": 81604,
-            "mun_corr": 82058
+            "mun_corr": 82058,
+            "mun_secao_nome": "Flor Do Sertão",
+            "mun_corr_nome": "Maravilha"
           }
         }
       ],
@@ -302434,10 +302594,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80756, mas a seção é 82317.",
+          "description": "Correspondência vinculada ao município 80756 (Capinzal), mas a seção pertence ao município 82317 (Ouro).",
           "details": {
             "mun_secao": 82317,
-            "mun_corr": 80756
+            "mun_corr": 80756,
+            "mun_secao_nome": "Ouro",
+            "mun_corr_nome": "Capinzal"
           }
         }
       ],
@@ -304237,10 +304399,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81701, mas a seção é 82490.",
+          "description": "Correspondência vinculada ao município 81701 (Chapadão Do Lageado), mas a seção pertence ao município 82490 (Petrolândia).",
           "details": {
             "mun_secao": 82490,
-            "mun_corr": 81701
+            "mun_corr": 81701,
+            "mun_secao_nome": "Petrolândia",
+            "mun_corr_nome": "Chapadão Do Lageado"
           }
         }
       ],
@@ -304492,10 +304656,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82457, mas a seção é 82511.",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
           "details": {
             "mun_secao": 82511,
-            "mun_corr": 82457
+            "mun_corr": 82457,
+            "mun_secao_nome": "Balneário Piçarras",
+            "mun_corr_nome": "Penha"
           }
         }
       ],
@@ -304753,10 +304919,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82457, mas a seção é 82511.",
+          "description": "Correspondência vinculada ao município 82457 (Penha), mas a seção pertence ao município 82511 (Balneário Piçarras).",
           "details": {
             "mun_secao": 82511,
-            "mun_corr": 82457
+            "mun_corr": 82457,
+            "mun_secao_nome": "Balneário Piçarras",
+            "mun_corr_nome": "Penha"
           }
         }
       ],
@@ -304883,10 +305051,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80942, mas a seção é 82619.",
+          "description": "Correspondência vinculada ao município 80942 (São Cristóvão Do Sul), mas a seção pertence ao município 82619 (Ponte Alta).",
           "details": {
             "mun_secao": 82619,
-            "mun_corr": 80942
+            "mun_corr": 80942,
+            "mun_secao_nome": "Ponte Alta",
+            "mun_corr_nome": "São Cristóvão Do Sul"
           }
         }
       ],
@@ -306558,10 +306728,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 82597, mas a seção é 82899.",
+          "description": "Correspondência vinculada ao município 82597 (Pomerode), mas a seção pertence ao município 82899 (Rio Dos Cedros).",
           "details": {
             "mun_secao": 82899,
-            "mun_corr": 82597
+            "mun_corr": 82597,
+            "mun_secao_nome": "Rio Dos Cedros",
+            "mun_corr_nome": "Pomerode"
           }
         }
       ],
@@ -308235,10 +308407,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80683, mas a seção é 83194.",
+          "description": "Correspondência vinculada ao município 80683 (Balneário Barra Do Sul), mas a seção pertence ao município 83194 (São Francisco Do Sul).",
           "details": {
             "mun_secao": 83194,
-            "mun_corr": 80683
+            "mun_corr": 80683,
+            "mun_secao_nome": "São Francisco Do Sul",
+            "mun_corr_nome": "Balneário Barra Do Sul"
           }
         }
       ],
@@ -308498,10 +308672,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80683, mas a seção é 83194.",
+          "description": "Correspondência vinculada ao município 80683 (Balneário Barra Do Sul), mas a seção pertence ao município 83194 (São Francisco Do Sul).",
           "details": {
             "mun_secao": 83194,
-            "mun_corr": 80683
+            "mun_corr": 80683,
+            "mun_secao_nome": "São Francisco Do Sul",
+            "mun_corr_nome": "Balneário Barra Do Sul"
           }
         }
       ],
@@ -308628,10 +308804,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 80250, mas a seção é 83194.",
+          "description": "Correspondência vinculada ao município 80250 (Araquari), mas a seção pertence ao município 83194 (São Francisco Do Sul).",
           "details": {
             "mun_secao": 83194,
-            "mun_corr": 80250
+            "mun_corr": 80250,
+            "mun_secao_nome": "São Francisco Do Sul",
+            "mun_corr_nome": "Araquari"
           }
         }
       ],
@@ -310944,10 +311122,12 @@
           "category": "HARDWARE_E_CARGA",
           "severity": "ALTA",
           "title": "Município da correspondência diverge do município da seção",
-          "description": "Correspondência vinculada ao município 81752, mas a seção é 83437.",
+          "description": "Correspondência vinculada ao município 81752 (Jaraguá Do Sul), mas a seção pertence ao município 83437 (Schroeder).",
           "details": {
             "mun_secao": 83437,
-            "mun_corr": 81752
+            "mun_corr": 81752,
+            "mun_secao_nome": "Schroeder",
+            "mun_corr_nome": "Jaraguá Do Sul"
           }
         }
       ],
