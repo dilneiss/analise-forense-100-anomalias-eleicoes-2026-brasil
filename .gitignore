@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Large raw single-state JSON dump (> 100 MB hard limit on GitHub)
+comparison_mg_geral/comparison_report.json
+
+# Local environments
+venv/
+.venv/
+env/
+.env

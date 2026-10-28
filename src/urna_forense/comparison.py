@@ -31,15 +31,17 @@ _SC_COORDS_CACHE: Optional[dict[str, Any]] = None
 def get_sc_coords() -> dict[str, Any]:
     global _SC_COORDS_CACHE
     if _SC_COORDS_CACHE is None:
-        p = Path("data/municipios_sc_coords.json")
-        if not p.is_file():
-            p = Path(__file__).resolve().parent.parent.parent / "data" / "municipios_sc_coords.json"
-        if p.is_file():
-            try:
-                _SC_COORDS_CACHE = json.loads(p.read_text(encoding="utf-8"))
-            except Exception:
-                _SC_COORDS_CACHE = {}
-        else:
+        for fname in ("data/municipios_coords.json", "data/municipios_sc_coords.json"):
+            p = Path(fname)
+            if not p.is_file():
+                p = Path(__file__).resolve().parent.parent.parent / fname
+            if p.is_file():
+                try:
+                    _SC_COORDS_CACHE = json.loads(p.read_text(encoding="utf-8"))
+                    break
+                except Exception:
+                    pass
+        if _SC_COORDS_CACHE is None:
             _SC_COORDS_CACHE = {}
     return _SC_COORDS_CACHE
 
