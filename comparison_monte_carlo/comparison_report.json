@@ -147,7 +147,10 @@
     "pct_secoes_com_anomalias": 8.33,
     "total_anomalias_detectadas": 2,
     "por_severidade": {
-      "ALTA": 2
+      "ALTA": 2,
+      "MEDIA": 0,
+      "BAIXA": 0,
+      "INFO": 0
     },
     "por_categoria": {
       "VOTACAO_E_MIGRACAO_TERCEIRA_VIA": 2

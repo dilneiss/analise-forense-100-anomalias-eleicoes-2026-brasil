@@ -166,8 +166,9 @@
     "total_anomalias_detectadas": 4626,
     "por_severidade": {
       "ALTA": 4084,
-      "MEDIA": 470,
-      "BAIXA": 72
+      "MEDIA": 355,
+      "BAIXA": 72,
+      "INFO": 115
     },
     "por_categoria": {
       "VOTACAO_E_MIGRACAO_TERCEIRA_VIA": 432,
@@ -403,12 +404,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=43462EEB vs 2T=00060F07.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=43462EEB vs 2T=00060F07. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "43462EEB",
-            "fc_2t": "00060F07"
+            "fc_2t": "00060F07",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -597,12 +599,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=91A757BE vs 2T=5833AB60.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=91A757BE vs 2T=5833AB60. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "91A757BE",
-            "fc_2t": "5833AB60"
+            "fc_2t": "5833AB60",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -781,12 +784,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=E5CA920E vs 2T=F7065FFB.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=E5CA920E vs 2T=F7065FFB. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "E5CA920E",
-            "fc_2t": "F7065FFB"
+            "fc_2t": "F7065FFB",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -964,12 +968,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=CBA444CE vs 2T=BBE3DC21.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=CBA444CE vs 2T=BBE3DC21. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "CBA444CE",
-            "fc_2t": "BBE3DC21"
+            "fc_2t": "BBE3DC21",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -1146,12 +1151,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=9B48C197 vs 2T=96D9D500.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=9B48C197 vs 2T=96D9D500. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "9B48C197",
-            "fc_2t": "96D9D500"
+            "fc_2t": "96D9D500",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -1527,12 +1533,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=05C00E3B vs 2T=6DE1FEE5.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=05C00E3B vs 2T=6DE1FEE5. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "05C00E3B",
-            "fc_2t": "6DE1FEE5"
+            "fc_2t": "6DE1FEE5",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -1696,12 +1703,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=CBA444CE vs 2T=923E45E2.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=CBA444CE vs 2T=923E45E2. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "CBA444CE",
-            "fc_2t": "923E45E2"
+            "fc_2t": "923E45E2",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -1868,12 +1876,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=CBA444CE vs 2T=923E45E2.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=CBA444CE vs 2T=923E45E2. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "CBA444CE",
-            "fc_2t": "923E45E2"
+            "fc_2t": "923E45E2",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -2051,12 +2060,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=1DFDEFA7 vs 2T=8D6334FE.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=1DFDEFA7 vs 2T=8D6334FE. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "1DFDEFA7",
-            "fc_2t": "8D6334FE"
+            "fc_2t": "8D6334FE",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -2212,12 +2222,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=D704953C vs 2T=3D182218.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=D704953C vs 2T=3D182218. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "D704953C",
-            "fc_2t": "3D182218"
+            "fc_2t": "3D182218",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -2560,12 +2571,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=11D44CC0 vs 2T=8C4DA862.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=11D44CC0 vs 2T=8C4DA862. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "11D44CC0",
-            "fc_2t": "8C4DA862"
+            "fc_2t": "8C4DA862",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -2906,12 +2918,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=B13A3A08 vs 2T=97E2D55A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=B13A3A08 vs 2T=97E2D55A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "B13A3A08",
-            "fc_2t": "97E2D55A"
+            "fc_2t": "97E2D55A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -3082,12 +3095,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=C5F11D06 vs 2T=C3764F24.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=C5F11D06 vs 2T=C3764F24. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "C5F11D06",
-            "fc_2t": "C3764F24"
+            "fc_2t": "C3764F24",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -3432,12 +3446,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=92E0EC3E vs 2T=7D2D55E7.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=92E0EC3E vs 2T=7D2D55E7. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "92E0EC3E",
-            "fc_2t": "7D2D55E7"
+            "fc_2t": "7D2D55E7",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -3606,12 +3621,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=05601EB0 vs 2T=649E8826.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=05601EB0 vs 2T=649E8826. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "05601EB0",
-            "fc_2t": "649E8826"
+            "fc_2t": "649E8826",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -3780,12 +3796,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=380E3986 vs 2T=D7507923.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=380E3986 vs 2T=D7507923. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "380E3986",
-            "fc_2t": "D7507923"
+            "fc_2t": "D7507923",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -3958,12 +3975,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=F5F5BE00 vs 2T=30D5679C.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=F5F5BE00 vs 2T=30D5679C. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "F5F5BE00",
-            "fc_2t": "30D5679C"
+            "fc_2t": "30D5679C",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -4130,12 +4148,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=D1A8EE6A vs 2T=FDB93F6D.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=D1A8EE6A vs 2T=FDB93F6D. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "D1A8EE6A",
-            "fc_2t": "FDB93F6D"
+            "fc_2t": "FDB93F6D",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -4291,12 +4310,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=7D051934 vs 2T=A432E3BF.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=7D051934 vs 2T=A432E3BF. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "7D051934",
-            "fc_2t": "A432E3BF"
+            "fc_2t": "A432E3BF",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -4454,12 +4474,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=61E59B6D vs 2T=BA287E19.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=61E59B6D vs 2T=BA287E19. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "61E59B6D",
-            "fc_2t": "BA287E19"
+            "fc_2t": "BA287E19",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -4615,12 +4636,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=8E3873AB vs 2T=6018384F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=8E3873AB vs 2T=6018384F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "8E3873AB",
-            "fc_2t": "6018384F"
+            "fc_2t": "6018384F",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -4776,12 +4798,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BA63F11D vs 2T=DBDE071F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BA63F11D vs 2T=DBDE071F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BA63F11D",
-            "fc_2t": "DBDE071F"
+            "fc_2t": "DBDE071F",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -5096,12 +5119,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=2481E562 vs 2T=61E59B6D.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=2481E562 vs 2T=61E59B6D. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "2481E562",
-            "fc_2t": "61E59B6D"
+            "fc_2t": "61E59B6D",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -5260,12 +5284,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=C0F792D0 vs 2T=97167F9B.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=C0F792D0 vs 2T=97167F9B. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "C0F792D0",
-            "fc_2t": "97167F9B"
+            "fc_2t": "97167F9B",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -5583,12 +5608,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=B4D3DFEF vs 2T=A9331520.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=B4D3DFEF vs 2T=A9331520. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "B4D3DFEF",
-            "fc_2t": "A9331520"
+            "fc_2t": "A9331520",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -5748,12 +5774,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=855E9D19 vs 2T=9BBAFC60.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=855E9D19 vs 2T=9BBAFC60. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "855E9D19",
-            "fc_2t": "9BBAFC60"
+            "fc_2t": "9BBAFC60",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -5909,12 +5936,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=AD108C71 vs 2T=3E1A489E.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=AD108C71 vs 2T=3E1A489E. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "AD108C71",
-            "fc_2t": "3E1A489E"
+            "fc_2t": "3E1A489E",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -6241,12 +6269,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=7C736F65 vs 2T=43B3178A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=7C736F65 vs 2T=43B3178A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "7C736F65",
-            "fc_2t": "43B3178A"
+            "fc_2t": "43B3178A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -6559,12 +6588,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=54091D41 vs 2T=49545B77.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=54091D41 vs 2T=49545B77. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "54091D41",
-            "fc_2t": "49545B77"
+            "fc_2t": "49545B77",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -6720,12 +6750,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=A03E77B9 vs 2T=06CF62B6.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=A03E77B9 vs 2T=06CF62B6. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "A03E77B9",
-            "fc_2t": "06CF62B6"
+            "fc_2t": "06CF62B6",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -6881,12 +6912,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=DB072BF9 vs 2T=01D00EC9.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=DB072BF9 vs 2T=01D00EC9. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "DB072BF9",
-            "fc_2t": "01D00EC9"
+            "fc_2t": "01D00EC9",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -7048,12 +7080,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BF186A75 vs 2T=44AFBE60.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BF186A75 vs 2T=44AFBE60. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BF186A75",
-            "fc_2t": "44AFBE60"
+            "fc_2t": "44AFBE60",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -7209,12 +7242,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=7FFAA356 vs 2T=68D1F10A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=7FFAA356 vs 2T=68D1F10A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "7FFAA356",
-            "fc_2t": "68D1F10A"
+            "fc_2t": "68D1F10A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -7370,12 +7404,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=83481B84 vs 2T=00060F07.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=83481B84 vs 2T=00060F07. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "83481B84",
-            "fc_2t": "00060F07"
+            "fc_2t": "00060F07",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -7533,12 +7568,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=94D5E721 vs 2T=28487753.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=94D5E721 vs 2T=28487753. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "94D5E721",
-            "fc_2t": "28487753"
+            "fc_2t": "28487753",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -7694,12 +7730,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=0543A0E6 vs 2T=8082CA23.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=0543A0E6 vs 2T=8082CA23. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "0543A0E6",
-            "fc_2t": "8082CA23"
+            "fc_2t": "8082CA23",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -7857,12 +7894,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=0543A0E6 vs 2T=47D5C19D.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=0543A0E6 vs 2T=47D5C19D. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "0543A0E6",
-            "fc_2t": "47D5C19D"
+            "fc_2t": "47D5C19D",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -8018,12 +8056,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=62610ED0 vs 2T=E2A97DA0.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=62610ED0 vs 2T=E2A97DA0. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "62610ED0",
-            "fc_2t": "E2A97DA0"
+            "fc_2t": "E2A97DA0",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -8179,12 +8218,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=3B698ECD vs 2T=1AA41DD2.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=3B698ECD vs 2T=1AA41DD2. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "3B698ECD",
-            "fc_2t": "1AA41DD2"
+            "fc_2t": "1AA41DD2",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -8503,12 +8543,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=FB127539 vs 2T=94E9513D.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=FB127539 vs 2T=94E9513D. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "FB127539",
-            "fc_2t": "94E9513D"
+            "fc_2t": "94E9513D",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -8666,12 +8707,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=9C51809D vs 2T=27006CAD.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=9C51809D vs 2T=27006CAD. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "9C51809D",
-            "fc_2t": "27006CAD"
+            "fc_2t": "27006CAD",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -8825,12 +8867,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=6AF69198 vs 2T=68D1F10A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=6AF69198 vs 2T=68D1F10A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "6AF69198",
-            "fc_2t": "68D1F10A"
+            "fc_2t": "68D1F10A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -9455,12 +9498,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=A5A0D91A vs 2T=3D182218.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=A5A0D91A vs 2T=3D182218. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "A5A0D91A",
-            "fc_2t": "3D182218"
+            "fc_2t": "3D182218",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -9760,12 +9804,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=D23942C2 vs 2T=D704953C.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=D23942C2 vs 2T=D704953C. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "D23942C2",
-            "fc_2t": "D704953C"
+            "fc_2t": "D704953C",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -9912,12 +9957,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=4A64FF24 vs 2T=DF6DD30E.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=4A64FF24 vs 2T=DF6DD30E. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "4A64FF24",
-            "fc_2t": "DF6DD30E"
+            "fc_2t": "DF6DD30E",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -10214,12 +10260,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BA63F11D vs 2T=DBDE071F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BA63F11D vs 2T=DBDE071F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BA63F11D",
-            "fc_2t": "DBDE071F"
+            "fc_2t": "DBDE071F",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -10366,12 +10413,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=80D1F1D5 vs 2T=2A573078.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=80D1F1D5 vs 2T=2A573078. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "80D1F1D5",
-            "fc_2t": "2A573078"
+            "fc_2t": "2A573078",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -10516,12 +10564,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=CA1CC299 vs 2T=0DDAC0CA.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=CA1CC299 vs 2T=0DDAC0CA. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "CA1CC299",
-            "fc_2t": "0DDAC0CA"
+            "fc_2t": "0DDAC0CA",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -10666,12 +10715,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=5B77EB62 vs 2T=0DDAC0CA.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=5B77EB62 vs 2T=0DDAC0CA. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "5B77EB62",
-            "fc_2t": "0DDAC0CA"
+            "fc_2t": "0DDAC0CA",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -10968,12 +11018,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=88517D4F vs 2T=972C3276.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=88517D4F vs 2T=972C3276. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "88517D4F",
-            "fc_2t": "972C3276"
+            "fc_2t": "972C3276",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -11120,12 +11171,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=460F849C vs 2T=972C3276.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=460F849C vs 2T=972C3276. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "460F849C",
-            "fc_2t": "972C3276"
+            "fc_2t": "972C3276",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -11726,12 +11778,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=82514FF1 vs 2T=7D2D55E7.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=82514FF1 vs 2T=7D2D55E7. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "82514FF1",
-            "fc_2t": "7D2D55E7"
+            "fc_2t": "7D2D55E7",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -12924,12 +12977,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=7A822BA6 vs 2T=D1CCB441.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=7A822BA6 vs 2T=D1CCB441. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "7A822BA6",
-            "fc_2t": "D1CCB441"
+            "fc_2t": "D1CCB441",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -13074,12 +13128,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=C5F11D06 vs 2T=C3764F24.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=C5F11D06 vs 2T=C3764F24. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "C5F11D06",
-            "fc_2t": "C3764F24"
+            "fc_2t": "C3764F24",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -14604,12 +14659,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=30B4A85C vs 2T=1482D9D5.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=30B4A85C vs 2T=1482D9D5. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "30B4A85C",
-            "fc_2t": "1482D9D5"
+            "fc_2t": "1482D9D5",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -14760,12 +14816,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=B3173017 vs 2T=64B2BB23.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=B3173017 vs 2T=64B2BB23. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "B3173017",
-            "fc_2t": "64B2BB23"
+            "fc_2t": "64B2BB23",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -14910,12 +14967,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=E94667D0 vs 2T=96D9D500.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=E94667D0 vs 2T=96D9D500. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "E94667D0",
-            "fc_2t": "96D9D500"
+            "fc_2t": "96D9D500",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -15062,12 +15120,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=170C2318 vs 2T=64B2BB23.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=170C2318 vs 2T=64B2BB23. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "170C2318",
-            "fc_2t": "64B2BB23"
+            "fc_2t": "64B2BB23",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -15214,12 +15273,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=9607D3D6 vs 2T=54092AC6.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=9607D3D6 vs 2T=54092AC6. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "9607D3D6",
-            "fc_2t": "54092AC6"
+            "fc_2t": "54092AC6",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -15820,12 +15880,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=9859146F vs 2T=E9593306.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=9859146F vs 2T=E9593306. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "9859146F",
-            "fc_2t": "E9593306"
+            "fc_2t": "E9593306",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -16269,12 +16330,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=E9795730 vs 2T=3E1A489E.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=E9795730 vs 2T=3E1A489E. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "E9795730",
-            "fc_2t": "3E1A489E"
+            "fc_2t": "3E1A489E",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -16419,12 +16481,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BEA41D5D vs 2T=40AE7E9A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BEA41D5D vs 2T=40AE7E9A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BEA41D5D",
-            "fc_2t": "40AE7E9A"
+            "fc_2t": "40AE7E9A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -16569,12 +16632,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BEA41D5D vs 2T=40AE7E9A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BEA41D5D vs 2T=40AE7E9A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BEA41D5D",
-            "fc_2t": "40AE7E9A"
+            "fc_2t": "40AE7E9A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -16719,12 +16783,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=5A0D8ED9 vs 2T=40AE7E9A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=5A0D8ED9 vs 2T=40AE7E9A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "5A0D8ED9",
-            "fc_2t": "40AE7E9A"
+            "fc_2t": "40AE7E9A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -16869,12 +16934,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=08DD80EA vs 2T=40AE7E9A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=08DD80EA vs 2T=40AE7E9A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "08DD80EA",
-            "fc_2t": "40AE7E9A"
+            "fc_2t": "40AE7E9A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17017,12 +17083,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=F3AB78EC vs 2T=40AE7E9A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=F3AB78EC vs 2T=40AE7E9A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "F3AB78EC",
-            "fc_2t": "40AE7E9A"
+            "fc_2t": "40AE7E9A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17167,12 +17234,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=921401A6 vs 2T=43B3178A.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=921401A6 vs 2T=43B3178A. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "921401A6",
-            "fc_2t": "43B3178A"
+            "fc_2t": "43B3178A",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17317,12 +17385,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=4CEDB532 vs 2T=C3B2DAE9.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=4CEDB532 vs 2T=C3B2DAE9. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "4CEDB532",
-            "fc_2t": "C3B2DAE9"
+            "fc_2t": "C3B2DAE9",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17467,12 +17536,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=1E9F2A23 vs 2T=A8FCE7CE.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=1E9F2A23 vs 2T=A8FCE7CE. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "1E9F2A23",
-            "fc_2t": "A8FCE7CE"
+            "fc_2t": "A8FCE7CE",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17617,12 +17687,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=92E0EC3E vs 2T=7D2D55E7.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=92E0EC3E vs 2T=7D2D55E7. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "92E0EC3E",
-            "fc_2t": "7D2D55E7"
+            "fc_2t": "7D2D55E7",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17771,12 +17842,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=C88AAE77 vs 2T=9BD886F2.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=C88AAE77 vs 2T=9BD886F2. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "C88AAE77",
-            "fc_2t": "9BD886F2"
+            "fc_2t": "9BD886F2",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -17921,12 +17993,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=D339C5E4 vs 2T=44AFBE60.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=D339C5E4 vs 2T=44AFBE60. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "D339C5E4",
-            "fc_2t": "44AFBE60"
+            "fc_2t": "44AFBE60",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -18369,12 +18442,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=1D062EBC vs 2T=05601EB0.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=1D062EBC vs 2T=05601EB0. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "1D062EBC",
-            "fc_2t": "05601EB0"
+            "fc_2t": "05601EB0",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -18519,12 +18593,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=E978CF22 vs 2T=2B039E32.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=E978CF22 vs 2T=2B039E32. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "E978CF22",
-            "fc_2t": "2B039E32"
+            "fc_2t": "2B039E32",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -19116,12 +19191,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=08C93816 vs 2T=06CF62B6.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=08C93816 vs 2T=06CF62B6. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "08C93816",
-            "fc_2t": "06CF62B6"
+            "fc_2t": "06CF62B6",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -19712,12 +19788,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=F078AF75 vs 2T=A6200D12.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=F078AF75 vs 2T=A6200D12. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "F078AF75",
-            "fc_2t": "A6200D12"
+            "fc_2t": "A6200D12",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -20318,12 +20395,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=8082CA23 vs 2T=47D5C19D.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=8082CA23 vs 2T=47D5C19D. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "8082CA23",
-            "fc_2t": "47D5C19D"
+            "fc_2t": "47D5C19D",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -20468,12 +20546,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=8082CA23 vs 2T=51685764.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=8082CA23 vs 2T=51685764. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "8082CA23",
-            "fc_2t": "51685764"
+            "fc_2t": "51685764",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -20618,12 +20697,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=51685764 vs 2T=8082CA23.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=51685764 vs 2T=8082CA23. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "51685764",
-            "fc_2t": "8082CA23"
+            "fc_2t": "8082CA23",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -20772,12 +20852,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=51685764 vs 2T=8082CA23.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=51685764 vs 2T=8082CA23. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "51685764",
-            "fc_2t": "8082CA23"
+            "fc_2t": "8082CA23",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -20926,12 +21007,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=5BBD7A87 vs 2T=3013AF68.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=5BBD7A87 vs 2T=3013AF68. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "5BBD7A87",
-            "fc_2t": "3013AF68"
+            "fc_2t": "3013AF68",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -22284,12 +22366,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=A3CC950A vs 2T=D1CCB441.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=A3CC950A vs 2T=D1CCB441. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "A3CC950A",
-            "fc_2t": "D1CCB441"
+            "fc_2t": "D1CCB441",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -22436,12 +22519,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=3F60827E vs 2T=D1CCB441.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=3F60827E vs 2T=D1CCB441. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "3F60827E",
-            "fc_2t": "D1CCB441"
+            "fc_2t": "D1CCB441",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -22586,12 +22670,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=006D2BB9 vs 2T=396E17F6.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=006D2BB9 vs 2T=396E17F6. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "006D2BB9",
-            "fc_2t": "396E17F6"
+            "fc_2t": "396E17F6",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -22738,12 +22823,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=DBDE071F vs 2T=96DE60AB.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=DBDE071F vs 2T=96DE60AB. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "DBDE071F",
-            "fc_2t": "96DE60AB"
+            "fc_2t": "96DE60AB",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -23188,12 +23274,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=CF852B49 vs 2T=A432E3BF.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=CF852B49 vs 2T=A432E3BF. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "CF852B49",
-            "fc_2t": "A432E3BF"
+            "fc_2t": "A432E3BF",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -315697,12 +315784,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=DFD7325E vs 2T=0D4B5D35.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=DFD7325E vs 2T=0D4B5D35. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "DFD7325E",
-            "fc_2t": "0D4B5D35"
+            "fc_2t": "0D4B5D35",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -315836,12 +315924,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=4D6DC416 vs 2T=28487753.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=4D6DC416 vs 2T=28487753. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "4D6DC416",
-            "fc_2t": "28487753"
+            "fc_2t": "28487753",
+            "procedimento_normal_2t": true
           }
         },
         {
@@ -316260,12 +316349,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=05219C17 vs 2T=8D6334FE.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=05219C17 vs 2T=8D6334FE. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "05219C17",
-            "fc_2t": "8D6334FE"
+            "fc_2t": "8D6334FE",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -316403,12 +316493,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=F2FA9CF9 vs 2T=0DDAC0CA.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=F2FA9CF9 vs 2T=0DDAC0CA. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "F2FA9CF9",
-            "fc_2t": "0DDAC0CA"
+            "fc_2t": "0DDAC0CA",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -316679,12 +316770,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=77B2D710 vs 2T=53EE4BD1.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=77B2D710 vs 2T=53EE4BD1. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "77B2D710",
-            "fc_2t": "53EE4BD1"
+            "fc_2t": "53EE4BD1",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -316957,12 +317049,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=4D6DC416 vs 2T=FDE0AFF0.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=4D6DC416 vs 2T=FDE0AFF0. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "4D6DC416",
-            "fc_2t": "FDE0AFF0"
+            "fc_2t": "FDE0AFF0",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -317094,12 +317187,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=F46529CF vs 2T=BA287E19.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=F46529CF vs 2T=BA287E19. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "F46529CF",
-            "fc_2t": "BA287E19"
+            "fc_2t": "BA287E19",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -317233,12 +317327,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=3D115110 vs 2T=BA287E19.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=3D115110 vs 2T=BA287E19. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "3D115110",
-            "fc_2t": "BA287E19"
+            "fc_2t": "BA287E19",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -317509,12 +317604,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=924824D0 vs 2T=47259971.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=924824D0 vs 2T=47259971. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "924824D0",
-            "fc_2t": "47259971"
+            "fc_2t": "47259971",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -318065,12 +318161,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=FEA6C983 vs 2T=C07A8C5F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=FEA6C983 vs 2T=C07A8C5F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "FEA6C983",
-            "fc_2t": "C07A8C5F"
+            "fc_2t": "C07A8C5F",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -318204,12 +318301,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=AEF0C9FB vs 2T=B13A3A08.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=AEF0C9FB vs 2T=B13A3A08. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "AEF0C9FB",
-            "fc_2t": "B13A3A08"
+            "fc_2t": "B13A3A08",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -318343,12 +318441,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=473A4799 vs 2T=E77298D5.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=473A4799 vs 2T=E77298D5. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "473A4799",
-            "fc_2t": "E77298D5"
+            "fc_2t": "E77298D5",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -319038,12 +319137,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=17F3EEB7 vs 2T=BD54DE6F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=17F3EEB7 vs 2T=BD54DE6F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "17F3EEB7",
-            "fc_2t": "BD54DE6F"
+            "fc_2t": "BD54DE6F",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -319175,12 +319275,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BD54DE6F vs 2T=B8B65698.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BD54DE6F vs 2T=B8B65698. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BD54DE6F",
-            "fc_2t": "B8B65698"
+            "fc_2t": "B8B65698",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -319312,12 +319413,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=14E85A7B vs 2T=9859146F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=14E85A7B vs 2T=9859146F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "14E85A7B",
-            "fc_2t": "9859146F"
+            "fc_2t": "9859146F",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -319451,12 +319553,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=E9593306 vs 2T=67B61F8D.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=E9593306 vs 2T=67B61F8D. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "E9593306",
-            "fc_2t": "67B61F8D"
+            "fc_2t": "67B61F8D",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -319588,12 +319691,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=E9593306 vs 2T=9859146F.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=E9593306 vs 2T=9859146F. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "E9593306",
-            "fc_2t": "9859146F"
+            "fc_2t": "9859146F",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -320287,12 +320391,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=5A7605F4 vs 2T=D7F8D6C5.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=5A7605F4 vs 2T=D7F8D6C5. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "5A7605F4",
-            "fc_2t": "D7F8D6C5"
+            "fc_2t": "D7F8D6C5",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -320426,12 +320531,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=34DCE986 vs 2T=9BD886F2.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=34DCE986 vs 2T=9BD886F2. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "34DCE986",
-            "fc_2t": "9BD886F2"
+            "fc_2t": "9BD886F2",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -320851,12 +320957,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=BFAAF4FA vs 2T=2FAFC320.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=BFAAF4FA vs 2T=2FAFC320. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "BFAAF4FA",
-            "fc_2t": "2FAFC320"
+            "fc_2t": "2FAFC320",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -320990,12 +321097,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=7161A0DF vs 2T=2FAFC320.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=7161A0DF vs 2T=2FAFC320. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "7161A0DF",
-            "fc_2t": "2FAFC320"
+            "fc_2t": "2FAFC320",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -321272,12 +321380,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=EF1D044D vs 2T=1E41D038.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=EF1D044D vs 2T=1E41D038. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "EF1D044D",
-            "fc_2t": "1E41D038"
+            "fc_2t": "1E41D038",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -321691,12 +321800,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=649E8826 vs 2T=05601EB0.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=649E8826 vs 2T=05601EB0. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "649E8826",
-            "fc_2t": "05601EB0"
+            "fc_2t": "05601EB0",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -321828,12 +321938,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=7B0230B3 vs 2T=06CF62B6.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=7B0230B3 vs 2T=06CF62B6. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "7B0230B3",
-            "fc_2t": "06CF62B6"
+            "fc_2t": "06CF62B6",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -322519,12 +322630,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=430BCF84 vs 2T=8C4DA862.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=430BCF84 vs 2T=8C4DA862. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "430BCF84",
-            "fc_2t": "8C4DA862"
+            "fc_2t": "8C4DA862",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -322658,12 +322770,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=C48210CF vs 2T=D781F175.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=C48210CF vs 2T=D781F175. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "C48210CF",
-            "fc_2t": "D781F175"
+            "fc_2t": "D781F175",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -323081,12 +323194,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=293F663F vs 2T=F8191014.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=293F663F vs 2T=F8191014. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "293F663F",
-            "fc_2t": "F8191014"
+            "fc_2t": "F8191014",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -323359,12 +323473,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=A637B0D6 vs 2T=2E0B0408.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=A637B0D6 vs 2T=2E0B0408. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "A637B0D6",
-            "fc_2t": "2E0B0408"
+            "fc_2t": "2E0B0408",
+            "procedimento_normal_2t": true
           }
         }
       ],
@@ -323496,12 +323611,13 @@
         {
           "code": "CHK003_TROCA_FLASH_CARGA",
           "category": "HARDWARE_E_CARGA",
-          "severity": "MEDIA",
-          "title": "Serial da Flash de Carga (FC) alterado",
-          "description": "FC alterada: 1T=48DD3B3D vs 2T=9BBAFC60.",
+          "severity": "INFO",
+          "title": "Atualização da Flash de Carga (Procedimento Normal do 2T)",
+          "description": "FC atualizada para o 2T: 1T=48DD3B3D vs 2T=9BBAFC60. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.",
           "details": {
             "fc_1t": "48DD3B3D",
-            "fc_2t": "9BBAFC60"
+            "fc_2t": "9BBAFC60",
+            "procedimento_normal_2t": true
           }
         }
       ],

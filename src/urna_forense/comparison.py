@@ -415,16 +415,19 @@ def evaluate_section_anomalies(
             )
         )
 
-    # CHK003: Troca de Flash de Carga
+    # CHK003: Troca de Flash de Carga (Procedimento padrão entre turnos para carregar nova cédula)
     if s1.numero_serie_fc and s2.numero_serie_fc and s1.numero_serie_fc != s2.numero_serie_fc:
         anomalies.append(
             Anomaly(
                 code="CHK003_TROCA_FLASH_CARGA",
                 category=CAT_HARDWARE,
-                severity=SEV_MEDIA,
-                title="Serial da Flash de Carga (FC) alterado",
-                description=f"FC alterada: 1T={s1.numero_serie_fc} vs 2T={s2.numero_serie_fc}.",
-                details={"fc_1t": s1.numero_serie_fc, "fc_2t": s2.numero_serie_fc},
+                severity=SEV_INFO,
+                title="Atualização da Flash de Carga (Procedimento Normal do 2T)",
+                description=(
+                    f"FC atualizada para o 2T: 1T={s1.numero_serie_fc} vs 2T={s2.numero_serie_fc}. "
+                    f"Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno."
+                ),
+                details={"fc_1t": s1.numero_serie_fc, "fc_2t": s2.numero_serie_fc, "procedimento_normal_2t": True},
             )
         )
 
@@ -2664,10 +2667,16 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "severidade": "MEDIA"
             }},
             "CHK003_TROCA_FLASH_CARGA": {{
-                "titulo": "Troca da Flash de Carga (FC)",
-                "explicacao": "O cartão que contém os sistemas e dados da eleição foi alterado entre os turnos.",
-                "por_que_suspeito": "Pode indicar recarga não documentada do sistema eleitoral.",
-                "severidade": "MEDIA"
+                "titulo": "Atualização da Flash de Carga (Procedimento Operacional Normal)",
+                "explicacao": "A Flash de Carga (FC) é o cartão de memória gerado pelo cartório eleitoral para configurar os candidatos na urna. Entre o 1º e o 2º turno, é procedimento normal e esperado a Justiça Eleitoral gerar novas mídias de carga contendo apenas a cédula com os dois finalistas (no caso, 22 e 13).",
+                "por_que_suspeito": "Geralmente NÃO indica fraude por si só, sendo uma atualização logística padrão do 2T. É mantido como INFO para rastreabilidade de mídias. Só se torna suspeito se acompanhado de carga gerada para outro município (CHK014) ou se permitir votação em candidatos não concorrentes (CHK059).",
+                "severidade": "INFO"
+            }},
+            "CHK059_VOTO_CANDIDATO_NAO_CONCORRENTE_NO_2T": {{
+                "titulo": "Voto para Candidato Não Habilitado no 2T (Fraude/Bug Crítico)",
+                "explicacao": "No 2º turno, apenas os finalistas habilitados (no caso, 13 e 22) podem receber votos nominais válidos. Se um eleitor digitar qualquer outro número (como 70 de Cury, 14 de Renan ou um número inexistente como 99), a urna DEVE registrar obrigatoriamente como VOTO NULO. A regra audita se surgiu algum voto nominal registrado para candidatos inexistentes ou eliminados.",
+                "por_que_suspeito": "Altíssima gravidade: se uma urna registrar voto nominal para um candidato eliminado ou inexistente, comprova falha crítica de integridade na tabela de votáveis ou adulteração deliberada do software da urna para desviar votos.",
+                "severidade": "ALTA"
             }},
             "CHK004_MODELO_URNA_DIVERGENTE": {{
                 "titulo": "Modelo de Urna Divergente",

@@ -120,10 +120,10 @@ python analyzer.py --input "C:\Users\dilne\Downloads\bu_imgbu_logjez_rdv_vscmr_2
 ### 5.1 Catálogo dos 100 Detectores Automatizados
 
 As 100 regras cobrem 8 eixos de integridade:
-- **1. Hardware e Carga (`CHK001` a `CHK015`):** Troca de urna física, troca de FV, troca de FC, modelo divergente, alteração de software oficial, carga gerada para outro município e serial TPM divergente.
+- **1. Hardware e Carga (`CHK001` a `CHK015`):** Troca de urna física, troca de FV, atualização da Flash de Carga (FC - procedimento normal do 2T), modelo divergente, alteração de software oficial, carga gerada para outro município e serial TPM divergente.
 - **2. Cadastro e Eleitorado (`CHK016` a `CHK030`):** Variação de eleitores originais (`aptos_secao`), redução/aumento do caderno congelado e picos de transferência temporária (TTE).
 - **3. Comparecimento e Abstenção (`CHK031` a `CHK045`):** Votos superando aptos, 100% de presença, abstenção acima de 50% e 70%, oscilações extremas e desvio da média municipal.
-- **4. Votação Presidencial e Terceira Via (`CHK046` a `CHK065`):** Queda de finalista com maior comparecimento (`CHK046`), queda com comparecimento igual (`CHK047`), queda desproporcional à abstenção (`CHK048`), absorção de 100% da 3ª via (`CHK053`), crescimento além do teto matemático (`CHK054`) e *swings* políticos extremos superiores a 40 pp e 50 pp (`CHK056`, `CHK057`).
+- **4. Votação Presidencial e Terceira Via (`CHK046` a `CHK065`):** Queda de finalista com maior comparecimento (`CHK046`), queda com comparecimento igual (`CHK047`), queda desproporcional à abstenção (`CHK048`), voto em candidato não concorrente no 2T (`CHK059`), absorção de 100% da 3ª via (`CHK053`), crescimento além do teto matemático (`CHK054`) e *swings* políticos extremos superiores a 40 pp e 50 pp (`CHK056`, `CHK057`).
 - **5. Biometria e Habilitação (`CHK066` a `CHK075`):** Quedas drásticas de biometria (> 20 pp e > 30 pp), surto de liberação por ano de nascimento (> 15 pp e > 25 pp), desativação de biometria e correlação de liberação manual com votação unânime.
 - **6. Tempo e Ritmo de Votação (`CHK076` a `CHK085`):** Abertura precoce (< 07h), encerramento precoce (< 17h), encerramento após 20h e 22h e tempo médio por voto humanamente inviável (< 15 segundos).
 - **7. Brancos e Nulos (`CHK086` a `CHK092`):** Explosão de brancos/nulos (> 15 pp), taxa superior a 30% e extinção total em seções grandes.
@@ -150,6 +150,11 @@ Na totalização do 1º turno aparecem candidatos que deixam de receber votos no
 | **28** | **LEONARDO AVALANCHE** | PRTB | 184 | Eliminado no 1T. Votação de direita/PRTB. |
 
 **Conclusão Metodológica:** O fato desses candidatos terem **0 votos no 2º turno não é uma anomalia ou fraude**, pois a lei eleitoral brasileira determina que apenas os dois mais votados disputam o 2º turno. O total de **373.893 votos** desses 11 candidatos representa a **reserva de votos migrantes** que a ferramenta audita para verificar se o crescimento dos finalistas obedece às leis da matemática.
+
+### 5.3 O que é Procedimento Normal vs O que é Suspeito no 2º Turno (FC vs CHK059)
+
+- **Atualização da Flash de Carga (`CHK003` - Normal e Esperado):** A Flash de Carga (FC) é o cartão de memória utilizado pelo cartório eleitoral para gravar na urna a cédula de votação. Entre o 1º e o 2º turno, **é procedimento padrão e esperado** que os cartórios eleitorais atualizem a Flash de Carga para configurar a nova cédula exclusiva com os dois candidatos que avançaram ao 2º turno. Por isso, essa regra é classificada como **`INFO` (Informativo Operacional)**, mantida no relatório apenas para fins de rastreabilidade de mídias.
+- **O que é Verdadeiramente Suspeito: Voto Nominal em Candidato Não Concorrente (`CHK059` - ALTA):** O que seria uma anomalia gravíssima e indicativo imediato de fraude é se surgisse votação nominal para candidatos que não participam do 2º turno (ou para números inexistentes). No 2º turno, se o eleitor digita 70 (Cury), 14 (Renan), 55 (Caiado) ou qualquer outro número, **a urna tem a obrigação legal de registrar como VOTO NULO**. A regra `CHK059` audita cada voto para assegurar que nenhuma urna tenha computado voto nominal para candidatos eliminados ou fantasmas no 2º turno. Em Santa Catarina, a auditoria confirmou que 100% dos votos nominais do 2T foram restritos aos candidatos habilitados (`CHK059 = 0`).
 
 ---
 
