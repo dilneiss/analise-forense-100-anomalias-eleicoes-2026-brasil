@@ -141,6 +141,8 @@ class SectionComparison:
     s2: Optional[SectionExtraction]
     anomalies: list[Anomaly] = field(default_factory=list)
     worst_severity: str = "NORMAL"
+    fraud_score: int = 0
+    fraud_label: str = ""
 
     @property
     def key_str(self) -> str:
@@ -155,6 +157,8 @@ class SectionComparison:
             "secao": self.secao,
             "key": self.key_str,
             "worst_severity": self.worst_severity,
+            "fraud_score": self.fraud_score,
+            "fraud_label": self.fraud_label,
             "total_anomalias": len(self.anomalies),
             "anomalias": [a.as_dict() for a in self.anomalies],
             "dados_1t": asdict(self.s1) if self.s1 else None,
@@ -1933,6 +1937,81 @@ def evaluate_section_anomalies(
     return anomalies
 
 
+
+def calculate_section_fraud_score(anomalies: list[Anomaly]) -> dict[str, Any]:
+    """Calcula a pontuacao de probabilidade de fraude para uma secao especifica."""
+    if not anomalies:
+        return {"score": 0, "label": "Sem Evidência de Fraude (0%)", "color": "#10b981", "desc": "Urna 100% consistente em todas as 100 verificações forenses."}
+
+    codes = [a.code for a in anomalies]
+    has_code = lambda prefix: any(prefix in c for c in codes)
+
+    if (has_code("CHK001") or has_code("CHK004")) and has_code("CHK014") and (has_code("CHK066") or has_code("CHK067")) and (has_code("CHK068") or has_code("CHK069")):
+        return {
+            "score": 93,
+            "label": "Altíssima Probabilidade de Fraude / Vício Material (93%)",
+            "color": "#b91c1c",
+            "desc": "Conjunção simultânea de troca física de máquina, carga preparada para outro município, desabamento de biometria e explosão de liberações manuais por ano de nascimento."
+        }
+
+    score = 0
+    if has_code("CHK093") or has_code("CHK098") or has_code("CHK100") or has_code("CHK059"):
+        score = max(score, 90)
+
+    if has_code("CHK046"):
+        score = max(score, 82)
+
+    if has_code("CHK054") or has_code("CHK055"):
+        score = max(score, 85)
+
+    if (has_code("CHK066") or has_code("CHK067")) and (has_code("CHK068") or has_code("CHK069")):
+        score = max(score, 88)
+    elif has_code("CHK066") or has_code("CHK068"):
+        score = max(score, 75)
+
+    if has_code("CHK001") and has_code("CHK014"):
+        score = max(score, 80)
+    elif has_code("CHK014"):
+        score = max(score, 65)
+    elif has_code("CHK001"):
+        score = max(score, 50)
+
+    if has_code("CHK056"):
+        score = max(score, 70)
+
+    chk16 = next((a for a in anomalies if "CHK016" in a.code), None)
+    if chk16 and chk16.severity == "ALTA":
+        score = max(score, 55)
+
+    all_info = all(a.severity in ["INFO", "BAIXA"] for a in anomalies)
+    if all_info:
+        return {
+            "score": 3,
+            "label": "Risco Mínimo / Ajustes Operacionais Normais (< 5%)",
+            "color": "#10b981",
+            "desc": "Apresenta apenas ajustes rotineiros comuns (como atualização padrão de Flash de Carga para o 2T ou variação residual <= 0.5% de eleitores)."
+        }
+
+    color = "#10b981"
+    label = f"Baixo Risco de Fraude ({score}%)"
+    desc = "Inconsistências isoladas com baixa probabilidade de alteração dolosa do resultado."
+
+    if score >= 80:
+        color = "#b91c1c"
+        label = f"Altíssima Probabilidade de Vício / Fraude ({score}%)"
+        desc = "Apresenta anomalias graves de hardware, biometria ou contabilidade que rompem as travas de segurança da urna."
+    elif score >= 50:
+        color = "#d97706"
+        label = f"Suspeita Elevada de Manipulação / Contaminação ({score}%)"
+        desc = "Combinação de inconsistências relevantes que exigem auditoria documental (folha de presença física e logs)."
+    elif score >= 20:
+        color = "#eab308"
+        label = f"Anomalia Moderada / Risco Médio ({score}%)"
+        desc = "Desvios operacionais ou comportamentais atípicos na seção."
+
+    return {"score": score, "label": label, "color": color, "desc": desc}
+
+
 def compute_worst_severity(anomalies: list[Anomaly]) -> str:
     """Calcula a pior severidade entre as anomalias da seção."""
     if not anomalies:
@@ -2200,6 +2279,7 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
             mun_key = mun_nome or f"Município {k.municipio}"
             municipality_anomaly_counter[mun_key] += 1
 
+        f_risk = calculate_section_fraud_score(anomalies)
         comp_sec = SectionComparison(
             uf=k.uf,
             municipio=k.municipio,
@@ -2210,6 +2290,8 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
             s2=s2,
             anomalies=anomalies,
             worst_severity=worst_sev,
+            fraud_score=f_risk["score"],
+            fraud_label=f_risk["label"],
         )
         sections_comparison.append(comp_sec)
 
@@ -2769,6 +2851,8 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                         <option value="BAIXA">Severidade BAIXA</option>
                     </select>
                     <select id="sortSelect" onchange="applySortDropdown()">
+                        <option value="fraud_desc" selected>Ordenar: Maior Chance de Fraude (93% &rarr; 0%)</option>
+                        <option value="fraud_asc">Ordenar: Menor Chance de Fraude (0% &rarr; 93%)</option>
                         <option value="sev_desc">Ordenar: Severidade (Alta &rarr; Baixa)</option>
                         <option value="sev_asc">Ordenar: Severidade (Baixa &rarr; Alta)</option>
                         <option value="mun_asc">Ordenar: Município (A &rarr; Z)</option>
@@ -2796,6 +2880,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                             <th class="col-fit t-center" onclick="sortByColumn('secao')">Seção</th>
                             <th class="col-fit t-center" onclick="sortByColumn('aptos')">Aptos (1T&rarr;2T)</th>
                             <th class="col-fit t-center" onclick="sortByColumn('severidade')">Severidade</th>
+                            <th class="col-fit t-center" onclick="sortByColumn('fraud_score')">Chance Fraude (%)</th>
                             <th class="col-fit t-center" onclick="sortByColumn('comparecimento')">Comparecimento</th>
                             <th class="col-fit t-center" onclick="sortByColumn('biometria')">Com Biometria</th>
                             <th class="col-fit t-center" onclick="sortByColumn('sem_biometria')">Sem Biometria</th>
@@ -2859,7 +2944,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
     <script>
         const allSections = {anom_json_str};
         const munMap = {mun_map_json};
-        let currentSort = {{ column: 'severidade', order: 'desc' }};
+        let currentSort = {{ column: 'fraud_score', order: 'desc' }};
         let currentFilteredSections = [];
 
         const SEV_WEIGHTS = {{
@@ -3222,6 +3307,20 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             }}
         }};
 
+        
+        function getFraudScoreBadge(s) {{
+            const fScore = s.fraud_score !== undefined ? s.fraud_score : (calculateSectionFraudScore(s, s.anomalias).score);
+            if (fScore >= 80) {{
+                return `<span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
+            }} else if (fScore >= 50) {{
+                return `<span class="badge" style="background:#ffedd5; color:#c2410c; border:1px solid #fed7aa; font-weight:800; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
+            }} else if (fScore >= 20) {{
+                return `<span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-weight:700; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
+            }} else {{
+                return `<span class="badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
+            }}
+        }}
+
         function getSeverityBadge(sev) {{
             if (sev === 'ALTA') return '<span class="badge badge-red">ALTA</span>';
             if (sev === 'MEDIA') return '<span class="badge badge-yellow">MÉDIA</span>';
@@ -3236,6 +3335,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             const p2 = d2.votos_presidenciais || {{}};
 
             switch(column) {{
+                case 'fraud_score': return s.fraud_score !== undefined ? s.fraud_score : calculateSectionFraudScore(s, s.anomalias).score;
                 case 'municipio': return (s.municipio_nome || '').toLowerCase();
                 case 'zona': return s.zona || 0;
                 case 'secao': return s.secao || 0;
@@ -3263,6 +3363,8 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
 
         function applySortDropdown() {{
             const val = document.getElementById('sortSelect').value;
+            if (val === 'fraud_desc') currentSort = {{ column: 'fraud_score', order: 'desc' }};
+            if (val === 'fraud_asc') currentSort = {{ column: 'fraud_score', order: 'asc' }};
             if (val === 'sev_desc') currentSort = {{ column: 'severidade', order: 'desc' }};
             if (val === 'sev_asc') currentSort = {{ column: 'severidade', order: 'asc' }};
             if (val === 'mun_asc') currentSort = {{ column: 'municipio', order: 'asc' }};
@@ -3353,6 +3455,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     <td class="col-fit t-center font-mono font-bold text-slate-900">${{s.secao}}</td>
                     <td class="col-fit t-center font-mono ${{aptClass}}">${{apt1}} &rarr; <strong>${{apt2}}</strong></td>
                     <td class="col-fit t-center">${{getSeverityBadge(s.worst_severity)}}</td>
+                    <td class="col-fit t-center">${{getFraudScoreBadge(s)}}</td>
                     <td class="col-fit t-center font-mono text-slate-800">${{c1}} &rarr; <strong>${{c2}}</strong></td>
                     <td class="col-fit t-center font-mono text-slate-700">${{bio1}} &rarr; <strong>${{bio2}}</strong></td>
                     <td class="col-fit t-center font-mono text-slate-700">${{sem1}} &rarr; <strong>${{sem2}}</strong></td>

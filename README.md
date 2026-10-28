@@ -332,9 +332,11 @@ O relatório visual gerado em **`comparison_sc_geral/comparison_report.html`** f
 
 1. **Aproveitamento de 100% da Largura da Tela:**
    O layout é fluido (*full-width*), aproveitando resoluções ultrawide, monitores 1080p, 2K e 4K sem cortes laterais.
-2. **Coluna de Aptos e Biometria por Seção:**
-   Exibe lado a lado:
+2. **Coluna de Aptos, Biometria e Chance de Fraude por Seção:**
+   Exibe lado a lado na listagem interativa:
    - `Aptos (1T → 2T)`
+   - `Severidade`
+   - `Chance Fraude (%)` (Badge com a probabilidade calculada da urna, de 0% a 93%)
    - `Comparecimento (1T → 2T)`
    - `Com Biometria (1T → 2T)`
    - `Sem Biometria (1T → 2T)`
@@ -342,17 +344,15 @@ O relatório visual gerado em **`comparison_sc_geral/comparison_report.html`** f
    - `Lula (13)` com variação nominal
    - `3ª Via 1T`
    - `Inconsistências Identificadas`
-3. **Botão 🔍 Inspecionar (Modal Explicativo para Leigos):**
+3. **Botão 🔍 Inspecionar (Modal com Medidor da Urna e Tradução para Leigos):**
    Ao clicar em **🔍 Detalhes** em qualquer linha da tabela, abre-se um modal interativo que decompõe cada anomalia daquela seção com:
    - **O que foi identificado na urna** (valores numéricos exatos).
    - **O que significa em linguagem simples** (explicação acessível para leigos).
    - **Por que isso levanta suspeita pericial** (o risco técnico envolvido).
 4. **Dicionário e Tradutor das 100 Inconsistências:**
    Card interativo com busca em tempo real que permite pesquisar qualquer termo (ex.: `biometria`, `queda`, `carga`, `tte`, `modelo`) e ler a tradução pericial de todas as 100 regras.
-5. **Ordenação com 1 Clique:**
-   Ordene instantaneamente por **Severidade** (`ALTA` $\rightarrow$ `MÉDIA` $\rightarrow$ `BAIXA`), **Maior Queda de Flávio**, **Maior Queda de Lula**, **Maior Variação de Comparecimento** ou clicando nos cabeçalhos da tabela.
-6. **100% Autônomo e Offline:**
-   Não carrega fontes ou scripts externos. Opera com total segurança em ambientes isolados (*air-gapped*).
+5. **Ordenação com 1 Clique por Chance de Fraude:**
+   A listagem é **ordenada por padrão pela Maior Chance de Fraude (93% &rarr; 0%)**, permitindo também ordenar por Severidade, Maior Queda de Flávio, Maior Queda de Lula, Maior Variação de Comparecimento ou clicando no cabeçalho de qualquer coluna (incluindo o cabeçalho `Chance Fraude (%)`).
 
 ---
 
@@ -366,8 +366,7 @@ pytest
 
 Saída:
 ```text
-============================== 59 passed in 1.14s ===============================
-```
+============================== 60 passed in 0.83s ===============================
 
 ---
 

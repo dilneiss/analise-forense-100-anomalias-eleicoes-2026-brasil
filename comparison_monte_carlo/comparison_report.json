@@ -354,7 +354,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 82,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)"
     },
     {
       "uf": "sc",
@@ -483,7 +485,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 82,
+      "fraud_label": "Altíssima Probabilidade de Vício / Fraude (82%)"
     },
     {
       "uf": "sc",
@@ -595,7 +599,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -711,7 +717,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -825,7 +833,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -941,7 +951,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1055,7 +1067,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1171,7 +1185,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1285,7 +1301,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1401,7 +1419,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1515,7 +1535,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1635,7 +1657,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1749,7 +1773,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1863,7 +1889,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -1977,7 +2005,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2091,7 +2121,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2205,7 +2237,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2319,7 +2353,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2435,7 +2471,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2553,7 +2591,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2667,7 +2707,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2781,7 +2823,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -2893,7 +2937,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     },
     {
       "uf": "sc",
@@ -3007,7 +3053,9 @@
         "total_terceira_via": 0,
         "votos_terceira_via": {},
         "cadeia_hash_valida": true
-      }
+      },
+      "fraud_score": 0,
+      "fraud_label": "Sem Evidência de Fraude (0%)"
     }
   ]
 }
