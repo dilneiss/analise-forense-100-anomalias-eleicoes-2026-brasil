@@ -24,16 +24,23 @@ from .parsers.bu import parse_bu
 from .reports import json_report
 from .scanner import NAME_RE
 
-# Candidatos oficiais de referência
+# Candidatos oficiais de referência (Eleições 2026)
 PRESIDENTIAL_CANDIDATES = {
-    13: "LULA",
-    22: "FLAVIO BOLSONARO",
-    14: "RENAN SANTOS",
-    70: "ESCRITOR AUGUSTO CURY",
-    55: "RONALDO CAIADO",
-    12: "CIRO GOMES",
+    13: "LULA (PT)",
+    22: "FLAVIO BOLSONARO (PL)",
+    14: "RENAN SANTOS (MISSÃO)",
+    70: "ESCRITOR AUGUSTO CURY (AVANTE)",
+    55: "RONALDO CAIADO (PSD/UNIÃO)",
+    30: "ZEMA (NOVO)",
+    80: "SAMARA (UP)",
+    16: "HERTZ DIAS (PSTU)",
+    27: "CLARIANA BARAO (DC)",
+    21: "EDMILSON COSTA (PCB)",
+    29: "RUI COSTA PIMENTA (PCO)",
+    35: "PMB (VOTO LEGENDA)",
+    28: "LEONARDO AVALANCHE (PRTB)",
+    12: "CIRO GOMES (PDT)",
 }
-
 # Severidades
 SEV_ALTA = "ALTA"
 SEV_MEDIA = "MEDIA"
@@ -2253,7 +2260,7 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
 # ============================================================================
 
 def generate_comparison_html(data: dict[str, Any]) -> str:
-    """Gera relatório HTML responsivo, autônomo com tabela completa, biometria e aptos."""
+    """Gera relatório HTML responsivo, autônomo, ocupando 100% da largura, com modal explicativo e glossário para leigos."""
     meta = data["metadados"]
     resumo = data["resumo_auditoria"]
     totais = data["totais_estaduais"]
@@ -2262,8 +2269,6 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
     secoes = data["secoes"]
 
     tipos_anomalias = resumo["por_tipo_anomalia"]
-
-    # Todas as seções com anomalias na tabela interativa (até 5.000 seções)
     anomalous_sections = [s for s in secoes if s.get("total_anomalias", 0) > 0][:5000]
 
     cand_rows = []
@@ -2276,22 +2281,22 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         pct_str = f"({c['pct_crescimento']:+.2f}%)" if c.get("pct_crescimento") is not None else ""
         cand_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="py-2.5 px-4 font-mono font-bold text-slate-800">{c['numero']}</td>
-            <td class="py-2.5 px-4 font-semibold text-slate-900">{html.escape(c['nome'])}</td>
-            <td class="py-2.5 px-4 text-right font-mono">{v1}</td>
-            <td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">{v2}</td>
-            <td class="py-2.5 px-4 text-right font-mono {color_class}">{d_str} <span class="text-xs text-slate-500 font-normal">{pct_str}</span></td>
+            <td class="py-2.5 px-3 font-mono font-bold text-slate-800">{c['numero']}</td>
+            <td class="py-2.5 px-3 font-semibold text-slate-900">{html.escape(c['nome'])}</td>
+            <td class="py-2.5 px-3 text-right font-mono">{v1}</td>
+            <td class="py-2.5 px-3 text-right font-mono font-bold text-slate-900">{v2}</td>
+            <td class="py-2.5 px-3 text-right font-mono {color_class}">{d_str} <span class="text-xs text-slate-500 font-normal">{pct_str}</span></td>
         </tr>
         """)
 
     anom_summary_rows = []
     for item in tipos_anomalias[:25]:
-        code = item["codigo"]
+        code_item = item["codigo"]
         count = item["total"]
         pct = round(count / resumo["total_secoes_analisadas"] * 100, 2)
         anom_summary_rows.append(f"""
         <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-            <td class="py-1.5 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code)}</td>
+            <td class="py-1.5 px-3 font-mono text-[11px] font-semibold text-slate-800">{html.escape(code_item)}</td>
             <td class="py-1.5 px-3 text-right font-mono font-bold text-slate-900">{count:,}</td>
             <td class="py-1.5 px-3 text-right font-mono text-xs text-slate-500">{pct:.2f}%</td>
         </tr>
@@ -2308,14 +2313,14 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
     <style>
         *, ::before, ::after {{ box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e2e8f0; }}
         body {{ margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.5; }}
-        .container {{ width: 100%; max-width: 1550px; margin-left: auto; margin-right: auto; padding: 1.5rem 1rem; }}
+        .container-fluid {{ width: 100% !important; max-width: 100% !important; margin: 0; padding: 1.25rem 2rem; }}
         .card {{ background-color: #ffffff; border-radius: 0.75rem; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); padding: 1.25rem; margin-bottom: 1.5rem; }}
         .card-header {{ display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }}
         .grid {{ display: grid; gap: 1rem; }}
         .grid-cols-6 {{ grid-template-columns: repeat(6, minmax(0, 1fr)); }}
         .grid-cols-2 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
         @media (max-width: 1200px) {{ .grid-cols-6 {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }} .grid-cols-2 {{ grid-template-columns: repeat(1, minmax(0, 1fr)); }} }}
-        @media (max-width: 768px) {{ .grid-cols-6 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
+        @media (max-width: 768px) {{ .grid-cols-6 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} .container-fluid {{ padding: 0.75rem 0.75rem; }} }}
         .stat-card {{ background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.875rem 1rem; }}
         .stat-label {{ font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; }}
         .stat-value {{ font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem; font-family: ui-monospace, monospace; }}
@@ -2333,17 +2338,29 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         .badge-yellow {{ background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }}
         .badge-blue {{ background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }}
         .badge-anom {{ background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; font-family: ui-monospace, monospace; }}
+        .btn-inspect {{ background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 0.25rem; padding: 0.25rem 0.5rem; font-size: 0.6875rem; font-weight: 700; cursor: pointer; transition: all 0.15s; white-space: nowrap; }}
+        .btn-inspect:hover {{ background: #dbeafe; border-color: #93c5fd; }}
         .font-mono {{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }}
+        
+        /* Modal */
+        .modal-overlay {{ display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); }}
+        .modal-content {{ background-color: #ffffff; margin: 2rem auto; padding: 1.75rem; border-radius: 0.75rem; max-width: 980px; width: 94%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); position: relative; max-height: 90vh; overflow-y: auto; }}
+        .modal-header {{ display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem; }}
+        .modal-close {{ background: #f1f5f9; border: none; border-radius: 0.375rem; width: 2rem; height: 2rem; font-size: 1.25rem; font-weight: 700; cursor: pointer; color: #64748b; display: flex; align-items: center; justify-content: center; }}
+        .modal-close:hover {{ background: #e2e8f0; color: #0f172a; }}
+        .anomaly-card {{ background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; border-left: 4px solid #ef4444; }}
+        .anomaly-card.sev-MEDIA {{ border-left-color: #f59e0b; }}
+        .anomaly-card.sev-BAIXA {{ border-left-color: #3b82f6; }}
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <!-- HEADER -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid #0f172a; padding-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #0f172a; padding-bottom: 0.875rem; flex-wrap: wrap; gap: 1rem;">
             <div>
                 <span class="badge badge-blue font-mono" style="margin-bottom: 0.5rem;">SUÍTE DE AUDITORIA FORENSE ELEITORAL OFICIAL</span>
                 <h1 style="font-size: 1.625rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0;">Auditoria Comparativa 1º vs 2º Turno (100 Regras Forenses)</h1>
-                <p style="font-size: 0.8125rem; color: #475569; margin: 0;">Eleições Gerais 2026 &bull; Cruzamento de BUs Oficiais &bull; Biometria, Cadastral, Aptos e Fluxo de Votação</p>
+                <p style="font-size: 0.8125rem; color: #475569; margin: 0;">Eleições Gerais 2026 &bull; Cruzamento de BUs Oficiais &bull; Biometria, Cadastral, Aptos e Fluxo de Terceira Via</p>
             </div>
             <div style="text-align: right; font-size: 0.8125rem; color: #64748b;">
                 <div><strong>Data da análise:</strong> {html.escape(meta['iniciado_em'])}</div>
@@ -2353,7 +2370,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         </div>
 
         <!-- 6 KPI CARDS -->
-        <div class="grid grid-cols-6" style="margin-bottom: 1.5rem;">
+        <div class="grid grid-cols-6" style="margin-bottom: 1.25rem;">
             <div class="stat-card" style="border-left: 4px solid #3b82f6;">
                 <div class="stat-label">Seções Auditadas</div>
                 <div class="stat-value">{resumo['total_secoes_analisadas']:,}</div>
@@ -2367,22 +2384,22 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             <div class="stat-card" style="border-left: 4px solid #f59e0b;">
                 <div class="stat-label">Severidade Alta (Crítica)</div>
                 <div class="stat-value" style="color: #d97706;">{resumo['por_severidade'].get('ALTA', 0):,}</div>
-                <div class="stat-desc">Quedas nominais, variações cadastrais</div>
+                <div class="stat-desc">Quedas nominais, trocas de urna</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #10b981;">
                 <div class="stat-label">Comparecimento (2T)</div>
                 <div class="stat-value" style="color: #047857;">{totais['comparecimento_2t']:,}</div>
-                <div class="stat-desc">{totais['pct_comparecimento_2t']}% presença ({totais['comparecimento_2t'] - totais['comparecimento_1t']:+,} vs 1T)</div>
+                <div class="stat-desc">{totais['pct_comparecimento_2t']}% ({totais['comparecimento_2t'] - totais['comparecimento_1t']:+,} vs 1T)</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #6366f1;">
                 <div class="stat-label">Com Biometria (2T)</div>
                 <div class="stat-value" style="color: #4338ca;">{bio.get('com_biometria_2t', 0):,}</div>
-                <div class="stat-desc">{bio.get('pct_biometria_2t', 0)}% dos votos no 2T</div>
+                <div class="stat-desc">{bio.get('pct_biometria_2t', 0)}% dos votantes</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #8b5cf6;">
                 <div class="stat-label">Sem Biometria (2T)</div>
                 <div class="stat-value" style="color: #6d28d9;">{bio.get('sem_biometria_2t', 0):,}</div>
-                <div class="stat-desc">Manual + Ano de Nascimento</div>
+                <div class="stat-desc">Manual + Ano Nascimento</div>
             </div>
         </div>
 
@@ -2393,7 +2410,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 <div class="card-header">
                     <div>
                         <h2 style="font-size: 1.0625rem; font-weight: 700; margin: 0; color: #0f172a;">Totalização Presidencial e Terceira Via</h2>
-                        <span style="font-size: 0.75rem; color: #64748b;">Consolidado de todas as seções (Terceira via no 1T: {t3.get('total_votos', 0):,} votos)</span>
+                        <span style="font-size: 0.75rem; color: #64748b;">Consolidado de todas as seções (Estoque de 3ª via no 1T: {t3.get('total_votos', 0):,} votos)</span>
                     </div>
                 </div>
                 <table>
@@ -2409,10 +2426,10 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     <tbody>
                         {"".join(cand_rows)}
                         <tr class="border-t-2 border-slate-200 bg-slate-50 font-bold">
-                            <td colspan="2" class="py-2.5 px-4 text-slate-800">COMPARECIMENTO TOTAL</td>
-                            <td class="py-2.5 px-4 text-right font-mono">{totais['comparecimento_1t']:,}</td>
-                            <td class="py-2.5 px-4 text-right font-mono">{totais['comparecimento_2t']:,}</td>
-                            <td class="py-2.5 px-4 text-right font-mono text-slate-900">{totais['comparecimento_2t'] - totais['comparecimento_1t']:+,}</td>
+                            <td colspan="2" class="py-2.5 px-3 text-slate-800">COMPARECIMENTO TOTAL</td>
+                            <td class="py-2.5 px-3 text-right font-mono">{totais['comparecimento_1t']:,}</td>
+                            <td class="py-2.5 px-3 text-right font-mono">{totais['comparecimento_2t']:,}</td>
+                            <td class="py-2.5 px-3 text-right font-mono text-slate-900">{totais['comparecimento_2t'] - totais['comparecimento_1t']:+,}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -2448,7 +2465,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             <div class="card-header">
                 <div>
                     <h2 style="font-size: 1.125rem; font-weight: 800; margin: 0; color: #0f172a;">Explorador Interativo de Seções Eleitorais</h2>
-                    <p style="font-size: 0.75rem; color: #64748b; margin: 0.25rem 0 0 0;">Exibição detalhada com <strong>Aptos</strong>, <strong>Biometria</strong>, <strong>Terceira Via</strong> e <strong>Inconsistências</strong>. Clique no cabeçalho de qualquer coluna para ordenar.</p>
+                    <p style="font-size: 0.75rem; color: #64748b; margin: 0.25rem 0 0 0;">Exibição detalhada com <strong>Aptos</strong>, <strong>Biometria</strong>, <strong>Terceira Via</strong> e <strong>Tradução para Leigos</strong>. Clique em <strong>🔍 Detalhes</strong> para inspecionar qualquer seção.</p>
                 </div>
                 <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
                     <input type="text" id="searchInput" placeholder="Buscar município, zona ou seção..." style="width: 240px;" oninput="applyFilters()">
@@ -2493,6 +2510,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                             <th onclick="sortByColumn('lula')" style="text-align: right;">Lula (13)</th>
                             <th onclick="sortByColumn('terceira_via')" style="text-align: right;">3ª Via 1T</th>
                             <th>Inconsistências Identificadas</th>
+                            <th style="text-align: center;">Ações</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -2503,6 +2521,19 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             </div>
         </div>
 
+        <!-- GLOSSÁRIO E GUIA PARA LEIGOS -->
+        <div class="card" style="margin-top: 1.5rem;">
+            <div class="card-header">
+                <div>
+                    <h2 style="font-size: 1.125rem; font-weight: 800; margin: 0; color: #0f172a;">Dicionário e Tradutor das 100 Inconsistências Forenses (Guia para Leigos)</h2>
+                    <p style="font-size: 0.75rem; color: #64748b; margin: 0.25rem 0 0 0;">Entenda o que significa cada regra técnica, o que ela avalia e por que uma ocorrência levanta suspeita pericial.</p>
+                </div>
+                <input type="text" id="glossarySearch" placeholder="Buscar regra no glossário (ex: biometria, queda, carga, tte)..." oninput="filterGlossary()" style="width: 320px;">
+            </div>
+            <div id="glossaryContainer" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; max-height: 550px; overflow-y: auto; padding-right: 0.5rem;">
+            </div>
+        </div>
+
         <!-- FOOTER METODOLÓGICO -->
         <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; font-size: 0.75rem; color: #64748b; border-top: 1px solid #e2e8f0;">
             <p style="margin: 0 0 0.5rem 0;"><strong>Ferramenta Forense de Auditoria da Urna Eletrônica</strong> &bull; 100 Regras Técnicas de Integridade Forense e Matemática Eleitoral.</p>
@@ -2510,10 +2541,30 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         </div>
     </div>
 
+    <!-- MODAL DE INSPEÇÃO DETALHADA DA SEÇÃO -->
+    <div id="detailsModal" class="modal-overlay" onclick="handleModalOverlayClick(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <div id="modalSevBadge" style="margin-bottom: 0.35rem;"></div>
+                    <h2 id="modalTitle" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;"></h2>
+                    <p id="modalSubtitle" style="font-size: 0.8125rem; color: #64748b; margin: 0.2rem 0 0 0;"></p>
+                </div>
+                <button onclick="closeModal()" class="modal-close">&times;</button>
+            </div>
+            <div id="modalKpis" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.25rem;"></div>
+            <h3 style="font-size: 0.9375rem; font-weight: 800; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.4rem; margin-bottom: 0.75rem;">
+                Inconsistências Identificadas e Tradução para Leigos:
+            </h3>
+            <div id="modalAnomaliesList"></div>
+        </div>
+    </div>
+
     <!-- SCRIPT DE FILTRAGEM, ORDENAÇÃO E RENDERIZAÇÃO OFFLINE -->
     <script>
         const allSections = {anom_json_str};
         let currentSort = {{ column: 'severidade', order: 'desc' }};
+        let currentFilteredSections = [];
 
         const SEV_WEIGHTS = {{
             'ALTA': 3,
@@ -2521,6 +2572,352 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             'BAIXA': 1,
             'INFO': 0,
             'NORMAL': -1
+        }};
+
+        const GLOSSARY_DATA = {{
+            // Hardware
+            "CHK001_TROCA_URNA_FISICA": {{
+                "titulo": "Substituição da Urna Física",
+                "explicacao": "A urna física que funcionou no 1º turno foi substituída por outra máquina diferente no 2º turno.",
+                "por_que_suspeito": "A troca de equipamento entre turnos sem motivo registrado em ata rompe a continuidade física da auditoria e exige conferência da urna de contingência.",
+                "severidade": "MEDIA"
+            }},
+            "CHK002_TROCA_FLASH_VOTACAO": {{
+                "titulo": "Troca da Flash de Votação (FV)",
+                "explicacao": "O cartão de memória de votação que armazena os votos foi substituído no 2º turno.",
+                "por_que_suspeito": "A FV deve permanecer vinculada à urna durante todo o processo eleitoral.",
+                "severidade": "MEDIA"
+            }},
+            "CHK003_TROCA_FLASH_CARGA": {{
+                "titulo": "Troca da Flash de Carga (FC)",
+                "explicacao": "O cartão que contém os sistemas e dados da eleição foi alterado entre os turnos.",
+                "por_que_suspeito": "Pode indicar recarga não documentada do sistema eleitoral.",
+                "severidade": "MEDIA"
+            }},
+            "CHK004_MODELO_URNA_DIVERGENTE": {{
+                "titulo": "Modelo de Urna Divergente",
+                "explicacao": "A urna do 1º turno era de um modelo (ex: UE2020) e no 2º turno passou a ser de outro modelo mais antigo ou diferente.",
+                "por_que_suspeito": "Urnas de modelos distintos possuem níveis diferentes de hardware de segurança.",
+                "severidade": "ALTA"
+            }},
+            "CHK005_VERSAO_SOFTWARE_ALTERADA": {{
+                "titulo": "Versão de Software Alterada",
+                "explicacao": "O programa de computador instalado na urna foi alterado entre o 1º e 2º turno.",
+                "por_que_suspeito": "O software de votação deve ser lacrado pelo TSE antes da eleição e não pode sofrer alteração entre turnos sem homologação.",
+                "severidade": "ALTA"
+            }},
+            "CHK006_MUDANCA_LOCAL_VOTACAO": {{
+                "titulo": "Mudança de Local Físico de Votação",
+                "explicacao": "A seção eleitoral foi transferida para outro endereço físico no 2º turno.",
+                "por_que_suspeito": "Mudanças de local podem desorientar eleitores e impactar a presença na urna.",
+                "severidade": "BAIXA"
+            }},
+            "CHK007_CODIGO_CARGA_ALTERADO": {{
+                "titulo": "Código de Carga Alterado na Mesma Urna",
+                "explicacao": "A mesma urna recebeu uma nova carga de dados para o 2º turno.",
+                "por_que_suspeito": "Indica que os dados da urna foram regravados entre os turnos.",
+                "severidade": "BAIXA"
+            }},
+            "CHK008_DATA_CARGA_ANOMALA_2T": {{
+                "titulo": "Data de Carga Anômala",
+                "explicacao": "A data registrada da carga da urna no 2T é anterior ao 1º turno.",
+                "por_que_suspeito": "Incoerência cronológica no relógio interno ou no processo de preparação.",
+                "severidade": "MEDIA"
+            }},
+            "CHK009_DATA_CARGA_TARDIA_2T": {{
+                "titulo": "Carga Tardia no Dia da Eleição",
+                "explicacao": "A urna foi carregada com dados às pressas no próprio dia da votação do 2T.",
+                "por_que_suspeito": "Cargas emergenciais no dia da votação pulam etapas formais de auditoria prévia.",
+                "severidade": "MEDIA"
+            }},
+            "CHK010_CORRESPONDENCIA_INVALIDA_2T": {{
+                "titulo": "Correspondência de Seção Inválida",
+                "explicacao": "A correspondência gravada na carga não bate com a seção do Boletim de Urna.",
+                "por_que_suspeito": "Risco de votos de uma seção estarem sendo computados em outra.",
+                "severidade": "ALTA"
+            }},
+            "CHK011_GERADOR_MIDIA_DIVERGENTE": {{
+                "titulo": "Gerador de Mídia Divergente",
+                "explicacao": "O computador usado pelo cartório para gerar a mídia de carga foi trocado.",
+                "por_que_suspeito": "Desvio no procedimento padrão de geração de cartões eleitorais.",
+                "severidade": "BAIXA"
+            }},
+            "CHK012_TPM_SERIAL_DIVERGENTE": {{
+                "titulo": "Serial TPM Divergente",
+                "explicacao": "O chip criptográfico soldado na placa-mãe da urna mudou na mesma máquina declarada.",
+                "por_que_suspeito": "Inconsistência de placa de hardware na mesma urna física.",
+                "severidade": "ALTA"
+            }},
+            "CHK013_SERIAL_INSTALACAO_REINICIADO": {{
+                "titulo": "Serial de Instalação Reiniciado",
+                "explicacao": "O contador de instalações da urna recuou para um valor menor.",
+                "por_que_suspeito": "Indica reinstalação não autorizada do sistema operacional da urna.",
+                "severidade": "MEDIA"
+            }},
+            "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO": {{
+                "titulo": "Carga Gerada para Outro Município",
+                "explicacao": "A carga da urna foi configurada para um município, mas a urna funcionou em outro.",
+                "por_que_suspeito": "Falha de custódia logística: urna operando fora de sua jurisdição municipal.",
+                "severidade": "ALTA"
+            }},
+            "CHK015_TIPO_ARQUIVO_NAO_VOTACAO_UE": {{
+                "titulo": "Tipo de Arquivo não Oficial",
+                "explicacao": "O arquivo do BU não está classificado como arquivo oficial de votação de urna.",
+                "por_que_suspeito": "Arquivo com cabeçalho diferente do padrão oficial de resultado.",
+                "severidade": "ALTA"
+            }},
+
+            // Cadastral
+            "CHK016_VARIACAO_APTOS_SECAO": {{
+                "titulo": "Variação de Eleitores Originais da Seção",
+                "explicacao": "A lista oficial de eleitores cadastrados na seção mudou entre o 1º e 2º turno.",
+                "por_que_suspeito": "Por lei, o cadastro de eleitores é congelado antes da eleição. Não podem surgir nem sumir eleitores da seção.",
+                "severidade": "ALTA"
+            }},
+            "CHK017_REDUCAO_APTOS_SECAO": {{
+                "titulo": "Redução de Eleitores Originais",
+                "explicacao": "Eleitores cadastrados foram retirados da lista de votantes no 2T.",
+                "por_que_suspeito": "Risco de exclusão indevida ou cerceamento de eleitores aptos.",
+                "severidade": "ALTA"
+            }},
+            "CHK018_AUMENTO_APTOS_SECAO": {{
+                "titulo": "Aumento de Eleitores Originais",
+                "explicacao": "Novos eleitores apareceram cadastrados na seção no 2T.",
+                "por_que_suspeito": "Inserção irregular de eleitores no cadastro após o congelamento legal.",
+                "severidade": "ALTA"
+            }},
+            "CHK019_PICO_TTE_ABSOLUTO": {{
+                "titulo": "Pico de Voto em Trânsito (TTE)",
+                "explicacao": "Salto repentino de mais de 20 eleitores temporários/em trânsito na seção.",
+                "por_que_suspeito": "Pode indicar deslocamento artificial de eleitores para seções estratégicas.",
+                "severidade": "MEDIA"
+            }},
+            "CHK020_PICO_TTE_PERCENTUAL": {{
+                "titulo": "Oscilação Excessiva de TTE",
+                "explicacao": "A quantidade de eleitores temporários variou mais de 10% da seção.",
+                "por_que_suspeito": "Alteração substancial no perfil do eleitorado da urna.",
+                "severidade": "MEDIA"
+            }},
+            "CHK023_APTOS_TOTAL_DIVERGENTE_SOMA": {{
+                "titulo": "Soma de Aptos Incoerente",
+                "explicacao": "A soma de eleitores originais com temporários não bate com o total.",
+                "por_que_suspeito": "Erro aritmético na contabilidade de eleitores da urna.",
+                "severidade": "ALTA"
+            }},
+            "CHK031_COMPARECIMENTO_EXCEDE_APTOS_2T": {{
+                "titulo": "Comparecimento Maior que Aptos (2T)",
+                "explicacao": "Houve mais votos computados do que eleitores cadastrados na urna no 2T.",
+                "por_que_suspeito": "Impossibilidade matemática: mais pessoas votaram do que o total de eleitores existentes na seção.",
+                "severidade": "ALTA"
+            }},
+            "CHK033_COMPARECIMENTO_100_PCT_2T": {{
+                "titulo": "100% de Presença (Zero Faltas)",
+                "explicacao": "Exatamente todos os eleitores cadastrados compareceram para votar no 2T.",
+                "por_que_suspeito": "Estatisticamente raríssimo em seções grandes: ninguém faltou, adoeceu ou viajou.",
+                "severidade": "MEDIA"
+            }},
+            "CHK036_SALTO_COMPARECIMENTO_MAIOR_25PP": {{
+                "titulo": "Salto de Presença > 25 pp",
+                "explicacao": "O comparecimento aumentou drasticamente mais de 25 pontos percentuais no 2T.",
+                "por_que_suspeito": "Entrada súbita de eleitores que não haviam votado no 1º turno.",
+                "severidade": "ALTA"
+            }},
+            "CHK037_QUEDA_COMPARECIMENTO_MAIOR_25PP": {{
+                "titulo": "Queda de Presença > 25 pp",
+                "explicacao": "O comparecimento despencou mais de 25 pontos percentuais no 2T.",
+                "por_que_suspeito": "Falta maciça de eleitores que haviam comparecido no 1º turno.",
+                "severidade": "ALTA"
+            }},
+            "CHK044_COMPARECIMENTO_DISCREPANTE_DO_MUNICIPIO": {{
+                "titulo": "Presença Discrepante da Média Municipal",
+                "explicacao": "A variação de comparecimento da seção foi o oposto do que aconteceu na cidade.",
+                "por_que_suspeito": "Seção se comportou de forma totalmente isolada e discrepante do município.",
+                "severidade": "ALTA"
+            }},
+
+            // Votação & Terceira Via
+            "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR": {{
+                "titulo": "Queda de Votos com MAIOR Comparecimento",
+                "explicacao": "O candidato finalista perdeu votos nominais no 2T, embora mais eleitores tenham ido votar na seção.",
+                "por_que_suspeito": "Se mais pessoas foram votar e o candidato perdeu votos absolutos, sua base encolheu misteriosamente mesmo com eleição polarizada.",
+                "severidade": "ALTA"
+            }},
+            "CHK047_QUEDA_FINALISTA_COM_COMPARECIMENTO_IGUAL": {{
+                "titulo": "Queda de Votos com Comparecimento IGUAL",
+                "explicacao": "O candidato finalista perdeu votos com exatamente o mesmo número de votantes na urna.",
+                "por_que_suspeito": "Perda de votos consolidados em relação ao 1º turno com eleitorado idêntico.",
+                "severidade": "ALTA"
+            }},
+            "CHK048_QUEDA_DESPROPORCIONAL_AO_COMPARECIMENTO": {{
+                "titulo": "Queda Desproporcional à Abstenção",
+                "explicacao": "A presença caiu pouco, mas o candidato perdeu mais de 2.5x dessa proporção em votos.",
+                "por_que_suspeito": "A perda de votos do candidato foi muito superior à queda geral de votantes da seção.",
+                "severidade": "ALTA"
+            }},
+            "CHK049_PERDA_BRUSCA_MAIOR_30PCT_FINALISTA": {{
+                "titulo": "Perda Brusca > 30% dos Votos",
+                "explicacao": "O candidato finalista perdeu mais de 30% de seus votos nominais com presença estável.",
+                "por_que_suspeito": "Desidratação inexplicável da votação obtida 21 dias antes.",
+                "severidade": "MEDIA"
+            }},
+            "CHK050_DESAPARECIMENTO_FINALISTA_NO_2T": {{
+                "titulo": "Desaparecimento Total de Votos",
+                "explicacao": "O candidato tinha votação expressiva no 1T e zerou (0 votos) no 2T.",
+                "por_que_suspeito": "Todos os eleitores que votaram nele no 1T sumiram ou mudaram no 2T.",
+                "severidade": "ALTA"
+            }},
+            "CHK052_UNANIMIDADE_100PCT_FINALISTA_2T": {{
+                "titulo": "100% de Votação Unânime",
+                "explicacao": "Todos os votos válidos da seção foram computados para um único candidato.",
+                "por_que_suspeito": "Unanimidade eleitoral absoluta no 2º turno.",
+                "severidade": "MEDIA"
+            }},
+            "CHK053_ABSORCAO_100PCT_TERCEIRA_VIA_POR_UM_CANDIDATO": {{
+                "titulo": "Absorção de 100% da Terceira Via por um Só Concorrente",
+                "explicacao": "Todos os votos de candidatos eliminados no 1T foram direcionados a um único concorrente.",
+                "por_que_suspeito": "Migração de votos 100% assimétrica, sem divisão natural de votos entre os finalistas.",
+                "severidade": "MEDIA"
+            }},
+            "CHK054_CRESCIMENTO_EXCEDE_TETO_MIGRACAO_E_COMPARECIMENTO": {{
+                "titulo": "Crescimento Excede Teto Matemático",
+                "explicacao": "O candidato ganhou mais votos no 2T do que a soma de toda a 3ª via, brancos, nulos e novos eleitores.",
+                "por_que_suspeito": "Impossibilidade matemática: o candidato cresceu mais do que todos os votos disponíveis para migrar.",
+                "severidade": "ALTA"
+            }},
+            "CHK055_CRESCIMENTO_COM_QUEDA_DE_COMPARECIMENTO_ACIMA_DA_TERCEIRA_VIA": {{
+                "titulo": "Crescimento com Queda de Presença",
+                "explicacao": "O comparecimento caiu, mas o candidato cresceu além do total existente de votos de terceira via no 1T.",
+                "por_que_suspeito": "O candidato cresceu votos que não existiam no 1T com menos pessoas votando.",
+                "severidade": "ALTA"
+            }},
+            "CHK056_INVERSAO_ABRUPTA_SWING_MAIOR_50PP": {{
+                "titulo": "Swing Político Extremo (> 50 pp)",
+                "explicacao": "Um candidato liderava com folga no 1T e o adversário virou de forma esmagadora no 2T.",
+                "por_que_suspeito": "Mudança radical e repentina na preferência política da seção em 3 semanas.",
+                "severidade": "ALTA"
+            }},
+            "CHK058_MIGRACAO_TOTALMENTE_ASSIMETRICA_CONTRA_MEDIA_MUNICIPAL": {{
+                "titulo": "Migração Oposta à Média Municipal",
+                "explicacao": "Na seção o candidato disparou, enquanto no resto da cidade o adversário cresceu.",
+                "por_que_suspeito": "Comportamento da seção colide frontalmente com a tendência de todo o município.",
+                "severidade": "ALTA"
+            }},
+            "CHK062_DESVIO_PADRAO_VOTOS_EXTREMO_NO_MUNICIPIO": {{
+                "titulo": "Desvio Extremo no Município (> 3.5 DP)",
+                "explicacao": "Percentual do candidato na seção desvia mais de 3.5 desvios-padrão da média da cidade.",
+                "por_que_suspeito": "Estatisticamente é um ponto fora da curva (outlier severo) no município.",
+                "severidade": "MEDIA"
+            }},
+
+            // Biometria
+            "CHK066_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_30PP": {{
+                "titulo": "Queda Drástica de Biometria (> 30 pp)",
+                "explicacao": "A taxa de reconhecimento biométrico caiu mais de 30 pontos percentuais no 2T.",
+                "por_que_suspeito": "O leitor biométrico parou de ser usado ou foi contornado pelos mesários.",
+                "severidade": "ALTA"
+            }},
+            "CHK067_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_20PP": {{
+                "titulo": "Queda Acentuada de Biometria (> 20 pp)",
+                "explicacao": "A validação por digital recuou mais de 20 pontos percentuais no 2T.",
+                "por_que_suspeito": "Queda anormal no uso da biometria entre os turnos.",
+                "severidade": "MEDIA"
+            }},
+            "CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP": {{
+                "titulo": "Surto Crítico de Habilitação Manual (> 25 pp)",
+                "explicacao": "Mesários liberaram mais de 25% dos eleitores digitando o ano de nascimento.",
+                "por_que_suspeito": "Pode indicar liberação de eleitores sem conferência da digital ou presença.",
+                "severidade": "ALTA"
+            }},
+            "CHK069_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_15PP": {{
+                "titulo": "Salto de Habilitação Manual (> 15 pp)",
+                "explicacao": "Aumento expressivo na liberação por ano de nascimento no 2T.",
+                "por_que_suspeito": "Uso elevado da exceção biográfica em vez da biometria.",
+                "severidade": "MEDIA"
+            }},
+            "CHK070_ZERO_BIOMETRIA_EM_SECAO_BIOMETRIZADA": {{
+                "titulo": "Zero Biometria em Seção Biometrizada",
+                "explicacao": "Seção que usou biometria no 1T teve 0 biometrias no 2T.",
+                "por_que_suspeito": "Leitor biométrico quebrado, desativado ou deliberadamente ignorado.",
+                "severidade": "MEDIA"
+            }},
+            "CHK072_SOMA_DETALHAMENTO_COMPARECIMENTO_DIVERGENTE": {{
+                "titulo": "Soma do Detalhamento Biométrico Diverge",
+                "explicacao": "Biometria + Biográfica + Sem Biometria não bate com o comparecimento.",
+                "por_que_suspeito": "Inconsistência nos contadores internos de habilitação da urna.",
+                "severidade": "ALTA"
+            }},
+
+            // Tempo
+            "CHK076_ABERTURA_PRECOCE_2T": {{
+                "titulo": "Abertura Precoce (< 07:00)",
+                "explicacao": "A urna começou a receber votos antes das 7 horas da manhã.",
+                "por_que_suspeito": "Violação do horário regulamentar de abertura do TSE.",
+                "severidade": "MEDIA"
+            }},
+            "CHK077_ABERTURA_TARDIA_2T": {{
+                "titulo": "Abertura Tardia (> 08:30)",
+                "explicacao": "A urna só começou a receber votos após as 8h30.",
+                "por_que_suspeito": "Atraso expressivo que pode indicar problemas técnicos ou operacionais.",
+                "severidade": "MEDIA"
+            }},
+            "CHK078_ENCERRAMENTO_PRECOCE_2T": {{
+                "titulo": "Encerramento Precoce (< 17:00)",
+                "explicacao": "A urna foi fechada antes das 17h enquanto ainda poderia haver eleitores.",
+                "por_que_suspeito": "Fechamento antecipado irregular que impede o voto de cidadãos.",
+                "severidade": "ALTA"
+            }},
+            "CHK079_ENCERRAMENTO_MUITO_TARDIO_2T": {{
+                "titulo": "Encerramento Tardio (> 20:00)",
+                "explicacao": "A votação continuou até depois das 20h.",
+                "por_que_suspeito": "Indica filas anômalas ou extensão excessiva do horário de votação.",
+                "severidade": "MEDIA"
+            }},
+            "CHK083_TEMPO_MEDIO_POR_VOTO_IMPOSSIVEL_INFERIOR_15S": {{
+                "titulo": "Votos em Menos de 15 Segundos",
+                "explicacao": "Tempo médio por voto menor que 15 segundos durante o dia todo.",
+                "por_que_suspeito": "Ritmo humanamente impossível para identificação, conferência e voto na cabine.",
+                "severidade": "ALTA"
+            }},
+            "CHK084_EMISSAO_BU_ANTERIOR_AO_ENCERRAMENTO": {{
+                "titulo": "Emissão Anterior ao Encerramento",
+                "explicacao": "O Boletim de Urna foi impresso antes do fechamento oficial da votação.",
+                "por_que_suspeito": "Violação cronológica grave na gravação dos arquivos da urna.",
+                "severidade": "ALTA"
+            }},
+
+            // Brancos e Nulos
+            "CHK086_EXPLOSAO_BRANCOS_NULOS_MAIOR_15PP": {{
+                "titulo": "Salto de Brancos e Nulos > 15 pp",
+                "explicacao": "Votos brancos e nulos aumentaram mais de 15 pontos percentuais no 2T.",
+                "por_que_suspeito": "Salto incomum de descarte de votos em eleição polarizada.",
+                "severidade": "MEDIA"
+            }},
+            "CHK088_EXTINCAO_BRANCOS_NULOS_SECAO_GRANDE": {{
+                "titulo": "Zero Brancos e Zero Nulos",
+                "explicacao": "Nenhum voto branco e nenhum nulo em urna com mais de 150 votantes.",
+                "por_que_suspeito": "Ausência total de erros de digitação ou votos de protesto em amostra grande.",
+                "severidade": "BAIXA"
+            }},
+
+            // Integridade
+            "CHK093_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_2T": {{
+                "titulo": "Soma de Votos != Comparecimento (2T)",
+                "explicacao": "A soma de válidos, brancos e nulos não bate com o comparecimento no 2T.",
+                "por_que_suspeito": "Corrupção ou incoerência nos totais de apuração do Boletim de Urna.",
+                "severidade": "ALTA"
+            }},
+            "CHK098_FALHA_CADEIA_HASH_SHA512_2T": {{
+                "titulo": "Cadeia de Hashes SHA-512 Rompida (2T)",
+                "explicacao": "O hash matemático recalculado voto a voto não bate com o declarado no 2T.",
+                "por_que_suspeito": "Alteração ou corrupção nos dados de votação do Boletim de Urna do 2T.",
+                "severidade": "ALTA"
+            }},
+            "CHK100_HASH_ASSINADO_VSC_DIVERGENTE": {{
+                "titulo": "Hash Assinado no VSC Divergente",
+                "explicacao": "O hash SHA-512 do arquivo do BU não bate com a assinatura oficial da urna.",
+                "por_que_suspeito": "Possível alteração no arquivo bu.dat após a assinatura digital da máquina.",
+                "severidade": "ALTA"
+            }}
         }};
 
         function getSeverityBadge(sev) {{
@@ -2598,7 +2995,6 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 return true;
             }});
 
-            // Ordenação
             filtered.sort((a, b) => {{
                 const valA = getSectionValue(a, currentSort.column);
                 const valB = getSectionValue(b, currentSort.column);
@@ -2607,8 +3003,9 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 return 0;
             }});
 
+            currentFilteredSections = filtered;
             const tbody = document.getElementById('tableBody');
-            const limit = Math.min(filtered.length, 250);
+            const limit = Math.min(filtered.length, 300);
             let html = '';
 
             for (let i = 0; i < limit; i++) {{
@@ -2644,7 +3041,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 const t3 = d1.total_terceira_via || 0;
 
                 const badges = s.anomalias.map(a => 
-                    `<span class="badge badge-anom" title="${{a.description || ''}} &bull; ${{a.title || ''}}">${{a.code}}</span>`
+                    `<span class="badge badge-anom" onclick="openModal(${{i}})" style="cursor:pointer;" title="${{a.description || ''}} &bull; ${{a.title || ''}}">${{a.code}}</span>`
                 ).join(' ');
 
                 html += `
@@ -2660,7 +3057,10 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     <td class="py-2.5 px-2 text-right font-mono ${{cl_22}}">${{v1_22}} &rarr; <strong>${{v2_22}}</strong> <span class="text-[10px]">(${{d_22 >= 0 ? '+' : ''}}${{d_22}})</span></td>
                     <td class="py-2.5 px-2 text-right font-mono ${{cl_13}}">${{v1_13}} &rarr; <strong>${{v2_13}}</strong> <span class="text-[10px]">(${{d_13 >= 0 ? '+' : ''}}${{d_13}})</span></td>
                     <td class="py-2.5 px-2 text-right font-mono font-semibold text-slate-700">${{t3}}</td>
-                    <td class="py-2.5 px-2" style="max-width: 380px;">${{badges}}</td>
+                    <td class="py-2.5 px-2" style="max-width: 320px;">${{badges}}</td>
+                    <td class="py-2.5 px-2 text-center">
+                        <button onclick="openModal(${{i}})" class="btn-inspect">🔍 Detalhes</button>
+                    </td>
                 </tr>`;
             }}
 
@@ -2668,9 +3068,123 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             document.getElementById('filterCount').textContent = `Exibindo ${{limit}} de ${{filtered.length}} seções encontradas nos filtros (ordenadas por ${{currentSort.column}} ${{currentSort.order}}).`;
         }}
 
-        // Inicializa ao carregar
+        function openModal(index) {{
+            const s = currentFilteredSections[index];
+            if (!s) return;
+
+            const d1 = s.dados_1t || {{}};
+            const d2 = s.dados_2t || {{}};
+            const p1 = d1.votos_presidenciais || {{}};
+            const p2 = d2.votos_presidenciais || {{}};
+
+            document.getElementById('modalSevBadge').innerHTML = getSeverityBadge(s.worst_severity);
+            document.getElementById('modalTitle').textContent = `${{s.municipio_nome || 'Município ' + s.municipio}} - Zona ${{s.zona}}, Seção ${{s.secao}}`;
+            document.getElementById('modalSubtitle').textContent = `Urna 1T: ${{d1.numero_interno_urna || 'N/A'}} | Urna 2T: ${{d2.numero_interno_urna || 'N/A'}} | Local: ${{d2.local || d1.local || 'N/A'}}`;
+
+            const sem1 = (d1.biometria_bio || 0) + (d1.biometria_nao || 0);
+            const sem2 = (d2.biometria_bio || 0) + (d2.biometria_nao || 0);
+
+            const v1_22 = p1['22'] || 0;
+            const v2_22 = p2['22'] || 0;
+            const v1_13 = p1['13'] || 0;
+            const v2_13 = p2['13'] || 0;
+
+            document.getElementById('modalKpis').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Comparecimento</div>
+                    <div class="stat-value" style="font-size:1.15rem;">${{d1.comparecimento}} &rarr; ${{d2.comparecimento}}</div>
+                    <div class="stat-desc">Aptos: ${{d1.aptos}} &rarr; ${{d2.aptos}}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Com Biometria</div>
+                    <div class="stat-value" style="font-size:1.15rem;">${{d1.biometria_sim}} &rarr; ${{d2.biometria_sim}}</div>
+                    <div class="stat-desc">Sem bio: ${{sem1}} &rarr; ${{sem2}}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Flávio Bolsonaro (22)</div>
+                    <div class="stat-value" style="font-size:1.15rem; color:${{v2_22 >= v1_22 ? '#047857' : '#b91c1c'}};">${{v1_22}} &rarr; ${{v2_22}}</div>
+                    <div class="stat-desc">Dif: ${{v2_22 - v1_22 >= 0 ? '+' : ''}}${{v2_22 - v1_22}} votos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Lula (13)</div>
+                    <div class="stat-value" style="font-size:1.15rem; color:${{v2_13 >= v1_13 ? '#047857' : '#b91c1c'}};">${{v1_13}} &rarr; ${{v2_13}}</div>
+                    <div class="stat-desc">Dif: ${{v2_13 - v1_13 >= 0 ? '+' : ''}}${{v2_13 - v1_13}} votos</div>
+                </div>
+            `;
+
+            let anomHtml = '';
+            for (const a of (s.anomalias || [])) {{
+                const g = GLOSSARY_DATA[a.code] || {{
+                    titulo: a.title,
+                    explicacao: a.description,
+                    por_que_suspeito: "Inconsistência técnica identificada nas verificações automáticas de integridade."
+                }};
+
+                anomHtml += `
+                    <div class="anomaly-card sev-${{a.severity}}">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+                            <span class="font-mono" style="font-weight:800; font-size:0.75rem; color:#0f172a;">${{a.code}}</span>
+                            ${{getSeverityBadge(a.severity)}}
+                        </div>
+                        <div style="font-weight:700; font-size:0.875rem; color:#1e293b; margin-bottom:0.25rem;">${{g.titulo}}</div>
+                        <div style="font-size:0.8125rem; color:#475569; margin-bottom:0.5rem; background:#ffffff; padding:0.4rem 0.6rem; border-radius:0.25rem; border:1px solid #e2e8f0;">
+                            <strong>Dado Identificado na Urna:</strong> ${{a.description}}
+                        </div>
+                        <div style="font-size:0.75rem; color:#334155; margin-bottom:0.35rem;">
+                            <strong>💡 O que significa para leigos:</strong> ${{g.explicacao}}
+                        </div>
+                        <div style="font-size:0.75rem; color:#991b1b;">
+                            <strong>⚠️ Por que isso levanta suspeita:</strong> ${{g.por_que_suspeito}}
+                        </div>
+                    </div>
+                `;
+            }}
+
+            document.getElementById('modalAnomaliesList').innerHTML = anomHtml;
+            document.getElementById('detailsModal').style.display = 'block';
+        }}
+
+        function closeModal() {{
+            document.getElementById('detailsModal').style.display = 'none';
+        }}
+
+        function handleModalOverlayClick(e) {{
+            if (e.target.id === 'detailsModal') closeModal();
+        }}
+
+        function renderGlossary() {{
+            const container = document.getElementById('glossaryContainer');
+            if (!container) return;
+            const search = (document.getElementById('glossarySearch').value || '').toLowerCase().trim();
+
+            let html = '';
+            for (const [code, info] of Object.entries(GLOSSARY_DATA)) {{
+                if (search && !code.toLowerCase().includes(search) && !info.titulo.toLowerCase().includes(search) && !info.explicacao.toLowerCase().includes(search)) {{
+                    continue;
+                }}
+
+                html += `
+                    <div class="stat-card" style="border-left: 3px solid ${{info.severidade === 'ALTA' ? '#ef4444' : (info.severidade === 'MEDIA' ? '#f59e0b' : '#3b82f6')}};">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+                            <span class="font-mono" style="font-size:0.7rem; font-weight:800; color:#0f172a;">${{code}}</span>
+                            ${{getSeverityBadge(info.severidade)}}
+                        </div>
+                        <div style="font-weight:700; font-size:0.8125rem; color:#1e293b; margin-bottom:0.2rem;">${{info.titulo}}</div>
+                        <div style="font-size:0.75rem; color:#475569; margin-bottom:0.3rem;">${{info.explicacao}}</div>
+                        <div style="font-size:0.6875rem; color:#991b1b;"><strong>Por que suspeito:</strong> ${{info.por_que_suspeito}}</div>
+                    </div>
+                `;
+            }}
+            container.innerHTML = html;
+        }}
+
+        function filterGlossary() {{
+            renderGlossary();
+        }}
+
         window.onload = function() {{
             applyFilters();
+            renderGlossary();
         }};
     </script>
 </body>

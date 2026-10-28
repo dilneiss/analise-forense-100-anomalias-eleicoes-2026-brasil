@@ -1,8 +1,8 @@
 {
   "metadados": {
-    "gerado_em": "2026-10-28T15:21:21.431314",
-    "iniciado_em": "2026-10-28T15:21:20.748931",
-    "duracao_segundos": 0.68,
+    "gerado_em": "2026-10-28T16:17:09.966939",
+    "iniciado_em": "2026-10-28T16:17:09.432984",
+    "duracao_segundos": 0.53,
     "diretorio_1t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_1t_SC",
     "diretorio_2t": "C:\\Users\\dilne\\Downloads\\bu_imgbu_logjez_rdv_vscmr_2026_2t_SC",
     "diretorio_saida": "C:\\Users\\dilne\\Downloads\\urna-forense\\comparison_monte_carlo",
@@ -42,7 +42,7 @@
     "candidatos": [
       {
         "numero": 22,
-        "nome": "FLAVIO BOLSONARO",
+        "nome": "FLAVIO BOLSONARO (PL)",
         "e_finalista": true,
         "votos_1t": 2860,
         "votos_2t": 3043,
@@ -51,7 +51,7 @@
       },
       {
         "numero": 13,
-        "nome": "LULA",
+        "nome": "LULA (PT)",
         "e_finalista": true,
         "votos_1t": 2053,
         "votos_2t": 2566,
@@ -60,7 +60,7 @@
       },
       {
         "numero": 70,
-        "nome": "ESCRITOR AUGUSTO CURY",
+        "nome": "ESCRITOR AUGUSTO CURY (AVANTE)",
         "e_finalista": false,
         "votos_1t": 144,
         "votos_2t": 0,
@@ -69,7 +69,7 @@
       },
       {
         "numero": 14,
-        "nome": "RENAN SANTOS",
+        "nome": "RENAN SANTOS (MISSÃO)",
         "e_finalista": false,
         "votos_1t": 101,
         "votos_2t": 0,
@@ -78,7 +78,7 @@
       },
       {
         "numero": 55,
-        "nome": "RONALDO CAIADO",
+        "nome": "RONALDO CAIADO (PSD/UNIÃO)",
         "e_finalista": false,
         "votos_1t": 63,
         "votos_2t": 0,
@@ -87,7 +87,7 @@
       },
       {
         "numero": 30,
-        "nome": "Candidato 30",
+        "nome": "ZEMA (NOVO)",
         "e_finalista": false,
         "votos_1t": 5,
         "votos_2t": 0,
@@ -96,7 +96,7 @@
       },
       {
         "numero": 21,
-        "nome": "Candidato 21",
+        "nome": "EDMILSON COSTA (PCB)",
         "e_finalista": false,
         "votos_1t": 4,
         "votos_2t": 0,
@@ -105,7 +105,7 @@
       },
       {
         "numero": 27,
-        "nome": "Candidato 27",
+        "nome": "CLARIANA BARAO (DC)",
         "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
@@ -114,7 +114,7 @@
       },
       {
         "numero": 28,
-        "nome": "Candidato 28",
+        "nome": "LEONARDO AVALANCHE (PRTB)",
         "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
@@ -123,7 +123,7 @@
       },
       {
         "numero": 29,
-        "nome": "Candidato 29",
+        "nome": "RUI COSTA PIMENTA (PCO)",
         "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
@@ -132,7 +132,7 @@
       },
       {
         "numero": 80,
-        "nome": "Candidato 80",
+        "nome": "SAMARA (UP)",
         "e_finalista": false,
         "votos_1t": 1,
         "votos_2t": 0,
@@ -180,8 +180,8 @@
           "code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR",
           "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
           "severity": "ALTA",
-          "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento MAIOR no 2T",
-          "description": "FLAVIO BOLSONARO caiu de 138 para 131 votos (-7), embora 2 novos eleitores tenham comparecido no 2T (288 -> 290).",
+          "title": "Queda de votos de FLAVIO BOLSONARO (PL) com comparecimento MAIOR no 2T",
+          "description": "FLAVIO BOLSONARO (PL) caiu de 138 para 131 votos (-7), embora 2 novos eleitores tenham comparecido no 2T (288 -> 290).",
           "details": {
             "candidato": 22,
             "votos_1t": 138,
@@ -309,8 +309,8 @@
           "code": "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR",
           "category": "VOTACAO_E_MIGRACAO_TERCEIRA_VIA",
           "severity": "ALTA",
-          "title": "Queda de votos de FLAVIO BOLSONARO com comparecimento MAIOR no 2T",
-          "description": "FLAVIO BOLSONARO caiu de 92 para 89 votos (-3), embora 1 novos eleitores tenham comparecido no 2T (167 -> 168).",
+          "title": "Queda de votos de FLAVIO BOLSONARO (PL) com comparecimento MAIOR no 2T",
+          "description": "FLAVIO BOLSONARO (PL) caiu de 92 para 89 votos (-3), embora 1 novos eleitores tenham comparecido no 2T (167 -> 168).",
           "details": {
             "candidato": 22,
             "votos_1t": 92,
