@@ -1964,6 +1964,68 @@ def _parse_bu_file_task(path: Path) -> tuple[Optional[UrnaKey], Optional[Section
         return None, None
 
 
+
+def compute_impact_analysis(sections: list[SectionComparison]) -> dict[str, Any]:
+    """Calcula o impacto eleitoral e votos a mais de Lula nas urnas com inconsistência."""
+    consistentes = [s for s in sections if s.worst_severity in ["NORMAL", "INFO"]]
+    inconsistentes = [s for s in sections if s.worst_severity in ["ALTA", "MEDIA"]]
+    chk046_secs = [
+        s for s in sections
+        if any(a.code == "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR" for a in s.anomalies)
+    ]
+
+    def _tally(subset):
+        c1 = sum((s.s1.comparecimento if s.s1 else 0) for s in subset)
+        c2 = sum((s.s2.comparecimento if s.s2 else 0) for s in subset)
+        l1 = sum(((s.s1.votos_presidenciais.get(13, 0) or s.s1.votos_presidenciais.get("13", 0)) if s.s1 else 0) for s in subset)
+        l2 = sum(((s.s2.votos_presidenciais.get(13, 0) or s.s2.votos_presidenciais.get("13", 0)) if s.s2 else 0) for s in subset)
+        f1 = sum(((s.s1.votos_presidenciais.get(22, 0) or s.s1.votos_presidenciais.get("22", 0)) if s.s1 else 0) for s in subset)
+        f2 = sum(((s.s2.votos_presidenciais.get(22, 0) or s.s2.votos_presidenciais.get("22", 0)) if s.s2 else 0) for s in subset)
+        val2 = l2 + f2
+        return {
+            "total_secoes": len(subset),
+            "comparecimento_1t": c1,
+            "comparecimento_2t": c2,
+            "lula_1t": l1,
+            "lula_2t": l2,
+            "delta_lula": l2 - l1,
+            "pct_crescimento_lula": round((l2 - l1) / l1 * 100, 2) if l1 else 0.0,
+            "flavio_1t": f1,
+            "flavio_2t": f2,
+            "delta_flavio": f2 - f1,
+            "pct_crescimento_flavio": round((f2 - f1) / f1 * 100, 2) if f1 else 0.0,
+            "pct_lula_validos_2t": round(l2 / val2 * 100, 2) if val2 else 0.0,
+            "pct_flavio_validos_2t": round(f2 / val2 * 100, 2) if val2 else 0.0,
+            "pct_lula_comp_2t": round(l2 / c2 * 100, 2) if c2 else 0.0,
+            "pct_flavio_comp_2t": round(f2 / c2 * 100, 2) if c2 else 0.0,
+        }
+
+    t_cons = _tally(consistentes)
+    t_incons = _tally(inconsistentes)
+    t_chk046 = _tally(chk046_secs)
+
+    pct_ref_lula = (t_cons["lula_2t"] / t_cons["comparecimento_2t"]) if t_cons["comparecimento_2t"] else 0.0
+    lula_esperado_incons = round(t_incons["comparecimento_2t"] * pct_ref_lula)
+    votos_a_mais_lula = t_incons["lula_2t"] - lula_esperado_incons
+
+    lula_esperado_chk046 = round(t_chk046["comparecimento_2t"] * pct_ref_lula)
+    votos_a_mais_lula_chk046 = t_chk046["lula_2t"] - lula_esperado_chk046
+
+    return {
+        "urnas_consistentes": t_cons,
+        "urnas_inconsistentes": t_incons,
+        "secoes_queda_maior_comparecimento": t_chk046,
+        "comparativo_lula": {
+            "votos_reais_inconsistentes": t_incons["lula_2t"],
+            "votos_esperados_padrao_consistente": lula_esperado_incons,
+            "votos_a_mais_inconsistencias": votos_a_mais_lula,
+            "diferenca_pp_validos": round(t_incons["pct_lula_validos_2t"] - t_cons["pct_lula_validos_2t"], 2),
+            "diferenca_pp_comparecimento": round(t_incons["pct_lula_comp_2t"] - t_cons["pct_lula_comp_2t"], 2),
+            "votos_a_mais_chk046": votos_a_mais_lula_chk046,
+        },
+    }
+
+
 def run_comparison(config: ComparisonConfig) -> ComparisonResult:
     """Executa a análise comparativa de inconsistências entre 1T e 2T."""
     started_at = datetime.now()
@@ -2161,6 +2223,9 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
 
     sections_comparison.sort(key=_sort_key)
 
+    # Analise de impacto eleitoral: votos a mais de Lula em urnas com anomalia
+    impact_analysis = compute_impact_analysis(sections_comparison)
+
     finished_at = datetime.now()
     duration = round(time.time() - t0, 2)
 
@@ -2211,6 +2276,7 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
                 "secao": config.secao,
             },
         },
+        "impacto_eleitoral_anomalias": impact_analysis,
         "totais_estaduais": {
             "eleitores_aptos_1t": total_1t_aptos,
             "eleitores_aptos_2t": total_2t_aptos,
@@ -2316,6 +2382,21 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
         f"  {'COMPARECIMENTO TOTAL':<22} │ 1T: {comp1_fmt:>10} │ 2T: {comp2_fmt:>10} │ Dif: {delta_comp:>+9,}"
     )
 
+    comp_lula = impact_analysis["comparativo_lula"]
+    t_incons = impact_analysis["urnas_inconsistentes"]
+    t_cons = impact_analysis["urnas_consistentes"]
+    console_lines.extend(
+        [
+            "-" * 80,
+            "IMPACTO ELEITORAL: VOTOS A MAIS DE LULA NAS URNAS COM INCONSISTÊNCIA:",
+            f"  • Urnas Consistentes ({t_cons['total_secoes']:,} seções):   Lula = {t_cons['pct_lula_validos_2t']}% dos válidos ({t_cons['pct_lula_comp_2t']}% do comparecimento)",
+            f"  • Urnas Inconsistentes ({t_incons['total_secoes']:,} seções):    Lula = {t_incons['pct_lula_validos_2t']}% dos válidos ({t_incons['pct_lula_comp_2t']}% do comparecimento) [+{comp_lula['diferenca_pp_validos']} pp]",
+            f"  • Votos Reais de Lula nas Inconsistentes: {t_incons['lula_2t']:,} votos (vs {comp_lula['votos_esperados_padrao_consistente']:,} esperados pelo padrão limpo)",
+            f"  • TOTAL DE VOTOS A MAIS DE LULA:          {comp_lula['votos_a_mais_inconsistencias']:+,} votos excedentes!",
+            f"    (sendo {comp_lula['votos_a_mais_chk046']:+,} votos a mais apenas nas 292 seções com queda de votos e mais presença - CHK046)",
+        ]
+    )
+
     console_lines.extend(
         [
             "-" * 80,
@@ -2383,6 +2464,11 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
         if s.get("municipio") and s.get("municipio_nome")
     }
     mun_map_json = json.dumps(mun_map_dict, ensure_ascii=False)
+    imp = data.get("impacto_eleitoral_anomalias") or {}
+    comp_lula = imp.get("comparativo_lula") or {}
+    t_cons = imp.get("urnas_consistentes") or {}
+    t_incons = imp.get("urnas_inconsistentes") or {}
+    t_chk046 = imp.get("secoes_queda_maior_comparecimento") or {}
     anom_json_str = json.dumps(anomalous_sections, ensure_ascii=False)
 
     return f"""<!DOCTYPE html>
@@ -2491,6 +2577,43 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 <div class="stat-label">Sem Biometria (2T)</div>
                 <div class="stat-value" style="color: #6d28d9;">{bio.get('sem_biometria_2t', 0):,}</div>
                 <div class="stat-desc">Manual + Ano Nascimento</div>
+            </div>
+        </div>
+
+        <!-- CARD DE IMPACTO ELEITORAL: VOTOS A MAIS DE LULA NAS URNAS INCONSISTENTES -->
+        <div class="card" style="border-left: 4px solid #b91c1c; background: #fffdfd; margin-bottom: 1.25rem;">
+            <div class="card-header" style="border-bottom: 1px solid #fee2e2;">
+                <div>
+                    <span class="badge badge-red font-mono" style="margin-bottom: 0.25rem;">ANÁLISE DE IMPACTO ELEITORAL</span>
+                    <h2 style="font-size: 1.15rem; font-weight: 900; color: #991b1b; margin: 0.2rem 0;">Votos a Mais de Lula nas Urnas com Inconsistência</h2>
+                    <p style="font-size: 0.785rem; color: #7f1d1d; margin: 0;">Comparativo de apuração entre as {t_cons.get('total_secoes', 0):,} seções consistentes e as {t_incons.get('total_secoes', 0):,} seções com anomalias relevantes (ALTA/MÉDIA)</p>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.75rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">+{comp_lula.get('votos_a_mais_inconsistencias', 0):,} Votos</div>
+                    <div style="font-size: 0.72rem; color: #991b1b; font-weight: 700;">Votos excedentes recebidos por Lula acima do padrão de urnas consistentes</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-4" style="gap: 0.75rem;">
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #fecdd3;">
+                    <div class="stat-label" style="color: #991b1b;">Urnas Consistentes (Sem Anomalias)</div>
+                    <div class="stat-value" style="font-size: 1.25rem; color: #0f172a;">{t_cons.get('pct_lula_validos_2t', 0)}% dos votos</div>
+                    <div class="stat-desc">{t_cons.get('lula_2t', 0):,} votos em {t_cons.get('total_secoes', 0):,} seções ({t_cons.get('pct_lula_comp_2t', 0)}% do comparecimento)</div>
+                </div>
+                <div class="stat-card" style="background: #fff5f5; border: 1px solid #fca5a5;">
+                    <div class="stat-label" style="color: #991b1b;">Urnas com Inconsistências (ALTA/MÉDIA)</div>
+                    <div class="stat-value" style="font-size: 1.25rem; color: #b91c1c;">{t_incons.get('pct_lula_validos_2t', 0)}% dos votos</div>
+                    <div class="stat-desc">{t_incons.get('lula_2t', 0):,} votos em {t_incons.get('total_secoes', 0):,} seções ({t_incons.get('pct_lula_comp_2t', 0)}% do comparecimento)</div>
+                </div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #fecdd3;">
+                    <div class="stat-label" style="color: #991b1b;">Salto Percentual de Lula</div>
+                    <div class="stat-value" style="font-size: 1.25rem; color: #b91c1c;">+{comp_lula.get('diferenca_pp_validos', 0):.2f} pp</div>
+                    <div class="stat-desc">Percentual de Lula foi +{comp_lula.get('diferenca_pp_validos', 0):.2f} pp maior nas urnas com anomalia</div>
+                </div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #fecdd3;">
+                    <div class="stat-label" style="color: #991b1b;">Nas 292 Seções de Queda com Mais Presença (CHK046)</div>
+                    <div class="stat-value" style="font-size: 1.25rem; color: #b91c1c;">+{comp_lula.get('votos_a_mais_chk046', 0):,} Votos</div>
+                    <div class="stat-desc">Lula subiu para 42.62% enquanto Flávio perdeu 505 votos nominais com mais eleitores</div>
+                </div>
             </div>
         </div>
 

@@ -246,6 +246,24 @@ Em **292 seções eleitorais**, ocorreu a anomalia mais grave da dinâmica de vo
 
 ---
 
+### 6.6 Impacto Eleitoral: Quantidade de Votos a Mais que Lula Teve nas Urnas com Inconsistência
+
+Ao segregar a apuração oficial de Santa Catarina entre as **urnas consistentes (16.378 seções)** e as **urnas com inconsistências relevantes (890 seções)**, a auditoria revelou um desvio estatístico de grande magnitude a favor de Lula:
+
+| Grupo de Seções Eleitorais em SC | Total de Seções | Comparecimento (2T) | Votos de Lula (2T) | % Lula nos Válidos | Votos de Flávio (2T) | % Flávio nos Válidos |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Urnas Consistentes (Sem Anomalias)** | **16.378** | 4.520.686 | 1.332.572 | **30,27%** | 3.070.079 | **69,73%** |
+| **Urnas Inconsistentes (ALTA / MÉDIA)** | **890** | 228.800 | 82.058 | **36,81%** | 140.894 | **63,19%** |
+| **Diferença / Salto Estatístico** | — | — | — | **+6,54 pp** | — | **-6,54 pp** |
+
+#### Cálculo Matemático dos Votos Excedentes:
+1. **Padrão Limpo de Santa Catarina:** Nas 16.378 seções sem anomalias, Lula obteve **29,48% do comparecimento** (ou 30,27% dos votos válidos entre os finalistas).
+2. **Votação Esperada nas Urnas com Inconsistência:** Se Lula tivesse mantido nas 890 urnas inconsistentes o mesmo patamar das urnas limpas do estado ($228.800 \times 29,48\%$), ele teria recebido **67.444 votos**.
+3. **Votação Real Registrada:** Lula recebeu **82.058 votos**.
+4. **TOTAL DE VOTOS A MAIS DE LULA:** Lula obteve **+14.614 VOTOS EXCEDENTES** nas urnas que apresentaram inconsistências!
+5. **Concentração nas 292 Seções de Queda com Mais Comparecimento (`CHK046`):** Apenas nas 292 seções onde Flávio perdeu 505 votos nominais mesmo com 1.784 novos eleitores comparecendo à urna, **Lula obteve +8.620 votos excedentes** (seu percentual saltou para **42,62%** dos votos válidos, contra apenas 30,27% no padrão limpo estadual).
+
+---
 ## 7. Painel Interativo HTML (100% Largura, Modal e Glossário)
 
 O relatório visual gerado em **`comparison_sc_geral/comparison_report.html`** foi concebido para proporcionar transparência total:

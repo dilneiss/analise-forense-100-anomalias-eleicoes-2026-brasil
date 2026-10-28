@@ -2071148,5 +2071148,66 @@
         "cadeia_hash_valida": true
       }
     }
-  ]
+  ],
+  "impacto_eleitoral_anomalias": {
+    "urnas_consistentes": {
+      "total_secoes": 16378,
+      "comparecimento_1t": 4411735,
+      "comparecimento_2t": 4520686,
+      "lula_1t": 1058441,
+      "lula_2t": 1332572,
+      "delta_lula": 274131,
+      "pct_crescimento_lula": 25.9,
+      "flavio_1t": 2856448,
+      "flavio_2t": 3070079,
+      "delta_flavio": 213631,
+      "pct_crescimento_flavio": 7.48,
+      "pct_lula_validos_2t": 30.27,
+      "pct_flavio_validos_2t": 69.73,
+      "pct_lula_comp_2t": 29.48,
+      "pct_flavio_comp_2t": 67.91
+    },
+    "urnas_inconsistentes": {
+      "total_secoes": 890,
+      "comparecimento_1t": 223976,
+      "comparecimento_2t": 228800,
+      "lula_1t": 65734,
+      "lula_2t": 82058,
+      "delta_lula": 16324,
+      "pct_crescimento_lula": 24.83,
+      "flavio_1t": 135038,
+      "flavio_2t": 140894,
+      "delta_flavio": 5856,
+      "pct_crescimento_flavio": 4.34,
+      "pct_lula_validos_2t": 36.81,
+      "pct_flavio_validos_2t": 63.19,
+      "pct_lula_comp_2t": 35.86,
+      "pct_flavio_comp_2t": 61.58
+    },
+    "secoes_queda_maior_comparecimento": {
+      "total_secoes": 292,
+      "comparecimento_1t": 69752,
+      "comparecimento_2t": 71536,
+      "lula_1t": 23206,
+      "lula_2t": 29707,
+      "delta_lula": 6501,
+      "pct_crescimento_lula": 28.01,
+      "flavio_1t": 40502,
+      "flavio_2t": 39997,
+      "delta_flavio": -505,
+      "pct_crescimento_flavio": -1.25,
+      "pct_lula_validos_2t": 42.62,
+      "pct_flavio_validos_2t": 57.38,
+      "pct_lula_comp_2t": 41.53,
+      "pct_flavio_comp_2t": 55.91
+    },
+    "comparativo_lula": {
+      "votos_reais_inconsistentes": 82058,
+      "votos_esperados_padrao_consistente": 67444,
+      "votos_a_mais_inconsistencias": 14614,
+      "diferenca_pp_validos": 6.54,
+      "diferenca_pp_comparecimento": 6.38,
+      "votos_a_mais_chk046": 8620
+    }
+  }
 }
