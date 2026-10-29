@@ -886,10 +886,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                         <option value="bio_drop_desc">Ordenar: Maior Queda de Biometria</option>
                     </select>
                     <select id="anomalySelect" onchange="applyFilters()" style="max-width: 260px; padding: 0.45rem 0.65rem; border: 1px solid #cbd5e1; border-radius: 6px;">
-                        <option value="ALL">Todas as Anomalias (124 regras)</option>
+                        <option value="ALL">Todas as Anomalias (127 regras)</option>
                         <option value="CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR">CHK046 - Queda do Líder com Mais Comparecimento</option>
                         <option value="CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP">CHK068 - Surto de Votos Manuais sem Biometria</option>
                         <option value="CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR">CHK121 - Digital de Mesário em Tentativa de Eleitor</option>
+                        <option value="CHK127_RAJADAS_MANUAIS_INTERCALADAS">CHK127 - Rajadas Manuais em Sala Esvaziada</option>
+                        <option value="CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE">CHK125 - Conflito de Eleitor que "Já Votou"</option>
+                        <option value="CHK126_SURTO_MANUAL_POS_17H">CHK126 - Surto Manual Pós-17h (Fila Estendida)</option>
                         <option value="CHK001_TROCA_URNA_FISICA">CHK001 - Substituição da Urna Física no 2T</option>
                         <option value="CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO">CHK014 - Carga de Outro Município</option>
                     </select>
@@ -1533,8 +1536,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                                     ${tMedio}s por eleitor ${isCabineRapida ? '<span class="badge badge-red" style="font-size:9px;">ESTEIRA ROBÓTICA</span>' : ''}
                                 </div>
                                 <div style="font-size:0.72rem; color:#64748b;">
-                                    Votos &lt; 10s: <strong>${telem.votos_sub10s_contagem}</strong> (${telem.votos_sub10s_pct}%) • Seq. máx: <strong>${telem.sequencia_max_sub10s}</strong>
+                                    Votos &lt; 10s: <strong>${telem.votos_sub10s_contagem}</strong> (${telem.votos_sub10s_pct}%) &bull; Seq. máx: <strong>${telem.sequencia_max_sub10s}</strong>
                                 </div>
+                                ${telem.rajadas_manuais_contagem ? `
+                                <div style="font-size:0.72rem; color:#b91c1c; margin-top:4px; font-weight:700;">
+                                    ⚡ Rajadas Manuais em Sala Vazia: <strong>${telem.rajadas_manuais_contagem}</strong> lotes (Seq. máx: <strong>${telem.max_sequencia_manual}</strong> seguidos sem digital)
+                                </div>` : ''}
                             </div>
                             <div>
                                 <div style="font-size:0.7rem; font-weight:700; color:#64748b; text-transform:uppercase; margin-bottom:3px;">Mesários Autorizadores de Voto Manual</div>

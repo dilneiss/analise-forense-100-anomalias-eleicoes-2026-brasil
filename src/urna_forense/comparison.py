@@ -2466,6 +2466,23 @@ def evaluate_section_anomalies(
                         details={"total_pos17": tot_noite, "manuais_pos17": manuais_noite, "pct_manual_pos17": round(pct_noite_man, 1)},
                     )
                 )
+    # CHK127: Rajadas consecutivas de votos manuais em sala esvaziada
+    if telemetry:
+        bursts = telemetry.get("rajadas_manuais_contagem", 0)
+        max_streak = telemetry.get("max_sequencia_manual", 0)
+        votos_burst = telemetry.get("votos_em_rajadas_manuais", 0)
+        if (max_streak >= 4 and bursts >= 2) or max_streak >= 5 or votos_burst >= 12:
+            anomalies.append(
+                Anomaly(
+                    code="CHK127_RAJADAS_MANUAIS_INTERCALADAS",
+                    category=CAT_BIOMETRIA,
+                    severity=SEV_ALTA if max_streak >= 6 or votos_burst >= 20 else SEV_MEDIA,
+                    title="Rajadas Consecutivas de Votos Manuais sem Biometria",
+                    description=f"{votos_burst} votos manuais computados em {bursts} rajadas consecutivas (sequência máxima de {max_streak} eleitores seguidos sem digital).",
+                    details={"rajadas": bursts, "max_streak": max_streak, "votos_em_rajadas": votos_burst},
+                )
+            )
+
 
 
 
@@ -2502,6 +2519,8 @@ def calculate_section_fraud_score(anomalies: list[Anomaly]) -> dict[str, Any]:
         score = max(score, 90)
     if has_code("CHK126"):
         score = max(score, 85)
+    if has_code("CHK127"):
+        score = max(score, 88)
 
     if has_code("CHK046"):
         score = max(score, 82)
@@ -3204,6 +3223,7 @@ RULE_HUMAN_TITLES = {
     "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO": ("Concentração de > 80% das Liberações em Único Mesário", "ALTA"),
     "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE": ("Tentativa de Habilitação de Eleitor que Consta 'Já Votou'", "ALTA"),
     "CHK126_SURTO_MANUAL_POS_17H": ("Surto de Votos Manuais sem Biometria Após 17h", "ALTA"),
+    "CHK127_RAJADAS_MANUAIS_INTERCALADAS": ("Rajadas Consecutivas de Votos Manuais em Sala Esvaziada", "ALTA"),
 }
 
 
@@ -4259,6 +4279,13 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "por_que_suspeito": "Altíssima gravidade: se uma urna registrar voto nominal para um candidato eliminado ou inexistente, comprova falha crítica de integridade na tabela de votáveis ou adulteração deliberada do software da urna para desviar votos.",
                 "severidade": "ALTA"
             }},
+            "CHK127_RAJADAS_MANUAIS_INTERCALADAS": {{
+                "titulo": "Rajadas Consecutivas de Votos sem Biometria em Sala Esvaziada",
+                "explicacao": "A urna registrou sequências de vários eleitores consecutivos (4 a 8 pessoas seguidas) liberados manualmente por ano de nascimento, intercaladas por eleitores normais com biometria ou longas pausas.",
+                "por_que_suspeito": "Padrão clássico de fraude intermitente no 2º turno: com o esvaziamento precoce das filas, o operador aproveita momentos de sala vazia para passar lotes de ausentes, parando quando chega um eleitor real e retomando a esteira em seguida.",
+                "severidade": "ALTA"
+            }},
+
             "CHK126_SURTO_MANUAL_POS_17H": {{
                 "titulo": "Surto de Votos sem Biometria Após as 17h",
                 "explicacao": "Mais de 40% dos votos computados durante a extensão de horário após as 17h foram liberados manualmente por digitação de ano de nascimento, sem validação da impressão digital do eleitor.",

@@ -298,7 +298,10 @@ def test_chk121_to_chk124_rules():
             {"mesario_id": "55667788", "liberacoes_manuais": 5, "pct_total_manuais": 12.5},
         ],
         "conflitos_ja_votou_contagem": 2,
-        "habilitacoes_canceladas_contagem": 4
+        "habilitacoes_canceladas_contagem": 4,
+        "rajadas_manuais_contagem": 3,
+        "max_sequencia_manual": 5,
+        "votos_em_rajadas_manuais": 15
     }
 
     anoms = evaluate_section_anomalies(s1, s2, telemetry=mock_telemetry)
@@ -309,3 +312,4 @@ def test_chk121_to_chk124_rules():
     assert "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO" in codes
     assert "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE" in codes
     assert "CHK126_SURTO_MANUAL_POS_17H" in codes
+    assert "CHK127_RAJADAS_MANUAIS_INTERCALADAS" in codes

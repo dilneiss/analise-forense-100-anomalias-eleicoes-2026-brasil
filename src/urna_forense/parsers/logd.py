@@ -363,6 +363,10 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
     ja_votou_events: list[dict[str, Any]] = []
     canceladas_count = 0
     nao_encontrado_count = 0
+    consecutive_manual = 0
+    max_consecutive_manual = 0
+    total_bursts_manual = 0
+    total_votos_em_bursts = 0
 
     faixas = {
         "manha_08_12": {"total": 0, "bio": 0, "manual": 0},
@@ -438,6 +442,17 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
             if current_hab_type == "MANUAL":
                 mid_key = current_mesario_id or "Nao identificado"
                 mesarios_contagem[mid_key] = mesarios_contagem.get(mid_key, 0) + 1
+            # Rastreamento de rajadas consecutivas manuais
+            if current_hab_type == "MANUAL":
+                consecutive_manual += 1
+                if consecutive_manual > max_consecutive_manual:
+                    max_consecutive_manual = consecutive_manual
+            else:
+                if consecutive_manual >= 3:
+                    total_bursts_manual += 1
+                    total_votos_em_bursts += consecutive_manual
+                consecutive_manual = 0
+
 
             # Faixa horaria
             h = vote_time.hour
@@ -460,6 +475,10 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
             # Reset por eleitor
             current_hab_type = "DESCONHECIDO"
             current_mesario_id = None
+
+    if consecutive_manual >= 3:
+        total_bursts_manual += 1
+        total_votos_em_bursts += consecutive_manual
 
     tempo_medio = round(sum(duracoes) / len(duracoes), 1) if duracoes else 0.0
     pct_sub10s = round(sub10s_count / votos_totais * 100, 2) if votos_totais else 0.0
@@ -495,5 +514,8 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
         "conflitos_ja_votou_eventos": ja_votou_events,
         "habilitacoes_canceladas_contagem": canceladas_count,
         "eleitor_nao_encontrado_contagem": nao_encontrado_count,
+        "rajadas_manuais_contagem": total_bursts_manual,
+        "max_sequencia_manual": max_consecutive_manual,
+        "votos_em_rajadas_manuais": total_votos_em_bursts,
         "votos_por_faixa_horaria": faixas
     }
