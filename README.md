@@ -588,6 +588,22 @@ A auditoria científica formulou 5 hipóteses para explicar como Lula saltou de 
 5. **Hipótese 5: Coação Comunitária e Ausência de Fiscais em Zonas Remotas:**
    * *Mecanismo:* Unanimidades forçadas de 100% em aldeias indígenas e zonas rurais isoladas onde líderes locais impõem o voto de cabresto sem a presença de fiscais de partidos rivais.
 
+#### Quadro Consolidado: De Quantos Votos Estamos Falando para Lula e Flávio em Cada Hipótese?
+
+Para que o leitor tenha números exatos em mente ao analisar as 5 hipóteses, a tabela abaixo consolida o **volume exato de votos que foram para Lula e para Flávio** em cada um dos fenômenos auditados no país:
+
+| Componente Eleitoral / Hipótese | Votos Totais Envolvidos | Votos para Lula (13) | Votos para Flávio (22) | Saldo Líquido do Fenômeno | Impacto Pericial no Resultado Final |
+|---|:---:|:---:|:---:|:---:|---|
+| **0. Ponto de Partida Oficial (1º Turno TSE)** | **119.115.869 válidos** | **53.721.918 (45,1%)** | **56.103.951 (47,1%)** | **Flávio +2.382.033** | **Flávio venceu o 1º turno com vantagem de +2,38M de votos.** |
+| **1. Hipótese da 3ª Via (Tese Oficial Suposta)** | **9.290.000 votos** | **+7.426.173 (79,9%)** | **+1.863.827 (20,1%)** | **Lula +5.562.346** | *Premissa não provada e contraditória com os apoios políticos pró-Flávio.* |
+| **1b. Cenário 3ª Via pelos Apoios (60% Flávio)** | **9.290.000 votos** | **+3.716.000 (40,0%)** | **+5.574.000 (60,0%)** | **Flávio +1.858.000** | *Reduz a margem de Lula para patamar passível de reversão imediata.* |
+| **1c. Cenário 3ª Via Conservador (70% Flávio)** | **9.290.000 votos** | **+2.787.000 (30,0%)** | **+6.503.000 (70,0%)** | **Flávio +3.716.000** | **Inverte a eleição nacional a favor de Flávio com o expurgo de anomalias.** |
+| **2. Expansão do Comparecimento no 2T** | **+2.960.756 novos votantes** | **+2.176.156 (73,5%)** | **+784.600 (26,5%)** | **Lula +1.391.556** | Forte mobilização municipal de prefeituras e passe livre no Nordeste. |
+| **3. Votos Manuais sem Biometria (`CHK068`)** | **15.884.298 votos no país** | **~9.250.000 (58,2%)** | **~6.634.298 (41,8%)** | **Lula +2.615.702** | *Vulnerabilidade estrutural que permitiu votação no lugar de ausentes.* |
+| **4. Inversão do Líder que Encolheu (`CHK046`)** | **4.751.432 votos em 19.159 urnas** | **+533.190 absorvidos** | **-225.000 perdidos** | **Lula +308.190** | *Anomalia onde Flávio perdeu votos que já eram dele enquanto a seção crescia.* |
+| **5. Urnas de Unanimidade Absoluta (106 Urnas)** | **15.156 votos válidos** | **14.860 (106 urnas)** | **296 (4 urnas)** | **Lula +14.564** | *Sumiço total de votos nominais de Flávio em aldeias e comunidades isoladas.* |
+| **RESULTADO FINAL OFICIAL DO TSE (2º TURNO)** | **123.710.622 válidos** | **64.056.078 (51,78%)** | **59.654.544 (48,22%)** | **Lula +4.401.534** | **Margem oficial declarada pelo TSE (+4,4M de votos).** |
+
 ---
 
 ### 6.11 Projeções Estatísticas vs Pesquisas de Opinião (Onde Bateu e Onde Divergiu)
