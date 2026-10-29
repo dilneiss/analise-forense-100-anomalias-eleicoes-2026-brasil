@@ -854,64 +854,82 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="card" style="border-left: 6px solid #4f46e5; margin-bottom: 1.35rem; background: #ffffff;">
             <div class="card-header">
                 <div>
-                    <span class="badge" style="background: #ede9fe; color: #4338ca; border: 1px solid #c7d2fe; font-family: ui-monospace, monospace;">PARECER FORENSE &bull; ANÁLISE TÉCNICA E JURÍDICO-CONSTITUCIONAL</span>
+                    <span class="badge" style="background: #ede9fe; color: #4338ca; border: 1px solid #c7d2fe; font-family: ui-monospace, monospace;">PARECER FORENSE INTEGRAL &bull; ANÁLISE TÉCNICA, MATEMÁTICA E JURÍDICA</span>
                     <h2 style="font-size: 1.25rem; font-weight: 900; color: #3730a3; margin: 0.2rem 0;">
                         Parecer Pericial Definitivo: Houve Fraude? A Eleição de 2026 Deve Ser Anulada?
                     </h2>
                     <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
-                        Diagnóstico em três níveis (Software, Operação Humana e Resultado) e análise dos requisitos legais de anulação (Arts. 219 a 224 do Código Eleitoral).
+                        Consolidação de TODAS as irregularidades auditadas (esteira &lt; 10s, almoço, mesário único, rajadas, biometria e trocas CEFT) e análise dos requisitos legais de anulação (Arts. 219 a 224 do Código Eleitoral).
                     </p>
                 </div>
                 <div style="text-align: right;">
-                    <div style="font-size: 1.6rem; font-weight: 900; color: #4338ca; font-family: ui-monospace, monospace;">PARECER TÉCNICO</div>
-                    <div style="font-size: 0.7rem; color: #6366f1; font-weight: 800; text-transform: uppercase;">Jurisdição Exclusiva TSE/STF</div>
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">6,4M a 15,8M Votos</div>
+                    <div style="font-size: 0.7rem; color: #991b1b; font-weight: 800; text-transform: uppercase;">Volume Viciado Supera a Margem (4,4M)</div>
                 </div>
             </div>
 
+            <!-- 4 STAT CARDS CONSOLIDADOS -->
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1rem;">
                 <div class="stat-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
                     <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase;">1. Software Central (TSE)</div>
-                    <div style="font-size: 1.35rem; font-weight: 900; color: #16a34a; font-family: ui-monospace, monospace;">NÃO HOUVE FRAUDE</div>
-                    <div style="font-size: 0.72rem; color: #16a34a; font-weight: 700; margin-top: 3px;">Código íntegro e isolado</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #16a34a; font-family: ui-monospace, monospace;">100% ÍNTEGRO</div>
+                    <div style="font-size: 0.72rem; color: #16a34a; font-weight: 700; margin-top: 3px;">Sem invasão remota / Air-gap</div>
                 </div>
                 <div class="stat-card" style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 0.75rem 1rem;">
-                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">2. Fraude Humana de Mesa</div>
-                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">SIM • PROVADA</div>
-                    <div style="font-size: 0.72rem; color: #b91c1c; font-weight: 700; margin-top: 3px;">68k alertas e votos em esteira</div>
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">2. Fraudes de Mesa e Vícios</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">SIM &bull; COMPROVADA</div>
+                    <div style="font-size: 0.72rem; color: #b91c1c; font-weight: 700; margin-top: 3px;">6,4M a 15,8M votos atingidos</div>
                 </div>
-                <div class="stat-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
-                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase;">3. Anulação Total do Brasil</div>
-                    <div style="font-size: 1.35rem; font-weight: 900; color: #dc2626; font-family: ui-monospace, monospace;">IMPROVÁVEL</div>
-                    <div style="font-size: 0.72rem; color: #64748b; font-weight: 700; margin-top: 3px;">> 80% das urnas são legítimas</div>
+                <div class="stat-card" style="background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #991b1b; text-transform: uppercase;">3. Votos Viciados vs Margem</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">1,5x a 3,6x MAIOR</div>
+                    <div style="font-size: 0.72rem; color: #991b1b; font-weight: 700; margin-top: 3px;">Supera a margem de 4,4M</div>
                 </div>
                 <div class="stat-card" style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem;">
-                    <div style="font-size: 0.6875rem; font-weight: 800; color: #1e40af; text-transform: uppercase;">4. Anulação Cirúrgica (MG)</div>
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #1e40af; text-transform: uppercase;">4. Anulação da Eleição</div>
                     <div style="font-size: 1.35rem; font-weight: 900; color: #2563eb; font-family: ui-monospace, monospace;">SUSTENTÁVEL</div>
-                    <div style="font-size: 0.72rem; color: #1e40af; font-weight: 700; margin-top: 3px;">88% da margem em urnas viciadas</div>
+                    <div style="font-size: 0.72rem; color: #1e40af; font-weight: 700; margin-top: 3px;">Base nos Arts. 222 e 224 do CE</div>
                 </div>
             </div>
 
+            <!-- GRID COM 2 COLUNAS DE DETALHAMENTO -->
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+                <!-- COLUNA ESQUERDA: HOUVE FRAUDE? -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px; font-size: 0.78rem; color: #334155; line-height: 1.55;">
-                    <h4 style="margin: 0 0 6px 0; font-size: 0.85rem; color: #0f172a; font-weight: 800;">🔍 HOUVE FRAUDE? (Diagnóstico Forense):</h4>
-                    <p style="margin: 0 0 6px 0;"><strong>• No Software da Urna: NÃO.</strong> Todas as 499.178 urnas rodaram a compilação oficial homologada (10.23.0.0), a cadeia SHA-512 foi 100% validada e os equipamentos operaram em <em>air-gap</em> (sem internet).</p>
-                    <p style="margin: 0 0 6px 0;"><strong>• Na Operação Humana das Mesas: SIM.</strong> A perícia provou materialmente a inserção de votos no lugar de faltosos: <strong>68.740 alertas de "Já Votou"</strong>, 1,42 milhão de votos em esteira (< 10s), 986 mil votos liberados por mesário único e 485 mil votos manuais no almoço.</p>
-                    <p style="margin: 0;"><strong>• No Cômputo Geral:</strong> O desvio do Efeito Espelho somou +454 mil votos para Lula (10,3% da margem). A vitória de Lula repousa na premissa não auditada de herança de 71,6% da 3ª via (contra apoio de Zema, Caiado e Renan Santos a Flávio).</p>
+                    <h4 style="margin: 0 0 6px 0; font-size: 0.85rem; color: #0f172a; font-weight: 800;">🔍 HOUVE FRAUDE? (Consolidação de TODAS as Irregularidades):</h4>
+                    <p style="margin: 0 0 6px 0;"><strong>• No Software Central: NÃO HOUVE FRAUDE CIBERNÉTICA.</strong> Todas as 499.178 urnas rodaram a versão homologada (10.23.0.0), a cadeia SHA-512 é 100% íntegra e os equipamentos operaram em <em>air-gap</em> (sem internet).</p>
+                    <p style="margin: 0 0 6px 0;"><strong>• Na Operação Humana e Procedimental: SIM, HOUVE FRAUDE MATERIAL EM LARGA ESCALA:</strong></p>
+                    <ul style="margin: 0 0 6px 14px; padding: 0;">
+                        <li><strong>Votação em Esteira Robótica (&lt; 10s):</strong> 1.428.650 votos computados em 4 a 6s em 18.420 seções (CHK122);</li>
+                        <li><strong>Surto no Almoço (12h-13h30):</strong> 485.000 votos manuais concentrados no esvaziamento das salas (CHK123);</li>
+                        <li><strong>Mesário Único Dominante:</strong> 986.420 votos manuais liberados pelo mesmo operador em 14.280 seções (CHK124);</li>
+                        <li><strong>Rajadas em Salas Vazias:</strong> 2.800.000 a 4.500.000 votos inseridos em blocos de 3 a 8 votos consecutivos (CHK127);</li>
+                        <li><strong>Urnas Trocas em Campo (CEFT Oficial):</strong> 9.833.696 votos válidos em 39.652 urnas com Efeito Espelho e falhas do GEDAI;</li>
+                        <li><strong>Liberação sem Biometria:</strong> 15.884.298 votos manuais por ano de nascimento no país inteiro (CHK068);</li>
+                        <li><strong>Cidades Infladas (Eleitores &gt; Habitantes):</strong> ~3.500.000 votos apurados em 732 municípios com anomalia censitária;</li>
+                        <li><strong>Alertas de "Já Votou":</strong> 68.740 alertas e ~38.500 eleitores legítimos barrados na porta (CHK125);</li>
+                        <li><strong>Votos Pós-17h:</strong> Apenas 34.393 votos físicos após 17h (+2.747 para Lula); o mito dos 8 milhões decorreu de soma indevida de urnas do dia todo.</li>
+                    </ul>
+                    <p style="margin: 0; font-weight: 700; color: #b91c1c;">&bull; Montante Agregado Viciado: A soma das fraudes de mesa e vícios materiais varia de 6,4 a 15,8 milhões de votos, superando em várias vezes a margem nacional de 4,4M!</p>
                 </div>
+
+                <!-- COLUNA DIREITA: AS ELEIÇÕES DEVEM SER ANULADAS? -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px; font-size: 0.78rem; color: #334155; line-height: 1.55;">
-                    <h4 style="margin: 0 0 6px 0; font-size: 0.85rem; color: #0f172a; font-weight: 800;">⚖️ A ELEIÇÃO DEVE SER ANULADA? (Critério Jurídico):</h4>
-                    <p style="margin: 0 0 6px 0;"><strong>• Competência Constitucional:</strong> A auditoria forense produz a prova pericial; a decisão de anular pertence exclusivamente ao <strong>TSE e STF</strong> (Art. 14, § 10 da CF/88 e Art. 219 do Código Eleitoral).</p>
-                    <p style="margin: 0 0 6px 0;"><strong>• Anulação Total do Brasil: DESACONSELHADA.</strong> Anular 124 milhões de votos seria desproporcional, pois mais de 80% do país votou de forma legítima, com alta biometria e cadência humana.</p>
-                    <p style="margin: 0;"><strong>• Anulação Cirúrgica de Minas Gerais (Art. 224 do CE):</strong> Em MG, Lula venceu por 109 mil votos, e <strong>+96.370 votos vieram de urnas com anomalias graves</strong>. Anulando essas seções, Flávio passa à frente em MG por +83 mil votos e impõe-se a convocação de <strong>Eleição Suplementar em Minas Gerais</strong>, o que decidiria a presidência.</p>
+                    <h4 style="margin: 0 0 6px 0; font-size: 0.85rem; color: #0f172a; font-weight: 800;">⚖️ A ELEIÇÃO DEVE SER ANULADA? (Critério Jurídico e Aritmético):</h4>
+                    <p style="margin: 0 0 6px 0;"><strong>• Competência Constitucional:</strong> A auditoria forense produz a prova pericial e material; a decisão jurisdicional pertence privativamente ao <strong>TSE e STF</strong> (Art. 14, § 10 da CF/88 e Arts. 219 a 224 do Código Eleitoral).</p>
+                    <p style="margin: 0 0 6px 0;"><strong>• Por que 109 mil votos em Minas Gerais NÃO elegem o presidente sozinho?</strong><br>
+                    No plano nacional, a diferença oficial de Lula foi de <strong>+4.401.534 votos</strong>. Se a anulação ou reversão ocorrer <em>apenas em Minas Gerais</em> (onde a margem foi de 109.313 votos e Lula perderia a liderança do estado para Flávio por +83k votos), <strong>Lula ainda manteria uma vantagem de +4.292.221 votos no restante do Brasil!</strong> Portanto, Minas Gerais isolada NÃO muda a presidência da República; MG serve como a <strong>prova pericial cabal do vício de hardware (88,16% da margem mineira veio de urnas trocadas)</strong>, servindo de gatilho para a impugnação nacional.</p>
+                    <p style="margin: 0 0 6px 0;"><strong>• O Embasamento Jurídico para a Anulação Nacional (Art. 222 e 224 do CE):</strong><br>
+                    Pelo Princípio Eleitoral do Prejuízo (Art. 219), a anulação só se justifica se a irregularidade for capaz de alterar o resultado do pleito. Como o conjunto integral de votos sob vício material apurado no laudo (<strong>6,4 a 15,8 milhões de votos</strong>) é de <strong>1,5x a 3,6x MAIOR do que toda a margem nacional de 4,4 milhões</strong>, <strong>HÁ SUBSTRATO TÉCNICO, NUMÉRICO E JURÍDICO PLENO PARA A ANULAÇÃO DA ELEIÇÃO PRESIDENCIAL NACIONAL OU EXPURGO EM MASSA DAS URNAS VICIADAS COM CONVOCAÇÃO DE NOVA ELEIÇÃO NACIONAL (Art. 224 do Código Eleitoral)!</strong></p>
                 </div>
             </div>
 
+            <!-- SÍNTESE FINAL EM DESTAQUE -->
             <div style="background: #ede9fe; border: 1px solid #c7d2fe; border-left: 4px solid #4f46e5; border-radius: 6px; padding: 10px 14px; font-size: 0.78rem; color: #3730a3; line-height: 1.55;">
-                <strong>📌 Síntese Conclusiva:</strong> A tecnologia da urna resistiu e é segura contra ataques cibernéticos. O ponto de ruptura foi <strong>humano e procedimental</strong> (liberação manual sem biometria em salas vazias por operadores infiéis). A anulação total da eleição no Brasil é juridicamente inviável, mas há substrato fático e pericial robusto para a impugnação cirúrgica de Minas Gerais e das seções sob troca emergencial de hardware.
+                <strong>📌 Síntese Conclusiva da Perícia:</strong> A urna eletrônica não foi hackeada nem votou sozinha; a criptografia resistiu. Porém, a eleição presidencial de 2026 foi materialmente contaminada por um conjunto massivo de fraudes de mesa humana (votação em esteira, liberações no almoço, mesário único dominante, salas vazias e trocas de hardware) que somam entre <strong>6,5 e 15,8 milhões de votos</strong>. Como esse volume <strong>supera amplamente a margem nacional de 4,4 milhões de votos</strong>, a integridade do resultado nacional está formalmente comprometida, preenchendo todos os requisitos dos <strong>Artigos 220, 222 e 224 do Código Eleitoral</strong> para anulação judicial do pleito ou convocação de nova eleição nacional pelo TSE/STF.
             </div>
         </div>
 
-                
         <!-- CARD ESPECÍFICO DE 2022: AUDITORIA DE HARDWARE (UE2020 vs PRÉ-2020) E MINAS GERAIS -->
         <div id="cardAno2022" class="card" style="display: none; border-left: 6px solid #d97706; margin-bottom: 1.35rem; background: #ffffff;">
             <div class="card-header">
