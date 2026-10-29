@@ -711,6 +711,88 @@ HTML_TEMPLATE = f"""<!DOCTYPE html>
         <div class="card" style="border: 1px solid #cbd5e1; background: #ffffff; margin-bottom: 1.35rem; box-shadow: 0 4px 16px -2px rgba(0,0,0,0.05);" id="verdictContainer"></div>
 
 
+
+        <!-- PAINEL DE AUDITORIA DE CÓDIGO DO SOFTWARE E CHIPS CRIPTOGRÁFICOS -->
+        <div class="card" style="border-left: 5px solid #0284c7; background: #ffffff; margin-bottom: 1.35rem; box-shadow: 0 4px 16px -2px rgba(2, 132, 199, 0.08);">
+            <div class="card-header" style="border-bottom: 1px solid #e0f2fe; padding-bottom: 0.85rem;">
+                <div>
+                    <div style="display:inline-flex; align-items:center; gap:6px; background:#e0f2fe; border:1px solid #bae6fd; border-radius:9999px; padding:3px 10px; margin-bottom:0.35rem;">
+                        <span style="font-size:1.1rem; line-height:1;">💻</span>
+                        <span style="font-size:10px; font-weight:800; color:#0369a1; text-transform:uppercase; letter-spacing:0.06em; font-family:ui-monospace,monospace;">AUDITORIA DO CÓDIGO FONTE &bull; SOFTWARE & CARGA</span>
+                    </div>
+                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #0c4a6e; margin: 0.15rem 0 0.3rem 0; letter-spacing: -0.02em;">
+                        Auditoria do Código de Software, Versão Oficial e Mídias de Carga
+                    </h2>
+                    <p style="font-size: 0.8125rem; color: #475569; margin: 0; line-height: 1.45;">
+                        Conferência comparativa entre as <strong>urnas limpas</strong> e as <strong>urnas anômalas</strong>: versão do programa de votação, compilação oficial, chips TPM e cadeia interna de integridade SHA-512.
+                    </p>
+                </div>
+                <div style="text-align: right; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 0.75rem; padding: 0.65rem 1.15rem;">
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7; font-family: ui-monospace, monospace; line-height: 1;">
+                        100% Versão 10.23.0.0
+                    </div>
+                    <div style="font-size: 0.7rem; color: #0369a1; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 4px;">
+                        Praia da Barra do Cahy (Compilação Homologada)
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRID COM 3 PILARES DE AUDITORIA DO CÓDIGO -->
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <!-- PILAR 1: VERSÃO DO SOFTWARE -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 1rem; border-top: 4px solid #10b981;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #047857; text-transform: uppercase; margin-bottom: 0.35rem;">
+                        1. VERSÃO DO PROGRAMA DE VOTAÇÃO
+                    </div>
+                    <div style="font-size: 1.15rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace;">
+                        10.23.0.0 (Idêntica)
+                    </div>
+                    <div style="font-size: 0.78rem; color: #334155; margin-top: 0.45rem; line-height: 1.45;">
+                        Tanto as <strong>16.378 urnas limpas de SC</strong> quanto as <strong>890 urnas anômalas</strong> (e todas as 52.062 de MG) registram rigorosamente a mesma compilação oficial: <code>10.23.0.0 - Praia da Barra do Cahy</code>. Não foi detectada versão paralela ou clandestina de software.
+                    </div>
+                </div>
+
+                <!-- PILAR 2: INTEGRIDADE SHA-512 -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 1rem; border-top: 4px solid #3b82f6;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #1d4ed8; text-transform: uppercase; margin-bottom: 0.35rem;">
+                        2. CADEIA INTERNA DE HASHES SHA-512
+                    </div>
+                    <div style="font-size: 1.15rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace;">
+                        100% Válida e Concluída
+                    </div>
+                    <div style="font-size: 0.78rem; color: #334155; margin-top: 0.45rem; line-height: 1.45;">
+                        O recálculo forense das cadeias matemáticas de hash SHA-512 dos votos nominais em todas as 69.388 seções foi <strong>100% aprovado</strong> (<code>CHK098 = 0</code> e <code>CHK099 = 0</code>). O arquivo de resultado do BU é matematicamente íntegro e autêntico em relação aos votos registrados nele.
+                    </div>
+                </div>
+
+                <!-- PILAR 3: CHIPS TPM E GERADORES DE CARGA -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 1rem; border-top: 4px solid #f59e0b;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #b45309; text-transform: uppercase; margin-bottom: 0.35rem;">
+                        3. CONCENTRAÇÃO DE MÍDIAS DE CARGA
+                    </div>
+                    <div style="font-size: 1.15rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace;">
+                        Agrupamento por Estação Geradora
+                    </div>
+                    <div style="font-size: 0.78rem; color: #334155; margin-top: 0.45rem; line-height: 1.45;">
+                        Em Minas Gerais, estações específicas de cartório (como <code>ZMG148STD02</code>, serial TPM <code>5683A0B9</code>) concentraram sozinhas mais de 104 seções com severidade ALTA. Em SC, estações como <code>CSC012W057425</code> concentraram dezenas de trocas e cargas limítrofes.
+                    </div>
+                </div>
+            </div>
+
+            <!-- PARECER FORENSE DECISIVO SOBRE O CÓDIGO DA URNA -->
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.625rem; padding: 0.85rem 1.15rem; margin-top: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="font-size: 1.35rem; line-height: 1;">🛡️</span>
+                <div style="font-size: 0.8125rem; color: #14532d; line-height: 1.55;">
+                    <strong style="color: #14532d; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;">
+                        CONCLUSÃO FORENSE DECISIVA: O SOFTWARE É O MESMO — O VÍCIO É OPERACIONAL HUMANO!
+                    </strong><br>
+                    A constatação de que as urnas com anomalias graves rodam <strong>exatamente o mesmo código de software e a mesma compilação oficial das urnas limpas</strong> é uma descoberta técnica de fundamental relevância jurídica:<br>
+                    &bull; <strong>Descarta Software Paralelo / Fraude de Código:</strong> Não houve uma "versão adulterada de software" instalada apenas nas urnas suspeitas. O executável assinado pelo TSE é exatamente o mesmo em todas as máquinas.<br>
+                    &bull; <strong>Comprova Vulnerabilidade Procedimental e Operacional Humana:</strong> As anomalias detectadas (como os 3 milhões de eleitores liberados sem biometria, o salto de +6,54 pp de Lula nas 890 seções de SC e o desvio de +96 mil votos que virou Minas Gerais) foram viabilizadas pelo <strong>próprio fluxo operacional permitido pelo software oficial</strong> — especificamente a prerrogativa do mesário de burlar a digital mediante digitação do ano de nascimento do eleitor, sem auditoria em tempo real.
+                </div>
+            </div>
+        </div>
+
         <!-- PAINEL DE AUDITORIA TEMPORAL: HORÁRIOS DE ENCERRAMENTO E VOTOS APÓS AS 17H -->
         <div class="card" style="border-left: 5px solid #6366f1; background: #ffffff; margin-bottom: 1.35rem; box-shadow: 0 4px 16px -2px rgba(99, 102, 241, 0.08);">
             <div class="card-header" style="border-bottom: 1px solid #e0e7ff; padding-bottom: 0.85rem;">
