@@ -159,7 +159,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             font-size: 0.8125rem;
             line-height: 1.45;
         }
-        .container-fluid { width: 100%; max-width: 1400px; margin: 0 auto; }
+        .container-fluid { width: 100%; max-width: 100%; margin: 0; padding: 0; box-sizing: border-box; }
+        .command-center-grid { display: grid; grid-template-columns: 46% calc(54% - 1.25rem); gap: 1.25rem; margin-bottom: 1.35rem; align-items: start; }
+        @media (max-width: 1200px) { .command-center-grid { grid-template-columns: 1fr; } }
         .card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -441,39 +443,106 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- BLOCO PRINCIPAL: MAPA INTERATIVO DO BRASIL + PAINEL EXECUTIVO DO ESTADO -->
-        <div class="grid grid-cols-2" style="margin-bottom: 1.35rem;">
-            <!-- LADO ESQUERDO: MAPA DO BRASIL GEO-GRID -->
-            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                <div class="card-header">
-                    <div>
-                        <span class="badge badge-blue font-mono">MAPA COROPLÉTICO INTERATIVO</span>
-                        <h2 style="font-size: 1.15rem; font-weight: 900; color: #0f172a; margin: 0.2rem 0;">
-                            Mapa do Brasil &bull; Risco Pericial de Fraude por Estado
-                        </h2>
-                        <p style="font-size: 0.75rem; color: #64748b; margin: 0;">
-                            Clique ou passe o mouse sobre qualquer estado para carregar os dados executivos ao lado.
-                        </p>
-                    </div>
-                    <div style="display: flex; gap: 6px; font-size: 10px; font-weight: 700;">
-                        <span style="display:inline-flex; align-items:center; gap:3px;"><span style="width:10px; height:10px; border-radius:2px; background:#e11d48; display:inline-block;"></span> Crítico (&ge;80%)</span>
-                        <span style="display:inline-flex; align-items:center; gap:3px;"><span style="width:10px; height:10px; border-radius:2px; background:#f59e0b; display:inline-block;"></span> Médio (45%)</span>
-                        <span style="display:inline-flex; align-items:center; gap:3px;"><span style="width:10px; height:10px; border-radius:2px; background:#10b981; display:inline-block;"></span> Baixo (&lt;5%)</span>
-                    </div>
+        <!-- PAINEL DE DECOMPOSIÇÃO: ONDE ESTÃO OS ~10,33 MILHÕES DE VOTOS DE LULA -->
+        <div class="card" style="border-left: 5px solid #0284c7; margin-bottom: 1.35rem;">
+            <div class="card-header">
+                <div>
+                    <span class="badge badge-blue font-mono">RASTREABILIDADE MATEMÁTICA</span>
+                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #0c4a6e; margin: 0.2rem 0;">
+                        Decomposição Matemática: De Onde Vieram os +10.334.160 Votos de Lula no 2º Turno?
+                    </h2>
+                    <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
+                        Análise científica de como a votação de Lula saltou de <strong>53.721.918 (45,15%)</strong> no 1T para <strong>64.056.078 (51,78%)</strong> no 2T.
+                    </p>
                 </div>
-
-                <!-- GRADE GEOGRÁFICA DO MAPA DO BRASIL (CADA ESTADO RIGOROSAMENTE 1X) -->
-                <div style="padding: 1rem 0;">
-                    <div class="map-grid" id="mapGrid"></div>
-                </div>
-
-                <div style="font-size: 0.72rem; color: #64748b; text-align: center; border-top: 1px solid #f1f5f9; padding-top: 0.5rem;">
-                    *Cartograma geográfico interativo com todos os 27 estados e DF posicionados por macro-regiões (cada estado 1x).
+                <div style="text-align: right;">
+                    <div style="font-size: 1.75rem; font-weight: 900; color: #0284c7; font-family: ui-monospace, monospace;">+__CRESCIMENTO_LULA__ Votos</div>
+                    <div style="font-size: 0.7rem; color: #0284c7; font-weight: 800; text-transform: uppercase;">Salto Total de Lula no 2º Turno (+19,24%)</div>
                 </div>
             </div>
 
-            <!-- LADO DIREITO: PAINEL EXECUTIVO DO ESTADO SELECIONADO -->
-            <div class="card" style="border-left: 6px solid #e11d48; display: flex; flex-direction: column; justify-content: space-between;" id="stateDetailCard">
+            <!-- BARRAS DA DECOMPOSIÇÃO -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem 1.35rem;">
+                <!-- 1. TERCEIRA VIA -->
+                <div style="margin-bottom: 1.15rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
+                        <span style="font-weight: 800; color: #0f172a;">
+                            1. Migração dos Votos da 3ª Via (Cury, Renan, Caiado, Zema...):
+                        </span>
+                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #0284c7;">
+                            +__VOTOS_TERCEIRA_VIA__ votos (__PCT_TERCEIRA__%)
+                        </span>
+                    </div>
+                    <div style="background: #e2e8f0; border-radius: 9999px; height: 16px; overflow: hidden;">
+                        <div style="background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%); height: 100%; width: __PCT_TERCEIRA__%; border-radius: 9999px;"></div>
+                    </div>
+                    <div style="font-size: 0.74rem; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 8px 12px; margin-top: 6px; line-height: 1.5;">
+                        <strong>💡 Esclarecimento Didático (Como funcionou a migração da 3ª Via?):</strong> No 1º Turno, os candidatos de centro e direita moderada (Cury, Renan Santos, Caiado, Zema, Simone Tebet) somaram <strong>9,29 milhões de votos</strong> válidos. No 2º Turno, com a disputa polarizada entre Flávio e Lula, cerca de <strong>7,42 milhões desses eleitores (__PCT_TERCEIRA__% de todo o salto de Lula)</strong> optaram pelo voto útil contra Flávio Bolsonaro, transferindo seus votos diretamente para o candidato petista. Essa migração maciça explica a maior fatia do crescimento de Lula no país e coincide com a margem de rejeição de Flávio nas capitais e grandes centros metropolitanos do Sudeste e Sul.
+                    </div>
+                </div>
+
+                <!-- 2. COMPARECIMENTO -->
+                <div style="margin-bottom: 1.15rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
+                        <span style="font-weight: 800; color: #0f172a;">
+                            2. Expansão de Comparecimento (+__NOVOS_VOTANTES__ novos votantes no 2T):
+                        </span>
+                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #10b981;">
+                            +__VOTOS_NOVOS__ votos (__PCT_NOVOS__%)
+                        </span>
+                    </div>
+                    <div style="background: #e2e8f0; border-radius: 9999px; height: 16px; overflow: hidden;">
+                        <div style="background: linear-gradient(90deg, #059669 0%, #10b981 100%); height: 100%; width: __PCT_NOVOS__%; border-radius: 9999px;"></div>
+                    </div>
+                    <div style="font-size: 0.74rem; color: #166534; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 8px 12px; margin-top: 6px; line-height: 1.5;">
+                        <strong>💡 Esclarecimento Didático (De onde vieram os novos votantes?):</strong> Entre o 1º e o 2º Turno, o comparecimento nacional aumentou em <strong>+__NOVOS_VOTANTES__ eleitores</strong> (o total de votantes no país saltou de 125,27 milhões para 128,23 milhões). Desses novos eleitores que compareceram apenas no 2º turno, Lula capturou <strong>2.176.156 votos (__PCT_NOVOS__% de toda a nova presença eleitoral)</strong>. Esse fenômeno foi fortemente impulsionado pelo passe livre generalizado no transporte público em capitais e metrópoles e por agressiva mobilização de prefeituras e governos locais no Nordeste e nas periferias, revertendo a abstenção do 1º turno.
+                    </div>
+                </div>
+
+                <!-- 3. VOTOS ANÔMALOS EXCEDENTES -->
+                <div style="margin-bottom: 1.15rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
+                        <span style="font-weight: 800; color: #991b1b;">
+                            3. VOTOS ANÔMALOS EXCEDENTES (Concentrados em Urnas com Falhas/Trocas):
+                        </span>
+                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #b91c1c;">
+                            +__VOTOS_ANOMALOS__ votos (__PCT_ANOMALOS__%) &bull; DECISIVO PARA A VIRADA EM MINAS GERAIS!
+                        </span>
+                    </div>
+                    <div style="background: #fee2e2; border-radius: 9999px; height: 16px; overflow: hidden;">
+                        <div style="background: linear-gradient(90deg, #e11d48 0%, #be123c 100%); height: 100%; width: __PCT_ANOMALOS__%; border-radius: 9999px; box-shadow: 0 0 8px rgba(225, 29, 72, 0.5);"></div>
+                    </div>
+                    <div style="font-size: 0.74rem; color: #7f1d1d; background: #fff5f5; border: 1px solid #fecdd3; border-radius: 6px; padding: 8px 12px; margin-top: 6px; line-height: 1.5;">
+                        <strong>💡 Esclarecimento Didático (Por que foi decisivo em Minas Gerais?):</strong> No Brasil consolidado, os votos anômalos somaram <strong>+__VOTOS_ANOMALOS__ votos</strong> (4,4% de todo o crescimento de Lula). Porém, o seu impacto foi cirúrgico e decisivo para inverter o resultado do estado mais disputado da federação: <strong>Minas Gerais</strong>. Lá, Lula venceu por apenas <strong>+109.313 votos</strong>, e nada menos que <strong>+96.370 votos (88,16% de toda a sua margem de vitória no estado)</strong> vieram exclusivamente de urnas com anomalias graves (desabamento de biometria, trocas físicas de máquina e a anomalia CHK046)! Sem essas urnas anômalas em MG, o candidato não teria virado a eleição mineira. No Rio Grande do Sul (RS), essa anomalia gerou <strong>+110.649 votos excedentes</strong> para Lula em 4.625 urnas.
+                    </div>
+                </div>
+
+                <!-- 4. NULOS E BRANCOS -->
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
+                        <span style="font-weight: 800; color: #0f172a;">
+                            4. Migração de Eleitores que Anularam ou Votaram em Branco no 1T:
+                        </span>
+                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #64748b;">
+                            +__VOTOS_NB__ votos (__PCT_NB__%)
+                        </span>
+                    </div>
+                    <div style="background: #e2e8f0; border-radius: 9999px; height: 16px; overflow: hidden;">
+                        <div style="background: #64748b; height: 100%; width: __PCT_NB__%; border-radius: 9999px;"></div>
+                    </div>
+                    <div style="font-size: 0.74rem; color: #334155; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-top: 6px; line-height: 1.5;">
+                        <strong>💡 Esclarecimento Didático (O resgate de votos Brancos e Nulos):</strong> No 1º Turno, cerca de 5,8 milhões de brasileiros votaram em branco ou anularam o voto. Com a intensa polarização do 2º Turno, a taxa de brancos e nulos encolheu significativamente, e cerca de <strong>+__VOTOS_NB__ eleitores</strong> que anteriormente não haviam escolhido nenhum candidato optaram por votar em Lula, representando __PCT_NB__% do seu crescimento total.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMAND CENTER NACIONAL (100% DA LARGURA): MAPA À ESQUERDA | TABELA COMPARATIVA À DIREITA -->
+        <div class="command-center-grid">
+            <!-- COLUNA ESQUERDA: MAPA DO BRASIL + PAINEL DO ESTADO SELECIONADO -->
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                
+                <div class="card" style="border-left: 6px solid #e11d48; display: flex; flex-direction: column; justify-content: space-between;" id="stateDetailCard">
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.85rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.65rem;">
                         <div>
@@ -542,125 +611,40 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                     Biometria: 2.389.985 eleitores votaram sem digital no 2º turno (18,32%).
                 </div>
             </div>
-        </div>
-
-        <!-- PAINEL DE DECOMPOSIÇÃO: ONDE ESTÃO OS ~10,33 MILHÕES DE VOTOS DE LULA -->
-        <div class="card" style="border-left: 5px solid #0284c7; margin-bottom: 1.35rem;">
-            <div class="card-header">
-                <div>
-                    <span class="badge badge-blue font-mono">RASTREABILIDADE MATEMÁTICA</span>
-                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #0c4a6e; margin: 0.2rem 0;">
-                        Decomposição Matemática: De Onde Vieram os +10.334.160 Votos de Lula no 2º Turno?
-                    </h2>
-                    <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
-                        Análise científica de como a votação de Lula saltou de <strong>53.721.918 (45,15%)</strong> no 1T para <strong>64.056.078 (51,78%)</strong> no 2T.
-                    </p>
-                </div>
-                <div style="text-align: right;">
-                    <div style="font-size: 1.75rem; font-weight: 900; color: #0284c7; font-family: ui-monospace, monospace;">+__CRESCIMENTO_LULA__ Votos</div>
-                    <div style="font-size: 0.7rem; color: #0284c7; font-weight: 800; text-transform: uppercase;">Salto Total de Lula no 2º Turno (+19,24%)</div>
-                </div>
             </div>
 
-            <!-- BARRAS DA DECOMPOSIÇÃO -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.15rem 1.25rem;">
-                <!-- 1. TERCEIRA VIA -->
-                <div style="margin-bottom: 0.85rem;">
-                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
-                        <span style="font-weight: 800; color: #0f172a;">
-                            1. Migração dos Votos da 3ª Via (Cury, Renan, Caiado, Zema...):
-                        </span>
-                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #0284c7;">
-                            +__VOTOS_TERCEIRA_VIA__ votos (__PCT_TERCEIRA__%)
-                        </span>
-                    </div>
-                    <div style="background: #e2e8f0; border-radius: 9999px; height: 16px; overflow: hidden;">
-                        <div style="background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%); height: 100%; width: __PCT_TERCEIRA__%; border-radius: 9999px;"></div>
-                    </div>
-                </div>
-
-                <!-- 2. COMPARECIMENTO -->
-                <div style="margin-bottom: 0.85rem;">
-                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
-                        <span style="font-weight: 800; color: #0f172a;">
-                            2. Expansão de Comparecimento (+__NOVOS_VOTANTES__ novos votantes no 2T):
-                        </span>
-                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #10b981;">
-                            +__VOTOS_NOVOS__ votos (__PCT_NOVOS__%)
-                        </span>
-                    </div>
-                    <div style="background: #e2e8f0; border-radius: 9999px; height: 16px; overflow: hidden;">
-                        <div style="background: linear-gradient(90deg, #059669 0%, #10b981 100%); height: 100%; width: __PCT_NOVOS__%; border-radius: 9999px;"></div>
-                    </div>
-                </div>
-
-                <!-- 3. VOTOS ANÔMALOS EXCEDENTES -->
-                <div style="margin-bottom: 0.85rem;">
-                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
-                        <span style="font-weight: 800; color: #991b1b;">
-                            3. VOTOS ANÔMALOS EXCEDENTES (Concentrados em Urnas com Falhas/Trocas):
-                        </span>
-                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #b91c1c;">
-                            +__VOTOS_ANOMALOS__ votos (__PCT_ANOMALOS__%) &bull; DECISIVO PARA A VIRADA EM MINAS GERAIS!
-                        </span>
-                    </div>
-                    <div style="background: #fee2e2; border-radius: 9999px; height: 16px; overflow: hidden;">
-                        <div style="background: linear-gradient(90deg, #e11d48 0%, #be123c 100%); height: 100%; width: __PCT_ANOMALOS__%; border-radius: 9999px; box-shadow: 0 0 8px rgba(225, 29, 72, 0.5);"></div>
-                    </div>
-                    <div style="font-size: 0.74rem; color: #7f1d1d; background: #fff5f5; border: 1px solid #fecdd3; border-radius: 6px; padding: 6px 10px; margin-top: 6px; line-height: 1.45;">
-                        <strong>💡 Esclarecimento Didático (Por que foi decisivo em Minas Gerais?):</strong> No Brasil como um todo, os votos anômalos somaram <strong>+__VOTOS_ANOMALOS__ votos</strong> (4,4% de todo o crescimento de Lula). Porém, o seu impacto foi cirúrgico e decisivo para inverter o resultado do estado mais disputado da federação: <strong>Minas Gerais</strong>. Lá, Lula venceu por apenas <strong>+109.313 votos</strong>, e nada menos que <strong>+96.370 votos (88,16% de toda a sua margem de vitória no estado)</strong> vieram exclusivamente de urnas com anomalias graves! Sem essas urnas anômalas em MG, o candidato não teria virado a eleição mineira.
-                    </div>
-                </div>
-
-                <!-- 4. NULOS E BRANCOS -->
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
-                        <span style="font-weight: 800; color: #0f172a;">
-                            4. Migração de Eleitores que Anularam ou Votaram em Branco no 1T:
-                        </span>
-                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #64748b;">
-                            +__VOTOS_NB__ votos (__PCT_NB__%)
-                        </span>
-                    </div>
-                    <div style="background: #e2e8f0; border-radius: 9999px; height: 16px; overflow: hidden;">
-                        <div style="background: #64748b; height: 100%; width: __PCT_NB__%; border-radius: 9999px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- TABELA NACIONAL COMPLETA (OS 28 ESTADOS LADO A LADO) -->
-        <div class="card" style="margin-bottom: 1.35rem;">
+            <!-- COLUNA DIREITA: TABELA COMPARATIVA DOS 28 ESTADOS -->
+                    <div class="card" style="margin-bottom: 0; display: flex; flex-direction: column;" id="nationalTableCard">
             <div class="card-header">
                 <div>
                     <h2 style="font-size: 1.15rem; font-weight: 900; color: #0f172a; margin: 0;">
                         Tabela Comparativa Nacional &bull; Todos os 28 Estados e DF
                     </h2>
                     <p style="font-size: 0.75rem; color: #64748b; margin: 0.2rem 0 0 0;">
-                        Ordenável por qualquer coluna. Clique em qualquer linha para carregar os detalhes do estado no painel executivo superior.
+                        Ordenável por qualquer coluna. Clique em qualquer linha para selecionar o estado no mapa e carregar o painel.
                     </p>
                 </div>
             </div>
-
-            <div style="overflow-x: auto;">
+            <div style="overflow-x: auto; max-height: 875px; overflow-y: auto;">
                 <table>
                     <thead>
                         <tr>
                             <th class="col-fit t-center" onclick="sortTable('uf')">UF</th>
                             <th class="col-grow t-left" onclick="sortTable('nome')">Estado</th>
                             <th class="col-fit t-center" onclick="sortTable('vencedor')">Vencedor 2T</th>
-                            <th class="col-fit t-right" onclick="sortTable('margem')">Margem de Vitória</th>
-                            <th class="col-fit t-right" onclick="sortTable('excedente')">Excedente Anômalo Lula</th>
-                            <th class="col-fit t-center" onclick="sortTable('chance')">Chance Fraude (%)</th>
+                            <th class="col-fit t-right" onclick="sortTable('margem')">Margem</th>
+                            <th class="col-fit t-right" onclick="sortTable('excedente')">Excedente Lula</th>
+                            <th class="col-fit t-center" onclick="sortTable('chance')">Chance Fraude</th>
                             <th class="col-fit t-right" onclick="sortTable('flavio_2t')">Flávio (22)</th>
                             <th class="col-fit t-right" onclick="sortTable('lula_2t')">Lula (13)</th>
-                            <th class="col-fit t-right" onclick="sortTable('sem_bio')">Sem Biometria</th>
-                            <th class="col-fit t-right" onclick="sortTable('chk046')">Urnas CHK046</th>
+                            <th class="col-fit t-right" onclick="sortTable('sem_bio')">Sem Bio</th>
+                            <th class="col-fit t-right" onclick="sortTable('chk046')">CHK046</th>
                         </tr>
                     </thead>
                     <tbody id="nationalTableBody"></tbody>
                 </table>
             </div>
+        </div>
         </div>
 
         <!-- NOVO: EXPLORADOR INTERATIVO DE SEÇÕES ELEITORAIS POR URNA -->
@@ -1158,12 +1142,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
                 const badges = (s.anomalias || []).slice(0, 3).map(a => {
                     const isHigh = a.severity === 'ALTA';
-                    return `<span class="badge ${isHigh ? 'badge-red' : 'badge-yellow'}" title="${a.description || ''}">${a.title || a.code}</span>`;
+                    return `<span class="badge ${isHigh ? 'badge-red' : 'badge-yellow'}" onclick="event.stopPropagation(); showRuleDetailsModal('${a.code}')" style="cursor:pointer; margin:2px;" title="${a.description || ''}">${a.title || a.code}</span>`;
                 }).join('');
 
                 const ufClass = s.uf === 'MG' || s.uf === 'BA' || s.uf === 'CE' ? 'badge-red' : 'badge-blue';
 
-                html += `<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                html += `<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(${i})" title="Clique nesta linha para abrir o dossiê detalhado da urna">
                     <td class="col-fit t-center"><span class="badge ${ufClass}">${s.uf}</span></td>
                     <td class="col-fit t-left font-semibold text-slate-900">${s.municipio_nome || s.municipio}</td>
                     <td class="col-fit t-center font-mono">${s.zona}</td>
@@ -1179,7 +1163,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                     <td class="col-fit t-center font-mono font-semibold text-slate-700">${t3}</td>
                     <td class="col-grow t-left" style="line-height: 1.45;">${badges}</td>
                     <td class="col-fit t-center">
-                        <button onclick="openModal(${i})" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:4px; padding:3px 8px; font-size:11px; font-weight:700; cursor:pointer;">🔍 Detalhes</button>
+                        <button onclick="event.stopPropagation(); openModal(${i})" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                            <span>🔍</span><span>Ver Detalhes</span>
+                        </button>
                     </td>
                 </tr>`;
             }
