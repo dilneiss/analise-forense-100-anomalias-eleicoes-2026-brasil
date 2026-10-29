@@ -291,7 +291,7 @@ def test_chk121_to_chk124_rules():
             "manha_08_12": {"total": 50, "bio": 45, "manual": 5},
             "almoco_12_14": {"total": 40, "bio": 20, "manual": 20},
             "tarde_14_17": {"total": 110, "bio": 95, "manual": 15},
-            "noite_apos_17": {"total": 0, "bio": 0, "manual": 0},
+            "noite_apos_17": {"total": 10, "bio": 4, "manual": 6},
         },
         "mesarios_habilitacao_manual": [
             {"mesario_id": "11223344", "liberacoes_manuais": 35, "pct_total_manuais": 87.5},
@@ -308,3 +308,4 @@ def test_chk121_to_chk124_rules():
     assert "CHK123_SURTO_MANUAL_HORARIO_DESERTO" in codes
     assert "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO" in codes
     assert "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE" in codes
+    assert "CHK126_SURTO_MANUAL_POS_17H" in codes

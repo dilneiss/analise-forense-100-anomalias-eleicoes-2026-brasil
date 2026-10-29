@@ -2447,6 +2447,26 @@ def evaluate_section_anomalies(
                     details={"conflitos_ja_votou": conflitos, "habilitacoes_canceladas": canceladas, "eventos": telemetry.get("conflitos_ja_votou_eventos", [])},
                 )
             )
+    # CHK126: Surto de votos manuais sem biometria após as 17h
+    if telemetry:
+        faixas = telemetry.get("votos_por_faixa_horaria", {})
+        noite = faixas.get("noite_apos_17", {})
+        tot_noite = noite.get("total", 0)
+        manuais_noite = noite.get("manual", 0)
+        if tot_noite >= 8 and manuais_noite >= 4:
+            pct_noite_man = (manuais_noite / tot_noite) * 100.0
+            if pct_noite_man >= 40.0:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK126_SURTO_MANUAL_POS_17H",
+                        category=CAT_TEMPORAL,
+                        severity=SEV_ALTA if pct_noite_man >= 60.0 else SEV_MEDIA,
+                        title="Surto de Votos Manuais sem Biometria Após as 17h",
+                        description=f"{manuais_noite} de {tot_noite} votos pós-17h ({pct_noite_man:.1f}%) foram liberados manualmente sem biometria.",
+                        details={"total_pos17": tot_noite, "manuais_pos17": manuais_noite, "pct_manual_pos17": round(pct_noite_man, 1)},
+                    )
+                )
+
 
 
     return anomalies
@@ -2480,6 +2500,8 @@ def calculate_section_fraud_score(anomalies: list[Anomaly]) -> dict[str, Any]:
         score = max(score, 88)
     if has_code("CHK125"):
         score = max(score, 90)
+    if has_code("CHK126"):
+        score = max(score, 85)
 
     if has_code("CHK046"):
         score = max(score, 82)
@@ -3181,6 +3203,7 @@ RULE_HUMAN_TITLES = {
     "CHK123_SURTO_MANUAL_HORARIO_DESERTO": ("Surto Desproporcional de Votos Manuais no Almoço", "MEDIA"),
     "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO": ("Concentração de > 80% das Liberações em Único Mesário", "ALTA"),
     "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE": ("Tentativa de Habilitação de Eleitor que Consta 'Já Votou'", "ALTA"),
+    "CHK126_SURTO_MANUAL_POS_17H": ("Surto de Votos Manuais sem Biometria Após 17h", "ALTA"),
 }
 
 
@@ -4236,6 +4259,13 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "por_que_suspeito": "Altíssima gravidade: se uma urna registrar voto nominal para um candidato eliminado ou inexistente, comprova falha crítica de integridade na tabela de votáveis ou adulteração deliberada do software da urna para desviar votos.",
                 "severidade": "ALTA"
             }},
+            "CHK126_SURTO_MANUAL_POS_17H": {{
+                "titulo": "Surto de Votos sem Biometria Após as 17h",
+                "explicacao": "Mais de 40% dos votos computados durante a extensão de horário após as 17h foram liberados manualmente por digitação de ano de nascimento, sem validação da impressão digital do eleitor.",
+                "por_que_suspeito": "Forte indício de que a extensão de horário ou a senha de fila foi utilizada pela mesa para inserir votos no lugar de faltosos sem a presença física do cidadão na cabine.",
+                "severidade": "ALTA"
+            }},
+
             "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE": {{
                 "titulo": "Tentativa de Votar com Eleitor já Registrado como 'Já Votou'",
                 "explicacao": "A urna eletrônica registrou eventos oficiais onde o mesário digitou o identificador do eleitor e o sistema bloqueou a tela informando que aquele cidadão já havia votado anteriormente naquele mesmo dia, resultando em cancelamento de habilitação.",

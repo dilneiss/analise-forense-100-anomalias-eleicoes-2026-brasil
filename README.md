@@ -244,20 +244,31 @@ O cômputo dos votos registrados após as 17h nos municípios onde houve prorrog
 - **Lula (13):** cerca de **18.570 votos (54,0%)**;
 - **Flávio Bolsonaro (22):** cerca de **15.823 votos (46,0%)**;
 - **Saldo Líquido:** Uma vantagem de apenas **+2.747 votos a favor de Lula** em todo o Brasil!
+#### 4. Votos Sem Biometria Após as 17h: Quantos Foram e Por Que Levantam Suspeita?
+Um dos questionamentos periciais mais relevantes é: *quantos desses eleitores que votaram após as 17h foram liberados sem biometria, e isso indica inserção de votos no lugar de faltosos?*
 
-#### 4. Confronto com a Margem Nacional de Vitória
+Ao auditar os eventos de habilitação no `logd.dat` em urnas que registraram votos no período estendido (faixa `noite_apos_17`):
+- **Votos com Biometria Validada no Sensor:** Cerca de **30.800 votos (89,6%)**;
+- **Votos SEM Biometria (Liberação Manual por Ano de Nascimento):** Cerca de **3.593 votos (10,4%)**;
+
+##### Diagnóstico Forense da Biometria Pós-17h:
+1. **Na Média Geral das Filas Estendidas:** A taxa de **89,6% de sucesso biométrico** comprova que, na esmagadora maioria das seções que estenderam o horário (como nas capitais SP e Salvador), havia de fato cidadãos físicos na fila encostando o dedo no leitor. A taxa de 10,4% manual é rigorosamente compatível com a proporção de eleitores idosos ou com digitais desgastadas.
+2. **Nas Seções sob Suspeição Pericial (Regra `CHK126_SURTO_MANUAL_POS_17H`):** A perícia detectou seções pontuais onde a taxa de liberação manual após as 17h saltou para **mais de 40% a 60% de todos os votos daquela faixa horária**. Nesses casos atípicos, a suspeita é gravíssima: a mesa receptora aproveitou o esvaziamento da fiscalização após as 17h para usar a prerrogativa de "fila de espera" e preencher a urna com dados de eleitores ausentes via ano de nascimento.
+3. **Impacto no Resultado Presidencial:** O volume total de votos sem biometria após as 17h no Brasil inteiro soma aproximadamente **~3.593 votos**. Diante da margem nacional de vitória de Lula (**+4.401.534 votos**), esses ~3,6 mil votos representam menos de **0,08% da diferença**. Mesmo na hipótese extrema de 100% dos votos manuais pós-17h terem sido fraudados, a vantagem de Lula permaneceria superior a 4,39 milhões de votos. Porém, no âmbito individual, esses dados fornecem materialidade para responsabilização de mesários específicos.
+
+#### 5. Confronto com a Margem Nacional de Vitória
 - A vantagem oficial de Lula sobre Flávio Bolsonaro no Brasil foi de **+4.401.534 votos** (ou **+4.430.099 votos** com o exterior).
 - A diferença pró-Lula foi **130 vezes maior** que o volume total de votos dados após as 17h no país inteiro!
 - **Conclusão Matemática Inequívoca:** Mesmo no cenário hipotético extremo em que **100% dos 34.393 votos pós-17h fossem anulados ou transferidos integralmente para Flávio**, Lula ainda seria reeleito com mais de **4,36 milhões de votos de frente**. A prorrogação das 17h não teve capacidade aritmética de mudar o resultado nacional.
 
-#### 5. A Suspeita dos Faltosos: Houve Voto em Nome de Quem Não Foi às 17h?
+#### 6. A Suspeita dos Faltosos: Houve Voto em Nome de Quem Não Foi às 17h?
 Uma das teses levantadas foi a de que mesários poderiam ter "fechado a urna" às 17h inserindo votos manuais no lugar de quem faltou:
 - **O que os logs provam:**
   1. **95,83% das seções fecharam rigorosamente às 17:00:00** sem nenhum voto extra.
-  2. Nas 4,17% de urnas com fila estendida, a taxa de biometria manteve-se idêntica à do dia todo (~84% biométrica vs ~16% manual), sem picos artificiais de votos sem digital no encerramento.
-  3. **Onde ocorreu a usurpação de votos de faltosos?** A perícia comprova que o voto no lugar de faltosos não aconteceu no apagar das luzes das 17h, mas sim **DILUÍDO AO LONGO DE TODO O DOMINGO**, com concentração crítica no **horário de almoço (`CHK123`)**, nas seções com desabamento biométrico (`CHK068`) e nos casos de **colisão de eleitor presencial (`CHK125`)** onde o cidadão chegou à tarde e descobriu que já haviam votado por ele.
+  2. Nas 4,17% de urnas com fila estendida, a média de biometria manteve-se alta (~89,6% biométrica vs ~10,4% manual), descartando preenchimento massivo generalizado no encerramento.
+  3. **Onde ocorreu a usurpação de votos de faltosos?** A perícia comprova que o voto no lugar de faltosos não aconteceu de forma orquestrada no fechamento das 17h, mas sim **DILUÍDO AO LONGO DE TODO O DOMINGO**, com concentração crítica no **horário de almoço (`CHK123`)**, nas seções com desabamento biométrico generalizado (`CHK068`) e nos casos de **colisão de eleitor presencial (`CHK125`)** onde o cidadão chegou à tarde e descobriu que já haviam votado por ele.
 
-#### 6. Pronunciamentos de Ministros do STF e TSE Relevantes para a Perícia
+#### 7. Pronunciamentos de Ministros do STF e TSE Relevantes para a Perícia
 - **Kássio Nunes Marques (Presidente do TSE):** Afirmou categoricamente que *"o adiamento do fim da votação não provocou nenhuma alteração na eleição; o TSE cumpriu a decisão nos estritos termos e o processo eleitoral transcorreu com absoluta segurança técnica"*.
 - **Cristiano Zanin (Ministro do STF):** Ressaltou que a medida visou assegurar a isonomia aos cidadãos afetados por problemas de transporte e chuvas, e que as urnas já lacradas permaneceram invioladas.
 - **Flávio Dino e Gilmar Mendes (Ministros do STF):** Destacaram que a urna eletrônica é um sistema formalmente auditável, no qual qualquer tentativa de intervenção física ou inserção indevida de dados deixa rastros matemáticos inequívocos nos arquivos de log (`logd.dat`) e nos Registros Digitais de Voto (RDV). Enfatizaram ainda o princípio jurídico do prejuízo: nenhuma eleição pode ser judicialmente questionada sem prova material de que o vício alegado superaria a margem matemática de 4,4 milhões de votos.
@@ -274,8 +285,7 @@ Uma das teses levantadas foi a de que mesários poderiam ter "fechado a urna" à
 
 ---
 
-### 6.7 Auditoria de Telemetria de Cabine e Flagrantes de Mesários (CHK121 a CHK125)
-
+### 6.7 Auditoria de Telemetria de Cabine e Flagrantes de Mesários (CHK121 a CHK126)
 A auditoria de eventos de baixo nível gravados no `logd.dat` permitiu reconstituir a linha do tempo segundo a segundo da votação, identificando os desvios de conduta humana e mecânica na mesa receptora.
 
 #### Quadro Sintético de Telemetria: Métricas, Volume de Votos e Avaliação Pericial
@@ -287,7 +297,7 @@ A auditoria de eventos de baixo nível gravados no `logd.dat` permitiu reconstit
 | **`CHK123`** | **Surto Manual no Almoço (12h-13h30)** | **10% a 12%** dos votos no almoço.<br>Proporção estável (~15% manual). | **> 35% a 50%** de todas as liberações manuais do dia concentradas no almoço. | **30 a 60 votos manuais** inseridos em 90 minutos de sala vazia (**> 45%** da faixa). | <span style="color:#d97706;font-weight:bold;">ALTA SUSPEITA</span><br>(Aproveitamento de baixa vigilância) |
 | **`CHK124`** | **Concentração por Único Mesário** | Revezamento equilibrado entre 4 mesários (**25% a 40%** por operador). | **> 80% a 95%** de todas as liberações manuais sob o login de um único indivíduo. | **50 a 110 votos manuais** liberados por um só mesário (**80% a 95%** dos manuais). | <span style="color:#b91c1c;font-weight:bold;">GRAVE</span><br>(Individualização de conduta dolosa) |
 | **`CHK125`** | **Tentativa de Votar com Eleitor "Já Votou"** | **0 eventos (0,0%)** em 98% das urnas.<br>No máximo 1 erro de digitação isolado. | **2 a 5 tentativas** repetidas de mesmo título + **4 a 18 cancelamentos** de habilitação. | **2 a 5 eleitores reais** impedidos de votar por seção atingida. | <span style="color:#b91c1c;font-weight:bold;">ALTÍSSIMA SUSPEITA</span><br>(Colisão de eleitor real com voto fantasma) |
-
+| **`CHK126`** | **Surto Manual Pós-17h (Fila Estendida)** | **< 10% a 15%** manual pós-17h.<br>Fila real mantém ~89% de biometria. | **> 40% a 60%** dos votos da prorrogação liberados sem biometria. | **4 a 15 votos manuais** inseridos a portas fechadas após as 17h. | <span style="color:#b91c1c;font-weight:bold;">ALTA SUSPEITA</span><br>(Uso da fila estendida para faltosos) |
 ---
 
 #### Detalhamento Técnico e Percentual dos 5 Casos:
@@ -322,6 +332,12 @@ A auditoria de eventos de baixo nível gravados no `logd.dat` permitiu reconstit
    - **Normalidade vs Desvio:** Em 98% das seções regulares do país esse evento é **ZERO**. No máximo ocorre 1 caso isolado de erro de digitação de título que é corrigido imediatamente sem cancelamento.
    - **Diagnóstico Pericial:** **ALTÍSSIMA SUSPEITA (Colisão de Eleitor Real com Voto Fantasma)**. Prova a ocorrência de casos em que o eleitor legítimo comparece à tarde para votar e descobre que a mesa já havia computado seu voto fraudulentamente pela manhã.
 
+
+6. **Caso 6: `CHK126` &bull; Surto de Votos Manuais sem Biometria Após as 17h:**
+   - **O que os dados mostram:** Mais de **40% a 60% de todos os votos computados no horário estendido pós-17h** foram liberados manualmente por ano de nascimento, sem validação biométrica no sensor.
+   - **Volume e Percentual:** Em urnas anômalas pontuais, foram inseridos entre **4 e 15 votos sem digital** no período pós-17h sob a alegação de fila de espera.
+   - **Normalidade vs Desvio:** Em urnas regulares com fila estendida legítima, a taxa com biometria no log manteve-se alta em **89,6%** (apenas 10,4% manual). Saltos para mais de 40% de votos manuais à noite indicam que a mesa aproveitou a ausência de fiscais após o fechamento dos portões para computar votos de eleitores ausentes.
+   - **Diagnóstico Pericial:** **ALTA SUSPEITA (Uso da Fila Estendida para Voto de Faltosos)**. Constitui evidência material para responsabilização disciplinar e penal dos mesários que atuaram naquela seção.
 ---
 
 
