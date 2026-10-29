@@ -517,11 +517,14 @@ HTML_CONTENT = f"""<!DOCTYPE html>
                             3. VOTOS ANÔMALOS EXCEDENTES (Concentrados em Urnas com Falhas/Trocas):
                         </span>
                         <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #b91c1c;">
-                            +{votos_anomalos_diretos:,} votos ({decomposition_data['pct_anomalos_excedentes']}%) &bull; DECISIVO EM MINAS GERAIS!
+                            +{votos_anomalos_diretos:,} votos ({decomposition_data['pct_anomalos_excedentes']}%) &bull; DECISIVO PARA A VIRADA EM MINAS GERAIS!
                         </span>
                     </div>
                     <div style="background: #fee2e2; border-radius: 9999px; height: 16px; overflow: hidden;">
                         <div style="background: linear-gradient(90deg, #e11d48 0%, #be123c 100%); height: 100%; width: {decomposition_data['pct_anomalos_excedentes']}%; border-radius: 9999px; box-shadow: 0 0 8px rgba(225, 29, 72, 0.5);"></div>
+                    </div>
+                    <div style="font-size: 0.74rem; color: #7f1d1d; background: #fff5f5; border: 1px solid #fecdd3; border-radius: 6px; padding: 6px 10px; margin-top: 6px; line-height: 1.45;">
+                        <strong>💡 Esclarecimento Didático (Por que foi decisivo em Minas Gerais?):</strong> No Brasil como um todo, os votos anômalos somaram <strong>+{votos_anomalos_diretos:,} votos</strong> (4,4% de todo o crescimento de Lula). Porém, o seu impacto foi cirúrgico e decisivo para inverter o resultado do estado mais disputado da federação: <strong>Minas Gerais</strong>. Lá, Lula venceu por apenas <strong>+109.313 votos</strong>, e nada menos que <strong>+96.370 votos (88,16% de toda a sua margem de vitória no estado)</strong> vieram exclusivamente de urnas com anomalias graves! Sem essas urnas anômalas em MG, o candidato não teria virado a eleição mineira.
                     </div>
                 </div>
 
