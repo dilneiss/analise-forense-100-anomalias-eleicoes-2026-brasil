@@ -432,18 +432,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #0f172a; padding-bottom: 0.85rem; flex-wrap: wrap; gap: 1rem;">
             <div>
-                <span class="badge badge-blue font-mono" style="margin-bottom: 0.5rem;">AUDITORIA FORENSE ELEITORAL NACIONAL &bull; 100% DAS URNAS</span>
-                <h1 style="font-size: 1.75rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0; letter-spacing: -0.02em;">
+                <span class="badge badge-blue font-mono" id="headerMainBadge" style="margin-bottom: 0.5rem;">AUDITORIA FORENSE ELEITORAL NACIONAL &bull; 100% DAS URNAS</span>
+                <h1 id="headerMainTitle" style="font-size: 1.75rem; font-weight: 900; color: #0f172a; margin: 0.25rem 0; letter-spacing: -0.02em;">
                     Auditoria Forense Nacional: Eleições Gerais 2026 (499.178 Urnas)
                 </h1>
-                <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
+                <p id="headerMainSubtitle" style="font-size: 0.8125rem; color: #475569; margin: 0;">
                     Cruzamento dos 28 Estados e Distrito Federal &bull; Quase 1 Milhão de Boletins de Urna (BUs) &bull; Rastreabilidade dos 10,33M Votos Adicionais
                 </p>
             </div>
             <div style="text-align: right; font-size: 0.8125rem; color: #64748b;">
-                <div><strong>Urnas Auditadas:</strong> __TOT_SECOES__ seções (100% do Brasil)</div>
+                <div id="headerSummaryUrnas"><strong>Urnas Auditadas:</strong> __TOT_SECOES__ seções (100% do Brasil)</div>
                 <div><strong>Data da Auditoria:</strong> 2026-10-29</div>
-                <div><strong>Margem Nacional:</strong> Lula __MARGEM_NACIONAL__ votos (51,78% vs 48,22%)</div>
+                <div id="headerSummaryMargem"><strong>Margem Nacional:</strong> Lula __MARGEM_NACIONAL__ votos (51,78% vs 48,22%)</div>
             </div>
         </div>
 
@@ -451,38 +451,38 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="grid grid-cols-6" style="margin-bottom: 1.35rem;">
             <div class="stat-card" style="border-left: 4px solid #3b82f6;">
                 <div class="stat-label">Urnas Auditadas</div>
-                <div class="stat-value">__TOT_SECOES__</div>
-                <div class="stat-desc">100% das seções do Brasil</div>
+                <div class="stat-value" id="kpiTotSecoes">__TOT_SECOES__</div>
+                <div class="stat-desc" id="kpiTotSecoesDesc">100% das seções do Brasil</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #10b981;">
                 <div class="stat-label">Comparecimento 2T</div>
-                <div class="stat-value" style="color:#047857;">__COMP_2T__</div>
-                <div class="stat-desc">+__NOVOS_VOTANTES__ novos votantes no 2T</div>
+                <div class="stat-value" id="kpiComp2T" style="color:#047857;">__COMP_2T__</div>
+                <div class="stat-desc" id="kpiCompDesc">+__NOVOS_VOTANTES__ novos votantes no 2T</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #6366f1;">
                 <div class="stat-label">Com Biometria</div>
-                <div class="stat-value" style="color:#4338ca;">__BIO_SIM_2T__</div>
-                <div class="stat-desc">__PCT_BIO_SIM_2T__% dos votantes</div>
+                <div class="stat-value" id="kpiBioSim" style="color:#4338ca;">__BIO_SIM_2T__</div>
+                <div class="stat-desc" id="kpiBioSimDesc">__PCT_BIO_SIM_2T__% dos votantes</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #8b5cf6;">
                 <div class="stat-label">Sem Biometria (Manual)</div>
-                <div class="stat-value" style="color:#6d28d9;">__BIO_NAO_2T__</div>
-                <div class="stat-desc">__PCT_BIO_NAO_2T__% liberados por ano nasc.</div>
+                <div class="stat-value" id="kpiBioNao" style="color:#6d28d9;">__BIO_NAO_2T__</div>
+                <div class="stat-desc" id="kpiBioNaoDesc">__PCT_BIO_NAO_2T__% liberados por ano nasc.</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #f59e0b;">
-                <div class="stat-label">Urnas CHK046 (Queda Líder)</div>
-                <div class="stat-value" style="color:#d97706;">__CHK046_SECOES__</div>
-                <div class="stat-desc">+__CHK046_EXCEDENTE__ votos excedentes</div>
+                <div class="stat-label" id="kpiAnomaliaLabel">Urnas CHK046 (Queda Líder)</div>
+                <div class="stat-value" id="kpiAnomalia" style="color:#d97706;">__CHK046_SECOES__</div>
+                <div class="stat-desc" id="kpiAnomaliaDesc">+__CHK046_EXCEDENTE__ votos excedentes</div>
             </div>
             <div class="stat-card" style="border-left: 4px solid #ef4444;">
                 <div class="stat-label">Excedente Anômalo Lula</div>
-                <div class="stat-value" style="color:#b91c1c;">+__EXCEDENTE_LULA__</div>
-                <div class="stat-desc">Votos a mais em urnas anômalas</div>
+                <div class="stat-value" id="kpiExcedente" style="color:#b91c1c;">+__EXCEDENTE_LULA__</div>
+                <div class="stat-desc" id="kpiExcedenteDesc">Votos a mais em urnas anômalas</div>
             </div>
         </div>
 
         <!-- PAINEL DE DECOMPOSIÇÃO: ONDE ESTÃO OS ~10,33 MILHÕES DE VOTOS DE LULA -->
-        <div class="card" style="border-left: 5px solid #0284c7; margin-bottom: 1.35rem;">
+        <div id="cardAno2026Decomposicao" class="card" style="border-left: 5px solid #0284c7; margin-bottom: 1.35rem;">
             <div class="card-header">
                 <div>
                     <span class="badge badge-blue font-mono">RASTREABILIDADE MATEMÁTICA</span>
@@ -663,7 +663,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                     <!-- MINI TABELA DE VOTAÇÃO NO 2T -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.75rem;">
                         <div style="background: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid #e2e8f0;">
-                            <div style="font-weight: 700; color: #475569;">Flávio Bolsonaro (22)</div>
+                            <div style="font-weight: 700; color: #475569;" id="detailVotesFlavioLabel">Flávio Bolsonaro (22)</div>
                             <div style="font-size: 1.1rem; font-weight: 900; font-family: ui-monospace, monospace;" id="detailVotesFlavio">6.241.786</div>
                         </div>
                         <div style="background: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid #e2e8f0;">
@@ -701,10 +701,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                             <th class="col-fit t-right" onclick="sortTable('margem')">Margem</th>
                             <th class="col-fit t-right" onclick="sortTable('excedente')">Excedente Lula</th>
                             <th class="col-fit t-center" onclick="sortTable('chance')">Chance Fraude</th>
-                            <th class="col-fit t-right" onclick="sortTable('flavio_2t')">Flávio (22)</th>
+                            <th class="col-fit t-right" onclick="sortTable('flavio_2t')" id="thCand1">Flávio (22)</th>
                             <th class="col-fit t-right" onclick="sortTable('lula_2t')">Lula (13)</th>
                             <th class="col-fit t-right" onclick="sortTable('sem_bio')">Sem Bio</th>
-                            <th class="col-fit t-right" onclick="sortTable('chk046')">CHK046</th>
+                            <th class="col-fit t-right" onclick="sortTable('chk046')" id="thAnomaliaCol">CHK046</th>
                         </tr>
                     </thead>
                     <tbody id="nationalTableBody">__NATIONAL_TABLE_ROWS__</tbody>
@@ -1488,7 +1488,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <!-- SCRIPT DE INTERATIVIDADE DO MAPA E DA TABELA -->
     <script>
-        const STATES_DATA = __STATES_DATA__;
+        let STATES_DATA = __STATES_DATA__;
         let statesList = __STATES_LIST__;
 
         const DATA_2026_ORIGINAL = JSON.parse(JSON.stringify(__STATES_DATA__));
@@ -1529,24 +1529,94 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             const btnComp = document.getElementById('btnAnoComp');
             const card22 = document.getElementById('cardAno2022');
             const cardComp = document.getElementById('cardAnoComp');
+            const card26Decomp = document.getElementById('cardAno2026Decomposicao');
             const statusDesc = document.getElementById('anoStatusDesc');
+            const thCand1 = document.getElementById('thCand1');
+            const thAnomalia = document.getElementById('thAnomaliaCol');
+            const lblCand1 = document.getElementById('detailVotesFlavioLabel');
 
-            if (btn26) btn26.style.background = ano === 2026 ? '#0f172a' : 'transparent';
-            if (btn26) btn26.style.color = ano === 2026 ? '#ffffff' : '#475569';
-            if (btn22) btn22.style.background = ano === 2022 ? '#d97706' : 'transparent';
-            if (btn22) btn22.style.color = ano === 2022 ? '#ffffff' : '#475569';
-            if (btnComp) btnComp.style.background = ano === 'comp' ? '#4f46e5' : 'transparent';
-            if (btnComp) btnComp.style.color = ano === 'comp' ? '#ffffff' : '#475569';
+            if (btn26) {
+                btn26.style.background = ano === 2026 ? '#0f172a' : 'transparent';
+                btn26.style.color = ano === 2026 ? '#ffffff' : '#475569';
+            }
+            if (btn22) {
+                btn22.style.background = ano === 2022 ? '#d97706' : 'transparent';
+                btn22.style.color = ano === 2022 ? '#ffffff' : '#475569';
+            }
+            if (btnComp) {
+                btnComp.style.background = ano === 'comp' ? '#4f46e5' : 'transparent';
+                btnComp.style.color = ano === 'comp' ? '#ffffff' : '#475569';
+            }
 
+            // Exibição condicional dos cards
             if (card22) card22.style.display = (ano === 2022 || ano === 'comp') ? 'block' : 'none';
             if (cardComp) cardComp.style.display = (ano === 'comp') ? 'block' : 'none';
+            if (card26Decomp) card26Decomp.style.display = (ano === 2026) ? 'block' : 'none';
 
             if (ano === 2022) {
                 if (statusDesc) statusDesc.innerHTML = 'Exibindo auditoria histórica de <strong>2022 (Jair Bolsonaro vs Lula)</strong>.';
+                if (thCand1) thCand1.textContent = 'Bolsonaro (22)';
+                if (thAnomalia) thAnomalia.textContent = 'Distorção Mod.';
+                if (lblCand1) lblCand1.textContent = 'Jair Bolsonaro (22)';
+
+                // Atualizar Título e Header
+                const titleElem = document.getElementById('headerMainTitle');
+                if (titleElem) titleElem.textContent = 'Auditoria Forense Nacional: Eleições Gerais 2022 (471.984 Urnas)';
+                const subElem = document.getElementById('headerMainSubtitle');
+                if (subElem) subElem.textContent = 'Cruzamento dos 28 Estados e Distrito Federal • Arquivos Oficiais D:\\urnas 2022 • Discrepância de Hardware (UE2020 vs Pré-2020)';
+                const urnasElem = document.getElementById('headerSummaryUrnas');
+                if (urnasElem) urnasElem.innerHTML = '<strong>Urnas Auditadas:</strong> 471.984 seções (100% do Brasil)';
+                const margemElem = document.getElementById('headerSummaryMargem');
+                if (margemElem) margemElem.innerHTML = '<strong>Margem Nacional:</strong> Lula 2.139.645 votos (50,90% vs 49,10%)';
+
+                // Atualizar 6 KPI Cards para 2022
+                const elTot = document.getElementById('kpiTotSecoes'); if (elTot) elTot.textContent = '471.984';
+                const elTotDesc = document.getElementById('kpiTotSecoesDesc'); if (elTotDesc) elTotDesc.textContent = '100% das seções de 2022';
+                const elComp = document.getElementById('kpiComp2T'); if (elComp) elComp.textContent = '124.252.796';
+                const elCompDesc = document.getElementById('kpiCompDesc'); if (elCompDesc) elCompDesc.textContent = 'Comparecimento Oficial 2022';
+                const elBioSim = document.getElementById('kpiBioSim'); if (elBioSim) elBioSim.textContent = '109.446.572';
+                const elBioSimDesc = document.getElementById('kpiBioSimDesc'); if (elBioSimDesc) elBioSimDesc.textContent = '88,08% dos votantes';
+                const elBioNao = document.getElementById('kpiBioNao'); if (elBioNao) elBioNao.textContent = '14.806.224';
+                const elBioNaoDesc = document.getElementById('kpiBioNaoDesc'); if (elBioNaoDesc) elBioNaoDesc.textContent = '11,92% liberados por ano nasc.';
+                const elAnom = document.getElementById('kpiAnomalia'); if (elAnom) elAnom.textContent = 'UE2020';
+                const elAnomLbl = document.getElementById('kpiAnomaliaLabel'); if (elAnomLbl) elAnomLbl.textContent = 'Distorção por Modelo';
+                const elAnomDesc = document.getElementById('kpiAnomaliaDesc'); if (elAnomDesc) elAnomDesc.textContent = 'Bolsonaro 51,05% nas novas';
+                const elExc = document.getElementById('kpiExcedente'); if (elExc) elExc.textContent = '+1.754.731';
+                const elExcDesc = document.getElementById('kpiExcedenteDesc'); if (elExcDesc) elExcDesc.textContent = 'Excedente em urnas antigas';
+
                 STATES_DATA = JSON.parse(JSON.stringify(DATA_2022_ORIGINAL));
                 statesList = Object.values(STATES_DATA).sort((a,b) => (b.votos_excedentes_lula||0) - (a.votos_excedentes_lula||0));
             } else {
-                if (statusDesc) statusDesc.innerHTML = ano === 'comp' ? 'Exibindo <strong>Estudo Comparativo 2022 vs 2026</strong>.' : 'Exibindo auditoria nacional de <strong>2026 (Flávio vs Lula)</strong>.';
+                if (statusDesc) statusDesc.innerHTML = ano === 'comp' ? 'Exibindo <strong>Estudo Comparativo Histórico 2022 vs 2026</strong>.' : 'Exibindo auditoria nacional de <strong>2026 (Flávio vs Lula)</strong>.';
+                if (thCand1) thCand1.textContent = 'Flávio (22)';
+                if (thAnomalia) thAnomalia.textContent = 'CHK046';
+                if (lblCand1) lblCand1.textContent = 'Flávio Bolsonaro (22)';
+
+                // Restaurar Título e Header 2026
+                const titleElem = document.getElementById('headerMainTitle');
+                if (titleElem) titleElem.textContent = 'Auditoria Forense Nacional: Eleições Gerais 2026 (499.178 Urnas)';
+                const subElem = document.getElementById('headerMainSubtitle');
+                if (subElem) subElem.textContent = 'Cruzamento dos 28 Estados e Distrito Federal • Quase 1 Milhão de Boletins de Urna (BUs) • Rastreabilidade dos 10,33M Votos Adicionais';
+                const urnasElem = document.getElementById('headerSummaryUrnas');
+                if (urnasElem) urnasElem.innerHTML = '<strong>Urnas Auditadas:</strong> __TOT_SECOES__ seções (100% do Brasil)';
+                const margemElem = document.getElementById('headerSummaryMargem');
+                if (margemElem) margemElem.innerHTML = '<strong>Margem Nacional:</strong> Lula __MARGEM_NACIONAL__ votos (51,78% vs 48,22%)';
+
+                // Restaurar 6 KPI Cards 2026
+                const elTot = document.getElementById('kpiTotSecoes'); if (elTot) elTot.textContent = '__TOT_SECOES__';
+                const elTotDesc = document.getElementById('kpiTotSecoesDesc'); if (elTotDesc) elTotDesc.textContent = '100% das seções do Brasil';
+                const elComp = document.getElementById('kpiComp2T'); if (elComp) elComp.textContent = '__COMP_2T__';
+                const elCompDesc = document.getElementById('kpiCompDesc'); if (elCompDesc) elCompDesc.textContent = '+__NOVOS_VOTANTES__ novos votantes no 2T';
+                const elBioSim = document.getElementById('kpiBioSim'); if (elBioSim) elBioSim.textContent = '__BIO_SIM_2T__';
+                const elBioSimDesc = document.getElementById('kpiBioSimDesc'); if (elBioSimDesc) elBioSimDesc.textContent = '__PCT_BIO_SIM_2T__% dos votantes';
+                const elBioNao = document.getElementById('kpiBioNao'); if (elBioNao) elBioNao.textContent = '__BIO_NAO_2T__';
+                const elBioNaoDesc = document.getElementById('kpiBioNaoDesc'); if (elBioNaoDesc) elBioNaoDesc.textContent = '__PCT_BIO_NAO_2T__% liberados por ano nasc.';
+                const elAnom = document.getElementById('kpiAnomalia'); if (elAnom) elAnom.textContent = '__CHK046_SECOES__';
+                const elAnomLbl = document.getElementById('kpiAnomaliaLabel'); if (elAnomLbl) elAnomLbl.textContent = 'Urnas CHK046 (Queda Líder)';
+                const elAnomDesc = document.getElementById('kpiAnomaliaDesc'); if (elAnomDesc) elAnomDesc.textContent = '+__CHK046_EXCEDENTE__ votos excedentes';
+                const elExc = document.getElementById('kpiExcedente'); if (elExc) elExc.textContent = '+__EXCEDENTE_LULA__';
+                const elExcDesc = document.getElementById('kpiExcedenteDesc'); if (elExcDesc) elExcDesc.textContent = 'Votos a mais em urnas anômalas';
+
                 STATES_DATA = JSON.parse(JSON.stringify(DATA_2026_ORIGINAL));
                 statesList = Object.values(STATES_DATA).sort((a,b) => (b.votos_excedentes_lula||0) - (a.votos_excedentes_lula||0));
             }
@@ -1555,6 +1625,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             renderTable();
             if (statesList.length > 0) {
                 selectState(selectedUf || statesList[0].uf);
+            }
+
+            if (ano === 'comp' && cardComp) {
+                cardComp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (ano === 2022 && card22) {
+                card22.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
@@ -1595,9 +1671,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                     cell.id = 'cell_' + uf;
 
                     let bg = '#10b981', color = '#ffffff';
-                    if (s.chance_fraude_pct >= 80) {
+                    const chance = s.chance_fraude_pct || 0;
+                    if (chance >= 80) {
                         bg = '#e11d48';
-                    } else if (s.chance_fraude_pct >= 30) {
+                    } else if (chance >= 30) {
                         bg = '#f59e0b';
                     } else {
                         bg = '#10b981';
@@ -1629,18 +1706,38 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             document.querySelectorAll('.map-cell').forEach(c => c.classList.remove('active'));
             const activeCell = document.getElementById('cell_' + uf);
             if (activeCell) activeCell.classList.add('active');
-            document.getElementById('detailUfBadge').textContent = `${s.nome.toUpperCase()} • ${uf}`;
-            document.getElementById('detailStateName').textContent = s.nome;
-            document.getElementById('detailSecCount').textContent = `${s.total_secoes.toLocaleString('pt-BR')} seções auditadas • ${(s.total_secoes * 2).toLocaleString('pt-BR')} BUs decodificados`;
-            const isFlavio = s.vencedor_2t === 'Flávio Bolsonaro';
-            document.getElementById('detailWinnerTag').innerHTML = `<span class="badge ${isFlavio ? 'badge-green' : 'badge-red'}" style="font-size:11px; padding:3px 8px;">Vencedor: ${s.vencedor_2t} (+${s.margem_vitoria_2t.toLocaleString('pt-BR')})</span>`;
-            document.getElementById('detailFraudPct').textContent = s.chance_fraude_pct + '%';
-            document.getElementById('detailFraudLabel').textContent = s.chance_fraude_pct >= 80 ? 'ALTÍSSIMA PROBABILIDADE DE ADULTERAÇÃO' : (s.chance_fraude_pct >= 30 ? 'SUSPEIÇÃO MODERADA' : 'BAIXO RISCO NO VENCEDOR');
-            document.getElementById('detailExcessVotes').textContent = '+' + s.votos_excedentes_lula.toLocaleString('pt-BR');
-            document.getElementById('detailImpactText').innerHTML = s.veredito;
-            document.getElementById('detailVotesFlavio').textContent = s.flavio_2t.toLocaleString('pt-BR');
-            document.getElementById('detailVotesLula').textContent = s.lula_2t.toLocaleString('pt-BR');
-            document.getElementById('detailBioNote').textContent = `Biometria: ${s.biometria_2t_nao.toLocaleString('pt-BR')} eleitores votaram sem digital no 2º turno (${(s.biometria_2t_nao / (s.comparecimento_2t || 1) * 100).toFixed(2)}%).`;
+            
+            const badgeUf = document.getElementById('detailUfBadge');
+            if (badgeUf) badgeUf.textContent = `${(s.nome||'').toUpperCase()} • ${uf}`;
+            const stateName = document.getElementById('detailStateName');
+            if (stateName) stateName.textContent = s.nome || '';
+            const secCount = document.getElementById('detailSecCount');
+            if (secCount) secCount.textContent = `${(s.total_secoes||0).toLocaleString('pt-BR')} seções auditadas • ${((s.total_secoes||0) * 2).toLocaleString('pt-BR')} BUs decodificados`;
+            
+            const isCand1 = (s.vencedor_2t === 'Flávio Bolsonaro' || s.vencedor_2t === 'Jair Bolsonaro');
+            const winnerTag = document.getElementById('detailWinnerTag');
+            if (winnerTag) winnerTag.innerHTML = `<span class="badge ${isCand1 ? 'badge-green' : 'badge-red'}" style="font-size:11px; padding:3px 8px;">Vencedor: ${s.vencedor_2t || ''} (+${(s.margem_vitoria_2t||0).toLocaleString('pt-BR')})</span>`;
+            
+            const fraudPct = document.getElementById('detailFraudPct');
+            if (fraudPct) fraudPct.textContent = (s.chance_fraude_pct || 0) + '%';
+            const fraudLbl = document.getElementById('detailFraudLabel');
+            if (fraudLbl) fraudLbl.textContent = (s.chance_fraude_pct >= 80) ? 'ALTÍSSIMA PROBABILIDADE DE ADULTERAÇÃO' : ((s.chance_fraude_pct >= 30) ? 'SUSPEIÇÃO MODERADA' : 'BAIXO RISCO NO VENCEDOR');
+            
+            const excVotes = document.getElementById('detailExcessVotes');
+            if (excVotes) excVotes.textContent = '+' + (s.votos_excedentes_lula || 0).toLocaleString('pt-BR');
+            const impactTxt = document.getElementById('detailImpactText');
+            if (impactTxt) impactTxt.innerHTML = s.veredito || '';
+            
+            const cand1Votes = (s.flavio_2t !== undefined ? s.flavio_2t : (s.bolsonaro_2t || 0));
+            const votesCand1 = document.getElementById('detailVotesFlavio');
+            if (votesCand1) votesCand1.textContent = cand1Votes.toLocaleString('pt-BR');
+            
+            const votesLula = document.getElementById('detailVotesLula');
+            if (votesLula) votesLula.textContent = (s.lula_2t || 0).toLocaleString('pt-BR');
+            
+            const bioNote = document.getElementById('detailBioNote');
+            if (bioNote) bioNote.textContent = `Biometria: ${(s.biometria_2t_nao || 0).toLocaleString('pt-BR')} eleitores votaram sem digital no 2º turno (${((s.biometria_2t_nao || 0) / (s.comparecimento_2t || 1) * 100).toFixed(2)}%).`;
+            
             document.querySelectorAll('#nationalTableBody tr').forEach(r => r.style.background = '');
             const targetRow = document.getElementById('row_' + uf);
             if (targetRow) targetRow.style.background = '#e0f2fe';
@@ -1648,11 +1745,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
         function selectState(uf) {
             previewState(uf);
-            // Sincronizar com o seletor do Explorador de Seções
+            // Sincronizar com o seletor do Explorador de Seções se existir
             const ufSelect = document.getElementById('ufFilterSelect');
             if (ufSelect) {
                 ufSelect.value = uf;
-                applyFilters();
+                if (typeof applyFilters === 'function') {
+                    applyFilters();
+                }
             }
         }
 
@@ -1662,28 +1761,36 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             let html = '';
 
             for (const s of statesList) {
-                const isFlavio = s.vencedor_2t === 'Flávio Bolsonaro';
-                const winnerBadge = `<span class="badge ${isFlavio ? 'badge-green' : 'badge-red'}">${s.vencedor_2t}</span>`;
+                const isCand1 = (s.vencedor_2t === 'Flávio Bolsonaro' || s.vencedor_2t === 'Jair Bolsonaro');
+                const winnerBadge = `<span class="badge ${isCand1 ? 'badge-green' : 'badge-red'}">${s.vencedor_2t || ''}</span>`;
                 
-                let chanceBadge = `<span class="badge badge-green">${s.chance_fraude_pct}%</span>`;
-                if (s.chance_fraude_pct >= 80) chanceBadge = `<span class="badge badge-red" style="font-weight:900;">${s.chance_fraude_pct}%</span>`;
-                else if (s.chance_fraude_pct >= 30) chanceBadge = `<span class="badge badge-yellow">${s.chance_fraude_pct}%</span>`;
+                const chance = s.chance_fraude_pct || 0;
+                let chanceBadge = `<span class="badge badge-green">${chance}%</span>`;
+                if (chance >= 80) chanceBadge = `<span class="badge badge-red" style="font-weight:900;">${chance}%</span>`;
+                else if (chance >= 30) chanceBadge = `<span class="badge badge-yellow">${chance}%</span>`;
 
                 const isSelected = (s.uf === selectedUf);
                 const rowBg = isSelected ? 'background: #e0f2fe;' : '';
+
+                const cand1Votes = (s.flavio_2t !== undefined ? s.flavio_2t : (s.bolsonaro_2t || 0));
+                const lulaVotes = (s.lula_2t || 0);
+                const semBioVotes = (s.biometria_2t_nao || 0);
+                const margemVal = (s.margem_vitoria_2t || 0);
+                const excVal = (s.votos_excedentes_lula || 0);
+                const chkVal = (s.chk046_secoes !== undefined ? s.chk046_secoes.toLocaleString('pt-BR') : (s.dif_pp_modelos !== undefined ? s.dif_pp_modelos + ' pp' : '0'));
 
                 html += `
                     <tr id="row_${s.uf}" style="cursor:pointer; ${rowBg}" onclick="selectState('${s.uf}')" class="hover:bg-slate-50 transition-colors">
                         <td class="col-fit t-center font-mono font-bold">${s.uf}</td>
                         <td class="col-grow t-left font-semibold text-slate-900">${s.nome}</td>
                         <td class="col-fit t-center">${winnerBadge}</td>
-                        <td class="col-fit t-right font-mono font-bold">+${s.margem_vitoria_2t.toLocaleString('pt-BR')}</td>
-                        <td class="col-fit t-right font-mono font-bold" style="color:#b91c1c;">+${s.votos_excedentes_lula.toLocaleString('pt-BR')}</td>
+                        <td class="col-fit t-right font-mono font-bold">+${margemVal.toLocaleString('pt-BR')}</td>
+                        <td class="col-fit t-right font-mono font-bold" style="color:#b91c1c;">+${excVal.toLocaleString('pt-BR')}</td>
                         <td class="col-fit t-center">${chanceBadge}</td>
-                        <td class="col-fit t-right font-mono">${s.flavio_2t.toLocaleString('pt-BR')}</td>
-                        <td class="col-fit t-right font-mono font-bold text-slate-900">${s.lula_2t.toLocaleString('pt-BR')}</td>
-                        <td class="col-fit t-right font-mono text-slate-700">${s.biometria_2t_nao.toLocaleString('pt-BR')}</td>
-                        <td class="col-fit t-right font-mono text-slate-700">${s.chk046_secoes.toLocaleString('pt-BR')}</td>
+                        <td class="col-fit t-right font-mono">${cand1Votes.toLocaleString('pt-BR')}</td>
+                        <td class="col-fit t-right font-mono font-bold text-slate-900">${lulaVotes.toLocaleString('pt-BR')}</td>
+                        <td class="col-fit t-right font-mono text-slate-700">${semBioVotes.toLocaleString('pt-BR')}</td>
+                        <td class="col-fit t-right font-mono text-slate-700">${chkVal}</td>
                     </tr>
                 `;
             }
@@ -1704,8 +1811,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                 if (col === 'margem') { valA = a.margem_vitoria_2t; valB = b.margem_vitoria_2t; }
                 if (col === 'excedente') { valA = a.votos_excedentes_lula; valB = b.votos_excedentes_lula; }
                 if (col === 'chance') { valA = a.chance_fraude_pct; valB = b.chance_fraude_pct; }
+                if (col === 'flavio_2t') {
+                    valA = (a.flavio_2t !== undefined ? a.flavio_2t : a.bolsonaro_2t);
+                    valB = (b.flavio_2t !== undefined ? b.flavio_2t : b.bolsonaro_2t);
+                }
                 if (col === 'sem_bio') { valA = a.biometria_2t_nao; valB = b.biometria_2t_nao; }
-                if (col === 'chk046') { valA = a.chk046_secoes; valB = b.chk046_secoes; }
+                if (col === 'chk046') { valA = (a.chk046_secoes !== undefined ? a.chk046_secoes : a.dif_pp_modelos || 0); valB = (b.chk046_secoes !== undefined ? b.chk046_secoes : b.dif_pp_modelos || 0); }
 
                 if (valA < valB) return currentSort.order === 'asc' ? -1 : 1;
                 if (valA > valB) return currentSort.order === 'asc' ? 1 : -1;
