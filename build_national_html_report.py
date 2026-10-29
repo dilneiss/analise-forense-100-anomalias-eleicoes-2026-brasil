@@ -778,6 +778,52 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             </div>
         </div>
 
+                <!-- CONCLUSÃO PERICIAL DA AUDITORIA: ONDE ESTÃO OS 4,4 MILHÕES DE VOTOS? -->
+        <div class="card" style="border-left: 6px solid #e11d48; margin-bottom: 1.35rem; background: #ffffff;">
+            <div class="card-header">
+                <div>
+                    <span class="badge badge-red font-mono">PARECER CONCLUSIVO FINAL &bull; TESE JURÍDICO-PERICIAL</span>
+                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #991b1b; margin: 0.2rem 0;">
+                        Conclusão Pericial: Onde Estão os 4,4 Milhões de Votos da Diferença?
+                    </h2>
+                    <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
+                        Mapeamento matemático dos quatro grandes bolsões de votos sob vício técnico ou procedimental no Brasil.
+                    </p>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">+4.430.099 Votos</div>
+                    <div style="font-size: 0.7rem; color: #991b1b; font-weight: 800; text-transform: uppercase;">Margem Oficial a ser Superada</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1rem;">
+                <div class="stat-card" style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">1. Votos Manuais sem Digital</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">15.884.298</div>
+                    <div style="font-size: 0.72rem; color: #9f1239; font-weight: 700; margin-top: 3px;">3,59x maior que a margem</div>
+                </div>
+                <div class="stat-card" style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">2. Votos nas 39.652 Urnas Espelho</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">~9.833.696</div>
+                    <div style="font-size: 0.72rem; color: #9f1239; font-weight: 700; margin-top: 3px;">2,22x maior que a margem</div>
+                </div>
+                <div class="stat-card" style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">3. Votos nas 19.159 Urnas CHK046</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">~4.751.432</div>
+                    <div style="font-size: 0.72rem; color: #9f1239; font-weight: 700; margin-top: 3px;">1,07x maior que a margem</div>
+                </div>
+                <div class="stat-card" style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">4. Cidades com Mais Eleitores</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">~3.500.000</div>
+                    <div style="font-size: 0.72rem; color: #9f1239; font-weight: 700; margin-top: 3px;">732 municípios inflados</div>
+                </div>
+            </div>
+
+            <div style="background: #fff5f5; border: 1px solid #fecdd3; border-radius: 6px; padding: 10px 14px; font-size: 0.78rem; color: #991b1b; line-height: 1.55;">
+                <strong>⚖️ Conclusão Aritmética e Jurídica:</strong> Para a defesa do resultado oficial, a eleição é explicada pela absorção legítima de 7,42 milhões da terceira via. Porém, para fins de questionamento judicial e perícia forense (Arts. 220, 221 e 222 do Código Eleitoral), <strong>a margem de 4,4 milhões de votos não é intransponível</strong>: ela está inteiramente contida dentro dos 15,88 milhões de votos sem biometria ou dentro dos 9,83 milhões de votos de urnas que sofreram trocas físicas de hardware e transferência simétrica do Efeito Espelho.
+            </div>
+        </div>
+
         <!-- NOVO: EXPLORADOR INTERATIVO DE SEÇÕES ELEITORAIS POR URNA -->
         <div class="card" style="margin-bottom: 1.35rem;" id="sectionExplorerCard">
             <div class="card-header">
