@@ -265,7 +265,27 @@ O cômputo dos votos registrados após as 17h nos municípios onde houve prorrog
 - **Lula (13):** cerca de **18.570 votos (54,0%)**;
 - **Flávio Bolsonaro (22):** cerca de **15.823 votos (46,0%)**;
 - **Saldo Líquido:** Uma vantagem de apenas **+2.747 votos a favor de Lula** em todo o Brasil!
-#### 4. Votos Sem Biometria Após as 17h: Quantos Foram e Por Que Levantam Suspeita?
+
+#### 4. O Mito dos "8 Milhões de Votos Após as 17h": De Onde Surgiu Essa Alegação e o que a Perícia Apurou?
+Nas redes sociais e em relatórios apócrifos que circularam após a eleição, surgiu com força a alegação de que **"mais de 8 milhões de votos teriam sido inseridos após as 17h"**, sugerindo que a prorrogação judicial teria decidido a eleição.
+
+A auditoria científica examinou a origem dessa alegação e identificou os três erros metodológicos que geraram esse boato:
+
+1. **O Erro Primário de Agrupamento (Somar os Votos do Dia Todo de Urnas que Emitiram BU após 17h):**
+   - A votação encerra às 17h, mas os procedimentos de encerramento da mesa receptora (emissão da zerésima de justificativa, impressão física das vias do BU, gravação na mídia e assinatura digital) levam entre 10 e 40 minutos.
+   - Portanto, milhares de urnas regulares emitiram o Boletim de Urna (`bu.dat`) às 17h05, 17h18 ou 17h30.
+   - Relatórios apócrifos cometeram o erro crasso de somar **TODOS OS VOTOS DO DIA INTEIRO (das 8h às 17h)** dessas seções cuja transmissão ou encerramento formal ocorreu após as 17h, alegando falsamente que todos aqueles votos haviam sido "depositados na cabine após o horário regulamentar"!
+   - Exemplo: Uma urna em São Paulo que atendeu 320 eleitores perfeitamente ao longo de 9 horas, mas cujo mesário finalizou a emissão do BU às 17h15, teve seus 320 votos somados como se tivessem sido "votados após as 17h". Ao multiplicar esse erro por dezenas de milhares de urnas, o cálculo apócrifo gerou artificialmente o número fantasioso de "8 milhões de votos".
+2. **A Confusão entre Votos Sem Biometria e o Horário das 17h:**
+   - Outra fonte de distorção foi a confusão pública entre os **15,88 milhões de votos sem biometria** (liberados por ano de nascimento ao longo de todo o domingo no país) e a prorrogação de horário. Veículos e analistas leigos misturaram a notícia de que *"havia mais de 8 milhões de votos sem digital em estados do Norte/Nordeste"* com a prorrogação das 17h, tratando os dois grupos como se fossem a mesma coisa.
+3. **A Curva de Apuração e Divulgação na TV:**
+   - O recebimento e divulgação de dados pelo TSE começou às 17h e durou até 23h26. Entre as 17h e 19h, a divulgação de alguns estados ficou retida devido à decisão de Zanin. Quando liberada às 19h, dezenas de milhões de votos entraram no painel da apuração na televisão. Esses votos foram *apurados* à noite, mas haviam sido *votados* ao longo de todo o dia.
+4. **A Prova Material Irrefutável do Log da Urna (`logd.dat`):**
+   - No log da urna, cada voto computado possui carimbo de segundo exato: `VOTE.COMPUTED: O voto do eleitor foi computado`.
+   - Filtrando exclusivamente os eventos `VOTE.COMPUTED` que ocorreram fisicamente após as 17:00:00, o total nacional do Brasil inteiro é de exatamente **34.393 votos** (com saldo líquido de apenas +2.747 votos para Lula).
+   - **Conclusão Pericial:** Não existem 8 milhões de votos dados após as 17h. A alegação decorre de erro amador de agregação de dados.
+
+#### 5. Votos Sem Biometria Após as 17h: Quantos Foram e Por Que Levantam Suspeita?
 Um dos questionamentos periciais mais relevantes é: *quantos desses eleitores que votaram após as 17h foram liberados sem biometria, e isso indica inserção de votos no lugar de faltosos?*
 
 Ao auditar os eventos de habilitação no `logd.dat` em urnas que registraram votos no período estendido (faixa `noite_apos_17`):
@@ -277,19 +297,19 @@ Ao auditar os eventos de habilitação no `logd.dat` em urnas que registraram vo
 2. **Nas Seções sob Suspeição Pericial (Regra `CHK126_SURTO_MANUAL_POS_17H`):** A perícia detectou seções pontuais onde a taxa de liberação manual após as 17h saltou para **mais de 40% a 60% de todos os votos daquela faixa horária**. Nesses casos atípicos, a suspeita é gravíssima: a mesa receptora aproveitou o esvaziamento da fiscalização após as 17h para usar a prerrogativa de "fila de espera" e preencher a urna com dados de eleitores ausentes via ano de nascimento.
 3. **Impacto no Resultado Presidencial:** O volume total de votos sem biometria após as 17h no Brasil inteiro soma aproximadamente **~3.593 votos**. Diante da margem nacional de vitória de Lula (**+4.401.534 votos**), esses ~3,6 mil votos representam menos de **0,08% da diferença**. Mesmo na hipótese extrema de 100% dos votos manuais pós-17h terem sido fraudados, a vantagem de Lula permaneceria superior a 4,39 milhões de votos. Porém, no âmbito individual, esses dados fornecem materialidade para responsabilização de mesários específicos.
 
-#### 5. Confronto com a Margem Nacional de Vitória
+#### 6. Confronto com a Margem Nacional de Vitória
 - A vantagem oficial de Lula sobre Flávio Bolsonaro no Brasil foi de **+4.401.534 votos** (ou **+4.430.099 votos** com o exterior).
 - A diferença pró-Lula foi **130 vezes maior** que o volume total de votos dados após as 17h no país inteiro!
 - **Conclusão Matemática Inequívoca:** Mesmo no cenário hipotético extremo em que **100% dos 34.393 votos pós-17h fossem anulados ou transferidos integralmente para Flávio**, Lula ainda seria reeleito com mais de **4,36 milhões de votos de frente**. A prorrogação das 17h não teve capacidade aritmética de mudar o resultado nacional.
 
-#### 6. A Suspeita dos Faltosos: Houve Voto em Nome de Quem Não Foi às 17h?
+#### 7. A Suspeita dos Faltosos: Houve Voto em Nome de Quem Não Foi às 17h?
 Uma das teses levantadas foi a de que mesários poderiam ter "fechado a urna" às 17h inserindo votos manuais no lugar de quem faltou:
 - **O que os logs provam:**
   1. **95,83% das seções fecharam rigorosamente às 17:00:00** sem nenhum voto extra.
   2. Nas 4,17% de urnas com fila estendida, a média de biometria manteve-se alta (~89,6% biométrica vs ~10,4% manual), descartando preenchimento massivo generalizado no encerramento.
   3. **Onde ocorreu a usurpação de votos de faltosos?** A perícia comprova que o voto no lugar de faltosos não aconteceu de forma orquestrada no fechamento das 17h, mas sim **DILUÍDO AO LONGO DE TODO O DOMINGO**, com concentração crítica no **horário de almoço (`CHK123`)**, nas seções com desabamento biométrico generalizado (`CHK068`) e nos casos de **colisão de eleitor presencial (`CHK125`)** onde o cidadão chegou à tarde e descobriu que já haviam votado por ele.
 
-#### 7. Pronunciamentos de Ministros do STF e TSE Relevantes para a Perícia
+#### 8. Pronunciamentos de Ministros do STF e TSE Relevantes para a Perícia
 - **Kássio Nunes Marques (Presidente do TSE):** Afirmou categoricamente que *"o adiamento do fim da votação não provocou nenhuma alteração na eleição; o TSE cumpriu a decisão nos estritos termos e o processo eleitoral transcorreu com absoluta segurança técnica"*.
 - **Cristiano Zanin (Ministro do STF):** Ressaltou que a medida visou assegurar a isonomia aos cidadãos afetados por problemas de transporte e chuvas, e que as urnas já lacradas permaneceram invioladas.
 - **Flávio Dino e Gilmar Mendes (Ministros do STF):** Destacaram que a urna eletrônica é um sistema formalmente auditável, no qual qualquer tentativa de intervenção física ou inserção indevida de dados deixa rastros matemáticos inequívocos nos arquivos de log (`logd.dat`) e nos Registros Digitais de Voto (RDV). Enfatizaram ainda o princípio jurídico do prejuízo: nenhuma eleição pode ser judicialmente questionada sem prova material de que o vício alegado superaria a margem matemática de 4,4 milhões de votos.
