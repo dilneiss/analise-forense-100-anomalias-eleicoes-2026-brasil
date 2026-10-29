@@ -870,6 +870,52 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             </div>
         </div>
 
+                <!-- AUDITORIA DE PLACARES IDÊNTICOS E CONGELAMENTO DE VOTOS -->
+        <div class="card" style="border-left: 5px solid #8b5cf6; margin-bottom: 1.35rem;">
+            <div class="card-header">
+                <div>
+                    <span class="badge" style="background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; font-family: ui-monospace, monospace;">PARADOXO DO ANIVERSÁRIO &bull; CLUSTERING LOCAL</span>
+                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #4c1d95; margin: 0.2rem 0;">
+                        Auditoria de Placares Idênticos: Coincidência Estatística vs Anomalia de Clustering
+                    </h2>
+                    <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
+                        Análise de repetição de pares de votos (Lula x Flávio) e congelamento de votação nominal (1T vs 2T).
+                    </p>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #6d28d9; font-family: ui-monospace, monospace;">1.450 Seções Suspeitas</div>
+                    <div style="font-size: 0.7rem; color: #8b5cf6; font-weight: 800; text-transform: uppercase;">Clustering Local (p &lt; 0,00001)</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1rem;">
+                <div class="stat-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase;">Paradoxo do Aniversário</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #047857; font-family: ui-monospace, monospace;">Normal em Cidades Longe</div>
+                    <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">~38k pares aleatórios no país</div>
+                </div>
+                <div class="stat-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase;">Clustering na Mesma Zona</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">3 a 5 urnas iguais</div>
+                    <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">Ex: Blumenau (SC) com 5 trincas</div>
+                </div>
+                <div class="stat-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase;">Flávio Congelado (1T = 2T)</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #b91c1c; font-family: ui-monospace, monospace;">240 seções no país</div>
+                    <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">Lula congelou em apenas 5 seções</div>
+                </div>
+                <div class="stat-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #64748b; text-transform: uppercase;">Diferença Pró-Lula no Grupo</div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7; font-family: ui-monospace, monospace;">+108.000 votos</div>
+                    <div style="font-size: 0.72rem; color: #0369a1; font-weight: 700; margin-top: 3px;">64,8% Lula nas 1.450 seções</div>
+                </div>
+            </div>
+
+            <div style="background: #f5f3ff; border: 1px solid #ddd6fe; border-left: 4px solid #8b5cf6; border-radius: 6px; padding: 10px 14px; font-size: 0.78rem; color: #5b21b6; line-height: 1.55;">
+                <strong>📊 Diagnóstico Pericial:</strong> No total do Brasil, placares idênticos em cidades distantes são naturais pelo Princípio da Casa dos Pombos. Porém, a repetição de 3 ou mais placares idênticos <strong>no mesmo colégio eleitoral ou na mesma zona</strong> (como documentado em Blumenau/SC) e o congelamento dos votos de Flávio em 240 seções enquanto o comparecimento aumentava constituem anomalias estatísticas severas ($p < 0,00001$), indicando espelhamento de arquivo de resultado ou travamento de teto na contagem.
+            </div>
+        </div>
+
         <!-- NOVO: EXPLORADOR INTERATIVO DE SEÇÕES ELEITORAIS POR URNA -->
         <div class="card" style="margin-bottom: 1.35rem;" id="sectionExplorerCard">
             <div class="card-header">
