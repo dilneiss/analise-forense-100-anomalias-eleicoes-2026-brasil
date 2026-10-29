@@ -496,907 +496,741 @@
             'NORMAL': -1
         };
 
-        const GLOSSARY_DATA = {{
+        const GLOSSARY_DATA = {
             // Hardware
-            "CHK001_TROCA_URNA_FISICA": {{
+            "CHK001_TROCA_URNA_FISICA": {
                 "titulo": "Substituição da Urna Física",
                 "explicacao": "A urna física que funcionou no 1º turno foi substituída por outra máquina diferente no 2º turno.",
                 "por_que_suspeito": "A troca de equipamento entre turnos sem motivo registrado em ata rompe a continuidade física da auditoria e exige conferência da urna de contingência.",
                 "severidade": "MEDIA"
-            }},
-            "CHK002_TROCA_FLASH_VOTACAO": {{
+            },
+            "CHK002_TROCA_FLASH_VOTACAO": {
                 "titulo": "Troca da Flash de Votação (FV)",
                 "explicacao": "O cartão de memória de votação que armazena os votos foi substituído no 2º turno.",
                 "por_que_suspeito": "A FV deve permanecer vinculada à urna durante todo o processo eleitoral.",
                 "severidade": "MEDIA"
-            }},
-            "CHK003_TROCA_FLASH_CARGA": {{
+            },
+            "CHK003_TROCA_FLASH_CARGA": {
                 "titulo": "Atualização da Flash de Carga (Procedimento Operacional Normal)",
                 "explicacao": "A Flash de Carga (FC) é o cartão de memória gerado pelo cartório eleitoral para configurar os candidatos na urna. Entre o 1º e o 2º turno, é procedimento normal e esperado a Justiça Eleitoral gerar novas mídias de carga contendo apenas a cédula com os dois finalistas (no caso, 22 e 13).",
                 "por_que_suspeito": "Geralmente NÃO indica fraude por si só, sendo uma atualização logística padrão do 2T. É mantido como INFO para rastreabilidade de mídias. Só se torna suspeito se acompanhado de carga gerada para outro município (CHK014) ou se permitir votação em candidatos não concorrentes (CHK059).",
                 "severidade": "INFO"
-            }},
-            "CHK059_VOTO_CANDIDATO_NAO_CONCORRENTE_NO_2T": {{
+            },
+            "CHK059_VOTO_CANDIDATO_NAO_CONCORRENTE_NO_2T": {
                 "titulo": "Voto para Candidato Não Habilitado no 2T (Fraude/Bug Crítico)",
                 "explicacao": "No 2º turno, apenas os finalistas habilitados (no caso, 13 e 22) podem receber votos nominais válidos. Se um eleitor digitar qualquer outro número (como 70 de Cury, 14 de Renan ou um número inexistente como 99), a urna DEVE registrar obrigatoriamente como VOTO NULO. A regra audita se surgiu algum voto nominal registrado para candidatos inexistentes ou eliminados.",
                 "por_que_suspeito": "Altíssima gravidade: se uma urna registrar voto nominal para um candidato eliminado ou inexistente, comprova falha crítica de integridade na tabela de votáveis ou adulteração deliberada do software da urna para desviar votos.",
                 "severidade": "ALTA"
-            }},
-            "CHK004_MODELO_URNA_DIVERGENTE": {{
+            },
+            "CHK004_MODELO_URNA_DIVERGENTE": {
                 "titulo": "Modelo de Urna Divergente",
                 "explicacao": "A urna do 1º turno era de um modelo (ex: UE2020) e no 2º turno passou a ser de outro modelo mais antigo ou diferente.",
                 "por_que_suspeito": "Urnas de modelos distintos possuem níveis diferentes de hardware de segurança.",
                 "severidade": "ALTA"
-            }},
-            "CHK005_VERSAO_SOFTWARE_ALTERADA": {{
+            },
+            "CHK005_VERSAO_SOFTWARE_ALTERADA": {
                 "titulo": "Versão de Software Alterada",
                 "explicacao": "O programa de computador instalado na urna foi alterado entre o 1º e 2º turno.",
                 "por_que_suspeito": "O software de votação deve ser lacrado pelo TSE antes da eleição e não pode sofrer alteração entre turnos sem homologação.",
                 "severidade": "ALTA"
-            }},
-            "CHK006_MUDANCA_LOCAL_VOTACAO": {{
+            },
+            "CHK006_MUDANCA_LOCAL_VOTACAO": {
                 "titulo": "Mudança de Local Físico de Votação",
                 "explicacao": "A seção eleitoral foi transferida para outro endereço físico no 2º turno.",
                 "por_que_suspeito": "Mudanças de local podem desorientar eleitores e impactar a presença na urna.",
                 "severidade": "BAIXA"
-            }},
-            "CHK007_CODIGO_CARGA_ALTERADO": {{
+            },
+            "CHK007_CODIGO_CARGA_ALTERADO": {
                 "titulo": "Código de Carga Alterado na Mesma Urna",
                 "explicacao": "A mesma urna recebeu uma nova carga de dados para o 2º turno.",
                 "por_que_suspeito": "Indica que os dados da urna foram regravados entre os turnos.",
                 "severidade": "BAIXA"
-            }},
-            "CHK008_DATA_CARGA_ANOMALA_2T": {{
+            },
+            "CHK008_DATA_CARGA_ANOMALA_2T": {
                 "titulo": "Data de Carga Anômala",
                 "explicacao": "A data registrada da carga da urna no 2T é anterior ao 1º turno.",
                 "por_que_suspeito": "Incoerência cronológica no relógio interno ou no processo de preparação.",
                 "severidade": "MEDIA"
-            }},
-            "CHK009_DATA_CARGA_TARDIA_2T": {{
+            },
+            "CHK009_DATA_CARGA_TARDIA_2T": {
                 "titulo": "Carga Tardia no Dia da Eleição",
                 "explicacao": "A urna foi carregada com dados às pressas no próprio dia da votação do 2T.",
                 "por_que_suspeito": "Cargas emergenciais no dia da votação pulam etapas formais de auditoria prévia.",
                 "severidade": "MEDIA"
-            }},
-            "CHK010_CORRESPONDENCIA_INVALIDA_2T": {{
+            },
+            "CHK010_CORRESPONDENCIA_INVALIDA_2T": {
                 "titulo": "Correspondência de Seção Inválida",
                 "explicacao": "A correspondência gravada na carga não bate com a seção do Boletim de Urna.",
                 "por_que_suspeito": "Risco de votos de uma seção estarem sendo computados em outra.",
                 "severidade": "ALTA"
-            }},
-            "CHK011_GERADOR_MIDIA_DIVERGENTE": {{
+            },
+            "CHK011_GERADOR_MIDIA_DIVERGENTE": {
                 "titulo": "Gerador de Mídia Divergente",
                 "explicacao": "O computador usado pelo cartório para gerar a mídia de carga foi trocado.",
                 "por_que_suspeito": "Desvio no procedimento padrão de geração de cartões eleitorais.",
                 "severidade": "BAIXA"
-            }},
-            "CHK012_TPM_SERIAL_DIVERGENTE": {{
+            },
+            "CHK012_TPM_SERIAL_DIVERGENTE": {
                 "titulo": "Serial TPM Divergente",
                 "explicacao": "O chip criptográfico soldado na placa-mãe da urna mudou na mesma máquina declarada.",
                 "por_que_suspeito": "Inconsistência de placa de hardware na mesma urna física.",
                 "severidade": "ALTA"
-            }},
-            "CHK013_SERIAL_INSTALACAO_REINICIADO": {{
+            },
+            "CHK013_SERIAL_INSTALACAO_REINICIADO": {
                 "titulo": "Serial de Instalação Reiniciado",
                 "explicacao": "O contador de instalações da urna recuou para um valor menor.",
                 "por_que_suspeito": "Indica reinstalação não autorizada do sistema operacional da urna.",
                 "severidade": "MEDIA"
-            }},
-                        "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO": {{
+            },
+                        "CHK014_CARGA_URNA_EM_OUTRO_MUNICIPIO": {
                 "titulo": "Carga Gerada para Outro Município (Distância e Vizinhança)",
                 "explicacao": "A carga da urna foi configurada para um município, mas a urna funcionou em outro. Se as cidades forem vizinhas/limítrofes (até ~45 km), o remanejamento pode ser normal por logística do cartório eleitoral regional. Se forem cidades distantes (> 45 km), a ocorrência não é normal e aponta falha de custódia.",
                 "por_que_suspeito": "A distância em km determina a gravidade: cidades vizinhas da mesma comarca representam contingência de polo regional; cidades distantes representam quebra de jurisdição e risco de substituição irregular de urnas.",
                 "severidade": "ALTA"
-            }},
-            "CHK015_TIPO_ARQUIVO_NAO_VOTACAO_UE": {{
+            },
+            "CHK015_TIPO_ARQUIVO_NAO_VOTACAO_UE": {
                 "titulo": "Tipo de Arquivo não Oficial",
                 "explicacao": "O arquivo do BU não está classificado como arquivo oficial de votação de urna.",
                 "por_que_suspeito": "Arquivo com cabeçalho diferente do padrão oficial de resultado.",
                 "severidade": "ALTA"
-            }},
+            },
 
             // Cadastral
-            "CHK016_VARIACAO_APTOS_SECAO": {{
+            "CHK016_VARIACAO_APTOS_SECAO": {
                 "titulo": "Variação de Eleitores Originais da Seção",
                 "explicacao": "A lista oficial de eleitores cadastrados na seção mudou entre os turnos. Variações pequenas de até meio por cento (<= 0.5%, como apenas 1 ou 2 eleitores) são ajustes cadastrais residuais comuns da Justiça Eleitoral (ex.: reativações pontuais de título). Apenas variações superiores a meio por cento (> 0.5%) são consideradas relevantes.",
                 "por_que_suspeito": "Se a variação for superior a 0.5% do eleitorado, aponta para inclusão ou exclusão anormal de votantes após o congelamento oficial do cadastro eleitoral.",
                 "severidade": "ALTA"
-            }},
-            "CHK017_REDUCAO_APTOS_SECAO": {{
+            },
+            "CHK017_REDUCAO_APTOS_SECAO": {
                 "titulo": "Redução de Eleitores Originais",
                 "explicacao": "Eleitores cadastrados foram retirados da lista de votantes no 2T. É relevante quando a redução ultrapassa 0.5% do total da seção.",
                 "por_que_suspeito": "Reduções acima de meio por cento podem indicar cerceamento indevido de eleitores aptos.",
                 "severidade": "ALTA"
-            }},
-            "CHK018_AUMENTO_APTOS_SECAO": {{
+            },
+            "CHK018_AUMENTO_APTOS_SECAO": {
                 "titulo": "Aumento de Eleitores Originais",
                 "explicacao": "Novos eleitores apareceram cadastrados na seção no 2T. É relevante quando o aumento ultrapassa 0.5% do total da seção.",
                 "por_que_suspeito": "Aumentos acima de meio por cento apontam para inserção irregular de eleitores no cadastro após o congelamento legal.",
                 "severidade": "ALTA"
-            }},
-            "CHK019_PICO_TTE_ABSOLUTO": {{
+            },
+            "CHK019_PICO_TTE_ABSOLUTO": {
                 "titulo": "Pico de Voto em Trânsito (TTE)",
                 "explicacao": "Salto repentino de mais de 20 eleitores temporários/em trânsito na seção.",
                 "por_que_suspeito": "Pode indicar deslocamento artificial de eleitores para seções estratégicas.",
                 "severidade": "MEDIA"
-            }},
-            "CHK020_PICO_TTE_PERCENTUAL": {{
+            },
+            "CHK020_PICO_TTE_PERCENTUAL": {
                 "titulo": "Oscilação Excessiva de TTE",
                 "explicacao": "A quantidade de eleitores temporários variou mais de 10% da seção.",
                 "por_que_suspeito": "Alteração substancial no perfil do eleitorado da urna.",
                 "severidade": "MEDIA"
-            }},
-            "CHK023_APTOS_TOTAL_DIVERGENTE_SOMA": {{
+            },
+            "CHK023_APTOS_TOTAL_DIVERGENTE_SOMA": {
                 "titulo": "Soma de Aptos Incoerente",
                 "explicacao": "A soma de eleitores originais com temporários não bate com o total.",
                 "por_que_suspeito": "Erro aritmético na contabilidade de eleitores da urna.",
                 "severidade": "ALTA"
-            }},
-            "CHK031_COMPARECIMENTO_EXCEDE_APTOS_2T": {{
+            },
+            "CHK031_COMPARECIMENTO_EXCEDE_APTOS_2T": {
                 "titulo": "Comparecimento Maior que Aptos (2T)",
                 "explicacao": "Houve mais votos computados do que eleitores cadastrados na urna no 2T.",
                 "por_que_suspeito": "Impossibilidade matemática: mais pessoas votaram do que o total de eleitores existentes na seção.",
                 "severidade": "ALTA"
-            }},
-            "CHK033_COMPARECIMENTO_100_PCT_2T": {{
+            },
+            "CHK033_COMPARECIMENTO_100_PCT_2T": {
                 "titulo": "100% de Presença (Zero Faltas)",
                 "explicacao": "Exatamente todos os eleitores cadastrados compareceram para votar no 2T.",
                 "por_que_suspeito": "Estatisticamente raríssimo em seções grandes: ninguém faltou, adoeceu ou viajou.",
                 "severidade": "MEDIA"
-            }},
-            "CHK036_SALTO_COMPARECIMENTO_MAIOR_25PP": {{
+            },
+            "CHK036_SALTO_COMPARECIMENTO_MAIOR_25PP": {
                 "titulo": "Salto de Presença > 25 pp",
                 "explicacao": "O comparecimento aumentou drasticamente mais de 25 pontos percentuais no 2T.",
                 "por_que_suspeito": "Entrada súbita de eleitores que não haviam votado no 1º turno.",
                 "severidade": "ALTA"
-            }},
-            "CHK037_QUEDA_COMPARECIMENTO_MAIOR_25PP": {{
+            },
+            "CHK037_QUEDA_COMPARECIMENTO_MAIOR_25PP": {
                 "titulo": "Queda de Presença > 25 pp",
                 "explicacao": "O comparecimento despencou mais de 25 pontos percentuais no 2T.",
                 "por_que_suspeito": "Falta maciça de eleitores que haviam comparecido no 1º turno.",
                 "severidade": "ALTA"
-            }},
-            "CHK044_COMPARECIMENTO_DISCREPANTE_DO_MUNICIPIO": {{
+            },
+            "CHK044_COMPARECIMENTO_DISCREPANTE_DO_MUNICIPIO": {
                 "titulo": "Presença Discrepante da Média Municipal",
                 "explicacao": "A variação de comparecimento da seção foi o oposto do que aconteceu na cidade.",
                 "por_que_suspeito": "Seção se comportou de forma totalmente isolada e discrepante do município.",
                 "severidade": "ALTA"
-            }},
+            },
 
             // Votação & Terceira Via
-            "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR": {{
+            "CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR": {
                 "titulo": "Queda de Votos com MAIOR Comparecimento",
                 "explicacao": "O candidato finalista perdeu votos nominais no 2T, embora mais eleitores tenham ido votar na seção.",
                 "por_que_suspeito": "Se mais pessoas foram votar e o candidato perdeu votos absolutos, sua base encolheu misteriosamente mesmo com eleição polarizada.",
                 "severidade": "ALTA"
-            }},
-            "CHK047_QUEDA_FINALISTA_COM_COMPARECIMENTO_IGUAL": {{
+            },
+            "CHK047_QUEDA_FINALISTA_COM_COMPARECIMENTO_IGUAL": {
                 "titulo": "Queda de Votos com Comparecimento IGUAL",
                 "explicacao": "O candidato finalista perdeu votos com exatamente o mesmo número de votantes na urna.",
                 "por_que_suspeito": "Perda de votos consolidados em relação ao 1º turno com eleitorado idêntico.",
                 "severidade": "ALTA"
-            }},
-            "CHK048_QUEDA_DESPROPORCIONAL_AO_COMPARECIMENTO": {{
+            },
+            "CHK048_QUEDA_DESPROPORCIONAL_AO_COMPARECIMENTO": {
                 "titulo": "Queda Desproporcional à Abstenção",
                 "explicacao": "A presença caiu pouco, mas o candidato perdeu mais de 2.5x dessa proporção em votos.",
                 "por_que_suspeito": "A perda de votos do candidato foi muito superior à queda geral de votantes da seção.",
                 "severidade": "ALTA"
-            }},
-            "CHK049_PERDA_BRUSCA_MAIOR_30PCT_FINALISTA": {{
+            },
+            "CHK049_PERDA_BRUSCA_MAIOR_30PCT_FINALISTA": {
                 "titulo": "Perda Brusca > 30% dos Votos",
                 "explicacao": "O candidato finalista perdeu mais de 30% de seus votos nominais com presença estável.",
                 "por_que_suspeito": "Desidratação inexplicável da votação obtida 21 dias antes.",
                 "severidade": "MEDIA"
-            }},
-            "CHK050_DESAPARECIMENTO_FINALISTA_NO_2T": {{
+            },
+            "CHK050_DESAPARECIMENTO_FINALISTA_NO_2T": {
                 "titulo": "Desaparecimento Total de Votos",
                 "explicacao": "O candidato tinha votação expressiva no 1T e zerou (0 votos) no 2T.",
                 "por_que_suspeito": "Todos os eleitores que votaram nele no 1T sumiram ou mudaram no 2T.",
                 "severidade": "ALTA"
-            }},
-            "CHK052_UNANIMIDADE_100PCT_FINALISTA_2T": {{
+            },
+            "CHK052_UNANIMIDADE_100PCT_FINALISTA_2T": {
                 "titulo": "100% de Votação Unânime",
                 "explicacao": "Todos os votos válidos da seção foram computados para um único candidato.",
                 "por_que_suspeito": "Unanimidade eleitoral absoluta no 2º turno.",
                 "severidade": "MEDIA"
-            }},
-            "CHK053_ABSORCAO_100PCT_TERCEIRA_VIA_POR_UM_CANDIDATO": {{
+            },
+            "CHK053_ABSORCAO_100PCT_TERCEIRA_VIA_POR_UM_CANDIDATO": {
                 "titulo": "Absorção de 100% da Terceira Via por um Só Concorrente",
                 "explicacao": "Todos os votos de candidatos eliminados no 1T foram direcionados a um único concorrente.",
                 "por_que_suspeito": "Migração de votos 100% assimétrica, sem divisão natural de votos entre os finalistas.",
                 "severidade": "MEDIA"
-            }},
-            "CHK054_CRESCIMENTO_EXCEDE_TETO_MIGRACAO_E_COMPARECIMENTO": {{
+            },
+            "CHK054_CRESCIMENTO_EXCEDE_TETO_MIGRACAO_E_COMPARECIMENTO": {
                 "titulo": "Crescimento Excede Teto Matemático",
                 "explicacao": "O candidato ganhou mais votos no 2T do que a soma de toda a 3ª via, brancos, nulos e novos eleitores.",
                 "por_que_suspeito": "Impossibilidade matemática: o candidato cresceu mais do que todos os votos disponíveis para migrar.",
                 "severidade": "ALTA"
-            }},
-            "CHK055_CRESCIMENTO_COM_QUEDA_DE_COMPARECIMENTO_ACIMA_DA_TERCEIRA_VIA": {{
+            },
+            "CHK055_CRESCIMENTO_COM_QUEDA_DE_COMPARECIMENTO_ACIMA_DA_TERCEIRA_VIA": {
                 "titulo": "Crescimento com Queda de Presença",
                 "explicacao": "O comparecimento caiu, mas o candidato cresceu além do total existente de votos de terceira via no 1T.",
                 "por_que_suspeito": "O candidato cresceu votos que não existiam no 1T com menos pessoas votando.",
                 "severidade": "ALTA"
-            }},
-            "CHK056_INVERSAO_ABRUPTA_SWING_MAIOR_50PP": {{
+            },
+            "CHK056_INVERSAO_ABRUPTA_SWING_MAIOR_50PP": {
                 "titulo": "Swing Político Extremo (> 50 pp)",
                 "explicacao": "Um candidato liderava com folga no 1T e o adversário virou de forma esmagadora no 2T.",
                 "por_que_suspeito": "Mudança radical e repentina na preferência política da seção em 3 semanas.",
                 "severidade": "ALTA"
-            }},
-            "CHK058_MIGRACAO_TOTALMENTE_ASSIMETRICA_CONTRA_MEDIA_MUNICIPAL": {{
+            },
+            "CHK058_MIGRACAO_TOTALMENTE_ASSIMETRICA_CONTRA_MEDIA_MUNICIPAL": {
                 "titulo": "Migração Oposta à Média Municipal",
                 "explicacao": "Na seção o candidato disparou, enquanto no resto da cidade o adversário cresceu.",
                 "por_que_suspeito": "Comportamento da seção colide frontalmente com a tendência de todo o município.",
                 "severidade": "ALTA"
-            }},
-            "CHK062_DESVIO_PADRAO_VOTOS_EXTREMO_NO_MUNICIPIO": {{
+            },
+            "CHK062_DESVIO_PADRAO_VOTOS_EXTREMO_NO_MUNICIPIO": {
                 "titulo": "Desvio Extremo no Município (> 3.5 DP)",
                 "explicacao": "Percentual do candidato na seção desvia mais de 3.5 desvios-padrão da média da cidade.",
                 "por_que_suspeito": "Estatisticamente é um ponto fora da curva (outlier severo) no município.",
                 "severidade": "MEDIA"
-            }},
+            },
 
             // Biometria
-            "CHK066_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_30PP": {{
+            "CHK066_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_30PP": {
                 "titulo": "Desabamento Crítico de Validação Biométrica (> 30 pp)",
                 "explicacao": "Como é possível a biometria funcionar normalmente para quase todos no 1º turno e falhar no 2º turno para os mesmos eleitores? Não existe justificativa biológica para as impressões digitais deixarem de ser reconhecidas 21 dias depois. Isso aponta que o leitor biométrico foi propositalmente ignorado, desligado ou contornado pelos mesários, que passaram a liberar a votação digitando o ano de nascimento no terminal.",
                 "por_que_suspeito": "A biometria é a única trava física que comprova a presença presencial do cidadão. Quando a biometria cai e a liberação manual explode, o mesário assume controle irrestrito da máquina, criando a brecha perfeita para habilitar votos no lugar de eleitores faltosos (voto fantasma), sem deixar rastro digital.",
                 "severidade": "ALTA"
-            }},
-            "CHK067_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_20PP": {{
+            },
+            "CHK067_QUEDA_ABRUPTA_BIOMETRIA_MAIOR_20PP": {
                 "titulo": "Queda Acentuada de Biometria (> 20 pp)",
                 "explicacao": "O eleitorado da seção é exatamente o mesmo nos dois turnos. Uma queda de mais de 20 pontos percentuais no reconhecimento por digital significa que dezenas de eleitores que tiveram sua digital reconhecida no 1º turno foram misteriosamente liberados sem biometria no 2º turno por digitação manual do ano de nascimento.",
                 "por_que_suspeito": "Anula a barreira de segurança antifraude da urna. A substituição da digital pela digitação manual do ano de nascimento pelo mesário elimina a garantia de presença física do cidadão e exige auditoria imediata das folhas de presença em papel assinadas e tomada de depoimentos dos mesários.",
                 "severidade": "MEDIA"
-            }},
-            "CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP": {{
+            },
+            "CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP": {
                 "titulo": "Surto Crítico de Liberação Manual por Ano de Nascimento (> 25 pp)",
                 "explicacao": "Os mesários digitaram manualmente o ano de nascimento para liberar mais de um quarto dos eleitores da seção, em vez de exigir a leitura da impressão digital.",
                 "por_que_suspeito": "Mesários mal-intencionados podem consultar o caderno eleitoral para obter a data de nascimento de eleitores que não compareceram e liberar a urna para votar no lugar deles, inflando artificialmente o comparecimento e alterando o resultado da urna.",
                 "severidade": "ALTA"
-            }},
-            "CHK069_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_15PP": {{
+            },
+            "CHK069_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_15PP": {
                 "titulo": "Salto de Liberação Manual por Ano de Nascimento (> 15 pp)",
                 "explicacao": "Aumento expressivo na liberação de eleitores por digitação do ano de nascimento no terminal do mesário no 2º turno.",
                 "por_que_suspeito": "Uso desproporcional da exceção manual sem justificativa técnica plausível, contornando a segurança biométrica.",
                 "severidade": "MEDIA"
-            }},
-            "CHK070_ZERO_BIOMETRIA_EM_SECAO_BIOMETRIZADA": {{
+            },
+            "CHK070_ZERO_BIOMETRIA_EM_SECAO_BIOMETRIZADA": {
                 "titulo": "Desativação Total da Biometria em Seção Biometrizada",
                 "explicacao": "Uma seção onde a maioria dos eleitores votou por biometria no 1º turno registrou ZERO votos por biometria no 2º turno. Todos os eleitores foram liberados manualmente.",
                 "por_que_suspeito": "O leitor óptico foi desconectado, desativado ou sumariamente ignorado pela mesa receptora durante todo o dia da eleição, eliminando 100% da rastreabilidade biométrica da urna.",
                 "severidade": "MEDIA"
-            }},
-            "CHK072_SOMA_DETALHAMENTO_COMPARECIMENTO_DIVERGENTE": {{
+            },
+            "CHK072_SOMA_DETALHAMENTO_COMPARECIMENTO_DIVERGENTE": {
                 "titulo": "Soma do Detalhamento Biométrico Diverge",
                 "explicacao": "Biometria + Biográfica + Sem Biometria não bate com o comparecimento.",
                 "por_que_suspeito": "Inconsistência nos contadores internos de habilitação da urna.",
                 "severidade": "ALTA"
-            }},
+            },
 
             // Tempo
-            "CHK076_ABERTURA_PRECOCE_2T": {{
+            "CHK076_ABERTURA_PRECOCE_2T": {
                 "titulo": "Abertura Precoce (< 07:00)",
                 "explicacao": "A urna começou a receber votos antes das 7 horas da manhã.",
                 "por_que_suspeito": "Violação do horário regulamentar de abertura do TSE.",
                 "severidade": "MEDIA"
-            }},
-            "CHK077_ABERTURA_TARDIA_2T": {{
+            },
+            "CHK077_ABERTURA_TARDIA_2T": {
                 "titulo": "Abertura Tardia (> 08:30)",
                 "explicacao": "A urna só começou a receber votos após as 8h30.",
                 "por_que_suspeito": "Atraso expressivo que pode indicar problemas técnicos ou operacionais.",
                 "severidade": "MEDIA"
-            }},
-            "CHK078_ENCERRAMENTO_PRECOCE_2T": {{
+            },
+            "CHK078_ENCERRAMENTO_PRECOCE_2T": {
                 "titulo": "Encerramento Precoce (< 17:00)",
                 "explicacao": "A urna foi fechada antes das 17h enquanto ainda poderia haver eleitores.",
                 "por_que_suspeito": "Fechamento antecipado irregular que impede o voto de cidadãos.",
                 "severidade": "ALTA"
-            }},
-            "CHK079_ENCERRAMENTO_MUITO_TARDIO_2T": {{
+            },
+            "CHK079_ENCERRAMENTO_MUITO_TARDIO_2T": {
                 "titulo": "Encerramento Tardio (> 20:00)",
                 "explicacao": "A votação continuou até depois das 20h.",
                 "por_que_suspeito": "Indica filas anômalas ou extensão excessiva do horário de votação.",
                 "severidade": "MEDIA"
-            }},
-            "CHK083_TEMPO_MEDIO_POR_VOTO_IMPOSSIVEL_INFERIOR_15S": {{
+            },
+            "CHK083_TEMPO_MEDIO_POR_VOTO_IMPOSSIVEL_INFERIOR_15S": {
                 "titulo": "Votos em Menos de 15 Segundos",
                 "explicacao": "Tempo médio por voto menor que 15 segundos durante o dia todo.",
                 "por_que_suspeito": "Ritmo humanamente impossível para identificação, conferência e voto na cabine.",
                 "severidade": "ALTA"
-            }},
-            "CHK084_EMISSAO_BU_ANTERIOR_AO_ENCERRAMENTO": {{
+            },
+            "CHK084_EMISSAO_BU_ANTERIOR_AO_ENCERRAMENTO": {
                 "titulo": "Emissão Anterior ao Encerramento",
                 "explicacao": "O Boletim de Urna foi impresso antes do fechamento oficial da votação.",
                 "por_que_suspeito": "Violação cronológica grave na gravação dos arquivos da urna.",
                 "severidade": "ALTA"
-            }},
+            },
 
             // Brancos e Nulos
-            "CHK086_EXPLOSAO_BRANCOS_NULOS_MAIOR_15PP": {{
+            "CHK086_EXPLOSAO_BRANCOS_NULOS_MAIOR_15PP": {
                 "titulo": "Salto de Brancos e Nulos > 15 pp",
                 "explicacao": "Votos brancos e nulos aumentaram mais de 15 pontos percentuais no 2T.",
                 "por_que_suspeito": "Salto incomum de descarte de votos em eleição polarizada.",
                 "severidade": "MEDIA"
-            }},
-            "CHK088_EXTINCAO_BRANCOS_NULOS_SECAO_GRANDE": {{
+            },
+            "CHK088_EXTINCAO_BRANCOS_NULOS_SECAO_GRANDE": {
                 "titulo": "Zero Brancos e Zero Nulos",
                 "explicacao": "Nenhum voto branco e nenhum nulo em urna com mais de 150 votantes.",
                 "por_que_suspeito": "Ausência total de erros de digitação ou votos de protesto em amostra grande.",
                 "severidade": "BAIXA"
-            }},
+            },
 
             // Integridade
-            "CHK093_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_2T": {{
+            "CHK093_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_2T": {
                 "titulo": "Soma de Votos != Comparecimento (2T)",
                 "explicacao": "A soma de válidos, brancos e nulos não bate com o comparecimento no 2T.",
                 "por_que_suspeito": "Corrupção ou incoerência nos totais de apuração do Boletim de Urna.",
                 "severidade": "ALTA"
-            }},
-            "CHK098_FALHA_CADEIA_HASH_SHA512_2T": {{
+            },
+            "CHK098_FALHA_CADEIA_HASH_SHA512_2T": {
                 "titulo": "Cadeia de Hashes SHA-512 Rompida (2T)",
                 "explicacao": "O hash matemático recalculado voto a voto não bate com o declarado no 2T.",
                 "por_que_suspeito": "Alteração ou corrupção nos dados de votação do Boletim de Urna do 2T.",
                 "severidade": "ALTA"
-            }},
-            "CHK100_HASH_ASSINADO_VSC_DIVERGENTE": {{
+            },
+            "CHK100_HASH_ASSINADO_VSC_DIVERGENTE": {
                 "titulo": "Hash Assinado no VSC Divergente",
                 "explicacao": "O hash SHA-512 do arquivo do BU não bate com a assinatura oficial da urna.",
                 "por_que_suspeito": "Possível alteração no arquivo bu.dat após a assinatura digital da máquina.",
                 "severidade": "ALTA"
-            }},
-            "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO": {{
+            },
+            "CHK101_BENFORD_PRIMEIRO_DIGITO_ANOMALO": {
                 "titulo": "Primeiro Dígito Anômalo (Lei de Benford)",
                 "explicacao": "Distribuições naturais de votos seguem a Lei de Benford (dígitos 1 e 2 são muito mais frequentes que dígitos 8 e 9).",
                 "por_que_suspeito": "Desvios severos em contagens podem indicar números forjados ou arredondados manualmente.",
                 "severidade": "BAIXA"
-            }},
-            "CHK102_DIGITOS_REDONDOS_EXCESSIVOS": {{
+            },
+            "CHK102_DIGITOS_REDONDOS_EXCESSIVOS": {
                 "titulo": "Comparecimento em Centena Exata (00)",
                 "explicacao": "O número total de votantes da seção cravou exatamente em uma centena redonda (ex.: 200, 300).",
                 "por_que_suspeito": "Pode indicar corte artificial ou encerramento direcionado de eleitores.",
                 "severidade": "BAIXA"
-            }},
-            "CHK103_URNA_SUBSTITUTA_SEM_HISTORICO_CARGA": {{
+            },
+            "CHK103_URNA_SUBSTITUTA_SEM_HISTORICO_CARGA": {
                 "titulo": "Urna Substituta Sem Código de Carga",
                 "explicacao": "A urna de contingência foi ligada sem registrar o código de carga no Boletim de Urna.",
                 "por_que_suspeito": "Quebra de procedimento na preparação e validação de urnas reservas.",
                 "severidade": "ALTA"
-            }},
-            "CHK104_CORRESPONDENCIA_DATA_CARGA_ANTERIOR_1T": {{
+            },
+            "CHK104_CORRESPONDENCIA_DATA_CARGA_ANTERIOR_1T": {
                 "titulo": "Data de Carga da Urna do 2T Anterior ao 1T",
                 "explicacao": "A urna do 2º turno tem registro de carga feito antes da votação do 1º turno.",
                 "por_que_suspeito": "Incoerência cronológica no relógio interno ou na geração da mídia de votação.",
                 "severidade": "ALTA"
-            }},
-            "CHK105_PICO_VOTOS_ULTIMA_HORA_ENCERRAMENTO": {{
+            },
+            "CHK105_PICO_VOTOS_ULTIMA_HORA_ENCERRAMENTO": {
                 "titulo": "Votação Concentrada em Poucas Horas",
                 "explicacao": "Grande volume de votos computado em uma janela comprimida de tempo.",
                 "por_que_suspeito": "Ritmo atípico que pode indicar concentração suspeita de votos perto do encerramento.",
                 "severidade": "MEDIA"
-            }},
-            "CHK106_INTERVALO_ABERTURA_PRIMEIRO_VOTO_EXCEDE_2H": {{
+            },
+            "CHK106_INTERVALO_ABERTURA_PRIMEIRO_VOTO_EXCEDE_2H": {
                 "titulo": "Atraso Superior a 2 Horas para Abertura",
                 "explicacao": "A urna só começou a receber votos após as 10 horas da manhã.",
                 "por_que_suspeito": "Retardo excessivo que prejudica o acesso de eleitores matutinos.",
                 "severidade": "BAIXA"
-            }},
-            "CHK107_INVERSAO_PROPORCAO_BRANCOS_NULOS": {{
+            },
+            "CHK107_INVERSAO_PROPORCAO_BRANCOS_NULOS": {
                 "titulo": "Inversão da Razão Brancos vs Nulos",
                 "explicacao": "A proporção entre votos brancos e nulos inverteu mais de 50 pontos percentuais entre turnos.",
                 "por_que_suspeito": "Mudança brusca no padrão de descarte de votos na seção.",
                 "severidade": "MEDIA"
-            }},
-            "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO": {{
+            },
+            "CHK108_MIGRACAO_TOTAL_BRANCOS_NULOS_PARA_UM_CANDIDATO": {
                 "titulo": "Migração Total de Brancos/Nulos para um Só Concorrente",
                 "explicacao": "A redução de votos inválidos no 2T migrou quase integralmente (> 90%) para um único candidato.",
                 "por_que_suspeito": "Desvio atípico e direcionado de votos inválidos para uma só candidatura.",
                 "severidade": "ALTA"
-            }},
-            "CHK109_ABSTENCAO_MAIOR_QUE_VOTOS_DO_VENCEDOR": {{
+            },
+            "CHK109_ABSTENCAO_MAIOR_QUE_VOTOS_DO_VENCEDOR": {
                 "titulo": "Abstenção Maior que a Votação do Vencedor",
                 "explicacao": "Mais pessoas faltaram do que o total de votos recebidos pelo candidato vencedor daquela urna.",
                 "por_que_suspeito": "Desmobilização extrema do eleitorado na seção.",
                 "severidade": "BAIXA"
-            }},
-            "CHK110_ABSTENCAO_REDUZIDA_COM_MIGRACAO_UNILATERAL": {{
+            },
+            "CHK110_ABSTENCAO_REDUZIDA_COM_MIGRACAO_UNILATERAL": {
                 "titulo": "Redução de Abstenção Canalizada 100% para um Candidato",
                 "explicacao": "Novos eleitores compareceram no 2T e 100% dos novos votos foram para o mesmo concorrente.",
                 "por_que_suspeito": "Mobilização totalmente assimétrica de eleitores faltosos.",
                 "severidade": "ALTA"
-            }},
-            "CHK111_HABILITACAO_BIOGRAFICA_SUPERIOR_A_BIOMETRICA": {{
+            },
+            "CHK111_HABILITACAO_BIOGRAFICA_SUPERIOR_A_BIOMETRICA": {
                 "titulo": "Liberação Manual por Ano de Nascimento Superou a Biometria",
                 "explicacao": "Mais eleitores foram liberados digitando o ano de nascimento do que colocando a impressão digital na urna.",
                 "por_que_suspeito": "A exceção virou regra: quando mais da metade da seção vota sem biometria, o mesário assume controle manual da máquina, permitindo votos fantasmas.",
                 "severidade": "ALTA"
-            }},
-            "CHK112_DESABAMENTO_BRUTAL_BIOMETRIA_MAIOR_40PP": {{
+            },
+            "CHK112_DESABAMENTO_BRUTAL_BIOMETRIA_MAIOR_40PP": {
                 "titulo": "Desabamento Brutal de Biometria (> 40 pp)",
                 "explicacao": "A validação por digital despencou mais de 40 pontos percentuais entre os dois turnos.",
                 "por_que_suspeito": "Leitor óptico desligado ou contornado maciçamente no 2º turno.",
                 "severidade": "ALTA"
-            }},
-            "CHK113_FALHA_MASSIVA_RECONHECIMENTO_DIGITAL_SEM_BIOMETRIA": {{
+            },
+            "CHK113_FALHA_MASSIVA_RECONHECIMENTO_DIGITAL_SEM_BIOMETRIA": {
                 "titulo": "Eleitores Sem Biometria Triplicaram",
                 "explicacao": "Quantidade de eleitores sem cadastro de digital triplicou de um turno para o outro.",
                 "por_que_suspeito": "Inconsistência cadastral no perfil de identificação biométrica da urna.",
                 "severidade": "MEDIA"
-            }},
-            "CHK114_VOTOS_CANDIDATO_SUPERAM_APTOS_ORIGINAIS": {{
+            },
+            "CHK114_VOTOS_CANDIDATO_SUPERAM_APTOS_ORIGINAIS": {
                 "titulo": "Votação do Candidato Supera Eleitores Originais da Seção",
                 "explicacao": "O candidato obteve mais votos do que o total de eleitores que pertenciam originalmente àquela seção.",
                 "por_que_suspeito": "Votação inflada por eleitores temporários e em trânsito (TTE).",
                 "severidade": "ALTA"
-            }},
-            "CHK115_QUEDA_NOMINAL_AMBOS_CANDIDATOS_COM_MAIOR_COMPARECIMENTO": {{
+            },
+            "CHK115_QUEDA_NOMINAL_AMBOS_CANDIDATOS_COM_MAIOR_COMPARECIMENTO": {
                 "titulo": "Ambos os Concorrentes Perderam Votos com Mais Presença",
                 "explicacao": "Comparecimento subiu, mas tanto Lula quanto Flávio perderam votos nominais absolutos.",
                 "por_que_suspeito": "Vazamento atípico de votos válidos para brancos e nulos.",
                 "severidade": "ALTA"
-            }},
-            "CHK116_TAXA_RETENCAO_PRIMEIRO_TURNO_INFERIOR_A_50PCT": {{
+            },
+            "CHK116_TAXA_RETENCAO_PRIMEIRO_TURNO_INFERIOR_A_50PCT": {
                 "titulo": "Candidato Perdeu Mais da Metade dos Votos do 1T",
                 "explicacao": "O candidato finalista reteve menos de 50% dos votos obtidos no 1T com presença estável.",
                 "por_que_suspeito": "Evasão inexplicável de votos consolidados em apenas 3 semanas.",
                 "severidade": "ALTA"
-            }},
-            "CHK117_TRANSFERENCIA_ZERO_TERCEIRA_VIA_COM_COMPARECIMENTO_CRESCENTE": {{
+            },
+            "CHK117_TRANSFERENCIA_ZERO_TERCEIRA_VIA_COM_COMPARECIMENTO_CRESCENTE": {
                 "titulo": "Estoque de 3ª Via Sumiu sem Migrar para Finalistas",
                 "explicacao": "Havia mais de 40 votos de terceira via, o comparecimento subiu, mas nenhum finalista cresceu além dos novos votantes.",
                 "por_que_suspeito": "Votos de candidatos eliminados desapareceram sem destino nominado.",
                 "severidade": "MEDIA"
-            }},
-            "CHK118_DIFERENCA_TEMPO_ENCERRAMENTO_E_EMISSAO_MAIOR_15MIN": {{
+            },
+            "CHK118_DIFERENCA_TEMPO_ENCERRAMENTO_E_EMISSAO_MAIOR_15MIN": {
                 "titulo": "Impressão do BU Demorou Mais de 15 Minutos Após Encerramento",
                 "explicacao": "A urna levou mais de 15 minutos entre o fechamento oficial às 17h e a emissão física do BU.",
                 "por_que_suspeito": "Retardo operacional incomum que pode indicar travamento, contingência ou intervenção manual.",
                 "severidade": "BAIXA"
-            }},
-            "CHK119_HORARIO_ENCERRAMENTO_IDENTICO_DE_SEGUNDO_ENTRE_URNAS_DISTINTAS": {{
+            },
+            "CHK119_HORARIO_ENCERRAMENTO_IDENTICO_DE_SEGUNDO_ENTRE_URNAS_DISTINTAS": {
                 "titulo": "Encerramento Cravado às 17:00:00",
                 "explicacao": "Urna encerrada no primeiro segundo regulamentar sem nenhum eleitor na fila.",
                 "por_que_suspeito": "Fechamento automático pontual sem retenção de votantes.",
                 "severidade": "INFO"
-            }},
-            "CHK120_VOTO_UNANIME_NO_LOCAL_DE_VOTACAO": {{
+            },
+            "CHK120_VOTO_UNANIME_NO_LOCAL_DE_VOTACAO": {
                 "titulo": "Zero Votos para Concorrente em Seção Expressiva do Local",
                 "explicacao": "Um dos dois candidatos finalistas recebeu zero votos válidos em uma seção expressiva do local de votação.",
                 "por_que_suspeito": "Unanimidade artificial extrema em colégios eleitorais com pluralidade de eleitores.",
                 "severidade": "ALTA"
-            }},
-            "CHK021_EXTINCAO_TTE_2T": {{
+            },
+            "CHK021_EXTINCAO_TTE_2T": {
                 "titulo": "Extinção de Eleitores em Trânsito no 2T",
                 "explicacao": "Havia eleitores habilitados para voto em trânsito (TTE) no 1º turno, mas o registro de TTE foi zerado no 2º turno.",
                 "por_que_suspeito": "O cadastro de voto em trânsito é unificado para ambos os turnos. O sumiço completo de eleitores em trânsito indica possível falha ou expurgo no cadastro da urna.",
                 "severidade": "MEDIA"
-            }},
-            "CHK022_SURGIMENTO_TTE_MASSIVO_2T": {{
+            },
+            "CHK022_SURGIMENTO_TTE_MASSIVO_2T": {
                 "titulo": "Surgimento Massivo de Voto em Trânsito no 2T",
                 "explicacao": "A seção não possuía eleitores em trânsito no 1º turno e registrou um número expressivo de votos em trânsito no 2º turno.",
                 "por_que_suspeito": "Incompatível com o procedimento eleitoral padrão, pois a solicitação de voto em trânsito deve ser realizada com meses de antecedência e fixada para ambos os pleitos.",
                 "severidade": "MEDIA"
-            }},
-            "CHK024_SECAO_MINIMA_ANOMALA": {{
+            },
+            "CHK024_SECAO_MINIMA_ANOMALA": {
                 "titulo": "Seção Eleitoral com Eleitorado Mínimo Anômalo",
                 "explicacao": "A seção possui menos de 15 eleitores aptos registrados.",
                 "por_que_suspeito": "Seções com eleitorado residual tão baixo violam as normas de agregação do TSE e fragilizam o sigilo constitucional do voto.",
                 "severidade": "BAIXA"
-            }},
-            "CHK025_SECAO_HIPERTROFICA": {{
+            },
+            "CHK025_SECAO_HIPERTROFICA": {
                 "titulo": "Seção Eleitoral Hipertrófica (> 500 Aptos)",
                 "explicacao": "A seção possui mais de 500 eleitores aptos registrados.",
                 "por_que_suspeito": "Seções hipertrofiadas causam filas excessivas e demandam ritmo de votação irrealista para viabilizar todos os votos dentro do horário legal.",
                 "severidade": "BAIXA"
-            }},
-            "CHK026_SECAO_SEM_APTOS": {{
+            },
+            "CHK026_SECAO_SEM_APTOS": {
                 "titulo": "Seção com Zero Eleitores Aptos Registrados",
                 "explicacao": "O Boletim de Urna registra zero eleitores aptos na seção.",
                 "por_que_suspeito": "Grave inconsistência cadastral. Uma seção em funcionamento não pode ter zero eleitores aptos.",
                 "severidade": "ALTA"
-            }},
-            "CHK027_OSCILACAO_APTOS_TOTAL_MAIOR_10PCT": {{
+            },
+            "CHK027_OSCILACAO_APTOS_TOTAL_MAIOR_10PCT": {
                 "titulo": "Oscilação de Aptos no Município Superior a 10%",
                 "explicacao": "A soma de eleitores aptos no município variou mais de 10% entre o 1º e 2º Turno.",
                 "por_que_suspeito": "O colégio eleitoral municipal é congelado antes do pleito. Oscilações gerais expressivas indicam anomalia cadastral ou importação indevida de dados.",
                 "severidade": "ALTA"
-            }},
-            "CHK028_DIVERGENCIA_APTOS_ENTRE_ELEICOES": {{
+            },
+            "CHK028_DIVERGENCIA_APTOS_ENTRE_ELEICOES": {
                 "titulo": "Divergência de Aptos entre Eleições no Mesmo BU",
                 "explicacao": "O total de eleitores aptos difere entre as diferentes eleições (Presidencial vs Estadual) registradas no mesmo Boletim de Urna.",
                 "por_que_suspeito": "O eleitorado da seção deve ser idêntico em todas as eleições do mesmo envelope, salvo regras estritas de voto em trânsito.",
                 "severidade": "ALTA"
-            }},
-            "CHK029_TRANSFERENCIA_TEMPORARIA_SUPERIOR_A_50PCT": {{
+            },
+            "CHK029_TRANSFERENCIA_TEMPORARIA_SUPERIOR_A_50PCT": {
                 "titulo": "Transferência Temporária de Eleitores Superior a 50%",
                 "explicacao": "Mais de 50% dos eleitores da seção são oriundos de transferência temporária (TTE).",
                 "por_que_suspeito": "Proporção desproporcional de eleitores voláteis que pode mascarar inserção de eleitores fora do domicílio eleitoral ordinário.",
                 "severidade": "MEDIA"
-            }},
-            "CHK030_ZONA_SECAO_FORA_PADRAO_CADASTRO": {{
+            },
+            "CHK030_ZONA_SECAO_FORA_PADRAO_CADASTRO": {
                 "titulo": "Numeração de Zona ou Seção Fora do Padrão Cadastral",
                 "explicacao": "A seção ou zona possui numeração atípica ou fora da faixa de seções ativas do município.",
                 "por_que_suspeito": "Pode indicar seção experimental, simulada ou criada fora do fluxo oficial de homologação do cartório.",
                 "severidade": "BAIXA"
-            }},
-            "CHK032_COMPARECIMENTO_EXCEDE_APTOS_1T": {{
+            },
+            "CHK032_COMPARECIMENTO_EXCEDE_APTOS_1T": {
                 "titulo": "Comparecimento no 1T Superior ao Total de Aptos",
                 "explicacao": "No 1º turno, o número de eleitores que compareceram superou a quantidade de eleitores aptos cadastrados.",
                 "por_que_suspeito": "Impossibilidade matemática direta que aponta para inconsistência de software ou inserção indevida de votos.",
                 "severidade": "ALTA"
-            }},
-            "CHK034_ABSTENCAO_SUPERIOR_50PCT_2T": {{
+            },
+            "CHK034_ABSTENCAO_SUPERIOR_50PCT_2T": {
                 "titulo": "Abstenção Elevada Superior a 50% no 2T",
                 "explicacao": "Mais da metade dos eleitores aptos da seção deixaram de votar no 2º turno.",
                 "por_que_suspeito": "Desvio estatístico expressivo em relação à média de abstenção histórica (cerca de 15% a 20%), podendo sinalizar contingências locais ou problemas de acesso.",
                 "severidade": "BAIXA"
-            }},
-            "CHK035_ABSTENCAO_SUPERIOR_70PCT_2T": {{
+            },
+            "CHK035_ABSTENCAO_SUPERIOR_70PCT_2T": {
                 "titulo": "Abstenção Crítica Extrema Superior a 70% no 2T",
                 "explicacao": "Mais de 70% dos eleitores faltaram à votação no 2º turno.",
                 "por_que_suspeito": "Anomalia severa de esvaziamento da seção que requer averiguação das condições de funcionamento da urna e do local de votação.",
                 "severidade": "MEDIA"
-            }},
-            "CHK038_COMPARECIMENTO_IDENTICO_COM_APTOS_DIFERENTES": {{
+            },
+            "CHK038_COMPARECIMENTO_IDENTICO_COM_APTOS_DIFERENTES": {
                 "titulo": "Comparecimento Idêntico com Quantidade Diferente de Aptos",
                 "explicacao": "A seção teve exatamente o mesmo número de votantes em ambos os turnos, apesar de o número de aptos ter mudado.",
                 "por_que_suspeito": "Coincidência estatística improvável que pode decorrer de preenchimento automatizado ou replicação de registros.",
                 "severidade": "BAIXA"
-            }},
-            "CHK039_COMPARECIMENTO_ZERO_2T": {{
+            },
+            "CHK039_COMPARECIMENTO_ZERO_2T": {
                 "titulo": "Comparecimento Zero no 2T (Seção Deserta)",
                 "explicacao": "Nenhum eleitor compareceu para votar na seção no 2º turno.",
                 "por_que_suspeito": "Seção fantasma ou urna não instalada que gerou arquivo de resultado sem votação.",
                 "severidade": "ALTA"
-            }},
-            "CHK040_COMPARECIMENTO_UNITARIO_2T": {{
+            },
+            "CHK040_COMPARECIMENTO_UNITARIO_2T": {
                 "titulo": "Comparecimento Unitário no 2T (Apenas 1 Votante)",
                 "explicacao": "Apenas um único eleitor votou em toda a seção durante todo o dia de eleição.",
                 "por_que_suspeito": "Quebra absoluta do sigilo constitucional do voto e atipicidade operacional extrema.",
                 "severidade": "ALTA"
-            }},
-            "CHK041_ABSTENCAO_ZERO_AMBOS_TURNOS": {{
+            },
+            "CHK041_ABSTENCAO_ZERO_AMBOS_TURNOS": {
                 "titulo": "Abstenção Zero (100% de Presença) em Ambos os Turnos",
                 "explicacao": "Todos os eleitores cadastrados compareceram para votar no 1º e no 2º Turno, sem nenhuma ausência.",
                 "por_que_suspeito": "Fenômeno estatisticamente quase impossível em populações reais, comum em fraudes de preenchimento manual.",
                 "severidade": "MEDIA"
-            }},
-            "CHK042_QUEDA_COMPARECIMENTO_MAIOR_30PCT": {{
+            },
+            "CHK042_QUEDA_COMPARECIMENTO_MAIOR_30PCT": {
                 "titulo": "Queda Abrupta de Comparecimento Superior a 30%",
                 "explicacao": "O comparecimento de eleitores desabou em mais de 30% do 1º para o 2º Turno.",
                 "por_que_suspeito": "Esvaziamento atípico que pode indicar desinformação, coação ou descarte de votos.",
                 "severidade": "MEDIA"
-            }},
-            "CHK043_EXPLOSAO_COMPARECIMENTO_MAIOR_40PCT": {{
+            },
+            "CHK043_EXPLOSAO_COMPARECIMENTO_MAIOR_40PCT": {
                 "titulo": "Explosão Abrupta de Comparecimento Superior a 40%",
                 "explicacao": "O comparecimento de votantes aumentou mais de 40% entre os dois turnos.",
                 "por_que_suspeito": "Inflação artificial de eleitores que exige cruzamento com a biometria para descartar votos de eleitores ausentes.",
                 "severidade": "ALTA"
-            }},
-            "CHK045_COMPARECIMENTO_PRESIDENCIAL_MENOR_QUE_CARGO_ESTADUAL": {{
+            },
+            "CHK045_COMPARECIMENTO_PRESIDENCIAL_MENOR_QUE_CARGO_ESTADUAL": {
                 "titulo": "Comparecimento Presidencial Menor que Estadual",
                 "explicacao": "Mais eleitores votaram para governador/cargo estadual do que para presidente na mesma urna.",
                 "por_que_suspeito": "O comparecimento deve ser comum à cabine de votação; discrepâncias apontam erro de totalização ou descarte parcial.",
                 "severidade": "ALTA"
-            }},
-            "CHK051_ZERO_VOTOS_FINALISTA_SECAO_GRANDE": {{
+            },
+            "CHK051_ZERO_VOTOS_FINALISTA_SECAO_GRANDE": {
                 "titulo": "Zero Votos para Candidato Finalista em Seção Relevante",
                 "explicacao": "Um dos dois candidatos finalistas obteve exatamente ZERO votos em seção com mais de 100 votantes.",
                 "por_que_suspeito": "Unanimidade absoluta que foge do padrão de pluralidade eleitoral e sugere coação local ou preenchimento viciado.",
                 "severidade": "ALTA"
-            }},
-            "CHK057_INVERSAO_ABRUPTA_SWING_MAIOR_40PP": {{
+            },
+            "CHK057_INVERSAO_ABRUPTA_SWING_MAIOR_40PP": {
                 "titulo": "Inversão Abrupta de Liderança com Swing > 40 pp",
                 "explicacao": "O candidato que venceu amplamente a seção no 1º turno foi derrotado com diferença superior a 40 pontos percentuais no 2º turno.",
                 "por_que_suspeito": "Virada política extrema que contraria a inércia eleitoral consolidada, requerendo checagem da transferência de votos.",
                 "severidade": "MEDIA"
-            }},
-            "CHK060_FINALISTA_COM_VOTACAO_MENOR_QUE_BRANCOS_E_NULOS": {{
+            },
+            "CHK060_FINALISTA_COM_VOTACAO_MENOR_QUE_BRANCOS_E_NULOS": {
                 "titulo": "Votação do Finalista Menor que Brancos e Nulos",
                 "explicacao": "O candidato obteve menos votos do que a soma de votos inválidos na seção.",
                 "por_que_suspeito": "Atipicidade grave de rejeição que diverge do comportamento médio das seções vizinhas.",
                 "severidade": "MEDIA"
-            }},
-            "CHK061_VOTOS_VALIDOS_ZERO_NO_2T": {{
+            },
+            "CHK061_VOTOS_VALIDOS_ZERO_NO_2T": {
                 "titulo": "Zero Votos Válidos no 2T (100% Brancos e Nulos)",
                 "explicacao": "Nenhum voto válido foi registrado para nenhum dos finalistas no 2º turno.",
                 "por_que_suspeito": "Urna com resultado totalmente nulo, indicando protesto massivo ou falha crítica no software de contagem.",
                 "severidade": "ALTA"
-            }},
-            "CHK063_AMBOS_FINALISTAS_PERDERAM_VOTOS_COM_MAIOR_COMPARECIMENTO": {{
+            },
+            "CHK063_AMBOS_FINALISTAS_PERDERAM_VOTOS_COM_MAIOR_COMPARECIMENTO": {
                 "titulo": "Ambos os Finalistas Perderam Votos com Comparecimento Maior",
                 "explicacao": "O comparecimento geral subiu, mas a votação nominal de ambos os finalistas caiu simultaneamente.",
                 "por_que_suspeito": "Anomalia de conservação de votos: o aumento de presença foi integralmente desviado para brancos/nulos.",
                 "severidade": "ALTA"
-            }},
-            "CHK064_CONCENTRACAO_DE_VOTOS_SUPERIOR_A_95PCT": {{
+            },
+            "CHK064_CONCENTRACAO_DE_VOTOS_SUPERIOR_A_95PCT": {
                 "titulo": "Concentração Hiper-Unânime Superior a 95% para um Candidato",
                 "explicacao": "Um único candidato obteve mais de 95% de todos os votos válidos em seção com grande comparecimento.",
                 "por_que_suspeito": "Quase unanimidade que demanda conferência das assinaturas no caderno de votação para descartar voto manobrado.",
                 "severidade": "ALTA"
-            }},
-            "CHK065_VOTOS_NOMINAIS_SUPERIORES_AO_COMPARECIMENTO": {{
+            },
+            "CHK065_VOTOS_NOMINAIS_SUPERIORES_AO_COMPARECIMENTO": {
                 "titulo": "Soma de Votos Nominais Superior ao Comparecimento",
                 "explicacao": "A quantidade de votos para candidatos somou mais do que o total de eleitores que compareceram à urna.",
                 "por_que_suspeito": "Falha matemática direta e corrupção nos registros do Boletim de Urna.",
                 "severidade": "ALTA"
-            }},
-            "CHK071_EXPLOSAO_SEM_BIOMETRIA_MAIOR_30PP": {{
+            },
+            "CHK071_EXPLOSAO_SEM_BIOMETRIA_MAIOR_30PP": {
                 "titulo": "Salto Abrupto de Eleitores sem Biometria Superior a 30 pp",
                 "explicacao": "A proporção de eleitores liberados sem biometria aumentou em mais de 30 pontos percentuais no 2º turno.",
                 "por_que_suspeito": "Queda inexplicável na precisão do leitor biométrico que abriu brecha para digitação manual do ano de nascimento pelo mesário.",
                 "severidade": "ALTA"
-            }},
-            "CHK073_BIOMETRIA_100PCT_COM_HABILITACAO_MANUAL_ZERO": {{
+            },
+            "CHK073_BIOMETRIA_100PCT_COM_HABILITACAO_MANUAL_ZERO": {
                 "titulo": "100% de Biometria Perfeita sem Habilitação Manual",
                 "explicacao": "Todos os votantes da seção foram validados na digital na primeira tentativa, sem nenhuma exceção manual.",
                 "por_que_suspeito": "Perfeição biométrica atípica em seções de grande porte com eleitores idosos ou com desgastes nas digitais.",
                 "severidade": "INFO"
-            }},
-            "CHK074_BIOMETRIA_SUPERIOR_AOS_APTOS": {{
+            },
+            "CHK074_BIOMETRIA_SUPERIOR_AOS_APTOS": {
                 "titulo": "Validações Biométricas Superam o Total de Aptos",
                 "explicacao": "O número de eleitores com digital reconhecida superou o total de aptos cadastrados.",
                 "por_que_suspeito": "Contagem duplicada ou inconsistência grave nos contadores internos da urna.",
                 "severidade": "ALTA"
-            }},
-            "CHK075_CORRELACAO_BIOGRAFICA_E_VOTO_UNANIME": {{
+            },
+            "CHK075_CORRELACAO_BIOGRAFICA_E_VOTO_UNANIME": {
                 "titulo": "Liberação Manual Correlacionada a Voto Unânime",
                 "explicacao": "Seção com alto índice de liberação manual pelo mesário apresentou votação esmagadora para um único concorrente.",
                 "por_que_suspeito": "Forte indicativo forense de que votos de eleitores ausentes foram inseridos manualmente com a senha do mesário.",
                 "severidade": "ALTA"
-            }},
-            "CHK080_ENCERRAMENTO_MADRUGADA_2T": {{
+            },
+            "CHK080_ENCERRAMENTO_MADRUGADA_2T": {
                 "titulo": "Encerramento da Votação na Madrugada do Dia Seguinte",
                 "explicacao": "A votação foi encerrada após as 00:00 da segunda-feira pós-eleição.",
                 "por_que_suspeito": "Atraso operacional extremo que expõe a urna a riscos de custódia fora do horário regulamentar.",
                 "severidade": "ALTA"
-            }},
-            "CHK081_DURACAO_VOTACAO_INFERIOR_A_4_HORAS": {{
+            },
+            "CHK081_DURACAO_VOTACAO_INFERIOR_A_4_HORAS": {
                 "titulo": "Votação Encerrada Prematuramente em Menos de 4 Horas",
                 "explicacao": "A urna foi encerrada antes das 12:00, funcionando por menos de metade do período regulamentar.",
                 "por_que_suspeito": "Interrupção indevida do pleito que impediu eleitores de exercerem o voto à tarde.",
                 "severidade": "ALTA"
-            }},
-            "CHK082_DURACAO_2T_SUPERIOR_AO_1T_EM_MAIS_DE_60MIN": {{
+            },
+            "CHK082_DURACAO_2T_SUPERIOR_AO_1T_EM_MAIS_DE_60MIN": {
                 "titulo": "Duração da Votação no 2T Muito Superior ao 1T",
                 "explicacao": "A votação no 2T durou mais de uma hora a mais que no 1T, apesar de haver apenas 1 ou 2 cargos para votar.",
                 "por_que_suspeito": "Como a votação no 2T é muito mais rápida por ter menos cargos, um tempo maior indica filas anômalas ou lentidão técnica.",
                 "severidade": "MEDIA"
-            }},
-            "CHK085_HORARIO_ABERTURA_DIVERGENTE_MAIOR_60MIN": {{
+            },
+            "CHK085_HORARIO_ABERTURA_DIVERGENTE_MAIOR_60MIN": {
                 "titulo": "Horário de Abertura Divergente em Mais de 60 Minutos",
                 "explicacao": "A urna foi aberta com mais de 1 hora de atraso em relação ao 1º turno.",
                 "por_que_suspeito": "Atrasos expressivos na inicialização da seção geram descarte de eleitores matutinos.",
                 "severidade": "BAIXA"
-            }},
-            "CHK087_BRANCOS_NULOS_SUPERIOR_A_30PCT": {{
+            },
+            "CHK087_BRANCOS_NULOS_SUPERIOR_A_30PCT": {
                 "titulo": "Volume Anômalo de Brancos e Nulos Superior a 30%",
                 "explicacao": "Mais de 30% dos eleitores presentes na seção anularam ou votaram em branco no 2º turno.",
                 "por_que_suspeito": "Desvio atípico para eleição polarizada de 2º turno, devendo ser investigada anomalia no teclado ou visor da urna.",
                 "severidade": "MEDIA"
-            }},
-            "CHK089_QUEDA_BRANCOS_NULOS_MAIOR_20PP": {{
+            },
+            "CHK089_QUEDA_BRANCOS_NULOS_MAIOR_20PP": {
                 "titulo": "Queda Drástica de Votos Inválidos Superior a 20 pp",
                 "explicacao": "A taxa de brancos e nulos caiu mais de 20 pontos percentuais entre o 1º e o 2º Turno.",
                 "por_que_suspeito": "Canalização incomum de eleitores nulos diretamente para voto nominal que deve ser acompanhada.",
                 "severidade": "MEDIA"
-            }},
-            "CHK090_NULOS_SUPERIORES_A_BRANCOS_EM_10X": {{
+            },
+            "CHK090_NULOS_SUPERIORES_A_BRANCOS_EM_10X": {
                 "titulo": "Votos Nulos Superam Brancos em Mais de 10 Vezes",
                 "explicacao": "A quantidade de votos nulos foi dez vezes maior que a de votos em branco.",
                 "por_que_suspeito": "Desproporção acentuada entre votos inválidos que pode apontar para digitação massiva de números incorretos ou erro de guia.",
                 "severidade": "BAIXA"
-            }},
-            "CHK091_BRANCOS_SUPERIORES_A_NULOS_EM_10X": {{
+            },
+            "CHK091_BRANCOS_SUPERIORES_A_NULOS_EM_10X": {
                 "titulo": "Votos Brancos Superam Nulos em Mais de 10 Vezes",
                 "explicacao": "A quantidade de votos em branco foi dez vezes maior que a de votos nulos.",
                 "por_que_suspeito": "Comportamento atípico de eleitorado que prefere o voto em branco direto em relação à anulação.",
                 "severidade": "BAIXA"
-            }},
-            "CHK092_100PCT_VOTOS_INVALIDOS_NO_2T": {{
+            },
+            "CHK092_100PCT_VOTOS_INVALIDOS_NO_2T": {
                 "titulo": "100% de Votos Inválidos no 2T",
                 "explicacao": "Todos os votos depositados na urna foram nulos ou brancos.",
                 "por_que_suspeito": "Nulidade integral do resultado da seção eleitoral.",
                 "severidade": "ALTA"
-            }},
-            "CHK094_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_1T": {{
+            },
+            "CHK094_DIVERGENCIA_SOMA_VOTOS_E_COMPARECIMENTO_1T": {
                 "titulo": "Divergência entre Soma de Votos e Comparecimento no 1T",
                 "explicacao": "A soma matemática dos votos nominais, brancos e nulos não fecha com o comparecimento registrado no 1T.",
                 "por_que_suspeito": "Erro aritmético interno no Boletim de Urna do 1º turno.",
                 "severidade": "ALTA"
-            }},
-            "CHK095_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_1T": {{
+            },
+            "CHK095_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_1T": {
                 "titulo": "Seção Eleitoral Presente Apenas no 1T",
                 "explicacao": "A seção funcionou no 1º turno, mas seu Boletim de Urna não consta nos arquivos do 2º turno.",
                 "por_que_suspeito": "Sumiço de urna ou agregação de seção não documentada entre turnos.",
                 "severidade": "ALTA"
-            }},
-            "CHK096_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_2T": {{
+            },
+            "CHK096_SECAO_DESEMPARELHADA_PRESENTE_APENAS_NO_2T": {
                 "titulo": "Seção Eleitoral Presente Apenas no 2T",
                 "explicacao": "A seção não constava no 1º turno e surgiu apenas no pacote de arquivos do 2º turno.",
                 "por_que_suspeito": "Surgimento de seção nova ou mudança de identificação zonal sem histórico pregresso.",
                 "severidade": "ALTA"
-            }},
-            "CHK097_TOTAL_VOTOS_CARGO_NAO_E_MULTIPLO_COMPARECIMENTO": {{
+            },
+            "CHK097_TOTAL_VOTOS_CARGO_NAO_E_MULTIPLO_COMPARECIMENTO": {
                 "titulo": "Total de Votos do Cargo Não Fecha com Comparecimento",
                 "explicacao": "Em cargos proporcionais ou majoritários, a quantidade de votos por eleitor divergiu do permitido por lei.",
                 "por_que_suspeito": "Violação das regras eleitorais de quantidade de votos por eleitor.",
                 "severidade": "ALTA"
-            }},
-            "CHK099_FALHA_CADEIA_HASH_SHA512_1T": {{
+            },
+            "CHK099_FALHA_CADEIA_HASH_SHA512_1T": {
                 "titulo": "Falha na Cadeia Interna de Hashes SHA-512 do 1T",
                 "explicacao": "A assinatura interna em cadeia do Boletim de Urna do 1º turno não conferiu com o recálculo dos votos.",
                 "por_que_suspeito": "Corrupção ou alteração de dados no arquivo do Boletim de Urna do 1º turno.",
                 "severidade": "ALTA"
-            }},
-        }};
-
-        
-        function getFraudScoreBadge(s) {{
-            const fScore = s.fraud_score !== undefined ? s.fraud_score : (calculateSectionFraudScore(s, s.anomalias).score);
-            if (fScore >= 80) {{
-                return `<span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
-            }} else if (fScore >= 50) {{
-                return `<span class="badge" style="background:#ffedd5; color:#c2410c; border:1px solid #fed7aa; font-weight:800; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
-            }} else if (fScore >= 20) {{
-                return `<span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-weight:700; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
-            }} else {{
-                return `<span class="badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; font-family:ui-monospace,monospace;">${{fScore}}%</span>`;
-            }}
-        }}
-
-        function getSeverityBadge(sev) {{
-            if (sev === 'ALTA') return '<span class="badge badge-red">ALTA</span>';
-            if (sev === 'MEDIA') return '<span class="badge badge-yellow">MÉDIA</span>';
-            if (sev === 'BAIXA') return '<span class="badge badge-blue">BAIXA</span>';
-            return '<span class="text-xs text-slate-500">' + sev + '</span>';
-        }}
-
-        function getSectionValue(s, column) {{
-            const d1 = s.dados_1t || {{}};
-            const d2 = s.dados_2t || {{}};
-            const p1 = d1.votos_presidenciais || {{}};
-            const p2 = d2.votos_presidenciais || {{}};
-
-            switch(column) {{
-                case 'fraud_score': return s.fraud_score !== undefined ? s.fraud_score : calculateSectionFraudScore(s, s.anomalias).score;
-                case 'municipio': return (s.municipio_nome || '').toLowerCase();
-                case 'zona': return s.zona || 0;
-                case 'secao': return s.secao || 0;
-                case 'aptos': return d2.aptos || 0;
-                case 'severidade': return SEV_WEIGHTS[s.worst_severity] || 0;
-                case 'comparecimento': return d2.comparecimento || 0;
-                case 'biometria': return d2.biometria_sim || 0;
-                case 'sem_biometria': return (d2.biometria_bio || 0) + (d2.biometria_nao || 0);
-                case 'flavio': return (p2['22'] || 0) - (p1['22'] || 0);
-                case 'lula': return (p2['13'] || 0) - (p1['13'] || 0);
-                case 'terceira_via': return d1.total_terceira_via || 0;
-                default: return 0;
-            }}
-        }}
-
-        function sortByColumn(column) {{
-            if (currentSort.column === column) {{
-                currentSort.order = currentSort.order === 'asc' ? 'desc' : 'asc';
-            }} else {{
-                currentSort.column = column;
-                currentSort.order = 'desc';
-            }}
-            applyFilters();
-        }}
-
-        function applySortDropdown() {{
-            const val = document.getElementById('sortSelect').value;
-            if (val === 'fraud_desc') currentSort = {{ column: 'fraud_score', order: 'desc' }};
-            if (val === 'fraud_asc') currentSort = {{ column: 'fraud_score', order: 'asc' }};
-            if (val === 'sev_desc') currentSort = {{ column: 'severidade', order: 'desc' }};
-            if (val === 'sev_asc') currentSort = {{ column: 'severidade', order: 'asc' }};
-            if (val === 'mun_asc') currentSort = {{ column: 'municipio', order: 'asc' }};
-            if (val === 'comp_delta_desc') currentSort = {{ column: 'comparecimento', order: 'desc' }};
-            if (val === 'comp_delta_asc') currentSort = {{ column: 'comparecimento', order: 'asc' }};
-            if (val === 'flavio_drop_desc') currentSort = {{ column: 'flavio', order: 'asc' }};
-            if (val === 'lula_drop_desc') currentSort = {{ column: 'lula', order: 'asc' }};
-            if (val === 't3_desc') currentSort = {{ column: 'terceira_via', order: 'desc' }};
-            if (val === 'bio_drop_desc') currentSort = {{ column: 'biometria', order: 'asc' }};
-            applyFilters();
-        }}
-
-        function applyFilters() {{
-            const search = document.getElementById('searchInput').value.toLowerCase().trim();
-            const sevFilter = document.getElementById('severitySelect').value;
-            const anomFilter = document.getElementById('anomalySelect').value;
-
-            let filtered = allSections.filter(s => {{
-                if (sevFilter !== 'ALL' && s.worst_severity !== sevFilter) return false;
-                if (anomFilter !== 'ALL' && !s.anomalias.some(a => a.code === anomFilter)) return false;
-
-                if (search) {{
-                    const mun = (s.municipio_nome || '').toLowerCase();
-                    const munCode = String(s.municipio || '');
-                    const zona = String(s.zona || '');
-                    const secao = String(s.secao || '');
-                    const hasAnom = s.anomalias.some(a => a.code.toLowerCase().includes(search) || (a.title || '').toLowerCase().includes(search));
-                    if (!mun.includes(search) && !munCode.includes(search) && !zona.includes(search) && !secao.includes(search) && !hasAnom) {{
-                        return false;
-                    }}
-                }}
-                return true;
-            }});
-
-            filtered.sort((a, b) => {{
-                const valA = getSectionValue(a, currentSort.column);
-                const valB = getSectionValue(b, currentSort.column);
-                if (valA < valB) return currentSort.order === 'asc' ? -1 : 1;
-                if (valA > valB) return currentSort.order === 'asc' ? 1 : -1;
-                return 0;
-            }});
-
-            currentFilteredSections = filtered;
-            const tbody = document.getElementById('tableBody');
-            const limit = Math.min(filtered.length, 300);
-            let html = '';
-
-            for (let i = 0; i < limit; i++) {{
-                const s = filtered[i];
-                const d1 = s.dados_1t || {{}};
-                const d2 = s.dados_2t || {{}};
-                const p1 = d1.votos_presidenciais || {{}};
-                const p2 = d2.votos_presidenciais || {{}};
-
-                const apt1 = d1.aptos || 0;
-                const apt2 = d2.aptos || 0;
-                const aptClass = apt1 !== apt2 ? 'text-amber-700 font-bold' : 'text-slate-600';
-
-                const c1 = d1.comparecimento || 0;
-                const c2 = d2.comparecimento || 0;
-
-                const bio1 = d1.biometria_sim || 0;
-                const bio2 = d2.biometria_sim || 0;
-
-                const sem1 = (d1.biometria_bio || 0) + (d1.biometria_nao || 0);
-                const sem2 = (d2.biometria_bio || 0) + (d2.biometria_nao || 0);
-
-                const v1_22 = p1['22'] || 0;
-                const v2_22 = p2['22'] || 0;
-                const d_22 = v2_22 - v1_22;
-                const cl_22 = d_22 > 0 ? 'text-emerald-700' : (d_22 < 0 ? 'text-rose-700 font-bold' : 'text-slate-600');
-
-                const v1_13 = p1['13'] || 0;
-                const v2_13 = p2['13'] || 0;
-                const d_13 = v2_13 - v1_13;
-                const cl_13 = d_13 > 0 ? 'text-emerald-700' : (d_13 < 0 ? 'text-rose-700 font-bold' : 'text-slate-600');
-
-                const t3 = d1.total_terceira_via || 0;
-
-                const badges = s.anomalias.map(a => 
-                    `<span class="badge badge-anom" onclick="openModal(${{i}})" style="cursor:pointer;" title="${{a.description || ''}} &bull; ${{a.title || ''}}">${{a.code}}</span>`
-                ).join(' ');
-
-                html += `
-                <tr class="transition-colors">
-                    <td class="col-fit t-left font-semibold text-slate-800">${{s.municipio_nome || 'Município ' + s.municipio}}</td>
-                    <td class="col-fit t-center font-mono text-slate-600">${{s.zona}}</td>
-                    <td class="col-fit t-center font-mono font-bold text-slate-900">${{s.secao}}</td>
-                    <td class="col-fit t-center font-mono ${{aptClass}}">${{apt1}} &rarr; <strong>${{apt2}}</strong></td>
-                    <td class="col-fit t-center">${{getSeverityBadge(s.worst_severity)}}</td>
-                    <td class="col-fit t-center">${{getFraudScoreBadge(s)}}</td>
-                    <td class="col-fit t-center font-mono text-slate-800">${{c1}} &rarr; <strong>${{c2}}</strong></td>
-                    <td class="col-fit t-center font-mono text-slate-700">${{bio1}} &rarr; <strong>${{bio2}}</strong></td>
-                    <td class="col-fit t-center font-mono text-slate-700">${{sem1}} &rarr; <strong>${{sem2}}</strong></td>
-                    <td class="col-fit t-right font-mono ${{cl_22}}">${{v1_22}} &rarr; <strong>${{v2_22}}</strong> <span class="text-[10px]">(${{d_22 >= 0 ? '+' : ''}}${{d_22}})</span></td>
-                    <td class="col-fit t-right font-mono ${{cl_13}}">${{v1_13}} &rarr; <strong>${{v2_13}}</strong> <span class="text-[10px]">(${{d_13 >= 0 ? '+' : ''}}${{d_13}})</span></td>
-                    <td class="col-fit t-center font-mono font-semibold text-slate-700">${{t3}}</td>
-                    <td class="col-grow t-left" style="line-height: 1.45;">${{badges}}</td>
-                    <td class="col-fit t-center">
-                        <button onclick="openModal(${{i}})" class="btn-inspect">🔍 Detalhes</button>
-                    </td>
-                </tr>`;
-            }}
-
-            tbody.innerHTML = html;
-            document.getElementById('filterCount').textContent = `Exibindo ${{limit}} de ${{filtered.length}} seções encontradas nos filtros (ordenadas por ${{currentSort.column}} ${{currentSort.order}}).`;
-        }}
+            },
+        };
 
         function switchState(state) {
             activeState = state;

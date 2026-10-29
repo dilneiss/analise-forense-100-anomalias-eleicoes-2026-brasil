@@ -403,9 +403,8 @@ from urna_forense.comparison import generate_comparison_html
 import re
 comp_source = Path("src/urna_forense/comparison.py").read_text(encoding="utf-8")
 idx_g_start = comp_source.find("const GLOSSARY_DATA = {")
-idx_g_end = comp_source.find("function calculateSectionFraudScore", idx_g_start)
-glossary_js = comp_source[idx_g_start:idx_g_end].strip() if idx_g_start != -1 and idx_g_end != -1 else "const GLOSSARY_DATA = {};"
-
+idx_close = comp_source.find("}};\n", idx_g_start)
+glossary_js = comp_source[idx_g_start:idx_close+3].replace("{{", "{").replace("}}", "}") if idx_g_start != -1 and idx_close != -1 else "const GLOSSARY_DATA = {};"
 HTML_TEMPLATE = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
