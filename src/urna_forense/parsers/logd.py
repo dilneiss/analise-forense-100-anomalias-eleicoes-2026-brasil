@@ -392,8 +392,8 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
             current_mesario_id = m_hab.group(1)
             current_hab_type = "MANUAL"
 
-        # 3. Urna pronta para receber votos
-        if e.category == "VOTE.READY" and e.timestamp:
+        # 3. Urna liberada para o eleitor votar na cabine
+        if (msg == "Eleitor foi habilitado" or e.category == "VOTE.READY") and e.timestamp:
             ready_time = e.timestamp
             if prev_vote_time:
                 diff_troca = (ready_time - prev_vote_time).total_seconds()

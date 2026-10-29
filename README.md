@@ -334,6 +334,31 @@ Confrontando o resultado das urnas com as principais pesquisas de intenção de 
 #### Onde as Pesquisas Falharam Flagrantemente (Os Desvios Regionais):
 1. **São Paulo:** Todas as pesquisas projetavam vitória de Flávio por 6 a 8 pontos percentuais. Nas urnas, Flávio teve uma vitória avassaladora por **10,4 pontos de vantagem (+2.019.904 votos!)**, superando amplamente o teto das pesquisas.
 2. **Minas Gerais:** As pesquisas presenciais de véspera apontavam **vitória de Flávio em Minas Gerais por 3 a 4 pontos**, confirmando a liderança de +588 mil votos do 1T. A virada de última hora de Lula por meros 109 mil votos decorreu exatamente do bolsão de 5.630 urnas que apresentaram desvios técnicos de biometria e a anomalia CHK046.
+### 6.12 Análise de Cadência: Votação em Curto Período de Tempo e Denúncias de "Votação Automática"
+
+Um dos pontos mais sensíveis da investigação pericial diz respeito às denúncias de que urnas estariam **"votando sozinhas / automaticamente"** ou registrando votos em intervalos inumanamente curtos.
+
+A auditoria científica dos eventos registrados no log oficial da urna (`logd.dat`) decompõe esse fenômeno em seus elementos materiais:
+
+#### 1. A Física da Votação Humana vs Votação em Esteira
+No log da urna, o ciclo de cada eleitor é demarcado por dois eventos obrigatórios:  
+`Eleitor foi habilitado` (o terminal do mesário libera a tela da urna) &rarr; `O voto do eleitor foi computado` (`VOTE.COMPUTED`).
+
+| Faixa de Duração na Cabine | Tempo em Segundos | Caracterização Pericial | Ocorrência Típica |
+|---|:---:|---|---|
+| **Votação Relâmpago / Suspeita** | **< 10 segundos** | **Ritmo Inumano / Robótico:** Tempo estrito para teclar números e confirmar sem ler a tela ou hesitar. | Operador da mesa votando em esteira no lugar de faltosos. |
+| **Votação Rápida** | **10s a 20 segundos** | **Eleitor Muito Ágil:** Cidadão jovem e decidido, com número memorizado. | Votação uninominal de 2º turno (apenas 2 dígitos de presidente). |
+| **Votação Normal** | **20s a 50 segundos** | **Padrão Médio do Eleitor:** Caminhar até a cabine, ouvir bipes sonoros, conferir a foto do candidato e confirmar. | Média consolidada do eleitorado brasileiro (~46 segundos). |
+| **Votação Lenta** | **> 50 segundos** | **Dificuldade de Manuseio:** Eleitores idosos, com visão reduzida ou dificuldade motora. | Comum em seções rurais e asilos. |
+
+#### 2. O Mito da "Urna Votando Sozinha" vs A Realidade do "Operador em Esteira"
+- **A Urna pode votar sozinha via internet? NÃO.** As urnas eletrônicas brasileiras são isoladas de qualquer conexão de rede ou internet durante a votação (*air-gapped*). Não existe injeção remota de votos via script externo pela rede.
+- **O que REALMENTE gera a denúncia de "votação automática"?**
+  1. **Operação Contínua pelo Mesário:** Quando mesários dispõem de cadernos de votação com títulos e datas de nascimento de eleitores ausentes, eles sentam no terminal e operam o sistema em **esteira contínua** (digita título &rarr; força 4 falhas de biometria em 3 segundos &rarr; digita ano de nascimento &rarr; aperta os botões na cabine em 4 segundos &rarr; computa voto &rarr; repete com o próximo ausente).
+  2. **Intervalo entre Eleitores (Tempo de Troca):** Em uma seção real, um eleitor leva de 15 a 30 segundos para sair da cabine, passar pela porta, e o próximo cidadão entrar e se identificar. Quando o log registra **intervalos de troca de apenas 2 a 4 segundos** entre dezenas de votos consecutivos, **comprova-se que não houve circulação física de pessoas**, mas sim uma única pessoa operando o equipamento em lote.
+  3. **Falhas Físicas de Teclado:** Eventos de `VOTE.ERROR` no log evidenciam urnas com teclas de confirmação presas ou ruído eletrônico no teclado matricial que geraram disparos múltiplos.
+
+---
 
 ## 7. Painel Interativo HTML Nacional e Mapa do Brasil
 
