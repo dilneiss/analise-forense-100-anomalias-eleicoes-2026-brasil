@@ -278,11 +278,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 6px;
-            max-width: 620px;
+            width: 100%;
+            max-width: 580px;
             margin: 0 auto;
         }
         .map-cell {
-            aspect-ratio: 1;
+            min-height: 52px;
+            height: 56px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
@@ -291,8 +293,17 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             cursor: pointer;
             transition: all 0.16s ease;
             position: relative;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
             user-select: none;
+            box-sizing: border-box;
+        }
+        .map-cell-empty {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            cursor: default !important;
+            min-height: 52px;
+            height: 56px;
         }
         .map-cell:hover {
             transform: scale(1.08);
@@ -562,7 +573,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
                     <!-- GRADE GEOGRÁFICA DO MAPA DO BRASIL (CADA ESTADO RIGOROSAMENTE 1X) -->
                     <div style="padding: 0.75rem 0;">
-                        <div class="map-grid" id="mapGrid"></div>
+                        <div class="map-grid" id="mapGrid">__MAP_GRID_HTML__</div>
                     </div>
 
                     <div style="font-size: 0.72rem; color: #64748b; text-align: center; border-top: 1px solid #f1f5f9; padding-top: 0.4rem;">
@@ -669,7 +680,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                             <th class="col-fit t-right" onclick="sortTable('chk046')">CHK046</th>
                         </tr>
                     </thead>
-                    <tbody id="nationalTableBody"></tbody>
+                    <tbody id="nationalTableBody">__NATIONAL_TABLE_ROWS__</tbody>
                 </table>
             </div>
         </div>
@@ -957,42 +968,32 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             }
         }
 
-        function selectState(uf) {
+        function previewState(uf) {
             selectedUf = uf;
             const s = STATES_DATA[uf];
             if (!s) return;
-
             document.querySelectorAll('.map-cell').forEach(c => c.classList.remove('active'));
             const activeCell = document.getElementById('cell_' + uf);
             if (activeCell) activeCell.classList.add('active');
-
             document.getElementById('detailUfBadge').textContent = `${s.nome.toUpperCase()} • ${uf}`;
             document.getElementById('detailStateName').textContent = s.nome;
             document.getElementById('detailSecCount').textContent = `${s.total_secoes.toLocaleString('pt-BR')} seções auditadas • ${(s.total_secoes * 2).toLocaleString('pt-BR')} BUs decodificados`;
-            
             const isFlavio = s.vencedor_2t === 'Flávio Bolsonaro';
-            document.getElementById('detailWinnerTag').innerHTML = `
-                <span class="badge ${isFlavio ? 'badge-green' : 'badge-red'}" style="font-size:11px; padding:3px 8px;">
-                    Vencedor: ${s.vencedor_2t} (+${s.margem_vitoria_2t.toLocaleString('pt-BR')})
-                </span>
-            `;
-
+            document.getElementById('detailWinnerTag').innerHTML = `<span class="badge ${isFlavio ? 'badge-green' : 'badge-red'}" style="font-size:11px; padding:3px 8px;">Vencedor: ${s.vencedor_2t} (+${s.margem_vitoria_2t.toLocaleString('pt-BR')})</span>`;
             document.getElementById('detailFraudPct').textContent = s.chance_fraude_pct + '%';
             document.getElementById('detailFraudLabel').textContent = s.chance_fraude_pct >= 80 ? 'ALTÍSSIMA PROBABILIDADE DE ADULTERAÇÃO' : (s.chance_fraude_pct >= 30 ? 'SUSPEIÇÃO MODERADA' : 'BAIXO RISCO NO VENCEDOR');
             document.getElementById('detailExcessVotes').textContent = '+' + s.votos_excedentes_lula.toLocaleString('pt-BR');
             document.getElementById('detailImpactText').innerHTML = s.veredito;
-
             document.getElementById('detailVotesFlavio').textContent = s.flavio_2t.toLocaleString('pt-BR');
             document.getElementById('detailVotesLula').textContent = s.lula_2t.toLocaleString('pt-BR');
             document.getElementById('detailBioNote').textContent = `Biometria: ${s.biometria_2t_nao.toLocaleString('pt-BR')} eleitores votaram sem digital no 2º turno (${(s.biometria_2t_nao / (s.comparecimento_2t || 1) * 100).toFixed(2)}%).`;
-
-            // Destacar linha na tabela da direita
             document.querySelectorAll('#nationalTableBody tr').forEach(r => r.style.background = '');
             const targetRow = document.getElementById('row_' + uf);
-            if (targetRow) {
-                targetRow.style.background = '#e0f2fe';
-            }
+            if (targetRow) targetRow.style.background = '#e0f2fe';
+        }
 
+        function selectState(uf) {
+            previewState(uf);
             // Sincronizar com o seletor do Explorador de Seções
             const ufSelect = document.getElementById('ufFilterSelect');
             if (ufSelect) {
@@ -1583,8 +1584,71 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 </html>
 """
 
+
+# Geração server-side do Mapa do Brasil em HTML puro
+MAP_LAYOUT_PY = [
+    ['',   '',   'RR', '',   'AP', '',   '',   'ZZ'],
+    ['',   'AM', 'PA', '',   'MA', 'PI', 'CE', 'RN'],
+    ['AC', 'RO', 'MT', 'TO', 'BA', 'PE', 'PB', ''],
+    ['',   '',   'GO', 'DF', '',   'AL', 'SE', ''],
+    ['',   'MS', 'MG', 'ES', '',   '',   '',   ''],
+    ['',   '',   'SP', 'RJ', '',   '',   '',   ''],
+    ['',   '',   'PR', '',   '',   '',   '',   ''],
+    ['',   '',   'SC', '',   '',   '',   '',   ''],
+    ['',   '',   'RS', '',   '',   '',   '',   '']
+]
+
+map_cells_html = []
+for r in range(len(MAP_LAYOUT_PY)):
+    for c in range(len(MAP_LAYOUT_PY[r])):
+        uf = MAP_LAYOUT_PY[r][c]
+        if not uf:
+            map_cells_html.append('<div class="map-cell map-cell-empty"></div>')
+            continue
+        s_data = states_dict.get(uf, {})
+        ch = s_data.get("chance_fraude_pct", 0)
+        bg = "#e11d48" if ch >= 80 else ("#f59e0b" if ch >= 30 else "#10b981")
+        exc = s_data.get("votos_excedentes_lula", 0)
+        exc_str = f"+{exc//1000}k" if exc >= 1000 else f"+{exc}"
+        active_cls = " active" if uf == "MG" else ""
+        map_cells_html.append(f'''<div class="map-cell{active_cls}" id="cell_{uf}" style="background-color: {bg}; color: #ffffff;" onclick="selectState('{uf}')" onmouseover="previewState('{uf}')">
+            <div class="map-cell-uf">{uf}</div>
+            <div class="map-cell-val">{exc_str}</div>
+        </div>''')
+
+map_grid_pre_rendered = "\n".join(map_cells_html)
+
+# Geração server-side das 28 linhas da Tabela Comparativa Nacional
+table_rows_html = []
+for s in states_list:
+    is_flavio = (s["vencedor_2t"] == "Flávio Bolsonaro")
+    w_class = "badge-green" if is_flavio else "badge-red"
+    winner_badge = f'<span class="badge {w_class}">{s["vencedor_2t"]}</span>'
+    ch = s["chance_fraude_pct"]
+    if ch >= 80: ch_badge = f'<span class="badge badge-red" style="font-weight:900;">{ch}%</span>'
+    elif ch >= 30: ch_badge = f'<span class="badge badge-yellow">{ch}%</span>'
+    else: ch_badge = f'<span class="badge badge-green">{ch}%</span>'
+    row_bg = "background: #e0f2fe;" if s["uf"] == "MG" else ""
+    table_rows_html.append(f'''
+        <tr id="row_{s['uf']}" style="cursor:pointer; {row_bg}" onclick="selectState('{s['uf']}')" class="hover:bg-slate-50 transition-colors">
+            <td class="col-fit t-center font-mono font-bold">{s['uf']}</td>
+            <td class="col-grow t-left font-semibold text-slate-900">{s['nome']}</td>
+            <td class="col-fit t-center">{winner_badge}</td>
+            <td class="col-fit t-right font-mono font-bold">+{s['margem_vitoria_2t']:,}</td>
+            <td class="col-fit t-right font-mono font-bold" style="color:#b91c1c;">+{s['votos_excedentes_lula']:,}</td>
+            <td class="col-fit t-center">{ch_badge}</td>
+            <td class="col-fit t-right font-mono">{s['flavio_2t']:,}</td>
+            <td class="col-fit t-right font-mono font-bold text-slate-900">{s['lula_2t']:,}</td>
+            <td class="col-fit t-right font-mono text-slate-700">{s['biometria_2t_nao']:,}</td>
+            <td class="col-fit t-right font-mono text-slate-700">{s['chk046_secoes']:,}</td>
+        </tr>''')
+
+national_table_pre_rendered = "\n".join(table_rows_html)
+
 # Substituir marcadores
 replacements = {
+    "__MAP_GRID_HTML__": map_grid_pre_rendered,
+    "__NATIONAL_TABLE_ROWS__": national_table_pre_rendered,
     "__TOT_SECOES__": f"{tot_secoes:,}",
     "__COMP_2T__": f"{tot_comp_2t:,}",
     "__NOVOS_VOTANTES__": f"{tot_comp_2t - tot_comp_1t:,}",
