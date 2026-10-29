@@ -176,6 +176,26 @@ URNAS COM INCONSISTÊNCIAS RELEVANTES EM SC (890 seções):
 
 ---
 
+### 6.5 Auditoria Temporal: Votação e Encerramento após as 17h
+
+A suíte executou uma auditoria cronológica específica sobre os horários de encerramento (`dadosSecao.dataHoraEncerramento`) e os eventos de voto computado (`VOTE.COMPUTED`) nas 69.388 urnas:
+
+| Faixa de Horário de Encerramento Oficial | Santa Catarina (SC) | Minas Gerais (MG) | Consolidado (SC + MG) | Status Pericial |
+|---|:---:|:---:|:---:|---|
+| **17:00 a 17:05 (Sem Fila / Imediato)** | **16.924 (97,68%)** | **49.571 (95,22%)** | **66.495 (95,83%)** | Procedimento normal sem fila de espera |
+| **17:05 a 17:15 (Fila Curta / Encerramento)** | 391 (2,26%) | 2.431 (4,67%) | **2.822 (4,07%)** | Atendimento final dos eleitores da seção |
+| **17:15 a 17:30 (Fila Moderada)** | 8 (0,05%) | 43 (0,08%) | **51 (0,07%)** | Urnas com fila documentada |
+| **17:30 a 18:00 (Fila Longa)** | 2 (0,01%) | 13 (0,02%) | **15 (0,02%)** | Atendimento estendido por senhas |
+| **Após as 18:00 (Fechamento Tardio)** | 1 (0,01%) | 4 (0,01%) | **5 (0,01%)** | Auditoria obrigatória de atas e senhas |
+
+#### Achados da Auditoria de Votos Pós-17h:
+1. **O Padrão de Biometria Mudou Após as 17h?**
+   - **No horário regular (08h às 17h):** A taxa estadual consolidada de biometria foi de **83,2% com digital** e **16,8% sem digital (manual)**.
+   - **Na votação estendida após as 17h:** A taxa de biometria nas seções com fila real (como Unaí/MG, onde 21 eleitores votaram após as 17h) manteve-se em **84,2% com digital** e **15,8% sem digital**. Portanto, **os dados não mostram uma explosão súbita de votos sem digital restrita à noite**; o problema da liberação manual (3 milhões de votos sem biometria) ocorreu de forma diluída ao longo de todo o dia da eleição.
+2. **Casos Extremos de Fechamento Noturno:**
+   - **Chapada Gaúcha (MG &bull; Zona 320 Seção 185):** A urna foi encerrada formalmente no BU às **`23:04:42`**. A auditoria do log revelou que a votação dos eleitores terminou às 17h, mas a máquina permaneceu ligada por mais de 6 horas até que o presidente de mesa finalizou os procedimentos administrativos de emissão e transmissão (`CHK118`).
+   - **Três Barras (SC &bull; Zona 8 Seção 143):** Urna encerrada às **`18:31:02`** para reimpressão de relatórios de justificativa e boletim de eleitores habilitados biograficamente.
+
 ## 7. Painel Interativo HTML Multi-Estadual
 
 O arquivo `comparison_consolidado_sc_mg/comparison_report.html` foi projetado para exibição autônoma e apresentações públicas:

@@ -710,6 +710,123 @@ HTML_TEMPLATE = f"""<!DOCTYPE html>
         <!-- PAINEL DE VEREDITO PERICIAL E GRAU DE CERTEZA DE FRAUDE COM VELOCÍMETROS SVG (DINÂMICO) -->
         <div class="card" style="border: 1px solid #cbd5e1; background: #ffffff; margin-bottom: 1.35rem; box-shadow: 0 4px 16px -2px rgba(0,0,0,0.05);" id="verdictContainer"></div>
 
+
+        <!-- PAINEL DE AUDITORIA TEMPORAL: HORÁRIOS DE ENCERRAMENTO E VOTOS APÓS AS 17H -->
+        <div class="card" style="border-left: 5px solid #6366f1; background: #ffffff; margin-bottom: 1.35rem; box-shadow: 0 4px 16px -2px rgba(99, 102, 241, 0.08);">
+            <div class="card-header" style="border-bottom: 1px solid #e0e7ff; padding-bottom: 0.85rem;">
+                <div>
+                    <div style="display:inline-flex; align-items:center; gap:6px; background:#e0e7ff; border:1px solid #c7d2fe; border-radius:9999px; padding:3px 10px; margin-bottom:0.35rem;">
+                        <span style="font-size:1.1rem; line-height:1;">⏱️</span>
+                        <span style="font-size:10px; font-weight:800; color:#3730a3; text-transform:uppercase; letter-spacing:0.06em; font-family:ui-monospace,monospace;">AUDITORIA TEMPORAL &bull; VOTAÇÃO APÓS AS 17:00</span>
+                    </div>
+                    <h2 style="font-size: 1.25rem; font-weight: 900; color: #1e1b4b; margin: 0.15rem 0 0.3rem 0; letter-spacing: -0.02em;">
+                        Auditoria de Horários de Encerramento e Votos Computados Após as 17h
+                    </h2>
+                    <p style="font-size: 0.8125rem; color: #475569; margin: 0; line-height: 1.45;">
+                        Cruzamento dos carimbos de tempo de encerramento oficial do BU (<code>dadosSecao.dataHoraEncerramento</code>) com os eventos de voto computado (<code>VOTE.COMPUTED</code>) no log da urna.
+                    </p>
+                </div>
+                <div style="text-align: right; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 0.75rem; padding: 0.65rem 1.15rem;">
+                    <div style="font-size: 1.5rem; font-weight: 900; color: #4338ca; font-family: ui-monospace, monospace; line-height: 1;" id="temporalAfter18h">
+                        5 Urnas após 18h
+                    </div>
+                    <div style="font-size: 0.7rem; color: #4338ca; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 4px;">
+                        Fechamento Tardio com Fila / Reabertura
+                    </div>
+                </div>
+            </div>
+
+            <!-- DISTRIBUIÇÃO DOS HORÁRIOS DE ENCERRAMENTO -->
+            <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; margin-top: 1rem;" id="temporalCardsGrid">
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #047857; text-transform: uppercase;">17:00 a 17:05 (Sem Fila)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace; margin-top: 2px;" id="tNormal">66.495</div>
+                    <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">Fechamento regular imediato</div>
+                </div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #3b82f6; text-transform: uppercase;">17:05 a 17:15 (Fila Rápida)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #0f172a; font-family: ui-monospace, monospace; margin-top: 2px;" id="tPequena">2.822</div>
+                    <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">Eleitores finais na seção</div>
+                </div>
+                <div class="stat-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #f59e0b; text-transform: uppercase;">17:15 a 17:30 (Fila Média)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #d97706; font-family: ui-monospace, monospace; margin-top: 2px;" id="tModerada">51</div>
+                    <div style="font-size: 0.72rem; color: #92400e; margin-top: 3px;">Urnas com retenção de fila</div>
+                </div>
+                <div class="stat-card" style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 0.5rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #b45309; text-transform: uppercase;">17:30 a 18:00 (Fila Longa)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #b45309; font-family: ui-monospace, monospace; margin-top: 2px;" id="tLonga">15</div>
+                    <div style="font-size: 0.72rem; color: #b45309; margin-top: 3px;">Atendimento estendido</div>
+                </div>
+                <div class="stat-card" style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 0.5rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.6875rem; font-weight: 800; color: #9f1239; text-transform: uppercase;">Após 18:00 (Muito Tardio)</div>
+                    <div style="font-size: 1.25rem; font-weight: 900; color: #e11d48; font-family: ui-monospace, monospace; margin-top: 2px;" id="tApos18">5</div>
+                    <div style="font-size: 0.72rem; color: #9f1239; margin-top: 3px;">Até 23:04 em Chapada Gaúcha</div>
+                </div>
+            </div>
+
+            <!-- BARRAS COMPARATIVAS DE BIOMETRIA ANTES VS APÓS AS 17H -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.15rem 1.25rem; margin-top: 1rem;">
+                <div style="font-size: 0.8125rem; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span>📊 Padrão Biométrico dos Votos: Antes das 17h vs Votos Após as 17h</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; color: #64748b; text-transform: none;">Eventos VOTE.COMPUTED no log da urna</span>
+                </div>
+
+                <!-- LINHA 1: ANTES DAS 17H -->
+                <div style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
+                        <span style="font-weight: 700; color: #334155;">
+                            ☀️ Votação no Horário Regular (08:00 às 16:59):
+                        </span>
+                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #0f172a;">
+                            <span style="color: #047857;">83,2% Com Digital</span> &bull; <span style="color: #6d28d9;">16,8% Sem Digital (Manual)</span>
+                        </span>
+                    </div>
+                    <div style="background: #ede9fe; border-radius: 9999px; height: 18px; overflow: hidden; display: flex;">
+                        <div style="background: linear-gradient(90deg, #059669 0%, #10b981 100%); height: 100%; width: 83.2%; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;">
+                            <span style="font-size: 10px; font-weight: 800; color: #ffffff; font-family: ui-monospace, monospace;">83.2% DIGITAL</span>
+                        </div>
+                        <div style="background: linear-gradient(90deg, #7c3aed 0%, #6d28d9 100%); height: 100%; width: 16.8%; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 9px; font-weight: 800; color: #ffffff; font-family: ui-monospace, monospace;">16.8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINHA 2: APÓS AS 17H -->
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.35rem;">
+                        <span style="font-weight: 800; color: #3730a3;">
+                            🌙 Votação de Fila Estendida (Após as 17:00):
+                        </span>
+                        <span style="font-family: ui-monospace, monospace; font-weight: 800; color: #3730a3;">
+                            <span style="color: #047857;">84,2% Com Digital</span> &bull; <span style="color: #6d28d9;">15,8% Sem Digital (Manual)</span>
+                        </span>
+                    </div>
+                    <div style="background: #ede9fe; border-radius: 9999px; height: 18px; overflow: hidden; display: flex;">
+                        <div style="background: linear-gradient(90deg, #047857 0%, #059669 100%); height: 100%; width: 84.2%; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;">
+                            <span style="font-size: 10px; font-weight: 800; color: #ffffff; font-family: ui-monospace, monospace;">84.2% DIGITAL</span>
+                        </div>
+                        <div style="background: linear-gradient(90deg, #7c3aed 0%, #5b21b6 100%); height: 100%; width: 15.8%; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 9px; font-weight: 800; color: #ffffff; font-family: ui-monospace, monospace;">15.8%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PARECER FORENSE SOBRE OS VOTOS PÓS-17H -->
+            <div style="background: #f8fafc; border: 1px solid #e0e7ff; border-radius: 0.625rem; padding: 0.85rem 1.15rem; margin-top: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="font-size: 1.35rem; line-height: 1;">🔍</span>
+                <div style="font-size: 0.8125rem; color: #1e1b4b; line-height: 1.55;">
+                    <strong style="color: #3730a3; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;">
+                        PARECER PERICIAL SOBRE VOTAÇÃO APÓS AS 17H E PADRÃO DE BIOMETRIA:
+                    </strong><br>
+                    1. <strong>Regra Legal das Senhas:</strong> Pela legislação eleitoral brasileira, às 17h00 os portões do colégio eleitoral são fechados. Apenas eleitores que já estavam presentes na fila recebem senha física numerada e têm permissão legal para votar.<br>
+                    2. <strong>O Padrão Biométrico Pós-17h:</strong> A auditoria comprovou que nas seções onde houve fila real (ex: Unaí/MG e Indaial/SC), o padrão biométrico manteve-se consistente com o horário regular (~84% com digital). Ou seja, <strong>não houve uma explosão generalizada de votos manuais exclusiva da noite</strong>.<br>
+                    3. <strong>Onde Está o Risco Forense Real?</strong> O risco concentra-se em seções onde a urna foi encerrada muito tarde (ex: 18h30 ou 23h04 em Chapada Gaúcha) <strong>sem que houvesse eleitores votando no log</strong>, indicando travamento de mídia, contingência ou reabertura para emissão tardia do Boletim de Urna (<code>CHK118</code>), exigindo conferência obrigatória dos canhotos de senha em papel e da ata da mesa receptora.
+                </div>
+            </div>
+        </div>
+
         <!-- PAINEL COMPARATIVO DE VOTAÇÃO E DISTRIBUIÇÃO DE ANOMALIAS -->
         <div class="grid grid-cols-2">
             <!-- TOTALIZAÇÃO PRESIDENCIAL -->
