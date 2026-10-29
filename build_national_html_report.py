@@ -541,7 +541,35 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="command-center-grid">
             <!-- COLUNA ESQUERDA: MAPA DO BRASIL + PAINEL DO ESTADO SELECIONADO -->
             <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                
+                <!-- CARD MAPA DO BRASIL INTERATIVO -->
+                <div class="card map-card" style="margin-bottom: 0;">
+                    <div class="card-header">
+                        <div>
+                            <span class="badge badge-blue font-mono">MAPA COROPLÉTICO INTERATIVO</span>
+                            <h2 style="font-size: 1.15rem; font-weight: 900; color: #0f172a; margin: 0.2rem 0;">
+                                Mapa do Brasil &bull; Risco Pericial por Estado
+                            </h2>
+                            <p style="font-size: 0.75rem; color: #64748b; margin: 0;">
+                                Clique ou passe o mouse sobre qualquer estado para carregar os dados executivos abaixo.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 6px; font-size: 10px; font-weight: 700;">
+                            <span style="display:inline-flex; align-items:center; gap:3px;"><span style="width:10px; height:10px; border-radius:2px; background:#e11d48; display:inline-block;"></span> Crítico (&ge;80%)</span>
+                            <span style="display:inline-flex; align-items:center; gap:3px;"><span style="width:10px; height:10px; border-radius:2px; background:#f59e0b; display:inline-block;"></span> Médio (45%)</span>
+                            <span style="display:inline-flex; align-items:center; gap:3px;"><span style="width:10px; height:10px; border-radius:2px; background:#10b981; display:inline-block;"></span> Baixo (&lt;5%)</span>
+                        </div>
+                    </div>
+
+                    <!-- GRADE GEOGRÁFICA DO MAPA DO BRASIL (CADA ESTADO RIGOROSAMENTE 1X) -->
+                    <div style="padding: 0.75rem 0;">
+                        <div class="map-grid" id="mapGrid"></div>
+                    </div>
+
+                    <div style="font-size: 0.72rem; color: #64748b; text-align: center; border-top: 1px solid #f1f5f9; padding-top: 0.4rem;">
+                        *Cartograma interativo com os 27 estados e DF posicionados por macro-regiões (cada estado 1x).
+                    </div>
+                </div>
+
                 <div class="card" style="border-left: 6px solid #e11d48; display: flex; flex-direction: column; justify-content: space-between;" id="stateDetailCard">
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.85rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.65rem;">
@@ -883,6 +911,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
         function renderMap() {
             const grid = document.getElementById('mapGrid');
+            if (!grid) return;
             grid.innerHTML = '';
             
             for (let r = 0; r < MAP_LAYOUT.length; r++) {
@@ -957,6 +986,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             document.getElementById('detailVotesLula').textContent = s.lula_2t.toLocaleString('pt-BR');
             document.getElementById('detailBioNote').textContent = `Biometria: ${s.biometria_2t_nao.toLocaleString('pt-BR')} eleitores votaram sem digital no 2º turno (${(s.biometria_2t_nao / (s.comparecimento_2t || 1) * 100).toFixed(2)}%).`;
 
+            // Destacar linha na tabela da direita
+            document.querySelectorAll('#nationalTableBody tr').forEach(r => r.style.background = '');
+            const targetRow = document.getElementById('row_' + uf);
+            if (targetRow) {
+                targetRow.style.background = '#e0f2fe';
+            }
+
             // Sincronizar com o seletor do Explorador de Seções
             const ufSelect = document.getElementById('ufFilterSelect');
             if (ufSelect) {
@@ -967,6 +1003,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
         function renderTable() {
             const tbody = document.getElementById('nationalTableBody');
+            if (!tbody) return;
             let html = '';
 
             for (const s of statesList) {
@@ -977,8 +1014,11 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                 if (s.chance_fraude_pct >= 80) chanceBadge = `<span class="badge badge-red" style="font-weight:900;">${s.chance_fraude_pct}%</span>`;
                 else if (s.chance_fraude_pct >= 30) chanceBadge = `<span class="badge badge-yellow">${s.chance_fraude_pct}%</span>`;
 
+                const isSelected = (s.uf === selectedUf);
+                const rowBg = isSelected ? 'background: #e0f2fe;' : '';
+
                 html += `
-                    <tr style="cursor:pointer;" onclick="selectState('${s.uf}')">
+                    <tr id="row_${s.uf}" style="cursor:pointer; ${rowBg}" onclick="selectState('${s.uf}')" class="hover:bg-slate-50 transition-colors">
                         <td class="col-fit t-center font-mono font-bold">${s.uf}</td>
                         <td class="col-grow t-left font-semibold text-slate-900">${s.nome}</td>
                         <td class="col-fit t-center">${winnerBadge}</td>
@@ -1533,10 +1573,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         });
 
         window.onload = function() {
-            renderMap();
-            renderTable();
-            selectState('MG');
-            applyFilters();
+            try { renderMap(); } catch(e) { console.error('Error in renderMap:', e); }
+            try { renderTable(); } catch(e) { console.error('Error in renderTable:', e); }
+            try { selectState('MG'); } catch(e) { console.error('Error in selectState:', e); }
+            try { applyFilters(); } catch(e) { console.error('Error in applyFilters:', e); }
         };
     </script>
 </body>
