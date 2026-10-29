@@ -3548,6 +3548,9 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                             <span style="font-size: 10px; font-weight: 800; color: #ffffff; font-family: ui-monospace, monospace;">42.62%</span>
                         </div>
                     </div>
+                    <div style="font-size: 0.75rem; color: #7f1d1d; background: #fff5f5; border: 1px solid #fecdd3; border-radius: 6px; padding: 6px 10px; margin-top: 6px; line-height: 1.45;">
+                        <strong>💡 O que significa para leigos ("Queda do Líder com Mais Presença"):</strong> Nessas 292 seções, o comparecimento de eleitores <strong>aumentou</strong> no 2º turno, mas o candidato líder em SC (Flávio) teve <em>menos votos nominais</em> do que já tinha obtido semanas antes. Em vez de disputar os novos votantes, os votos do líder foram drenados enquanto Lula disparou para <strong>42,62%</strong> de média nessas urnas, gerando sozinho <strong>+{comp_lula.get('votos_a_mais_chk046', 0):,} votos a mais</strong> do que a proporção normal do eleitorado indicaria.
+                    </div>
                 </div>
             </div>
 
