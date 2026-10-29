@@ -1,0 +1,23 @@
+{
+  "uf": "AC",
+  "nome": "Acre",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 588433,
+  "comparecimento_2t": 447470,
+  "lula_2t": 128062,
+  "bolsonaro_2t": 300486,
+  "brancos_2t": 4642,
+  "nulos_2t": 14280,
+  "biometria_2t_nao": 23197,
+  "pct_biometria_2t_nao": 5.18,
+  "secoes_anomalas": 9,
+  "pct_lula_ue2020": 27.56,
+  "pct_lula_pre2020": 39.11,
+  "dif_pp_modelos": 11.55,
+  "votos_excedentes_lula": 9614,
+  "margem_vitoria_2t": 172424,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 172424 votos. Nas urnas UE2020, Bolsonaro teve desempenho 11.6 pp superior às urnas antigas. Margem consolidada."
+}

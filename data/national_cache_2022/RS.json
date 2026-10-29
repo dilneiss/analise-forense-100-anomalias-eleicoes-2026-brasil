@@ -1,0 +1,23 @@
+{
+  "uf": "RS",
+  "nome": "Rio Grande do Sul",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 8593487,
+  "comparecimento_2t": 7525381,
+  "lula_2t": 3494747,
+  "bolsonaro_2t": 3792534,
+  "brancos_2t": 97893,
+  "nulos_2t": 140207,
+  "biometria_2t_nao": 595280,
+  "pct_biometria_2t_nao": 7.91,
+  "secoes_anomalas": 1,
+  "pct_lula_ue2020": 43.46,
+  "pct_lula_pre2020": 38.76,
+  "dif_pp_modelos": -4.7,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 297787,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 15,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 297787 votos. Nas urnas UE2020, Bolsonaro teve desempenho 4.7 pp superior às urnas antigas. Margem consolidada."
+}

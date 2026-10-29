@@ -1,0 +1,23 @@
+{
+  "uf": "PR",
+  "nome": "Paraná",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 8475632,
+  "comparecimento_2t": 6940381,
+  "lula_2t": 2516637,
+  "bolsonaro_2t": 4154444,
+  "brancos_2t": 99318,
+  "nulos_2t": 169982,
+  "biometria_2t_nao": 446793,
+  "pct_biometria_2t_nao": 6.44,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 39.08,
+  "pct_lula_pre2020": 33.78,
+  "dif_pp_modelos": -5.31,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 1637807,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 15,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 1637807 votos. Nas urnas UE2020, Bolsonaro teve desempenho 5.3 pp superior às urnas antigas. Margem consolidada."
+}

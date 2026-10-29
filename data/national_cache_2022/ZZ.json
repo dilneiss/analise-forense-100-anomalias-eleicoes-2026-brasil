@@ -1,0 +1,23 @@
+{
+  "uf": "ZZ",
+  "nome": "Exterior",
+  "ano": 2022,
+  "total_secoes": 984,
+  "aptos_2t": 697078,
+  "comparecimento_2t": 303102,
+  "lula_2t": 152905,
+  "bolsonaro_2t": 110905,
+  "brancos_2t": 14264,
+  "nulos_2t": 25028,
+  "biometria_2t_nao": 34856,
+  "pct_biometria_2t_nao": 11.5,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 48.95,
+  "pct_lula_pre2020": 53.1,
+  "dif_pp_modelos": 4.15,
+  "votos_excedentes_lula": 4124,
+  "margem_vitoria_2t": 42000,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 42000 votos. Nas urnas UE2020, Bolsonaro teve desempenho 4.2 pp superior às urnas antigas. Margem consolidada."
+}

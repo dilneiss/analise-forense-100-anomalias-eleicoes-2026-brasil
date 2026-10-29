@@ -1,0 +1,23 @@
+{
+  "uf": "RR",
+  "nome": "Roraima",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 365858,
+  "comparecimento_2t": 289381,
+  "lula_2t": 67458,
+  "bolsonaro_2t": 213518,
+  "brancos_2t": 2697,
+  "nulos_2t": 5708,
+  "biometria_2t_nao": 9983,
+  "pct_biometria_2t_nao": 3.45,
+  "secoes_anomalas": 12,
+  "pct_lula_ue2020": 21.25,
+  "pct_lula_pre2020": 38.31,
+  "dif_pp_modelos": 17.05,
+  "votos_excedentes_lula": 7476,
+  "margem_vitoria_2t": 146060,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 146060 votos. Nas urnas UE2020, Bolsonaro teve desempenho 17.1 pp superior às urnas antigas. Margem consolidada."
+}

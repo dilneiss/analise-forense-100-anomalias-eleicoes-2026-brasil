@@ -188,17 +188,35 @@ def parse_bu(raw: bytes) -> BU:
     dados_node = children[index]
     index += 1
     comparecimento_node = children[index]
-    index += 1
+    comparecimento = 0
     detalhamento: Optional[dict[str, int]] = None
-    if index < len(children) and children[index].tag_class == 2 and children[index].tag_number == 1:
-        partes = children[index].children()
-        if len(partes) >= 3:
-            detalhamento = {
-                "sem_biometria": partes[0].as_int(),
-                "por_biometria": partes[1].as_int(),
-                "por_biografia": partes[2].as_int(),
-            }
+    if children[index].tag_class == 2 and children[index].tag_number == 1 and not children[index].constructed:
+        # Formato 2022: [1] sem_biometria (ano nascimento), [2] por_biometria
+        sem_bio = children[index].as_int()
         index += 1
+        por_bio = 0
+        if index < len(children) and children[index].tag_class == 2 and children[index].tag_number == 2:
+            por_bio = children[index].as_int()
+            index += 1
+        detalhamento = {
+            "sem_biometria": sem_bio,
+            "por_biometria": por_bio,
+            "por_biografia": 0,
+        }
+        comparecimento = sem_bio + por_bio
+    else:
+        # Formato 2026: comparecimento (INTEGER) + [1] detalhamento biométrico
+        comparecimento = children[index].as_int()
+        index += 1
+        if index < len(children) and children[index].tag_class == 2 and children[index].tag_number == 1:
+            partes = children[index].children()
+            if len(partes) >= 3:
+                detalhamento = {
+                    "sem_biometria": partes[0].as_int(),
+                    "por_biometria": partes[1].as_int(),
+                    "por_biografia": partes[2].as_int(),
+                }
+            index += 1
     if index >= len(children):
         raise BULegivelError("resultados da votacao ausentes")
     resultados_node = children[index]
@@ -241,7 +259,7 @@ def parse_bu(raw: bytes) -> BU:
         conteudo_size=len(inner_raw),
         data_hora_emissao=common.data_hora(emissao_node.as_text()),
         dados_secao=dados_secao,
-        comparecimento=comparecimento_node.as_int(),
+        comparecimento=comparecimento,
         detalhamento_comparecimento=detalhamento,
         historico_codigos_carga=[node.as_text() for node in historico_node.children()]
         if historico_node is not None and historico_node.is_universal and historico_node.tag_number == 16
@@ -269,16 +287,40 @@ def parse_bu(raw: bytes) -> BU:
         if len(partes) > 1:
             bu.offsets["encerramento"] = partes[1].start
     bu.eleicoes = [_parse_eleicao(node) for node in resultados_node.children()]
+    if bu.comparecimento == 0 and bu.eleicoes:
+        # Em 2022, resgata o comparecimento oficial dos resultados
+        for el in bu.eleicoes:
+            for r in el.get("resultados", []):
+                if r.get("comparecimento", 0) > bu.comparecimento:
+                    bu.comparecimento = r["comparecimento"]
     bu.cadeia_hashes = verify_hash_chains(bu)
     return bu
 
 
 def _parse_eleicao(node: Node) -> dict[str, Any]:
     children = node.children()
-    if len(children) < 7:
+    if len(children) < 3:
         raise BULegivelError("ResultadoVotacaoPorEleicao incompleto")
+    if len(children) >= 7:
+        res_node = children[4]
+        aptos_secao = children[2].as_int()
+        aptos_tte = children[3].as_int()
+        ultimo_hash = children[5].value.hex().upper()
+        assinatura = {
+            "tamanho": len(children[6].value),
+            "sha256": hashlib.sha256(children[6].value).hexdigest(),
+        }
+    else:
+        res_node = children[2]
+        aptos_secao = children[1].as_int()
+        aptos_tte = 0
+        ultimo_hash = children[3].value.hex().upper() if len(children) > 3 else ""
+        assinatura = {
+            "tamanho": len(children[4].value) if len(children) > 4 else 0,
+            "sha256": hashlib.sha256(children[4].value).hexdigest() if len(children) > 4 else "",
+        }
     resultados: list[dict[str, Any]] = []
-    for resultado_node in children[4].children():
+    for resultado_node in res_node.children():
         partes = resultado_node.children()
         tipo_cargo = partes[0].as_int()
         cargos = []
@@ -313,14 +355,11 @@ def _parse_eleicao(node: Node) -> dict[str, Any]:
     return {
         "id_eleicao": children[0].as_int(),
         "qtd_eleitores_aptos": children[1].as_int(),
-        "qtd_eleitores_aptos_secao": children[2].as_int(),
-        "qtd_eleitores_aptos_tte": children[3].as_int(),
+        "qtd_eleitores_aptos_secao": aptos_secao,
+        "qtd_eleitores_aptos_tte": aptos_tte,
         "resultados": resultados,
-        "ultimo_hash_votos_votavel": children[5].value.hex().upper(),
-        "assinatura_ultimo_hash": {
-            "tamanho": len(children[6].value),
-            "sha256": hashlib.sha256(children[6].value).hexdigest(),
-        },
+        "ultimo_hash_votos_votavel": ultimo_hash,
+        "assinatura_ultimo_hash": assinatura,
     }
 
 

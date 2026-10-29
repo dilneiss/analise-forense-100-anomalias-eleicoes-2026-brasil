@@ -1,0 +1,23 @@
+{
+  "uf": "MA",
+  "nome": "Maranhão",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 5042999,
+  "comparecimento_2t": 4181467,
+  "lula_2t": 2828376,
+  "bolsonaro_2t": 1180600,
+  "brancos_2t": 43516,
+  "nulos_2t": 128975,
+  "biometria_2t_nao": 377627,
+  "pct_biometria_2t_nao": 9.03,
+  "secoes_anomalas": 255,
+  "pct_lula_ue2020": 72.17,
+  "pct_lula_pre2020": 78.08,
+  "dif_pp_modelos": 5.92,
+  "votos_excedentes_lula": 108835,
+  "margem_vitoria_2t": 1647776,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 78,
+  "veredito": "Em 2022, Lula venceu por 1647776 votos. Nas urnas UE2020, Bolsonaro teve desempenho 5.9 pp superior às urnas antigas. Margem consolidada."
+}

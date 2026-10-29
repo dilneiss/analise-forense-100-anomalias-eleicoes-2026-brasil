@@ -1,0 +1,23 @@
+{
+  "uf": "GO",
+  "nome": "Goiás",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 4870354,
+  "comparecimento_2t": 3704257,
+  "lula_2t": 1454723,
+  "bolsonaro_2t": 2045610,
+  "brancos_2t": 54620,
+  "nulos_2t": 149304,
+  "biometria_2t_nao": 425602,
+  "pct_biometria_2t_nao": 11.49,
+  "secoes_anomalas": 2,
+  "pct_lula_ue2020": 35.63,
+  "pct_lula_pre2020": 44.15,
+  "dif_pp_modelos": 8.53,
+  "votos_excedentes_lula": 80657,
+  "margem_vitoria_2t": 590887,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 590887 votos. Nas urnas UE2020, Bolsonaro teve desempenho 8.5 pp superior às urnas antigas. Margem consolidada."
+}

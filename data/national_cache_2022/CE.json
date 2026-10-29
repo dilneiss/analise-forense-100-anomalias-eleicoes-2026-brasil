@@ -1,0 +1,23 @@
+{
+  "uf": "CE",
+  "nome": "Ceará",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 6820673,
+  "comparecimento_2t": 5707779,
+  "lula_2t": 3807891,
+  "bolsonaro_2t": 1637997,
+  "brancos_2t": 74762,
+  "nulos_2t": 187129,
+  "biometria_2t_nao": 729581,
+  "pct_biometria_2t_nao": 12.78,
+  "secoes_anomalas": 371,
+  "pct_lula_ue2020": 71.23,
+  "pct_lula_pre2020": 79.16,
+  "dif_pp_modelos": 7.93,
+  "votos_excedentes_lula": 196277,
+  "margem_vitoria_2t": 2169894,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 78,
+  "veredito": "Em 2022, Lula venceu por 2169894 votos. Nas urnas UE2020, Bolsonaro teve desempenho 7.9 pp superior às urnas antigas. Margem consolidada."
+}

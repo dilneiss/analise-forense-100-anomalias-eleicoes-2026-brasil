@@ -1,0 +1,23 @@
+{
+  "uf": "SC",
+  "nome": "Santa Catarina",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 5489658,
+  "comparecimento_2t": 4806786,
+  "lula_2t": 1409409,
+  "bolsonaro_2t": 3247322,
+  "brancos_2t": 60920,
+  "nulos_2t": 89135,
+  "biometria_2t_nao": 515695,
+  "pct_biometria_2t_nao": 10.73,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 33.06,
+  "pct_lula_pre2020": 28.76,
+  "dif_pp_modelos": -4.3,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 1837913,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 15,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 1837913 votos. Nas urnas UE2020, Bolsonaro teve desempenho 4.3 pp superior às urnas antigas. Margem consolidada."
+}

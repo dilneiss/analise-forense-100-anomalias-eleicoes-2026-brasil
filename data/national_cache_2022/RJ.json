@@ -1,0 +1,23 @@
+{
+  "uf": "RJ",
+  "nome": "Rio de Janeiro",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 12827296,
+  "comparecimento_2t": 9976326,
+  "lula_2t": 4156229,
+  "bolsonaro_2t": 5403851,
+  "brancos_2t": 149479,
+  "nulos_2t": 266767,
+  "biometria_2t_nao": 882852,
+  "pct_biometria_2t_nao": 8.85,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 48.95,
+  "pct_lula_pre2020": 38.4,
+  "dif_pp_modelos": -10.55,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 1247622,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 15,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 1247622 votos. Nas urnas UE2020, Bolsonaro teve desempenho 10.6 pp superior às urnas antigas. Margem consolidada."
+}

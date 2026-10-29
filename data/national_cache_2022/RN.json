@@ -1,0 +1,23 @@
+{
+  "uf": "RN",
+  "nome": "Rio Grande do Norte",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2554727,
+  "comparecimento_2t": 2079412,
+  "lula_2t": 1326785,
+  "bolsonaro_2t": 673416,
+  "brancos_2t": 24961,
+  "nulos_2t": 54250,
+  "biometria_2t_nao": 204966,
+  "pct_biometria_2t_nao": 9.86,
+  "secoes_anomalas": 46,
+  "pct_lula_ue2020": 52.64,
+  "pct_lula_pre2020": 73.26,
+  "dif_pp_modelos": 20.63,
+  "votos_excedentes_lula": 177915,
+  "margem_vitoria_2t": 653369,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 653369 votos. Nas urnas UE2020, Bolsonaro teve desempenho 20.6 pp superior às urnas antigas. Margem consolidada."
+}

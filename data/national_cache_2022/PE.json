@@ -1,0 +1,23 @@
+{
+  "uf": "PE",
+  "nome": "Pernambuco",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 7018098,
+  "comparecimento_2t": 5650170,
+  "lula_2t": 3640938,
+  "bolsonaro_2t": 1778946,
+  "brancos_2t": 74305,
+  "nulos_2t": 155981,
+  "biometria_2t_nao": 469609,
+  "pct_biometria_2t_nao": 8.31,
+  "secoes_anomalas": 145,
+  "pct_lula_ue2020": 58.34,
+  "pct_lula_pre2020": 75.81,
+  "dif_pp_modelos": 17.47,
+  "votos_excedentes_lula": 413446,
+  "margem_vitoria_2t": 1861992,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 78,
+  "veredito": "Em 2022, Lula venceu por 1861992 votos. Nas urnas UE2020, Bolsonaro teve desempenho 17.5 pp superior às urnas antigas. Margem consolidada."
+}

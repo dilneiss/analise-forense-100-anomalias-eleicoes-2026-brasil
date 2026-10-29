@@ -1,0 +1,23 @@
+{
+  "uf": "MG",
+  "nome": "Minas Gerais",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 16290870,
+  "comparecimento_2t": 12975764,
+  "lula_2t": 6190960,
+  "bolsonaro_2t": 6141310,
+  "brancos_2t": 213715,
+  "nulos_2t": 429779,
+  "biometria_2t_nao": 1649319,
+  "pct_biometria_2t_nao": 12.71,
+  "secoes_anomalas": 27,
+  "pct_lula_ue2020": 48.2,
+  "pct_lula_pre2020": 46.52,
+  "dif_pp_modelos": -1.68,
+  "votos_excedentes_lula": 71240,
+  "margem_vitoria_2t": 49650,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 85,
+  "veredito": "Em 2022, Lula venceu por 49650 votos. Nas urnas UE2020, Bolsonaro teve desempenho 1.7 pp superior às urnas antigas. Excedente em urnas antigas supera a margem estadual!"
+}

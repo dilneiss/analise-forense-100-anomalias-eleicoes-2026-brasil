@@ -1,0 +1,23 @@
+{
+  "uf": "AP",
+  "nome": "Amapá",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 550696,
+  "comparecimento_2t": 420849,
+  "lula_2t": 189918,
+  "bolsonaro_2t": 213962,
+  "brancos_2t": 4514,
+  "nulos_2t": 12455,
+  "biometria_2t_nao": 33426,
+  "pct_biometria_2t_nao": 7.94,
+  "secoes_anomalas": 32,
+  "pct_lula_ue2020": 45.06,
+  "pct_lula_pre2020": 50.69,
+  "dif_pp_modelos": 5.62,
+  "votos_excedentes_lula": 6937,
+  "margem_vitoria_2t": 24044,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 24044 votos. Nas urnas UE2020, Bolsonaro teve desempenho 5.6 pp superior às urnas antigas. Margem consolidada."
+}

@@ -1,0 +1,23 @@
+{
+  "uf": "SE",
+  "nome": "Sergipe",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 1671801,
+  "comparecimento_2t": 1300977,
+  "lula_2t": 825499,
+  "bolsonaro_2t": 400598,
+  "brancos_2t": 22359,
+  "nulos_2t": 52521,
+  "biometria_2t_nao": 126563,
+  "pct_biometria_2t_nao": 9.73,
+  "secoes_anomalas": 64,
+  "pct_lula_ue2020": 60.68,
+  "pct_lula_pre2020": 73.14,
+  "dif_pp_modelos": 12.46,
+  "votos_excedentes_lula": 66857,
+  "margem_vitoria_2t": 424901,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 424901 votos. Nas urnas UE2020, Bolsonaro teve desempenho 12.5 pp superior às urnas antigas. Margem consolidada."
+}

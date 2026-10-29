@@ -1,0 +1,23 @@
+{
+  "uf": "RO",
+  "nome": "Rondônia",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 1230987,
+  "comparecimento_2t": 917631,
+  "lula_2t": 261749,
+  "bolsonaro_2t": 623192,
+  "brancos_2t": 10582,
+  "nulos_2t": 22108,
+  "biometria_2t_nao": 50334,
+  "pct_biometria_2t_nao": 5.49,
+  "secoes_anomalas": 1,
+  "pct_lula_ue2020": 31.95,
+  "pct_lula_pre2020": 30.91,
+  "dif_pp_modelos": -1.05,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 361443,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 361443 votos. Nas urnas UE2020, Bolsonaro teve desempenho 1.1 pp superior às urnas antigas. Margem consolidada."
+}

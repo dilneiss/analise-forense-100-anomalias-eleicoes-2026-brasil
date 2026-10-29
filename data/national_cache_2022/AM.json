@@ -1,0 +1,23 @@
+{
+  "uf": "AM",
+  "nome": "Amazonas",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2647748,
+  "comparecimento_2t": 2073981,
+  "lula_2t": 1022731,
+  "bolsonaro_2t": 978259,
+  "brancos_2t": 22485,
+  "nulos_2t": 50506,
+  "biometria_2t_nao": 138553,
+  "pct_biometria_2t_nao": 6.68,
+  "secoes_anomalas": 170,
+  "pct_lula_ue2020": 48.95,
+  "pct_lula_pre2020": 69.4,
+  "dif_pp_modelos": 20.45,
+  "votos_excedentes_lula": 135946,
+  "margem_vitoria_2t": 44472,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 44472 votos. Nas urnas UE2020, Bolsonaro teve desempenho 20.4 pp superior às urnas antigas. Excedente em urnas antigas supera a margem estadual!"
+}

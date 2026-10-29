@@ -1,0 +1,23 @@
+{
+  "uf": "TO",
+  "nome": "Tocantins",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 1093051,
+  "comparecimento_2t": 878363,
+  "lula_2t": 434303,
+  "bolsonaro_2t": 413120,
+  "brancos_2t": 9691,
+  "nulos_2t": 21249,
+  "biometria_2t_nao": 64940,
+  "pct_biometria_2t_nao": 7.39,
+  "secoes_anomalas": 5,
+  "pct_lula_ue2020": 48.79,
+  "pct_lula_pre2020": 45.2,
+  "dif_pp_modelos": -3.58,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 21183,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 21183 votos. Nas urnas UE2020, Bolsonaro teve desempenho 3.6 pp superior às urnas antigas. Margem consolidada."
+}

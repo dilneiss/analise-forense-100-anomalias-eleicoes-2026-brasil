@@ -1,0 +1,23 @@
+{
+  "uf": "AL",
+  "nome": "Alagoas",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2325656,
+  "comparecimento_2t": 1718508,
+  "lula_2t": 935043,
+  "bolsonaro_2t": 687847,
+  "brancos_2t": 24204,
+  "nulos_2t": 71414,
+  "biometria_2t_nao": 230468,
+  "pct_biometria_2t_nao": 13.41,
+  "secoes_anomalas": 121,
+  "pct_lula_ue2020": 48.95,
+  "pct_lula_pre2020": 63.51,
+  "dif_pp_modelos": 14.56,
+  "votos_excedentes_lula": 88492,
+  "margem_vitoria_2t": 247196,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 247196 votos. Nas urnas UE2020, Bolsonaro teve desempenho 14.6 pp superior às urnas antigas. Margem consolidada."
+}

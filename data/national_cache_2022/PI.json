@@ -1,0 +1,23 @@
+{
+  "uf": "PI",
+  "nome": "Piauí",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2573810,
+  "comparecimento_2t": 2095923,
+  "lula_2t": 1551340,
+  "bolsonaro_2t": 467065,
+  "brancos_2t": 20491,
+  "nulos_2t": 57027,
+  "biometria_2t_nao": 252389,
+  "pct_biometria_2t_nao": 12.04,
+  "secoes_anomalas": 359,
+  "pct_lula_ue2020": 79.83,
+  "pct_lula_pre2020": 82.65,
+  "dif_pp_modelos": 2.83,
+  "votos_excedentes_lula": 28536,
+  "margem_vitoria_2t": 1084275,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 78,
+  "veredito": "Em 2022, Lula venceu por 1084275 votos. Nas urnas UE2020, Bolsonaro teve desempenho 2.8 pp superior às urnas antigas. Margem consolidada."
+}

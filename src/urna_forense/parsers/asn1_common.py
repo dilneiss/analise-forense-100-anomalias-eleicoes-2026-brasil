@@ -146,21 +146,28 @@ def parse_identificacao(node: Node) -> dict[str, Any]:
 
 def parse_carga(node: Node) -> dict[str, Any]:
     children = node.children()
-    if len(children) < 5:
+    if len(children) < 4:
         raise Asn1Error("Carga incompleta")
-    gerador = children[2].children()
+    if len(children) >= 5 and children[2].tag_number == 16:
+        gerador = children[2].children()
+        return {
+            "numero_interno_urna": children[0].as_int(),
+            "numero_serie_fc": children[1].value.hex().upper(),
+            "identificador_gerador_midia": {
+                "nome": gerador[0].as_text() if len(gerador) > 0 else None,
+                "serial_certificado_tpm": gerador[1].as_text() if len(gerador) > 1 else None,
+                "serial_instalacao": gerador[2].as_text() if len(gerador) > 2 else None,
+            },
+            "data_hora_carga": data_hora(children[3].as_text()).isoformat(),
+            "codigo_carga": children[4].as_text(),
+        }
     return {
         "numero_interno_urna": children[0].as_int(),
         "numero_serie_fc": children[1].value.hex().upper(),
-        "identificador_gerador_midia": {
-            "nome": gerador[0].as_text() if len(gerador) > 0 else None,
-            "serial_certificado_tpm": gerador[1].as_text() if len(gerador) > 1 else None,
-            "serial_instalacao": gerador[2].as_text() if len(gerador) > 2 else None,
-        },
-        "data_hora_carga": data_hora(children[3].as_text()).isoformat(),
-        "codigo_carga": children[4].as_text(),
+        "identificador_gerador_midia": None,
+        "data_hora_carga": data_hora(children[2].as_text()).isoformat(),
+        "codigo_carga": children[3].as_text(),
     }
-
 
 def parse_urna(node: Node) -> dict[str, Any]:
     children = node.children()
@@ -201,24 +208,37 @@ def parse_codigo_cargo(node: Node) -> tuple[int, str]:
 
 
 def parse_total_votos_votavel(node: Node) -> dict[str, Any]:
-    """``TotalVotosVotavel`` do BU."""
+    """``TotalVotosVotavel`` do BU (compatível com 2022 e 2026)."""
     children = node.children()
-    if len(children) < 4:
+    if len(children) < 3:
         raise Asn1Error("TotalVotosVotavel incompleto")
     tipo_node = children[0]
     tipo = tipo_node.as_int()
     quantidade = children[1].as_int()
     identificacao: Optional[dict[str, int]] = None
-    idx_ordem = 2
-    if len(children) >= 5 and children[2].tag_class == 2 and children[2].tag_number == 3:
-        partes = children[2].children()
-        identificacao = {
-            "partido": partes[0].as_int(),
-            "numero": partes[1].as_int(),
-        }
-        idx_ordem = 3
-    ordem = children[idx_ordem].as_int()
-    hash_node = children[idx_ordem + 1]
+    ordem = 0
+    if len(children) == 3:
+        hash_node = children[2]
+    elif len(children) == 4:
+        if children[2].tag_class == 2 and children[2].tag_number == 3:
+            partes = children[2].children()
+            identificacao = {
+                "partido": partes[0].as_int(),
+                "numero": partes[1].as_int(),
+            }
+            hash_node = children[3]
+        else:
+            ordem = children[2].as_int()
+            hash_node = children[3]
+    else:
+        if children[2].tag_class == 2 and children[2].tag_number == 3:
+            partes = children[2].children()
+            identificacao = {
+                "partido": partes[0].as_int(),
+                "numero": partes[1].as_int(),
+            }
+        ordem = children[3].as_int()
+        hash_node = children[4]
     return {
         "tipo_voto": tipo,
         "tipo_voto_nome": TIPO_VOTO_BU.get(tipo, f"desconhecido_{tipo}"),

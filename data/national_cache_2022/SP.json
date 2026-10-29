@@ -1,0 +1,23 @@
+{
+  "uf": "SP",
+  "nome": "São Paulo",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 34667793,
+  "comparecimento_2t": 27042071,
+  "lula_2t": 11519882,
+  "bolsonaro_2t": 14216587,
+  "brancos_2t": 435349,
+  "nulos_2t": 870253,
+  "biometria_2t_nao": 2129845,
+  "pct_biometria_2t_nao": 7.88,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 45.72,
+  "pct_lula_pre2020": 44.83,
+  "dif_pp_modelos": -0.9,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 2696705,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 15,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 2696705 votos. Nas urnas UE2020, Bolsonaro teve desempenho 0.9 pp superior às urnas antigas. Margem consolidada."
+}

@@ -1,0 +1,23 @@
+{
+  "uf": "DF",
+  "nome": "Distrito Federal",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2206126,
+  "comparecimento_2t": 1836080,
+  "lula_2t": 723232,
+  "bolsonaro_2t": 1041331,
+  "brancos_2t": 27284,
+  "nulos_2t": 44233,
+  "biometria_2t_nao": 125506,
+  "pct_biometria_2t_nao": 6.84,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 42.62,
+  "pct_lula_pre2020": 36.19,
+  "dif_pp_modelos": -6.42,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 318099,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 318099 votos. Nas urnas UE2020, Bolsonaro teve desempenho 6.4 pp superior às urnas antigas. Margem consolidada."
+}

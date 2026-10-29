@@ -1,0 +1,23 @@
+{
+  "uf": "PB",
+  "nome": "Paraíba",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 3091684,
+  "comparecimento_2t": 2521191,
+  "lula_2t": 1601953,
+  "bolsonaro_2t": 806060,
+  "brancos_2t": 34188,
+  "nulos_2t": 78990,
+  "biometria_2t_nao": 201274,
+  "pct_biometria_2t_nao": 7.98,
+  "secoes_anomalas": 86,
+  "pct_lula_ue2020": 59.14,
+  "pct_lula_pre2020": 76.14,
+  "dif_pp_modelos": 17.0,
+  "votos_excedentes_lula": 177015,
+  "margem_vitoria_2t": 795893,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Lula venceu por 795893 votos. Nas urnas UE2020, Bolsonaro teve desempenho 17.0 pp superior às urnas antigas. Margem consolidada."
+}

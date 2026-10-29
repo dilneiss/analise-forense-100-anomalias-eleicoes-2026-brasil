@@ -1,0 +1,23 @@
+{
+  "uf": "ES",
+  "nome": "Espírito Santo",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2921506,
+  "comparecimento_2t": 2420986,
+  "lula_2t": 965251,
+  "bolsonaro_2t": 1369796,
+  "brancos_2t": 33171,
+  "nulos_2t": 52768,
+  "biometria_2t_nao": 174740,
+  "pct_biometria_2t_nao": 7.22,
+  "secoes_anomalas": 0,
+  "pct_lula_ue2020": 37.5,
+  "pct_lula_pre2020": 42.05,
+  "dif_pp_modelos": 4.55,
+  "votos_excedentes_lula": 28547,
+  "margem_vitoria_2t": 404545,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 404545 votos. Nas urnas UE2020, Bolsonaro teve desempenho 4.5 pp superior às urnas antigas. Margem consolidada."
+}

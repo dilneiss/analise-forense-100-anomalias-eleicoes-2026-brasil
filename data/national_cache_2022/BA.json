@@ -1,0 +1,23 @@
+{
+  "uf": "BA",
+  "nome": "Bahia",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 11291528,
+  "comparecimento_2t": 8847648,
+  "lula_2t": 6090771,
+  "bolsonaro_2t": 2357028,
+  "brancos_2t": 106967,
+  "nulos_2t": 292882,
+  "biometria_2t_nao": 620699,
+  "pct_biometria_2t_nao": 7.02,
+  "secoes_anomalas": 67,
+  "pct_lula_ue2020": 70.24,
+  "pct_lula_pre2020": 74.1,
+  "dif_pp_modelos": 3.86,
+  "votos_excedentes_lula": 152817,
+  "margem_vitoria_2t": 3733743,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 78,
+  "veredito": "Em 2022, Lula venceu por 3733743 votos. Nas urnas UE2020, Bolsonaro teve desempenho 3.9 pp superior às urnas antigas. Margem consolidada."
+}

@@ -1,0 +1,23 @@
+{
+  "uf": "MT",
+  "nome": "Mato Grosso",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 2469414,
+  "comparecimento_2t": 1934241,
+  "lula_2t": 652786,
+  "bolsonaro_2t": 1216730,
+  "brancos_2t": 23512,
+  "nulos_2t": 41213,
+  "biometria_2t_nao": 155978,
+  "pct_biometria_2t_nao": 8.06,
+  "secoes_anomalas": 2,
+  "pct_lula_ue2020": 41.26,
+  "pct_lula_pre2020": 26.77,
+  "dif_pp_modelos": -14.5,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 563944,
+  "vencedor_2t": "Jair Bolsonaro",
+  "chance_fraude_pct": 35,
+  "veredito": "Em 2022, Jair Bolsonaro venceu por 563944 votos. Nas urnas UE2020, Bolsonaro teve desempenho 14.5 pp superior às urnas antigas. Margem consolidada."
+}

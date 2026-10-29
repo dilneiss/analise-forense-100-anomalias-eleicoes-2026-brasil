@@ -1,0 +1,23 @@
+{
+  "uf": "PA",
+  "nome": "Pará",
+  "ano": 2022,
+  "total_secoes": 1200,
+  "aptos_2t": 6082312,
+  "comparecimento_2t": 4945197,
+  "lula_2t": 2523274,
+  "bolsonaro_2t": 2259160,
+  "brancos_2t": 48430,
+  "nulos_2t": 114333,
+  "biometria_2t_nao": 317283,
+  "pct_biometria_2t_nao": 6.42,
+  "secoes_anomalas": 38,
+  "pct_lula_ue2020": 67.27,
+  "pct_lula_pre2020": 60.88,
+  "dif_pp_modelos": -6.39,
+  "votos_excedentes_lula": 0,
+  "margem_vitoria_2t": 264114,
+  "vencedor_2t": "Lula",
+  "chance_fraude_pct": 78,
+  "veredito": "Em 2022, Lula venceu por 264114 votos. Nas urnas UE2020, Bolsonaro teve desempenho 6.4 pp superior às urnas antigas. Margem consolidada."
+}
