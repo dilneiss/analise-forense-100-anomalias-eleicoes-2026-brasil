@@ -172,7 +172,7 @@ def parse_bu(raw: bytes) -> BU:
     if not (inner.is_universal and inner.tag_number == 16):
         raise BULegivelError("conteudo do BU nao e SEQUENCE")
     children = inner.children()
-    if len(children) < 10:
+    if len(children) < 8:
         raise BULegivelError(f"BU com {len(children)} campos")
     index = 0
     cabecalho_node = children[index]

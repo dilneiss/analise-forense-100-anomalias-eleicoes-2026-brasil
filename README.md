@@ -86,25 +86,25 @@ A auditoria científica de **100% das 499.178 urnas eletrônicas do Brasil** dec
 ================================================================================
 RESULTADO CONSOLIDADO NACIONAL - 100% DAS URNAS DO BRASIL (ELEIÇÕES GERAIS 2026)
 ================================================================================
-Total de Seções Eleitorais Auditadas: 497,897 (quase 1 milhão de BUs decodificados)
-Comparecimento Nacional 1T:          124,933,510 votantes
-Comparecimento Nacional 2T:          127,854,631 votantes (+2,921,121 novos eleitores)
-Eleitores sem Biometria no 2T:        15,884,298 eleitores (12.42% do eleitorado!)
-Terceira Via no 1T:                   9,292,232 votos
+Total de Seções Eleitorais Auditadas: 499,178 (998.354 BUs decodificados)
+Comparecimento Nacional 1T:          125,274,487 votantes
+Comparecimento Nacional 2T:          128,235,243 votantes (+2,960,756 novos eleitores)
+Eleitores sem Biometria no 2T:        15,884,298 eleitores (12.39% do eleitorado!)
+Terceira Via no 1T:                   9,321,882 votos
 --------------------------------------------------------------------------------
 FLÁVIO BOLSONARO (22):
-  • 1º Turno:  55,960,361 (47.04%)
-  • 2º Turno:  59,654,544 (48.22%)
-  • Crescimento no 2T: +3,694,183 votos (+6.60%)
+  • 1º Turno:  56,103,951 (47.04%)
+  • 2º Turno:  59,825,688 (48.22%)
+  • Crescimento no 2T: +3,721,737 votos (+6.63%)
 --------------------------------------------------------------------------------
 LULA (13):
-  • 1º Turno:  53,721,918 (45.15%)
-  • 2º Turno:  64,056,078 (51.78%)
-  • Crescimento no 2T: +10,334,160 votos (+19.24%)
+  • 1º Turno:  53,878,914 (45.17%)
+  • 2º Turno:  64,255,787 (51.78%)
+  • Crescimento no 2T: +10,376,873 votos (+19.26%)
 --------------------------------------------------------------------------------
-DIFERENÇA NACIONAL NO 2T: Lula +4,401,534 votos (51.78% vs 48.22%)
-TOTAL DE VOTOS EXCEDENTES ANÔMALOS DE LULA NO BRASIL: +454,516 votos!
-SEÇÕES COM QUEDA DO LÍDER E MAIS COMPARECIMENTO (CHK046): 19,157 seções (+308,162 votos)
+DIFERENÇA NACIONAL NO 2T: Lula +4,430,099 votos (51.78% vs 48.22%)
+TOTAL DE VOTOS EXCEDENTES ANÔMALOS DE LULA NO BRASIL: +454,544 votos!
+SEÇÕES COM QUEDA DO LÍDER E MAIS COMPARECIMENTO (CHK046): 19,159 seções (+308,190 votos)
 ================================================================================
 ```
 
@@ -176,7 +176,7 @@ flowchart TD
 | **AC** | Acre | Flávio Bolsonaro | +143.202 | +501 | 2% (Baixo) | 0,35% da margem |
 | **RR** | Roraima | Flávio Bolsonaro | +136.170 | +49 | 2% (Baixo) | 0,04% da margem |
 | **AP** | Amapá | Lula | +24.294 | +25 | 45% (Médio) | 0,10% da margem |
-| **ZZ** | Exterior | Flávio Bolsonaro | +0 | +0 | 2% (Baixo) | 0,00% |
+| **ZZ** | Exterior | Lula | +28.565 | +28 | 2% (Baixo) | 0,10% da margem |
 
 ---
 
