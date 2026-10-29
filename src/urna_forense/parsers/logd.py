@@ -359,6 +359,10 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
 
     flagrantes_mesario: list[dict[str, Any]] = []
     mesarios_contagem: dict[str, int] = {}
+    ja_votou_count = 0
+    ja_votou_events: list[dict[str, Any]] = []
+    canceladas_count = 0
+    nao_encontrado_count = 0
 
     faixas = {
         "manha_08_12": {"total": 0, "bio": 0, "manual": 0},
@@ -380,6 +384,17 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
                 "mesario_id": mid,
                 "mensagem": msg
             })
+        # 1.1 Conflito: O eleitor identificado já votou ou cancelamento
+        if "já votou" in msg.lower():
+            ja_votou_count += 1
+            ja_votou_events.append({
+                "timestamp": e.timestamp.isoformat() if e.timestamp else "",
+                "mensagem": msg
+            })
+        elif "habilitação cancelada" in msg.lower():
+            canceladas_count += 1
+        elif "não encontrado para o identificador" in msg.lower():
+            nao_encontrado_count += 1
 
         # 2. Habilitacao
         if "Tipo de habilitação do eleitor [biométrica]" in msg:
@@ -476,5 +491,9 @@ def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
         "distribuicao_tempo_cabine": distribuicao,
         "flagrantes_biometria_mesario": flagrantes_mesario,
         "mesarios_habilitacao_manual": mesarios_lista,
+        "conflitos_ja_votou_contagem": ja_votou_count,
+        "conflitos_ja_votou_eventos": ja_votou_events,
+        "habilitacoes_canceladas_contagem": canceladas_count,
+        "eleitor_nao_encontrado_contagem": nao_encontrado_count,
         "votos_por_faixa_horaria": faixas
     }

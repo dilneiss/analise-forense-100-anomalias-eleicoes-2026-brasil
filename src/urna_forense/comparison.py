@@ -2432,6 +2432,22 @@ def evaluate_section_anomalies(
                         details={"mesario_id": top_m.get("mesario_id"), "liberacoes": top_m.get("liberacoes_manuais"), "pct": top_m.get("pct_total_manuais")},
                     )
                 )
+    # CHK125: Conflito de eleitor que consta "Já Votou"
+    if telemetry:
+        conflitos = telemetry.get("conflitos_ja_votou_contagem", 0)
+        canceladas = telemetry.get("habilitacoes_canceladas_contagem", 0)
+        if conflitos >= 2 or (conflitos >= 1 and canceladas >= 3):
+            anomalies.append(
+                Anomaly(
+                    code="CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE",
+                    category=CAT_BIOMETRIA,
+                    severity=SEV_ALTA,
+                    title="Tentativa de Habilitação de Eleitor que Consta 'Já Votou'",
+                    description=f"A urna registrou {conflitos} evento(s) de eleitor identificado que já havia votado e {canceladas} cancelamentos de habilitação.",
+                    details={"conflitos_ja_votou": conflitos, "habilitacoes_canceladas": canceladas, "eventos": telemetry.get("conflitos_ja_votou_eventos", [])},
+                )
+            )
+
 
     return anomalies
 
@@ -2462,6 +2478,8 @@ def calculate_section_fraud_score(anomalies: list[Anomaly]) -> dict[str, Any]:
         score = max(score, 90)
     if has_code("CHK124"):
         score = max(score, 88)
+    if has_code("CHK125"):
+        score = max(score, 90)
 
     if has_code("CHK046"):
         score = max(score, 82)
@@ -3162,6 +3180,7 @@ RULE_HUMAN_TITLES = {
     "CHK122_VOTACAO_ESTEIRA_TEMPO_INFERIOR_10S": ("Votação em Esteira Contínua (< 10s na Cabine)", "ALTA"),
     "CHK123_SURTO_MANUAL_HORARIO_DESERTO": ("Surto Desproporcional de Votos Manuais no Almoço", "MEDIA"),
     "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO": ("Concentração de > 80% das Liberações em Único Mesário", "ALTA"),
+    "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE": ("Tentativa de Habilitação de Eleitor que Consta 'Já Votou'", "ALTA"),
 }
 
 
@@ -4217,6 +4236,13 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "por_que_suspeito": "Altíssima gravidade: se uma urna registrar voto nominal para um candidato eliminado ou inexistente, comprova falha crítica de integridade na tabela de votáveis ou adulteração deliberada do software da urna para desviar votos.",
                 "severidade": "ALTA"
             }},
+            "CHK125_TENTATIVA_HABILITACAO_ELEITOR_JA_VOTANTE": {{
+                "titulo": "Tentativa de Votar com Eleitor já Registrado como 'Já Votou'",
+                "explicacao": "A urna eletrônica registrou eventos oficiais onde o mesário digitou o identificador do eleitor e o sistema bloqueou a tela informando que aquele cidadão já havia votado anteriormente naquele mesmo dia, resultando em cancelamento de habilitação.",
+                "por_que_suspeito": "Forte indício de usurpação de identidade / voto fantasma: ocorre quando a mesa vota no lugar de um faltoso no início do dia e o eleitor legítimo comparece posteriormente, descobrindo que seu voto já foi indevidamente computado.",
+                "severidade": "ALTA"
+            }},
+
             "CHK004_MODELO_URNA_DIVERGENTE": {{
                 "titulo": "Modelo de Urna Divergente",
                 "explicacao": "A urna do 1º turno era de um modelo (ex: UE2020) e no 2º turno passou a ser de outro modelo mais antigo ou diferente.",
