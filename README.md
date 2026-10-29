@@ -500,6 +500,53 @@ A análise forense separa tecnicamente as causas:
    - *O Desfecho:* À tarde, **o eleitor legítimo comparece fisicamente à seção**. Ao digitar o título do eleitor, a urna acusa: `O eleitor identificado já votou`. O mesário tenta de novo, a urna rejeita, e a habilitação é obrigatoriamente cancelada (`Habilitação cancelada`). O cidadão sai da seção sem conseguir exercer seu direito ao voto.
    - *Correlação:* Essas ocorrências concentram-se fortemente em seções que também apresentam alta taxa de liberação manual (regra `CHK068`), quebra de biometria e o padrão `CHK046`.
 
+
+### 6.14 Anomalia Demográfica: Cidades com Mais Eleitores (e Votos) do que Habitantes
+
+Outra linha investigativa essencial da auditoria eleitoral diz respeito à discrepância entre o cadastro eleitoral do TSE e o contingente populacional apurado pelo IBGE: **existem municípios onde o número de votos ou de eleitores aptos supera a própria população da cidade?**
+
+O cruzamento dos dados cadastrais do TSE com as estimativas populacionais do Censo IBGE revela que essa distorção é estrutural em centenas de cidades brasileiras:
+
+#### 1. A Dimensão Nacional do Fenômeno
+- O Brasil possui exatamente **732 municípios (13,1% do total de 5.570 cidades do país &bull; 1 em cada 8 municípios)** onde o número de **eleitores aptos registrados no TSE é superior ao número total de habitantes residentes** contabilizados pelo IBGE!
+- Em cidades com disparidades extremas e alto comparecimento, o **número de votos apurados nas urnas supera a própria população residente** do município.
+
+#### 2. Ranking dos Estados com Mais Cidades com Eleitorado Superior à População:
+
+| UF | Estado | Quantidade de Municípios com Eleitores > Habitantes | % das Cidades do Estado |
+|:---:|---|:---:|:---:|
+| **MG** | Minas Gerais | **186 municípios** | 21,8% de todo o estado |
+| **GO** | Goiás | **87 municípios** | **35,4% (Líder Proporcional)** |
+| **PI** | Piauí | **76 municípios** | 33,9% |
+| **RS** | Rio Grande do Sul | **74 municípios** | 14,9% |
+| **PB** | Paraíba | **64 municípios** | 28,7% |
+| **RN** | Rio Grande do Norte | **51 municípios** | 30,5% |
+| **SP** | São Paulo | **26 municípios** | 4,0% |
+| **BA** | Bahia | **23 municípios** | 5,5% |
+| **TO** | Tocantins | **23 municípios** | 16,5% |
+| **AL** | Alagoas | **15 municípios** | 14,7% |
+| **PR** | Paraná | **15 municípios** | 3,8% |
+| **CE** | Ceará | **14 municípios** | 7,6% |
+| **SE** | Sergipe | **14 municípios** | 18,7% |
+| **SC** | Santa Catarina | **13 municípios** | 4,4% |
+| **MA** | Maranhão | **11 municípios** | 5,1% |
+| **MT** | Mato Grosso | **10 municípios** | 7,0% |
+| **PE** | Pernambuco | **10 municípios** | 5,4% |
+| **PA** | Pará | **9 municípios** | 6,2% |
+| **RJ** | Rio de Janeiro | **6 municípios** | 6,5% |
+| **AP** | Amapá | **3 municípios** | 18,8% |
+| **MS** | Mato Grosso do Sul | **2 municípios** | 2,5% |
+| **TOTAL** | **BRASIL CONSOLIDADO** | **732 municípios** | **13,1% dos municípios do país** |
+
+#### 3. Casos Extremos no País:
+1. **Davinópolis (GO):** O eleitorado apto registrado alcançou **220% da população residente** estimada pelo IBGE (mais que o dobro de títulos ativos em relação aos moradores). Com comparecimento em torno de 85%, a cidade registrou **mais votos apurados do que a população física de moradores**.
+2. **São João da Barra (RJ):** Líder nacional em números absolutos de excesso, com **+4.456 eleitores a mais** que o total de habitantes.
+3. **Serra da Saudade (MG):** Menor município do Brasil em população (833 habitantes no Censo), possui mais de **1.150 eleitores cadastrados**.
+4. **Cidades Turísticas e Balneários (ex: Mangaratiba/RJ e Tibau/RN):** Eleitorado flutuante entre 140% e 160% da população permanente.
+
+#### 4. Avaliação Pericial: Vínculo Afetivo vs Risco de Fraude de Faltosos
+- **O Fundamento Legal (Resolução TSE nº 23.659/2021):** Para o direito eleitoral, domicílio é mais amplo que a residência física: admite vínculo afetivo, patrimonial, familiar ou político. Isso explica o êxodo de jovens que migram para capitais para estudar e trabalhar, mas mantêm o título eleitoral em suas pequenas cidades natais para votar com a família.
+- **A Conexão Forense com a Fraude de Mesa:** Em municípios onde o eleitorado é inflado em 150% a 220% da população real, existe uma massa gigantesca de eleitores que residem longe e frequentemente não comparecem no 2º turno. Quando essas seções apresentam simultaneamente a **quebra de biometria (`CHK068` - votos por ano de nascimento)** e **votação em esteira (`CHK122`)**, cria-se o cenário perfeito para que operadores locais votem em nome desses "eleitores ausentes distantes" sem qualquer fiscalização presencial.
 ---
 
 ## 7. Painel Interativo HTML Nacional e Mapa do Brasil
