@@ -116,7 +116,8 @@ def extract_sections_for_uf(uf: str, max_sections: int = 150):
                     "biometria_sim": s1["bio_sim"],
                     "biometria_nao": s1["bio_nao"],
                     "votos_presidenciais": s1["pres"],
-                    "numero_interno_urna": s1["num_urna"],
+                    "numero_interno_urna": s1.get("num_urna", 0),
+                    "local": s1.get("local", 0),
                 },
                 "dados_2t": {
                     "aptos": s2["aptos"],
@@ -124,7 +125,8 @@ def extract_sections_for_uf(uf: str, max_sections: int = 150):
                     "biometria_sim": s2["bio_sim"],
                     "biometria_nao": s2["bio_nao"],
                     "votos_presidenciais": s2["pres"],
-                    "numero_interno_urna": s2["num_urna"],
+                    "numero_interno_urna": s2.get("num_urna", 0),
+                    "local": s2.get("local", 0),
                 }
             })
             

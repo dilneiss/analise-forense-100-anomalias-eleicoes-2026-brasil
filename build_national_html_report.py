@@ -1415,17 +1415,38 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             document.getElementById('modalSevBadge').innerHTML = getSeverityBadge(s.worst_severity);
             document.getElementById('modalTitle').textContent = `[${s.uf || 'BR'}] ${s.municipio_nome || 'Município ' + s.municipio} - Zona ${s.zona}, Seção ${s.secao}`;
             
-            document.getElementById('modalSubtitle').innerHTML = `
-                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; font-weight:700; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; color:#334155;">
-                    <span style="color:#64748b;">Urna 1T:</span> ${d1.numero_interno_urna || 'N/A'}
-                </span>
-                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; font-weight:700; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; color:#334155;">
-                    <span style="color:#64748b;">Urna 2T:</span> ${d2.numero_interno_urna || 'N/A'}
-                </span>
-                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:4px; padding:2px 8px; color:#64748b;">
-                    📍 Local ${d2.local || d1.local || 'N/A'}
+            let urnaSubHtml = '';
+            const u1 = d1.numero_interno_urna;
+            const u2 = d2.numero_interno_urna;
+            const loc = d2.local || d1.local;
+
+            if (u1 && u1 > 0) {
+                urnaSubHtml += `
+                    <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; font-weight:700; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; color:#334155;">
+                        <span style="color:#64748b;">Urna 1T:</span> ${u1}
+                    </span>
+                `;
+            }
+            if (u2 && u2 > 0) {
+                urnaSubHtml += `
+                    <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; font-weight:700; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; color:#334155;">
+                        <span style="color:#64748b;">Urna 2T:</span> ${u2}
+                    </span>
+                `;
+            }
+            if (loc && loc > 0) {
+                urnaSubHtml += `
+                    <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:4px; padding:2px 8px; color:#64748b;">
+                        📍 Local ${loc}
+                    </span>
+                `;
+            }
+            urnaSubHtml += `
+                <span style="display:inline-flex; align-items:center; gap:4px; font-family:ui-monospace,monospace; font-size:11px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:4px; padding:2px 8px; color:#166534; font-weight:700;">
+                    ✓ Seção Oficial TSE (${s.key || (s.uf + '-' + s.municipio + '-Z' + s.zona + '-S' + s.secao)})
                 </span>
             `;
+            document.getElementById('modalSubtitle').innerHTML = urnaSubHtml;
 
             const fScore = s.fraud_score !== undefined ? s.fraud_score : 70;
             const fLabel = s.fraud_label || (fScore >= 80 ? 'Altíssima Probabilidade de Fraude / Vício' : 'Inconsistência Relevante');

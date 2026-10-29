@@ -64,10 +64,18 @@ def extract_bu_data(raw: bytes):
         bio_nao = (b.detalhamento_comparecimento.get("sem_biometria", 0) + b.detalhamento_comparecimento.get("por_biografia", 0)) if b.detalhamento_comparecimento else 0
         
         # Carga
-        codigo_carga = b.urna.get("codigo_carga", "") if b.urna else ""
-        num_urna = b.urna.get("numero_interno", 0) if b.urna else 0
+        codigo_carga = ""
+        num_urna = 0
+        if b.urna:
+            codigo_carga = b.urna.get("codigo_carga", "")
+            carga_block = b.urna.get("correspondencia", {}).get("carga", {})
+            if carga_block:
+                codigo_carga = codigo_carga or carga_block.get("codigo_carga", "")
+                num_urna = carga_block.get("numero_interno_urna", 0)
+            if not num_urna:
+                num_urna = b.urna.get("numero_interno", 0)
+        local_id = b.identificacao.get("local", 0)
         mun_corr = b.identificacao.get("municipio_correspondencia") or b.identificacao["municipio"]
-        
         return {
             "mun": b.identificacao["municipio"],
             "zona": b.identificacao["zona"],
@@ -81,6 +89,7 @@ def extract_bu_data(raw: bytes):
             "bio_nao": bio_nao,
             "codigo_carga": codigo_carga,
             "num_urna": num_urna,
+            "local": local_id,
             "mun_corr": mun_corr,
         }
     except Exception:
