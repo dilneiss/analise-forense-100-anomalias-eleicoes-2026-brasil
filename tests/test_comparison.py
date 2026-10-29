@@ -274,3 +274,34 @@ def test_cli_comparison_options(tmp_path, capsys):
         assert "AUDITORIA FORENSE COMPARATIVA" in out
         assert (out_dir / "comparison_report.json").is_file()
         assert (out_dir / "comparison_report.html").is_file()
+
+
+def test_chk121_to_chk124_rules():
+    s1 = _make_sample(comparecimento=200, encerramento="2026-10-04T17:01:00")
+    s2 = _make_sample(comparecimento=200, encerramento="2026-10-25T17:01:00")
+
+    mock_telemetry = {
+        "flagrantes_biometria_mesario": [
+            {"timestamp": "2026-10-25T10:00:00", "mesario_id": "11223344", "mensagem": "Biometria do mesário encontrada em eleitores"}
+        ],
+        "votos_sub10s_contagem": 15,
+        "votos_sub10s_pct": 12.5,
+        "sequencia_max_sub10s": 4,
+        "votos_por_faixa_horaria": {
+            "manha_08_12": {"total": 50, "bio": 45, "manual": 5},
+            "almoco_12_14": {"total": 40, "bio": 20, "manual": 20},
+            "tarde_14_17": {"total": 110, "bio": 95, "manual": 15},
+            "noite_apos_17": {"total": 0, "bio": 0, "manual": 0},
+        },
+        "mesarios_habilitacao_manual": [
+            {"mesario_id": "11223344", "liberacoes_manuais": 35, "pct_total_manuais": 87.5},
+            {"mesario_id": "55667788", "liberacoes_manuais": 5, "pct_total_manuais": 12.5},
+        ]
+    }
+
+    anoms = evaluate_section_anomalies(s1, s2, telemetry=mock_telemetry)
+    codes = {a.code for a in anoms}
+    assert "CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR" in codes
+    assert "CHK122_VOTACAO_ESTEIRA_TEMPO_INFERIOR_10S" in codes
+    assert "CHK123_SURTO_MANUAL_HORARIO_DESERTO" in codes
+    assert "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO" in codes

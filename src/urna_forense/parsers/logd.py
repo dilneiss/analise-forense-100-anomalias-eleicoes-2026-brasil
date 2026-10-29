@@ -16,7 +16,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Optional
+from typing import Any, Optional
 
 from ..models import LogEvent
 
@@ -335,3 +335,146 @@ def detect_turn(events: list[LogEvent]) -> tuple[Optional[int], list[str]]:
     if not votes:
         return None, []
     return max(votes, key=lambda key: votes[key]), evidence
+
+
+def extract_cabin_telemetry(events: list[LogEvent]) -> dict[str, Any]:
+    """Extrai telemetria de votacao: tempos de cabine, flagrantes de mesarios e distribuicao horaria."""
+    MESARIO_HABILITOU_RE = re.compile(r"Mes[áa]rio\s+([0-9A-Za-z]+)\s+habilitou", re.IGNORECASE)
+    MESARIO_BIOMETRIA_ALERTA_RE = re.compile(
+        r"(?:Biometria do mes[áa]rio\s+([0-9A-Za-z]+)\s+encontrada em eleitores|Digital coletada bate com uma digital gravada ap[oó]s o registro inicial de mes[áa]rio)",
+        re.IGNORECASE
+    )
+
+    ready_time: Optional[datetime] = None
+    prev_vote_time: Optional[datetime] = None
+    current_hab_type = "DESCONHECIDO"
+    current_mesario_id = None
+
+    duracoes: list[float] = []
+    intervalos_troca: list[float] = []
+
+    consecutive_sub10s = 0
+    max_consecutive_sub10s = 0
+    sub10s_count = 0
+
+    flagrantes_mesario: list[dict[str, Any]] = []
+    mesarios_contagem: dict[str, int] = {}
+
+    faixas = {
+        "manha_08_12": {"total": 0, "bio": 0, "manual": 0},
+        "almoco_12_14": {"total": 0, "bio": 0, "manual": 0},
+        "tarde_14_17": {"total": 0, "bio": 0, "manual": 0},
+        "noite_apos_17": {"total": 0, "bio": 0, "manual": 0},
+    }
+
+    votos_totais = 0
+
+    for e in events:
+        msg = e.message
+        # 1. Flagrante de mesario tentando biometria em eleitores
+        alerta_match = MESARIO_BIOMETRIA_ALERTA_RE.search(msg)
+        if alerta_match:
+            mid = alerta_match.group(1) or "DESCONHECIDO"
+            flagrantes_mesario.append({
+                "timestamp": e.timestamp.isoformat() if e.timestamp else "",
+                "mesario_id": mid,
+                "mensagem": msg
+            })
+
+        # 2. Habilitacao
+        if "Tipo de habilitação do eleitor [biométrica]" in msg:
+            current_hab_type = "BIOMETRICA"
+        elif "Solicitação de dado pessoal do eleitor para habilitação manual" in msg or "Dado digitado confere" in msg:
+            current_hab_type = "MANUAL"
+
+        m_hab = MESARIO_HABILITOU_RE.search(msg)
+        if m_hab:
+            current_mesario_id = m_hab.group(1)
+            current_hab_type = "MANUAL"
+
+        # 3. Urna pronta para receber votos
+        if e.category == "VOTE.READY" and e.timestamp:
+            ready_time = e.timestamp
+            if prev_vote_time:
+                diff_troca = (ready_time - prev_vote_time).total_seconds()
+                if 0 <= diff_troca <= 600:
+                    intervalos_troca.append(diff_troca)
+
+        # 4. Voto computado
+        elif e.category == "VOTE.COMPUTED" and e.timestamp:
+            votos_totais += 1
+            vote_time = e.timestamp
+            prev_vote_time = vote_time
+
+            dur = (vote_time - ready_time).total_seconds() if ready_time else 0.0
+            ready_time = None
+
+            if dur > 0:
+                duracoes.append(dur)
+                if dur < 10.0:
+                    sub10s_count += 1
+                    consecutive_sub10s += 1
+                    if consecutive_sub10s > max_consecutive_sub10s:
+                        max_consecutive_sub10s = consecutive_sub10s
+                else:
+                    consecutive_sub10s = 0
+
+            # Contabilizar mesario se foi manual
+            if current_hab_type == "MANUAL":
+                mid_key = current_mesario_id or "Nao identificado"
+                mesarios_contagem[mid_key] = mesarios_contagem.get(mid_key, 0) + 1
+
+            # Faixa horaria
+            h = vote_time.hour
+            is_bio = (current_hab_type == "BIOMETRICA")
+            if h < 12:
+                faixa_key = "manha_08_12"
+            elif h < 14:
+                faixa_key = "almoco_12_14"
+            elif h < 17:
+                faixa_key = "tarde_14_17"
+            else:
+                faixa_key = "noite_apos_17"
+
+            faixas[faixa_key]["total"] += 1
+            if is_bio:
+                faixas[faixa_key]["bio"] += 1
+            else:
+                faixas[faixa_key]["manual"] += 1
+
+            # Reset por eleitor
+            current_hab_type = "DESCONHECIDO"
+            current_mesario_id = None
+
+    tempo_medio = round(sum(duracoes) / len(duracoes), 1) if duracoes else 0.0
+    pct_sub10s = round(sub10s_count / votos_totais * 100, 2) if votos_totais else 0.0
+
+    distribuicao = {
+        "sub_10s": sum(1 for d in duracoes if d < 10.0),
+        "de_10s_a_20s": sum(1 for d in duracoes if 10.0 <= d < 20.0),
+        "de_20s_a_45s": sum(1 for d in duracoes if 20.0 <= d < 45.0),
+        "acima_45s": sum(1 for d in duracoes if d >= 45.0),
+    }
+
+    total_manuais = sum(mesarios_contagem.values())
+    mesarios_lista = []
+    for mid, count in sorted(mesarios_contagem.items(), key=lambda x: x[1], reverse=True):
+        pct_man = round(count / total_manuais * 100, 1) if total_manuais else 0.0
+        mesarios_lista.append({
+            "mesario_id": mid,
+            "liberacoes_manuais": count,
+            "pct_total_manuais": pct_man
+        })
+
+    return {
+        "log_disponivel": True,
+        "total_votos_log": votos_totais,
+        "tempo_medio_cabine_seg": tempo_medio,
+        "votos_sub10s_contagem": sub10s_count,
+        "votos_sub10s_pct": pct_sub10s,
+        "sequencia_max_sub10s": max_consecutive_sub10s,
+        "distribuicao_tempo_cabine": distribuicao,
+        "flagrantes_biometria_mesario": flagrantes_mesario,
+        "mesarios_habilitacao_manual": mesarios_lista,
+        "votos_por_faixa_horaria": faixas
+    }

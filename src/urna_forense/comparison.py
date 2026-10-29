@@ -24,6 +24,8 @@ from .parsers.bu import parse_bu
 from .reports import json_report
 from .scanner import NAME_RE
 
+from .containers.jez import read_log_payloads
+from .parsers.logd import parse_text, extract_cabin_telemetry
 import math
 
 _SC_COORDS_CACHE: Optional[dict[str, Any]] = None
@@ -59,6 +61,22 @@ def calculate_municipios_distance_km(code1: int, code2: int) -> Optional[float]:
     a = math.sin(dlat / 2.0)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2.0)**2
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
     return round(R * c, 1)
+
+def extract_section_log_telemetry(bu_path: Optional[Path]) -> Optional[dict[str, Any]]:
+    """Extrai telemetria de cabine e mesários a partir do log.jez pareado ao bu.dat."""
+    if not bu_path:
+        return None
+    log_path = Path(str(bu_path).replace("-bu.dat", "-log.jez"))
+    if not log_path.is_file():
+        return None
+    try:
+        _, payloads = read_log_payloads(log_path)
+        if not payloads:
+            return None
+        events = parse_text(payloads[0].text)
+        return extract_cabin_telemetry(events.events)
+    except Exception:
+        return None
 
 
 # Candidatos oficiais de referência (Eleições 2026)
@@ -180,6 +198,7 @@ class SectionComparison:
     worst_severity: str = "NORMAL"
     fraud_score: int = 0
     fraud_label: str = ""
+    telemetria_log: Optional[dict[str, Any]] = None
 
     @property
     def key_str(self) -> str:
@@ -196,6 +215,7 @@ class SectionComparison:
             "worst_severity": self.worst_severity,
             "fraud_score": self.fraud_score,
             "fraud_label": self.fraud_label,
+            "telemetria_log": self.telemetria_log,
             "total_anomalias": len(self.anomalies),
             "anomalias": [a.as_dict() for a in self.anomalies],
             "dados_1t": asdict(self.s1) if self.s1 else None,
@@ -390,6 +410,7 @@ def evaluate_section_anomalies(
     runoff_candidates: tuple[int, int] = (13, 22),
     mun_stats: Optional[dict[str, Any]] = None,
     mun_resolver: Optional[Callable[[int], Optional[str]]] = None,
+    telemetry: Optional[dict[str, Any]] = None,
 ) -> list[Anomaly]:
     """Aplica o catálogo completo de 100 verificações automatizadas."""
     anomalies: list[Anomaly] = []
@@ -2340,6 +2361,77 @@ def evaluate_section_anomalies(
                     details={"local": s2.local, "cand_a": c1_v, "cand_b": c2_v},
                 )
             )
+    # ------------------------------------------------------------------------
+    # TELEMETRIA DE CABINE, LOG E MESÁRIOS (CHK121 a CHK124)
+    # ------------------------------------------------------------------------
+    # CHK121: Digital de mesário detectada em eleitor
+    if telemetry and telemetry.get("flagrantes_biometria_mesario"):
+        flagrantes = telemetry["flagrantes_biometria_mesario"]
+        if len(flagrantes) > 0:
+            anomalies.append(
+                Anomaly(
+                    code="CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR",
+                    category=CAT_BIOMETRIA,
+                    severity=SEV_ALTA,
+                    title="Digital de mesário detectada no leitor durante tentativa de eleitor",
+                    description=f"A urna registrou {len(flagrantes)} evento(s) onde a digital coletada bateu com a de um mesário da mesa.",
+                    details={"total_flagrantes": len(flagrantes), "amostra": flagrantes[:3]},
+                )
+            )
+
+    # CHK122: Votação em esteira (< 10s na cabine)
+    if telemetry:
+        sub10_cnt = telemetry.get("votos_sub10s_contagem", 0)
+        sub10_pct = telemetry.get("votos_sub10s_pct", 0.0)
+        max_seq = telemetry.get("sequencia_max_sub10s", 0)
+        if max_seq >= 3 or (sub10_pct >= 10.0 and sub10_cnt >= 10):
+            anomalies.append(
+                Anomaly(
+                    code="CHK122_VOTACAO_ESTEIRA_TEMPO_INFERIOR_10S",
+                    category=CAT_TEMPORAL,
+                    severity=SEV_ALTA,
+                    title="Votação em esteira mecânica contínua (< 10s na cabine)",
+                    description=f"{sub10_cnt} votos ({sub10_pct}%) computados em ritmo inumano (< 10s), com sequência máxima de {max_seq} votos consecutivos.",
+                    details={"votos_sub10s": sub10_cnt, "pct_sub10s": sub10_pct, "sequencia_max": max_seq},
+                )
+            )
+
+    # CHK123: Surto manual no horário de almoço (12h às 14h)
+    if telemetry:
+        faixas = telemetry.get("votos_por_faixa_horaria", {})
+        almoco = faixas.get("almoco_12_14", {})
+        tot_manuais = sum(f.get("manual", 0) for f in faixas.values())
+        manuais_almoco = almoco.get("manual", 0)
+        if tot_manuais >= 20 and manuais_almoco >= 15:
+            pct_almoco = (manuais_almoco / tot_manuais) * 100.0
+            if pct_almoco >= 35.0:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK123_SURTO_MANUAL_HORARIO_DESERTO",
+                        category=CAT_TEMPORAL,
+                        severity=SEV_MEDIA,
+                        title="Surto desproporcional de votos manuais no horário de almoço",
+                        description=f"{manuais_almoco} votos manuais ({pct_almoco:.1f}% do total da urna) concentrados entre 12h e 14h.",
+                        details={"manuais_almoco": manuais_almoco, "pct_almoco": round(pct_almoco, 1)},
+                    )
+                )
+
+    # CHK124: Concentração desproporcional por mesário (> 80%)
+    if telemetry:
+        mesarios = telemetry.get("mesarios_habilitacao_manual", [])
+        if len(mesarios) >= 2:
+            top_m = mesarios[0]
+            if top_m.get("pct_total_manuais", 0.0) >= 80.0 and top_m.get("liberacoes_manuais", 0) >= 25:
+                anomalies.append(
+                    Anomaly(
+                        code="CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO",
+                        category=CAT_BIOMETRIA,
+                        severity=SEV_ALTA,
+                        title="Mais de 80% das liberações manuais por um único mesário",
+                        description=f"Mesário {top_m.get('mesario_id')} autenticou {top_m.get('liberacoes_manuais')} liberações ({top_m.get('pct_total_manuais')}% do total da urna).",
+                        details={"mesario_id": top_m.get("mesario_id"), "liberacoes": top_m.get("liberacoes_manuais"), "pct": top_m.get("pct_total_manuais")},
+                    )
+                )
 
     return anomalies
 
@@ -2364,6 +2456,12 @@ def calculate_section_fraud_score(anomalies: list[Anomaly]) -> dict[str, Any]:
     score = 0
     if has_code("CHK093") or has_code("CHK098") or has_code("CHK100") or has_code("CHK059"):
         score = max(score, 90)
+    if has_code("CHK121"):
+        score = max(score, 95)
+    if has_code("CHK122"):
+        score = max(score, 90)
+    if has_code("CHK124"):
+        score = max(score, 88)
 
     if has_code("CHK046"):
         score = max(score, 82)
@@ -2709,6 +2807,33 @@ def run_comparison(config: ComparisonConfig) -> ComparisonResult:
         )
         sections_comparison.append(comp_sec)
 
+    # Enriquecimento com telemetria do log para seções com anomalias ou alta biografia
+    candidate_sections = [
+        s for s in sections_comparison
+        if (s.worst_severity in ("ALTA", "MEDIA") or (s.s2 and s.s2.pct_biografia > 20.0)) and s.s2 and s.s2.path
+    ]
+    if candidate_sections:
+        _log(f"[3.5/5] Extraindo telemetria forense do log em {len(candidate_sections)} seções relevantes...")
+        bu_paths = [s.s2.path for s in candidate_sections]
+        with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
+            telemetrias = list(executor.map(extract_section_log_telemetry, bu_paths))
+        for comp_sec, telem in zip(candidate_sections, telemetrias):
+            if telem:
+                comp_sec.telemetria_log = telem
+                mun_b = mun_benchmarks.get(comp_sec.municipio)
+                mun_res = (lambda code: table.get((comp_sec.uf, code)).nome if (comp_sec.uf, code) in table else None) if table else None
+                new_anoms = evaluate_section_anomalies(comp_sec.s1, comp_sec.s2, mun_stats=mun_b, mun_resolver=mun_res, telemetry=telem)
+                diff_anoms = [a for a in new_anoms if a.code not in {x.code for x in comp_sec.anomalies}]
+                for a in diff_anoms:
+                    comp_sec.anomalies.append(a)
+                    anomaly_counter[a.code] += 1
+                    severity_counter[a.severity] += 1
+                    category_counter[a.category] += 1
+                comp_sec.worst_severity = compute_worst_severity(comp_sec.anomalies)
+                f_risk = calculate_section_fraud_score(comp_sec.anomalies)
+                comp_sec.fraud_score = f_risk["score"]
+                comp_sec.fraud_label = f_risk["label"]
+
     total_sections_with_anomalies = sum(1 for s in sections_comparison if s.anomalies)
     total_anomalies_count = sum(len(s.anomalies) for s in sections_comparison)
 
@@ -3033,6 +3158,10 @@ RULE_HUMAN_TITLES = {
     "CHK118_DIFERENCA_TEMPO_ENCERRAMENTO_E_EMISSAO_MAIOR_15MIN": ("Impressão do BU Demorou > 15 min Após Encerramento", "BAIXA"),
     "CHK119_HORARIO_ENCERRAMENTO_IDENTICO_DE_SEGUNDO_ENTRE_URNAS_DISTINTAS": ("Encerramento Cravado às 17:00:00", "INFO"),
     "CHK120_VOTO_UNANIME_NO_LOCAL_DE_VOTACAO": ("Zero Votos para Concorrente em Seção Expressiva do Local", "ALTA"),
+    "CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR": ("Digital de Mesário Detectada em Tentativas de Eleitor", "ALTA"),
+    "CHK122_VOTACAO_ESTEIRA_TEMPO_INFERIOR_10S": ("Votação em Esteira Contínua (< 10s na Cabine)", "ALTA"),
+    "CHK123_SURTO_MANUAL_HORARIO_DESERTO": ("Surto Desproporcional de Votos Manuais no Almoço", "MEDIA"),
+    "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO": ("Concentração de > 80% das Liberações em Único Mesário", "ALTA"),
 }
 
 
@@ -3989,6 +4118,7 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
             <!-- GRÁFICO / MEDIDOR DE CHANCE DE FRAUDE NESTA URNA -->
             <div id="modalFraudCard"></div>
             <div id="modalKpis" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.25rem;"></div>
+            <div id="modalTelemetry"></div>
             <h3 style="font-size: 0.9375rem; font-weight: 800; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.4rem; margin-bottom: 0.75rem;">
                 Inconsistências Identificadas e Tradução para Leigos:
             </h3>
@@ -4526,6 +4656,30 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                 "titulo": "Zero Votos para Concorrente em Seção Expressiva do Local",
                 "explicacao": "Um dos dois candidatos finalistas recebeu zero votos válidos em uma seção expressiva do local de votação.",
                 "por_que_suspeito": "Unanimidade artificial extrema em colégios eleitorais com pluralidade de eleitores.",
+                "severidade": "ALTA"
+            }},
+            "CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR": {{
+                "titulo": "Digital de Mesário em Tentativa de Eleitor",
+                "explicacao": "A própria urna registrou que a digital encostada no leitor durante a habilitação de um eleitor bateu com a de um dos mesários da mesa.",
+                "por_que_suspeito": "Flagrante material gravado no log: o mesário colocou o próprio dedo no sensor para tentar habilitar o voto ou forçar o bypass em nome de eleitor ausente.",
+                "severidade": "ALTA"
+            }},
+            "CHK122_VOTACAO_ESTEIRA_TEMPO_INFERIOR_10S": {{
+                "titulo": "Votação em Esteira (< 10s por Eleitor)",
+                "explicacao": "Votos consecutivos foram confirmados em menos de 10 segundos entre a liberação da urna e o voto computado.",
+                "por_que_suspeito": "Tempo fisicamente insuficiente para um ser humano entrar na cabine, ouvir bipes, digitar números e confirmar. Indica operador votando em esteira contínua.",
+                "severidade": "ALTA"
+            }},
+            "CHK123_SURTO_MANUAL_HORARIO_DESERTO": {{
+                "titulo": "Surto de Votos Manuais no Horário de Almoço",
+                "explicacao": "Mais de 30% de todas as liberações manuais por ano de nascimento da urna se concentraram entre 12h00 e 13h30.",
+                "por_que_suspeito": "Aproveitamento de janela de baixa vigilância na sala de votação (horário de almoço) para inserção de votos manuais no lugar de faltosos.",
+                "severidade": "MEDIA"
+            }},
+            "CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO": {{
+                "titulo": "Mais de 80% das Liberações por um Único Mesário",
+                "explicacao": "Um único mesário específico da mesa foi responsável por mais de 80% de todas as liberações manuais sem biometria da seção.",
+                "por_que_suspeito": "Individualização de conduta ilícita: prova que a quebra da biometria não foi rotina da mesa, mas ação deliberada e concentrada de um indivíduo específico.",
                 "severidade": "ALTA"
             }},
             "CHK021_EXTINCAO_TTE_2T": {{
@@ -5207,6 +5361,82 @@ def generate_comparison_html(data: dict[str, Any]) -> str:
                     <div style="font-size: 0.75rem; color: ${{dif13 >= 0 ? '#047857' : '#b91c1c'}}; font-weight: 700; margin-top: 0.35rem;">Dif: ${{dif13 >= 0 ? '+' : ''}}${{dif13}} votos</div>
                 </div>
             `;
+            // Renderizar Telemetria do Log se disponivel
+            const telem = s.telemetria_log;
+            if (telem) {{
+                let flagrantesHtml = '';
+                if (telem.flagrantes_biometria_mesario && telem.flagrantes_biometria_mesario.length > 0) {{
+                    flagrantesHtml = `
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-left:4px solid #e11d48; border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.75rem;">
+                            <div style="font-weight:800; font-size:0.8rem; color:#991b1b; display:flex; align-items:center; gap:6px;">
+                                <span>🚨</span> <span>FLAGRANTE MATERIAL: Digital de Mesário Detectada em Tentativas de Eleitor (${{telem.flagrantes_biometria_mesario.length}} eventos no log)</span>
+                            </div>
+                            <div style="font-size:0.72rem; color:#881337; margin-top:3px; font-family:ui-monospace,monospace;">
+                                ${{telem.flagrantes_biometria_mesario[0].mensagem}} (${{telem.flagrantes_biometria_mesario[0].timestamp}})
+                            </div>
+                        </div>
+                    `;
+                }}
+
+                let mesariosRows = '';
+                if (telem.mesarios_habilitacao_manual && telem.mesarios_habilitacao_manual.length > 0) {{
+                    for (const m of telem.mesarios_habilitacao_manual) {{
+                        mesariosRows += `
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:3px 6px; font-family:ui-monospace,monospace; font-weight:700;">${{m.mesario_id}}</td>
+                                <td style="padding:3px 6px; text-align:right; font-family:ui-monospace,monospace; font-weight:800; color:#b91c1c;">${{m.liberacoes_manuais}}</td>
+                                <td style="padding:3px 6px; text-align:right; font-family:ui-monospace,monospace; font-weight:700;">${{m.pct_total_manuais}}%</td>
+                            </tr>
+                        `;
+                    }}
+                }}
+
+                const tMedio = telem.tempo_medio_cabine_seg || 0;
+                const isCabineRapida = tMedio > 0 && tMedio < 10;
+
+                document.getElementById('modalTelemetry').innerHTML = `
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.85rem 1rem; margin-bottom:1.25rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; border-bottom:1px solid #e2e8f0; padding-bottom:0.4rem;">
+                            <span style="font-size:0.75rem; font-weight:800; color:#1e293b; text-transform:uppercase; display:flex; align-items:center; gap:5px;">
+                                <span>⏱️</span> <span>Telemetria Forense do Log &bull; Cabine e Mesários da Seção</span>
+                            </span>
+                            <span style="font-size:0.7rem; font-weight:700; color:#047857; background:#dcfce7; border:1px solid #bbf7d0; border-radius:4px; padding:1px 6px;">
+                                ${{telem.total_votos_log}} votos auditados no log
+                            </span>
+                        </div>
+                        ${{flagrantesHtml}}
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.85rem;">
+                            <div>
+                                <div style="font-size:0.7rem; font-weight:700; color:#64748b; text-transform:uppercase;">Velocidade Média na Cabine</div>
+                                <div style="font-size:1.2rem; font-weight:900; font-family:ui-monospace,monospace; color:${{isCabineRapida ? '#b91c1c' : '#0f172a'}}; margin:2px 0;">
+                                    ${{tMedio}}s por eleitor ${{isCabineRapida ? '<span class="badge badge-red" style="font-size:9px;">ESTEIRA ROBÓTICA</span>' : ''}}
+                                </div>
+                                <div style="font-size:0.72rem; color:#64748b;">
+                                    Votos &lt; 10s: <strong>${{telem.votos_sub10s_contagem}}</strong> (${{telem.votos_sub10s_pct}}%) &bull; Seq. máx: <strong>${{telem.sequencia_max_sub10s}}</strong>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size:0.7rem; font-weight:700; color:#64748b; text-transform:uppercase; margin-bottom:3px;">Mesários Autorizadores de Voto Manual</div>
+                                <table style="width:100%; font-size:11px; border-collapse:collapse;">
+                                    <thead>
+                                        <tr style="border-bottom:1px solid #cbd5e1; color:#475569; text-transform:uppercase; font-size:9px;">
+                                            <th style="text-align:left; padding:2px 6px;">Mesário</th>
+                                            <th style="text-align:right; padding:2px 6px;">Manuais</th>
+                                            <th style="text-align:right; padding:2px 6px;">%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${{mesariosRows || '<tr><td colspan="3" style="color:#64748b; padding:4px;">Nenhuma liberação manual</td></tr>'}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }} else {{
+                document.getElementById('modalTelemetry').innerHTML = '';
+            }}
+
 
             let anomHtml = '';
             for (const a of sortedAnoms) {{

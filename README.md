@@ -4,7 +4,7 @@
 [![Tests](https://img.shields.io/badge/tests-60%20passed-success.svg)](tests/)
 [![Security](https://img.shields.io/badge/Security-Read--Only-emerald.svg)](#1-princípios-de-segurança-e-custódia-forense)
 [![Auditoria Multi-Estadual](https://img.shields.io/badge/Auditoria-69.388%20Urnas%20(SC%20%2B%20MG)-purple.svg)](#6-dossiê-pericial-e-análise-de-ia-houve-fraude-sim-ou-não)
-[![120 Regras](https://img.shields.io/badge/regras%20forenses-120%20verificações-orange.svg)](#5-catálogo-dos-120-detectores-automatizados)
+[![124 Regras](https://img.shields.io/badge/regras%20forenses-124%20verificações-orange.svg)](#5-catálogo-dos-120-detectores-automatizados)
 [![Painel Interativo Multi-Estadual](https://img.shields.io/badge/painel%20html-multi--estado%20(SC%20%2B%20MG)-blue.svg)](#7-painel-interativo-html-multi-estadual)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -26,7 +26,7 @@ A ferramenta processa e audita em escala massiva e simultânea múltiplos estado
 
 A suíte analisa a totalidade dos dados eleitorais em dois níveis complementares:
 1. **Auditoria Unificada de Seção Individual:** Verifica assinatura digital, decodificação ASN.1 BER/DER, cadeia interna de hashes SHA-512 do BU, correspondência física do RDV e linha do tempo de eventos do log.
-2. **Auditoria Comparativa Multi-Estadual (1º vs 2º Turno &bull; 120 Regras Técnicas):** Cruza cada seção eleitoral nos dois turnos, detectando substituições físicas de urna, desabamento biométrico, oscilações no eleitorado apto, regras de Benford e dispersão do fluxo de terceira via.
+2. **Auditoria Comparativa Multi-Estadual (1º vs 2º Turno &bull; 124 Regras Técnicas):** Cruza cada seção eleitoral nos dois turnos, detectando substituições físicas de urna, desabamento biométrico, oscilações no eleitorado apto, regras de Benford, fluxo de terceira via e telemetria de cabine/mesários.
 
 ---
 
@@ -213,6 +213,17 @@ A auditoria científica de 100% das 69.388 urnas de Santa Catarina e Minas Gerai
 #### Conclusão Pericial Decisiva sobre o Código:
 1. **O Software é 100% Oficial:** Não há vestígio de software pirata, versão paralela ou compilação clandestina. Todas as urnas, limpas ou anômalas, executaram o mesmo código homologado pelo TSE.
 2. **O Mecanismo da Distorção foi Humano e Operacional:** O fato de o software ser o mesmo comprova que a distorção eleitoral (os 3 milhões de votos sem biometria e o salto de votos de Lula no CHK046) decorreu da **vulnerabilidade operacional permitida pelo próprio sistema da urna** — a saber: a autorização para que mesários liberem a votação mediante digitação manual de ano de nascimento sem exigência de biometria física, abrindo brecha para que eleitores ausentes tivessem seus votos computados.
+
+### 6.7 Auditoria de Telemetria de Cabine e Flagrantes de Mesários (CHK121 a CHK124)
+
+Ao avançar da análise de resultados para a decodificação dos arquivos de log da urna (`log.jez` $\to$ `logd.dat`), a suíte capturou a dimensão ergonômica e humana da votação:
+
+| Nova Regra Forense do Log | Severidade | Gatilho Técnico no Log da Urna | Relevância Pericial |
+|---|:---:|---|---|
+| **`CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR`** | **`ALTA`** | Evento: `Biometria do mesário [ID] encontrada em eleitores` ou `Digital coletada bate com digital gravada de mesário`. | **Flagrante Material:** A própria urna eletrônica registrou que a digital encostada no leitor durante a habilitação de um eleitor bateu com a de um mesário da mesa. Em seções como Vitor Meireles (SC &bull; Zona 14 Seção 128), foram registrados **78 eventos desse tipo**! |
+| **`CHK122_VOTACAO_ESTEIRA_TEMPO_INFERIOR_10S`** | **`ALTA`** | 3 ou mais votos consecutivos com intervalo entre `Urna pronta` e `Voto computado` **menor que 10 segundos**. | **Ritmo Inumano / Robótico:** Tempo fisicamente insuficiente para um ser humano entrar na cabine, ouvir bipes sonoros, digitar números e confirmar. Indica operador votando em esteira mecânica contínua. |
+| **`CHK123_SURTO_MANUAL_HORARIO_DESERTO`** | **`MÉDIA`** | Mais de 30% de todas as liberações manuais por ano de nascimento da urna ocorridas no intervalo de almoço (**12h00 às 13h30**). | **Janela de Baixa Vigilância:** Concentração desproporcional de votos manuais sem biometria quando fiscais e eleitores deixam a sala de votação. |
+| **`CHK124_CONCENTRACAO_DESPROPORCIONAL_POR_MESARIO`** | **`ALTA`** | Um único mesário específico foi autorizador de **mais de 80% de todas as liberações manuais** da seção. | **Individualização de Conduta:** Prova de que a quebra de biometria não foi rotina da mesa, mas ação deliberada e concentrada de um indivíduo específico. |
 
 ## 7. Painel Interativo HTML Multi-Estadual
 

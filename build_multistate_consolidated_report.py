@@ -356,6 +356,36 @@ for s in sec_mg:
 combined_sections = sorted(sec_sc + sec_mg, key=lambda s: (s.get("fraud_score", 0), s.get("total_anomalias", 0)), reverse=True)[:8000]
 print(f"Total de secoes combinadas no explorador: {len(combined_sections):,} (SC: {len(sec_sc):,} + MG: {len(sec_mg):,})")
 
+# Enriquecimento com telemetria do log nas seções mais críticas do explorador
+print("Extraindo telemetria forense do log nas seções críticas do explorador (32 threads)...")
+from concurrent.futures import ThreadPoolExecutor
+from urna_forense.comparison import extract_section_log_telemetry
+
+def _enrich_sec(s):
+    d2 = s.get("dados_2t") or {}
+    p = d2.get("path")
+    if p:
+        telem = extract_section_log_telemetry(Path(p))
+        if telem:
+            s["telemetria_log"] = telem
+            flagrantes = telem.get("flagrantes_biometria_mesario", [])
+            if flagrantes and not any(a.get("code") == "CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR" for a in s.get("anomalias", [])):
+                s.setdefault("anomalias", []).insert(0, {
+                    "code": "CHK121_DIGITAL_MESARIO_DETECTADA_EM_ELEITOR",
+                    "title": "Digital de Mesário em Tentativa de Eleitor",
+                    "severity": "ALTA",
+                    "category": "BIOMETRIA",
+                    "description": f"A urna registrou {len(flagrantes)} evento(s) onde a digital coletada bateu com a de um mesário da mesa.",
+                    "details": {"total_flagrantes": len(flagrantes), "amostra": flagrantes[:2]}
+                })
+                s["total_anomalias"] = len(s["anomalias"])
+                s["fraud_score"] = max(s.get("fraud_score", 0), 95)
+    return s
+
+with ThreadPoolExecutor(max_workers=32) as pool:
+    combined_sections[:100] = list(pool.map(_enrich_sec, combined_sections[:100]))
+print("Telemetria enriquecida com sucesso nas seções críticas!")
+
 # Dicionario de municipios de SC + MG
 mun_map = {}
 for s in data_sc["secoes"]:
@@ -1039,6 +1069,7 @@ HTML_TEMPLATE = f"""<!DOCTYPE html>
             </div>
             <div id="modalFraudCard"></div>
             <div id="modalKpis" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.25rem;"></div>
+            <div id="modalTelemetry"></div>
             <h3 style="font-size: 0.9375rem; font-weight: 800; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.4rem; margin-bottom: 0.75rem;">
                 Inconsistências Identificadas e Tradução para Leigos:
             </h3>
@@ -1559,7 +1590,7 @@ HTML_TEMPLATE = f"""<!DOCTYPE html>
                 case 'sem_biometria': return ((d2.biometria_bio || 0) + (d2.biometria_nao || 0)) - ((d1.biometria_bio || 0) + (d1.biometria_nao || 0));
                 case 'flavio': return (p2['22'] || 0) - (p1['22'] || 0);
                 case 'lula': return (p2['13'] || 0) - (p1['13'] || 0);
-                case 'terceira_via': return d1.votos_terceira_via || 0;
+                case 'terceira_via': return (d1.total_terceira_via !== undefined && d1.total_terceira_via !== null) ? d1.total_terceira_via : (typeof d1.votos_terceira_via === 'object' && d1.votos_terceira_via !== null ? Object.values(d1.votos_terceira_via).reduce((a, b) => a + b, 0) : (d1.votos_terceira_via || 0));
                 default: return s.fraud_score || 0;
             }}
         }}
@@ -1670,7 +1701,7 @@ HTML_TEMPLATE = f"""<!DOCTYPE html>
                 const d_13 = v2_13 - v1_13;
                 const cl_13 = d_13 >= 0 ? 'text-emerald-700 font-bold' : 'text-rose-700 font-bold';
 
-                const t3 = d1.votos_terceira_via || 0;
+                const t3 = (d1.total_terceira_via !== undefined && d1.total_terceira_via !== null) ? d1.total_terceira_via : (typeof d1.votos_terceira_via === 'object' && d1.votos_terceira_via !== null ? Object.values(d1.votos_terceira_via).reduce((a, b) => a + b, 0) : (d1.votos_terceira_via || 0));
 
                 const badges = s.anomalias.slice(0, 3).map(a => {{
                     const isHigh = a.severity === 'ALTA';
@@ -1835,6 +1866,82 @@ HTML_TEMPLATE = f"""<!DOCTYPE html>
                     <div style="font-size: 0.75rem; color: ${{dif13 >= 0 ? '#047857' : '#b91c1c'}}; font-weight: 700; margin-top: 0.35rem;">Dif: ${{dif13 >= 0 ? '+' : ''}}${{dif13}} votos</div>
                 </div>
             `;
+            // Renderizar Telemetria do Log se disponivel
+            const telem = s.telemetria_log;
+            if (telem) {{
+                let flagrantesHtml = '';
+                if (telem.flagrantes_biometria_mesario && telem.flagrantes_biometria_mesario.length > 0) {{
+                    flagrantesHtml = `
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-left:4px solid #e11d48; border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.75rem;">
+                            <div style="font-weight:800; font-size:0.8rem; color:#991b1b; display:flex; align-items:center; gap:6px;">
+                                <span>🚨</span> <span>FLAGRANTE MATERIAL: Digital de Mesário Detectada em Tentativas de Eleitor (${{telem.flagrantes_biometria_mesario.length}} eventos no log)</span>
+                            </div>
+                            <div style="font-size:0.72rem; color:#881337; margin-top:3px; font-family:ui-monospace,monospace;">
+                                ${{telem.flagrantes_biometria_mesario[0].mensagem}} (${{telem.flagrantes_biometria_mesario[0].timestamp}})
+                            </div>
+                        </div>
+                    `;
+                }}
+
+                let mesariosRows = '';
+                if (telem.mesarios_habilitacao_manual && telem.mesarios_habilitacao_manual.length > 0) {{
+                    for (const m of telem.mesarios_habilitacao_manual) {{
+                        mesariosRows += `
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:3px 6px; font-family:ui-monospace,monospace; font-weight:700;">${{m.mesario_id}}</td>
+                                <td style="padding:3px 6px; text-align:right; font-family:ui-monospace,monospace; font-weight:800; color:#b91c1c;">${{m.liberacoes_manuais}}</td>
+                                <td style="padding:3px 6px; text-align:right; font-family:ui-monospace,monospace; font-weight:700;">${{m.pct_total_manuais}}%</td>
+                            </tr>
+                        `;
+                    }}
+                }}
+
+                const tMedio = telem.tempo_medio_cabine_seg || 0;
+                const isCabineRapida = tMedio > 0 && tMedio < 10;
+
+                document.getElementById('modalTelemetry').innerHTML = `
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.85rem 1rem; margin-bottom:1.25rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; border-bottom:1px solid #e2e8f0; padding-bottom:0.4rem;">
+                            <span style="font-size:0.75rem; font-weight:800; color:#1e293b; text-transform:uppercase; display:flex; align-items:center; gap:5px;">
+                                <span>⏱️</span> <span>Telemetria Forense do Log &bull; Cabine e Mesários da Seção</span>
+                            </span>
+                            <span style="font-size:0.7rem; font-weight:700; color:#047857; background:#dcfce7; border:1px solid #bbf7d0; border-radius:4px; padding:1px 6px;">
+                                ${{telem.total_votos_log}} votos auditados no log
+                            </span>
+                        </div>
+                        ${{flagrantesHtml}}
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.85rem;">
+                            <div>
+                                <div style="font-size:0.7rem; font-weight:700; color:#64748b; text-transform:uppercase;">Velocidade Média na Cabine</div>
+                                <div style="font-size:1.2rem; font-weight:900; font-family:ui-monospace,monospace; color:${{isCabineRapida ? '#b91c1c' : '#0f172a'}}; margin:2px 0;">
+                                    ${{tMedio}}s por eleitor ${{isCabineRapida ? '<span class="badge badge-red" style="font-size:9px;">ESTEIRA ROBÓTICA</span>' : ''}}
+                                </div>
+                                <div style="font-size:0.72rem; color:#64748b;">
+                                    Votos &lt; 10s: <strong>${{telem.votos_sub10s_contagem}}</strong> (${{telem.votos_sub10s_pct}}%) &bull; Seq. máx: <strong>${{telem.sequencia_max_sub10s}}</strong>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size:0.7rem; font-weight:700; color:#64748b; text-transform:uppercase; margin-bottom:3px;">Mesários Autorizadores de Voto Manual</div>
+                                <table style="width:100%; font-size:11px; border-collapse:collapse;">
+                                    <thead>
+                                        <tr style="border-bottom:1px solid #cbd5e1; color:#475569; text-transform:uppercase; font-size:9px;">
+                                            <th style="text-align:left; padding:2px 6px;">Mesário</th>
+                                            <th style="text-align:right; padding:2px 6px;">Manuais</th>
+                                            <th style="text-align:right; padding:2px 6px;">%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${{mesariosRows || '<tr><td colspan="3" style="color:#64748b; padding:4px;">Nenhuma liberação manual</td></tr>'}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }} else {{
+                document.getElementById('modalTelemetry').innerHTML = '';
+            }}
+
 
             let anomHtml = '';
             for (const a of sortedAnoms) {{
