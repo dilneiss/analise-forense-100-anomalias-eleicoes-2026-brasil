@@ -1199,10 +1199,1059 @@
                             <th class="col-fit t-center">Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody"></tbody>
+                    <tbody id="tableBody"><tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(0)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">SC</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Vitor Meireles</td>
+            <td class="col-fit t-center font-mono">14</td>
+            <td class="col-fit t-center font-mono font-bold">128</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">93%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">249 &rarr; 249 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">220 &rarr; 230 <span style='font-size:10px; color:#047857;'>(+10)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">168 &rarr; 112 <span style='font-size:10px; color:#b91c1c;'>(-56)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">52 &rarr; 118 <span style='font-size:10px; color:#b91c1c;'>(+66)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">141 &rarr; <strong>164</strong> <span style="font-size:10px;">(+23)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">50 &rarr; <strong>62</strong> <span style="font-size:10px;">(+12)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">21</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-yellow" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK001_TROCA_URNA_FISICA\")" style="cursor:pointer; margin:2px;" title="Urna substituída: 1T=1752201 vs 2T=1681529.">Número interno da urna física alterado</span><span class="badge badge-yellow" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK002_TROCA_FLASH_VOTACAO\")" style="cursor:pointer; margin:2px;" title="FV alterada: 1T=3223AE43 vs 2T=07797BA5.">Serial da Flash de Votação (FV) alterado</span><span class="badge badge-yellow" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK003_TROCA_FLASH_CARGA\")" style="cursor:pointer; margin:2px;" title="FC atualizada para o 2T: 1T=43462EEB vs 2T=00060F07. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.">Atualização da Flash de Carga (Procedimento Normal do 2T)</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(0)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(1)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">MG</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">São Miguel Do Anta</td>
+            <td class="col-fit t-center font-mono">268</td>
+            <td class="col-fit t-center font-mono font-bold">68</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">93%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">289 &rarr; 289 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">241 &rarr; 249 <span style='font-size:10px; color:#047857;'>(+8)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">199 &rarr; 148 <span style='font-size:10px; color:#b91c1c;'>(-51)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">42 &rarr; 101 <span style='font-size:10px; color:#b91c1c;'>(+59)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">76 &rarr; <strong>78</strong> <span style="font-size:10px;">(+2)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">133 &rarr; <strong>160</strong> <span style="font-size:10px;">(+27)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">14</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-yellow" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK001_TROCA_URNA_FISICA\")" style="cursor:pointer; margin:2px;" title="Urna substituída: 1T=1751846 vs 2T=1653283.">Número interno da urna física alterado</span><span class="badge badge-yellow" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK003_TROCA_FLASH_CARGA\")" style="cursor:pointer; margin:2px;" title="FC atualizada para o 2T: 1T=F6CB0257 vs 2T=02BA9C62. Procedimento rotineiro dos cartórios eleitorais para carregar a cédula exclusiva dos finalistas no 2º turno.">Atualização da Flash de Carga (Procedimento Normal do 2T)</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK004_MODELO_URNA_DIVERGENTE\")" style="cursor:pointer; margin:2px;" title="Geração/série da urna diferente: 1T=1751846 vs 2T=1653283.">Modelo de urna divergente entre turnos</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(1)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(2)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Craíbas</td>
+            <td class="col-fit t-center font-mono">31</td>
+            <td class="col-fit t-center font-mono font-bold">153</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">395 &rarr; 395 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">322 &rarr; 329 <span style='font-size:10px; color:#047857;'>(+7)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">85 &rarr; 95 <span style='font-size:10px; color:#b91c1c;'>(+10)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">76 &rarr; <strong>73</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">218 &rarr; <strong>248</strong> <span style="font-size:10px;">(+30)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+7 eleitores) e Lula foi a 77.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="95 eleitores (28.9% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(2)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(3)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Delmiro Gouveia</td>
+            <td class="col-fit t-center font-mono">40</td>
+            <td class="col-fit t-center font-mono font-bold">133</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">250 &rarr; 250 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">179 &rarr; 185 <span style='font-size:10px; color:#047857;'>(+6)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">38 &rarr; 65 <span style='font-size:10px; color:#b91c1c;'>(+27)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">28 &rarr; <strong>22</strong> <span style="font-size:10px;">(-6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">131 &rarr; <strong>153</strong> <span style="font-size:10px;">(+22)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 6 votos enquanto comparecimento subiu (+6 eleitores) e Lula foi a 87.4%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="65 eleitores (35.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(3)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(4)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Maceió</td>
+            <td class="col-fit t-center font-mono">33</td>
+            <td class="col-fit t-center font-mono font-bold">301</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">460 &rarr; 461 <span style='font-size:10px; color:#b91c1c;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">370 &rarr; 374 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">144 &rarr; 135 <span style='font-size:10px; color:#64748b;'>(-9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">150 &rarr; <strong>145</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">170 &rarr; <strong>216</strong> <span style="font-size:10px;">(+46)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 59.8%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="135 eleitores (36.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(4)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(5)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Igaci</td>
+            <td class="col-fit t-center font-mono">45</td>
+            <td class="col-fit t-center font-mono font-bold">25</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">264 &rarr; 264 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">195 &rarr; 199 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">60 &rarr; 65 <span style='font-size:10px; color:#b91c1c;'>(+5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">50 &rarr; <strong>46</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">132 &rarr; <strong>148</strong> <span style="font-size:10px;">(+16)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 76.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="65 eleitores (32.7% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(5)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(6)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Inhapi</td>
+            <td class="col-fit t-center font-mono">39</td>
+            <td class="col-fit t-center font-mono font-bold">90</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">347 &rarr; 347 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">251 &rarr; 254 <span style='font-size:10px; color:#047857;'>(+3)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">61 &rarr; 71 <span style='font-size:10px; color:#b91c1c;'>(+10)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">43 &rarr; <strong>39</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">183 &rarr; <strong>205</strong> <span style="font-size:10px;">(+22)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+3 eleitores) e Lula foi a 84.0%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="71 eleitores (28.0% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(6)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(7)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Girau Do Ponciano</td>
+            <td class="col-fit t-center font-mono">44</td>
+            <td class="col-fit t-center font-mono font-bold">179</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">379 &rarr; 379 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">299 &rarr; 303 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">130 &rarr; 138 <span style='font-size:10px; color:#b91c1c;'>(+8)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">54 &rarr; <strong>50</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">221 &rarr; <strong>247</strong> <span style="font-size:10px;">(+26)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 83.2%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="138 eleitores (45.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(7)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(8)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Poço Das Trincheiras</td>
+            <td class="col-fit t-center font-mono">50</td>
+            <td class="col-fit t-center font-mono font-bold">34</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">304 &rarr; 304 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">234 &rarr; 238 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">62 &rarr; 88 <span style='font-size:10px; color:#b91c1c;'>(+26)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">39 &rarr; <strong>35</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">172 &rarr; <strong>200</strong> <span style="font-size:10px;">(+28)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 85.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="88 eleitores (37.0% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(8)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(9)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Pão De Açúcar</td>
+            <td class="col-fit t-center font-mono">11</td>
+            <td class="col-fit t-center font-mono font-bold">80</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">322 &rarr; 322 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">249 &rarr; 251 <span style='font-size:10px; color:#047857;'>(+2)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">56 &rarr; 79 <span style='font-size:10px; color:#b91c1c;'>(+23)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">53 &rarr; <strong>46</strong> <span style="font-size:10px;">(-7)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">176 &rarr; <strong>196</strong> <span style="font-size:10px;">(+20)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 7 votos enquanto comparecimento subiu (+2 eleitores) e Lula foi a 81.0%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="79 eleitores (31.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(9)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(10)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Pilar</td>
+            <td class="col-fit t-center font-mono">8</td>
+            <td class="col-fit t-center font-mono font-bold">153</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">393 &rarr; 393 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">316 &rarr; 329 <span style='font-size:10px; color:#047857;'>(+13)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">94 &rarr; 100 <span style='font-size:10px; color:#b91c1c;'>(+6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">144 &rarr; <strong>140</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">140 &rarr; <strong>180</strong> <span style="font-size:10px;">(+40)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+13 eleitores) e Lula foi a 56.2%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="100 eleitores (30.4% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(10)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(11)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Lagoa Da Canoa</td>
+            <td class="col-fit t-center font-mono">44</td>
+            <td class="col-fit t-center font-mono font-bold">177</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">356 &rarr; 356 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">280 &rarr; 288 <span style='font-size:10px; color:#047857;'>(+8)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">71 &rarr; 83 <span style='font-size:10px; color:#b91c1c;'>(+12)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">82 &rarr; <strong>74</strong> <span style="font-size:10px;">(-8)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">168 &rarr; <strong>204</strong> <span style="font-size:10px;">(+36)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 8 votos enquanto comparecimento subiu (+8 eleitores) e Lula foi a 73.4%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="83 eleitores (28.8% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(11)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(12)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Senador Rui Palmeira</td>
+            <td class="col-fit t-center font-mono">51</td>
+            <td class="col-fit t-center font-mono font-bold">68</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">327 &rarr; 327 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">246 &rarr; 249 <span style='font-size:10px; color:#047857;'>(+3)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">69 &rarr; 74 <span style='font-size:10px; color:#b91c1c;'>(+5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">47 &rarr; <strong>42</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">166 &rarr; <strong>200</strong> <span style="font-size:10px;">(+34)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+3 eleitores) e Lula foi a 82.6%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="74 eleitores (29.7% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(12)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(13)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Maceió</td>
+            <td class="col-fit t-center font-mono">1</td>
+            <td class="col-fit t-center font-mono font-bold">536</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">419 &rarr; 419 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">354 &rarr; 356 <span style='font-size:10px; color:#047857;'>(+2)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">139 &rarr; 137 <span style='font-size:10px; color:#64748b;'>(-2)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">162 &rarr; <strong>155</strong> <span style="font-size:10px;">(-7)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">139 &rarr; <strong>190</strong> <span style="font-size:10px;">(+51)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 7 votos enquanto comparecimento subiu (+2 eleitores) e Lula foi a 55.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="137 eleitores (38.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(13)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(14)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Santana Do Ipanema</td>
+            <td class="col-fit t-center font-mono">19</td>
+            <td class="col-fit t-center font-mono font-bold">272</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">288 &rarr; 288 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">233 &rarr; 237 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">74 &rarr; 70 <span style='font-size:10px; color:#64748b;'>(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">70 &rarr; <strong>64</strong> <span style="font-size:10px;">(-6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">137 &rarr; <strong>166</strong> <span style="font-size:10px;">(+29)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 6 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 72.2%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="70 eleitores (29.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(14)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(15)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Igaci</td>
+            <td class="col-fit t-center font-mono">45</td>
+            <td class="col-fit t-center font-mono font-bold">4</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">267 &rarr; 267 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">201 &rarr; 205 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">51 &rarr; 59 <span style='font-size:10px; color:#b91c1c;'>(+8)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">56 &rarr; <strong>51</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">121 &rarr; <strong>151</strong> <span style="font-size:10px;">(+30)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 74.8%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="59 eleitores (28.8% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(15)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(16)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Limoeiro De Anadia</td>
+            <td class="col-fit t-center font-mono">47</td>
+            <td class="col-fit t-center font-mono font-bold">145</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">365 &rarr; 365 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">297 &rarr; 298 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">97 &rarr; 84 <span style='font-size:10px; color:#64748b;'>(-13)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">72 &rarr; <strong>69</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">191 &rarr; <strong>218</strong> <span style="font-size:10px;">(+27)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 76.0%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="84 eleitores (28.2% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(16)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(17)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Olho D'Água Das Flores</td>
+            <td class="col-fit t-center font-mono">11</td>
+            <td class="col-fit t-center font-mono font-bold">106</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">323 &rarr; 323 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">235 &rarr; 247 <span style='font-size:10px; color:#047857;'>(+12)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">39 &rarr; 63 <span style='font-size:10px; color:#b91c1c;'>(+24)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">78 &rarr; <strong>74</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">130 &rarr; <strong>164</strong> <span style="font-size:10px;">(+34)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+12 eleitores) e Lula foi a 68.9%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="63 eleitores (25.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(17)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(18)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Minador Do Negrão</td>
+            <td class="col-fit t-center font-mono">46</td>
+            <td class="col-fit t-center font-mono font-bold">18</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">245 &rarr; 245 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">198 &rarr; 200 <span style='font-size:10px; color:#047857;'>(+2)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">36 &rarr; 51 <span style='font-size:10px; color:#b91c1c;'>(+15)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">51 &rarr; <strong>47</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">125 &rarr; <strong>142</strong> <span style="font-size:10px;">(+17)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+2 eleitores) e Lula foi a 75.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="51 eleitores (25.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(18)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(19)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Teotônio Vilela</td>
+            <td class="col-fit t-center font-mono">34</td>
+            <td class="col-fit t-center font-mono font-bold">269</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">395 &rarr; 395 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">263 &rarr; 265 <span style='font-size:10px; color:#047857;'>(+2)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">135 &rarr; 130 <span style='font-size:10px; color:#64748b;'>(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">87 &rarr; <strong>73</strong> <span style="font-size:10px;">(-14)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">154 &rarr; <strong>191</strong> <span style="font-size:10px;">(+37)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 14 votos enquanto comparecimento subiu (+2 eleitores) e Lula foi a 72.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="130 eleitores (49.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(19)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(20)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Coité Do Nóia</td>
+            <td class="col-fit t-center font-mono">45</td>
+            <td class="col-fit t-center font-mono font-bold">130</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">312 &rarr; 312 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">257 &rarr; 258 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">67 &rarr; 102 <span style='font-size:10px; color:#b91c1c;'>(+35)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">64 &rarr; <strong>58</strong> <span style="font-size:10px;">(-6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">177 &rarr; <strong>192</strong> <span style="font-size:10px;">(+15)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 6 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 76.8%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="102 eleitores (39.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(20)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(21)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AL</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Maravilha</td>
+            <td class="col-fit t-center font-mono">50</td>
+            <td class="col-fit t-center font-mono font-bold">92</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">315 &rarr; 315 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">241 &rarr; 242 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">63 &rarr; 62 <span style='font-size:10px; color:#64748b;'>(-1)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">59 &rarr; <strong>53</strong> <span style="font-size:10px;">(-6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">161 &rarr; <strong>185</strong> <span style="font-size:10px;">(+24)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 6 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 77.7%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="62 eleitores (25.6% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(21)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(22)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AM</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Jutaí</td>
+            <td class="col-fit t-center font-mono">41</td>
+            <td class="col-fit t-center font-mono font-bold">14</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">359 &rarr; 359 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">226 &rarr; 240 <span style='font-size:10px; color:#047857;'>(+14)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">52 &rarr; 61 <span style='font-size:10px; color:#b91c1c;'>(+9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">87 &rarr; <strong>78</strong> <span style="font-size:10px;">(-9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">125 &rarr; <strong>145</strong> <span style="font-size:10px;">(+20)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 9 votos enquanto comparecimento subiu (+14 eleitores) e Lula foi a 65.0%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="61 eleitores (25.4% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(22)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(23)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AM</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Manaus</td>
+            <td class="col-fit t-center font-mono">68</td>
+            <td class="col-fit t-center font-mono font-bold">795</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">333 &rarr; 333 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">248 &rarr; 249 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">100 &rarr; 106 <span style='font-size:10px; color:#b91c1c;'>(+6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">126 &rarr; <strong>116</strong> <span style="font-size:10px;">(-10)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">99 &rarr; <strong>127</strong> <span style="font-size:10px;">(+28)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 10 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 52.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="106 eleitores (42.6% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(23)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(24)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AM</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Manaus</td>
+            <td class="col-fit t-center font-mono">40</td>
+            <td class="col-fit t-center font-mono font-bold">611</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">343 &rarr; 343 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">278 &rarr; 279 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">88 &rarr; 89 <span style='font-size:10px; color:#b91c1c;'>(+1)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">158 &rarr; <strong>155</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">80 &rarr; <strong>110</strong> <span style="font-size:10px;">(+30)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 41.5%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="89 eleitores (31.9% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(24)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(25)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AM</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Lábrea</td>
+            <td class="col-fit t-center font-mono">12</td>
+            <td class="col-fit t-center font-mono font-bold">110</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">362 &rarr; 362 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">268 &rarr; 276 <span style='font-size:10px; color:#047857;'>(+8)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">70 &rarr; 85 <span style='font-size:10px; color:#b91c1c;'>(+15)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">117 &rarr; <strong>107</strong> <span style="font-size:10px;">(-10)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">132 &rarr; <strong>156</strong> <span style="font-size:10px;">(+24)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 10 votos enquanto comparecimento subiu (+8 eleitores) e Lula foi a 59.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="85 eleitores (30.8% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(25)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(26)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AM</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Manaus</td>
+            <td class="col-fit t-center font-mono">65</td>
+            <td class="col-fit t-center font-mono font-bold">673</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">367 &rarr; 364 <span style='font-size:10px; color:#b91c1c;'>(-3)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">282 &rarr; 283 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">76 &rarr; 71 <span style='font-size:10px; color:#64748b;'>(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">137 &rarr; <strong>133</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">114 &rarr; <strong>142</strong> <span style="font-size:10px;">(+28)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 51.6%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="71 eleitores (25.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(26)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(27)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-blue">AM</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Jutaí</td>
+            <td class="col-fit t-center font-mono">41</td>
+            <td class="col-fit t-center font-mono font-bold">39</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">384 &rarr; 385 <span style='font-size:10px; color:#b91c1c;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">260 &rarr; 261 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">81 &rarr; 76 <span style='font-size:10px; color:#64748b;'>(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">106 &rarr; <strong>93</strong> <span style="font-size:10px;">(-13)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">145 &rarr; <strong>158</strong> <span style="font-size:10px;">(+13)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 13 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 62.9%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="76 eleitores (29.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(27)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(28)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Remanso</td>
+            <td class="col-fit t-center font-mono">67</td>
+            <td class="col-fit t-center font-mono font-bold">154</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">270 &rarr; 270 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">212 &rarr; 220 <span style='font-size:10px; color:#047857;'>(+8)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">63 &rarr; 63 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">18 &rarr; <strong>9</strong> <span style="font-size:10px;">(-9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">185 &rarr; <strong>203</strong> <span style="font-size:10px;">(+18)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 9 votos enquanto comparecimento subiu (+8 eleitores) e Lula foi a 95.8%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="63 eleitores (28.6% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(28)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(29)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Maragogipe</td>
+            <td class="col-fit t-center font-mono">118</td>
+            <td class="col-fit t-center font-mono font-bold">268</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">334 &rarr; 334 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">233 &rarr; 236 <span style='font-size:10px; color:#047857;'>(+3)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">75 &rarr; 74 <span style='font-size:10px; color:#64748b;'>(-1)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">50 &rarr; <strong>41</strong> <span style="font-size:10px;">(-9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">172 &rarr; <strong>192</strong> <span style="font-size:10px;">(+20)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 9 votos enquanto comparecimento subiu (+3 eleitores) e Lula foi a 82.4%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="74 eleitores (31.4% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(29)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(30)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Brumado</td>
+            <td class="col-fit t-center font-mono">90</td>
+            <td class="col-fit t-center font-mono font-bold">178</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">292 &rarr; 292 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">227 &rarr; 257 <span style='font-size:10px; color:#047857;'>(+30)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">56 &rarr; 68 <span style='font-size:10px; color:#b91c1c;'>(+12)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">42 &rarr; <strong>39</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">172 &rarr; <strong>206</strong> <span style="font-size:10px;">(+34)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+30 eleitores) e Lula foi a 84.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="68 eleitores (26.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(30)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(31)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Salvador</td>
+            <td class="col-fit t-center font-mono">5</td>
+            <td class="col-fit t-center font-mono font-bold">433</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">395 &rarr; 395 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">281 &rarr; 309 <span style='font-size:10px; color:#047857;'>(+28)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">113 &rarr; 122 <span style='font-size:10px; color:#b91c1c;'>(+9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">64 &rarr; <strong>61</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">182 &rarr; <strong>239</strong> <span style="font-size:10px;">(+57)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+28 eleitores) e Lula foi a 79.7%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="122 eleitores (39.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(31)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(32)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Salvador</td>
+            <td class="col-fit t-center font-mono">8</td>
+            <td class="col-fit t-center font-mono font-bold">678</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">415 &rarr; 415 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">307 &rarr; 315 <span style='font-size:10px; color:#047857;'>(+8)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">122 &rarr; 120 <span style='font-size:10px; color:#64748b;'>(-2)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">79 &rarr; <strong>75</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">174 &rarr; <strong>220</strong> <span style="font-size:10px;">(+46)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+8 eleitores) e Lula foi a 74.6%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="120 eleitores (38.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(32)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(33)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">São Gabriel</td>
+            <td class="col-fit t-center font-mono">95</td>
+            <td class="col-fit t-center font-mono font-bold">225</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">230 &rarr; 230 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">195 &rarr; 200 <span style='font-size:10px; color:#047857;'>(+5)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">51 &rarr; 56 <span style='font-size:10px; color:#b91c1c;'>(+5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">30 &rarr; <strong>26</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">152 &rarr; <strong>169</strong> <span style="font-size:10px;">(+17)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+5 eleitores) e Lula foi a 86.7%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="56 eleitores (28.0% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(33)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(34)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Barra Do Mendes</td>
+            <td class="col-fit t-center font-mono">176</td>
+            <td class="col-fit t-center font-mono font-bold">241</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">335 &rarr; 334 <span style='font-size:10px; color:#b91c1c;'>(-1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">254 &rarr; 258 <span style='font-size:10px; color:#047857;'>(+4)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">69 &rarr; 75 <span style='font-size:10px; color:#b91c1c;'>(+6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">46 &rarr; <strong>42</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">186 &rarr; <strong>207</strong> <span style="font-size:10px;">(+21)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+4 eleitores) e Lula foi a 83.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="75 eleitores (29.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(34)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(35)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Salvador</td>
+            <td class="col-fit t-center font-mono">2</td>
+            <td class="col-fit t-center font-mono font-bold">367</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">230 &rarr; 230 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">174 &rarr; 185 <span style='font-size:10px; color:#047857;'>(+11)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">64 &rarr; 63 <span style='font-size:10px; color:#64748b;'>(-1)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">36 &rarr; <strong>31</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">118 &rarr; <strong>149</strong> <span style="font-size:10px;">(+31)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+11 eleitores) e Lula foi a 82.8%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="63 eleitores (34.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(35)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(36)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Simões Filho</td>
+            <td class="col-fit t-center font-mono">33</td>
+            <td class="col-fit t-center font-mono font-bold">247</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">361 &rarr; 361 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">266 &rarr; 278 <span style='font-size:10px; color:#047857;'>(+12)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">90 &rarr; 105 <span style='font-size:10px; color:#b91c1c;'>(+15)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">92 &rarr; <strong>88</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">128 &rarr; <strong>175</strong> <span style="font-size:10px;">(+47)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+12 eleitores) e Lula foi a 66.5%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="105 eleitores (37.8% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(36)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(37)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Remanso</td>
+            <td class="col-fit t-center font-mono">67</td>
+            <td class="col-fit t-center font-mono font-bold">118</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">307 &rarr; 307 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">246 &rarr; 260 <span style='font-size:10px; color:#047857;'>(+14)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">75 &rarr; 78 <span style='font-size:10px; color:#b91c1c;'>(+3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">43 &rarr; <strong>39</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">201 &rarr; <strong>214</strong> <span style="font-size:10px;">(+13)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+14 eleitores) e Lula foi a 84.6%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="78 eleitores (30.0% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(37)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(38)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Lapão</td>
+            <td class="col-fit t-center font-mono">104</td>
+            <td class="col-fit t-center font-mono font-bold">60</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">193 &rarr; 193 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">170 &rarr; 175 <span style='font-size:10px; color:#047857;'>(+5)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">62 &rarr; 55 <span style='font-size:10px; color:#64748b;'>(-7)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">34 &rarr; <strong>25</strong> <span style="font-size:10px;">(-9)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">126 &rarr; <strong>143</strong> <span style="font-size:10px;">(+17)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 9 votos enquanto comparecimento subiu (+5 eleitores) e Lula foi a 85.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="55 eleitores (31.4% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(38)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(39)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Manoel Vitorino</td>
+            <td class="col-fit t-center font-mono">22</td>
+            <td class="col-fit t-center font-mono font-bold">137</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">377 &rarr; 376 <span style='font-size:10px; color:#b91c1c;'>(-1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">297 &rarr; 298 <span style='font-size:10px; color:#047857;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">71 &rarr; 77 <span style='font-size:10px; color:#b91c1c;'>(+6)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">69 &rarr; <strong>65</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">204 &rarr; <strong>221</strong> <span style="font-size:10px;">(+17)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+1 eleitores) e Lula foi a 77.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="77 eleitores (25.8% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(39)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(40)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Camamu</td>
+            <td class="col-fit t-center font-mono">78</td>
+            <td class="col-fit t-center font-mono font-bold">44</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">341 &rarr; 341 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">258 &rarr; 265 <span style='font-size:10px; color:#047857;'>(+7)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">72 &rarr; 73 <span style='font-size:10px; color:#b91c1c;'>(+1)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">98 &rarr; <strong>95</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">124 &rarr; <strong>154</strong> <span style="font-size:10px;">(+30)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+7 eleitores) e Lula foi a 61.8%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="73 eleitores (27.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(40)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(41)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Ilhéus</td>
+            <td class="col-fit t-center font-mono">26</td>
+            <td class="col-fit t-center font-mono font-bold">282</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">366 &rarr; 366 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">255 &rarr; 264 <span style='font-size:10px; color:#047857;'>(+9)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">92 &rarr; 102 <span style='font-size:10px; color:#b91c1c;'>(+10)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">67 &rarr; <strong>63</strong> <span style="font-size:10px;">(-4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">162 &rarr; <strong>194</strong> <span style="font-size:10px;">(+32)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 4 votos enquanto comparecimento subiu (+9 eleitores) e Lula foi a 75.5%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="102 eleitores (38.6% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(41)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(42)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Jaguaripe</td>
+            <td class="col-fit t-center font-mono">30</td>
+            <td class="col-fit t-center font-mono font-bold">234</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">334 &rarr; 334 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">249 &rarr; 275 <span style='font-size:10px; color:#047857;'>(+26)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">65 &rarr; 69 <span style='font-size:10px; color:#b91c1c;'>(+4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">41 &rarr; <strong>36</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">188 &rarr; <strong>227</strong> <span style="font-size:10px;">(+39)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+26 eleitores) e Lula foi a 86.3%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="69 eleitores (25.1% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(42)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(43)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Santa Bárbara</td>
+            <td class="col-fit t-center font-mono">160</td>
+            <td class="col-fit t-center font-mono font-bold">139</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">242 &rarr; 242 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">201 &rarr; 207 <span style='font-size:10px; color:#047857;'>(+6)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">59 &rarr; 59 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">32 &rarr; <strong>27</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">154 &rarr; <strong>173</strong> <span style="font-size:10px;">(+19)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+6 eleitores) e Lula foi a 86.5%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="59 eleitores (28.5% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(43)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(44)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Santana</td>
+            <td class="col-fit t-center font-mono">99</td>
+            <td class="col-fit t-center font-mono font-bold">55</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">350 &rarr; 351 <span style='font-size:10px; color:#b91c1c;'>(+1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">235 &rarr; 254 <span style='font-size:10px; color:#047857;'>(+19)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">62 &rarr; 64 <span style='font-size:10px; color:#b91c1c;'>(+2)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">73 &rarr; <strong>70</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">145 &rarr; <strong>177</strong> <span style="font-size:10px;">(+32)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+19 eleitores) e Lula foi a 71.7%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="64 eleitores (25.2% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(44)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(45)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Abaré</td>
+            <td class="col-fit t-center font-mono">158</td>
+            <td class="col-fit t-center font-mono font-bold">166</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">384 &rarr; 384 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">309 &rarr; 312 <span style='font-size:10px; color:#047857;'>(+3)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">99 &rarr; 102 <span style='font-size:10px; color:#b91c1c;'>(+3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">87 &rarr; <strong>82</strong> <span style="font-size:10px;">(-5)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">205 &rarr; <strong>224</strong> <span style="font-size:10px;">(+19)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 5 votos enquanto comparecimento subiu (+3 eleitores) e Lula foi a 73.2%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="102 eleitores (32.7% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(45)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(46)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Maraú</td>
+            <td class="col-fit t-center font-mono">78</td>
+            <td class="col-fit t-center font-mono font-bold">191</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">336 &rarr; 336 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">206 &rarr; 215 <span style='font-size:10px; color:#047857;'>(+9)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">64 &rarr; 68 <span style='font-size:10px; color:#b91c1c;'>(+4)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">49 &rarr; <strong>46</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">142 &rarr; <strong>165</strong> <span style="font-size:10px;">(+23)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+9 eleitores) e Lula foi a 78.2%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="68 eleitores (31.6% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(46)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(47)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Salvador</td>
+            <td class="col-fit t-center font-mono">13</td>
+            <td class="col-fit t-center font-mono font-bold">303</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">350 &rarr; 350 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">242 &rarr; 262 <span style='font-size:10px; color:#047857;'>(+20)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">110 &rarr; 108 <span style='font-size:10px; color:#64748b;'>(-2)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">62 &rarr; <strong>59</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">144 &rarr; <strong>193</strong> <span style="font-size:10px;">(+49)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+20 eleitores) e Lula foi a 76.6%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="108 eleitores (41.2% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(47)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(48)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Monte Santo</td>
+            <td class="col-fit t-center font-mono">50</td>
+            <td class="col-fit t-center font-mono font-bold">282</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">289 &rarr; 288 <span style='font-size:10px; color:#b91c1c;'>(-1)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">262 &rarr; 267 <span style='font-size:10px; color:#047857;'>(+5)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">58 &rarr; 70 <span style='font-size:10px; color:#b91c1c;'>(+12)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">42 &rarr; <strong>39</strong> <span style="font-size:10px;">(-3)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">205 &rarr; <strong>224</strong> <span style="font-size:10px;">(+19)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 3 votos enquanto comparecimento subiu (+5 eleitores) e Lula foi a 85.2%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="70 eleitores (26.2% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(48)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal(49)" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge badge-red">BA</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">Pojuca</td>
+            <td class="col-fit t-center font-mono">200</td>
+            <td class="col-fit t-center font-mono font-bold">65</td>
+            <td class="col-fit t-center"><span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">90%</span></td>
+            <td class="col-fit t-center"><span class="badge badge-red">ALTA</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">311 &rarr; 311 <span style='font-size:10px; color:#64748b;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">242 &rarr; 250 <span style='font-size:10px; color:#047857;'>(+8)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">0 &rarr; 0 <span style='font-size:10px; color:#047857;'>(+0)</span></td>
+            <td class="col-fit t-center font-mono text-slate-700">70 &rarr; 72 <span style='font-size:10px; color:#b91c1c;'>(+2)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#b91c1c; font-weight:700;">56 &rarr; <strong>48</strong> <span style="font-size:10px;">(-8)</span></td>
+            <td class="col-fit t-right font-mono" style="color:#047857; font-weight:700;">157 &rarr; <strong>193</strong> <span style="font-size:10px;">(+36)</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">0</td>
+            <td class="col-grow t-left" style="line-height: 1.45;"><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK046_QUEDA_FINALISTA_COM_COMPARECIMENTO_MAIOR\")" style="cursor:pointer; margin:2px;" title="Flávio perdeu 8 votos enquanto comparecimento subiu (+8 eleitores) e Lula foi a 80.1%.">Queda de Votos com MAIOR Comparecimento</span><span class="badge badge-red" onclick="event.stopPropagation(); showRuleDetailsModal(\"CHK068_SURTO_HABILITACAO_BIOGRAFICA_MAIOR_25PP\")" style="cursor:pointer; margin:2px;" title="72 eleitores (28.8% do comparecimento) foram liberados manualmente por ano de nascimento.">Surto Crítico de Votos Manuais sem Biometria</span></td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal(49)" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr></tbody>
                 </table>
             </div>
-            <div id="filterCount" style="font-size: 0.75rem; color: #64748b; margin-top: 0.75rem; text-align: right;"></div>
+            <div id="filterCount" style="font-size: 0.75rem; color: #64748b; margin-top: 0.75rem; text-align: right;">Exibindo as 50 seções mais anômalas do Brasil (use os filtros acima para filtrar por UF, severidade ou regra).</div>
         </div>
 
         <!-- FOOTER -->
@@ -2719,12 +3768,20 @@
             }
         });
 
-        window.onload = function() {
+        function initDashboard() {
             try { renderMap(); } catch(e) { console.error('Error in renderMap:', e); }
             try { renderTable(); } catch(e) { console.error('Error in renderTable:', e); }
             try { selectState('MG'); } catch(e) { console.error('Error in selectState:', e); }
             try { applyFilters(); } catch(e) { console.error('Error in applyFilters:', e); }
-        };
+        }
+
+        // Executar imediatamente se o documento já estiver pronto ou em DOMContentLoaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDashboard);
+        } else {
+            initDashboard();
+        }
+        window.addEventListener('load', initDashboard);
     </script>
 </body>
 </html>

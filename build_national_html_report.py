@@ -825,10 +825,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                             <th class="col-fit t-center">Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody"></tbody>
+                    <tbody id="tableBody">__SECTION_TABLE_ROWS__</tbody>
                 </table>
             </div>
-            <div id="filterCount" style="font-size: 0.75rem; color: #64748b; margin-top: 0.75rem; text-align: right;"></div>
+            <div id="filterCount" style="font-size: 0.75rem; color: #64748b; margin-top: 0.75rem; text-align: right;">__FILTER_COUNT_PRE__</div>
         </div>
 
         <!-- FOOTER -->
@@ -1573,12 +1573,20 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             }
         });
 
-        window.onload = function() {
+        function initDashboard() {
             try { renderMap(); } catch(e) { console.error('Error in renderMap:', e); }
             try { renderTable(); } catch(e) { console.error('Error in renderTable:', e); }
             try { selectState('MG'); } catch(e) { console.error('Error in selectState:', e); }
             try { applyFilters(); } catch(e) { console.error('Error in applyFilters:', e); }
-        };
+        }
+
+        // Executar imediatamente se o documento já estiver pronto ou em DOMContentLoaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDashboard);
+        } else {
+            initDashboard();
+        }
+        window.addEventListener('load', initDashboard);
     </script>
 </body>
 </html>
@@ -1646,9 +1654,120 @@ for s in states_list:
 national_table_pre_rendered = "\n".join(table_rows_html)
 
 # Substituir marcadores
+
+# Geração server-side das primeiras 50 seções anômalas para exibição instantânea
+def generate_section_rows_html(sections_slice):
+    html_rows = []
+    for i, s in enumerate(sections_slice):
+        d1 = s.get("dados_1t") or {}
+        d2 = s.get("dados_2t") or {}
+        p1 = d1.get("votos_presidenciais") or {}
+        p2 = d2.get("votos_presidenciais") or {}
+
+        apt1 = d1.get("aptos", 0)
+        apt2 = d2.get("aptos", 0)
+        d_apt = apt2 - apt1
+        apt_color = "#b91c1c" if d_apt != 0 else "#64748b"
+        apt_str = f"{apt1} &rarr; {apt2} <span style='font-size:10px; color:{apt_color};'>({'+' if d_apt >= 0 else ''}{d_apt})</span>"
+
+        c1 = d1.get("comparecimento", 0)
+        c2 = d2.get("comparecimento", 0)
+        d_c = c2 - c1
+        comp_color = "#047857" if d_c > 0 else ("#b91c1c" if d_c < 0 else "#64748b")
+        comp_str = f"{c1} &rarr; {c2} <span style='font-size:10px; color:{comp_color};'>({'+' if d_c >= 0 else ''}{d_c})</span>"
+
+        bio1 = d1.get("biometria_sim", 0)
+        bio2 = d2.get("biometria_sim", 0)
+        d_bio = bio2 - bio1
+        bio_color = "#b91c1c" if d_bio < 0 else "#047857"
+        bio_str = f"{bio1} &rarr; {bio2} <span style='font-size:10px; color:{bio_color};'>({'+' if d_bio >= 0 else ''}{d_bio})</span>"
+
+        sem1 = (d1.get("biometria_bio", 0) or 0) + (d1.get("biometria_nao", 0) or 0)
+        sem2 = (d2.get("biometria_bio", 0) or 0) + (d2.get("biometria_nao", 0) or 0)
+        d_sem = sem2 - sem1
+        sem_color = "#b91c1c" if d_sem > 0 else "#64748b"
+        sem_str = f"{sem1} &rarr; {sem2} <span style='font-size:10px; color:{sem_color};'>({'+' if d_sem >= 0 else ''}{d_sem})</span>"
+
+        v1_22 = p1.get("22", 0)
+        v2_22 = p2.get("22", 0)
+        d_22 = v2_22 - v1_22
+        cl_22 = "color:#047857; font-weight:700;" if d_22 >= 0 else "color:#b91c1c; font-weight:700;"
+
+        v1_13 = p1.get("13", 0)
+        v2_13 = p2.get("13", 0)
+        d_13 = v2_13 - v1_13
+        cl_13 = "color:#047857; font-weight:700;" if d_13 >= 0 else "color:#b91c1c; font-weight:700;"
+
+        t3 = d1.get("total_terceira_via")
+        if t3 is None:
+            v_t3 = d1.get("votos_terceira_via")
+            if isinstance(v_t3, dict):
+                t3 = sum(v_t3.values())
+            else:
+                t3 = v_t3 or 0
+
+        # Fraud score badge
+        f_score = s.get("fraud_score", 0)
+        if f_score >= 80:
+            fraud_badge = f'<span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; font-weight:800; font-family:ui-monospace,monospace;">{f_score}%</span>'
+        elif f_score >= 50:
+            fraud_badge = f'<span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-weight:800; font-family:ui-monospace,monospace;">{f_score}%</span>'
+        else:
+            fraud_badge = f'<span class="badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; font-weight:800; font-family:ui-monospace,monospace;">{f_score}%</span>'
+
+        # Severity badge
+        sev = s.get("worst_severity", "ALTA")
+        if sev == "ALTA": sev_badge = '<span class="badge badge-red">ALTA</span>'
+        elif sev == "MEDIA": sev_badge = '<span class="badge badge-yellow">MÉDIA</span>'
+        else: sev_badge = '<span class="badge badge-blue">BAIXA</span>'
+
+        # Badges
+        badges_list = []
+        for a in (s.get("anomalias") or [])[:3]:
+            is_high = (a.get("severity") == "ALTA")
+            b_cls = "badge-red" if is_high else "badge-yellow"
+            code = a.get("code", "")
+            title = a.get("title") or code
+            desc = a.get("description", "")
+            badges_list.append(f'<span class="badge {b_cls}" onclick="event.stopPropagation(); showRuleDetailsModal(\\"{code}\\")" style="cursor:pointer; margin:2px;" title="{desc}">{title}</span>')
+        badges_html = "".join(badges_list)
+
+        uf = s.get("uf", "BR")
+        uf_cls = "badge-red" if uf in ["MG", "BA", "CE"] else "badge-blue"
+        mun_nome = s.get("municipio_nome") or s.get("municipio", "")
+
+        row = f'''<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors" style="cursor:pointer;" onclick="openModal({i})" title="Clique nesta linha para abrir o dossiê detalhado da urna">
+            <td class="col-fit t-center"><span class="badge {uf_cls}">{uf}</span></td>
+            <td class="col-fit t-left font-semibold text-slate-900">{mun_nome}</td>
+            <td class="col-fit t-center font-mono">{s.get("zona", "")}</td>
+            <td class="col-fit t-center font-mono font-bold">{s.get("secao", "")}</td>
+            <td class="col-fit t-center">{fraud_badge}</td>
+            <td class="col-fit t-center">{sev_badge}</td>
+            <td class="col-fit t-center font-mono text-slate-700">{apt_str}</td>
+            <td class="col-fit t-center font-mono text-slate-700">{comp_str}</td>
+            <td class="col-fit t-center font-mono text-slate-700">{bio_str}</td>
+            <td class="col-fit t-center font-mono text-slate-700">{sem_str}</td>
+            <td class="col-fit t-right font-mono" style="{cl_22}">{v1_22} &rarr; <strong>{v2_22}</strong> <span style="font-size:10px;">({'+' if d_22 >= 0 else ''}{d_22})</span></td>
+            <td class="col-fit t-right font-mono" style="{cl_13}">{v1_13} &rarr; <strong>{v2_13}</strong> <span style="font-size:10px;">({'+' if d_13 >= 0 else ''}{d_13})</span></td>
+            <td class="col-fit t-center font-mono font-semibold text-slate-700">{t3}</td>
+            <td class="col-grow t-left" style="line-height: 1.45;">{badges_html}</td>
+            <td class="col-fit t-center">
+                <button onclick="event.stopPropagation(); openModal({i})" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:6px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.15s ease;">
+                    <span>🔍</span><span>Ver Detalhes</span>
+                </button>
+            </td>
+        </tr>'''
+        html_rows.append(row)
+    return "\n".join(html_rows)
+
+sections_50_html = generate_section_rows_html(all_sections[:50])
+filter_count_pre_html = "Exibindo as 50 seções mais anômalas do Brasil (use os filtros acima para filtrar por UF, severidade ou regra)."
+
 replacements = {
     "__MAP_GRID_HTML__": map_grid_pre_rendered,
     "__NATIONAL_TABLE_ROWS__": national_table_pre_rendered,
+    "__SECTION_TABLE_ROWS__": sections_50_html,
+    "__FILTER_COUNT_PRE__": filter_count_pre_html,
     "__TOT_SECOES__": f"{tot_secoes:,}",
     "__COMP_2T__": f"{tot_comp_2t:,}",
     "__NOVOS_VOTANTES__": f"{tot_comp_2t - tot_comp_1t:,}",
