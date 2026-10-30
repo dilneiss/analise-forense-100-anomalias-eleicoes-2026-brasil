@@ -843,7 +843,6 @@
         }
         #recDotUi button:hover { background: rgba(255,255,255,.24); }
         body.rec-ocultar .top-bar, body.rec-ocultar .bottom-bar { display: none !important; }
-        body.rec-ocultar .slide-pane { padding: 2rem 3rem; }
         #recToast {
             position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%) translateY(20px);
             background: rgba(9,13,22,.96); border: 1px solid rgba(255,255,255,.16);
@@ -853,18 +852,6 @@
         }
         #recToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        /* --- correções de layout da barra superior --- */
-        .top-bar { flex-wrap: wrap; height: auto; min-height: 54px; padding: 6px 1.25rem; row-gap: 6px; }
-        .top-title { flex: 1 1 320px; min-width: 0; }
-        .top-title > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .top-controls { flex: 0 0 auto; flex-wrap: wrap; row-gap: 6px; }
-        @media (max-width: 1180px) {
-            .top-title .top-badge { display: none; }
-            .btn-mode { padding: 5px 9px; font-size: .7rem; }
-        }
-        @media (max-width: 900px) {
-            #btnModeSplit, #btnModeFull { display: none; }
-        }
 
         /* --- painel de diagnóstico do gravador --- */
         #recDiag {
@@ -900,11 +887,48 @@
         }
         #recDiag button.primario { background: #2563eb; border-color: #3b82f6; color: #fff; }
 
-        /* auto-play + gravação em tela cheia */
-        body.rec-ocultar .slide-pane { padding: 1.25rem 2rem !important; }
-        body.rec-ocultar .slide-card { max-width: 1180px; }
+        /* ===== dock de gravação (fora do fluxo: não afeta o layout) ===== */
+        .rec-dock {
+            position: fixed; right: 18px; bottom: 18px; z-index: 9997;
+            display: flex; align-items: center; gap: 8px;
+            background: rgba(9, 13, 22, .92);
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 12px; padding: 8px 11px;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, .5);
+            backdrop-filter: blur(8px);
+            font-size: .72rem; color: #cbd5e1; font-weight: 700;
+            transition: opacity .18s ease;
+            opacity: .42;
+        }
+        .rec-dock:hover, .rec-dock:focus-within { opacity: 1; }
+        .rec-dock .sep { width: 1px; height: 18px; background: rgba(255,255,255,.14); }
+        .rec-dock label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
+        .rec-dock input[type=checkbox] { accent-color: #38bdf8; cursor: pointer; }
+        .rec-dock select {
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+            color: #cbd5e1; font-size: .7rem; font-weight: 700; border-radius: 6px;
+            padding: 3px 5px; cursor: pointer;
+        }
+        #recDock #btnRec { font-size: .72rem; padding: 6px 12px; }
+        body.rec-ocultar .rec-dock { display: none; }
+
+        /* selo REC discreto no canto, sem interferir no conteúdo */
+        #recDotUi {
+            top: auto !important; bottom: 18px; right: 18px;
+            opacity: .55; transition: opacity .18s ease;
+            padding: 5px 12px 5px 9px; font-size: .72rem; gap: 8px;
+        }
+        #recDotUi:hover { opacity: 1; }
+        #recDotUi button { pointer-events: auto; }
         #recDotUi #recSlide { color: #93c5fd; }
         #recDotUi #recCount { color: #fde68a; }
+
+        /* toast fora da área do slide */
+        #recToast { bottom: auto !important; top: 16px; }
+
+        /* dock auto-ocultável: invisível quando ocioso, aparece ao aproximar o mouse */
+        .rec-dock.oculto { opacity: 0 !important; pointer-events: none; }
+
     </style>
 </head>
 <body>
@@ -918,21 +942,6 @@
             <button id="btnModeSplit" class="btn-mode active" onclick="setMode('split')">📺 Slide + Roteiro</button>
             <button id="btnModeScript" class="btn-mode" onclick="setMode('script')">🎙️ Roteiro</button>
             <button id="btnModeFull" class="btn-mode" onclick="setMode('fullscreen')">📽️ Telão</button>
-            <span style="width:1px;height:22px;background:rgba(255,255,255,.14);"></span>
-            <button id="btnRec" onclick="alternarGravacao()" title="Gravar esta aba com áudio (atalho: R)">⏺ Gravar apresentação</button>
-            <label id="lblAuto" style="display:inline-flex; align-items:center; gap:5px; font-size:.7rem; color:#94a3b8; font-weight:700; cursor:pointer; user-select:none;" title="Ao gravar, avança os slides sozinho e para no final">
-                <input type="checkbox" id="chkAuto" checked style="accent-color:#38bdf8; cursor:pointer;"> auto-play
-            </label>
-            <select id="selVel" title="Velocidade do auto-play" style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); color:#cbd5e1; font-size:.7rem; font-weight:700; border-radius:6px; padding:4px 6px; cursor:pointer;">
-                <option value="0.75">0,75x</option>
-                <option value="1" selected>1x</option>
-                <option value="1.25">1,25x</option>
-                <option value="1.5">1,5x</option>
-                <option value="2">2x</option>
-            </select>
-            <label id="lblOcultar" style="display:none; align-items:center; gap:5px; font-size:.7rem; color:#94a3b8; font-weight:700; cursor:pointer; user-select:none;">
-                <input type="checkbox" id="chkOcultar" checked style="accent-color:#ef4444; cursor:pointer;"> esconder barras p/ gravar
-            </label>
         </div>
     </div>
 
@@ -1016,7 +1025,7 @@
             <span class="kbd-hint">◄ ► Navegar</span>
             <span class="kbd-hint">Espaço Avançar</span>
             <span class="kbd-hint">T Roteiro</span>
-            <span class="kbd-hint">R Gravar+Auto</span>
+            
             <span class="kbd-hint">N Narração</span>
             <span class="kbd-hint">A Auto Play</span>
         </div>
@@ -1687,6 +1696,30 @@
         });
 
 
+
+        /* auto-hide do dock: não interfere no rodapé quando ocioso */
+        (function autoHideDock() {
+            let dock = null, t = null;
+            const revelar = () => {
+                if (!dock) dock = document.getElementById('recDock');
+                if (!dock) return;
+                dock.classList.remove('oculto');
+                clearTimeout(t);
+                t = setTimeout(() => {
+                    if (!dock.matches(':hover') && !dock.matches(':focus-within')) dock.classList.add('oculto');
+                }, 2600);
+            };
+            window.addEventListener('mousemove', ev => {
+                const perto = ev.clientX > window.innerWidth - 420 && ev.clientY > window.innerHeight - 160;
+                if (perto) revelar();
+            }, { passive: true });
+            window.addEventListener('keydown', ev => { if (ev.key.toLowerCase() === 'r') revelar(); });
+            setTimeout(() => {
+                dock = document.getElementById('recDock');
+                if (dock) { revelar(); }
+            }, 600);
+        })();
+
         /* ===================================================================
            GRAVADOR DA PRÓPRIA ABA (vídeo + áudio do sistema + microfone)
            =================================================================== */
@@ -1940,6 +1973,9 @@
             rec.chunks = [];
             rec.mr.ondataavailable = ev => { if (ev.data && ev.data.size > 0) rec.chunks.push(ev.data); };
             rec.mr.onstop = salvarGravacao;
+            rec.mr.onerror = ev => mostrarDiag('Erro durante a gravação',
+                String((ev && ev.error) || ev),
+                ['Interrompa, feche outras capturas de tela e tente novamente.']);
             rec.mr.start(1000);
 
             rec.display.getVideoTracks()[0].addEventListener('ended', () => {
@@ -1950,7 +1986,7 @@
             const btn = document.getElementById('btnRec');
             if (btn) { btn.classList.add('gravando'); btn.innerHTML = '⏹ Parar e baixar'; }
             const lbl = document.getElementById('lblOcultar');
-            if (lbl) lbl.style.display = 'inline-flex';
+            if (lbl) lbl.style.display = '';
             rec.ocultar = true;
             const chkO = document.getElementById('chkOcultar');
             if (chkO) chkO.checked = true;
@@ -1976,6 +2012,14 @@
             }, 500);
 
             recToast('Gravando a aba. Use ← → para navegar. Pressione R para parar.');
+            await new Promise(r => setTimeout(r, 350));
+            if (!rec.mr || rec.mr.state !== 'recording') {
+                mostrarDiag('O gravador não engatou',
+                    'MediaRecorder.state = ' + (rec.mr ? rec.mr.state : 'null'),
+                    ['Tente novamente e mantenha a aba visível durante a captura.',
+                     'Se persistir, abra pelo atalho <code>Abrir Apresentacao.bat</code> (localhost).']);
+                return;
+            }
             iniciarAutoplay();
         }
 
@@ -1988,7 +2032,7 @@
             const btn = document.getElementById('btnRec');
             if (btn) { btn.classList.remove('gravando'); btn.innerHTML = '⏺ Gravar apresentação'; }
             const lbl = document.getElementById('lblOcultar');
-            if (lbl) lbl.style.display = 'none';
+            if (lbl) lbl.style.display = '';
             document.body.classList.remove('rec-ocultar');
             const dot = document.getElementById('recDotUi');
             if (dot) dot.style.display = 'none';
@@ -2149,6 +2193,27 @@
         </div>
     </div>
 
+
+
+    <!-- DOCK DE GRAVAÇÃO (posição fixa: não altera o layout da apresentação) -->
+    <div class="rec-dock" id="recDock">
+        <button id="btnRec" onclick="alternarGravacao()" title="Gravar esta aba com áudio (atalho: R)">⏺ Gravar</button>
+        <span class="sep"></span>
+        <label title="Ao gravar, avança os slides sozinho e encerra no último">
+            <input type="checkbox" id="chkAuto" checked> auto
+        </label>
+        <select id="selVel" title="Velocidade do auto-play">
+            <option value="0.75">0,75x</option>
+            <option value="1" selected>1x</option>
+            <option value="1.25">1,25x</option>
+            <option value="1.5">1,5x</option>
+            <option value="2">2x</option>
+        </select>
+        <span class="sep"></span>
+        <label title="Esconder topo e rodapé durante a gravação">
+            <input type="checkbox" id="chkOcultar" checked> limpar
+        </label>
+    </div>
 
     <div id="recDiag">
         <div class="box">
