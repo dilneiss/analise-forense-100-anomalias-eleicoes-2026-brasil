@@ -1,0 +1,18 @@
+{
+  "uf": "RN",
+  "ano": 2018,
+  "total_secoes": 7389,
+  "aptos_2t": 2373876,
+  "comparecimento_2t": 1943331,
+  "abstencao_2t": 430545,
+  "bolsonaro_2t": 652562,
+  "haddad_2t": 1131027,
+  "brancos_2t": 29990,
+  "nulos_2t": 129752,
+  "biometria_2t_nao": 259465,
+  "pct_biometria_2t_nao": 13.35,
+  "secoes_anomalas": 13,
+  "margem_vitoria_2t": 478465,
+  "vencedor_2t": "Fernando Haddad",
+  "zip_size_mb": 1.56
+}

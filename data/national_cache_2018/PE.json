@@ -1,0 +1,18 @@
+{
+  "uf": "PE",
+  "ano": 2018,
+  "total_secoes": 19797,
+  "aptos_2t": 6569316,
+  "comparecimento_2t": 5377444,
+  "abstencao_2t": 1191872,
+  "bolsonaro_2t": 1661163,
+  "haddad_2t": 3297944,
+  "brancos_2t": 76515,
+  "nulos_2t": 341822,
+  "biometria_2t_nao": 427504,
+  "pct_biometria_2t_nao": 7.95,
+  "secoes_anomalas": 16,
+  "margem_vitoria_2t": 1636781,
+  "vencedor_2t": "Fernando Haddad",
+  "zip_size_mb": 1.98
+}

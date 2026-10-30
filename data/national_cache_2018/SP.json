@@ -1,0 +1,18 @@
+{
+  "uf": "SP",
+  "ano": 2018,
+  "total_secoes": 96328,
+  "aptos_2t": 33042569,
+  "comparecimento_2t": 25846143,
+  "abstencao_2t": 7196426,
+  "bolsonaro_2t": 15306023,
+  "haddad_2t": 7212132,
+  "brancos_2t": 746949,
+  "nulos_2t": 2581039,
+  "biometria_2t_nao": 284453,
+  "pct_biometria_2t_nao": 1.1,
+  "secoes_anomalas": 16,
+  "margem_vitoria_2t": 8093891,
+  "vencedor_2t": "Jair Bolsonaro",
+  "zip_size_mb": 16.77
+}

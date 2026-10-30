@@ -1,0 +1,18 @@
+{
+  "uf": "AM",
+  "ano": 2018,
+  "total_secoes": 7017,
+  "aptos_2t": 2428821,
+  "comparecimento_2t": 1909279,
+  "abstencao_2t": 519542,
+  "bolsonaro_2t": 885401,
+  "haddad_2t": 875845,
+  "brancos_2t": 29353,
+  "nulos_2t": 118680,
+  "biometria_2t_nao": 111941,
+  "pct_biometria_2t_nao": 5.86,
+  "secoes_anomalas": 49,
+  "margem_vitoria_2t": 9556,
+  "vencedor_2t": "Jair Bolsonaro",
+  "zip_size_mb": 1.49
+}
