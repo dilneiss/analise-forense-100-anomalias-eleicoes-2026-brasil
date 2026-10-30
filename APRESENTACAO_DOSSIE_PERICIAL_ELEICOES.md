@@ -249,7 +249,41 @@ Para que uma investigação pericial seja rigorosa, é indispensável estabelece
 
 ---
 
-## Capítulo 13: A Retaguarda Oficial do TSE (CEFT, CESP e GEDAI)
+## Capítulo 13: A Série Histórica Pré-Urna Eletrônica (1950 a 1998)
+
+Para realizar um confronto histórico científico, a perícia realizou o download de seis eleições presidenciais históricas diretamente do CDN oficial do TSE (`cdn.tse.jus.br/estatistica/sead/odsele/` e `dadosabertos.tse.jus.br`): **1998, 1994, 1989, 1960, 1955 e 1950**.
+
+### 13.1 Diagnóstico Pericial da Base Histórica Disponibilizada pelo TSE:
+1. **Eleição de 1998 (`votacao_secao_1998_BR`): NÃO UTILIZÁVEL**  
+   O pacote oficial entrega apenas 481.078 linhas (20,9 milhões de votos), correspondendo a cerca de **31% do eleitorado da época**. O TSE não disponibilizou arquivos presidenciais consolidados por UF;
+2. **Eleição de 1994 (`votacao_candidato_munzona_1994`): NÃO UTILIZÁVEL**  
+   O dataset oficial simplesmente omitiu as linhas do cargo de Presidente da República, contendo apenas Governador, Senador e Deputados;
+3. **Eleições de 1955 e 1950: PARCIALMENTE UTILIZÁVEIS**  
+   Devido à antiga sistemática de voto separado para Presidente e Vice, os arquivos oficiais rotulam candidatos a Vice (como Milton Campos e João Café Filho) na mesma lista de Presidente;
+4. **Eleições de 1989 e 1960: ✅ AUDITÁVEIS COM INTEGRIDADE PLENA:**  
+   - **1989 (2º Turno):** Fernando Collor venceu com **35.090.206 votos (53,03%)** contra 31.075.803 (46,97%) de Lula &bull; Margem oficial: **4.014.403 votos (6,06 pp)**;
+   - **1960 (Turno Único):** Jânio Quadros venceu com **5.636.623 votos (55,35%)** contra 4.547.010 (44,65%) de Henrique Lott &bull; Margem oficial: **1.089.613 votos (10,70 pp)**.
+
+> **Honestidade Científica:** Qualquer estudo que pretenda divulgar dados presidenciais por seção de 1994 e 1998 precisa esclarecer qual fonte utilizou, pois a base oficial aberta do TSE é truncada ou inexistente.
+
+---
+
+## Capítulo 14: Cédula de Papel vs Urna Eletrônica: Padrões Comparados (1960 a 2026)
+
+O cruzamento da série longa (1960 → 2026) permite separar os padrões sociológicos constantes da evolução técnica das fraudes:
+
+### 14.1 Padrões Históricos Constantes:
+1. **A Regra das Margens Estreitas:** Toda alternância de poder se dá por margens reduzidas no 2º turno (1989: 6,1 pp; 2014: 3,3 pp; 2022: 1,8 pp; 2026: 3,6 pp). Portanto, desvios materiais de milhões de votos são determinantes em qualquer época;
+2. **Absorção de Votos Novos pelo 2º Colocado:** Em todas as eleições com 2º turno (1989, 2014, 2018, 2022, 2026), o candidato que perde o 1º turno absorve mais votos novos no 2º turno (Lula +19,4M em 1989, Aécio +16,1M em 2014, Haddad +15,7M em 2018 e Lula +10,4M em 2026);
+3. **Assimetria Regional Histórica:** Já em 1960, Jânio venceu amplamente em São Paulo e no Sul, mas perdeu no Nordeste, provando que a polarização geográfica brasileira antecede a urna eletrônica.
+
+### 14.2 O que Mudou na Física da Fraude:
+- **Na Cédula de Papel (Pré-2000):** A fraude era física e artesanal na contagem manual (urna prenhe, rasura de cédulas e alteração de mapas nas juntas apuradoras);
+- **Na Urna Eletrônica (2014 a 2026):** O log digital permitiu detectar a violação do tempo humano (esteira mecânica de 4 segundos), o vício em hardware antigo sem serial no log (2022), a manipulação na troca física por contingência (CEFT) e a liberação manual por ano de nascimento no horário de almoço.
+
+---
+
+## Capítulo 15: A Retaguarda Oficial do TSE (CEFT, CESP e GEDAI)
 
 Para que o cidadão comum e o juiz compreendam a prova material, é indispensável traduzir o significado dessas siglas oficiais:
 - **O que é o GEDAI?** Significa *Gerenciador de Dados, Aplicativos e Imagens*. É o computador do cartório eleitoral que programa e grava as memórias flash das urnas eletrônicas antes da votação;
@@ -263,7 +297,7 @@ Para que o cidadão comum e o juiz compreendam a prova material, é indispensáv
 
 ---
 
-## Capítulo 14: A Importância de Minas Gerais e a Batalha Eleitoral (2022 vs 2026)
+## Capítulo 16: A Importância de Minas Gerais e a Batalha Eleitoral (2022 vs 2026)
 
 Por que Minas Gerais é o estado mais importante de qualquer eleição presidencial no Brasil e por que foi o epicentro das fraudes mais cirúrgicas?
 
@@ -338,7 +372,7 @@ PARECER PERICIAL FINAL OFICIAL • AUDITORIA ELEITORAL NACIONAL DE 2026
 
 ---
 
-## Capítulo 17: Encerramento, Autoria e Código Aberto no GitHub
+## Capítulo 19: Encerramento, Autoria e Código Aberto no GitHub
 
 ### 16.1 Sobre o Autor da Perícia Técnica:
 - **Autor e Desenvolvedor:** **Dilnei Soethe Spancerski** (GitHub: `dilneiss` &bull; Email: `dilnei.soethe@gmail.com`);
