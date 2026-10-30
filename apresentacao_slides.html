@@ -852,6 +852,53 @@
             box-shadow: 0 10px 30px rgba(0,0,0,.5); max-width: 78vw; text-align: center;
         }
         #recToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* --- correções de layout da barra superior --- */
+        .top-bar { flex-wrap: wrap; height: auto; min-height: 54px; padding: 6px 1.25rem; row-gap: 6px; }
+        .top-title { flex: 1 1 320px; min-width: 0; }
+        .top-title > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .top-controls { flex: 0 0 auto; flex-wrap: wrap; row-gap: 6px; }
+        @media (max-width: 1180px) {
+            .top-title .top-badge { display: none; }
+            .btn-mode { padding: 5px 9px; font-size: .7rem; }
+        }
+        @media (max-width: 900px) {
+            #btnModeSplit, #btnModeFull { display: none; }
+        }
+
+        /* --- painel de diagnóstico do gravador --- */
+        #recDiag {
+            position: fixed; inset: 0; z-index: 10000; display: none;
+            align-items: center; justify-content: center;
+            background: rgba(2, 6, 23, .82); backdrop-filter: blur(6px);
+        }
+        #recDiag.show { display: flex; }
+        #recDiag .box {
+            width: min(660px, 92vw); background: #0b1220; color: #e2e8f0;
+            border: 1px solid rgba(244, 63, 94, .45); border-radius: 14px;
+            padding: 22px 24px; box-shadow: 0 30px 80px rgba(0,0,0,.7);
+            font-size: .86rem; line-height: 1.62;
+        }
+        #recDiag h3 { margin: 0 0 6px; font-size: 1.05rem; color: #fda4af; }
+        #recDiag .motivo {
+            font-family: 'JetBrains Mono', monospace; font-size: .76rem;
+            background: rgba(244,63,94,.1); border: 1px solid rgba(244,63,94,.3);
+            color: #fecdd3; padding: 8px 10px; border-radius: 8px; margin: 10px 0;
+            word-break: break-word;
+        }
+        #recDiag ol { margin: 10px 0 14px; padding-left: 20px; }
+        #recDiag li { margin-bottom: 7px; }
+        #recDiag code {
+            background: rgba(255,255,255,.08); padding: 1px 6px; border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace; font-size: .78rem; color: #7dd3fc;
+        }
+        #recDiag .acoes { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+        #recDiag button {
+            border-radius: 8px; padding: 8px 16px; font-weight: 800; font-size: .8rem;
+            cursor: pointer; border: 1px solid rgba(255,255,255,.18);
+            background: rgba(255,255,255,.08); color: #e2e8f0;
+        }
+        #recDiag button.primario { background: #2563eb; border-color: #3b82f6; color: #fff; }
     </style>
 </head>
 <body>
@@ -1657,11 +1704,56 @@
             }
         }
 
-        async function iniciarGravacao() {
-            if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
-                recToast('Este navegador não suporta gravação de aba. Use Chrome, Edge ou Firefox atualizados.');
-                return;
+
+        /* ---------------- diagnóstico detalhado do gravador ---------------- */
+        function fecharDiag() {
+            const d = document.getElementById('recDiag');
+            if (d) d.classList.remove('show');
+        }
+
+        function mostrarDiag(titulo, motivo, passos, htmlExtra) {
+            let d = document.getElementById('recDiag');
+            if (!d) return;
+            document.getElementById('recDiagTitle').textContent = titulo;
+            document.getElementById('recDiagReason').textContent = motivo;
+            const body = document.getElementById('recDiagBody');
+            let html = '';
+            if (htmlExtra) html += htmlExtra;
+            if (passos && passos.length) {
+                html += '<ol>' + passos.map(p => '<li>' + p + '</li>').join('') + '</ol>';
             }
+            body.innerHTML = html;
+            d.classList.add('show');
+        }
+
+        function preChecagemGravador() {
+            if (typeof window.MediaRecorder === 'undefined') {
+                mostrarDiag('Navegador sem suporte a MediaRecorder',
+                    'window.MediaRecorder = undefined',
+                    ['Atualize para Chrome, Edge ou Firefox recentes.',
+                     'Em navegadores embutidos (Instagram, Facebook, WhatsApp) a gravação não funciona: abra o arquivo no Chrome.']);
+                return false;
+            }
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+                mostrarDiag('A API de captura de tela não está disponível',
+                    'navigator.mediaDevices.getDisplayMedia = ' + (navigator.mediaDevices ? 'undefined' : 'navigator.mediaDevices undefined'),
+                    ['Abra a apresentação pelo endereço <code>http://localhost:8765/apresentacao_slides.html</code> — use o atalho <code>Abrir Apresentação.bat</code> na pasta do projeto.',
+                     'Ou abra no Chrome / Edge atualizado (Firefox também funciona).',
+                     'Se estiver em iframe ou navegador interno de outro app, abra em uma janela normal do Chrome.']);
+                return false;
+            }
+            if (window.isSecureContext === false) {
+                mostrarDiag('Contexto inseguro bloqueia a captura',
+                    'window.isSecureContext = false',
+                    ['Use o atalho <code>Abrir Apresentação.bat</code>, que serve a página em <code>http://127.0.0.1:8765</code>.',
+                     'Alternativamente sirva a pasta com <code>python -m http.server 8765</code> e abra <code>http://localhost:8765/apresentacao_slides.html</code>.']);
+                return false;
+            }
+            return true;
+        }
+
+        async function iniciarGravacao() {
+            if (!preChecagemGravador()) return;
             try {
                 // 1) Vídeo da aba (o usuário escolhe a aba e marca "compartilhar áudio da aba")
                 rec.display = await navigator.mediaDevices.getDisplayMedia({
@@ -1669,7 +1761,25 @@
                     audio: true
                 });
             } catch (e) {
-                recToast('Gravação cancelada: ' + (e && e.name ? e.name : e));
+                const nome = (e && e.name) || 'Erro';
+                const msg = (e && e.message) || String(e);
+                if (nome === 'NotAllowedError') {
+                    mostrarDiag('Captura de tela negada ou cancelada',
+                        nome + ': ' + msg,
+                        ['Na janela que abriu, escolha a aba <strong>“Esta aba”</strong> (ou “Chrome Tab”) e clique em Compartilhar.',
+                         'Se a janela não apareceu, verifique se outra janela de captura já está aberta ou se o navegador está bloqueando pop-ups do sistema.',
+                         'No Windows, confirme em <code>Configurações → Privacidade → Captura de tela</code> se o acesso a apps está permitido.']);
+                } else if (nome === 'NotSupportedError' || nome === 'TypeError') {
+                    mostrarDiag('Captura de tela não suportada neste contexto',
+                        nome + ': ' + msg,
+                        ['Abra a página via <code>http://localhost:8765/apresentacao_slides.html</code> usando o atalho <code>Abrir Apresentação.bat</code>.',
+                         'Evite abrir o arquivo dentro de iframes ou de pré-visualizações de editores.',
+                         'Use Chrome 72+, Edge 79+ ou Firefox 66+.']);
+                } else {
+                    mostrarDiag('Falha ao capturar a aba', nome + ': ' + msg,
+                        ['Use o atalho <code>Abrir Apresentação.bat</code> (serve via localhost).',
+                         'Reinicie o navegador e tente novamente.']);
+                }
                 return;
             }
 
@@ -1704,7 +1814,7 @@
                 console.warn('Falha ao misturar áudio:', e);
             }
             if (!temAudio) {
-                recToast('Sem áudio capturado. Ao escolher a aba, marque "Compartilhar áudio da aba".');
+                recToast('Gravando SEM áudio: na janela de compartilhamento, marque “Compartilhar áudio da aba”.');
             }
 
             rec.stream = new MediaStream(tracks);
@@ -1928,5 +2038,17 @@
         </div>
     </div>
 
+
+    <div id="recDiag">
+        <div class="box">
+            <h3 id="recDiagTitle">Não foi possível iniciar a gravação</h3>
+            <div class="motivo" id="recDiagReason"></div>
+            <div id="recDiagBody"></div>
+            <div class="acoes">
+                <button onclick="fecharDiag()">Fechar</button>
+                <button class="primario" id="recDiagRetry" onclick="fecharDiag();alternarGravacao();">Tentar novamente</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

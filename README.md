@@ -1221,6 +1221,16 @@ O cruzamento dos dados de 2018 com 2022 e 2026 desmascara a narrativa de que a v
 
 ---
 
+#### Como abrir para gravar (obrigatório)
+
+Navegadores só liberam a captura de tela em **contexto seguro** (`https://` ou `localhost`). Abrir o arquivo direto por `file://` faz o botão de gravação falhar em parte dos navegadores.
+
+1. Dê duplo clique em **`Abrir Apresentacao.bat`** (na raiz do projeto) — ele sobe um servidor em `http://127.0.0.1:8765` e abre a apresentação no navegador padrão;
+2. Alternativa por terminal: `python servir_apresentacao.py`;
+3. Clique em **⏺ Gravar apresentação** e, na janela do navegador, escolha **a aba atual** marcando **“Compartilhar áudio da aba”**.
+
+Se algo falhar, o próprio slide abre um **painel de diagnóstico** com a causa técnica exata (`window.isSecureContext`, `getDisplayMedia` ausente, `NotAllowedError`, `NotSupportedError`) e o passo a passo de correção.
+
 ### 6.22.1 Gravador de Aba Integrado à Apresentação (Vídeo + Áudio)
 
 O arquivo `apresentacao_slides.html` passou a incluir um **gravador nativo da própria aba**, sem dependências externas:
