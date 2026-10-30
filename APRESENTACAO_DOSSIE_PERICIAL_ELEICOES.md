@@ -5,11 +5,11 @@
 
 ---
 
-## Estrutura da Apresentação em 16 Capítulos Didáticos
+## Estrutura da Apresentação em 17 Capítulos Didáticos
 
 ```mermaid
 flowchart TD
-    C1[1. Abertura Oficial e Escala de 1,5M BUs] --> C2[2. Metodologia e Air-Gap: 2022 vs 2026]
+    C1[1. Abertura Oficial: Tríade 2018, 2022 e 2026] --> C2[2. Metodologia e Air-Gap nos Três Pleitos]
     C2 --> C3[<b>3. Checagem de Mitos: 8 Milhões pós-17h é FAKE</b>]
     C3 --> C4[<b>4. Checagem de Mitos: Hackers, Algoritmos e Wi-Fi</b>]
     C4 --> C5[5. Ponto de Partida e Margens Oficiais]
@@ -18,12 +18,13 @@ flowchart TD
     C7 --> C8[8. Exemplos Críticos e Flagrantes Reais]
     C8 --> C9[9. A Física do Tempo: Esteira e Almoço]
     C9 --> C10[10. A Tabela Mestra das 13 Fraudes]
-    C10 --> C11[11. Retaguarda Oficial: CEFT e GEDAI]
-    C11 --> C12[12. A Batalha de Minas Gerais]
-    C12 --> C13[13. O Hardware em 2022: UE2020 vs Antigas]
-    C13 --> C14[14. O Placar Reconstruído dos Vencedores]
-    C14 --> C15[15. Parecer Pericial de Anulação]
-    C15 --> C16[16. Encerramento e Código Aberto]
+    C10 --> C11[<b>11. O Padrão de Controle: Eleições 2018</b>]
+    C11 --> C12[12. Retaguarda Oficial: CEFT e GEDAI]
+    C12 --> C13[13. A Batalha de Minas Gerais Desmistificada]
+    C13 --> C14[14. O Hardware em 2022: UE2020 vs Antigas]
+    C14 --> C15[15. O Placar Reconstruído dos Vencedores]
+    C15 --> C16[16. Parecer Pericial de Anulação no TSE/STF]
+    C16 --> C17[17. Encerramento e Código Aberto no GitHub]
 ```
 
 ---
@@ -215,7 +216,21 @@ A auditoria científica provou que a virada de Lula não decorreu de migração 
 
 ---
 
-## Capítulo 11: A Auditoria de Retaguarda do TSE (CEFT, CESP e GEDAI)
+## Capítulo 11: O Padrão Científico de Controle: Eleições Presidenciais 2018
+
+Para que uma investigação pericial seja rigorosa, é indispensável estabelecer um **grupo de controle de normalidade estatística**:
+- A auditoria processou a totalidade dos **454.448 Boletins de Urna (BWEB)** oficiais de 2018 no portal `dadosabertos.tse.jus.br`;
+- **Resultado Oficial de 2018 (2º Turno):** Jair Messias Bolsonaro venceu com **57.797.847 votos (55,13%)** contra 47.040.906 (44,87%) de Fernando Haddad &bull; **Margem de +10.756.941 votos (10,26%)**;
+- **Aderência Plena às Pesquisas:** As pesquisas de véspera do Ibope (54% x 46%) e Datafolha (55% x 45%) cravaram exatamente o resultado das urnas;
+- **O Contraste Espetacular de Minas Gerais em 2018:**
+  * Em 2018, Jair Bolsonaro venceu Minas Gerais com **58,19% dos votos válidos (+1.717.155 votos de vantagem sobre o PT)**, acompanhando com harmonia perfeita os outros estados do Sudeste (São Paulo com 67,97% e Rio de Janeiro com 67,95%);
+  * Em 2022, esse 1,7 milhão de votos sumiu misteriosamente sob urnas antigas com log genérico (vitória de Lula por meros 49k votos &bull; 0,40%);
+  * Em 2026, repetiu-se sob urnas de contingência trocadas no CEFT (vitória de Lula por 109k votos &bull; 0,88%).
+- **Conclusão:** 2018 é o organismo saudável que comprova que o Sudeste e Minas Gerais pertencem à maioria conservadora do país. A inversão em 2022 e 2026 não foi demográfica, mas decorreu exclusivamente das anomalias materiais documentadas no laudo.
+
+---
+
+## Capítulo 12: A Auditoria de Retaguarda do TSE (CEFT, CESP e GEDAI)
 
 Uma das maiores descobertas da perícia ocorreu ao abrir o repositório oficial de retaguarda do TSE (Portal Oficial do TSE: `resultados.tse.jus.br`), contendo 224 diretórios de correspondência de sistemas e logs de cartório eleitoral:
 
@@ -236,7 +251,7 @@ Ao decodificar os logs internos do sistema **GEDAI-UE (Versão 8.23.0.0)** gerad
 
 ---
 
-## Capítulo 12: O Falso Álibi de Minas Gerais Desmistificado
+## Capítulo 13: O Falso Álibi de Minas Gerais Desmistificado
 
 ### 6.1 Por que 109 mil votos em Minas Gerais NÃO elegem o presidente sozinho?
 No debate público, afirmou-se repetidamente que a anulação das urnas de Minas Gerais reverteria a presidência. **A matemática pericial desmente essa simplificação:**
@@ -255,7 +270,7 @@ Minas Gerais é a **prova material e científica do vício de hardware em labora
 
 ---
 
-## Capítulo 13: O Comparativo Histórico 2022 vs 2026
+## Capítulo 14: O Comparativo Histórico 2022 vs 2026
 
 Ao abrirmos o acervo oficial das Eleições de 2022 (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`), contendo os 471.984 Boletins de Urna do 2º turno entre Jair Bolsonaro e Lula, comprovamos que **a eleição de 2026 foi uma repetição quase decalque dos mesmos padrões observados em 2022**:
 
@@ -310,7 +325,7 @@ PARECER PERICIAL FINAL OFICIAL • AUDITORIA ELEITORAL NACIONAL DE 2026
 
 ---
 
-## Capítulo 16: Encerramento, Autoria e Código Aberto no GitHub
+## Capítulo 17: Encerramento, Autoria e Código Aberto no GitHub
 
 ### 16.1 Sobre o Autor da Perícia Técnica:
 - **Autor e Desenvolvedor:** **Dilnei Soethe Spancerski** (GitHub: `dilneiss` &bull; Email: `dilnei.soethe@gmail.com`);

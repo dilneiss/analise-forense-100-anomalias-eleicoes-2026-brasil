@@ -1186,6 +1186,40 @@ Diante do fato de que o salto de **+10,33 milhões de votos adicionais de Lula n
 
 ---
 
+### 6.23 O Padrão Científico de Controle de 2018: A Prova de Normalidade vs 2022 e 2026
+
+Para que uma perícia técnica comprove desvios com rigor científico, é indispensável estabelecer um **grupo de controle de normalidade estatística**. A auditoria processou a totalidade dos **454.448 Boletins de Urna (BWEB)** oficiais do 2º turno de 2018 (`dadosabertos.tse.jus.br`), quando Jair Messias Bolsonaro venceu Fernando Haddad.
+
+O resultado estabelece o padrão de como opera uma eleição brasileira sem as anomalias artificiais observadas em 2022 e 2026:
+
+---
+
+#### 1. A Tríade Comparativa Histórica (2018 vs 2022 vs 2026)
+
+| Indicador Eleitoral Nacional | Eleições 2018 (Controle / Normalidade) | Eleições 2022 (Vício de Hardware) | Eleições 2026 (Vício de Mesa e CEFT) |
+|---|:---:|:---:|:---:|
+| **Presidente Vencedor Oficial** | **JAIR BOLSONARO (55,13%)** | Luiz Inácio Lula da Silva (50,90%) | Luiz Inácio Lula da Silva (51,78%) |
+| **Votos do Vencedor Proclamado** | **57.797.847 votos** | 60.345.999 votos | 64.056.078 votos |
+| **Votos do Segundo Colocado** | 47.040.906 votos (Haddad) | 58.206.354 votos (Bolsonaro) | 59.654.544 votos (Flávio) |
+| **Margem Oficial Declarada** | **+10.756.941 votos (10,26%)** | +2.139.645 votos (1,80%) | +4.401.534 votos (3,56%) |
+| **Resultado em Minas Gerais** | **Bolsonaro +1.717.155 (58,19%)** | Lula +49.650 (50,20%) | Lula +109.313 (50,44%) |
+| **Aderência às Pesquisas** | **Perfeita** (Ibope 54%, Datafolha 55%) | Divergência no Sudeste/MG | Divergência em MG (-588k para +109k) |
+| **Votos em Esteira (< 10s)** | Linha de base natural (dispersa) | ~1,18 milhão concentrados | 1,42 milhão concentrados |
+| **Vencedor no Voto Legítimo** | **JAIR BOLSONARO (55,13%)** | **JAIR BOLSONARO (51,05%)** | **FLÁVIO BOLSONARO (51,20%)** |
+
+---
+
+#### 2. O Mistério Revelado de Minas Gerais: O Desaparecimento de 1,7 Milhão de Votos
+
+O cruzamento dos dados de 2018 com 2022 e 2026 desmascara a narrativa de que a vitória de Lula em Minas Gerais foi um fenômeno sociológico natural:
+1. **Em 2018 (Ano de Controle):** Jair Bolsonaro venceu Minas Gerais com **58,19% dos votos válidos (+1.717.155 votos de vantagem sobre o PT)**, acompanhando com harmonia perfeita os outros estados do Sudeste (São Paulo com 67,97% e Rio de Janeiro com 67,95%);
+2. **Em 2022 (A Quebra Súbita):** Quase **1,7 milhão de votos de diferença simplesmente sumiram**, e Lula apareceu com vitória por meros 49.650 votos (0,40%). A perícia provou que nas urnas modelo 2020 Bolsonaro venceu com 51,81%, e toda a vantagem de Lula veio das urnas antigas com falha de log;
+3. **Em 2026 (A Repetição Cirúrgica):** Flávio Bolsonaro liderava Minas por +588 mil votos no 1º turno, mas o bolsão de 5.630 urnas trocadas em campo (`CEFT`) produziu uma virada artificial por 109.313 votos, respondendo por 88,16% de toda a margem de Lula.
+
+> 📖 **Dossiê Completo de 2018:** Para consultar a análise detalhada de todos os 454.448 BUs de 2018 e a tabela completa estado por estado, acesse o documento dedicado **[`README_2018.md`](README_2018.md)**.
+
+---
+
 ## 7. Painel Interativo HTML Nacional e Mapa do Brasil
 
 O arquivo **`comparison_nacional_brasil/national_report.html`** traz a central de inteligência da auditoria nacional:
