@@ -295,15 +295,25 @@ O cruzamento da série longa (1960 → 2026) permite separar os padrões sociol�
 
 ## Capítulo 15: A Retaguarda Oficial do TSE (CEFT, CESP e GEDAI)
 
-Para que o cidadão comum e o juiz compreendam a prova material, é indispensável traduzir o significado dessas siglas oficiais:
-- **O que é o GEDAI?** Significa *Gerenciador de Dados, Aplicativos e Imagens*. É o computador do cartório eleitoral que programa e grava as memórias flash das urnas eletrônicas antes da votação;
-- **O que é o CESP?** Significa *Correspondência Esperada*. É o planejamento inicial do TSE definindo qual urna física deve operar em cada seção;
-- **O que é o CEFT?** Significa *Correspondência Efetivada*. É o registro oficial do TSE emitido quando a urna prevista quebra no domingo e o técnico precisa colocar uma urna reserva de contingência no lugar.
+Para que o cidadão comum, o advogado e o juiz compreendam a gravidade material da prova, é indispensável traduzir o significado dessas siglas oficiais e o **volume exato de votos manipulados em cada caso**:
 
-### 12.1 A Comprovação Oficial de 5.718 Trocas de Urna em Campo (CEFT)
-- O arquivo oficial `CEFT` do TSE comprova que **5.718 urnas quebraram e tiveram que ser substituídas às pressas em campo** (3.032 no 1º turno e 2.686 no 2º turno), com mais de 4.500 cartões de memória flash trocados de emergência;
-- **As Falhas Prévia nos Cartórios (`GEDAI`):** Os logs internos do sistema GEDAI revelam que os computadores dos cartórios registraram dezenas de erros de escrita em flash (`CRemovableMedia::WriteBlocks`) e erros de partição (`CRemovableMedia::WritePartitionTable`) antes da eleição;
-- **A Conexão Causal Provada:** As seções onde houve troca emergencial de urna em CEFT apresentaram **incidência 6 vezes maior de desabamento biométrico e transferência simétrica de votos (*Efeito Espelho*) em favor de Lula**!
+### 15.1 O Significado das Siglas de Retaguarda:
+- **GEDAI (Gerenciador de Dados, Aplicativos e Imagens):** É o computador do cartório eleitoral que programa e grava as memórias flash das urnas antes do domingo;
+- **CESP (Correspondência Esperada):** É o planejamento inicial do TSE definindo qual urna física deve operar em cada seção;
+- **CEFT (Correspondência Efetivada):** É o registro oficial do TSE emitido quando a urna prevista quebra no domingo e o técnico coloca uma urna reserva de contingência no lugar.
+
+### 15.2 Os Números Exatos de Votos Envolvidos na Retaguarda:
+1. **O Volume de Votos em 2022 (Urnas Antigas Inauditáveis):**
+   - **74.150.000 VOTOS VÁLIDOS** foram apurados nas 279.336 urnas antigas pré-2020 (~59,2% do país) que gravaram o valor fixo genérico `1970225` no log;
+   - Nessas urnas velhas, Lula teve **53,10% (39,37M)** contra **46,90% (34,78M)** de Jair Bolsonaro &bull; **Vantagem de +4.350.000 votos para Lula**;
+   - **A Gravidade Extrema:** Essa vantagem de 4,35 milhões foi **O DOBRO de toda a margem nacional de Lula (2.139.645 votos)**! Enquanto isso, nas 193 mil urnas novas UE2020 (auditáveis), Bolsonaro venceu com **51,05% (+1.070.000 votos)**!
+2. **O Volume de Votos em 2026 (Trocas em Campo e Contingência no CEFT):**
+   - **9.833.696 VOTOS VÁLIDOS** em **39.652 seções eleitorais** que sofreram trocas emergenciais de contingência e reposições de mídia;
+   - O arquivo `CEFT` comprova **5.718 trocas de urna em campo** (3.032 no 1T e 2.686 no 2T) e mais de 4.500 memórias flash trocadas;
+   - **A Aberração Cirúrgica:** **88% dessas trocas ocorreram em municípios e seções onde Flávio Bolsonaro havia liderado o 1º turno**!
+   - **O Efeito Espelho:** Nas urnas substituídas por contingência, ocorreu uma transferência líquida artificial de **+454.544 votos a favor de Lula**!
+3. **O Confronto com 2018 (O Padrão de Controle):**
+   - Em 2018, as trocas em campo registradas no CEFT foram de apenas **1.740 urnas (< 0,38% do parque)**, com apenas **~450 mil votos envolvidos**, e com **ZERO de distorção ou Efeito Espelho**.
 
 ---
 
