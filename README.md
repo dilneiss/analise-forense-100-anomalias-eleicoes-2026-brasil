@@ -5,6 +5,7 @@
 [![Security](https://img.shields.io/badge/Security-Read--Only-emerald.svg)](#1-princípios-de-segurança-e-custódia-forense)
 [![Auditoria Nacional](https://img.shields.io/badge/Auditoria-499.178%20Urnas%20(100%25%20Brasil)-purple.svg)](#6-dossiê-pericial-e-análise-de-ia-houve-fraude-sim-ou-não)
 [![124 Regras](https://img.shields.io/badge/regras%20forenses-124%20verificações-orange.svg)](#5-catálogo-dos-124-detectores-automatizados)
+[![Apresentação](https://img.shields.io/badge/Apresentação-25%20Capítulos%20(Slides%20%2B%20Voz)-blue.svg)](#8-apresentação-executiva-em-slides-e-teleprompter-interativo-25-capítulos)
 [![Relatório Nacional](https://img.shields.io/badge/relatório-100%25%20Brasil%20(Mapa%20Interativo)-blue.svg)](#7-painel-interativo-html-nacional-e-mapa-do-brasil)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -1220,6 +1221,22 @@ O cruzamento dos dados de 2018 com 2022 e 2026 desmascara a narrativa de que a v
 
 ---
 
+### 6.22.1 Gravador de Aba Integrado à Apresentação (Vídeo + Áudio)
+
+O arquivo `apresentacao_slides.html` passou a incluir um **gravador nativo da própria aba**, sem dependências externas:
+
+- **Botão `⏺ Gravar apresentação`** na barra superior (ou tecla **`R`**);
+- Captura **vídeo da aba + áudio do sistema + microfone**, com mistura dos dois canais via Web Audio API;
+- Indicador flutuante `● REC 00:00` com botão de parar;
+- Opção **"ocultar controles"** (marcada por padrão) para gravar em modo telão limpo;
+- Ao iniciar, o navegador pede a aba a compartilhar — **é obrigatório marcar "Compartilhar áudio da aba"** para capturar o som do sistema;
+- Ao encerrar, o arquivo `.webm` é baixado automaticamente como `apresentacao-auditoria-AAAA-MM-DD-HHMM.webm`;
+- Aviso de confirmação antes de fechar a aba durante a gravação.
+
+**Compatibilidade:** Chrome, Edge e Firefox atuais. O `getDisplayMedia` exige contexto seguro — funciona em `file://` no Chrome/Edge e em `https://` ou `localhost`.
+
+---
+
 ### 6.23 Auditoria Histórica Comparada: Eleições Presidenciais de 2002 a 2026
 
 > ⚠️ **NOTA DE CORREÇÃO PERICIAL (emitida após a ampliação da base de evidências):**
@@ -1293,7 +1310,74 @@ O arquivo **`comparison_nacional_brasil/national_report.html`** traz a central d
 
 ---
 
-## 8. Testes Automatizados
+## 8. Apresentação Executiva em Slides e Teleprompter Interativo (25 Capítulos)
+
+A suíte inclui uma aplicação web completa e autônoma para apresentação pública, palestras e gravação de vídeos executivos: **`apresentacao_slides.html`** (e sua cópia idêntica em `comparison_nacional_brasil/apresentacao_slides.html`).
+
+A aplicação foi desenvolvida em **HTML5/CSS3/JavaScript puro (Single File)**, sem necessidade de servidores, Node.js ou bibliotecas externas, abrindo instantaneamente em qualquer navegador moderno.
+
+```bash
+# Como abrir a apresentação no Windows:
+start apresentacao_slides.html
+```
+
+### 8.1 Modos de Exibição com 1 Clique
+- **📺 Modo Dividido (`Slide + Roteiro`):** Palco visual à esquerda (100% widescreen) e coluna do **Teleprompter do Apresentador** à direita, contendo tópicos para enfatizar e o roteiro falado parágrafo a parágrafo;
+- **🎙️ Modo Roteiro Puro (`Roteiro`):** Foco exclusivo na leitura da locução com tipografia ampliada;
+- **📽️ Modo Telão 100% Widescreen (`Telão`):** Oculta os painéis laterais e expande o slide para 100% da largura e altura da tela, ideal para gravação de vídeos em **1080p e 4K** sem barras pretas ou distrações.
+
+### 8.2 Recursos Tecnológicos Integrados
+1. **Narração por Inteligência Artificial (ElevenLabs TTS Integrada):**
+   - **Voz Padrão Davi (`2CECaLAGTS5NRGxgbcxr`):** Timbre jovem, inteligente, seguro e enérgico;
+   - **Seleção Rápida de Vozes Populares:** Antoni, Daniel, Rachel ou qualquer Voice ID de voz clonada;
+   - **Consulta de Modelos na API (`🔍 Buscar Modelos na API`):** Conecta à sua conta ElevenLabs para listar modelos v2, Turbo v2.5 e v3/v4;
+   - **Modulação de Expressividade Avançada:** Controles deslizantes de Exagero de Estilo (`style: 0.35`), Estabilidade Dinâmica (`stability: 0.40`) e Similaridade (`0.82`) para eliminar entonação robótica e garantir cadência humana e dramática;
+   - **Cache Persistente no Navegador (IndexedDB):** O áudio de cada slide é armazenado localmente via chave criptográfica SHA-256 de `(voz + modelo + estilo + texto)`. Você só gasta créditos da API na primeira geração;
+   - **Botão de Narração no Rodapé:** Permite iniciar, pausar, retomar ou parar a fala com um clique na barra inferior, mesmo em tela cheia no modo Telão;
+   - **Controle Deslizante do Player (Scrubber):** Barra de progresso interativa com tempo decorrido / duração total (`00:42 / 01:55`) e controle deslizante para avançar ou retroceder a fala para qualquer ponto com precisão;
+   - **Modo Auto Play Contínuo (`🔁 Auto Play`):** Piloto automático da apresentação. Ao ativar, o sistema inicia a narração do slide atual e, ao terminar a fala, avança automaticamente para o próximo slide, executando a apresentação inteira do Slide 1 ao 25 sem intervenção manual.
+2. **Atalhos Rápidos de Teclado:**
+   - `◄` / `►` ou `Espaço` / `PageDown`: Avançar e retroceder slides;
+   - `Home` / `End`: Ir para o primeiro ou último slide;
+   - `T`: Alternar rapidamente entre Modo Telão e Modo Dividido;
+   - `N`: Tocar / Pausar / Retomar a narração de voz do slide atual;
+   - `A`: Ativar / Desativar o modo Auto Play contínuo de apresentação.
+
+---
+
+### 8.3 Guia Rápido dos 25 Capítulos da Apresentação
+
+| Capítulo | Título Oficial | Fato Central Comprovado nos Dados |
+|:---:|---|---|
+| **#01** | **Abertura Oficial & Comparativo** | Dossiê de 2,4M de BUs; Placar real: Jair 51,05% e Flávio 51,20%. |
+| **#02** | **Metodologia, Custódia e Arquitetura** | Decodificação ASN.1 nativa, integridade de hashes e os 3 períodos eleitorais. |
+| **#03** | **Desmontando Mitos (Parte 1): Boato pós-17h** | Prova nos carimbos do log: apenas 34.393 votos reais entraram após as 17h. |
+| **#04** | **Desmontando Mitos (Parte 2): Hackers e Satélites** | Urnas são *air-gapped*; software é o oficial lacrado; o vício foi na mesa humana. |
+| **#05** | **O Enigma das Reações Humanas** | A surpresa da derrota de Lula no 1T (+2,4M pró-Flávio) e a inquietação no 2T. |
+| **#06** | **A Cortina de Fumaça e o Golpe do Transporte** | Ônibus retidos em Salvador/BA (Z13 S303) e 4,68M de votos viciados no Nordeste. |
+| **#07** | **Ponto de Partida e Margens (2018 a 2026)** | Da folga de +10,75M em 2018 para as margens estreitas e atípicas de 2022 e 2026. |
+| **#08** | **O Confronto Histórico do Comparecimento** | Em 37 anos de eleições (1989 a 2018), comparecimento SEMPRE caiu no 2T; o salto de +2,96M em 2026 é inédito. |
+| **#09** | **A Falácia da Terceira Via: Herança Antipetista** | Votações de Alckmin, Tebet, Cury, Renan e Caiado: a divisão de 2018 (60/40) dá vitória a Flávio. |
+| **#10** | **O Enigma do Voto Desconectado (Legislativo)** | Por que o PL venceu no 1T (5 cargos e exército de fiscais) e como 10,8M sem biometria foram para Lula no 2T. |
+| **#11** | **O que é uma Urna Anômala vs Urna Limpa?** | Critérios científicos objetivos: esteiras < 10s, mesário dominante e trocas CEFT. |
+| **#12** | **A Anatomia do Vício nos Três Pleitos** | Linha do tempo: do parque homogêneo de 2018 para o hardware viciado de 2022 e mesa em 2026. |
+| **#13** | **Flagrantes Reais • Parte 1: Identidade e Território** | 78 digitais de mesário em Vitor Meireles/SC, 106 urnas de voto zero e 114 cidades infladas. |
+| **#14** | **Flagrantes Reais • Parte 2: Mesários e Hardware** | 14 mil seções com mesário único, 485 mil votos no almoço e 19.159 seções com queda anômala. |
+| **#15** | **A Cadência Temporal dos Logs (Esteiras)** | 1,42 milhão de votos em 4 a 6s no logd.dat e rajadas sequenciais em salas desertas. |
+| **#16** | **A Tabela Mestra das Fraudes: 2018 vs 2022 vs 2026** | Síntese de 10 mecanismos: 15,88M sem biometria e 116.480 novos eleitores ilegais no 2T. |
+| **#17** | **A Retaguarda Oficial nos Cartórios (CEFT/GEDAI)** | 5.718 urnas trocadas em campo com Efeito Espelho transferindo +454k votos para Lula. |
+| **#18** | **O Grupo de Controle Científico: Eleições 2018** | Pleito 229 com 454k BUs limpos, trocas < 0,38% e Bolsonaro 55,13% (padrão de normalidade). |
+| **#19** | **Série Histórica Pré-Urna Eletrônica (1950 a 1998)** | Auditoria no CDN do TSE: apenas 1989 e 1960 são íntegros; 1994 e 1998 estão truncados. |
+| **#20** | **Cédula de Papel vs Urna Eletrônica (1960 a 2026)** | 66 anos de democracia: a fraude migrou da contagem manual para a liberação de mesário. |
+| **#21** | **O Estado-Termômetro: Minas Gerais (2022 vs 2026)** | 100% histórico: Bolsonaro venceu MG nas UE2020 (+21k) e Flávio venceu no voto limpo (+83k). |
+| **#22** | **O Fator de Hardware: Urnas UE2020 vs Pré-2020** | Analogia do videogame (PS4 vs PS5): Bolsonaro venceu em 100% das 27 UFs nas urnas novas. |
+| **#23** | **O Placar Reconstruído dos Três Pleitos** | A tríade conservadora: Bolsonaro 55,13% (2018), 51,05% (2022) e Flávio 51,20% (2026). |
+| **#24** | **O Parecer Pericial Final: A Eleição Deve Ser Anulada?** | Nulidade cogente: os vícios superam a margem em 2,0x (2022) e 3,6x (2026) pelos Arts. 219 e 222 do CE. |
+| **#25** | **Conclusão e Auditoria Aberta: Dilnei S. Spancerski** | Apelo de compartilhamento cívico, repositório aberto e compromisso inegociável com a verdade. |
+
+---
+
+## 9. Testes Automatizados
 
 A suíte conta com 62 testes automatizados cobrindo 100% dos detectores, decodificadores ASN.1 e matriz de integridade:
 
