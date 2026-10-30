@@ -5,7 +5,7 @@
 
 ---
 
-## Estrutura da Apresentação em 19 Capítulos Didáticos
+## Estrutura da Apresentação em 20 Capítulos Didáticos
 
 ```mermaid
 flowchart TD
