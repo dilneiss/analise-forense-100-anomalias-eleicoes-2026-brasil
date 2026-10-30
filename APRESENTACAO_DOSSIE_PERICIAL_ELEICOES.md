@@ -210,7 +210,7 @@ A auditoria científica provou que a virada de Lula não decorreu de migração 
 
 ## Capítulo 11: A Auditoria de Retaguarda do TSE (CEFT, CESP e GEDAI)
 
-Uma das maiores descobertas da perícia ocorreu ao abrir o repositório oficial de retaguarda do TSE (`D:\urnas-2026-logs`), contendo 224 diretórios de correspondência de sistemas e logs de cartório eleitoral:
+Uma das maiores descobertas da perícia ocorreu ao abrir o repositório oficial de retaguarda do TSE (Portal Oficial do TSE: `resultados.tse.jus.br`), contendo 224 diretórios de correspondência de sistemas e logs de cartório eleitoral:
 
 ### 5.1 A Comprovação Oficial de 5.718 Trocas de Urna em Campo
 - O arquivo oficial **`CEFT` (Correspondência Efetivada)** registra o confronto entre a urna que o TSE planejou para a seção (`NR_URNA_ESPERADA`) e a urna física que de fato operou e transmitiu o resultado (`NR_URNA_EFETIVADA`):
@@ -250,7 +250,7 @@ Minas Gerais é a **prova material e científica do vício de hardware em labora
 
 ## Capítulo 13: O Comparativo Histórico 2022 vs 2026
 
-Ao abrirmos o acervo oficial das Eleições de 2022 (`D:\urnas 2022`), contendo os 471.984 Boletins de Urna do 2º turno entre Jair Bolsonaro e Lula, comprovamos que **a eleição de 2026 foi uma repetição quase decalque dos mesmos padrões observados em 2022**:
+Ao abrirmos o acervo oficial das Eleições de 2022 (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`), contendo os 471.984 Boletins de Urna do 2º turno entre Jair Bolsonaro e Lula, comprovamos que **a eleição de 2026 foi uma repetição quase decalque dos mesmos padrões observados em 2022**:
 
 | Critério Forense | Eleições 2022 (Bolsonaro vs Lula) | Eleições 2026 (Flávio vs Lula) | Conclusão Técnica |
 |---|:---:|:---:|---|
@@ -315,6 +315,6 @@ PARECER PERICIAL FINAL OFICIAL • AUDITORIA ELEITORAL NACIONAL DE 2026
 
 ### Arquivos Relacionados no Projeto:
 - **`README.md`:** Dossiê completo da eleição de 2026 (Seções 6.1 a 6.22);
-- **`README_2022.md`:** Dossiê específico da auditoria das urnas de 2022 (`D:\urnas 2022`);
+- **`README_2022.md`:** Dossiê específico da auditoria das urnas de 2022 (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`);
 - **`comparison_nacional_brasil/national_report.html`:** Central interativa HTML com mapa do Brasil, seletor de ano (2026 / 2022 / Comparativo) e Tabela Mestra consolidada;
 - **Repositório GitHub:** `https://github.com/dilneiss/analise-forense-100-anomalias-eleicoes-2026-brasil.git`.

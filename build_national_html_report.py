@@ -1070,7 +1070,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                         Dossiê Eleições 2022: O Fator de Hardware (UE2020 vs Pré-2020) e o Caso de Minas Gerais
                     </h2>
                     <p style="font-size: 0.8125rem; color: #475569; margin: 0;">
-                        Análise de 471.984 Boletins de Urna oficiais de 2022 em D:\urnas 2022 &bull; Discrepância sistemática entre modelos de urna.
+                        Análise de 471.984 Boletins de Urna oficiais de 2022 fornecidos pelo TSE (dadosabertos.tse.jus.br) &bull; Discrepância sistemática entre modelos de urna.
                     </p>
                 </div>
                 <div style="text-align: right;">
@@ -1563,7 +1563,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                 const titleElem = document.getElementById('headerMainTitle');
                 if (titleElem) titleElem.textContent = 'Auditoria Forense Nacional: Eleições Gerais 2022 (471.984 Urnas)';
                 const subElem = document.getElementById('headerMainSubtitle');
-                if (subElem) subElem.textContent = 'Cruzamento dos 28 Estados e Distrito Federal • Arquivos Oficiais D:\\urnas 2022 • Discrepância de Hardware (UE2020 vs Pré-2020)';
+                if (subElem) subElem.textContent = 'Cruzamento dos 28 Estados e Distrito Federal • Arquivos Oficiais do TSE (dadosabertos.tse.jus.br) • Discrepância de Hardware (UE2020 vs Pré-2020)';
                 const urnasElem = document.getElementById('headerSummaryUrnas');
                 if (urnasElem) urnasElem.innerHTML = '<strong>Urnas Auditadas:</strong> 471.984 seções (100% do Brasil)';
                 const margemElem = document.getElementById('headerSummaryMargem');

@@ -1104,7 +1104,7 @@ Pelo **Princípio Eleitoral do Prejuízo (Art. 219 do Código Eleitoral)**, só 
 
 ### 6.21 Comparativo Histórico: O Padrão de 2026 é Repetição de 2022? Jair Bolsonaro Teria Sido Eleito?
 
-A auditoria científica estendeu os motores periciais aos arquivos oficiais das **Eleições Presidenciais de 2022** (`D:\urnas 2022`), cruzando os 471.984 Boletins de Urna de 2022 com os 499.178 BUs de 2026.
+A auditoria científica estendeu os motores periciais aos arquivos oficiais das **Eleições Presidenciais de 2022** (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`), cruzando os 471.984 Boletins de Urna de 2022 com os 499.178 BUs de 2026.
 
 O resultado comprovou que **a dinâmica de 2026 é a repetição quase decalque dos mesmos padrões forenses observados em 2022**:
 
@@ -1127,7 +1127,7 @@ O resultado comprovou que **a dinâmica de 2026 é a repetição quase decalque 
 
 A margem oficial de Lula sobre Jair Bolsonaro em 2022 foi de **2.139.645 votos (1,80%)** &mdash; menos da metade da margem de 2026.
 
-Ao analisar os dados de 2022 em `D:\urnas 2022`:
+Ao analisar os dados de 2022 em `dadosabertos.tse.jus.br`:
 
 1. **Nas Urnas Modelo 2020 (UE2020 - Novas e Auditáveis):**
    - Cerca de 193 mil urnas UE2020 operaram no Brasil com registro patrimonial perfeito no log.

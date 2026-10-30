@@ -6,7 +6,7 @@ Ferramenta modular de auditoria técnica e reprodução científica dos arquivos
 
 ## 1. Princípios de Segurança e Custódia de Evidência
 
-- **Modo Somente Leitura:** Os arquivos de evidência originais de 2022 (`D:\urnas 2022`) são tratados como imutáveis e nunca são abertos para escrita.
+- **Modo Somente Leitura:** Os arquivos de evidência originais de 2022 (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`) são tratados como imutáveis e nunca são abertos para escrita.
 - **Processamento Concorrente de Alto Desempenho:** Decodificação ASN.1 DER/BER nativa capaz de processar mais de 2.800 Boletins de Urna por segundo.
 - **Criptografia e Hashes:** Recálculo e validação das cadeias de hash SHA-512 dos votos e comparação com as assinaturas digitais do TSE.
 - **Vocabulário Controlado de Auditoria:** Termos técnicos precisos (`VALIDADO`, `NÃO VALIDADO`, `INCONSISTENTE`, `ALTERAÇÃO_COMPROVÁVEL`).
