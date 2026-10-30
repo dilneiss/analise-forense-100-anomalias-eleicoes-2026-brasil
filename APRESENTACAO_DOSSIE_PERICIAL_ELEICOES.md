@@ -5,7 +5,7 @@
 
 ---
 
-## Estrutura da Apresentação em 17 Capítulos Didáticos
+## Estrutura da Apresentação em 18 Capítulos Didáticos
 
 ```mermaid
 flowchart TD
@@ -94,7 +94,23 @@ Antes de aprofundar nas fraudes reais comprovadas pelos arquivos, a perícia cum
 
 ---
 
-## Capítulo 5: O Ponto de Partida Numérico (1º Turno vs 2º Turno)
+## Capítulo 5: O Enigma Político das Reações: A Derrota no 1T e a Expressão Inquieta no 2T
+
+Antes de ingressar na contabilidade algorítmica dos votos, é imperativo contextualizar o momento político e humano registrado pelas câmeras de TV em todo o país:
+
+### 5.1 O Choque da Derrota no 1º Turno (04/10/2026):
+- **O Fato Político:** Flávio Bolsonaro venceu o primeiro turno com **56.103.951 votos (47,1%)**, abrindo uma vantagem expressiva de quase **2,4 milhões de votos sobre Lula**;
+- **A Reação Registrada pela Imprensa (Portal Terra):** A reportagem de véspera estampou: *"Clima na equipe de Lula é de surpresa e tristeza, mas campanha aposta em virada no segundo turno"*. A cúpula governista tinha certeza de que venceria na primeira etapa utilizando as mesmas armas de 2022, mas a baixa popularidade e o desgaste da gestão federal cobraram o preço nas urnas.
+
+### 5.2 A Vitória Inquieta no 2º Turno (25/10/2026):
+- **A Imagem Histórica:** No momento em que a apuração do TSE cravava a vitória oficial de Lula, as câmeras flagraram a reação de Lula ao lado do vice-presidente Geraldo Alckmin;
+- **A Inquietação Inexplicável:** Enquanto os aliados comemoravam ao fundo com sorrisos, a expressão de Lula não era de celebração, alívio ou euforia natural de um vencedor, mas sim de **visível tensão, apreensão e desconforto** &mdash; como se ele próprio estivesse inquieto com o surgimento extraordinário de quase 11 milhões de votos adicionais em seu favor em apenas três semanas, um número tão gritante que atrairia inevitavelmente uma auditoria pericial rigorosa.
+
+> 🔬 **O Pivot Científico:** Deixemos de lado as impressões visuais, emoções e interpretações subjetivas. A perícia não trabalha com expressões de rosto; o nosso compromisso é com a frieza matemática dos arquivos oficiais e a física dos computadores das urnas. Vamos aos dados para que cada cidadão tire suas próprias conclusões.
+
+---
+
+## Capítulo 7: O Ponto de Partida Numérico (1º Turno vs 2º Turno)
 
 Para entender a anomalia, é fundamental observar o ponto de partida oficial registrado pelas urnas no 1º turno:
 
@@ -119,7 +135,7 @@ Para entender a anomalia, é fundamental observar o ponto de partida oficial reg
 
 ---
 
-## Capítulo 6: A Falácia da Absorção da Terceira Via
+## Capítulo 7: A Falácia da Absorção da Terceira Via
 
 A narrativa oficial e os analistas políticos tradicionais justificam o salto de Lula afirmando que ele teria absorvido os votos dos candidatos derrotados no 1º turno.
 
@@ -142,7 +158,7 @@ A narrativa oficial e os analistas políticos tradicionais justificam o salto de
 
 ---
 
-## Capítulo 7: O que é uma Urna Anômala vs Urna Limpa?
+## Capítulo 8: O que é uma Urna Anômala vs Urna Limpa?
 
 Para que o espectador e o juiz compreendam o laudo, a perícia estabelece critérios objetivos que separam o comportamento eleitoral humano da distorção mecânica:
 
@@ -164,7 +180,7 @@ Para que o espectador e o juiz compreendam o laudo, a perícia estabelece crité
 
 ---
 
-## Capítulo 8: Exemplos Críticos e Flagrantes Reais nos Arquivos (2022 vs 2026)
+## Capítulo 9: Exemplos Críticos e Flagrantes Reais nos Arquivos (2022 vs 2026)
 
 A perícia documentou casos concretos extraídos diretamente dos logs oficiais do TSE:
 
@@ -179,7 +195,7 @@ A perícia documentou casos concretos extraídos diretamente dos logs oficiais d
 
 ---
 
-## Capítulo 9: A Física da Votação: Esteira Robótica e o Horário de Almoço
+## Capítulo 10: A Física da Votação: Esteira Robótica e o Horário de Almoço
 
 Ao analisar a linha do tempo cronológica segundo a segundo nos arquivos `logd.dat`:
 - **A Média Nacional:** O cidadão brasileiro leva em média **46 segundos** para votar no 2º turno uninominal;
@@ -189,7 +205,7 @@ Ao analisar a linha do tempo cronológica segundo a segundo nos arquivos `logd.d
 
 ---
 
-## Capítulo 10: A Tabela Mestra das 13 Fraudes e Irregularidades Materiais
+## Capítulo 11: A Tabela Mestra das 13 Fraudes e Irregularidades Materiais
 
 A auditoria consolidou os nove grandes mecanismos de vício apurados nos arquivos oficiais de 2022 e 2026. Abaixo está a explicação detalhada de como funciona cada um dos itens:
 
@@ -219,7 +235,7 @@ A auditoria consolidou os nove grandes mecanismos de vício apurados nos arquivo
 
 ---
 
-## Capítulo 11: O Padrão Científico de Controle: Eleições Presidenciais 2018
+## Capítulo 12: O Padrão Científico de Controle: Eleições Presidenciais 2018
 
 Para que uma investigação pericial seja rigorosa, é indispensável estabelecer um **grupo de controle de normalidade estatística**:
 - A auditoria processou a totalidade dos **454.448 Boletins de Urna (BWEB)** oficiais de 2018 no portal `dadosabertos.tse.jus.br`;
@@ -233,7 +249,7 @@ Para que uma investigação pericial seja rigorosa, é indispensável estabelece
 
 ---
 
-## Capítulo 12: A Retaguarda Oficial do TSE (CEFT, CESP e GEDAI)
+## Capítulo 13: A Retaguarda Oficial do TSE (CEFT, CESP e GEDAI)
 
 Para que o cidadão comum e o juiz compreendam a prova material, é indispensável traduzir o significado dessas siglas oficiais:
 - **O que é o GEDAI?** Significa *Gerenciador de Dados, Aplicativos e Imagens*. É o computador do cartório eleitoral que programa e grava as memórias flash das urnas eletrônicas antes da votação;
@@ -247,7 +263,7 @@ Para que o cidadão comum e o juiz compreendam a prova material, é indispensáv
 
 ---
 
-## Capítulo 13: A Importância de Minas Gerais e a Batalha Eleitoral (2022 vs 2026)
+## Capítulo 14: A Importância de Minas Gerais e a Batalha Eleitoral (2022 vs 2026)
 
 Por que Minas Gerais é o estado mais importante de qualquer eleição presidencial no Brasil e por que foi o epicentro das fraudes mais cirúrgicas?
 
@@ -267,7 +283,7 @@ Por que Minas Gerais é o estado mais importante de qualquer eleição presidenc
 
 ---
 
-## Capítulo 14: O Comparativo Histórico 2022 vs 2026
+## Capítulo 15: O Comparativo Histórico 2022 vs 2026
 
 Ao abrirmos o acervo oficial das Eleições de 2022 (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`), contendo os 471.984 Boletins de Urna do 2º turno entre Jair Bolsonaro e Lula, comprovamos que **a eleição de 2026 foi uma repetição quase decalque dos mesmos padrões observados em 2022**:
 
@@ -286,7 +302,7 @@ Ao abrirmos o acervo oficial das Eleições de 2022 (Portal de Dados Abertos do 
 
 ---
 
-## Capítulo 8: Parecer Pericial Final &bull; A Eleição de 2026 Deve Ser Anulada?
+## Capítulo 9: Parecer Pericial Final &bull; A Eleição de 2026 Deve Ser Anulada?
 
 ```text
 ====================================================================================================
