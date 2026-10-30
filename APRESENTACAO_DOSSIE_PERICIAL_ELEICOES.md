@@ -31,8 +31,9 @@ flowchart TD
 
 ## Bloco 1: Abertura e Introdução ao Espectador
 
-> **Sugestão de Fala / Narração para o Vídeo (CTA de Alto Impacto):**  
-> *"Preste muita atenção nos próximos minutos, porque o que você vai ver aqui vai abalar tudo o que você achava que sabia sobre o poder no Brasil.  
+> **Sugestão de Fala / Narração para o Vídeo (CTA de Alto Impacto & Alerta de Urgência):**  
+> *"Preste muita atenção nos próximos minutos. Este vídeo pode cair a qualquer momento das redes sociais e eu posso sofrer represálias ou até ser preso por revelar o que está documentado aqui. Por isso, antes de qualquer coisa: baixe este vídeo agora, salve uma cópia no seu celular ou computador e compartilhe o máximo que você puder com todo mundo, em grupos, com advogados, peritos e parlamentares, até que este laudo chegue em quem tiver autoridade e capacidade técnica de analisar, afirmar e tomar as providências legais cabíveis!  
+> Pelos dados matemáticos reais das urnas oficiais, **JAIR BOLSONARO** em 2022 e **FLÁVIO BOLSONARO** em 2026 foram os legítimos presidentes eleitos pelo povo brasileiro!  
 > Pelos dados matemáticos reais das urnas oficiais, **JAIR BOLSONARO** em 2022 e **FLÁVIO BOLSONARO** em 2026 foram os legítimos presidentes eleitos pelo povo brasileiro! O que os números e os logs oficiais comprovam é que a vontade popular foi usurpada através de um esquema massivo de distorções de mesa e anomalias de hardware.  
 > Eu quero deixar uma coisa muito clara desde o primeiro segundo: eu não sou político, não tenho cargo público e não pertenço a partido nenhum. Esta é uma análise técnica independente de um programador que utilizou inteligência artificial avançada e processamento massivo de dados para ler e auditar, linha por linha, segundo por segundo, exatamente 1.942.324 Boletins de Urna e arquivos de log oficiais disponibilizados pelo próprio TSE nos portais `dadosabertos.tse.jus.br` e `resultados.tse.jus.br`.  
 > A gravidade do que nós encontramos nos arquivos é estarrecedora: são mais de 1,4 milhão de votos computados em esteiras desumanas de 4 segundos, mesários colocando a própria digital para liberar votos em salas vazias no horário de almoço e mais de 5.700 urnas trocadas em campo com desvios que superam em até três vezes e meia toda a margem da eleição!  
