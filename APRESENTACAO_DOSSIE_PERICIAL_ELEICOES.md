@@ -310,18 +310,28 @@ PARECER PERICIAL FINAL OFICIAL • AUDITORIA ELEITORAL NACIONAL DE 2026
 
 ---
 
-## Capítulo 16: Roteiro e Mensagem de Conclusão para o Vídeo
+## Capítulo 16: Encerramento, Autoria e Código Aberto no GitHub
 
-> **Sugestão de Fala / Encerramento do Apresentador no Vídeo:**  
-> *"Chegamos ao final desta exposição. Você conheceu os dados oficiais, os números brutos, os arquivos de log e a legislação eleitoral.  
-> A conclusão técnica é cristalina: as urnas não foram hackeadas por satélite ou internet, mas a eleição presidencial foi materialmente fraudada e comprometida na ponta humana das mesas receptoras, através da esteira de digitação sem biometria, de mesários operando em salas vazias e de substituições físicas de equipamentos com falhas graves de gravação.  
-> Como o total de votos sob suspeição direta soma entre 6,5 e 15,8 milhões de votos &mdash; superando em até três vezes e meia a margem de 4,4 milhões da eleição &mdash;, a soberania do voto popular brasileiro foi violada.  
-> Todos os arquivos, códigos-fonte, decodificadores e tabelas desta perícia estão publicados com transparência total e código aberto no nosso repositório no GitHub para conferência de qualquer cidadão, perito ou autoridade da Justiça Eleitoral. A verdade dos fatos está nos números."*
+### 16.1 Sobre o Autor da Perícia Técnica:
+- **Autor e Desenvolvedor:** **Dilnei Soethe Spancerski** (GitHub: `dilneiss` &bull; Email: `dilnei.soethe@gmail.com`);
+- **Perfil Técnico:** Programador, Engenheiro de Software e Pesquisador em Inteligência Artificial e Processamento Massivo de Dados Forenses;
+- **Natureza do Projeto:** Trabalho 100% autônomo, independente e voluntário, sem financiamento partidário, com o objetivo exclusivo de auditar a integridade matemática dos arquivos públicos disponibilizados pelo Tribunal Superior Eleitoral (TSE).
+
+### 16.2 Roteiro e Chamada Final do Apresentador (Teleprompter):
+> *"Chegamos ao final desta grande apresentação pericial.  
+> Eu quero me apresentar formalmente a todos vocês: meu nome é **Dilnei Soethe Spancerski**.  
+> Eu sou programador, engenheiro de software e pesquisador em inteligência artificial e análise de dados.  
+> Este trabalho nasceu de um compromisso estritamente cívico e técnico. Eu não recebi verba pública, não fui contratado por campanha política e não tenho filiação partidária. Eu sou um profissional da tecnologia que dedicou semanas de trabalho para construir os decodificadores e aplicar inteligência artificial sobre quase dois milhões de arquivos oficiais publicados pelo próprio TSE.  
+> Aponte a câmera do seu celular para o QR Code que está aparecendo na tela agora. Você será direcionado diretamente para o nosso repositório no GitHub (`github.com/dilneiss/analise-forense-100-anomalias-eleicoes-2026-brasil`). Lá você pode baixar todos os códigos-fonte em Python, os decodificadores, o laudo completo em texto e os relatórios interativos com mapa de calor para conferir seção por seção com os seus próprios olhos.  
+> A verdade dos fatos não depende de quem está no poder; a verdade matemática resiste aos fatos.  
+> Compartilhe este vídeo com seus amigos, envie para advogados, peritos, deputados e senadores. Exija a aplicação da lei e a preservação da soberania popular do Brasil.  
+> Meu nome é Dilnei Soethe Spancerski, e muito obrigado pela sua atenção."*
 
 ---
 
-### Arquivos Relacionados no Projeto:
+### Arquivos Oficiais do Repositório:
 - **`README.md`:** Dossiê completo da eleição de 2026 (Seções 6.1 a 6.22);
-- **`README_2022.md`:** Dossiê específico da auditoria das urnas de 2022 (Portal de Dados Abertos do TSE: `dadosabertos.tse.jus.br`);
-- **`comparison_nacional_brasil/national_report.html`:** Central interativa HTML com mapa do Brasil, seletor de ano (2026 / 2022 / Comparativo) e Tabela Mestra consolidada;
+- **`README_2022.md`:** Dossiê específico da auditoria das urnas de 2022;
+- **`comparison_nacional_brasil/national_report.html`:** Central interativa HTML com mapa do Brasil e seletor de ano (2026 / 2022 / Comparativo);
+- **`apresentacao_slides.html`:** Aplicação interativa de slides em 16 capítulos com QR Code escaneável e teleprompter integrado;
 - **Repositório GitHub:** `https://github.com/dilneiss/analise-forense-100-anomalias-eleicoes-2026-brasil.git`.
