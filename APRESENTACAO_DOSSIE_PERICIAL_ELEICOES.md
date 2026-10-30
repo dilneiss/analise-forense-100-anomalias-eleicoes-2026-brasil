@@ -207,7 +207,7 @@ Ao analisar a linha do tempo cronológica segundo a segundo nos arquivos `logd.d
 
 ## Capítulo 11: A Tabela Mestra das 13 Fraudes e Irregularidades Materiais
 
-A auditoria consolidou os nove grandes mecanismos de vício apurados nos arquivos oficiais de 2022 e 2026. Abaixo está a explicação detalhada de como funciona cada um dos itens:
+A auditoria consolidou a comparação sistemática dos três pleitos eleitorais: 2018 (o grupo de controle de normalidade) em confronto com 2022 e 2026 (onde todos os votos viciados foram computados a favor de Lula). Abaixo está a explicação detalhada de como funciona cada um dos itens:
 
 ### Detalhamento Item por Item da Tabela Mestra:
 
