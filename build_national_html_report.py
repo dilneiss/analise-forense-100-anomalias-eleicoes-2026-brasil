@@ -437,7 +437,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                     Auditoria Forense Nacional: Eleições Gerais 2026 (499.178 Urnas)
                 </h1>
                 <p id="headerMainSubtitle" style="font-size: 0.8125rem; color: #475569; margin: 0;">
-                    Cruzamento dos 28 Estados e Distrito Federal &bull; Quase 1 Milhão de Boletins de Urna (BUs) &bull; Rastreabilidade dos 10,33M Votos Adicionais
+                    Cruzamento dos 28 Estados e Distrito Federal &bull; 998.356 Boletins de Urna (BUs) Oficiais (1T + 2T) &bull; Rastreabilidade dos 10,33M Votos Adicionais
                 </p>
             </div>
             <div style="text-align: right; font-size: 0.8125rem; color: #64748b;">
@@ -1596,7 +1596,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                 const titleElem = document.getElementById('headerMainTitle');
                 if (titleElem) titleElem.textContent = 'Auditoria Forense Nacional: Eleições Gerais 2026 (499.178 Urnas)';
                 const subElem = document.getElementById('headerMainSubtitle');
-                if (subElem) subElem.textContent = 'Cruzamento dos 28 Estados e Distrito Federal • Quase 1 Milhão de Boletins de Urna (BUs) • Rastreabilidade dos 10,33M Votos Adicionais';
+                if (subElem) subElem.textContent = 'Cruzamento dos 28 Estados e Distrito Federal • 998.356 Boletins de Urna (BUs) Oficiais (1T + 2T) • Rastreabilidade dos 10,33M Votos Adicionais';
                 const urnasElem = document.getElementById('headerSummaryUrnas');
                 if (urnasElem) urnasElem.innerHTML = '<strong>Urnas Auditadas:</strong> __TOT_SECOES__ seções (100% do Brasil)';
                 const margemElem = document.getElementById('headerSummaryMargem');

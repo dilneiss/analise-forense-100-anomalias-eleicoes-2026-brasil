@@ -31,7 +31,7 @@ flowchart TD
 ## Bloco 1: Abertura e Introdução ao Espectador
 
 > **Sugestão de Fala / Narração para o Vídeo:**  
-> *"Olá a todos. O que você vai ver neste vídeo não é uma opinião política, não é um boato de rede social e não é uma teoria da conspiração. Este documento é o resultado de uma auditoria técnica e pericial exaustiva realizada sobre quase um milhão de Boletins de Urna oficiais, arquivos de log, registros de assinatura digital e bancos de dados de cartórios eleitorais distribuídos em todas as 499.178 seções eleitorais do Brasil. Mostraremos, número por número, gráfico por gráfico, de onde saíram os votos que decidiram a eleição, quais foram os mecanismos materiais de distorção e o que a legislação brasileira determina sobre a validade desse resultado."*
+> *"Olá a todos. O que você vai ver neste vídeo não é uma opinião política, não é um boato de rede social e não é uma teoria da conspiração. Este documento é o resultado de uma auditoria técnica e pericial exaustiva realizada sobre 998.356 Boletins de Urna oficiais em 2026 (e 943.968 em 2022), arquivos de log, registros de assinatura digital e bancos de dados de cartórios eleitorais distribuídos em todas as 499.178 seções eleitorais do Brasil. Mostraremos, número por número, gráfico por gráfico, de onde saíram os votos que decidiram a eleição, quais foram os mecanismos materiais de distorção e o que a legislação brasileira determina sobre a validade desse resultado."*
 
 ---
 

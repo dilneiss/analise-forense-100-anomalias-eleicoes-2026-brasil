@@ -10,7 +10,7 @@
 
 Suíte forense de alta performance para auditoria técnica, decodificação ASN.1 em baixo nível, conferência criptográfica e análise comparativa de integridade entre turnos (**1º Turno vs 2º Turno**) dos arquivos oficiais gerados pelas urnas eletrônicas do Tribunal Superior Eleitoral (TSE) nas **Eleições Gerais 2026**.
 
-A ferramenta processa e audita em escala massiva a totalidade das **28 UFs (26 Estados, Distrito Federal e Exterior)**, cobrindo **499.178 seções eleitorais** e decodificando **quase 1 milhão de Boletins de Urna (BUs) oficiais** (998.354 arquivos).
+A ferramenta processa e audita em escala massiva a totalidade das **28 UFs (26 Estados, Distrito Federal e Exterior)**, cobrindo **499.178 seções eleitorais** e decodificando **998.356 Boletins de Urna (BUs) oficiais** (exatamente 998.356 arquivos: 499.178 no 1T e 499.178 no 2T).
 
 ---
 
@@ -511,7 +511,7 @@ A tabela abaixo consolida as principais cidades, zonas e seções onde ocorreu a
 
 ### 6.9 Veredito Pericial Final de IA: Houve Fraude? (SIM / NÃO)
 
-Com base no cruzamento matemático, criptográfico, ergonômico e cronológico de quase 1 milhão de Boletins de Urna oficiais em 100% do território nacional, integrando a auditoria da prorrogação das 17h e as declarações das autoridades eleitorais:
+Com base no cruzamento matemático, criptográfico, ergonômico e cronológico de 998.356 Boletins de Urna oficiais em 100% do território nacional, integrando a auditoria da prorrogação das 17h e as declarações das autoridades eleitorais:
 
 ```text
 ================================================================================
@@ -820,7 +820,7 @@ Ao cruzar o comparecimento apurado nas urnas oficiais com o Censo/Estimativas Po
 
 ### 6.15 Conclusão Pericial: Onde Encontrar os 4,4 Milhões de Votos para Inversão ou Anulação?
 
-Após a longa e exaustiva auditoria matemática, criptográfica, temporal e ergonômica de quase 1 milhão de Boletins de Urna oficiais em 100% das seções do Brasil, chegamos à pergunta jurídica e pericial definitiva:
+Após a longa e exaustiva auditoria matemática, criptográfica, temporal e ergonômica de 998.356 Boletins de Urna oficiais em 100% das seções do Brasil, chegamos à pergunta jurídica e pericial definitiva:
 
 **Como a diferença oficial entre Flávio Bolsonaro e Lula foi de 4.430.099 votos, onde nos dados da eleição é possível encontrar esse contingente de 4,4 milhões de votos que poderia inverter o resultado ou embasar uma anulação com base em irregularidades materiais?**
 
@@ -1055,7 +1055,7 @@ Ao cruzar a base oficial de `CEFT` com as **39.652 urnas anômalas** detectadas 
 
 ### 6.20 Parecer Pericial Conclusivo: Houve Fraude? As Eleições de 2026 Devem Ser Anuladas?
 
-Diante do volume sem precedentes de dados, logs e análises matemáticas cruzadas em quase 1 milhão de Boletins de Urna oficiais em todas as 499.178 seções eleitorais do Brasil, a perícia forense consolida abaixo a resposta técnica definitiva, integrando **todas as irregularidades apuradas no laudo** e fundamentando os cenários jurídicos e constitucionais:
+Diante do volume sem precedentes de dados, logs e análises matemáticas cruzadas em 998.356 Boletins de Urna oficiais em todas as 499.178 seções eleitorais do Brasil, a perícia forense consolida abaixo a resposta técnica definitiva, integrando **todas as irregularidades apuradas no laudo** e fundamentando os cenários jurídicos e constitucionais:
 
 ---
 
