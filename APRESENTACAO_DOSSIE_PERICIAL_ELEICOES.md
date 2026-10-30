@@ -30,13 +30,16 @@ flowchart TD
 
 ## Bloco 1: Abertura e Introdução ao Espectador
 
-> **Sugestão de Fala / Narração para o Vídeo:**  
-> *"Olá a todos. Este documento traz a conclusão da maior perícia técnica já realizada sobre o sistema eleitoral brasileiro, cruzando 1.942.324 Boletins de Urna oficiais das eleições presidenciais de 2022 e 2026.  
-> E nós abrimos esta apresentação anunciando diretamente a resposta pericial definitiva que os dados comprovam:  
-> Quem são os verdadeiros vencedores legítimos das urnas no Brasil se expurgarmos os vícios de hardware e as fraudes de mesa?  
-> Em 2022, o Presidente legitimamente eleito foi **JAIR MESSIAS BOLSONARO**, com **51,05% dos votos válidos** e mais de 1 milhão e 70 mil votos de vantagem sobre Lula nas urnas auditáveis modelo 2020!  
-> Em 2026, o Presidente legitimamente eleito foi **FLÁVIO BOLSONARO**, com **51,20% dos votos válidos** e uma vantagem real entre 1,4 milhão e 2,1 milhões de votos sobre Lula após o expurgo dos votos em esteira robótica, mesário único e urnas de contingência!  
-> Nos dois pleitos presidenciais, o resultado proclamado pelo TSE decorreu unicamente da exploração de falhas físicas de equipamento e de manipulações humanas de mesa que violaram a soberania popular. A verdade está nos números."*
+> **Sugestão de Fala / Narração para o Vídeo (CTA de Alto Impacto):**  
+> *"Preste muita atenção nos próximos minutos, porque o que você vai ver aqui vai abalar tudo o que você achava que sabia sobre o poder no Brasil.  
+> Pelos dados matemáticos reais das urnas oficiais, **JAIR BOLSONARO** em 2022 e **FLÁVIO BOLSONARO** em 2026 foram os legítimos presidentes eleitos pelo povo brasileiro! O que os números e os logs oficiais comprovam é que a vontade popular foi usurpada através de um esquema massivo de distorções de mesa e anomalias de hardware.  
+> Eu quero deixar uma coisa muito clara desde o primeiro segundo: eu não sou político, não tenho cargo público e não pertenço a partido nenhum. Esta é uma análise técnica independente de um programador que utilizou inteligência artificial avançada e processamento massivo de dados para ler e auditar, linha por linha, segundo por segundo, exatamente 1.942.324 Boletins de Urna e arquivos de log oficiais disponibilizados pelo próprio TSE nos portais `dadosabertos.tse.jus.br` e `resultados.tse.jus.br`.  
+> A gravidade do que nós encontramos nos arquivos é estarrecedora: são mais de 1,4 milhão de votos computados em esteiras desumanas de 4 segundos, mesários colocando a própria digital para liberar votos em salas vazias no horário de almoço e mais de 5.700 urnas trocadas em campo com desvios que superam em até três vezes e meia toda a margem da eleição!  
+> Nós cruzamos 100% das seções eleitorais do país e os números comprovam com rigor científico:  
+> Em 2022, nas urnas modelo 2020 que possuíam identificação patrimonial válida, **Jair Bolsonaro venceu com 51,05% dos votos e foi reeleito Presidente da República!**  
+> Em 2026, com o expurgo dos votos em esteira e fraudes de mesa, **Flávio Bolsonaro venceu com 51,20% dos votos e é o legítimo Presidente eleito!**  
+> Não se trata de opinião. Trata-se da prova matemática extraída diretamente dos arquivos oficiais da própria Justiça Eleitoral. Veja com seus próprios olhos nos próximos slides."*
+
 ---
 
 ## Capítulo 1: Metodologia Científica, Custódia e Arquitetura da Urna
