@@ -1619,6 +1619,12 @@
                 updateScrubberDisplay(0, currentAudio.duration);
             };
 
+            const selVel = document.getElementById('selVel');
+            if (selVel && selVel.value) {
+                const vel = parseFloat(selVel.value) || 1;
+                currentAudio.playbackRate = vel;
+            }
+
             currentAudio.ontimeupdate = () => {
                 if (currentAudio && !isUserSeeking) {
                     updateScrubberDisplay(currentAudio.currentTime, currentAudio.duration);
@@ -1649,7 +1655,12 @@
                     } else {
                         stopAutoPlay();
                         updateElevenStatus('Apresentação concluída! 🏆', 'cached');
-                        alert('Apresentação concluída com sucesso! Todos os 25 slides foram narrados.');
+                        if (typeof rec !== 'undefined' && rec.mr && rec.mr.state !== 'inactive') {
+                            recToast('Apresentação e narração concluídas — finalizando gravação e baixando vídeo...');
+                            pararGravacao();
+                        } else {
+                            alert('Apresentação concluída com sucesso! Todos os 25 slides foram narrados.');
+                        }
                     }
                 }
             };
@@ -1659,6 +1670,18 @@
                 isAudioPlaying = false;
                 updatePlayButtons(false);
                 updateElevenStatus('Erro de áudio', 'error');
+                if (isAutoPlayActive) {
+                    setTimeout(() => {
+                        if (!isAutoPlayActive) return;
+                        if (currentSlideIdx < SLIDES.length - 1) {
+                            renderSlide(currentSlideIdx + 1);
+                            playOrGenerateNarration();
+                        } else {
+                            stopAutoPlay();
+                            if (typeof rec !== 'undefined' && rec.mr && rec.mr.state !== 'inactive') pararGravacao();
+                        }
+                    }, 3000);
+                }
             };
 
             currentAudio.play().catch(e => {
@@ -1723,7 +1746,7 @@
         /* ===================================================================
            GRAVADOR DA PRÓPRIA ABA (vídeo + áudio do sistema + microfone)
            =================================================================== */
-        let rec = { mr: null, chunks: [], stream: null, ctx: null, t0: 0, tick: null,
+        let rec = window.rec = { mr: null, chunks: [], stream: null, ctx: null, t0: 0, tick: null,
                     display: null, mic: null, ocultar: true };
 
         function recToast(msg) {
@@ -1747,91 +1770,11 @@
         }
 
 
-        /* ===================== AUTO-PLAY COM ENCERRAMENTO ===================== */
-        const auto = { ativo: false, timer: null, tick: null, fim: 0, dur: 0 };
-
-        function parseTempo(txt) {
-            if (!txt) return 90;
-            const m = String(txt).match(/(?:(\d+)\s*min)?\s*(?:(\d+)\s*s)?/i);
-            if (!m) return 90;
-            const min = parseInt(m[1] || '0', 10);
-            const seg = parseInt(m[2] || '0', 10);
-            const total = min * 60 + seg;
-            return total > 0 ? total : 90;
-        }
-
-        function duracaoDoSlide(i) {
-            const s = SLIDES[i];
-            const base = parseTempo(s && s.tempo_estimado);
-            const vel = parseFloat((document.getElementById('selVel') || {}).value || '1') || 1;
-            return Math.max(3, base / vel);
-        }
-
+        /* ===================== HUD DE GRAVAÇÃO ===================== */
         function atualizarHudGravacao() {
             const el = document.getElementById('recSlide');
             if (el) el.textContent = (currentSlideIdx + 1) + '/' + SLIDES.length;
         }
-
-        function iniciarAutoplay() {
-            pararAutoplay();
-            const chk = document.getElementById('chkAuto');
-            if (chk && !chk.checked) return;
-            auto.ativo = true;
-            renderSlide(0);
-            atualizarHudGravacao();
-            agendarAutoplay();
-            clearInterval(auto.tick);
-            auto.tick = setInterval(() => {
-                if (!auto.ativo) return;
-                const restante = Math.max(0, Math.ceil((auto.fim - Date.now()) / 1000));
-                const c = document.getElementById('recCount');
-                if (c) c.textContent = fmtDur(restante * 1000);
-            }, 400);
-        }
-
-        function agendarAutoplay() {
-            clearTimeout(auto.timer);
-            if (!auto.ativo) return;
-            auto.dur = duracaoDoSlide(currentSlideIdx);
-            auto.fim = Date.now() + auto.dur * 1000;
-            auto.timer = setTimeout(passoAutoplay, auto.dur * 1000);
-        }
-
-        function passoAutoplay() {
-            if (!auto.ativo) return;
-            if (currentSlideIdx >= SLIDES.length - 1) {
-                pararAutoplay();
-                if (rec.mr && rec.mr.state !== 'inactive') {
-                    recToast('Fim da apresentação — encerrando e salvando a gravação.');
-                    pararGravacao();
-                }
-                return;
-            }
-            renderSlide(currentSlideIdx + 1);
-            atualizarHudGravacao();
-            agendarAutoplay();
-        }
-
-        function pararAutoplay() {
-            auto.ativo = false;
-            clearTimeout(auto.timer);
-            clearInterval(auto.tick);
-            const c = document.getElementById('recCount');
-            if (c) c.textContent = '--:--';
-        }
-
-        // Se o usuário navegar manualmente durante a gravação, o timer é reiniciado
-        (function interceptarNavegacao() {
-            const origNext = window.nextSlide, origPrev = window.prevSlide;
-            window.nextSlide = function () {
-                origNext();
-                if (auto.ativo) { atualizarHudGravacao(); agendarAutoplay(); }
-            };
-            window.prevSlide = function () {
-                origPrev();
-                if (auto.ativo) { atualizarHudGravacao(); agendarAutoplay(); }
-            };
-        })();
 
         async function alternarGravacao() {
             if (rec.mr && rec.mr.state !== 'inactive') {
@@ -2020,11 +1963,18 @@
                      'Se persistir, abra pelo atalho <code>Abrir Apresentacao.bat</code> (localhost).']);
                 return;
             }
-            iniciarAutoplay();
+
+            // Iniciar Auto Play com Narração de Voz Integrada!
+            const chkAuto = document.getElementById('chkAuto');
+            if (!chkAuto || chkAuto.checked) {
+                renderSlide(0);
+                startAutoPlay();
+            }
         }
 
         function pararGravacao() {
-            if (typeof pararAutoplay === 'function') pararAutoplay();
+            if (typeof stopAutoPlay === 'function') stopAutoPlay();
+            if (typeof stopElevenAudio === 'function') stopElevenAudio();
             if (rec.mr && rec.mr.state !== 'inactive') {
                 try { rec.mr.stop(); } catch (e) { console.warn(e); }
             }
@@ -2199,8 +2149,8 @@
     <div class="rec-dock" id="recDock">
         <button id="btnRec" onclick="alternarGravacao()" title="Gravar esta aba com áudio (atalho: R)">⏺ Gravar</button>
         <span class="sep"></span>
-        <label title="Ao gravar, avança os slides sozinho e encerra no último">
-            <input type="checkbox" id="chkAuto" checked> auto
+        <label title="Ao gravar, inicia a apresentação com narração automática de voz e para no final">
+            <input type="checkbox" id="chkAuto" checked> auto narração
         </label>
         <select id="selVel" title="Velocidade do auto-play">
             <option value="0.75">0,75x</option>
