@@ -207,7 +207,7 @@ Ao analisar a linha do tempo cronológica segundo a segundo nos arquivos `logd.d
 
 ## Capítulo 11: A Tabela Mestra das 13 Fraudes e Irregularidades Materiais
 
-A auditoria consolidou a comparação sistemática dos três pleitos eleitorais: 2018 (o grupo de controle de normalidade) em confronto com 2022 e 2026 (onde todos os votos viciados foram computados a favor de Lula). Abaixo está a explicação detalhada de como funciona cada um dos itens:
+A auditoria consolidou a comparação sistemática dos três pleitos eleitorais: 2018 (o grupo de controle de normalidade) em confronto com 2022 e 2026 (onde em 2018 o sistema operou limpo (organismo saudável), enquanto em 2022 e 2026 todos os votos viciados foram computados a favor de Lula em detrimento de Bolsonaro e Flávio). Abaixo está a explicação detalhada de como funciona cada um dos itens:
 
 ### Detalhamento Item por Item da Tabela Mestra:
 
