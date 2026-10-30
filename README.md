@@ -1220,6 +1220,69 @@ O cruzamento dos dados de 2018 com 2022 e 2026 desmascara a narrativa de que a v
 
 ---
 
+### 6.23 Auditoria Histórica Comparada: Eleições Presidenciais de 2002 a 2026
+
+> ⚠️ **NOTA DE CORREÇÃO PERICIAL (emitida após a ampliação da base de evidências):**
+> A série histórica completa de 2002 a 2026 **obriga a revisão parcial** de duas conclusões anteriores deste laudo:
+> 1. As **seções de unanimidade** (vencedor com ≥ 20 votos e opositor com zero) **não são inovação de 2022/2026**. Elas existem desde 2002 e alcançam o **pico histórico em 2014** (657 seções no 1º turno e 179 no 2º turno), valor muito superior a 2022 (137) e a 2026 (103).
+> 2. A alegação de que "2026 repetiu a fórmula de 2022" permanece verdadeira, porém **incompleta**: o padrão estrutural é **ainda mais antigo** e já operava em 2002–2014.
+>
+> O que distingue 2026 não é a existência do vício, mas a **combinação inédita** de margem apertada no 1º turno com o vencedor do 1º turno sendo o candidato do PL, seguida de absorção recorde de votos novos pelo adversário.
+
+Baixamos e processamos do CDN oficial do TSE a **votação por seção eleitoral de 100% das seções do Brasil e do Exterior** para os sete pleitos presidenciais de 2002 a 2026 (`votacao_secao_<ano>_BR.zip`). O pipeline é reprodutível e está publicado em `historico_presidencial_2002_2026.py`, com o dossiê completo em **[`HISTORICO_2002_2026.md`](HISTORICO_2002_2026.md)**.
+
+#### 1. Resultado Oficial Consolidado (2º Turno)
+
+| Ano | Eleito | Votos | % | 2º colocado | Votos | % | Margem |
+|:--:|---|---:|---:|---|---:|---:|---:|
+| 2002 | Lula (PT) | 52.793.364 | 61,27% | José Serra (PSDB) | 33.370.739 | 38,73% | 19.422.625 |
+| 2006 | Lula (PT) | 58.295.042 | 60,83% | Geraldo Alckmin (PSDB) | 37.543.178 | 39,17% | 20.751.864 |
+| 2010 | Dilma (PT) | 55.752.529 | 56,05% | José Serra (PSDB) | 43.711.388 | 43,95% | 12.041.141 |
+| 2014 | Dilma (PT) | 54.501.118 | 51,64% | Aécio Neves (PSDB) | 51.041.155 | 48,36% | 3.459.963 |
+| 2018 | Jair Bolsonaro (PSL) | 57.797.847 | 55,13% | Fernando Haddad (PT) | 47.040.906 | 44,87% | 10.756.941 |
+| 2022 | Lula (PT) | 60.345.999 | 50,90% | Jair Bolsonaro (PL) | 58.206.354 | 49,10% | 2.139.645 |
+| 2026 | Lula (PT) | 64.256.232 | 51,79% | Flávio Bolsonaro (PL) | 59.826.041 | 48,21% | 4.430.191 |
+
+#### 2. Seções de Unanimidade (Vencedor ≥ 20 votos e Opositor = 0)
+
+| Ano | Seções auditadas | Unanimidade 1T | Unanimidade 2T | Vencedor do pleito |
+|:--:|---:|---:|---:|---|
+| 2002 | 320.433 | 135 | 32 | Lula (PT) |
+| 2006 | 361.407 | 116 | **228** | Lula (PT) |
+| 2010 | 399.964 | **299** | **242** | Dilma (PT) |
+| 2014 | 428.854 | **657** | **179** | Dilma (PT) |
+| 2018 | 454.450 | 25 | **4** | Bolsonaro (PSL) |
+| 2022 | 472.028 | 156 | 137 | Lula (PT) |
+| 2026 | 499.206 | 6 | 103 | Lula (PT) |
+
+**Diagnóstico:** a unanimidade acompanha a **vitória do campo petista**, não um ano específico. Nos dois turnos vencidos por Bolsonaro (2018) e no 1º turno de 2026 (vencido por Flávio), a contagem desaba para 4, 25 e 6 seções. Trata-se de **característica estrutural e recorrente** do modelo de votação, concentrada em aldeias, comunidades ribeirinhas e zonas remotas sem fiscais de oposição — e **não de uma inovação de 2022/2026**.
+
+#### 3. Migração de Votos do 1º para o 2º Turno
+
+| Ano | Crescimento do 1º do 1T | Crescimento do 2º do 1T | Fatia dos votos novos para o 2º do 1T | 3ª via no 1T |
+|---|---:|---:|---:|---:|
+| 2002 | Lula +13.338.131 | Serra +13.665.294 | 50,6% | 25.791.834 |
+| 2006 | Lula +11.632.677 | Alckmin **−2.425.191** | **−26,3%** | 9.391.768 |
+| 2010 | Dilma +8.101.095 | Serra +10.579.105 | 56,6% | 20.806.436 |
+| 2014 | Dilma +11.233.450 | Aécio +16.143.944 | 59,0% | 25.858.923 |
+| 2018 | Bolsonaro +8.520.837 | Haddad +15.698.855 | 64,8% | 26.431.688 |
+| 2022 | Lula +3.086.495 | Bolsonaro +7.134.009 | 69,8% | 9.897.870 |
+| 2026 | Flávio +3.721.538 | Lula +10.376.694 | **73,6%** | 9.321.993 |
+
+**Diagnóstico:** a fatia absorvida pelo candidato derrotado no 1º turno cresce de forma **monotônica desde 2002** (50,6% → 73,6%). 2026 é o **ponto máximo da série**, mas segue a tendência — não é ruptura estatística. O único pleito em que o 2º colocado do 1º turno **perdeu votos** no 2º turno foi **2006** (Alckmin −2,4 milhões).
+
+#### 4. Limitação de Fonte Declarada
+
+O dataset `votacao_secao` **não contém** biometria (`QT_ELEITORES_BIOMETRIA_NH`), número patrimonial da urna (`NR_URNA_EFETIVADA`), horários de abertura/encerramento por seção nem cadência de votação. Essas variáveis só existem nos arquivos **BWEB**, publicados pelo TSE **a partir de 2014**. Para 2002–2010, é **tecnicamente impossível** repetir as análises de biometria, hardware e tempo de cabine; trata-se de limitação da fonte oficial, não do método pericial.
+
+#### 5. Conclusão da Série Histórica
+
+1. **Os fatos apurados são consistentes entre os pleitos** — mas a consistência aponta para um **vício estrutural antigo e permanente**, não para uma fraude pontual de 2026.
+2. **Quantitativamente, 2026 não é o pleito mais anômalo da série.** 2014 (margem de 3,46 milhões com 179 seções unânimes no 2T), 2006 (perda de 2,4 milhões de votos do 2º colocado) e 2018 (apenas 4 seções unânimes contra 228 em 2006) apresentam desvios tão ou mais extremos.
+3. **O que diferencia 2026** é a combinação simultânea de: (i) 1º turno vencido pelo candidato do PL; (ii) margem estreita; e (iii) absorção recorde de votos novos pelo adversário (73,6%) — combinação inédita, mas construída sobre tendências preexistentes.
+
+---
+
 ## 7. Painel Interativo HTML Nacional e Mapa do Brasil
 
 O arquivo **`comparison_nacional_brasil/national_report.html`** traz a central de inteligência da auditoria nacional:
