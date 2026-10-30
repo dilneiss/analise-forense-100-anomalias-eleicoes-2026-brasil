@@ -14,5 +14,20 @@
   "secoes_anomalas": 1,
   "margem_vitoria_2t": 365625,
   "vencedor_2t": "Jair Bolsonaro",
-  "zip_size_mb": 1.01
+  "zip_size_mb": 11.05,
+  "total_secoes_1t": 4181,
+  "aptos_1t": 1175617,
+  "comparecimento_1t": 913340,
+  "abstencao_1t": 262277,
+  "bolsonaro_1t": 538311,
+  "haddad_1t": 176107,
+  "ciro_1t": 52118,
+  "alckmin_1t": 37048,
+  "outros_1t": 61317,
+  "terceira_via_1t": 150483,
+  "brancos_1t": 15329,
+  "nulos_1t": 33110,
+  "crescimento_bolsonaro": 56657,
+  "crescimento_haddad": 53236,
+  "novos_votantes_2t": -31119
 }

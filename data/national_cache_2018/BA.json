@@ -14,5 +14,20 @@
   "secoes_anomalas": 49,
   "margem_vitoria_2t": 3424519,
   "vencedor_2t": "Fernando Haddad",
-  "zip_size_mb": 2.97
+  "zip_size_mb": 72.73,
+  "total_secoes_1t": 31192,
+  "aptos_1t": 10392015,
+  "comparecimento_1t": 8236847,
+  "abstencao_1t": 2155168,
+  "bolsonaro_1t": 1725140,
+  "haddad_1t": 4441955,
+  "ciro_1t": 693273,
+  "alckmin_1t": 172900,
+  "outros_1t": 335277,
+  "terceira_via_1t": 1201450,
+  "brancos_1t": 169806,
+  "nulos_1t": 697750,
+  "crescimento_bolsonaro": 335242,
+  "crescimento_haddad": 1042946,
+  "novos_votantes_2t": -36520
 }
