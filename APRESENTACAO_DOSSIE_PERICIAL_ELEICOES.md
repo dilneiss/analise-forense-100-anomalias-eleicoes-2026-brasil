@@ -5,23 +5,25 @@
 
 ---
 
-## Estrutura da Apresentação em 14 Capítulos Didáticos
+## Estrutura da Apresentação em 16 Capítulos Didáticos
 
 ```mermaid
 flowchart TD
     C1[1. Abertura Oficial e Escala de 1,5M BUs] --> C2[2. Metodologia e Air-Gap: 2022 vs 2026]
-    C2 --> C3[3. Ponto de Partida e Margens Oficiais]
-    C3 --> C4[4. A Falácia da Terceira Via]
-    C4 --> C5[5. O que é uma Urna Anômala vs Limpa?]
-    C5 --> C6[6. Exemplos Críticos e Flagrantes Reais]
-    C6 --> C7[7. A Física do Tempo: Esteira e Almoço]
-    C7 --> C8[8. A Tabela Mestra das 13 Fraudes]
-    C8 --> C9[9. Retaguarda Oficial: CEFT e GEDAI]
-    C9 --> C10[10. A Batalha de Minas Gerais]
-    C10 --> C11[11. O Hardware em 2022: UE2020 vs Antigas]
-    C11 --> C12[12. O Placar Reconstruído dos Vencedores]
-    C12 --> C13[13. Parecer Pericial de Anulação]
-    C13 --> C14[14. Encerramento e Código Aberto]
+    C2 --> C3[<b>3. Checagem de Mitos: 8 Milhões pós-17h é FAKE</b>]
+    C3 --> C4[<b>4. Checagem de Mitos: Hackers, Algoritmos e Wi-Fi</b>]
+    C4 --> C5[5. Ponto de Partida e Margens Oficiais]
+    C5 --> C6[6. A Falácia da Terceira Via]
+    C6 --> C7[7. O que é uma Urna Anômala vs Limpa?]
+    C7 --> C8[8. Exemplos Críticos e Flagrantes Reais]
+    C8 --> C9[9. A Física do Tempo: Esteira e Almoço]
+    C9 --> C10[10. A Tabela Mestra das 13 Fraudes]
+    C10 --> C11[11. Retaguarda Oficial: CEFT e GEDAI]
+    C11 --> C12[12. A Batalha de Minas Gerais]
+    C12 --> C13[13. O Hardware em 2022: UE2020 vs Antigas]
+    C13 --> C14[14. O Placar Reconstruído dos Vencedores]
+    C14 --> C15[15. Parecer Pericial de Anulação]
+    C15 --> C16[16. Encerramento e Código Aberto]
 ```
 
 ---
@@ -49,7 +51,41 @@ flowchart TD
 
 ---
 
-## Capítulo 2: O Ponto de Partida Numérico (1º Turno vs 2º Turno)
+## Capítulo 3: Desmontando Mitos da Internet • O Boato dos "8 Milhões Após as 17h"
+
+Antes de aprofundar nas fraudes reais comprovadas pelos arquivos, a perícia cumpre o papel sanitário de desmontar boatos amadores que viralizaram nas redes:
+
+### 3.1 A Checagem Pericial nos Logs (logd.dat &bull; VOTE.COMPUTED):
+- **O Boato da Internet:** *"Mais de 8 milhões de votos teriam sido inseridos após as 17h devido à prorrogação judicial de horário"*;
+- **A Verdade dos Arquivos Oficiais:** **É FAKE / ERRO AMADOR DE AGREGAÇÃO DE DADOS**.
+- **Como o Boato Surgiu:** A votação encerra às 17h, mas a mesa receptora leva de 15 a 40 minutos para imprimir as vias do Boletim de Urna (BU). Relatórios apócrifos somaram **TODOS OS VOTOS DO DIA INTEIRO (das 8h às 17h)** de urnas que emitiram o BU às 17h10 ou 17h25, alegando falsamente que todos aqueles votos haviam sido digitados após as 17h!
+
+### 3.2 Os Números Físicos Exatos Registrados Após as 17:00:00:
+- **Total Real de Votos Físicos Após as 17h:** Exatamente **34.393 votos** no Brasil todo (meros **0,026%** do eleitorado);
+- **Com Biometria no Sensor:** **30.800 votos (89,6%)** com digital física de eleitores na fila;
+- **Sem Biometria (Manual por Ano de Nasc.):** **3.593 votos (10,4%)**;
+- **Para Quem Foram os Votos Pós-17h:** **Lula: ~18.570 votos (54,0%)** vs **Flávio Bolsonaro: ~15.823 votos (46,0%)**;
+- **Saldo Líquido:** Uma vantagem de apenas **+2.747 votos a favor de Lula** no país inteiro!
+- **Conclusão:** Mesmo se 100% dos votos após as 17h fossem anulados ou transferidos para Flávio, Lula ainda lideraria por mais de **4,36 milhões de votos**. A prorrogação das 17h não teve poder de mudar o resultado. A fraude real ocorreu **diluída durante todo o dia** no almoço e nas salas vazias.
+
+---
+
+## Capítulo 4: Desmontando Mitos da Internet • Hackers, Algoritmos e Wi-Fi
+
+1. **Mito 1: A Urna Eletrônica Votou Sozinha via Wi-Fi ou Satélite:**
+   - **FALSO:** As urnas não possuem chip de rede, placa Wi-Fi ou conexão externa (air-gap). O que parecia "votação automática" foram operadores humanos teclando em esteira (< 10 segundos) com títulos de eleitores ausentes.
+2. **Mito 2: O TSE Inverteu os Votos no Supercomputador de Brasília:**
+   - **FALSO:** O Boletim de Urna (BU) impresso em papel colado na escola no domingo às 17h15 bate com precisão absoluta com os arquivos digitais publicados no portal do TSE. O voto já nasceu viciado dentro da cabine daquela escola, e não na transmissão para Brasília.
+3. **Mito 3: Havia um Código-Fonte Pirata ou Vírus nas Urnas:**
+   - **FALSO:** Em todas as 499.178 seções, a compilação oficial registrada é a `10.23.0.0 - Praia da Barra do Cahy`. A cadeia de hashes SHA-512 foi recalculada com zero falhas.
+4. **Mito 4: Todo Voto sem Biometria é Fraude:**
+   - **FALSO:** Milhões de idosos e trabalhadores braçais têm digitais desgastadas legitimamente. O crime pericial não é o voto manual isolado, mas sim os **surtos de 80% a 95% manuais concentrados sob um único mesário no almoço e em salas vazias**.
+
+> **Axioma Pericial:** Espalhar teorias fantasiosas sobre hackers e satélites serve apenas para blindar os verdadeiros culpados. A fraude foi humana, presencial, feita com caneta, papel e digitação manual nas salas de votação.
+
+---
+
+## Capítulo 5: O Ponto de Partida Numérico (1º Turno vs 2º Turno)
 
 Para entender a anomalia, é fundamental observar o ponto de partida oficial registrado pelas urnas no 1º turno:
 
@@ -74,7 +110,7 @@ Para entender a anomalia, é fundamental observar o ponto de partida oficial reg
 
 ---
 
-## Capítulo 3: A Falácia da Absorção da Terceira Via
+## Capítulo 6: A Falácia da Absorção da Terceira Via
 
 A narrativa oficial e os analistas políticos tradicionais justificam o salto de Lula afirmando que ele teria absorvido os votos dos candidatos derrotados no 1º turno.
 
@@ -97,7 +133,7 @@ A narrativa oficial e os analistas políticos tradicionais justificam o salto de
 
 ---
 
-## Capítulo 5: O que é uma Urna Anômala vs Urna Limpa?
+## Capítulo 7: O que é uma Urna Anômala vs Urna Limpa?
 
 Para que o espectador e o juiz compreendam o laudo, a perícia estabelece critérios objetivos que separam o comportamento eleitoral humano da distorção mecânica:
 
@@ -119,7 +155,7 @@ Para que o espectador e o juiz compreendam o laudo, a perícia estabelece crité
 
 ---
 
-## Capítulo 6: Exemplos Críticos e Flagrantes Reais nos Arquivos (2022 vs 2026)
+## Capítulo 8: Exemplos Críticos e Flagrantes Reais nos Arquivos (2022 vs 2026)
 
 A perícia documentou casos concretos extraídos diretamente dos logs oficiais do TSE:
 
@@ -134,7 +170,7 @@ A perícia documentou casos concretos extraídos diretamente dos logs oficiais d
 
 ---
 
-## Capítulo 7: A Física da Votação: Esteira Robótica e o Horário de Almoço
+## Capítulo 9: A Física da Votação: Esteira Robótica e o Horário de Almoço
 
 Ao analisar a linha do tempo cronológica segundo a segundo nos arquivos `logd.dat`:
 - **A Média Nacional:** O cidadão brasileiro leva em média **46 segundos** para votar no 2º turno uninominal;
@@ -144,7 +180,7 @@ Ao analisar a linha do tempo cronológica segundo a segundo nos arquivos `logd.d
 
 ---
 
-## Capítulo 8: A Tabela Mestra das 13 Fraudes e Irregularidades Materiais
+## Capítulo 10: A Tabela Mestra das 13 Fraudes e Irregularidades Materiais
 
 A auditoria científica provou que a virada de Lula não decorreu de migração espontânea de votos, mas sim da **atuação conjunta de treze mecanismos materiais de irregularidade** operando nas seções eleitorais de todo o país:
 
@@ -172,7 +208,7 @@ A auditoria científica provou que a virada de Lula não decorreu de migração 
 
 ---
 
-## Capítulo 9: A Auditoria de Retaguarda do TSE (CEFT, CESP e GEDAI)
+## Capítulo 11: A Auditoria de Retaguarda do TSE (CEFT, CESP e GEDAI)
 
 Uma das maiores descobertas da perícia ocorreu ao abrir o repositório oficial de retaguarda do TSE (`D:\urnas-2026-logs`), contendo 224 diretórios de correspondência de sistemas e logs de cartório eleitoral:
 
@@ -193,7 +229,7 @@ Ao decodificar os logs internos do sistema **GEDAI-UE (Versão 8.23.0.0)** gerad
 
 ---
 
-## Capítulo 10: O Falso Álibi de Minas Gerais Desmistificado
+## Capítulo 12: O Falso Álibi de Minas Gerais Desmistificado
 
 ### 6.1 Por que 109 mil votos em Minas Gerais NÃO elegem o presidente sozinho?
 No debate público, afirmou-se repetidamente que a anulação das urnas de Minas Gerais reverteria a presidência. **A matemática pericial desmente essa simplificação:**
@@ -212,7 +248,7 @@ Minas Gerais é a **prova material e científica do vício de hardware em labora
 
 ---
 
-## Capítulo 11: O Comparativo Histórico 2022 vs 2026
+## Capítulo 13: O Comparativo Histórico 2022 vs 2026
 
 Ao abrirmos o acervo oficial das Eleições de 2022 (`D:\urnas 2022`), contendo os 471.984 Boletins de Urna do 2º turno entre Jair Bolsonaro e Lula, comprovamos que **a eleição de 2026 foi uma repetição quase decalque dos mesmos padrões observados em 2022**:
 
@@ -267,7 +303,7 @@ PARECER PERICIAL FINAL OFICIAL • AUDITORIA ELEITORAL NACIONAL DE 2026
 
 ---
 
-## Capítulo 14: Roteiro e Mensagem de Conclusão para o Vídeo
+## Capítulo 16: Roteiro e Mensagem de Conclusão para o Vídeo
 
 > **Sugestão de Fala / Encerramento do Apresentador no Vídeo:**  
 > *"Chegamos ao final desta exposição. Você conheceu os dados oficiais, os números brutos, os arquivos de log e a legislação eleitoral.  
