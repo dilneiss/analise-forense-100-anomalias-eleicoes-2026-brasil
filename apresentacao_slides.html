@@ -899,6 +899,12 @@
             background: rgba(255,255,255,.08); color: #e2e8f0;
         }
         #recDiag button.primario { background: #2563eb; border-color: #3b82f6; color: #fff; }
+
+        /* auto-play + gravação em tela cheia */
+        body.rec-ocultar .slide-pane { padding: 1.25rem 2rem !important; }
+        body.rec-ocultar .slide-card { max-width: 1180px; }
+        #recDotUi #recSlide { color: #93c5fd; }
+        #recDotUi #recCount { color: #fde68a; }
     </style>
 </head>
 <body>
@@ -914,8 +920,18 @@
             <button id="btnModeFull" class="btn-mode" onclick="setMode('fullscreen')">📽️ Telão</button>
             <span style="width:1px;height:22px;background:rgba(255,255,255,.14);"></span>
             <button id="btnRec" onclick="alternarGravacao()" title="Gravar esta aba com áudio (atalho: R)">⏺ Gravar apresentação</button>
+            <label id="lblAuto" style="display:inline-flex; align-items:center; gap:5px; font-size:.7rem; color:#94a3b8; font-weight:700; cursor:pointer; user-select:none;" title="Ao gravar, avança os slides sozinho e para no final">
+                <input type="checkbox" id="chkAuto" checked style="accent-color:#38bdf8; cursor:pointer;"> auto-play
+            </label>
+            <select id="selVel" title="Velocidade do auto-play" style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); color:#cbd5e1; font-size:.7rem; font-weight:700; border-radius:6px; padding:4px 6px; cursor:pointer;">
+                <option value="0.75">0,75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1,25x</option>
+                <option value="1.5">1,5x</option>
+                <option value="2">2x</option>
+            </select>
             <label id="lblOcultar" style="display:none; align-items:center; gap:5px; font-size:.7rem; color:#94a3b8; font-weight:700; cursor:pointer; user-select:none;">
-                <input type="checkbox" id="chkOcultar" checked style="accent-color:#ef4444; cursor:pointer;"> ocultar controles
+                <input type="checkbox" id="chkOcultar" checked style="accent-color:#ef4444; cursor:pointer;"> esconder barras p/ gravar
             </label>
         </div>
     </div>
@@ -1000,7 +1016,7 @@
             <span class="kbd-hint">◄ ► Navegar</span>
             <span class="kbd-hint">Espaço Avançar</span>
             <span class="kbd-hint">T Roteiro</span>
-            <span class="kbd-hint">R Gravar</span>
+            <span class="kbd-hint">R Gravar+Auto</span>
             <span class="kbd-hint">N Narração</span>
             <span class="kbd-hint">A Auto Play</span>
         </div>
@@ -1070,6 +1086,7 @@
             
             const pct = ((currentSlideIdx + 1) / SLIDES.length) * 100;
             document.getElementById('progressFill').style.width = pct + '%';
+            atualizarHudGravacao();
         }
 
         function nextSlide() {
@@ -1696,6 +1713,93 @@
             return m + ':' + r;
         }
 
+
+        /* ===================== AUTO-PLAY COM ENCERRAMENTO ===================== */
+        const auto = { ativo: false, timer: null, tick: null, fim: 0, dur: 0 };
+
+        function parseTempo(txt) {
+            if (!txt) return 90;
+            const m = String(txt).match(/(?:(\d+)\s*min)?\s*(?:(\d+)\s*s)?/i);
+            if (!m) return 90;
+            const min = parseInt(m[1] || '0', 10);
+            const seg = parseInt(m[2] || '0', 10);
+            const total = min * 60 + seg;
+            return total > 0 ? total : 90;
+        }
+
+        function duracaoDoSlide(i) {
+            const s = SLIDES[i];
+            const base = parseTempo(s && s.tempo_estimado);
+            const vel = parseFloat((document.getElementById('selVel') || {}).value || '1') || 1;
+            return Math.max(3, base / vel);
+        }
+
+        function atualizarHudGravacao() {
+            const el = document.getElementById('recSlide');
+            if (el) el.textContent = (currentSlideIdx + 1) + '/' + SLIDES.length;
+        }
+
+        function iniciarAutoplay() {
+            pararAutoplay();
+            const chk = document.getElementById('chkAuto');
+            if (chk && !chk.checked) return;
+            auto.ativo = true;
+            renderSlide(0);
+            atualizarHudGravacao();
+            agendarAutoplay();
+            clearInterval(auto.tick);
+            auto.tick = setInterval(() => {
+                if (!auto.ativo) return;
+                const restante = Math.max(0, Math.ceil((auto.fim - Date.now()) / 1000));
+                const c = document.getElementById('recCount');
+                if (c) c.textContent = fmtDur(restante * 1000);
+            }, 400);
+        }
+
+        function agendarAutoplay() {
+            clearTimeout(auto.timer);
+            if (!auto.ativo) return;
+            auto.dur = duracaoDoSlide(currentSlideIdx);
+            auto.fim = Date.now() + auto.dur * 1000;
+            auto.timer = setTimeout(passoAutoplay, auto.dur * 1000);
+        }
+
+        function passoAutoplay() {
+            if (!auto.ativo) return;
+            if (currentSlideIdx >= SLIDES.length - 1) {
+                pararAutoplay();
+                if (rec.mr && rec.mr.state !== 'inactive') {
+                    recToast('Fim da apresentação — encerrando e salvando a gravação.');
+                    pararGravacao();
+                }
+                return;
+            }
+            renderSlide(currentSlideIdx + 1);
+            atualizarHudGravacao();
+            agendarAutoplay();
+        }
+
+        function pararAutoplay() {
+            auto.ativo = false;
+            clearTimeout(auto.timer);
+            clearInterval(auto.tick);
+            const c = document.getElementById('recCount');
+            if (c) c.textContent = '--:--';
+        }
+
+        // Se o usuário navegar manualmente durante a gravação, o timer é reiniciado
+        (function interceptarNavegacao() {
+            const origNext = window.nextSlide, origPrev = window.prevSlide;
+            window.nextSlide = function () {
+                origNext();
+                if (auto.ativo) { atualizarHudGravacao(); agendarAutoplay(); }
+            };
+            window.prevSlide = function () {
+                origPrev();
+                if (auto.ativo) { atualizarHudGravacao(); agendarAutoplay(); }
+            };
+        })();
+
         async function alternarGravacao() {
             if (rec.mr && rec.mr.state !== 'inactive') {
                 pararGravacao();
@@ -1847,13 +1951,18 @@
             if (btn) { btn.classList.add('gravando'); btn.innerHTML = '⏹ Parar e baixar'; }
             const lbl = document.getElementById('lblOcultar');
             if (lbl) lbl.style.display = 'inline-flex';
-            if (rec.ocultar) document.body.classList.add('rec-ocultar');
+            rec.ocultar = true;
+            const chkO = document.getElementById('chkOcultar');
+            if (chkO) chkO.checked = true;
+            document.body.classList.add('rec-ocultar');
 
             let dot = document.getElementById('recDotUi');
             if (!dot) {
                 dot = document.createElement('div');
                 dot.id = 'recDotUi';
                 dot.innerHTML = '<span class="dot"></span><span id="recTime">00:00</span>' +
+                                '<span id="recSlide">1/16</span>' +
+                                '<span id="recCount">--:--</span>' +
                                 '<button onclick="pararGravacao()">Parar</button>';
                 document.body.appendChild(dot);
             }
@@ -1867,9 +1976,11 @@
             }, 500);
 
             recToast('Gravando a aba. Use ← → para navegar. Pressione R para parar.');
+            iniciarAutoplay();
         }
 
         function pararGravacao() {
+            if (typeof pararAutoplay === 'function') pararAutoplay();
             if (rec.mr && rec.mr.state !== 'inactive') {
                 try { rec.mr.stop(); } catch (e) { console.warn(e); }
             }

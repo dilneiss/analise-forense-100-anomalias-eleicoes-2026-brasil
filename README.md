@@ -1221,6 +1221,18 @@ O cruzamento dos dados de 2018 com 2022 e 2026 desmascara a narrativa de que a v
 
 ---
 
+#### Auto-play com encerramento automático
+
+Ao iniciar a gravação, a apresentação entra em **modo automático**:
+
+- as **barras superior e inferior são escondidas** automaticamente (o slide ocupa a tela inteira);
+- os slides avançam sozinhos respeitando o `tempo_estimado` de cada um (ex.: `2 min 15 s` = 135 s);
+- a velocidade é ajustável em **0,75x / 1x / 1,25x / 1,5x / 2x** no seletor ao lado do botão;
+- o selo flutuante mostra `● REC 00:00 · 3/25 · 01:42` (tempo gravado · slide atual · contagem regressiva do slide);
+- ao terminar o **último slide**, a gravação é **encerrada e o arquivo `.webm` é salvo automaticamente**;
+- navegar manualmente com `←` `→` durante a gravação reinicia o cronômetro do slide atual;
+- desmarcar **“auto-play”** desativa o avanço automático (a gravação continua manual e não para sozinha).
+
 #### Como abrir para gravar (obrigatório)
 
 Navegadores só liberam a captura de tela em **contexto seguro** (`https://` ou `localhost`). Abrir o arquivo direto por `file://` faz o botão de gravação falhar em parte dos navegadores.
