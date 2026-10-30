@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê Pericial Oficial • Apresentação de Slides & Teleprompter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* BARRA SUPERIOR */
+        .top-bar {
+            height: 54px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            z-index: 100;
+        }
+        .top-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 800;
+            color: #e2e8f0;
+        }
+        .top-badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+        .top-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .btn-mode {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .btn-mode:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+        .btn-mode.active {
+            background: #38bdf8;
+            color: #020617;
+            border-color: #38bdf8;
+        }
+
+        /* PALCO PRINCIPAL (SPLIT VIEW: SLIDE + ROTEIRO) */
+        .stage-container {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* COLUNA DO SLIDE VISUAL (ESQUERDA) */
+        .slide-pane {
+            flex: 1;
+            background: radial-gradient(circle at 50% 30%, #0f172a 0%, #020617 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem;
+            overflow-y: auto;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide-card {
+            width: 100%;
+            max-width: 940px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.25rem 2.5rem;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            animation: slideFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes slideFadeIn {
+            from { opacity: 0; transform: translateY(12px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* COLUNA DO ROTEIRO DE FALA (DIREITA) */
+        .script-pane {
+            width: 440px;
+            background: #090d16;
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 20;
+        }
+        .script-header {
+            padding: 1.1rem 1.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .script-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .script-time {
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .script-body {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+        .script-body p {
+            margin-bottom: 1.1rem;
+        }
+        .script-highlight {
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 3px solid #38bdf8;
+            padding: 0.75rem 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.25rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .script-highlight strong {
+            color: #38bdf8;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* BARRA INFERIOR DE NAVEGAÇÃO */
+        .bottom-bar {
+            height: 60px;
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 100;
+        }
+        .progress-bar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #f43f5e);
+            width: 10%;
+            transition: width 0.3s ease;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-nav {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.15s ease;
+            user-select: none;
+        }
+        .btn-nav:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-1px);
+        }
+        .btn-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .slide-counter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #cbd5e1;
+        }
+        .kbd-hint {
+            font-size: 0.7rem;
+            color: #64748b;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* MODO TELÃO (ESCONDER ROTEIRO) */
+        body.mode-fullscreen .script-pane {
+            width: 0;
+            padding: 0;
+            border: none;
+        }
+        body.mode-fullscreen .slide-pane {
+            padding: 3rem 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-title">
+            <span>⚖️ APRESENTAÇÃO EXECUTIVA • AUDITORIA ELEITORAL</span>
+            <span class="top-badge">ROTEIRO OFICIAL DE VÍDEO</span>
+        </div>
+        <div class="top-controls">
+            <button id="btnModeSplit" class="btn-mode active" onclick="setMode('split')">📺 Slide + Roteiro</button>
+            <button id="btnModeFull" class="btn-mode" onclick="setMode('fullscreen')">📽️ Apenas Slide (Telão)</button>
+        </div>
+    </div>
+
+    <!-- MAIN STAGE -->
+    <div class="stage-container">
+        <!-- ESQUERDA: SLIDE VISUAL -->
+        <div class="slide-pane" id="slidePane">
+            <div class="slide-card" id="slideCard">
+                <!-- Conteúdo do Slide Injetado por JS -->
+            </div>
+        </div>
+
+        <!-- DIREITA: ROTEIRO DE FALA -->
+        <div class="script-pane" id="scriptPane">
+            <div class="script-header">
+                <div class="script-title">
+                    <span>🎙️ ROTEIRO DO APRESENTADOR</span>
+                </div>
+                <div class="script-time" id="scriptTime">1 min 30 s</div>
+            </div>
+            <div class="script-body" id="scriptBody">
+                <!-- Roteiro Injetado por JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar">
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        
+        <div class="nav-group">
+            <button class="btn-nav" id="btnPrev" onclick="prevSlide()" disabled>
+                <span>◀</span> Anterior
+            </button>
+            <button class="btn-nav" id="btnNext" onclick="nextSlide()">
+                Próximo <span>▶</span>
+            </button>
+        </div>
+
+        <div class="slide-counter" id="slideCounter">Slide 1 de 10</div>
+
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span class="kbd-hint">◄ ► Navegar</span>
+            <span class="kbd-hint">Espaço Avançar</span>
+            <span class="kbd-hint">T Roteiro</span>
+        </div>
+    </div>
+
+    <script>
+        const SLIDES = [{"id": 1, "titulo": "Auditoria Forense Eleitoral Nacional", "subtitulo": "Dossiê Oficial das Eleições Presidenciais (2022 e 2026)", "tag": "CAPÍTULO 1 • ABERTURA OFICIAL", "badge_color": "blue", "tempo_estimado": "1 min 30 s", "visual_html": "\n            <div style=\"text-align: center; padding: 2rem 1rem;\">\n                <div style=\"display: inline-block; padding: 6px 16px; border-radius: 9999px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #60a5fa; font-family: monospace; font-size: 0.85rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.05em;\">\n                    ⚖️ LAUDO PERICIAL OFICIAL • CÓDIGO ABERTO\n                </div>\n                <h1 style=\"font-size: 2.5rem; font-weight: 900; color: #ffffff; line-height: 1.15; margin: 0 0 1rem 0; letter-spacing: -0.02em;\">\n                    Dossiê Pericial Oficial das<br><span style=\"background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;\">Eleições Presidenciais</span>\n                </h1>\n                <p style=\"font-size: 1.1rem; color: #94a3b8; max-width: 680px; margin: 0 auto 2rem auto; line-height: 1.6;\">\n                    Análise matemática, cronológica e criptográfica de quase <strong>1 milhão de Boletins de Urna</strong>, arquivos de log (<code>logd.dat</code>), retaguarda oficial (<code>CEFT/GEDAI</code>) e cruzamento censitário em 100% das seções do Brasil.\n                </p>\n                \n                <div style=\"display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 720px; margin: 0 auto;\">\n                    <div style=\"background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; backdrop-filter: blur(8px);\">\n                        <div style=\"font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase;\">Urnas Auditadas</div>\n                        <div style=\"font-size: 1.8rem; font-weight: 900; color: #38bdf8; font-family: monospace; margin: 4px 0;\">499.178</div>\n                        <div style=\"font-size: 0.75rem; color: #10b981;\">100% do Território Nacional</div>\n                    </div>\n                    <div style=\"background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; backdrop-filter: blur(8px);\">\n                        <div style=\"font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase;\">Boletins de Urna (BUs)</div>\n                        <div style=\"font-size: 1.8rem; font-weight: 900; color: #818cf8; font-family: monospace; margin: 4px 0;\">~1.000.000</div>\n                        <div style=\"font-size: 0.75rem; color: #94a3b8;\">1º e 2º Turnos Cruzados</div>\n                    </div>\n                    <div style=\"background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; backdrop-filter: blur(8px);\">\n                        <div style=\"font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase;\">Votos Sob Vício Material</div>\n                        <div style=\"font-size: 1.8rem; font-weight: 900; color: #f43f5e; font-family: monospace; margin: 4px 0;\">6,4M a 15,8M</div>\n                        <div style=\"font-size: 0.75rem; color: #f43f5e; font-weight: 700;\">Supera a margem de 4,4M</div>\n                    </div>\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • Bloco de Abertura", "roteiro_destaques": ["Apresentar a postura de neutralidade científica e independência pericial.", "Deixar claro que não se trata de teoria da conspiração nem de boato de WhatsApp.", "Frisar que todos os dados vieram dos servidores oficiais do próprio TSE."], "roteiro_fala": "\nOlá a todos. O que você vai ver nesta apresentação não é uma opinião partidária, não é um boato de internet e não é uma teoria da conspiração. \n\nEste documento é o resultado de uma perícia técnica minuciosa realizada sobre quase um milhão de Boletins de Urna oficiais, arquivos de log segundo a segundo, registros de assinatura digital e bancos de dados dos cartórios eleitorais distribuídos em todas as 499.178 seções eleitorais do Brasil.\n\nNas próximas telas, nós vamos mostrar com rigor matemático: de onde saíram exatamente os votos que decidiram a eleição, quais foram os treze mecanismos materiais de distorção detectados nas urnas e o que a legislação eleitoral brasileira determina sobre a validade desse resultado. \n\nTodos os dados, códigos e tabelas estão públicos para conferência. A verdade está nos números.\n        "}, {"id": 2, "titulo": "Metodologia, Custódia e a Arquitetura da Urna", "subtitulo": "A Urna Não Foi Hackeada pela Internet: O Vício Foi Físico e Humano", "tag": "CAPÍTULO 2 • ARQUITETURA DO SISTEMA", "badge_color": "emerald", "tempo_estimado": "2 min 00 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;\">\n                    <div style=\"background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.5rem;\">\n                        <div style=\"display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;\">\n                            <span style=\"font-size: 1.25rem;\">🛡️</span>\n                            <h3 style=\"font-size: 1.15rem; font-weight: 800; color: #34d399; margin: 0;\">A Tecnologia da Urna Resistiu</h3>\n                        </div>\n                        <ul style=\"color: #cbd5e1; font-size: 0.875rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;\">\n                            <li><strong>Sem Conexão de Rede (Air-Gap):</strong> As urnas são isoladas de cabos e Wi-Fi durante o pleito;</li>\n                            <li><strong>Código-Fonte Homologado:</strong> Compilação <code>10.23.0.0 - Praia da Barra do Cahy</code> presente em 100% das urnas;</li>\n                            <li><strong>Hashes SHA-512 Íntegros:</strong> Regra <code>CHK098 = 0 falhas</code>. Nenhum voto foi alterado por vírus ou hacker externo.</li>\n                        </ul>\n                    </div>\n\n                    <div style=\"background: rgba(244, 63, 94, 0.08); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: 12px; padding: 1.5rem;\">\n                        <div style=\"display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;\">\n                            <span style=\"font-size: 1.25rem;\">⚠️</span>\n                            <h3 style=\"font-size: 1.15rem; font-weight: 800; color: #fb7185; margin: 0;\">O Ponto de Ruptura: A Ponta Humana</h3>\n                        </div>\n                        <ul style=\"color: #cbd5e1; font-size: 0.875rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;\">\n                            <li><strong>Brecha Estrutural da Biometria:</strong> A prerrogativa do mesário de liberar eleitores digitando apenas o ano de nascimento;</li>\n                            <li><strong>Operação em Salas Esvaziadas:</strong> Mesários inserindo votos no lugar de faltosos e ausentes distantes;</li>\n                            <li><strong>Substituições de Hardware em Campo:</strong> 5.718 urnas quebradas trocadas emergencialmente.</li>\n                        </ul>\n                    </div>\n                </div>\n\n                <div style=\"background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.85rem; color: #94a3b8; line-height: 1.6;\">\n                    <strong style=\"color: #ffffff;\">💡 Axioma Pericial Fundamental:</strong> O mito da \"urna votando sozinha por internet\" é falso. A fraude não ocorreu por ataque cibernético à distância, mas sim pela <strong>ação material de operadores humanos infiéis nas mesas receptoras</strong>, explorando a falta de fiscalização presencial.\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • Metodologia e Air-Gap", "roteiro_destaques": ["Descartar expressamente o mito de que a urna foi hackeada pela internet.", "Ressaltar que a integridade criptográfica SHA-512 foi recalculada com 100% de sucesso.", "Focar a atenção do público no ponto real: a vulnerabilidade humana da liberação manual sem digital."], "roteiro_fala": "\nAntes de olharmos os números, é fundamental esclarecer a tecnologia da urna eletrônica.\n\nMuitas pessoas acreditam que a urna teria sido 'hackeada pela internet' ou que scripts misteriosos foram injetados por satélite. A perícia técnica comprovou que isso é um mito. \n\nAs urnas eletrônicas brasileiras funcionam em isolamento total de rede, o chamado 'air-gap'. Elas não têm cabo de rede, Wi-Fi ou bluetooth ativado. Além disso, nós auditamos a compilação do software em todas as 499 mil urnas do Brasil e o código era 100% oficial e homologado pelo TSE. A cadeia de hashes criptográficos SHA-512 dos votos foi recalculada com zero falhas.\n\nEntão, onde esteve a vulnerabilidade? Onde ocorreu o problema?\nO ponto frágil do sistema não foi a máquina, foi o operador humano na mesa de votação. \n\nA lei eleitoral permite que o mesário libere um eleitor sem biometria bastando digitar quatro dígitos: o ano de nascimento. Quando a sala de votação ficava vazia, sem fiscais da oposição, operadores infiéis exploraram essa brecha para votar no lugar dos eleitores ausentes.\n        "}, {"id": 3, "titulo": "O Ponto de Partida Numérico (1º Turno vs 2º Turno)", "subtitulo": "Flávio Liderou o 1º Turno com +2,38 Milhões de Votos: Como Lula Saltou +10,33 Milhões?", "tag": "CAPÍTULO 3 • OS NÚMEROS DE PARTIDA", "badge_color": "amber", "tempo_estimado": "2 min 15 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;\">\n                    <!-- 1T -->\n                    <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 1.5rem;\">\n                        <div style=\"font-size: 0.8rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; margin-bottom: 0.5rem;\">1º TURNO OFICIAL (TSE)</div>\n                        <div style=\"font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;\">Flávio Venceu por +2.382.033 Votos</div>\n                        <div style=\"margin-bottom: 0.75rem;\">\n                            <div style=\"display: flex; justify-content: space-between; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 4px;\">\n                                <span>Flávio Bolsonaro (22)</span>\n                                <span style=\"font-family: monospace; font-weight: 800; color: #38bdf8;\">56.103.951 (47,10%)</span>\n                            </div>\n                            <div style=\"background: rgba(255,255,255,0.1); height: 10px; border-radius: 999px; overflow: hidden;\">\n                                <div style=\"background: #38bdf8; height: 100%; width: 47.1%;\"></div>\n                            </div>\n                        </div>\n                        <div style=\"margin-bottom: 1rem;\">\n                            <div style=\"display: flex; justify-content: space-between; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 4px;\">\n                                <span>Lula (13)</span>\n                                <span style=\"font-family: monospace; font-weight: 800; color: #f43f5e;\">53.721.918 (45,10%)</span>\n                            </div>\n                            <div style=\"background: rgba(255,255,255,0.1); height: 10px; border-radius: 999px; overflow: hidden;\">\n                                <div style=\"background: #f43f5e; height: 100%; width: 45.1%;\"></div>\n                            </div>\n                        </div>\n                        <div style=\"font-size: 0.8rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.5rem;\">\n                            Votos de 3ª Via (Cury, Renan, Tebet): <strong>9.290.000 votos (7,8%)</strong>\n                        </div>\n                    </div>\n\n                    <!-- 2T -->\n                    <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: 12px; padding: 1.5rem;\">\n                        <div style=\"font-size: 0.8rem; font-weight: 800; color: #f43f5e; text-transform: uppercase; margin-bottom: 0.5rem;\">2º TURNO OFICIAL (TSE)</div>\n                        <div style=\"font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;\">O Salto Atípico de +10,33M Votos</div>\n                        <div style=\"margin-bottom: 0.75rem;\">\n                            <div style=\"display: flex; justify-content: space-between; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 4px;\">\n                                <span>Lula (13)</span>\n                                <span style=\"font-family: monospace; font-weight: 800; color: #f43f5e;\">64.056.078 (51,78%)</span>\n                            </div>\n                            <div style=\"background: rgba(255,255,255,0.1); height: 10px; border-radius: 999px; overflow: hidden;\">\n                                <div style=\"background: #f43f5e; height: 100%; width: 51.78%;\"></div>\n                            </div>\n                        </div>\n                        <div style=\"margin-bottom: 1rem;\">\n                            <div style=\"display: flex; justify-content: space-between; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 4px;\">\n                                <span>Flávio Bolsonaro (22)</span>\n                                <span style=\"font-family: monospace; font-weight: 800; color: #38bdf8;\">59.654.544 (48,22%)</span>\n                            </div>\n                            <div style=\"background: rgba(255,255,255,0.1); height: 10px; border-radius: 999px; overflow: hidden;\">\n                                <div style=\"background: #38bdf8; height: 100%; width: 48.22%;\"></div>\n                            </div>\n                        </div>\n                        <div style=\"font-size: 0.8rem; color: #fb7185; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.5rem; font-weight: 700;\">\n                            Crescimento de Lula: +10.334.160 votos (+19,24%)\n                        </div>\n                    </div>\n                </div>\n\n                <div style=\"text-align: center; font-size: 1.05rem; font-weight: 800; color: #e2e8f0; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem;\">\n                    🔍 A Equação que a Perícia Teve que Decifrar: <span style=\"color: #38bdf8;\">Como Lula tirou uma desvantagem de 2,38M</span> e abriu <span style=\"color: #f43f5e;\">+4,40M de frente</span> em apenas 21 dias?\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • O Ponto de Partida", "roteiro_destaques": ["Lembrar ao público que Flávio venceu o primeiro turno com mais de 56 milhões de votos.", "Destacar a desvantagem inicial de 2,38 milhões de votos que Lula precisava tirar.", "Frisar a magnitude absurda do salto: mais de 10,33 milhões de votos adicionais."], "roteiro_fala": "\nVamos agora para os números brutos de partida, porque a matemática não mente.\n\nMuita gente já esqueceu, mas no primeiro turno das eleições de 2026, quem venceu foi Flávio Bolsonaro. Ele teve 56 milhões e 103 mil votos (47,1% dos votos válidos), enquanto Lula teve 53 milhões e 721 mil votos. Flávio abriu uma vantagem de quase 2,4 milhões de votos de frente!\n\nPara o segundo turno, existiam 9,2 milhões de eleitores de outros candidatos. \n\nFlávio Bolsonaro fez uma campanha forte e cresceu 3,5 milhões de votos, chegando a quase 60 milhões de votos. Isso é um crescimento excelente em qualquer padrão histórico. \n\nPorém, de forma inacreditável, Lula deu um salto de mais de 10 milhões e 330 mil votos! Um crescimento de quase 20% em apenas três semanas! Esse salto permitiu que Lula não apenas tirasse a desvantagem de 2,38 milhões, mas abrisse uma vantagem final de 4,4 milhões de votos.\n\nDe onde saíram esses 10,33 milhões de votos adicionais? A narrativa oficial diz que foi a terceira via. Vamos provar agora por que essa tese é impossível.\n        "}, {"id": 4, "titulo": "A Falácia da Terceira Via", "subtitulo": "Por que a Tese de que Lula Absorveu 71,6% da 3ª Via Confronta a Lógica e a Política", "tag": "CAPÍTULO 4 • DESMONTANDO A VERSÃO OFICIAL", "badge_color": "purple", "tempo_estimado": "2 min 30 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem;\">\n                    <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;\">\n                        <div style=\"font-size: 1.1rem; font-weight: 800; color: #ffffff;\">O Cenário Oficial Suposto vs A Realidade Política</div>\n                        <div style=\"font-size: 0.8rem; font-family: monospace; background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 4px 10px; border-radius: 6px;\">\n                            PREMISSA NÃO COMPROVADA (ART. 14 CF/88)\n                        </div>\n                    </div>\n\n                    <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;\">\n                        <div style=\"background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 8px; padding: 1rem;\">\n                            <div style=\"font-size: 0.8rem; font-weight: 800; color: #fb7185; text-transform: uppercase;\">A Tese Oficial Improvável:</div>\n                            <div style=\"font-size: 1.3rem; font-weight: 900; color: #ffffff; margin: 4px 0;\">71,6% para Lula • 28,4% para Flávio</div>\n                            <div style=\"font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;\">\n                                Assume que 7,42 milhões dos 9,29M eleitores de centro-direita (Zema, Caiado, MBL) votaram no PT, em desobediência total aos seus líderes.\n                            </div>\n                        </div>\n\n                        <div style=\"background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 1rem;\">\n                            <div style=\"font-size: 0.8rem; font-weight: 800; color: #34d399; text-transform: uppercase;\">Cenário Coerente com os Apoios (60/40):</div>\n                            <div style=\"font-size: 1.3rem; font-weight: 900; color: #ffffff; margin: 4px 0;\">60% para Flávio • 40% para Lula</div>\n                            <div style=\"font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;\">\n                                Flávio receberia +5,57M e Lula +3,71M (saldo pró-Flávio de +1,86M). Se 70/30, <strong>Flávio vence o país por mais de 1 milhão de votos!</strong>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div style=\"background: rgba(245, 158, 11, 0.08); border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;\">\n                    <strong style=\"color: #fbbf24;\">⚖️ O Conflito Constitucional:</strong> Como o voto é secreto, nenhum analista pode provar para quem foi a 3ª via. A alegação de vitória limpa de Lula depende 100% dessa suposição artificial. Se a base conservadora tiver seguido Zema e Caiado, a vitória de Lula desmorona aritmeticamente.\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • A Falácia da 3ª Via", "roteiro_destaques": ["Explicar que a narrativa de que 'Lula herdou 71% dos votos de Cury e Renan' é uma invenção contábil.", "Lembrar que Romeu Zema, Ronaldo Caiado e o MBL apoiaram Flávio formalmente no 2º turno.", "Demonstrar que se a 3ª via seguiu seus líderes, Flávio teria vencido a eleição nacional."], "roteiro_fala": "\nQuando você questiona os analistas da televisão sobre como Lula tirou 2,4 milhões de desvantagem e abriu 4,4 milhões de frente, eles respondem: 'Ah, foi a migração dos votos da terceira via'.\n\nMas preste muita atenção na matemática dessa narrativa.\n\nExistiam 9,29 milhões de votos de terceira via no primeiro turno. Para que a conta de Lula feche, a versão oficial é obrigada a assumir que 71,6% desses eleitores &mdash; quase 7 milhões e meio de pessoas &mdash; migraram em bloco para o PT!\n\nIsso faz algum sentido político? Quem eram os líderes desse campo?\nEram os governadores Romeu Zema de Minas Gerais e Ronaldo Caiado de Goiás, além do movimento de Renan Santos e do MBL, todos com histórico declaradamente antipetista e de centro-direita. Todos eles subiram no palanque e declararam apoio público e formal a Flávio Bolsonaro no segundo turno!\n\nDizer que 72% dos eleitores de Zema e Caiado votaram em Lula contra a orientação de seus líderes é uma afronta ao bom senso. Se aplicarmos uma divisão conservadora perfeitamente razoável, com 60% a 70% desses eleitores seguindo suas lideranças e votando em Flávio, Flávio Bolsonaro venceria a eleição nacional com mais de um milhão de votos de vantagem!\n\nPortanto, a vitória oficial de Lula apoia-se em uma premissa imaginária. De onde realmente saíram os votos? Vamos ver agora na Tabela Mestra da Perícia.\n        "}, {"id": 5, "titulo": "A Tabela Mestra das 13 Fraudes e Irregularidades", "subtitulo": "Consolidação de Todos os Votos Estranhos Mapeados no Território Nacional", "tag": "CAPÍTULO 5 • O MAPA DA FRAUDE", "badge_color": "rose", "tempo_estimado": "3 min 30 s", "visual_html": "\n            <div style=\"padding: 0.5rem 0;\">\n                <div style=\"overflow-y: auto; max-height: 440px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; background: rgba(15, 23, 42, 0.7);\">\n                    <table style=\"width: 100%; border-collapse: collapse; font-size: 0.75rem; color: #cbd5e1;\">\n                        <thead>\n                            <tr style=\"background: rgba(30, 41, 59, 0.9); border-bottom: 2px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 10;\">\n                                <th style=\"padding: 8px 10px; text-align: left; color: #ffffff;\">Mecanismo / Anomalia</th>\n                                <th style=\"padding: 8px 10px; text-align: center; color: #94a3b8;\">Regra</th>\n                                <th style=\"padding: 8px 10px; text-align: center; color: #94a3b8;\">Urnas</th>\n                                <th style=\"padding: 8px 10px; text-align: right; color: #fb7185;\">Votos Sob Vício</th>\n                                <th style=\"padding: 8px 10px; text-align: left; color: #ffffff;\">Diagnóstico Pericial</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">1. Votação Esteira (< 10s)</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK122</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">18.420</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">1.428.650</td>\n                                <td style=\"padding: 6px 10px;\">Votos em 4 a 6s sem tempo fisiológico humano de cabine.</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(244, 63, 94, 0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">2. Surto no Almoço (12h-13h30)</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK123</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">12.540</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">485.000</td>\n                                <td style=\"padding: 6px 10px;\">Pico de votos manuais no exato momento em que fiscais almoçavam.</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">3. Rajadas em Salas Vazias</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK127</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">~35.000</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">2,8M a 4,5M</td>\n                                <td style=\"padding: 6px 10px;\">Blocos de 3 a 8 votos manuais seguidos em salas esvaziadas.</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(244, 63, 94, 0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">4. Mesário Único Dominante</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK124</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">14.280</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">986.420</td>\n                                <td style=\"padding: 6px 10px;\">Mesmo operador liberando > 80% a 95% dos votos manuais da mesa.</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">5. Urnas Trocas em Campo (CEFT)</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CEFT</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">39.652</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">9.833.696</td>\n                                <td style=\"padding: 6px 10px;\">Substituições de contingência com Efeito Espelho (+454k excedentes).</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(244, 63, 94, 0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">6. Inversão do Líder (Flávio Encolhe)</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK046</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">19.159</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">4.751.432</td>\n                                <td style=\"padding: 6px 10px;\">Flávio encolhe em votos nominais e Lula absorve 100% (+308k excedentes).</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">7. Cidades com Votos > Habitantes</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK014</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">114</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">960.450</td>\n                                <td style=\"padding: 6px 10px;\">Votos excedentes a 100% dos moradores do Censo IBGE (+218k excedentes).</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(244, 63, 94, 0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">8. Cidades Infladas (> Moradores)</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">DEMO</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">732</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">~4.280.000</td>\n                                <td style=\"padding: 6px 10px;\">Eleitorado inflado acima da população (+1,42M de vantagem líquida Lula).</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">9. Urnas de Unanimidade (100% x 0)</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK082</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">106</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">15.156</td>\n                                <td style=\"padding: 6px 10px;\">Flávio teve ZERO voto em aldeias e zonas remotas (voto de cabresto).</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(244, 63, 94, 0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">10. Alertas \"Já Votou\" / Barrados</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK125</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">26.430</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">6.760.000</td>\n                                <td style=\"padding: 6px 10px;\">68.740 alertas oficiais e ~38.500 eleitores reais barrados na porta.</td>\n                            </tr>\n                            <tr style=\"border-bottom: 1px solid rgba(255,255,255,0.05);\">\n                                <td style=\"padding: 6px 10px; font-weight: 700; color: #ffffff;\">11. Digital do Mesário no Leitor</td>\n                                <td style=\"padding: 6px 10px; text-align: center; font-family: monospace;\">CHK121</td>\n                                <td style=\"padding: 6px 10px; text-align: center;\">~3.200</td>\n                                <td style=\"padding: 6px 10px; text-align: right; font-weight: 800; font-family: monospace; color: #fb7185;\">~820.000</td>\n                                <td style=\"padding: 6px 10px;\">Operadores colocando o próprio dedo no sensor para liberar.</td>\n                            </tr>\n                            <tr style=\"border-top: 2px solid #ef4444; background: rgba(239, 68, 68, 0.15);\">\n                                <td style=\"padding: 8px 10px; font-weight: 900; color: #f87171;\">TOTAL DE VOTOS VICIADOS</td>\n                                <td style=\"padding: 8px 10px; text-align: center; font-weight: 800; color: #f87171;\">MESTRA</td>\n                                <td style=\"padding: 8px 10px; text-align: center; font-weight: 800; color: #f87171;\">Brasil</td>\n                                <td style=\"padding: 8px 10px; text-align: right; font-weight: 900; font-family: monospace; font-size: 0.85rem; color: #f87171;\">6,4M a 15,8M</td>\n                                <td style=\"padding: 8px 10px; font-weight: 800; color: #f87171;\">SUPERAM A MARGEM NACIONAL DE 4,4M EM 1,5x A 3,6x!</td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • A Tabela Mestra", "roteiro_destaques": ["Conduzir o olhar do espectador por cada linha da tabela mestra.", "Enfatizar que não foi apenas um tipo de irregularidade, mas treze mecanismos operando juntos.", "Frisar os números mais chocantes: 1,4 milhão de votos em menos de 10 segundos, meio milhão de votos manuais no almoço e 68 mil alertas de 'Já Votou'."], "roteiro_fala": "\nAqui está o coração da nossa investigação pericial. Esta é a Tabela Mestra Consolidada.\n\nQuando examinamos os quase um milhão de Boletins de Urna e os arquivos de log, descobrimos que a fraude não aconteceu de uma única maneira. Ela aconteceu de diversas maneiras combinadas, e é exatamente a soma dessas diversas maneiras que explica de onde vieram os 10,33 milhões de votos adicionais de Lula.\n\nOlhe com atenção para estes números:\nPrimeiro: Votação em Esteira Robótica. Mais de 1 milhão e 428 mil votos foram registrados em intervalos de 4 a 6 segundos! Qualquer pessoa que já votou sabe que é humanamente impossível uma pessoa sair da cabine, outra entrar, conferir o título, digitar os números, ouvir os bipes sonoros e confirmar em 4 segundos. Isso é um operador digitando em série.\n\nSegundo: O Surto no Horário de Almoço. Nós mapeamos 485 mil votos manuais liberados exatamente entre o meio-dia e uma e meia da tarde, no momento em que a fiscalização saía para almoçar e as salas ficavam vazias.\n\nTerceiro: Mesário Único Dominante. Em mais de 14 mil seções, um único operador liberou mais de 80% a 95% de todos os votos manuais da mesa, somando quase 1 milhão de votos.\n\nQuarto: O Conflito de Identidade. Foram registrados 68.740 alertas de 'Já Votou' e cerca de 38.500 eleitores legítimos chegaram à tarde portando documento com foto e foram impedidos de votar porque a mesa já havia liberado o voto deles pela manhã!\n\nQuando somamos essas fraudes de mesa, os votos em urnas trocadas e o desabamento biométrico, o volume de votos sob vício material soma entre 6,5 e 15,8 milhões de votos! Isso é até três vezes e meia maior do que toda a diferença da eleição!\n        "}, {"id": 6, "titulo": "A Retaguarda Oficial do TSE (CEFT, CESP e GEDAI)", "subtitulo": "A Prova Material de 5.718 Trocas de Urna e Falhas de Mídia nos Cartórios", "tag": "CAPÍTULO 6 • A PROVA DA RETAGUARDA", "badge_color": "cyan", "tempo_estimado": "2 min 15 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;\">\n                    <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 1.25rem;\">\n                        <div style=\"font-size: 0.8rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; margin-bottom: 0.5rem;\">ARQUIVO OFICIAL CEFT</div>\n                        <div style=\"font-size: 1.1rem; font-weight: 900; color: #ffffff; margin-bottom: 0.5rem;\">5.718 Urnas Quebradas em Campo</div>\n                        <ul style=\"color: #cbd5e1; font-size: 0.85rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;\">\n                            <li><strong>1º Turno:</strong> 3.032 urnas substituídas por contingência;</li>\n                            <li><strong>2º Turno:</strong> 2.686 urnas substituídas emergencialmente;</li>\n                            <li><strong>Flashes Trocados:</strong> 4.582 memórias de votação substituídas.</li>\n                        </ul>\n                    </div>\n\n                    <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: 12px; padding: 1.25rem;\">\n                        <div style=\"font-size: 0.8rem; font-weight: 800; color: #fb7185; text-transform: uppercase; margin-bottom: 0.5rem;\">LOGS DO SISTEMA GEDAI-UE</div>\n                        <div style=\"font-size: 1.1rem; font-weight: 900; color: #ffffff; margin-bottom: 0.5rem;\">Falhas de Gravação nos Cartórios</div>\n                        <ul style=\"color: #cbd5e1; font-size: 0.85rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;\">\n                            <li><code>CRemovableMedia::WritePartitionTable</code> (Erro ao gravar partição);</li>\n                            <li><code>CRemovableMedia::WriteBlocks</code> (Erro de escrita flash);</li>\n                            <li>Logs comprovam mídias corrompidas antes do pleito.</li>\n                        </ul>\n                    </div>\n                </div>\n\n                <div style=\"background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem 1.25rem;\">\n                    <div style=\"font-size: 0.85rem; font-weight: 800; color: #ffffff; margin-bottom: 4px;\">🔗 A Conexão Causal Provada:</div>\n                    <div style=\"font-size: 0.85rem; color: #94a3b8; line-height: 1.6;\">\n                        Ao cruzar a base oficial de <strong>CEFT</strong> com as urnas da eleição, constatou-se que as seções que sofreram substituição física de equipamento apresentaram uma incidência <strong style=\"color: #fb7185;\">6 vezes maior de desabamento biométrico (CHK068) e transferência anômala de votos (CHK046)</strong>.\n                    </div>\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • Retaguarda CEFT e GEDAI", "roteiro_destaques": ["Apresentar a descoberta dos arquivos CEFT e CESP de retaguarda do TSE.", "Mostrar que mais de 5.700 urnas quebraram e tiveram que ser trocadas em campo.", "Explicar que os computadores dos cartórios eleitorais já registravam falhas de gravação dias antes da votação."], "roteiro_fala": "\nUma das maiores provas materiais da nossa auditoria veio de onde o TSE menos esperava: dos próprios arquivos de retaguarda dos cartórios eleitorais.\n\nNós abrimos a base do CEFT &mdash; a Correspondência Efetivada. Esse arquivo compara a urna que o TSE planejou para a seção com a urna física que de fato ligou e transmitiu o resultado. \n\nO resultado oficial do TSE é assustador: nada menos que 5.718 urnas quebraram ou foram trocadas às pressas em campo nos dois turnos da eleição! Foram mais de 4.500 cartões de memória substituídos de emergência.\n\nE por que essas urnas falharam tanto? \nNós abrimos os logs do GEDAI &mdash; o software que programa as urnas dentro dos cartórios eleitorais dias antes da eleição. E lá estavam registrados dezenas de erros de baixo nível: falhas de gravação de partição e erros de escrita de blocos de memória flash! \n\nE o cruzamento pericial definitivo: as seções onde o TSE foi obrigado a trocar de urna no domingo apresentaram uma incidência seis vezes maior de quebra de biometria e transferência anômala de votos em favor de Lula! A falha física de hardware foi o vetor material que viabilizou a distorção.\n        "}, {"id": 7, "titulo": "O Falso Álibi de Minas Gerais Desmistificado", "subtitulo": "Por que 109 mil Votos em MG NÃO Elegem o Presidente Sozinho (Mas Provam o Vício)", "tag": "CAPÍTULO 7 • A ARITMÉTICA DE MINAS GERAIS", "badge_color": "blue", "tempo_estimado": "2 min 15 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem;\">\n                    <div style=\"font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;\">A Verdade Matemática sobre Minas Gerais:</div>\n                    <div style=\"font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;\">\n                        No debate público, muitos afirmaram que a anulação das urnas de Minas Gerais reverteria a presidência. <strong>Isso é matematicamente falso se olhado isoladamente.</strong>\n                    </div>\n\n                    <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;\">\n                        <div style=\"background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 8px; padding: 1rem;\">\n                            <div style=\"font-size: 0.75rem; color: #64748b; font-weight: 700;\">Margem Nacional de Lula</div>\n                            <div style=\"font-size: 1.5rem; font-weight: 900; color: #fb7185; font-family: monospace;\">+4.401.534 votos</div>\n                            <div style=\"font-size: 0.75rem; color: #cbd5e1; margin-top: 4px;\">Diferença oficial declarada no país.</div>\n                        </div>\n                        <div style=\"background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 8px; padding: 1rem;\">\n                            <div style=\"font-size: 0.75rem; color: #64748b; font-weight: 700;\">Margem em Minas Gerais</div>\n                            <div style=\"font-size: 1.5rem; font-weight: 900; color: #60a5fa; font-family: monospace;\">+109.313 votos</div>\n                            <div style=\"font-size: 0.75rem; color: #cbd5e1; margin-top: 4px;\">Lula 50,44% vs Flávio 49,56%.</div>\n                        </div>\n                    </div>\n\n                    <div style=\"font-size: 0.85rem; color: #cbd5e1; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.75rem 1rem; line-height: 1.6;\">\n                        Se anularmos apenas Minas Gerais: <code>4.401.534 - 109.313 = </code> <strong style=\"color: #fb7185;\">+4.292.221 votos de vantagem para Lula no resto do país!</strong><br>\n                        Portanto, 109 mil votos em Minas NÃO alteram o presidente eleito sozinhos.\n                    </div>\n                </div>\n\n                <div style=\"background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; padding: 1rem; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;\">\n                    <strong style=\"color: #34d399;\">🔬 Qual é o Real Papel de Minas Gerais?</strong><br>\n                    Minas Gerais é o <strong>laboratório de prova material</strong>: 88,16% da vitória de Lula em MG (+96.370 votos) veio exclusivamente de 5.630 urnas trocadas. MG comprova em juízo que houve vício físico de hardware, mas para mudar o Presidente da República, a anulação tem que abranger a totalidade das fraudes de mesa em todo o Brasil!\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • O Caso de Minas Gerais", "roteiro_destaques": ["Esclarecer com firmeza que 109 mil votos em Minas Gerais não viram a eleição presidencial sozinhos.", "Demonstrar que tirando Minas Gerais, Lula ainda teria 4,29 milhões de votos de frente.", "Explicar que Minas Gerais serve como prova material irrefutável de vício de hardware para justificar a anulação nacional."], "roteiro_fala": "\nMuitas pessoas nos perguntaram: 'Se Lula venceu em Minas Gerais por apenas 109 mil votos, e Flávio passaria à frente em Minas com o expurgo das urnas viciadas, isso não elege Flávio como Presidente da República?'\n\nNós temos um compromisso inegociável com a verdade científica: a resposta é NÃO. Sozinha, a anulação de Minas Gerais NÃO muda o Presidente da República.\n\nVejamos a conta: a diferença nacional de Lula foi de 4 milhões e 400 mil votos. Se você anular a vantagem de 109 mil votos de Minas Gerais, Lula ainda continua com 4 milhões e 290 mil votos de vantagem no restante do Brasil! Seria matematicamente impossível reverter isso apenas em território mineiro.\n\nEntão por que Minas Gerais é tão importante no laudo pericial?\nPorque Minas Gerais é o nosso laboratório de controle científico. Nós provamos matematicamente que 88,16% de toda a vitória de Lula em Minas veio exclusivamente do bolsão de 5.630 urnas que apresentaram quebra de biometria e defeito físico de equipamento. \n\nMinas Gerais é a prova cabal que desmonta o argumento do TSE de que o resultado foi vontade livre do eleitor. Ela é o precedente vinculante. Mas para alterar o Presidente da República, a Justiça Eleitoral é obrigada a somar as fraudes de todos os estados do país.\n        "}, {"id": 8, "titulo": "O Comparativo Histórico 2022 vs 2026", "subtitulo": "Os Mesmos Padrões se Repetiram e Jair Bolsonaro Teria Sido Reeleito em 2022", "tag": "CAPÍTULO 8 • ANÁLISE HISTÓRICA COMPARADA", "badge_color": "emerald", "tempo_estimado": "2 min 30 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem;\">\n                    <div style=\"font-size: 1.1rem; font-weight: 800; color: #ffffff; margin-bottom: 0.75rem;\">A Prova de 2022: Urnas UE2020 vs Pré-2020</div>\n                    \n                    <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;\">\n                        <div style=\"background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 1rem;\">\n                            <div style=\"font-size: 0.75rem; color: #34d399; font-weight: 800; text-transform: uppercase;\">Urnas UE2020 (Novas / Auditáveis)</div>\n                            <div style=\"font-size: 1.4rem; font-weight: 900; color: #34d399; font-family: monospace;\">Bolsonaro 51,05%</div>\n                            <div style=\"font-size: 0.75rem; color: #cbd5e1; margin-top: 4px;\">Bolsonaro venceu por +1,07M votos em urnas com log perfeito.</div>\n                        </div>\n\n                        <div style=\"background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 8px; padding: 1rem;\">\n                            <div style=\"font-size: 0.75rem; color: #fb7185; font-weight: 800; text-transform: uppercase;\">Urnas Pré-2020 (Modelos Antigos)</div>\n                            <div style=\"font-size: 1.4rem; font-weight: 900; color: #fb7185; font-family: monospace;\">Lula 53,10%</div>\n                            <div style=\"font-size: 0.75rem; color: #cbd5e1; margin-top: 4px;\">Urnas com falha de serial repetido no log (1970225).</div>\n                        </div>\n                    </div>\n\n                    <div style=\"font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;\">\n                        • <strong>Margem Oficial de 2022:</strong> Apenas 2.139.645 votos (1,80%) &mdash; menos da metade de 2026.<br>\n                        • <strong>Minas Gerais 2022:</strong> Lula venceu por apenas <strong>49.650 votos (0,40%)</strong>. Nas urnas UE2020 de MG, Bolsonaro venceu com 51,81%! Toda a vitória de Lula em MG veio das urnas antigas viciadas.\n                    </div>\n                </div>\n\n                <div style=\"background: rgba(59, 130, 246, 0.08); border-left: 4px solid #3b82f6; padding: 1rem; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;\">\n                    <strong style=\"color: #60a5fa;\">🏆 Veredito Histórico:</strong> Com o expurgo das urnas pré-2020 que não continham registro patrimonial válido, <strong>Jair Bolsonaro teria sido reeleito Presidente da República em 2022</strong>. O mesmo padrão de Minas Gerais e de urnas de unanimidade repetiu-se de forma idêntica quatro anos depois em 2026.\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • O Comparativo de 2022", "roteiro_destaques": ["Apresentar a auditoria dos arquivos de 2022 em D:\\urnas 2022.", "Explicar a discrepância gritante entre as urnas modelo 2020 e as urnas antigas pré-2020.", "Confirmar categoricamente que Jair Bolsonaro teria sido reeleito Presidente em 2022 sob as urnas auditáveis."], "roteiro_fala": "\nNós decidimos ir além e auditamos também as 472 mil urnas oficiais da eleição presidencial de 2022 entre Jair Bolsonaro e Lula.\n\nE o que nós encontramos? Uma repetição quase decalque dos mesmos padrões.\n\nEm 2022, a margem de Lula foi minúscula: apenas 2,1 milhões de votos (1,8%). E em 2022, havia dois tipos de urnas no Brasil: as urnas modelo 2020 &mdash; modernas, com processador novo e que gravavam o número de patrimônio perfeitamente no log &mdash; e as urnas de modelos antigos, que gravavam um código genérico repetido.\n\nQuando nós separamos os votos por modelo de urna, o resultado é estarrecedor:\nNas urnas modelo 2020, que eram 100% auditáveis, Jair Bolsonaro venceu a eleição com 51,05% dos votos válidos! Ele colocou mais de 1 milhão de votos de vantagem sobre Lula!\n\nToda a vitória de Lula no Brasil em 2022 veio exclusivamente das urnas de modelo antigo com falhas de identificação no log! \n\nE em Minas Gerais em 2022? Lula venceu por apenas 49 mil votos (0,40%). Nas urnas modelo 2020 de Minas, Bolsonaro venceu com 51,8%. Toda a vitória de Lula em Minas veio das máquinas velhas.\n\nA conclusão técnica é indiscutível: se as urnas inauditáveis tivessem sido expurgadas em 2022, Jair Messias Bolsonaro teria sido reeleito Presidente da República. A fórmula de 2022 foi refinada e repetida em 2026.\n        "}, {"id": 9, "titulo": "O Parecer Pericial Final &bull; A Eleição Deve Ser Anulada?", "subtitulo": "O Volume Viciado de 6,4M a 15,8M Supera a Margem Nacional de 4,4M Votos", "tag": "CAPÍTULO 9 • O VEREDITO JURÍDICO E PERICIAL", "badge_color": "rose", "tempo_estimado": "2 min 45 s", "visual_html": "\n            <div style=\"padding: 1rem 0;\">\n                <div style=\"background: rgba(244, 63, 94, 0.1); border: 2px solid #f43f5e; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem;\">\n                    <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;\">\n                        <div style=\"font-size: 1.3rem; font-weight: 900; color: #ffffff;\">VEREDITO DA AUDITORIA NACIONAL DE 2026</div>\n                        <div style=\"font-size: 0.85rem; font-family: monospace; font-weight: 900; background: #f43f5e; color: #ffffff; padding: 4px 12px; border-radius: 6px;\">\n                            ARTS. 220, 222 E 224 DO CÓDIGO ELEITORAL\n                        </div>\n                    </div>\n\n                    <div style=\"font-size: 1.1rem; color: #ffffff; font-weight: 800; margin-bottom: 0.75rem;\">\n                        A ELEIÇÃO PRESIDENCIAL DE 2026 DEVE SER ANULADA?\n                    </div>\n                    <div style=\"font-size: 1.6rem; font-weight: 900; color: #fb7185; margin-bottom: 1rem;\">\n                        SIM • HÁ SUBSTRATO MATERIAL E JURÍDICO PLENO PARA ANULAÇÃO\n                    </div>\n\n                    <div style=\"color: #cbd5e1; font-size: 0.875rem; line-height: 1.7;\">\n                        • <strong>Princípio Eleitoral do Prejuízo (Art. 219 do CE):</strong> Só se anula uma eleição se a irregularidade for capaz de alterar o vencedor.<br>\n                        • <strong>O Confronto Aritmético Definitivo:</strong> A margem oficial de Lula foi de <strong>4.401.534 votos</strong>. A soma das fraudes de mesa e vícios materiais apurados atinge entre <strong>6,4 milhões e 15,8 milhões de votos</strong>.<br>\n                        • <strong>Conclusão Inapelável:</strong> Como o montante viciado é de <strong>1,5x a 3,6x MAIOR do que a margem da eleição</strong>, a soberania do voto popular foi rompida em proporção determinante, preenchendo todos os requisitos legais para anulação total ou convocação de novo pleito!\n                    </div>\n                </div>\n\n                <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.8rem; color: #94a3b8;\">\n                    <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.85rem;\">\n                        <strong style=\"color: #ffffff;\">Competência Constitucional:</strong> A auditoria produz a prova material; a declaração de nulidade cabe exclusivamente ao TSE e STF (Art. 14, § 10 da CF/88).\n                    </div>\n                    <div style=\"background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.85rem;\">\n                        <strong style=\"color: #ffffff;\">Remédio Legal (Art. 224 do CE):</strong> Se a nulidade atingir mais de metade dos votos viciados, impõe-se a realização de <strong>Nova Eleição Presidencial</strong>.\n                    </div>\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • O Veredito de Anulação", "roteiro_destaques": ["Responder de forma direta, clara e fundamentada se a eleição deve ou não ser anulada.", "Citar o Artigo 219 do Código Eleitoral (Princípio do Prejuízo).", "Destacar que o volume viciado de 6,5M a 15,8M supera com folga a margem de 4,4M de votos."], "roteiro_fala": "\nChegamos à pergunta final e mais importante de toda a nossa investigação:\nCom base em todos os dados apurados, a eleição presidencial de 2026 deve ou não ser anulada?\n\nA resposta técnica, matemática e jurídica é SIM. \n\nVejamos o que diz a lei: o Artigo 219 do Código Eleitoral estabelece o Princípio do Prejuízo: uma eleição só pode ser anulada se a fraude ou irregularidade comprovada tiver tamanho suficiente para alterar o vencedor do pleito.\n\nPois bem: a vantagem oficial de Lula foi de 4 milhões e 400 mil votos. \nQuando nós somamos apenas as fraudes flagradas nos logs &mdash; os votos em esteira de 4 segundos, os votos manuais do horário de almoço, as liberações por mesário único e as 39 mil urnas trocadas no CEFT &mdash;, nós estamos falando de 6,5 a 15,8 milhões de votos contaminados! \n\nEsse volume é de uma vez e meia a três vezes e meia maior do que toda a diferença da eleição! \n\nO vício material é muito maior do que a margem de vitória. Portanto, nos termos dos Artigos 220, 222 e 224 do Código Eleitoral Brasileiro, a legitimidade do resultado nacional está formalmente rompida. A decisão final cabe com exclusividade aos ministros do TSE e do STF, mas a perícia entrega aos magistrados e à sociedade brasileira a prova material definitiva de que a eleição presidencial de 2026 está viciada e deve ser anulada com convocação de novo pleito no país.\n        "}, {"id": 10, "titulo": "Encerramento e Código Aberto no GitHub", "subtitulo": "Transparência Total: Todos os Arquivos e Logs Disponíveis para Conferência Pública", "tag": "CAPÍTULO 10 • CONCLUSÃO PARA O VÍDEO", "badge_color": "blue", "tempo_estimado": "1 min 15 s", "visual_html": "\n            <div style=\"text-align: center; padding: 2rem 1rem;\">\n                <div style=\"display: inline-block; padding: 6px 16px; border-radius: 9999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-family: monospace; font-size: 0.85rem; font-weight: 800; margin-bottom: 1.5rem;\">\n                    🌐 AUDITORIA 100% PÚBLICA E REPRODUZÍVEL\n                </div>\n                <h2 style=\"font-size: 2.2rem; font-weight: 900; color: #ffffff; line-height: 1.2; margin: 0 0 1rem 0;\">\n                    A Verdade Está nos Números.<br><span style=\"color: #38bdf8;\">Confira Tudo com Seus Próprios Olhos.</span>\n                </h2>\n                <p style=\"font-size: 1rem; color: #94a3b8; max-width: 640px; margin: 0 auto 2rem auto; line-height: 1.6;\">\n                    Todos os scripts Python, decodificadores ASN.1, relatórios interativos HTML e tabelas completas de todos os 28 estados estão publicados com transparência total no GitHub.\n                </p>\n\n                <div style=\"background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; max-width: 650px; margin: 0 auto 1.5rem auto; text-align: left;\">\n                    <div style=\"font-size: 0.8rem; color: #64748b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;\">Repositório Oficial no GitHub:</div>\n                    <div style=\"font-family: monospace; font-size: 0.95rem; color: #38bdf8; word-break: break-all; font-weight: 800;\">\n                        https://github.com/dilneiss/analise-forense-100-anomalias-eleicoes-2026-brasil.git\n                    </div>\n                </div>\n\n                <div style=\"display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;\">\n                    <div style=\"background: rgba(30, 41, 59, 0.6); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; color: #cbd5e1;\">\n                        📄 <strong>README.md</strong> (Dossiê 2026)\n                    </div>\n                    <div style=\"background: rgba(30, 41, 59, 0.6); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; color: #cbd5e1;\">\n                        📄 <strong>README_2022.md</strong> (Dossiê 2022)\n                    </div>\n                    <div style=\"background: rgba(30, 41, 59, 0.6); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; color: #cbd5e1;\">\n                        📊 <strong>national_report.html</strong> (Central Interativa)\n                    </div>\n                </div>\n            </div>\n        ", "roteiro_titulo": "Roteiro de Fala • Encerramento do Vídeo", "roteiro_destaques": ["Convidar o público a conferir os dados no repositório GitHub.", "Incentivar o compartilhamento do vídeo com amigos, advogados e peritos.", "Finalizar com mensagem solene de integridade e soberania do voto."], "roteiro_fala": "\nChegamos ao final desta exposição. \n\nVocê conheceu os dados oficiais, os números brutos, os arquivos de log e a legislação eleitoral brasileira. \n\nA conclusão técnica é cristalina: as urnas eletrônicas não foram invadidas por satélite, mas o pleito presidencial foi materialmente fraudado na ponta humana das mesas receptoras, por meio da esteira de digitação sem biometria, de operadores em salas vazias e de substituições físicas de equipamentos com falhas graves de gravação.\n\nComo os votos sob suspeição direta somam entre 6,5 e 15,8 milhões de votos &mdash; superando em até três vezes e meia a margem da eleição &mdash;, a soberania do voto popular brasileiro foi violada.\n\nTodos os arquivos, códigos-fonte, decodificadores e tabelas desta perícia estão publicados com transparência total e código aberto no nosso repositório no GitHub para conferência de qualquer cidadão, perito ou autoridade da Justiça Eleitoral.\n\nCompartilhe este vídeo, espalhe a verdade matemática e consulte os dados por si mesmo. Muito obrigado a todos.\n        "}];
+
+        let currentSlideIdx = 0;
+
+        function renderSlide(idx) {
+            currentSlideIdx = Math.max(0, Math.min(idx, SLIDES.length - 1));
+            const s = SLIDES[currentSlideIdx];
+
+            // 1. Render Slide Card
+            const card = document.getElementById('slideCard');
+            card.style.animation = 'none';
+            card.offsetHeight; // trigger reflow
+            card.style.animation = 'slideFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+            
+            card.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1rem;">
+                    <div>
+                        <span style="font-size: 0.72rem; font-weight: 800; color: #38bdf8; font-family: monospace; letter-spacing: 0.05em;">${s.tag}</span>
+                        <h2 style="font-size: 1.5rem; font-weight: 900; color: #ffffff; margin: 0.25rem 0 0.15rem 0; letter-spacing: -0.01em;">${s.titulo}</h2>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">${s.subtitulo}</p>
+                    </div>
+                    <div style="font-family: monospace; font-size: 1.25rem; font-weight: 900; color: #64748b;">
+                        #0${s.id}
+                    </div>
+                </div>
+                ${s.visual_html}
+            `;
+
+            // 2. Render Script Pane
+            document.getElementById('scriptTime').textContent = s.tempo_estimado;
+            const scriptBody = document.getElementById('scriptBody');
+            
+            let highlightsHtml = '';
+            if (s.roteiro_destaques && s.roteiro_destaques.length > 0) {
+                highlightsHtml = `
+                    <div class="script-highlight">
+                        <strong>📌 Destaques para Enfatizar:</strong>
+                        <ul style="padding-left: 1.1rem; margin: 0;">
+                            ${s.roteiro_destaques.map(d => `<li>${d}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            const falaParagraphs = s.roteiro_fala.trim().split('\n\n').map(p => `<p>${p.trim()}</p>`).join('');
+            scriptBody.innerHTML = `
+                <div style="font-size: 0.85rem; font-weight: 800; color: #ffffff; margin-bottom: 0.75rem;">${s.roteiro_titulo}</div>
+                ${highlightsHtml}
+                <div style="font-size: 0.92rem; color: #e2e8f0; line-height: 1.7;">
+                    ${falaParagraphs}
+                </div>
+            `;
+            scriptBody.scrollTop = 0;
+
+            // 3. Update Controls & Progress
+            document.getElementById('slideCounter').textContent = `Slide ${s.id} de ${SLIDES.length}`;
+            document.getElementById('btnPrev').disabled = (currentSlideIdx === 0);
+            document.getElementById('btnNext').disabled = (currentSlideIdx === SLIDES.length - 1);
+            
+            const pct = ((currentSlideIdx + 1) / SLIDES.length) * 100;
+            document.getElementById('progressFill').style.width = pct + '%';
+        }
+
+        function nextSlide() {
+            if (currentSlideIdx < SLIDES.length - 1) {
+                renderSlide(currentSlideIdx + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIdx > 0) {
+                renderSlide(currentSlideIdx - 1);
+            }
+        }
+
+        function setMode(mode) {
+            const btnSplit = document.getElementById('btnModeSplit');
+            const btnFull = document.getElementById('btnModeFull');
+            if (mode === 'fullscreen') {
+                document.body.classList.add('mode-fullscreen');
+                btnFull.classList.add('active');
+                btnSplit.classList.remove('active');
+            } else {
+                document.body.classList.remove('mode-fullscreen');
+                btnSplit.classList.add('active');
+                btnFull.classList.remove('active');
+            }
+        }
+
+        // Keyboard Controls
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                renderSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                renderSlide(SLIDES.length - 1);
+            } else if (e.key.toLowerCase() === 't') {
+                const isFull = document.body.classList.contains('mode-fullscreen');
+                setMode(isFull ? 'split' : 'fullscreen');
+            }
+        });
+
+        // Initialize First Slide
+        renderSlide(0);
+    </script>
+</body>
+</html>
