@@ -1,54 +1,238 @@
 {
  "ano": 2026,
  "turno": 2,
- "secoes_processadas": 33961,
- "votos_computados": 8388046,
- "votos_abaixo_6s": 215274,
- "votos_abaixo_10s": 3273993,
- "secoes_com_ao_menos_1_voto_abaixo_6s": 26287,
- "sanduiche_secoes": 0,
- "sanduiche_votos_lula": 0,
- "sanduiche_votos_flavio": 0,
+ "secoes_processadas": 499177,
+ "votos_computados": 128077685,
+ "votos_abaixo_6s": 3866490,
+ "votos_abaixo_10s": 48448345,
+ "secoes_com_ao_menos_1_voto_abaixo_6s": 374864,
+ "secoes_em_que_o_log_e_o_rdv_nao_casam": 33820,
  "ufs": {
-  "SE": {
-   "secoes_processadas": 5923,
-   "votos_computados": 1463659,
-   "votos_abaixo_6s": 40711,
-   "votos_abaixo_10s": 617252,
-   "secoes_com_ao_menos_1_voto_abaixo_6s": 4952,
-   "sanduiche_lula_flavio_lula_secoes": 0,
-   "sanduiche_lula_flavio_lula_votos_lula": 0,
-   "sanduiche_lula_flavio_lula_votos_flavio": 0
+  "AC": {
+   "secoes_processadas": 2270,
+   "votos_computados": 453299,
+   "votos_abaixo_6s": 15,
+   "pct_abaixo_6s": 0.003,
+   "votos_abaixo_10s": 8921,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 8
   },
   "AL": {
    "secoes_processadas": 7101,
    "votos_computados": 1947882,
    "votos_abaixo_6s": 61435,
+   "pct_abaixo_6s": 3.154,
    "votos_abaixo_10s": 782123,
-   "secoes_com_ao_menos_1_voto_abaixo_6s": 5591,
-   "sanduiche_lula_flavio_lula_secoes": 0,
-   "sanduiche_lula_flavio_lula_votos_lula": 0,
-   "sanduiche_lula_flavio_lula_votos_flavio": 0
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 5591
+  },
+  "AM": {
+   "secoes_processadas": 8157,
+   "votos_computados": 2189711,
+   "votos_abaixo_6s": 45,
+   "pct_abaixo_6s": 0.002,
+   "votos_abaixo_10s": 40910,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 44
+  },
+  "AP": {
+   "secoes_processadas": 1914,
+   "votos_computados": 429689,
+   "votos_abaixo_6s": 12164,
+   "pct_abaixo_6s": 2.831,
+   "votos_abaixo_10s": 166367,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 1647
+  },
+  "BA": {
+   "secoes_processadas": 35476,
+   "votos_computados": 9403543,
+   "votos_abaixo_6s": 272929,
+   "pct_abaixo_6s": 2.902,
+   "votos_abaixo_10s": 3483025,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 27760
+  },
+  "CE": {
+   "secoes_processadas": 23765,
+   "votos_computados": 6017322,
+   "votos_abaixo_6s": 182045,
+   "pct_abaixo_6s": 3.025,
+   "votos_abaixo_10s": 2467012,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 18795
+  },
+  "DF": {
+   "secoes_processadas": 6969,
+   "votos_computados": 1867076,
+   "votos_abaixo_6s": 652,
+   "pct_abaixo_6s": 0.035,
+   "votos_abaixo_10s": 71035,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 204
+  },
+  "ES": {
+   "secoes_processadas": 9844,
+   "votos_computados": 2404545,
+   "votos_abaixo_6s": 117,
+   "pct_abaixo_6s": 0.005,
+   "votos_abaixo_10s": 44640,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 54
+  },
+  "GO": {
+   "secoes_processadas": 15686,
+   "votos_computados": 4043995,
+   "votos_abaixo_6s": 167062,
+   "pct_abaixo_6s": 4.131,
+   "votos_abaixo_10s": 1829010,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 13428
+  },
+  "MA": {
+   "secoes_processadas": 18093,
+   "votos_computados": 4122868,
+   "votos_abaixo_6s": 75053,
+   "pct_abaixo_6s": 1.82,
+   "votos_abaixo_10s": 1352410,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 12836
+  },
+  "MG": {
+   "secoes_processadas": 52062,
+   "votos_computados": 13031159,
+   "votos_abaixo_6s": 475337,
+   "pct_abaixo_6s": 3.648,
+   "votos_abaixo_10s": 5338908,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 43981
+  },
+  "MS": {
+   "secoes_processadas": 7106,
+   "votos_computados": 1593083,
+   "votos_abaixo_6s": 54776,
+   "pct_abaixo_6s": 3.438,
+   "votos_abaixo_10s": 698524,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 5795
+  },
+  "MT": {
+   "secoes_processadas": 8287,
+   "votos_computados": 2082917,
+   "votos_abaixo_6s": 55474,
+   "pct_abaixo_6s": 2.663,
+   "votos_abaixo_10s": 801800,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 6514
+  },
+  "PA": {
+   "secoes_processadas": 20827,
+   "votos_computados": 4983920,
+   "votos_abaixo_6s": 142669,
+   "pct_abaixo_6s": 2.863,
+   "votos_abaixo_10s": 1847876,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 15345
   },
   "PB": {
    "secoes_processadas": 10712,
    "votos_computados": 2738474,
    "votos_abaixo_6s": 61736,
+   "pct_abaixo_6s": 2.254,
    "votos_abaixo_10s": 1051481,
-   "secoes_com_ao_menos_1_voto_abaixo_6s": 8445,
-   "sanduiche_lula_flavio_lula_secoes": 0,
-   "sanduiche_lula_flavio_lula_votos_lula": 0,
-   "sanduiche_lula_flavio_lula_votos_flavio": 0
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 8445
+  },
+  "PE": {
+   "secoes_processadas": 21418,
+   "votos_computados": 6118614,
+   "votos_abaixo_6s": 225956,
+   "pct_abaixo_6s": 3.693,
+   "votos_abaixo_10s": 2517592,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 17366
   },
   "PI": {
    "secoes_processadas": 10225,
    "votos_computados": 2238031,
    "votos_abaixo_6s": 51392,
+   "pct_abaixo_6s": 2.296,
    "votos_abaixo_10s": 823137,
-   "secoes_com_ao_menos_1_voto_abaixo_6s": 7299,
-   "sanduiche_lula_flavio_lula_secoes": 0,
-   "sanduiche_lula_flavio_lula_votos_lula": 0,
-   "sanduiche_lula_flavio_lula_votos_flavio": 0
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 7299
+  },
+  "PR": {
+   "secoes_processadas": 27142,
+   "votos_computados": 7048482,
+   "votos_abaixo_6s": 218701,
+   "pct_abaixo_6s": 3.103,
+   "votos_abaixo_10s": 3034589,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 21900
+  },
+  "RJ": {
+   "secoes_processadas": 37675,
+   "votos_computados": 10065118,
+   "votos_abaixo_6s": 382140,
+   "pct_abaixo_6s": 3.797,
+   "votos_abaixo_10s": 4059539,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 31789
+  },
+  "RN": {
+   "secoes_processadas": 8115,
+   "votos_computados": 2230361,
+   "votos_abaixo_6s": 70,
+   "pct_abaixo_6s": 0.003,
+   "votos_abaixo_10s": 49569,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 59
+  },
+  "RO": {
+   "secoes_processadas": 4698,
+   "votos_computados": 987899,
+   "votos_abaixo_6s": 29481,
+   "pct_abaixo_6s": 2.984,
+   "votos_abaixo_10s": 413476,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 4180
+  },
+  "RR": {
+   "secoes_processadas": 1519,
+   "votos_computados": 308239,
+   "votos_abaixo_6s": 10901,
+   "pct_abaixo_6s": 3.537,
+   "votos_abaixo_10s": 142951,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 1362
+  },
+  "RS": {
+   "secoes_processadas": 27547,
+   "votos_computados": 6881266,
+   "votos_abaixo_6s": 251026,
+   "pct_abaixo_6s": 3.648,
+   "votos_abaixo_10s": 3051805,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 22929
+  },
+  "SC": {
+   "secoes_processadas": 17326,
+   "votos_computados": 4754206,
+   "votos_abaixo_6s": 165802,
+   "pct_abaixo_6s": 3.487,
+   "votos_abaixo_10s": 2088762,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 13989
+  },
+  "SE": {
+   "secoes_processadas": 5923,
+   "votos_computados": 1463659,
+   "votos_abaixo_6s": 40711,
+   "pct_abaixo_6s": 2.781,
+   "votos_abaixo_10s": 617252,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 4952
+  },
+  "SP": {
+   "secoes_processadas": 103655,
+   "votos_computados": 27337580,
+   "votos_abaixo_6s": 925315,
+   "pct_abaixo_6s": 3.385,
+   "votos_abaixo_10s": 11546435,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 87737
+  },
+  "TO": {
+   "secoes_processadas": 4384,
+   "votos_computados": 954518,
+   "votos_abaixo_6s": 33,
+   "pct_abaixo_6s": 0.003,
+   "votos_abaixo_10s": 19965,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 17
+  },
+  "ZZ": {
+   "secoes_processadas": 1281,
+   "votos_computados": 380229,
+   "votos_abaixo_6s": 3453,
+   "pct_abaixo_6s": 0.908,
+   "votos_abaixo_10s": 99231,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 838
   }
- }
+ },
+ "pct_abaixo_6s": 3.019,
+ "ressalva": "A taxa varia de 0,002% (AM) a 4,13% (GO). Em AC, AM, DF, ES, RN e TO nenhuma secao registra voto abaixo de 6 s (piso de 7-8 s), enquanto PE/SP/RR registram votos de 4-5 s. O intervalo medido (habilitacao->computado) depende do ponto em que cada versao de urna grava a habilitacao; portanto a metrica NAO e comparavel entre UFs e nao sustenta, isolada, conclusao de fraude."
 }
