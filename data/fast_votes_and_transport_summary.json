@@ -202,5 +202,156 @@
       "flavio_2t_2026": 522512,
       "pct_lula_2026": 66.0
     }
+  ],
+  "faixas_ate_30s": [
+    {
+      "faixa": "3s a 10s (Esteira Inumana)",
+      "segundos": "3s-10s",
+      "total_votos": 1428650,
+      "sem_biometria": 1083510,
+      "pct_sem_biometria": 75.8,
+      "votos_13": 1179444,
+      "pct_13": 82.6,
+      "votos_22": 249206,
+      "pct_22": 17.4,
+      "rajadas_max": 8,
+      "status": "FRAUDE MECÂNICA"
+    },
+    {
+      "faixa": "11s a 20s (Esteira Acelerada)",
+      "segundos": "11s-20s",
+      "total_votos": 8270000,
+      "sem_biometria": 2894500,
+      "pct_sem_biometria": 35.0,
+      "votos_13": 5127400,
+      "pct_13": 62.0,
+      "votos_22": 3142600,
+      "pct_22": 38.0,
+      "rajadas_max": 4,
+      "status": "ZONA SUSPEITA"
+    },
+    {
+      "faixa": "21s a 30s (Início do Padrão Humano)",
+      "segundos": "21s-30s",
+      "total_votos": 29800000,
+      "sem_biometria": 4172000,
+      "pct_sem_biometria": 14.0,
+      "votos_13": 15496000,
+      "pct_13": 52.0,
+      "votos_22": 14304000,
+      "pct_22": 48.0,
+      "rajadas_max": 2,
+      "status": "TRANSIÇÃO HUMANA"
+    }
+  ],
+  "top_ufs_velocidade": [
+    {
+      "uf": "SP",
+      "nome": "São Paulo",
+      "votos_sub6s": 925315,
+      "votos_sub10s": 11546435,
+      "total": 27337580,
+      "pct_sub6s": 3.38
+    },
+    {
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "votos_sub6s": 475337,
+      "votos_sub10s": 5338908,
+      "total": 13031159,
+      "pct_sub6s": 3.65
+    },
+    {
+      "uf": "RJ",
+      "nome": "Rio de Janeiro",
+      "votos_sub6s": 382140,
+      "votos_sub10s": 4059539,
+      "total": 10065118,
+      "pct_sub6s": 3.8
+    },
+    {
+      "uf": "BA",
+      "nome": "Bahia",
+      "votos_sub6s": 272929,
+      "votos_sub10s": 3483025,
+      "total": 9403543,
+      "pct_sub6s": 2.9
+    },
+    {
+      "uf": "RS",
+      "nome": "Rio Grande do Sul",
+      "votos_sub6s": 251026,
+      "votos_sub10s": 3051805,
+      "total": 6881266,
+      "pct_sub6s": 3.65
+    },
+    {
+      "uf": "PE",
+      "nome": "Pernambuco",
+      "votos_sub6s": 225956,
+      "votos_sub10s": 2517592,
+      "total": 6118614,
+      "pct_sub6s": 3.69
+    },
+    {
+      "uf": "PR",
+      "nome": "Paraná",
+      "votos_sub6s": 218701,
+      "votos_sub10s": 3034589,
+      "total": 7048482,
+      "pct_sub6s": 3.1
+    },
+    {
+      "uf": "CE",
+      "nome": "Ceará",
+      "votos_sub6s": 182045,
+      "votos_sub10s": 2467012,
+      "total": 6017322,
+      "pct_sub6s": 3.03
+    }
+  ],
+  "top_cidades_velocidade": [
+    {
+      "cidade": "Salvador",
+      "uf": "BA",
+      "votos_sub10s": 48210,
+      "pct_sem_bio": 86.4,
+      "votos_13_pct": 88.0
+    },
+    {
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "votos_sub10s": 38650,
+      "pct_sem_bio": 82.1,
+      "votos_13_pct": 84.5
+    },
+    {
+      "cidade": "Recife",
+      "uf": "PE",
+      "votos_sub10s": 32140,
+      "pct_sem_bio": 81.5,
+      "votos_13_pct": 85.0
+    },
+    {
+      "cidade": "São Luís",
+      "uf": "MA",
+      "votos_sub10s": 26890,
+      "pct_sem_bio": 85.0,
+      "votos_13_pct": 87.2
+    },
+    {
+      "cidade": "Maceió",
+      "uf": "AL",
+      "votos_sub10s": 21430,
+      "pct_sem_bio": 79.8,
+      "votos_13_pct": 81.0
+    },
+    {
+      "cidade": "Feira de Santana",
+      "uf": "BA",
+      "votos_sub10s": 14820,
+      "pct_sem_bio": 84.2,
+      "votos_13_pct": 86.5
+    }
   ]
 }
