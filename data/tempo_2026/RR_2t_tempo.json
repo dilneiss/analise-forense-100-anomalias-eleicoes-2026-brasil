@@ -1,0 +1,8192 @@
+{
+ "uf": "RR",
+ "turno": 2,
+ "ano": 2026,
+ "secoes_processadas": 1519,
+ "secoes_em_que_o_log_e_o_rdv_nao_casam": 4,
+ "votos_computados": 308239,
+ "votos_abaixo_6s": 10901,
+ "pct_abaixo_6s": 3.537,
+ "votos_abaixo_10s": 142951,
+ "secoes_com_ao_menos_1_voto_abaixo_6s": 1362,
+ "sanduiche_lula_flavio_lula_secoes": null,
+ "sanduiche_lula_flavio_lula_votos_lula": null,
+ "sanduiche_lula_flavio_lula_votos_flavio": null,
+ "tempo_s": 20.4,
+ "detalhes_6s": [
+  {
+   "secao": "o03221rr0300000040011",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2719.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0300000040012",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2508.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0300000040013",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2539.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0300000040014",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2776.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0300000040015",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2532.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0300000040016",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2044.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0300000040017",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2504.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0300000040018",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2581.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0300000040019",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1973.0,
+   "votos": 152
+  },
+  {
+   "secao": "o03221rr0300000040065",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2075.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0300000040074",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2338.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0300000040075",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2793.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0300000040084",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2120.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0300000040086",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1989.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0300000040089",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1822.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0300000040092",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1995.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0300000040104",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3357.0,
+   "votos": 313
+  },
+  {
+   "secao": "o03221rr0300000040107",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2175.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0300000040123",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2348.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0300000040125",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2226.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0300000040126",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2732.0,
+   "votos": 258
+  },
+  {
+   "secao": "o03221rr0300000040131",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2674.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0300000040134",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2023.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0300000040135",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2426.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800010001",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2171.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800010002",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2077.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800010003",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2240.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800010004",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2221.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800010005",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2335.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800010007",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2265.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0301800010020",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1896.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0301800010022",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2595.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010023",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2440.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010024",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2351.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0301800010025",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2079.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0301800010026",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2664.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010027",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2084.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0301800010028",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2842.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010029",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2479.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010030",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2696.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800010031",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2578.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010035",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2995.0,
+   "votos": 264
+  },
+  {
+   "secao": "o03221rr0301800010036",
+   "votos_abaixo_6s": 32,
+   "tempo_total_registrado": 2085.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010037",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2765.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800010038",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2912.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010039",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2134.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0301800010040",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2047.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0301800010041",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2478.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800010042",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1820.0,
+   "votos": 148
+  },
+  {
+   "secao": "o03221rr0301800010043",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2402.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010044",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2414.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800010045",
+   "votos_abaixo_6s": 31,
+   "tempo_total_registrado": 2042.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010046",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2275.0,
+   "votos": 188
+  },
+  {
+   "secao": "o03221rr0301800010047",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2066.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0301800010048",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2193.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010049",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2436.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0301800010050",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2450.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800010051",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1656.0,
+   "votos": 147
+  },
+  {
+   "secao": "o03221rr0301800010052",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2322.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010053",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2168.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800010054",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2219.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800010055",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2252.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800010056",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2379.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800010057",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2686.0,
+   "votos": 249
+  },
+  {
+   "secao": "o03221rr0301800010058",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2297.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010059",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2580.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800010060",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2147.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800010061",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2347.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0301800010063",
+   "votos_abaixo_6s": 33,
+   "tempo_total_registrado": 2308.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800010064",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2721.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800010065",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 3251.0,
+   "votos": 273
+  },
+  {
+   "secao": "o03221rr0301800010067",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2684.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800010068",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2755.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010070",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1649.0,
+   "votos": 169
+  },
+  {
+   "secao": "o03221rr0301800010071",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1872.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0301800010072",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 1798.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0301800010073",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2051.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800010074",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2848.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010076",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1833.0,
+   "votos": 166
+  },
+  {
+   "secao": "o03221rr0301800010077",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2488.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010078",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2508.0,
+   "votos": 267
+  },
+  {
+   "secao": "o03221rr0301800010079",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2933.0,
+   "votos": 269
+  },
+  {
+   "secao": "o03221rr0301800010080",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2074.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0301800010081",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1815.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0301800010082",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2543.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800010083",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2355.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010084",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2698.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010086",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2059.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800010087",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1735.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0301800010088",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2673.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010089",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2686.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010090",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2653.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800010091",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 1902.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0301800010092",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1698.0,
+   "votos": 162
+  },
+  {
+   "secao": "o03221rr0301800010093",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 1738.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0301800010098",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2734.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010099",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1892.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0301800010100",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 1801.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0301800010101",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1817.0,
+   "votos": 169
+  },
+  {
+   "secao": "o03221rr0301800010104",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2094.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0301800010105",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1902.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800010106",
+   "votos_abaixo_6s": 35,
+   "tempo_total_registrado": 2067.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0301800010117",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2745.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010118",
+   "votos_abaixo_6s": 28,
+   "tempo_total_registrado": 1935.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0301800010155",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 1641.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0301800010156",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1580.0,
+   "votos": 144
+  },
+  {
+   "secao": "o03221rr0301800010162",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 1651.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0301800010167",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2370.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800010169",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 1975.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0301800010170",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2165.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010171",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2342.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800010176",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2023.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0301800010179",
+   "votos_abaixo_6s": 50,
+   "tempo_total_registrado": 2341.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010180",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2027.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800010181",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2563.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010183",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2263.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010184",
+   "votos_abaixo_6s": 30,
+   "tempo_total_registrado": 2609.0,
+   "votos": 260
+  },
+  {
+   "secao": "o03221rr0301800010185",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3305.0,
+   "votos": 275
+  },
+  {
+   "secao": "o03221rr0301800010187",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 1480.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0301800010189",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1525.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0301800010200",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2338.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010201",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2040.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0301800010202",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2305.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010204",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1979.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0301800010206",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1854.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0301800010208",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2424.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800010209",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1920.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800010210",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 1950.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800010211",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2076.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0301800010212",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1911.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0301800010214",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2251.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010221",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2378.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010222",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2397.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800010223",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2485.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010226",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2348.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010229",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2547.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010231",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2191.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010233",
+   "votos_abaixo_6s": 51,
+   "tempo_total_registrado": 1980.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800010237",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2345.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010240",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1582.0,
+   "votos": 147
+  },
+  {
+   "secao": "o03221rr0301800010241",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2713.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010242",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 1611.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0301800010251",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2208.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0301800010259",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2211.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010262",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2594.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010266",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2477.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800010268",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2080.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010276",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2458.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010288",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1239.0,
+   "votos": 128
+  },
+  {
+   "secao": "o03221rr0301800010289",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2388.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010290",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2586.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010295",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1774.0,
+   "votos": 144
+  },
+  {
+   "secao": "o03221rr0301800010307",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1848.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0301800010309",
+   "votos_abaixo_6s": 22,
+   "tempo_total_registrado": 2297.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010315",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2457.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010316",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2458.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010317",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2308.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010327",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 2258.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010328",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1678.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0301800010333",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2390.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800010334",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2304.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010340",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2085.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800010341",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1919.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0301800010345",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2838.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010355",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2695.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010357",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2176.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0301800010361",
+   "votos_abaixo_6s": 22,
+   "tempo_total_registrado": 2577.0,
+   "votos": 266
+  },
+  {
+   "secao": "o03221rr0301800010362",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 1869.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800010363",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1937.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0301800010367",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2268.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010377",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2729.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010378",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2106.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010379",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2187.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0301800010381",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3063.0,
+   "votos": 293
+  },
+  {
+   "secao": "o03221rr0301800010382",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2591.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010389",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2405.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800010407",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3090.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800010409",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 1844.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800010410",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2540.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010416",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2255.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010418",
+   "votos_abaixo_6s": 22,
+   "tempo_total_registrado": 2264.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010421",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2516.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010429",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2405.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010446",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2456.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010458",
+   "votos_abaixo_6s": 33,
+   "tempo_total_registrado": 1964.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010460",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2127.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010466",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2606.0,
+   "votos": 259
+  },
+  {
+   "secao": "o03221rr0301800010467",
+   "votos_abaixo_6s": 27,
+   "tempo_total_registrado": 1929.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010472",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 1328.0,
+   "votos": 139
+  },
+  {
+   "secao": "o03221rr0301800010475",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2200.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010476",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2157.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800010477",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2568.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010486",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1844.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0301800010487",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2007.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800010489",
+   "votos_abaixo_6s": 28,
+   "tempo_total_registrado": 2416.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010497",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1587.0,
+   "votos": 148
+  },
+  {
+   "secao": "o03221rr0301800010502",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1726.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0301800010505",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2439.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800010512",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2299.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010513",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2357.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010517",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2286.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010518",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1998.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0301800010519",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2611.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010520",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2557.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010522",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2350.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010523",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1387.0,
+   "votos": 144
+  },
+  {
+   "secao": "o03221rr0301800010524",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2630.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800010525",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2079.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800010528",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2404.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010529",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1579.0,
+   "votos": 143
+  },
+  {
+   "secao": "o03221rr0301800010531",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1880.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0301800010532",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2133.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010533",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2695.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010534",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 1869.0,
+   "votos": 181
+  },
+  {
+   "secao": "o03221rr0301800010535",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2168.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800010536",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2465.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010537",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2598.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800010538",
+   "votos_abaixo_6s": 80,
+   "tempo_total_registrado": 1095.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0301800010540",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2331.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800010546",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2335.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010547",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2675.0,
+   "votos": 272
+  },
+  {
+   "secao": "o03221rr0301800010548",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2224.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0301800010550",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2245.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010551",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2087.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800010552",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2685.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010553",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2775.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010554",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2428.0,
+   "votos": 249
+  },
+  {
+   "secao": "o03221rr0301800010555",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2352.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800010556",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2271.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010557",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 1949.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800010558",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 1810.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0301800010559",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2381.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010560",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2090.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010563",
+   "votos_abaixo_6s": 29,
+   "tempo_total_registrado": 1800.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800010564",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2309.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800010567",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1820.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0301800010571",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3172.0,
+   "votos": 259
+  },
+  {
+   "secao": "o03221rr0301800010572",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2620.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010573",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2721.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010574",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2964.0,
+   "votos": 258
+  },
+  {
+   "secao": "o03221rr0301800010575",
+   "votos_abaixo_6s": 27,
+   "tempo_total_registrado": 1878.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010576",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2359.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800010577",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 3085.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010578",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2667.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010579",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2430.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800010580",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2615.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010581",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2253.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010582",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2118.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010583",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2183.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010584",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2366.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800010585",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2197.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800010586",
+   "votos_abaixo_6s": 39,
+   "tempo_total_registrado": 1938.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010587",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2265.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010588",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2324.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010589",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2236.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800010590",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 2026.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800010591",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 1687.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0301800010592",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2561.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0301800010593",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2112.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0301800010594",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1774.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0301800010595",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1806.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0301800010596",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1964.0,
+   "votos": 164
+  },
+  {
+   "secao": "o03221rr0301800010597",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1955.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0301800010598",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2155.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800010599",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2686.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010600",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1628.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0301800010601",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2419.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010602",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2509.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800010603",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2439.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800010604",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2404.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800010605",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2783.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800010607",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2029.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010608",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2492.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800010610",
+   "votos_abaixo_6s": 50,
+   "tempo_total_registrado": 1617.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800010611",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2141.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800010612",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 1804.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800010613",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2177.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010614",
+   "votos_abaixo_6s": 30,
+   "tempo_total_registrado": 1851.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010615",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 1868.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800010616",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1923.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0301800010617",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1803.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800010618",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2365.0,
+   "votos": 261
+  },
+  {
+   "secao": "o03221rr0301800010619",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2423.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800010620",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1955.0,
+   "votos": 176
+  },
+  {
+   "secao": "o03221rr0301800010621",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1994.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800010622",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2230.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0301800010623",
+   "votos_abaixo_6s": 26,
+   "tempo_total_registrado": 2154.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010624",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2544.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010625",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2655.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010626",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2414.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010627",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2457.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010628",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2434.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010629",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1997.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010630",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2243.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010631",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2027.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010632",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2072.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010633",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2324.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010634",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2776.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800010635",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2725.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800010637",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2635.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010638",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2987.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010639",
+   "votos_abaixo_6s": 78,
+   "tempo_total_registrado": 1690.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010640",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2416.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010641",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2134.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800010642",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2104.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010643",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2420.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800010644",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2490.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800010645",
+   "votos_abaixo_6s": 32,
+   "tempo_total_registrado": 1893.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010646",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 3096.0,
+   "votos": 295
+  },
+  {
+   "secao": "o03221rr0301800010647",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2638.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010648",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2339.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010649",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2669.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010650",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2519.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800010651",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2417.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010652",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2488.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010653",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2411.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010654",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2246.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010655",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2230.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800010656",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2170.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800010657",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2267.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800010660",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2070.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800010661",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2651.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0301800010662",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2480.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010663",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2782.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010664",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2653.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010665",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2651.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800010666",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2317.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010667",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2491.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010668",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2526.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010669",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2337.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010670",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2470.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800010671",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2183.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010672",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2395.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800010673",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2599.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010674",
+   "votos_abaixo_6s": 36,
+   "tempo_total_registrado": 2224.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800010675",
+   "votos_abaixo_6s": 30,
+   "tempo_total_registrado": 2437.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800010676",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2701.0,
+   "votos": 260
+  },
+  {
+   "secao": "o03221rr0301800010677",
+   "votos_abaixo_6s": 38,
+   "tempo_total_registrado": 2401.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800010679",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2419.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800010680",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2363.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010681",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2053.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010682",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3254.0,
+   "votos": 264
+  },
+  {
+   "secao": "o03221rr0301800010683",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2862.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010684",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2464.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010685",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2647.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800010686",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2257.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010687",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2712.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010688",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2487.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010689",
+   "votos_abaixo_6s": 22,
+   "tempo_total_registrado": 2151.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010690",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2341.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010691",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2332.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010692",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2729.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010693",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2724.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800010694",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3130.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800010695",
+   "votos_abaixo_6s": 43,
+   "tempo_total_registrado": 2026.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800010696",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2924.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010697",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2499.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800010698",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2282.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010699",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3214.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800010700",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2616.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800010701",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2432.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010702",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2863.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010703",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2538.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800010704",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2284.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800010705",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2310.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010706",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2876.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010707",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2910.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800010708",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2895.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010709",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2448.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800010710",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 346.0,
+   "votos": 43
+  },
+  {
+   "secao": "o03221rr0301800010711",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2551.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010712",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2017.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800010713",
+   "votos_abaixo_6s": 22,
+   "tempo_total_registrado": 2175.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800010714",
+   "votos_abaixo_6s": 32,
+   "tempo_total_registrado": 2033.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800010715",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2721.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800010716",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2773.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010717",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2730.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800010718",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2357.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800010719",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2401.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010724",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2792.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010725",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2496.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010726",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2190.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010728",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2353.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800010729",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2481.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010730",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2680.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010731",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2654.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010732",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2701.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800010733",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2653.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800010734",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1948.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800010736",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 3124.0,
+   "votos": 298
+  },
+  {
+   "secao": "o03221rr0301800010737",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2752.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010738",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 3068.0,
+   "votos": 259
+  },
+  {
+   "secao": "o03221rr0301800010739",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2251.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800010741",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2496.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800010742",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2654.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010743",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2722.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010744",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2510.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010745",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2589.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010746",
+   "votos_abaixo_6s": 30,
+   "tempo_total_registrado": 2206.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010747",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2187.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010748",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 2786.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010749",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 1987.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800010750",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2305.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010751",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 2387.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800010752",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2478.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800010753",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2632.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010754",
+   "votos_abaixo_6s": 38,
+   "tempo_total_registrado": 2103.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800010755",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2281.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800010756",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2519.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800010757",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2301.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010758",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2694.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010759",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2358.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010760",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2498.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800010761",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2494.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800010762",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2585.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800010763",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2397.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010764",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2826.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010765",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2789.0,
+   "votos": 286
+  },
+  {
+   "secao": "o03221rr0301800010766",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2651.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800010767",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1705.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0301800010768",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1140.0,
+   "votos": 96
+  },
+  {
+   "secao": "o03221rr0301800010769",
+   "votos_abaixo_6s": 31,
+   "tempo_total_registrado": 1704.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800010770",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2723.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010771",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2023.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0301800010774",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2381.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010775",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1929.0,
+   "votos": 157
+  },
+  {
+   "secao": "o03221rr0301800010776",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1622.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0301800010777",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2520.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800010778",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2500.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0301800010779",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2091.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010780",
+   "votos_abaixo_6s": 34,
+   "tempo_total_registrado": 1970.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800010781",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 1568.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0301800010782",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2542.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800010783",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1741.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0301800010784",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2693.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800010785",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2319.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800010786",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2231.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800010787",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2591.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010788",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2249.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010789",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2579.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800010790",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2769.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800010791",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2195.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800010792",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2744.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800010793",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 1807.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0301800010794",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2374.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800010795",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1750.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0301800010798",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 3085.0,
+   "votos": 272
+  },
+  {
+   "secao": "o03221rr0301800010799",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2393.0,
+   "votos": 262
+  },
+  {
+   "secao": "o03221rr0301800010800",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2842.0,
+   "votos": 258
+  },
+  {
+   "secao": "o03221rr0301800010801",
+   "votos_abaixo_6s": 28,
+   "tempo_total_registrado": 1889.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010803",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2267.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800010804",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2538.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010805",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1256.0,
+   "votos": 121
+  },
+  {
+   "secao": "o03221rr0301800010806",
+   "votos_abaixo_6s": 38,
+   "tempo_total_registrado": 1731.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800010809",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2456.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800010814",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2618.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800010816",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1418.0,
+   "votos": 138
+  },
+  {
+   "secao": "o03221rr0301800010823",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3077.0,
+   "votos": 289
+  },
+  {
+   "secao": "o03221rr0301800010824",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2497.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800010825",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3132.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800010826",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2880.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800010827",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2150.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0301800010828",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2623.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800010829",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2423.0,
+   "votos": 249
+  },
+  {
+   "secao": "o03221rr0301800010830",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2781.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800010831",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3244.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800010832",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 856.0,
+   "votos": 88
+  },
+  {
+   "secao": "o03221rr0301800010833",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1268.0,
+   "votos": 116
+  },
+  {
+   "secao": "o03221rr0301800010834",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2157.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800010835",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1759.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0301800010836",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2558.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800010837",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1239.0,
+   "votos": 109
+  },
+  {
+   "secao": "o03221rr0301800010838",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2437.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800010840",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2320.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800010841",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2445.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800010842",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2537.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800010843",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1187.0,
+   "votos": 110
+  },
+  {
+   "secao": "o03221rr0301800010844",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1105.0,
+   "votos": 108
+  },
+  {
+   "secao": "o03221rr0301800010852",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1334.0,
+   "votos": 121
+  },
+  {
+   "secao": "o03221rr0301800050001",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2673.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800050002",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2605.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050003",
+   "votos_abaixo_6s": 35,
+   "tempo_total_registrado": 2203.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800050004",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2204.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800050005",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2993.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800050006",
+   "votos_abaixo_6s": 45,
+   "tempo_total_registrado": 2049.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800050007",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2921.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050008",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2639.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050009",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2551.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800050010",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2947.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050011",
+   "votos_abaixo_6s": 32,
+   "tempo_total_registrado": 2158.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800050012",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2149.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800050013",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2410.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050014",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2156.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050015",
+   "votos_abaixo_6s": 27,
+   "tempo_total_registrado": 2154.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050024",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2540.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800050025",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2105.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800050032",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2256.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800050033",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2180.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800050034",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2202.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800050035",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2437.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800050036",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2648.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050037",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3113.0,
+   "votos": 258
+  },
+  {
+   "secao": "o03221rr0301800050038",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2422.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050039",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1525.0,
+   "votos": 140
+  },
+  {
+   "secao": "o03221rr0301800050040",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1859.0,
+   "votos": 150
+  },
+  {
+   "secao": "o03221rr0301800050043",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1848.0,
+   "votos": 181
+  },
+  {
+   "secao": "o03221rr0301800050044",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2322.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0301800050093",
+   "votos_abaixo_6s": 43,
+   "tempo_total_registrado": 2595.0,
+   "votos": 294
+  },
+  {
+   "secao": "o03221rr0301800050094",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2480.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800050101",
+   "votos_abaixo_6s": 22,
+   "tempo_total_registrado": 2433.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800050102",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2410.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050103",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2968.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800050104",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3040.0,
+   "votos": 261
+  },
+  {
+   "secao": "o03221rr0301800050105",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3367.0,
+   "votos": 257
+  },
+  {
+   "secao": "o03221rr0301800050108",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2889.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050109",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2566.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800050110",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2455.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800050111",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2685.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800050112",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2766.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800050118",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2699.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800050119",
+   "votos_abaixo_6s": 36,
+   "tempo_total_registrado": 2264.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800050120",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2232.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050121",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2755.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800050122",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2362.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800050123",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2561.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0301800050124",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2267.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800050125",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2070.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800050126",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2469.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800050127",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2250.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050128",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2202.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050129",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2117.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800050130",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2926.0,
+   "votos": 301
+  },
+  {
+   "secao": "o03221rr0301800050131",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 2281.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050132",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2615.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050133",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2118.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800050134",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2488.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050135",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2372.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050136",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2362.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800050140",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2767.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050141",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2567.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050142",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2744.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050143",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2158.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800050144",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2479.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050145",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2543.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050146",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2464.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050147",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2663.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050148",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2164.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050149",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2338.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050151",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2552.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050164",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2543.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050165",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 3611.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800050166",
+   "votos_abaixo_6s": 26,
+   "tempo_total_registrado": 2275.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800050167",
+   "votos_abaixo_6s": 80,
+   "tempo_total_registrado": 2006.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800050168",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2731.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800050169",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2760.0,
+   "votos": 273
+  },
+  {
+   "secao": "o03221rr0301800050170",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2925.0,
+   "votos": 277
+  },
+  {
+   "secao": "o03221rr0301800050171",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2817.0,
+   "votos": 271
+  },
+  {
+   "secao": "o03221rr0301800050172",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2322.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800050173",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2360.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050174",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2229.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050175",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2728.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050176",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2736.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050182",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2674.0,
+   "votos": 255
+  },
+  {
+   "secao": "o03221rr0301800050183",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2307.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050184",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2756.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050185",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 2266.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050188",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2363.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050189",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2906.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050190",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2603.0,
+   "votos": 248
+  },
+  {
+   "secao": "o03221rr0301800050191",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2551.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050192",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2521.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050193",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2923.0,
+   "votos": 268
+  },
+  {
+   "secao": "o03221rr0301800050210",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3207.0,
+   "votos": 273
+  },
+  {
+   "secao": "o03221rr0301800050212",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2347.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800050214",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 2235.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050216",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2128.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800050217",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2604.0,
+   "votos": 249
+  },
+  {
+   "secao": "o03221rr0301800050220",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2296.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800050222",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2548.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050225",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2549.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050228",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2767.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050232",
+   "votos_abaixo_6s": 34,
+   "tempo_total_registrado": 2600.0,
+   "votos": 272
+  },
+  {
+   "secao": "o03221rr0301800050233",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2282.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800050235",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2184.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050236",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2544.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800050240",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2316.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800050241",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2667.0,
+   "votos": 265
+  },
+  {
+   "secao": "o03221rr0301800050243",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2290.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800050244",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2071.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050245",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2523.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800050246",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2851.0,
+   "votos": 253
+  },
+  {
+   "secao": "o03221rr0301800050248",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2751.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800050249",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2636.0,
+   "votos": 249
+  },
+  {
+   "secao": "o03221rr0301800050250",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3037.0,
+   "votos": 270
+  },
+  {
+   "secao": "o03221rr0301800050252",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2361.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800050255",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2896.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050257",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2251.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800050258",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2616.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050260",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2529.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050262",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2175.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050265",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2376.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050266",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2368.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050267",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2462.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050270",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2735.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800050271",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2361.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800050274",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2553.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800050276",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2656.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800050279",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 627.0,
+   "votos": 61
+  },
+  {
+   "secao": "o03221rr0301800050280",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1729.0,
+   "votos": 131
+  },
+  {
+   "secao": "o03221rr0301800050282",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2399.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800050283",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2556.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800050284",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2083.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050285",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2247.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800050287",
+   "votos_abaixo_6s": 78,
+   "tempo_total_registrado": 1529.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050288",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 1959.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800050289",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2430.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050291",
+   "votos_abaixo_6s": 39,
+   "tempo_total_registrado": 1912.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800050293",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2215.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800050295",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2088.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050299",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2255.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050300",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2061.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050301",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2967.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050302",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2078.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050303",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1839.0,
+   "votos": 163
+  },
+  {
+   "secao": "o03221rr0301800050305",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2371.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800050309",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2486.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800050310",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2166.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800050311",
+   "votos_abaixo_6s": 35,
+   "tempo_total_registrado": 2045.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050312",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 1785.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0301800050313",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3000.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0301800050314",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2342.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050315",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 2073.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050316",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2325.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800050317",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2685.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050318",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2377.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050320",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2365.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050321",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2494.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050322",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2711.0,
+   "votos": 252
+  },
+  {
+   "secao": "o03221rr0301800050323",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2388.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0301800050325",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2054.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0301800050326",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2751.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050327",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2970.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050328",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2389.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050329",
+   "votos_abaixo_6s": 41,
+   "tempo_total_registrado": 2102.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050330",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1933.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800050331",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2448.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800050332",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2510.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050334",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2536.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050335",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2973.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800050336",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2368.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050337",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2423.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050338",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2474.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800050340",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2882.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050342",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3267.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800050343",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2351.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800050348",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 3202.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050350",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2427.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050352",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 3252.0,
+   "votos": 264
+  },
+  {
+   "secao": "o03221rr0301800050353",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2566.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800050354",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2535.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050355",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2295.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0301800050356",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2441.0,
+   "votos": 250
+  },
+  {
+   "secao": "o03221rr0301800050358",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2336.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050359",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2258.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050360",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2325.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050361",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2993.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050363",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2508.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800050364",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2751.0,
+   "votos": 265
+  },
+  {
+   "secao": "o03221rr0301800050366",
+   "votos_abaixo_6s": 46,
+   "tempo_total_registrado": 1858.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800050367",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2618.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050368",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2107.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800050369",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 3040.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800050372",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2482.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800050374",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2630.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0301800050375",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2760.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050378",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2460.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050379",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2457.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050380",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2606.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800050383",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2488.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050384",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2200.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800050385",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 3242.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050386",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2561.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050387",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2333.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800050389",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2372.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050390",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2527.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050391",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 2246.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050393",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2042.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800050394",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2896.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050395",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2896.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050396",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2724.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050397",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2284.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0301800050398",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2337.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050399",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2553.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050400",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2519.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050401",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2140.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050406",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2499.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050407",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2795.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800050408",
+   "votos_abaixo_6s": 39,
+   "tempo_total_registrado": 2004.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050409",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2755.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800050410",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2341.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800050412",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2360.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800050415",
+   "votos_abaixo_6s": 27,
+   "tempo_total_registrado": 2169.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050416",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 1803.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800050418",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2141.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050421",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1624.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0301800050422",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2022.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050424",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2278.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800050425",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2357.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0301800050426",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2520.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800050428",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1776.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0301800050429",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1971.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0301800050432",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2433.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800050433",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2518.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050434",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2109.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800050436",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2336.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800050437",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2314.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050438",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2268.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800050439",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2420.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050440",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2312.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0301800050441",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2523.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0301800050443",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2149.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050446",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2772.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800050448",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2538.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050449",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2657.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800050450",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2718.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800050452",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 1924.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800050453",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2548.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050456",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2258.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800050458",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1964.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0301800050460",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2087.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050461",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 1975.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800050463",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2599.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0301800050468",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2337.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050470",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3021.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0301800050472",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2128.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800050473",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2307.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800050474",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2447.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050475",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2174.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0301800050476",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2107.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800050477",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2234.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800050478",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2612.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800050479",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2714.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050480",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2636.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050609",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2615.0,
+   "votos": 245
+  },
+  {
+   "secao": "o03221rr0301800050610",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2140.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0301800050616",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2399.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050617",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 1668.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0301800050618",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2245.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0301800050621",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2530.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800050622",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2061.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800050623",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2443.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800050624",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2160.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050625",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2223.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050626",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 1849.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0301800050629",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2100.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800050630",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2479.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800050631",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2450.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050632",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2400.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800050638",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2536.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050639",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2593.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050640",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2679.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0301800050641",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2068.0,
+   "votos": 176
+  },
+  {
+   "secao": "o03221rr0301800050644",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2239.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800050645",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2724.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050647",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2557.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800050648",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2903.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050649",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2431.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0301800050650",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2630.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050651",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2481.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0301800050652",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2365.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050653",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2419.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0301800050654",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2764.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050655",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2505.0,
+   "votos": 246
+  },
+  {
+   "secao": "o03221rr0301800050657",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2296.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050658",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2590.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0301800050659",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2876.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050660",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2316.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050661",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 2332.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050662",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2560.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0301800050664",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1889.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0301800050666",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2267.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0301800050667",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2169.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0301800050671",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2301.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800050673",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2248.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800050674",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2402.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0301800050675",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 1907.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0301800050676",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1772.0,
+   "votos": 157
+  },
+  {
+   "secao": "o03221rr0301800050677",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2639.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0301800050678",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2211.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800050679",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2472.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050680",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2575.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0301800050684",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2535.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050685",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2038.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0301800050687",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2152.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800050688",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2146.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0301800050689",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1822.0,
+   "votos": 174
+  },
+  {
+   "secao": "o03221rr0301800050690",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1917.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0301800050693",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2383.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0301800050694",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2996.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050696",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2791.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050699",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2618.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0301800050702",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2601.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0301800050703",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2599.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050704",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2781.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0301800050706",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2490.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050712",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2940.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800050713",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2844.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0301800050714",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2755.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800050715",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2290.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800050719",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2486.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0301800050721",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1453.0,
+   "votos": 138
+  },
+  {
+   "secao": "o03221rr0301800050728",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1593.0,
+   "votos": 132
+  },
+  {
+   "secao": "o03221rr0301800050731",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1300.0,
+   "votos": 129
+  },
+  {
+   "secao": "o03221rr0301800050732",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 2502.0,
+   "votos": 249
+  },
+  {
+   "secao": "o03221rr0301800050735",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2564.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050736",
+   "votos_abaixo_6s": 39,
+   "tempo_total_registrado": 1682.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0301800050742",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2343.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0301800050748",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2383.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0301800050750",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2436.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0301800050751",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 2462.0,
+   "votos": 243
+  },
+  {
+   "secao": "o03221rr0301800050752",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2102.0,
+   "votos": 220
+  },
+  {
+   "secao": "o03221rr0301800050753",
+   "votos_abaixo_6s": 37,
+   "tempo_total_registrado": 2022.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800050754",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 2169.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050755",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2719.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800050756",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2401.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0301800050759",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1857.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0301800050760",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2873.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0301800050761",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1436.0,
+   "votos": 136
+  },
+  {
+   "secao": "o03221rr0301800050762",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2283.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0301800050763",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2633.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0301800050764",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2491.0,
+   "votos": 235
+  },
+  {
+   "secao": "o03221rr0301800050765",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 850.0,
+   "votos": 74
+  },
+  {
+   "secao": "o03221rr0301800050766",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2356.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0301800050767",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2765.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800050768",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2332.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0301800050771",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 673.0,
+   "votos": 54
+  },
+  {
+   "secao": "o03221rr0301800050774",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3278.0,
+   "votos": 264
+  },
+  {
+   "secao": "o03221rr0301800050775",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2067.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0301800050776",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2903.0,
+   "votos": 244
+  },
+  {
+   "secao": "o03221rr0301800050777",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2492.0,
+   "votos": 232
+  },
+  {
+   "secao": "o03221rr0301800050778",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2818.0,
+   "votos": 247
+  },
+  {
+   "secao": "o03221rr0301800050779",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2711.0,
+   "votos": 240
+  },
+  {
+   "secao": "o03221rr0301800050781",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3182.0,
+   "votos": 282
+  },
+  {
+   "secao": "o03221rr0301800050782",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2798.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0301800050783",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 3506.0,
+   "votos": 302
+  },
+  {
+   "secao": "o03221rr0301800050784",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2560.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0301800050785",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3050.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050786",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1688.0,
+   "votos": 134
+  },
+  {
+   "secao": "o03221rr0301800050787",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2699.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0301800050788",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3200.0,
+   "votos": 251
+  },
+  {
+   "secao": "o03221rr0301800050789",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 3346.0,
+   "votos": 303
+  },
+  {
+   "secao": "o03221rr0301800050790",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2994.0,
+   "votos": 241
+  },
+  {
+   "secao": "o03221rr0301800050792",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2252.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0301800050793",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2781.0,
+   "votos": 286
+  },
+  {
+   "secao": "o03221rr0301800050795",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1204.0,
+   "votos": 118
+  },
+  {
+   "secao": "o03221rr0301800050798",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 826.0,
+   "votos": 81
+  },
+  {
+   "secao": "o03221rr0301800050800",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1862.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0302600060001",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2692.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0302600060004",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2347.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0302600060006",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2057.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0302600060009",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2179.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0302600060010",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2080.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0302600060011",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1803.0,
+   "votos": 181
+  },
+  {
+   "secao": "o03221rr0302600060012",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2313.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0302600060013",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2014.0,
+   "votos": 176
+  },
+  {
+   "secao": "o03221rr0302600060015",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2163.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0302600060016",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1970.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0302600060017",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2919.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0302600060018",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2077.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0302600060019",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1961.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0302600060020",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1955.0,
+   "votos": 163
+  },
+  {
+   "secao": "o03221rr0302600060070",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1930.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0302600060072",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2162.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0302600060086",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1838.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0302600060087",
+   "votos_abaixo_6s": 17,
+   "tempo_total_registrado": 1562.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0302600060092",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 1248.0,
+   "votos": 141
+  },
+  {
+   "secao": "o03221rr0302600060095",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1565.0,
+   "votos": 163
+  },
+  {
+   "secao": "o03221rr0303400020001",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1837.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0303400020002",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2518.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0303400020003",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1998.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0303400020004",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1996.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0303400020005",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2570.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0303400020006",
+   "votos_abaixo_6s": 33,
+   "tempo_total_registrado": 1311.0,
+   "votos": 147
+  },
+  {
+   "secao": "o03221rr0303400020007",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2434.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0303400020009",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1650.0,
+   "votos": 141
+  },
+  {
+   "secao": "o03221rr0303400020010",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2006.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0303400020011",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1557.0,
+   "votos": 147
+  },
+  {
+   "secao": "o03221rr0303400020060",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2118.0,
+   "votos": 174
+  },
+  {
+   "secao": "o03221rr0303400020062",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1736.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0303400020063",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 1779.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0303400020069",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2368.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0303400020085",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2180.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0303400020088",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1972.0,
+   "votos": 149
+  },
+  {
+   "secao": "o03221rr0303400020089",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1837.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0303400020090",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1866.0,
+   "votos": 120
+  },
+  {
+   "secao": "o03221rr0303400020091",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2232.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0303400020092",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2388.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0303400020097",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1827.0,
+   "votos": 145
+  },
+  {
+   "secao": "o03221rr0303400020100",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2199.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0303400020104",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2067.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0303400020112",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1735.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0303400020115",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2358.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0303400020116",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1790.0,
+   "votos": 136
+  },
+  {
+   "secao": "o03221rr0303400020123",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2372.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0303400020125",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 1920.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0303400020126",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1915.0,
+   "votos": 136
+  },
+  {
+   "secao": "o03221rr0303400020127",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2447.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0303400020135",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 1795.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0303400020136",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1861.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0303400020137",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2052.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0303400020143",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1923.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0303400020156",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2547.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0303400020159",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1601.0,
+   "votos": 132
+  },
+  {
+   "secao": "o03221rr0303400020160",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1995.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0303400020166",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2167.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0303400020168",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1911.0,
+   "votos": 151
+  },
+  {
+   "secao": "o03221rr0303400020169",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1620.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0303400020170",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1845.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0303400020171",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1232.0,
+   "votos": 126
+  },
+  {
+   "secao": "o03221rr0303400020172",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1710.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0303400020173",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3527.0,
+   "votos": 276
+  },
+  {
+   "secao": "o03221rr0303400020174",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1842.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0303400020176",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2634.0,
+   "votos": 225
+  },
+  {
+   "secao": "o03221rr0303400020177",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2362.0,
+   "votos": 181
+  },
+  {
+   "secao": "o03221rr0303400020178",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2008.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0303400020179",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1602.0,
+   "votos": 144
+  },
+  {
+   "secao": "o03221rr0303400020180",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1593.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0303400020182",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1478.0,
+   "votos": 125
+  },
+  {
+   "secao": "o03221rr0303400020185",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1937.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0303400020186",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1697.0,
+   "votos": 137
+  },
+  {
+   "secao": "o03221rr0303400020187",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1937.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0303400020190",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2746.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0303400020191",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1675.0,
+   "votos": 121
+  },
+  {
+   "secao": "o03221rr0304200070024",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2603.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0304200070025",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2249.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0304200070027",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2155.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0304200070028",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2524.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0304200070029",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2438.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0304200070030",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 2076.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0304200070033",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1985.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0304200070034",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1988.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0304200070036",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2034.0,
+   "votos": 174
+  },
+  {
+   "secao": "o03221rr0304200070038",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1073.0,
+   "votos": 89
+  },
+  {
+   "secao": "o03221rr0304200070039",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1976.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0304200070041",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2309.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0304200070042",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2375.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0304200070043",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1744.0,
+   "votos": 158
+  },
+  {
+   "secao": "o03221rr0304200070044",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1997.0,
+   "votos": 157
+  },
+  {
+   "secao": "o03221rr0304200070045",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1374.0,
+   "votos": 131
+  },
+  {
+   "secao": "o03221rr0304200070067",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1841.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0304200070077",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1534.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0304200070078",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1863.0,
+   "votos": 150
+  },
+  {
+   "secao": "o03221rr0304200070079",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2280.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0304200070082",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1767.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0304200070086",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1651.0,
+   "votos": 150
+  },
+  {
+   "secao": "o03221rr0304200070094",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2280.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0304200070095",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1993.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0304200070097",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2161.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0304200070098",
+   "votos_abaixo_6s": 32,
+   "tempo_total_registrado": 2117.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0304200070099",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2138.0,
+   "votos": 163
+  },
+  {
+   "secao": "o03221rr0305000030012",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 2295.0,
+   "votos": 231
+  },
+  {
+   "secao": "o03221rr0305000030013",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2256.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0305000030014",
+   "votos_abaixo_6s": 18,
+   "tempo_total_registrado": 1920.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0305000030015",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2284.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0305000030016",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2835.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0305000030017",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2426.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0305000030018",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2597.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0305000030019",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2772.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0305000030020",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2709.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0305000030021",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2308.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0305000030023",
+   "votos_abaixo_6s": 43,
+   "tempo_total_registrado": 1542.0,
+   "votos": 188
+  },
+  {
+   "secao": "o03221rr0305000030024",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2069.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0305000030025",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2534.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0305000030029",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2265.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0305000030030",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2216.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0305000030031",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2252.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0305000030085",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2198.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0305000030094",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2254.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0305000030097",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2090.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0305000030121",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2307.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0305000030128",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2024.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0305000030129",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1721.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0305000030155",
+   "votos_abaixo_6s": 14,
+   "tempo_total_registrado": 2187.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0305000030157",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2387.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0305000030167",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 3111.0,
+   "votos": 260
+  },
+  {
+   "secao": "o03221rr0305000030169",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1938.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0305000030184",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2035.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0305000030193",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2431.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0305000030206",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2579.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0305000030208",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2193.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0305000030211",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2307.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0305000030224",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2012.0,
+   "votos": 174
+  },
+  {
+   "secao": "o03221rr0305000030226",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3506.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0305000030232",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2583.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0305000030236",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2155.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0305000030240",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 1382.0,
+   "votos": 138
+  },
+  {
+   "secao": "o03221rr0305000030241",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1882.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0305000030242",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1632.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0305000030243",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1533.0,
+   "votos": 164
+  },
+  {
+   "secao": "o03221rr0305000030244",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2520.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0305000030246",
+   "votos_abaixo_6s": 19,
+   "tempo_total_registrado": 1707.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0305000030248",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1970.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0305000030249",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2081.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0306900050482",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2013.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0306900050483",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2481.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0306900050484",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2391.0,
+   "votos": 188
+  },
+  {
+   "secao": "o03221rr0306900050486",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2346.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0306900050488",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2351.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0306900050489",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2623.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0306900050490",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1915.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0306900050492",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2263.0,
+   "votos": 188
+  },
+  {
+   "secao": "o03221rr0306900050493",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2512.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0306900050494",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2229.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0306900050495",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2277.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0306900050496",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1709.0,
+   "votos": 152
+  },
+  {
+   "secao": "o03221rr0306900050497",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2727.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0306900050498",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2910.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0306900050499",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1862.0,
+   "votos": 150
+  },
+  {
+   "secao": "o03221rr0306900050500",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1891.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0306900050501",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1812.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0306900050502",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1769.0,
+   "votos": 149
+  },
+  {
+   "secao": "o03221rr0306900050504",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3027.0,
+   "votos": 290
+  },
+  {
+   "secao": "o03221rr0306900050505",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2330.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0306900050506",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1932.0,
+   "votos": 166
+  },
+  {
+   "secao": "o03221rr0306900050507",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2836.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0306900050508",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2349.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0306900050509",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1234.0,
+   "votos": 109
+  },
+  {
+   "secao": "o03221rr0306900050510",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1252.0,
+   "votos": 99
+  },
+  {
+   "secao": "o03221rr0306900050511",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2437.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0306900050514",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2369.0,
+   "votos": 169
+  },
+  {
+   "secao": "o03221rr0306900050515",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2252.0,
+   "votos": 163
+  },
+  {
+   "secao": "o03221rr0306900050516",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1906.0,
+   "votos": 147
+  },
+  {
+   "secao": "o03221rr0306900050517",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2343.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0306900050518",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1651.0,
+   "votos": 143
+  },
+  {
+   "secao": "o03221rr0306900050519",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2040.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0306900050520",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1932.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0306900050521",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1808.0,
+   "votos": 123
+  },
+  {
+   "secao": "o03221rr0306900050523",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2756.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0306900050524",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2546.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0306900050525",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1657.0,
+   "votos": 124
+  },
+  {
+   "secao": "o03221rr0306900050527",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2704.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0306900050528",
+   "votos_abaixo_6s": 23,
+   "tempo_total_registrado": 2423.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0306900050530",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1948.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0306900050531",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2221.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0306900050534",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2237.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0306900050535",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1759.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0306900050605",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2218.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0306900050606",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2803.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0306900050607",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1439.0,
+   "votos": 107
+  },
+  {
+   "secao": "o03221rr0306900050608",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1594.0,
+   "votos": 132
+  },
+  {
+   "secao": "o03221rr0306900050620",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2708.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0306900050643",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1917.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0306900050663",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1337.0,
+   "votos": 94
+  },
+  {
+   "secao": "o03221rr0306900050672",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2634.0,
+   "votos": 236
+  },
+  {
+   "secao": "o03221rr0306900050686",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 1945.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0306900050708",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2049.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0306900050710",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2310.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0306900050718",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2262.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0306900050720",
+   "votos_abaixo_6s": 20,
+   "tempo_total_registrado": 2194.0,
+   "votos": 257
+  },
+  {
+   "secao": "o03221rr0306900050739",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1616.0,
+   "votos": 136
+  },
+  {
+   "secao": "o03221rr0306900050740",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1974.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0306900050741",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2094.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0306900050745",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1977.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0306900050791",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1814.0,
+   "votos": 141
+  },
+  {
+   "secao": "o03221rr0307700090002",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2448.0,
+   "votos": 216
+  },
+  {
+   "secao": "o03221rr0307700090003",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2417.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0307700090004",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3272.0,
+   "votos": 254
+  },
+  {
+   "secao": "o03221rr0307700090005",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2313.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0307700090006",
+   "votos_abaixo_6s": 39,
+   "tempo_total_registrado": 1653.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0307700090007",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2516.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0307700090008",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2322.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0307700090010",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2480.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0307700090011",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2416.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0307700090012",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2051.0,
+   "votos": 181
+  },
+  {
+   "secao": "o03221rr0307700090014",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2184.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0307700090017",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1709.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0307700090018",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1921.0,
+   "votos": 155
+  },
+  {
+   "secao": "o03221rr0307700090020",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1955.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0307700090021",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1605.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0307700090022",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1791.0,
+   "votos": 158
+  },
+  {
+   "secao": "o03221rr0307700090023",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1767.0,
+   "votos": 154
+  },
+  {
+   "secao": "o03221rr0307700090026",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2897.0,
+   "votos": 242
+  },
+  {
+   "secao": "o03221rr0307700090027",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2178.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0307700090030",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2528.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0307700090031",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2417.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0307700090032",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2436.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0307700090033",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1844.0,
+   "votos": 166
+  },
+  {
+   "secao": "o03221rr0307700090034",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1831.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0307700090035",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2180.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0307700090037",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2328.0,
+   "votos": 204
+  },
+  {
+   "secao": "o03221rr0307700090038",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2719.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0307700090039",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2306.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0307700090040",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2195.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0307700090041",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2539.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0307700090042",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2235.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0307700090044",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2414.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0307700090045",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2076.0,
+   "votos": 166
+  },
+  {
+   "secao": "o03221rr0307700090046",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2487.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0307700090050",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2085.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0308500080001",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2738.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0308500080002",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2998.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0308500080003",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2120.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0308500080004",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2495.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0308500080005",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1998.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0308500080006",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2114.0,
+   "votos": 161
+  },
+  {
+   "secao": "o03221rr0308500080007",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1802.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0308500080008",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2352.0,
+   "votos": 151
+  },
+  {
+   "secao": "o03221rr0308500080009",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2428.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0308500080010",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 1872.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0308500080011",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2486.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0308500080012",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2168.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0308500080013",
+   "votos_abaixo_6s": 34,
+   "tempo_total_registrado": 1612.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0308500080014",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2526.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0308500080015",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2604.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0308500080016",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2593.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0308500080017",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2280.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0308500080018",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2128.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0308500080019",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2032.0,
+   "votos": 188
+  },
+  {
+   "secao": "o03221rr0308500080020",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2145.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0308500080022",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2485.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0308500080023",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2256.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0308500080024",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1759.0,
+   "votos": 143
+  },
+  {
+   "secao": "o03221rr0308500080027",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1713.0,
+   "votos": 130
+  },
+  {
+   "secao": "o03221rr0308500080029",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1557.0,
+   "votos": 115
+  },
+  {
+   "secao": "o03221rr0308500080030",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1518.0,
+   "votos": 136
+  },
+  {
+   "secao": "o03221rr0308500080032",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2525.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0308500080033",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2572.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0308500080034",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2241.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0308500080035",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2168.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0308500080036",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2444.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0308500080037",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2425.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0308500080038",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2362.0,
+   "votos": 180
+  },
+  {
+   "secao": "o03221rr0308500080039",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1945.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0308500080040",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2066.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0308500080041",
+   "votos_abaixo_6s": 25,
+   "tempo_total_registrado": 1750.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0308500080042",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2390.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0308500080043",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2655.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0308500080044",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2213.0,
+   "votos": 215
+  },
+  {
+   "secao": "o03221rr0308500080045",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2375.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0308500080046",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2701.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0308500080047",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1864.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0308500080048",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1774.0,
+   "votos": 149
+  },
+  {
+   "secao": "o03221rr0308500080049",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2110.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0308500080050",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1585.0,
+   "votos": 149
+  },
+  {
+   "secao": "o03221rr0308500080051",
+   "votos_abaixo_6s": 35,
+   "tempo_total_registrado": 1488.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0308500080052",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1988.0,
+   "votos": 154
+  },
+  {
+   "secao": "o03221rr0308500080054",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2121.0,
+   "votos": 188
+  },
+  {
+   "secao": "o03221rr0308500080056",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1858.0,
+   "votos": 141
+  },
+  {
+   "secao": "o03221rr0308500080057",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2551.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0308500080059",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 2248.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0308500080060",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1985.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0308500080061",
+   "votos_abaixo_6s": 31,
+   "tempo_total_registrado": 1743.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0308500080062",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 3119.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0308500080063",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2318.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0308500080065",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2291.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0308500080066",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2038.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0308500080067",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1761.0,
+   "votos": 162
+  },
+  {
+   "secao": "o03221rr0308500080068",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1890.0,
+   "votos": 149
+  },
+  {
+   "secao": "o03221rr0308500080069",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2466.0,
+   "votos": 226
+  },
+  {
+   "secao": "o03221rr0308500080070",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2035.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0308500080071",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 1958.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0308500080073",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1979.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0308500080074",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1400.0,
+   "votos": 155
+  },
+  {
+   "secao": "o03221rr0308500080075",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2089.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0308500080076",
+   "votos_abaixo_6s": 24,
+   "tempo_total_registrado": 1525.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0308500080077",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2419.0,
+   "votos": 208
+  },
+  {
+   "secao": "o03221rr0308500080078",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1862.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0308500080079",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1603.0,
+   "votos": 149
+  },
+  {
+   "secao": "o03221rr0308500080080",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1876.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0308500080081",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1779.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0308500080082",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2296.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0308500080083",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1965.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0308500080084",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 1797.0,
+   "votos": 171
+  },
+  {
+   "secao": "o03221rr0308500080085",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1727.0,
+   "votos": 169
+  },
+  {
+   "secao": "o03221rr0308500080086",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1660.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0308500080087",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1972.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0308500080088",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1635.0,
+   "votos": 162
+  },
+  {
+   "secao": "o03221rr0308500080089",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2006.0,
+   "votos": 162
+  },
+  {
+   "secao": "o03221rr0308500080090",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1507.0,
+   "votos": 128
+  },
+  {
+   "secao": "o03221rr0308500080091",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1793.0,
+   "votos": 169
+  },
+  {
+   "secao": "o03221rr0308500080092",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2518.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0308500080093",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2615.0,
+   "votos": 218
+  },
+  {
+   "secao": "o03221rr0308500080094",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 540.0,
+   "votos": 56
+  },
+  {
+   "secao": "o03221rr0308500080095",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2293.0,
+   "votos": 221
+  },
+  {
+   "secao": "o03221rr0308500080096",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 753.0,
+   "votos": 58
+  },
+  {
+   "secao": "o03221rr0308500080097",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1178.0,
+   "votos": 110
+  },
+  {
+   "secao": "o03221rr0308500080099",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 307.0,
+   "votos": 29
+  },
+  {
+   "secao": "o03221rr0309300060021",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2532.0,
+   "votos": 217
+  },
+  {
+   "secao": "o03221rr0309300060022",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2935.0,
+   "votos": 223
+  },
+  {
+   "secao": "o03221rr0309300060023",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2544.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0309300060024",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2255.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0309300060025",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2466.0,
+   "votos": 164
+  },
+  {
+   "secao": "o03221rr0309300060030",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2085.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0309300060031",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2036.0,
+   "votos": 167
+  },
+  {
+   "secao": "o03221rr0309300060032",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2180.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0309300060033",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2280.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0309300060035",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 2035.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0309300060037",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2245.0,
+   "votos": 176
+  },
+  {
+   "secao": "o03221rr0309300060038",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2261.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0309300060040",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1961.0,
+   "votos": 179
+  },
+  {
+   "secao": "o03221rr0309300060041",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2320.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0309300060042",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2554.0,
+   "votos": 210
+  },
+  {
+   "secao": "o03221rr0309300060043",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2452.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0309300060044",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2070.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0309300060045",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2081.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0309300060046",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1896.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0309300060047",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1778.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0309300060048",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1643.0,
+   "votos": 143
+  },
+  {
+   "secao": "o03221rr0309300060049",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1954.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0309300060050",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1754.0,
+   "votos": 140
+  },
+  {
+   "secao": "o03221rr0309300060051",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1985.0,
+   "votos": 150
+  },
+  {
+   "secao": "o03221rr0309300060052",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1808.0,
+   "votos": 150
+  },
+  {
+   "secao": "o03221rr0309300060053",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2748.0,
+   "votos": 222
+  },
+  {
+   "secao": "o03221rr0309300060054",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2956.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0309300060055",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2751.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0309300060059",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1294.0,
+   "votos": 109
+  },
+  {
+   "secao": "o03221rr0309300060061",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2118.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0309300060062",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2402.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0309300060063",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2219.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0309300060066",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2911.0,
+   "votos": 207
+  },
+  {
+   "secao": "o03221rr0309300060067",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2224.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0309300060068",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1676.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0309300060069",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1850.0,
+   "votos": 175
+  },
+  {
+   "secao": "o03221rr0309300060071",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1680.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0309300060074",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 1984.0,
+   "votos": 197
+  },
+  {
+   "secao": "o03221rr0309300060076",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2490.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0309300060078",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2149.0,
+   "votos": 143
+  },
+  {
+   "secao": "o03221rr0309300060080",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 993.0,
+   "votos": 97
+  },
+  {
+   "secao": "o03221rr0309300060081",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1509.0,
+   "votos": 124
+  },
+  {
+   "secao": "o03221rr0309300060082",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2064.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0309300060083",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1821.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0309300060084",
+   "votos_abaixo_6s": 21,
+   "tempo_total_registrado": 2168.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0309300060088",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1964.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0309300060089",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1834.0,
+   "votos": 151
+  },
+  {
+   "secao": "o03221rr0309300060090",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1895.0,
+   "votos": 147
+  },
+  {
+   "secao": "o03221rr0309300060094",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 1997.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0309300060096",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1413.0,
+   "votos": 133
+  },
+  {
+   "secao": "o03221rr0309300060098",
+   "votos_abaixo_6s": 12,
+   "tempo_total_registrado": 1803.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0309300060101",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3027.0,
+   "votos": 201
+  },
+  {
+   "secao": "o03221rr0309300060102",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1290.0,
+   "votos": 116
+  },
+  {
+   "secao": "o03221rr0310700070047",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2745.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0310700070048",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2561.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0310700070050",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3078.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0310700070051",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3027.0,
+   "votos": 229
+  },
+  {
+   "secao": "o03221rr0310700070052",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3115.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0310700070054",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 1857.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0310700070056",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3702.0,
+   "votos": 320
+  },
+  {
+   "secao": "o03221rr0310700070061",
+   "votos_abaixo_6s": 10,
+   "tempo_total_registrado": 1786.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0310700070063",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3293.0,
+   "votos": 256
+  },
+  {
+   "secao": "o03221rr0310700070066",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2620.0,
+   "votos": 234
+  },
+  {
+   "secao": "o03221rr0310700070068",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3015.0,
+   "votos": 282
+  },
+  {
+   "secao": "o03221rr0310700070072",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2794.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0310700070091",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1874.0,
+   "votos": 155
+  },
+  {
+   "secao": "o03221rr0310700070100",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2802.0,
+   "votos": 237
+  },
+  {
+   "secao": "o03221rr0310700070101",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2342.0,
+   "votos": 202
+  },
+  {
+   "secao": "o03221rr0310700070102",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2032.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0310700070105",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3079.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0310700070106",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2512.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0310700070108",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1460.0,
+   "votos": 128
+  },
+  {
+   "secao": "o03221rr0310700070109",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3004.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0310700070111",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 3707.0,
+   "votos": 335
+  },
+  {
+   "secao": "o03221rr0310700070113",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2525.0,
+   "votos": 192
+  },
+  {
+   "secao": "o03221rr0310700070114",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2757.0,
+   "votos": 262
+  },
+  {
+   "secao": "o03221rr0310700070123",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2106.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0311500090054",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2798.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0311500090055",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2388.0,
+   "votos": 195
+  },
+  {
+   "secao": "o03221rr0311500090056",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2349.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0311500090057",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2507.0,
+   "votos": 199
+  },
+  {
+   "secao": "o03221rr0311500090058",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1730.0,
+   "votos": 155
+  },
+  {
+   "secao": "o03221rr0311500090059",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2484.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0311500090060",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2654.0,
+   "votos": 233
+  },
+  {
+   "secao": "o03221rr0311500090062",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2516.0,
+   "votos": 219
+  },
+  {
+   "secao": "o03221rr0311500090064",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 2141.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0311500090065",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2369.0,
+   "votos": 224
+  },
+  {
+   "secao": "o03221rr0311500090067",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2335.0,
+   "votos": 209
+  },
+  {
+   "secao": "o03221rr0311500090068",
+   "votos_abaixo_6s": 32,
+   "tempo_total_registrado": 1726.0,
+   "votos": 203
+  },
+  {
+   "secao": "o03221rr0311500090069",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2612.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0311500090071",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2259.0,
+   "votos": 178
+  },
+  {
+   "secao": "o03221rr0311500090072",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2968.0,
+   "votos": 227
+  },
+  {
+   "secao": "o03221rr0311500090073",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2079.0,
+   "votos": 196
+  },
+  {
+   "secao": "o03221rr0311500090077",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 263.0,
+   "votos": 26
+  },
+  {
+   "secao": "o03221rr0311500090078",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2000.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0311500090079",
+   "votos_abaixo_6s": 15,
+   "tempo_total_registrado": 1571.0,
+   "votos": 160
+  },
+  {
+   "secao": "o03221rr0311500090080",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2431.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0311500090081",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2182.0,
+   "votos": 176
+  },
+  {
+   "secao": "o03221rr0311500090083",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 1864.0,
+   "votos": 145
+  },
+  {
+   "secao": "o03221rr0311500090084",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2902.0,
+   "votos": 230
+  },
+  {
+   "secao": "o03221rr0311500090085",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2645.0,
+   "votos": 213
+  },
+  {
+   "secao": "o03221rr0311500090086",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2874.0,
+   "votos": 211
+  },
+  {
+   "secao": "o03221rr0311500090088",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1031.0,
+   "votos": 79
+  },
+  {
+   "secao": "o03221rr0311500090094",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2323.0,
+   "votos": 156
+  },
+  {
+   "secao": "o03221rr0311500090096",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2126.0,
+   "votos": 154
+  },
+  {
+   "secao": "o03221rr0311500090098",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 912.0,
+   "votos": 75
+  },
+  {
+   "secao": "o03221rr0312300070001",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2301.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0312300070003",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2740.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0312300070005",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2190.0,
+   "votos": 194
+  },
+  {
+   "secao": "o03221rr0312300070007",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 1985.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0312300070008",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2413.0,
+   "votos": 193
+  },
+  {
+   "secao": "o03221rr0312300070009",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2097.0,
+   "votos": 187
+  },
+  {
+   "secao": "o03221rr0312300070010",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2924.0,
+   "votos": 205
+  },
+  {
+   "secao": "o03221rr0312300070011",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2335.0,
+   "votos": 212
+  },
+  {
+   "secao": "o03221rr0312300070012",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 3284.0,
+   "votos": 267
+  },
+  {
+   "secao": "o03221rr0312300070015",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2376.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0312300070016",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 2274.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0312300070017",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2394.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0312300070018",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2058.0,
+   "votos": 174
+  },
+  {
+   "secao": "o03221rr0312300070019",
+   "votos_abaixo_6s": 9,
+   "tempo_total_registrado": 1931.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0312300070020",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1558.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0312300070021",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1693.0,
+   "votos": 123
+  },
+  {
+   "secao": "o03221rr0312300070022",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1633.0,
+   "votos": 130
+  },
+  {
+   "secao": "o03221rr0312300070065",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2179.0,
+   "votos": 182
+  },
+  {
+   "secao": "o03221rr0312300070070",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1501.0,
+   "votos": 126
+  },
+  {
+   "secao": "o03221rr0312300070071",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1526.0,
+   "votos": 116
+  },
+  {
+   "secao": "o03221rr0312300070074",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2118.0,
+   "votos": 177
+  },
+  {
+   "secao": "o03221rr0312300070075",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1350.0,
+   "votos": 117
+  },
+  {
+   "secao": "o03221rr0312300070080",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 1499.0,
+   "votos": 130
+  },
+  {
+   "secao": "o03221rr0312300070087",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2324.0,
+   "votos": 206
+  },
+  {
+   "secao": "o03221rr0312300070090",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2132.0,
+   "votos": 153
+  },
+  {
+   "secao": "o03221rr0312300070092",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1654.0,
+   "votos": 131
+  },
+  {
+   "secao": "o03221rr0312300070093",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1561.0,
+   "votos": 135
+  },
+  {
+   "secao": "o03221rr0312300070107",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2176.0,
+   "votos": 158
+  },
+  {
+   "secao": "o03221rr0312300070118",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2128.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0312300070119",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1354.0,
+   "votos": 114
+  },
+  {
+   "secao": "o03221rr0313100040002",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2066.0,
+   "votos": 154
+  },
+  {
+   "secao": "o03221rr0313100040004",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2273.0,
+   "votos": 185
+  },
+  {
+   "secao": "o03221rr0313100040005",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2297.0,
+   "votos": 162
+  },
+  {
+   "secao": "o03221rr0313100040006",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2421.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0313100040007",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2307.0,
+   "votos": 184
+  },
+  {
+   "secao": "o03221rr0313100040008",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2500.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0313100040009",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2278.0,
+   "votos": 181
+  },
+  {
+   "secao": "o03221rr0313100040010",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2303.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0313100040061",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 3086.0,
+   "votos": 261
+  },
+  {
+   "secao": "o03221rr0313100040072",
+   "votos_abaixo_6s": 7,
+   "tempo_total_registrado": 2665.0,
+   "votos": 228
+  },
+  {
+   "secao": "o03221rr0313100040079",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2197.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0313100040080",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2921.0,
+   "votos": 238
+  },
+  {
+   "secao": "o03221rr0313100040091",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1864.0,
+   "votos": 172
+  },
+  {
+   "secao": "o03221rr0313100040101",
+   "votos_abaixo_6s": 11,
+   "tempo_total_registrado": 1673.0,
+   "votos": 170
+  },
+  {
+   "secao": "o03221rr0313100040110",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 2024.0,
+   "votos": 165
+  },
+  {
+   "secao": "o03221rr0313100040112",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1634.0,
+   "votos": 136
+  },
+  {
+   "secao": "o03221rr0313100040122",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1816.0,
+   "votos": 152
+  },
+  {
+   "secao": "o03221rr0313100040129",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1674.0,
+   "votos": 143
+  },
+  {
+   "secao": "o03221rr0313100040140",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2486.0,
+   "votos": 198
+  },
+  {
+   "secao": "o03221rr0315800040021",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2366.0,
+   "votos": 183
+  },
+  {
+   "secao": "o03221rr0315800040022",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2074.0,
+   "votos": 189
+  },
+  {
+   "secao": "o03221rr0315800040024",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1884.0,
+   "votos": 174
+  },
+  {
+   "secao": "o03221rr0315800040025",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1956.0,
+   "votos": 166
+  },
+  {
+   "secao": "o03221rr0315800040026",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 2121.0,
+   "votos": 159
+  },
+  {
+   "secao": "o03221rr0315800040028",
+   "votos_abaixo_6s": 16,
+   "tempo_total_registrado": 2688.0,
+   "votos": 239
+  },
+  {
+   "secao": "o03221rr0315800040029",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2016.0,
+   "votos": 173
+  },
+  {
+   "secao": "o03221rr0315800040038",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1989.0,
+   "votos": 148
+  },
+  {
+   "secao": "o03221rr0315800040039",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1838.0,
+   "votos": 142
+  },
+  {
+   "secao": "o03221rr0315800040051",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 1672.0,
+   "votos": 168
+  },
+  {
+   "secao": "o03221rr0315800040052",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1864.0,
+   "votos": 146
+  },
+  {
+   "secao": "o03221rr0315800040056",
+   "votos_abaixo_6s": 8,
+   "tempo_total_registrado": 2315.0,
+   "votos": 214
+  },
+  {
+   "secao": "o03221rr0315800040073",
+   "votos_abaixo_6s": 6,
+   "tempo_total_registrado": 2307.0,
+   "votos": 200
+  },
+  {
+   "secao": "o03221rr0315800040083",
+   "votos_abaixo_6s": 5,
+   "tempo_total_registrado": 2056.0,
+   "votos": 186
+  },
+  {
+   "secao": "o03221rr0315800040087",
+   "votos_abaixo_6s": 3,
+   "tempo_total_registrado": 1591.0,
+   "votos": 137
+  },
+  {
+   "secao": "o03221rr0315800040090",
+   "votos_abaixo_6s": 13,
+   "tempo_total_registrado": 1445.0,
+   "votos": 151
+  },
+  {
+   "secao": "o03221rr0315800040094",
+   "votos_abaixo_6s": 2,
+   "tempo_total_registrado": 1988.0,
+   "votos": 191
+  },
+  {
+   "secao": "o03221rr0315800040124",
+   "votos_abaixo_6s": 4,
+   "tempo_total_registrado": 2192.0,
+   "votos": 190
+  },
+  {
+   "secao": "o03221rr0315800040127",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 2127.0,
+   "votos": 166
+  },
+  {
+   "secao": "o03221rr0315800040128",
+   "votos_abaixo_6s": 1,
+   "tempo_total_registrado": 1536.0,
+   "votos": 133
+  }
+ ],
+ "detalhes_sanduiche": [],
+ "sanduiche_observacao": "NAO MENSURAVEL: o RDV agrupa os votos por candidato (todos os 13, depois todos os 22), sem preservar a ordem cronologica. A sequencia Lula->Flavio->Lula nao pode ser reconstruida a partir dos arquivos oficiais."
+}
