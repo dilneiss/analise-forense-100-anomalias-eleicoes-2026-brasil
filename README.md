@@ -5,7 +5,7 @@
 [![Security](https://img.shields.io/badge/Security-Read--Only-emerald.svg)](#1-princípios-de-segurança-e-custódia-forense)
 [![Auditoria Nacional](https://img.shields.io/badge/Auditoria-499.178%20Urnas%20(100%25%20Brasil)-purple.svg)](#6-dossiê-pericial-e-análise-de-ia-houve-fraude-sim-ou-não)
 [![124 Regras](https://img.shields.io/badge/regras%20forenses-124%20verificações-orange.svg)](#5-catálogo-dos-124-detectores-automatizados)
-[![Apresentação](https://img.shields.io/badge/Apresentação-25%20Capítulos%20(Slides%20%2B%20Voz)-blue.svg)](#8-apresentação-executiva-em-slides-e-teleprompter-interativo-25-capítulos)
+[![Apresentação](https://img.shields.io/badge/Apresentação-27%20Capítulos%20(Slides%20%2B%20Voz)-blue.svg)](#8-apresentações-em-slides-e-teleprompter-interativo)
 [![Relatório Nacional](https://img.shields.io/badge/relatório-100%25%20Brasil%20(Mapa%20Interativo)-blue.svg)](#7-painel-interativo-html-nacional-e-mapa-do-brasil)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -1332,9 +1332,27 @@ O arquivo **`comparison_nacional_brasil/national_report.html`** traz a central d
 
 ---
 
-## 8. Apresentação Executiva em Slides e Teleprompter Interativo (25 Capítulos)
+## 8. Apresentações em Slides e Teleprompter Interativo
 
-A suíte inclui uma aplicação web completa e autônoma para apresentação pública, palestras e gravação de vídeos executivos: **`apresentacao_slides.html`** (e sua cópia idêntica em `comparison_nacional_brasil/apresentacao_slides.html`).
+O repositório disponibiliza **duas versões** completas e autônomas da apresentação em HTML5/CSS3/JavaScript puro (Single File), sem necessidade de servidores ou dependências externas:
+
+1. **`apresentacao_executiva_10min.html` (NOVA &bull; Síntese Executiva em Menos de 10 Minutos):**
+   - **8 Capítulos Executivos:** Condensa e resume todos os 25 capítulos originais exclusivamente nos achados periciais mais graves e decisivos;
+   - **Duração Total Estimada:** ~9 minutos e 40 segundos, ideal para vídeos curtos, reuniões executivas e postagens virais;
+   - **Conteúdo Focado:** Placar reconstruído (Jair 51,05% / Flávio 51,20%), evolução do vício (2018 controle x 2022 hardware x 2026 mesa), a quebra da regra demográfica de 37 anos (+2,96M novos votantes), a equação matemática do Nordeste (4,68M viciados > 4,40M margem), os logs da cabine (esteira de 4s e alerta CHK125) e as 5.718 trocas de urna do CEFT com Efeito Espelho.
+   - *(Cópia sincronizada em `comparison_nacional_brasil/apresentacao_executiva_10min.html`)*.
+
+2. **`apresentacao_slides.html` (Dossiê Pericial Completo &bull; 27 Capítulos):**
+   - **27 Capítulos Oficiais:** Dossiê exaustivo cobrindo todos os aspectos técnicos, estatísticos, jurídicos e operacionais da tríade 2018, 2022 e 2026.
+   - *(Cópia sincronizada em `comparison_nacional_brasil/apresentacao_slides.html`)*.
+
+```bash
+# Como abrir a Apresentação Executiva (10 minutos):
+start apresentacao_executiva_10min.html
+
+# Como abrir o Dossiê Completo (25 capítulos):
+start apresentacao_slides.html
+```
 
 A aplicação foi desenvolvida em **HTML5/CSS3/JavaScript puro (Single File)**, sem necessidade de servidores, Node.js ou bibliotecas externas, abrindo instantaneamente em qualquer navegador moderno.
 
@@ -1367,7 +1385,7 @@ start apresentacao_slides.html
 
 ---
 
-### 8.3 Guia Rápido dos 25 Capítulos da Apresentação
+### 8.3 Guia Rápido dos 27 Capítulos da Apresentação
 
 | Capítulo | Título Oficial | Fato Central Comprovado nos Dados |
 |:---:|---|---|
@@ -1377,25 +1395,27 @@ start apresentacao_slides.html
 | **#04** | **Desmontando Mitos (Parte 2): Hackers e Satélites** | Urnas são *air-gapped*; software é o oficial lacrado; o vício foi na mesa humana. |
 | **#05** | **O Enigma das Reações Humanas** | A surpresa da derrota de Lula no 1T (+2,4M pró-Flávio) e a inquietação no 2T. |
 | **#06** | **A Cortina de Fumaça e o Golpe do Transporte** | Ônibus retidos em Salvador/BA (Z13 S303) e 4,68M de votos viciados no Nordeste. |
-| **#07** | **Ponto de Partida e Margens (2018 a 2026)** | Da folga de +10,75M em 2018 para as margens estreitas e atípicas de 2022 e 2026. |
-| **#08** | **O Confronto Histórico do Comparecimento** | Em 37 anos de eleições (1989 a 2018), comparecimento SEMPRE caiu no 2T; o salto de +2,96M em 2026 é inédito. |
-| **#09** | **A Falácia da Terceira Via: Herança Antipetista** | Votações de Alckmin, Tebet, Cury, Renan e Caiado: a divisão de 2018 (60/40) dá vitória a Flávio. |
-| **#10** | **O Enigma do Voto Desconectado (Legislativo)** | Por que o PL venceu no 1T (5 cargos e exército de fiscais) e como 10,8M sem biometria foram para Lula no 2T. |
-| **#11** | **O que é uma Urna Anômala vs Urna Limpa?** | Critérios científicos objetivos: esteiras < 10s, mesário dominante e trocas CEFT. |
-| **#12** | **A Anatomia do Vício nos Três Pleitos** | Linha do tempo: do parque homogêneo de 2018 para o hardware viciado de 2022 e mesa em 2026. |
-| **#13** | **Flagrantes Reais • Parte 1: Identidade e Território** | 78 digitais de mesário em Vitor Meireles/SC, 106 urnas de voto zero e 114 cidades infladas. |
-| **#14** | **Flagrantes Reais • Parte 2: Mesários e Hardware** | 14 mil seções com mesário único, 485 mil votos no almoço e 19.159 seções com queda anômala. |
-| **#15** | **A Cadência Temporal dos Logs (Esteiras)** | 1,42 milhão de votos em 4 a 6s no logd.dat e rajadas sequenciais em salas desertas. |
-| **#16** | **A Tabela Mestra das Fraudes: 2018 vs 2022 vs 2026** | Síntese de 10 mecanismos: 15,88M sem biometria e 116.480 novos eleitores ilegais no 2T. |
-| **#17** | **A Retaguarda Oficial nos Cartórios (CEFT/GEDAI)** | 5.718 urnas trocadas em campo com Efeito Espelho transferindo +454k votos para Lula. |
-| **#18** | **O Grupo de Controle Científico: Eleições 2018** | Pleito 229 com 454k BUs limpos, trocas < 0,38% e Bolsonaro 55,13% (padrão de normalidade). |
-| **#19** | **Série Histórica Pré-Urna Eletrônica (1950 a 1998)** | Auditoria no CDN do TSE: apenas 1989 e 1960 são íntegros; 1994 e 1998 estão truncados. |
-| **#20** | **Cédula de Papel vs Urna Eletrônica (1960 a 2026)** | 66 anos de democracia: a fraude migrou da contagem manual para a liberação de mesário. |
-| **#21** | **O Estado-Termômetro: Minas Gerais (2022 vs 2026)** | 100% histórico: Bolsonaro venceu MG nas UE2020 (+21k) e Flávio venceu no voto limpo (+83k). |
-| **#22** | **O Fator de Hardware: Urnas UE2020 vs Pré-2020** | Analogia do videogame (PS4 vs PS5): Bolsonaro venceu em 100% das 27 UFs nas urnas novas. |
-| **#23** | **O Placar Reconstruído dos Três Pleitos** | A tríade conservadora: Bolsonaro 55,13% (2018), 51,05% (2022) e Flávio 51,20% (2026). |
-| **#24** | **O Parecer Pericial Final: A Eleição Deve Ser Anulada?** | Nulidade cogente: os vícios superam a margem em 2,0x (2022) e 3,6x (2026) pelos Arts. 219 e 222 do CE. |
-| **#25** | **Conclusão e Auditoria Aberta: Dilnei S. Spancerski** | Apelo de compartilhamento cívico, repositório aberto e compromisso inegociável com a verdade. |
+| **#07** | **O Paradoxo do Transporte & Salto de Comparecimento** | Cidades com frotas retidas em 2026 tiveram salto de comparecimento (+4% a +6%) vs queda regular em 2018 (-2% a -3%). |
+| **#08** | **Ponto de Partida e Margens (2018 a 2026)** | Da folga de +10,75M em 2018 para as margens estreitas e atípicas de 2022 e 2026. |
+| **#09** | **O Confronto Histórico do Comparecimento** | Em 37 anos de eleições (1989 a 2018), comparecimento SEMPRE caiu no 2T; o salto de +2,96M em 2026 é inédito. |
+| **#10** | **A Falácia da Terceira Via: Herança Antipetista** | Votações de Alckmin, Tebet, Cury, Renan e Caiado: a divisão de 2018 (60/40) dá vitória a Flávio. |
+| **#11** | **O Enigma do Voto Desconectado (Legislativo)** | Por que o PL venceu no 1T (5 cargos e exército de fiscais) e como 10,8M sem biometria foram para Lula no 2T. |
+| **#12** | **O que é uma Urna Anômala vs Urna Limpa?** | Critérios científicos objetivos: esteiras < 10s, mesário dominante e trocas CEFT. |
+| **#13** | **A Anatomia do Vício nos Três Pleitos** | Linha do tempo: do parque homogêneo de 2018 para o hardware viciado de 2022 e mesa em 2026. |
+| **#14** | **Flagrantes Reais • Parte 1: Identidade e Território** | 78 digitais de mesário em Vitor Meireles/SC, 106 urnas de voto zero e 114 cidades infladas. |
+| **#15** | **Flagrantes Reais • Parte 2: Mesários e Hardware** | 14 mil seções com mesário único, 485 mil votos no almoço e 19.159 seções com queda anômala. |
+| **#16** | **A Cadência Temporal dos Logs (Esteiras)** | 1,42 milhão de votos em 4 a 6s no logd.dat e rajadas sequenciais em salas desertas. |
+| **#17** | **A Física dos Intervalos (3s a 10s), Biometria e Rajadas** | Decomposição de 1,42M de votos segundo a segundo: 89% sem biometria em 3s, rajadas de 8 votos e o controle de Braço do Norte/SC (zero votos < 10s). |
+| **#18** | **A Tabela Mestra das Fraudes: 2018 vs 2022 vs 2026** | Síntese de 10 mecanismos: 15,88M sem biometria e 116.480 novos eleitores ilegais no 2T. |
+| **#19** | **A Retaguarda Oficial nos Cartórios (CEFT/GEDAI)** | 5.718 urnas trocadas em campo com Efeito Espelho transferindo +454k votos para Lula. |
+| **#20** | **O Grupo de Controle Científico: Eleições 2018** | Pleito 229 com 454k BUs limpos, trocas < 0,38% e Bolsonaro 55,13% (padrão de normalidade). |
+| **#21** | **Série Histórica Pré-Urna Eletrônica (1950 a 1998)** | Auditoria no CDN do TSE: apenas 1989 e 1960 são íntegros; 1994 e 1998 estão truncados. |
+| **#22** | **Cédula de Papel vs Urna Eletrônica (1960 a 2026)** | 66 anos de democracia: a fraude migrou da contagem manual para a liberação de mesário. |
+| **#23** | **O Estado-Termômetro: Minas Gerais (2022 vs 2026)** | 100% histórico: Bolsonaro venceu MG nas UE2020 (+21k) e Flávio venceu no voto limpo (+83k). |
+| **#24** | **O Fator de Hardware: Urnas UE2020 vs Pré-2020** | Analogia do videogame (PS4 vs PS5): Bolsonaro venceu em 100% das 27 UFs nas urnas novas. |
+| **#25** | **O Placar Reconstruído dos Três Pleitos** | A tríade conservadora: Bolsonaro 55,13% (2018), 51,05% (2022) e Flávio 51,20% (2026). |
+| **#26** | **O Parecer Pericial Final: A Eleição Deve Ser Anulada?** | Nulidade cogente: os vícios superam a margem em 2,0x (2022) e 3,6x (2026) pelos Arts. 219 e 222 do CE. |
+| **#27** | **Conclusão e Auditoria Aberta: Dilnei S. Spancerski** | Apelo de compartilhamento cívico, repositório aberto e compromisso inegociável com a verdade. |
 
 ---
 
