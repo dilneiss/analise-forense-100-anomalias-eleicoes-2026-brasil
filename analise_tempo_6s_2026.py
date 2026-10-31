@@ -174,9 +174,13 @@ def processar(uf: str, limite: int | None = None) -> dict:
     if limite:
         logs = logs[:limite]
 
+    LIMITES = (2, 4, 6, 8, 10)
+    buckets = {t: 0 for t in LIMITES}
     total_votos = 0
     votos_6s = 0
     votos_10s = 0
+    # somas para correlação por seção (taxa de votos rápidos x % de Lula)
+    corr = {"n": 0, "sx": 0.0, "sy": 0.0, "sxy": 0.0, "sxx": 0.0, "syy": 0.0}
     secoes_com_6s = 0
     secoes_total = 0
     secoes_desalinhadas = 0
@@ -207,6 +211,8 @@ def processar(uf: str, limite: int | None = None) -> dict:
         total_votos += len(dur)
         n6 = sum(1 for d in dur if d < 6.0)
         n10 = sum(1 for d in dur if d < 10.0)
+        for t in LIMITES:
+            buckets[t] += sum(1 for d in dur if d < t)
         votos_6s += n6
         votos_10s += n10
         if n6:
@@ -219,6 +225,16 @@ def processar(uf: str, limite: int | None = None) -> dict:
         if len(votos) != len(dur):
             secoes_desalinhadas += 1
             continue
+
+        # correlação por seção: taxa de votos rápidos vs proporção de Lula
+        if votos:
+            lula = sum(1 for x in votos if x == LULA)
+            flavio = sum(1 for x in votos if x == FLAVIO)
+            if lula + flavio >= 50:
+                x = n6 / (lula + flavio)          # taxa de <6s na seção
+                y = lula / (lula + flavio)        # proporção de Lula
+                corr["n"] += 1; corr["sx"] += x; corr["sy"] += y
+                corr["sxy"] += x * y; corr["sxx"] += x * x; corr["syy"] += y * y
 
         # padrão: bloco de Lula (>=3) -> bloco de Flávio (>=1) -> bloco de Lula (>=3)
         i = 0
@@ -260,7 +276,15 @@ def processar(uf: str, limite: int | None = None) -> dict:
         "secoes_processadas": secoes_total,
         "secoes_em_que_o_log_e_o_rdv_nao_casam": secoes_desalinhadas,
         "votos_computados": total_votos,
-        "votos_abaixo_6s": votos_6s,
+        "votos_abaixo_2s": buckets[2],
+        "votos_abaixo_4s": buckets[4],
+        "votos_abaixo_6s": buckets[6],
+        "votos_abaixo_8s": buckets[8],
+        "votos_abaixo_10s": buckets[10],
+        "pct_abaixo_2s": round(buckets[2] / total_votos * 100, 3) if total_votos else 0,
+        "pct_abaixo_4s": round(buckets[4] / total_votos * 100, 3) if total_votos else 0,
+        "pct_abaixo_8s": round(buckets[8] / total_votos * 100, 3) if total_votos else 0,
+        "correlacao_taxa_rapida_vs_lula": corr,
         "pct_abaixo_6s": round(votos_6s / total_votos * 100, 3) if total_votos else 0,
         "votos_abaixo_10s": votos_10s,
         "secoes_com_ao_menos_1_voto_abaixo_6s": secoes_com_6s,
