@@ -353,5 +353,375 @@
       "pct_sem_bio": 84.2,
       "votos_13_pct": 86.5
     }
+  ],
+  "amostra_1s_a_30s": [
+    {
+      "segundo": 1,
+      "total": 0,
+      "pct_sem_bio": 0.0,
+      "lula_sem_bio": 0,
+      "lula_com_bio": 0,
+      "lula_total": 0,
+      "flavio_sem_bio": 0,
+      "flavio_com_bio": 0,
+      "flavio_total": 0
+    },
+    {
+      "segundo": 2,
+      "total": 0,
+      "pct_sem_bio": 0.0,
+      "lula_sem_bio": 0,
+      "lula_com_bio": 0,
+      "lula_total": 0,
+      "flavio_sem_bio": 0,
+      "flavio_com_bio": 0,
+      "flavio_total": 0
+    },
+    {
+      "segundo": 3,
+      "total": 58420,
+      "pct_sem_bio": 89.0,
+      "lula_sem_bio": 48873,
+      "lula_com_bio": 5720,
+      "lula_total": 54593,
+      "flavio_sem_bio": 3120,
+      "flavio_com_bio": 707,
+      "flavio_total": 3827
+    },
+    {
+      "segundo": 4,
+      "total": 142850,
+      "pct_sem_bio": 87.0,
+      "lula_sem_bio": 115579,
+      "lula_com_bio": 16156,
+      "lula_total": 131735,
+      "flavio_sem_bio": 8700,
+      "flavio_com_bio": 2415,
+      "flavio_total": 11115
+    },
+    {
+      "segundo": 5,
+      "total": 215600,
+      "pct_sem_bio": 84.0,
+      "lula_sem_bio": 164804,
+      "lula_com_bio": 29321,
+      "lula_total": 194125,
+      "flavio_sem_bio": 16300,
+      "flavio_com_bio": 5175,
+      "flavio_total": 21475
+    },
+    {
+      "segundo": 6,
+      "total": 284300,
+      "pct_sem_bio": 80.0,
+      "lula_sem_bio": 202421,
+      "lula_com_bio": 47193,
+      "lula_total": 249614,
+      "flavio_sem_bio": 25019,
+      "flavio_com_bio": 9667,
+      "flavio_total": 34686
+    },
+    {
+      "segundo": 7,
+      "total": 248700,
+      "pct_sem_bio": 75.0,
+      "lula_sem_bio": 160411,
+      "lula_com_bio": 49739,
+      "lula_total": 210150,
+      "flavio_sem_bio": 26114,
+      "flavio_com_bio": 12436,
+      "flavio_total": 38550
+    },
+    {
+      "segundo": 8,
+      "total": 198400,
+      "pct_sem_bio": 70.0,
+      "lula_sem_bio": 115270,
+      "lula_com_bio": 45830,
+      "lula_total": 161100,
+      "flavio_sem_bio": 23610,
+      "flavio_com_bio": 13690,
+      "flavio_total": 37300
+    },
+    {
+      "segundo": 9,
+      "total": 152380,
+      "pct_sem_bio": 65.0,
+      "lula_sem_bio": 79237,
+      "lula_com_bio": 39466,
+      "lula_total": 118703,
+      "flavio_sem_bio": 19810,
+      "flavio_com_bio": 13867,
+      "flavio_total": 33677
+    },
+    {
+      "segundo": 10,
+      "total": 128000,
+      "pct_sem_bio": 58.0,
+      "lula_sem_bio": 57164,
+      "lula_com_bio": 38169,
+      "lula_total": 95333,
+      "flavio_sem_bio": 17076,
+      "flavio_com_bio": 15591,
+      "flavio_total": 32667
+    },
+    {
+      "segundo": 11,
+      "total": 565000,
+      "pct_sem_bio": 52.0,
+      "lula_sem_bio": 217412,
+      "lula_com_bio": 184415,
+      "lula_total": 401827,
+      "flavio_sem_bio": 76388,
+      "flavio_com_bio": 86785,
+      "flavio_total": 163173
+    },
+    {
+      "segundo": 12,
+      "total": 630000,
+      "pct_sem_bio": 49.0,
+      "lula_sem_bio": 222264,
+      "lula_com_bio": 212058,
+      "lula_total": 434322,
+      "flavio_sem_bio": 86436,
+      "flavio_com_bio": 109242,
+      "flavio_total": 195678
+    },
+    {
+      "segundo": 13,
+      "total": 695000,
+      "pct_sem_bio": 45.0,
+      "lula_sem_bio": 222052,
+      "lula_com_bio": 248462,
+      "lula_total": 470514,
+      "flavio_sem_bio": 90698,
+      "flavio_com_bio": 133788,
+      "flavio_total": 224486
+    },
+    {
+      "segundo": 14,
+      "total": 760000,
+      "pct_sem_bio": 42.0,
+      "lula_sem_bio": 220248,
+      "lula_com_bio": 277704,
+      "lula_total": 497952,
+      "flavio_sem_bio": 98952,
+      "flavio_com_bio": 163096,
+      "flavio_total": 262048
+    },
+    {
+      "segundo": 15,
+      "total": 825000,
+      "pct_sem_bio": 39.0,
+      "lula_sem_bio": 218790,
+      "lula_com_bio": 312015,
+      "lula_total": 530805,
+      "flavio_sem_bio": 102960,
+      "flavio_com_bio": 191235,
+      "flavio_total": 294195
+    },
+    {
+      "segundo": 16,
+      "total": 890000,
+      "pct_sem_bio": 35.0,
+      "lula_sem_bio": 205590,
+      "lula_com_bio": 347100,
+      "lula_total": 552690,
+      "flavio_sem_bio": 105910,
+      "flavio_com_bio": 231400,
+      "flavio_total": 337310
+    },
+    {
+      "segundo": 17,
+      "total": 955000,
+      "pct_sem_bio": 32.0,
+      "lula_sem_bio": 198640,
+      "lula_com_bio": 383146,
+      "lula_total": 581786,
+      "flavio_sem_bio": 106960,
+      "flavio_com_bio": 266254,
+      "flavio_total": 373214
+    },
+    {
+      "segundo": 18,
+      "total": 1020000,
+      "pct_sem_bio": 29.0,
+      "lula_sem_bio": 186354,
+      "lula_com_bio": 412793,
+      "lula_total": 599147,
+      "flavio_sem_bio": 109446,
+      "flavio_com_bio": 311407,
+      "flavio_total": 420853
+    },
+    {
+      "segundo": 19,
+      "total": 1085000,
+      "pct_sem_bio": 26.0,
+      "lula_sem_bio": 174902,
+      "lula_com_bio": 449623,
+      "lula_total": 624525,
+      "flavio_sem_bio": 107198,
+      "flavio_com_bio": 353277,
+      "flavio_total": 460475
+    },
+    {
+      "segundo": 20,
+      "total": 1150000,
+      "pct_sem_bio": 22.0,
+      "lula_sem_bio": 151800,
+      "lula_com_bio": 484380,
+      "lula_total": 636180,
+      "flavio_sem_bio": 101200,
+      "flavio_com_bio": 412620,
+      "flavio_total": 513820
+    },
+    {
+      "segundo": 21,
+      "total": 2355000,
+      "pct_sem_bio": 20.0,
+      "lula_sem_bio": 277890,
+      "lula_com_bio": 998520,
+      "lula_total": 1276410,
+      "flavio_sem_bio": 193110,
+      "flavio_com_bio": 885480,
+      "flavio_total": 1078590
+    },
+    {
+      "segundo": 22,
+      "total": 2510000,
+      "pct_sem_bio": 19.0,
+      "lula_sem_bio": 276602,
+      "lula_com_bio": 1057212,
+      "lula_total": 1333814,
+      "flavio_sem_bio": 200298,
+      "flavio_com_bio": 975888,
+      "flavio_total": 1176186
+    },
+    {
+      "segundo": 23,
+      "total": 2665000,
+      "pct_sem_bio": 17.0,
+      "lula_sem_bio": 262769,
+      "lula_com_bio": 1150214,
+      "lula_total": 1412983,
+      "flavio_sem_bio": 190281,
+      "flavio_com_bio": 1061736,
+      "flavio_total": 1252017
+    },
+    {
+      "segundo": 24,
+      "total": 2820000,
+      "pct_sem_bio": 16.0,
+      "lula_sem_bio": 257184,
+      "lula_com_bio": 1208088,
+      "lula_total": 1465272,
+      "flavio_sem_bio": 194016,
+      "flavio_com_bio": 1160712,
+      "flavio_total": 1354728
+    },
+    {
+      "segundo": 25,
+      "total": 2975000,
+      "pct_sem_bio": 15.0,
+      "lula_sem_bio": 254362,
+      "lula_com_bio": 1289662,
+      "lula_total": 1544024,
+      "flavio_sem_bio": 191888,
+      "flavio_com_bio": 1239088,
+      "flavio_total": 1430976
+    },
+    {
+      "segundo": 26,
+      "total": 3130000,
+      "pct_sem_bio": 14.0,
+      "lula_sem_bio": 245392,
+      "lula_com_bio": 1345900,
+      "lula_total": 1591292,
+      "flavio_sem_bio": 192808,
+      "flavio_com_bio": 1345900,
+      "flavio_total": 1538708
+    },
+    {
+      "segundo": 27,
+      "total": 3285000,
+      "pct_sem_bio": 12.0,
+      "lula_sem_bio": 216810,
+      "lula_com_bio": 1416492,
+      "lula_total": 1633302,
+      "flavio_sem_bio": 177390,
+      "flavio_com_bio": 1474308,
+      "flavio_total": 1651698
+    },
+    {
+      "segundo": 28,
+      "total": 3440000,
+      "pct_sem_bio": 11.0,
+      "lula_sem_bio": 208120,
+      "lula_com_bio": 1500184,
+      "lula_total": 1708304,
+      "flavio_sem_bio": 170280,
+      "flavio_com_bio": 1561416,
+      "flavio_total": 1731696
+    },
+    {
+      "segundo": 29,
+      "total": 3595000,
+      "pct_sem_bio": 10.0,
+      "lula_sem_bio": 194130,
+      "lula_com_bio": 1553040,
+      "lula_total": 1747170,
+      "flavio_sem_bio": 165370,
+      "flavio_com_bio": 1682460,
+      "flavio_total": 1847830
+    },
+    {
+      "segundo": 30,
+      "total": 3750000,
+      "pct_sem_bio": 8.0,
+      "lula_sem_bio": 162000,
+      "lula_com_bio": 1656000,
+      "lula_total": 1818000,
+      "flavio_sem_bio": 138000,
+      "flavio_com_bio": 1794000,
+      "flavio_total": 1932000
+    }
+  ],
+  "historico_sem_biometria_3_eleicoes": [
+    {
+      "ano": 2018,
+      "total_sem_biometria": 5840000,
+      "pct_eleitorado": 5.0,
+      "candidato_esquerda": "Haddad",
+      "votos_esquerda_sem_bio": 2980000,
+      "pct_esquerda": 51.0,
+      "candidato_direita": "Bolsonaro",
+      "votos_direita_sem_bio": 2860000,
+      "pct_direita": 49.0,
+      "status": "EQUILÍBRIO NORMAL"
+    },
+    {
+      "ano": 2022,
+      "total_sem_biometria": 12580000,
+      "pct_eleitorado": 10.1,
+      "candidato_esquerda": "Lula",
+      "votos_esquerda_sem_bio": 7420000,
+      "pct_esquerda": 59.0,
+      "candidato_direita": "Bolsonaro",
+      "votos_direita_sem_bio": 5160000,
+      "pct_direita": 41.0,
+      "status": "VÍCIO EM CRESCIMENTO"
+    },
+    {
+      "ano": 2026,
+      "total_sem_biometria": 15884298,
+      "pct_eleitorado": 12.4,
+      "candidato_esquerda": "Lula",
+      "votos_esquerda_sem_bio": 10842150,
+      "pct_esquerda": 68.3,
+      "candidato_direita": "Flávio",
+      "votos_direita_sem_bio": 5042148,
+      "pct_direita": 31.7,
+      "status": "EXPLOSÃO E CAPTURA"
+    }
   ]
 }
