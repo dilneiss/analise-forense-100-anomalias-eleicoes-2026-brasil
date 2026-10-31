@@ -48,6 +48,14 @@ def main():
         except Exception as e:
             print(f"[{uf}] ERRO: {e}", flush=True)
         time.sleep(1)
+    # SINCRONIZAR_PROJETO: cópia consolidada para o repositório (na C:), que é pequena
+    try:
+        destino = Path("data/tempo_2026")
+        destino.mkdir(parents=True, exist_ok=True)
+        (destino / "nacional_tempo_6s_2026.json").write_text(
+            json.dumps(acumulado, ensure_ascii=False, indent=1), encoding="utf-8")
+    except Exception as e:
+        print("aviso: falha ao sincronizar consolidado no projeto:", e, flush=True)
     print("=== CONCLUÍDO ===", flush=True)
     print(json.dumps({k: v for k, v in acumulado.items() if k != "ufs"}, ensure_ascii=False, indent=2), flush=True)
 

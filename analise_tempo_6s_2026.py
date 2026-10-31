@@ -28,7 +28,7 @@ from urna_forense import der  # noqa: E402
 BASE_URL = ("https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/"
             "arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_{uf}.zip")
 DDIR = Path("D:/urnas2026")
-OUT = Path("data/tempo_2026")
+OUT = Path("D:/urnas2026/resultados")
 OUT.mkdir(parents=True, exist_ok=True)
 
 LULA, FLAVIO = 13, 22

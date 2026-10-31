@@ -1,11 +1,11 @@
 {
  "ano": 2026,
  "turno": 2,
- "secoes_processadas": 23736,
- "votos_computados": 6150015,
- "votos_abaixo_6s": 163882,
- "votos_abaixo_10s": 2450856,
- "secoes_com_ao_menos_1_voto_abaixo_6s": 18988,
+ "secoes_processadas": 33961,
+ "votos_computados": 8388046,
+ "votos_abaixo_6s": 215274,
+ "votos_abaixo_10s": 3273993,
+ "secoes_com_ao_menos_1_voto_abaixo_6s": 26287,
  "sanduiche_secoes": 0,
  "sanduiche_votos_lula": 0,
  "sanduiche_votos_flavio": 0,
@@ -36,6 +36,16 @@
    "votos_abaixo_6s": 61736,
    "votos_abaixo_10s": 1051481,
    "secoes_com_ao_menos_1_voto_abaixo_6s": 8445,
+   "sanduiche_lula_flavio_lula_secoes": 0,
+   "sanduiche_lula_flavio_lula_votos_lula": 0,
+   "sanduiche_lula_flavio_lula_votos_flavio": 0
+  },
+  "PI": {
+   "secoes_processadas": 10225,
+   "votos_computados": 2238031,
+   "votos_abaixo_6s": 51392,
+   "votos_abaixo_10s": 823137,
+   "secoes_com_ao_menos_1_voto_abaixo_6s": 7299,
    "sanduiche_lula_flavio_lula_secoes": 0,
    "sanduiche_lula_flavio_lula_votos_lula": 0,
    "sanduiche_lula_flavio_lula_votos_flavio": 0
