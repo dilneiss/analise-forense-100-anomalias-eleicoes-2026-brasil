@@ -37,19 +37,52 @@ MSG_DONE = "O voto do eleitor foi computado"
 DIA_2T = (25, 10, 2026)   # data oficial do 2º turno de 2026
 
 
-def baixar(uf: str) -> Path:
+def baixar(uf: str, tentativas: int = 4) -> Path:
+    """Baixa o pacote garantindo integridade (tamanho e ZIP válido)."""
     DDIR.mkdir(parents=True, exist_ok=True)
     dst = DDIR / f"{uf}_2t.zip"
-    if dst.exists() and dst.stat().st_size > 10_000_000:
+
+    def valido(caminho: Path) -> bool:
+        if not caminho.exists() or caminho.stat().st_size < 10_000_000:
+            return False
+        try:
+            with zipfile.ZipFile(caminho) as z:
+                z.namelist()
+            return True
+        except Exception:
+            return False
+
+    if valido(dst):
         return dst
-    req = urllib.request.Request(BASE_URL.format(uf=uf), headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=3600) as r, open(dst, "wb") as f:
-        while True:
-            ch = r.read(1 << 20)
-            if not ch:
-                break
-            f.write(ch)
-    return dst
+
+    if dst.exists():
+        print(f"  {uf}: pacote inválido ({dst.stat().st_size/1048576:.0f} MB) — rebaixando", flush=True)
+        dst.unlink(missing_ok=True)
+
+    for t in range(1, tentativas + 1):
+        try:
+            req = urllib.request.Request(BASE_URL.format(uf=uf), headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=3600) as r:
+                esperado = int(r.headers.get("Content-Length") or 0)
+                with open(dst, "wb") as f:
+                    while True:
+                        ch = r.read(1 << 20)
+                        if not ch:
+                            break
+                        f.write(ch)
+            obtido = dst.stat().st_size
+            if esperado and obtido != esperado:
+                print(f"  {uf}: incompleto ({obtido/1048576:.0f}/{esperado/1048576:.0f} MB) tentativa {t}", flush=True)
+                dst.unlink(missing_ok=True)
+                continue
+            if valido(dst):
+                return dst
+            print(f"  {uf}: ZIP inválido na tentativa {t}", flush=True)
+            dst.unlink(missing_ok=True)
+        except Exception as e:
+            print(f"  {uf}: erro no download (tentativa {t}): {e}", flush=True)
+            dst.unlink(missing_ok=True)
+    raise RuntimeError(f"não foi possível baixar o pacote de {uf} após {tentativas} tentativas")
 
 
 def eventos_log(raw_jez: bytes) -> list[tuple[datetime, str]]:
@@ -78,8 +111,12 @@ def eventos_log(raw_jez: bytes) -> list[tuple[datetime, str]]:
     return out
 
 
-def sequencia_votos(raw_rdv: bytes) -> list[int]:
-    """Lista ordenada do número votado por voto computado (13/22/95/96...)."""
+def sequencia_votos(raw_rdv: bytes, cargo_alvo: int = 1) -> list[int]:
+    """Lista ordenada dos votos do cargo (1 = Presidente), no turno do arquivo.
+
+    Em estados com segundo turno estadual a urna registra mais de um cargo no
+    mesmo RDV; sem filtrar por cargo os votos de governador contaminam a conta.
+    """
     try:
         root = der.parse(raw_rdv)
     except Exception:
@@ -87,25 +124,45 @@ def sequencia_votos(raw_rdv: bytes) -> list[int]:
 
     votos: list[int] = []
 
-    def procurar(no, prof=0):
-        if prof > 12 or not getattr(no, "constructed", False):
-            return
-        filhos = no.children()
-        # Um Voto = SEQUENCE { [1] tipoVoto, INTEGER numero }
-        if (len(filhos) in (1, 2) and filhos[0].tag_class == 0 and filhos[0].tag_number == 10
-                and (len(filhos) == 1 or filhos[1].tag_name == "NumericString")):
-            if len(filhos) == 2:
-                try:
-                    votos.append(int(filhos[1].value.decode()))
-                except (ValueError, AttributeError):
+    def extrair_votos(no) -> None:
+        def walk(n, d=0):
+            if d > 18 or not getattr(n, "constructed", False):
+                return
+            f = n.children()
+            if (len(f) in (1, 2) and f[0].tag_class == 0 and f[0].tag_number == 10
+                    and (len(f) == 1 or f[1].tag_name == "NumericString")):
+                if len(f) == 2:
+                    try:
+                        votos.append(int(f[1].value.decode()))
+                    except (ValueError, AttributeError):
+                        votos.append(0)
+                else:
                     votos.append(0)
-            else:
-                votos.append(0)
-            return
-        for f in filhos:
-            procurar(f, prof + 1)
+                return
+            for x in f:
+                walk(x, d + 1)
+        walk(no)
 
-    procurar(root)
+    def procurar_cargos(no, d=0):
+        if d > 14 or not getattr(no, "constructed", False):
+            return False
+        f = no.children()
+        # nó de cargo: { [1] codigoCargo, INTEGER ordem, SEQUENCE votos }
+        if (len(f) >= 3 and f[0].tag_class == 2 and f[0].tag_number == 1
+                and getattr(f[2], "constructed", False)):
+            try:
+                codigo = f[0].as_int()
+            except Exception:
+                codigo = None
+            if codigo == cargo_alvo:
+                extrair_votos(f[2])
+                return True
+            return False
+        for x in f:
+            procurar_cargos(x, d + 1)
+        return False
+
+    procurar_cargos(root)
     return votos
 
 
