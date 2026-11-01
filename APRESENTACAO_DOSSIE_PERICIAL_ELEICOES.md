@@ -203,7 +203,7 @@ Este é o confronto pericial mais contundente já realizado sobre a dinâmica de
   * **O Deserto do 2º Turno:** Deputados e senadores eleitos desmobilizaram suas equipes. A urna foi reduzida a **uma única tela de 3 teclas (1-3-Confirma)**, permitindo injeções rápidas de mesários em salas sem fiscais de oposição.
 - **A Verdadeira Destinação dos Quase 16 Milhões de Votos Sem Biometria:**
   * **NÃO Foram Votos Brancos nem Nulos:** Todos os votos brancos e nulos do Brasil somaram apenas **4.153.768 votos (3,24% do eleitorado)** no 2º turno. Mesmo se 100% deles fossem sem digital, sobram **mais de 11,73 milhões de votos nominais válidos**!
-  * **96,4% de Votos Válidos Nominais:** Nas seções com surto manual auditadas, brancos/nulos foram de míseros 2,5% a 3,6%. Mais de **76% a 93% dos votos nominais válidos foram cravados para Lula (13)**;
+  * **96,4% de Votos Válidos Nominais:** Nas seções com surto manual auditadas, brancos/nulos foram de míseros 2,5% a 3,6%. Mais de **76% a 93% dos votos nominais válidos foram apurados para Lula (13) no Boletim de Urna**;
   * **Captura de Mais de 10,8 Milhões:** Mais de **10,8 milhões de votos nominais para Lula entraram sem biometria**, volume que é **quase 2,5 vezes maior do que toda a sua margem de vitória (4.430.191 votos)**!
 
 ---
