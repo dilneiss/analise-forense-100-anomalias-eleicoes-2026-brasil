@@ -1332,34 +1332,35 @@ O arquivo **`comparison_nacional_brasil/national_report.html`** traz a central d
 
 ---
 
-## 8. Apresentações em Slides e Teleprompter Interativo
+## 8. Apresentações em Slides, Motion Graphics e Teleprompter Interativo
 
-O repositório disponibiliza **duas versões** completas e autônomas da apresentação em HTML5/CSS3/JavaScript puro (Single File), sem necessidade de servidores ou dependências externas:
+O repositório disponibiliza **três aplicações web autônomas e complementares** desenvolvidas em HTML5/CSS3/JavaScript puro (Single File), sem dependências de servidores ou bibliotecas externas:
 
-1. **`apresentacao_executiva_10min.html` (NOVA &bull; Síntese Executiva em Menos de 10 Minutos):**
-   - **8 Capítulos Executivos:** Condensa e resume todos os 25 capítulos originais exclusivamente nos achados periciais mais graves e decisivos;
-   - **Duração Total Estimada:** ~9 minutos e 40 segundos, ideal para vídeos curtos, reuniões executivas e postagens virais;
-   - **Conteúdo Focado:** Placar reconstruído (Jair 51,05% / Flávio 51,20%), evolução do vício (2018 controle x 2022 hardware x 2026 mesa), a quebra da regra demográfica de 37 anos (+2,96M novos votantes), a equação matemática do Nordeste (4,68M viciados > 4,40M margem), os logs da cabine (esteira de 4s e alerta CHK125) e as 5.718 trocas de urna do CEFT com Efeito Espelho.
+1. **`motion_graphics_achados.html` (NOVA &bull; Experiência Interativa em Motion Graphics):**
+   - **Simulador Interativo dos 4 Segundos:** O usuário testa na prática tentar votar em 4 segundos com teclado numérico oficial e som sintetizado da urna via Web Audio API;
+   - **Animações Cinéticas em 5 Cenas:** Histograma animado de 3s a 10s, cabo de guerra Lula (948k) vs Flávio (135k), explosão de 49x sobre 2018 e terminal de logs com digitação em tempo real e alerta `CHK125`;
+   - *(Cópia sincronizada em `comparison_nacional_brasil/motion_graphics_achados.html`)*.
+
+2. **`apresentacao_executiva_10min.html` (Síntese Executiva em Menos de 10 Minutos):**
+   - **8 Capítulos Executivos:** Condensa e resume todos os 27 capítulos originais exclusivamente nos achados periciais mais graves e decisivos;
    - *(Cópia sincronizada em `comparison_nacional_brasil/apresentacao_executiva_10min.html`)*.
 
-2. **`apresentacao_slides.html` (Dossiê Pericial Completo &bull; 27 Capítulos):**
+3. **`apresentacao_slides.html` (Dossiê Pericial Completo &bull; 27 Capítulos):**
    - **27 Capítulos Oficiais:** Dossiê exaustivo cobrindo todos os aspectos técnicos, estatísticos, jurídicos e operacionais da tríade 2018, 2022 e 2026.
    - *(Cópia sincronizada em `comparison_nacional_brasil/apresentacao_slides.html`)*.
 
 ```bash
+# Como abrir o Motion Graphics Interativo:
+start motion_graphics_achados.html
+
 # Como abrir a Apresentação Executiva (10 minutos):
 start apresentacao_executiva_10min.html
 
-# Como abrir o Dossiê Completo (25 capítulos):
+# Como abrir o Dossiê Completo (27 capítulos):
 start apresentacao_slides.html
 ```
 
-A aplicação foi desenvolvida em **HTML5/CSS3/JavaScript puro (Single File)**, sem necessidade de servidores, Node.js ou bibliotecas externas, abrindo instantaneamente em qualquer navegador moderno.
-
-```bash
-# Como abrir a apresentação no Windows:
-start apresentacao_slides.html
-```
+As três aplicações foram desenvolvidas em **HTML5/CSS3/JavaScript puro (Single File)**, sem necessidade de servidores, Node.js ou bibliotecas externas, abrindo instantaneamente em qualquer navegador moderno.
 
 ### 8.1 Modos de Exibição com 1 Clique
 - **📺 Modo Dividido (`Slide + Roteiro`):** Palco visual à esquerda (100% widescreen) e coluna do **Teleprompter do Apresentador** à direita, contendo tópicos para enfatizar e o roteiro falado parágrafo a parágrafo;
