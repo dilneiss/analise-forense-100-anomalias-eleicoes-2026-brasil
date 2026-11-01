@@ -254,7 +254,8 @@ Este é o confronto pericial mais contundente já realizado sobre a dinâmica de
 ## Capítulo 15: A Cadência Temporal dos Logs: Esteira Robótica e o Horário de Almoço
 - **A Física do Tempo Humano no Histórico Brasileiro:** Desde os primeiros arquivos BWEB com logs de urna disponibilizados pelo TSE em 2014 e 2018, o processo de identificação, caminhada até a cabine, votação, conferência e retorno sempre durou no mínimo 20 segundos (média estável de 46 segundos). Nunca em nenhuma eleição do passado houve esteira de 4 segundos a não ser no bolsão anômalo de 2022 e 2026;
 - **A Esteira de 4 Segundos:** 1.428.650 votos em 2026 e 1.180.000 em 2022 duraram menos de 10 segundos, com intervalos de troca entre eleitores de 2 a 4 segundos, provando cabine vazia e digitação contínua pelo mesário;
-- **O Golpe das Salas Vazias:** Surtos concentrados durante a pausa de almoço quando fiscais de oposição se ausentavam da sala.
+- **O Golpe das Salas Vazias:** Surtos concentrados durante a pausa de almoço quando fiscais de oposição se ausentavam da sala;
+- **Nota Metodológica &bull; Sigilo Constitucional do Voto (Art. 14 da CF/88):** O arquivo oficial `logd.dat` registra o fato físico inegável do tempo de cabine e da ausência de digital (`Voto confirmado para [Presidente]`), sem jamais gravar o número do candidato digitado pelo eleitor para preservar o sigilo do voto. A destinação dos votos rápidos aos candidatos decorre de **estimativa pericial por correlação de seção** (cruzamento com o Boletim de Urna `bu.dat` e RDV daquela mesma urna, onde nas 106 seções unânimes a apuração foi 100% para Lula e, nas seções com esteira, a média de votos de Lula no BU atingiu ~82% a 87%).
 
 ---
 

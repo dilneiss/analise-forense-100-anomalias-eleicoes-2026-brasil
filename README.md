@@ -344,8 +344,15 @@ A auditoria de eventos de baixo nível gravados no `logd.dat` permitiu reconstit
 ---
 #### Detalhamento Técnico e Percentual dos 7 Casos (Consolidado Nacional &bull; Brasil Inteiro):
 
-*Esclarecimento Metodológico: A auditoria processou a totalização oficial de todas as **499.178 urnas eletrônicas dos 28 estados e DF**. Os números abaixo consolidam o alcance nacional de cada fenômeno no país todo, utilizando seções específicas (como Vitor Meireles/SC, Luislândia/MG ou Davinópolis/GO) apenas como **estudos de caso forenses e flagrantes materiais representativos**.*
+> ⚖️ **Nota Metodológica Fundamental sobre o Sigilo Constitucional do Voto (Art. 14 da CF/88):**  
+> O arquivo oficial de eventos `logd.dat` registra com precisão de segundos cada etapa da votação (`Eleitor foi habilitado`, `O voto do eleitor foi computado`) e o método de autenticação (`[biométrica]` vs `Solicitação de dado pessoal por ano de nascimento`). No entanto, em estrito cumprimento ao Artigo 14 da Constituição Federal, o log **NUNCA grava o número do candidato digitado pelo eleitor** (registra apenas `Voto confirmado para [Presidente]`).  
+> A quantificação e atribuição de votos aos candidatos (Lula vs Flávio Bolsonaro) nos votos em alta velocidade (&lt; 10s) não decorre de identificação individual no log, mas de **ESTIMATIVA PERICIAL POR CORRELAÇÃO DE SEÇÃO** (cruzamento da telemetria do log com o Boletim de Urna `bu.dat` e o Registro Digital do Voto `rdv.dat` daquela mesma seção eleitoral):  
+> 1. Nas seções com **100% de votos para Lula (106 urnas de voto zero para a oposição)**, 100% dos votos em esteira foram matematicamente de Lula;  
+> 2. Nas seções com **dominância massiva (> 85% a 95% para Lula no Nordeste)**, a esteira de votos manuais alimentou quase que exclusivamente o candidato majoritário da urna;  
+> 3. Na **correlação estatística nacional**, quanto maior a taxa de esteiras &lt; 10s e de votos manuais na urna, maior é o percentual do candidato 13 no BU.  
+> Portanto, os intervalos de tempo e a ausência de biometria são **fatos físicos materiais comprovados nos logs**; a divisão partidária apresentada representa uma **estimativa pericial estatisticamente fundamentada no resultado oficial dos BUs**.
 
+*Esclarecimento Metodológico: A auditoria processou a totalização oficial de todas as **499.178 urnas eletrônicas dos 28 estados e DF**. Os números abaixo consolidam o alcance nacional de cada fenômeno no país todo, utilizando seções específicas (como Vitor Meireles/SC, Luislândia/MG ou Davinópolis/GO) apenas como **estudos de caso forenses e flagrantes materiais representativos**.*
 1. **Caso 1: `CHK121` &bull; Digital de Mesário Detectada em Tentativas de Eleitor:**
    - **O que os dados mostram:** O leitor biométrico da urna rejeita o eleitor e registra textualmente que a digital lida no sensor pertence a um dos membros da mesa receptora cadastrados na urna (`Biometria do mesário [CPF/Título] encontrada em eleitores`).
    - **Alcance Nacional:** Detectado na telemetria de dezenas de seções sob auditoria detalhada em múltiplos estados da federação (Sul, Sudeste e Nordeste). No cômputo nacional projetado, foram identificadas milhares de tentativas irregulares onde membros de mesa colocaram a própria digital no leitor biométrico.

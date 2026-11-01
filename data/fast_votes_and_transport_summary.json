@@ -723,5 +723,6 @@
       "pct_direita": 31.7,
       "status": "EXPLOSÃO E CAPTURA"
     }
-  ]
+  ],
+  "nota_metodologica_sigilo_voto": "O arquivo oficial logd.dat omite o número do candidato digitado em cumprimento ao Artigo 14 da Constituição Federal (Sigilo do Voto). A divisão de votos por candidato nas faixas de velocidade representa uma ESTIMATIVA PERICIAL POR CORRELAÇÃO DE SEÇÃO com o Boletim de Urna (BU) e RDV de cada urna."
 }
