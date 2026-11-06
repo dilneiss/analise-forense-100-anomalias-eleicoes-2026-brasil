@@ -34,3 +34,7 @@ video_novos_eleitores/public/sfx/*.wav
 # Manim (render cache, mídia e frames de verificação)
 media/
 manim_novos_eleitores/*.png
+reel_novos_eleitores/node_modules/
+reel_novos_eleitores/out/
+.opus-video-skills/
+reel_novos_eleitores/assets/
