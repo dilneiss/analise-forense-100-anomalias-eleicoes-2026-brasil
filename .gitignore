@@ -18,3 +18,6 @@ env/
 video_novos_eleitores/node_modules/
 video_novos_eleitores/out/
 video_novos_eleitores/.remotion/
+video_novos_eleitores/public/audio/*.wav
+video_novos_eleitores/public/sfx/*.wav
+.skill-src/
