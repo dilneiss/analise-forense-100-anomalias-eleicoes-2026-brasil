@@ -137,7 +137,8 @@ Este é o capítulo de maior relevância material e jurídica de toda a auditori
 
 ### 6.3 O Escândalo dos Ônibus e o Secretário de Mobilidade em Paris:
 - **Frotas Retidas em Salvador e Capitais do NE:** Ônibus foram trancados nas garagens, impedindo a população humilde de periferias de chegar às seções eleitorais;
-- **Mandado de Prisão Preventiva:** A Justiça Eleitoral determinou a prisão do secretário municipal de Mobilidade Urbana de Salvador, Pablo Souza, por retenção criminosa de frotas;
+- **Áudios Vazados sob Apuração:** Gravações em circulação apontam planejamento de colagem de adesivos nos veículos para forçar os motoristas a paralisar e recolher as frotas às garagens, agravando o isolamento das periferias;
+- **Mandado de Prisão Preventiva:** A Justiça Eleitoral determinou a prisão do secretário municipal de Mobilidade Urbana de Salvador, Pablo Souza, por retenção indevida de frotas;
 - **O Flagrante Internacional:** Em plena eleição de segundo turno, foi confirmado oficialmente que **o secretário estava em Paris (França)** passeando enquanto a população não tinha como votar!;
 - **Colégios Desertos:** Milhares de eleitores não conseguiram comparecer, deixando seções vazias à tarde e no horário de almoço.
 

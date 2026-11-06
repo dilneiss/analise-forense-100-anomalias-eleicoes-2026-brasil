@@ -40,3 +40,25 @@ reel_novos_eleitores/out/
 reel_novos_eleitores/assets/
 .motion-video-kit/
 kit_film/
+herk/
+cab/
+ani/
+cmd/
+hfl/
+ms/
+
+# projetos de framework (Motion Canvas / Revideo) e dependências
+mc_film/
+rv_film/
+node_modules/
+
+# ---------------------------------------------------------------
+# Pastas de geração de vídeo: ficam fora do git (dependências e renders)
+# Os vídeos prontos ficam em videos_testes/ e são versionados.
+# ---------------------------------------------------------------
+video_novos_eleitores/
+reel_novos_eleitores/
+manim_novos_eleitores/
+
+# exceção: os MP4 entregues em videos_testes/ entram no git
+!videos_testes/**/*.mp4
