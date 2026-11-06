@@ -30,3 +30,7 @@ vozes_teste/
 video_novos_eleitores/public/audio/*.wav
 video_novos_eleitores/public/historia/
 video_novos_eleitores/public/sfx/*.wav
+
+# Manim (render cache, mídia e frames de verificação)
+media/
+manim_novos_eleitores/*.png
