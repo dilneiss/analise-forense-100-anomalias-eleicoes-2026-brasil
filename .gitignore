@@ -14,10 +14,19 @@ venv/
 env/
 .env
 
-# Remotion video project
+# Remotion video project & build caches
 video_novos_eleitores/node_modules/
 video_novos_eleitores/out/
 video_novos_eleitores/.remotion/
-video_novos_eleitores/public/audio/*.wav
-video_novos_eleitores/public/sfx/*.wav
+
+# Video & Audio tests and temporary outputs
+vozes_teste/
+.rapido-src/
 .skill-src/
+*.mp4
+*.wav
+*.mp3
+*.webp
+video_novos_eleitores/public/audio/*.wav
+video_novos_eleitores/public/historia/
+video_novos_eleitores/public/sfx/*.wav
