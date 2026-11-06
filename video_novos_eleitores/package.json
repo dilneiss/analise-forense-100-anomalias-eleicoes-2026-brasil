@@ -8,6 +8,7 @@
     "render": "remotion render src/index.ts NovosEleitores out/video.mp4 --codec=h264 --crf=18",
     "render:wide": "remotion render src/index.ts NovosEleitoresWide out/video_wide.mp4 --codec=h264 --crf=18",
     "render:narrado": "remotion render src/index.ts EleitoresEntreTurnos out/eleitores_entre_turnos_narrado.mp4 --codec=h264 --crf=17",
+    "render:historia": "remotion render src/index.ts HistoriaEleitores out/historia_novos_eleitores.mp4 --codec=h264 --crf=17",
     "still": "remotion still src/index.ts NovosEleitores out/frame.png"
   },
   "dependencies": {
