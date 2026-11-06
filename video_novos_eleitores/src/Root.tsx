@@ -9,6 +9,7 @@ import { OpuscarVideo } from "./opuscar/Comp";
 import { TOTAL_FRAMES_OPUSCAR } from "./opuscar_timeline";
 import { KitFilm } from "./kit/Comp";
 import { BEATS } from "./kit/scenes";
+import { TheatreFilm, THEATRE_FRAMES } from "./theatre/Film";
 
 /**
  * NovosEleitores        — versão muda original (38s)
@@ -47,6 +48,14 @@ export const RemotionRoot: React.FC = () => (
       id="HistoriaEleitores"
       component={HistoriaVideo}
       durationInFrames={TOTAL_FRAMES_HISTORIA}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="TheatreFilm"
+      component={TheatreFilm}
+      durationInFrames={THEATRE_FRAMES}
       fps={30}
       width={1080}
       height={1920}
