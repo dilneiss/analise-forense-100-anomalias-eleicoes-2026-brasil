@@ -13,3 +13,8 @@ venv/
 .venv/
 env/
 .env
+
+# Remotion video project
+video_novos_eleitores/node_modules/
+video_novos_eleitores/out/
+video_novos_eleitores/.remotion/

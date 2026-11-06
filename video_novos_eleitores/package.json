@@ -1,0 +1,24 @@
+{
+  "name": "video-novos-eleitores",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Video Remotion sobre os 116.480 novos eleitores cadastrados entre o 1o e o 2o turno",
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts NovosEleitores out/video.mp4 --codec=h264 --crf=18",
+    "render:wide": "remotion render src/index.ts NovosEleitoresWide out/video_wide.mp4 --codec=h264 --crf=18",
+    "still": "remotion still src/index.ts NovosEleitores out/frame.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/google-fonts": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.4"
+  }
+}
