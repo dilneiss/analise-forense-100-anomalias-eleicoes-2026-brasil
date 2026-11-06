@@ -7,6 +7,8 @@ import { HistoriaVideo } from "./historia/Comp";
 import { TOTAL_FRAMES_HISTORIA } from "./story_timeline";
 import { OpuscarVideo } from "./opuscar/Comp";
 import { TOTAL_FRAMES_OPUSCAR } from "./opuscar_timeline";
+import { KitFilm } from "./kit/Comp";
+import { BEATS } from "./kit/scenes";
 
 /**
  * NovosEleitores        — versão muda original (38s)
@@ -48,6 +50,14 @@ export const RemotionRoot: React.FC = () => (
       fps={30}
       width={1080}
       height={1920}
+    />
+    <Composition
+      id="KitLaunchFilm"
+      component={KitFilm}
+      durationInFrames={BEATS.dur}
+      fps={30}
+      width={1920}
+      height={1080}
     />
     <Composition
       id="OpuscarNovosEleitores"
